@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="application/javascript">
+//封装功能
+		function processArray(items,process,callback){
+			var todo=items.concat();//克隆数组
+			window.setTimeout(function(){
+				process(todo.shift());
+				if (!!todo.length) {
+					window.setTimeout(arguments.callee,25))
+				}else{
+					callback(items);
+				}
+			},25)
+		}
+		</script>
+	</body>
+
+</html>
