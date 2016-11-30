@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--
+        	作者：1330361087@qq.com
+        	时间：2016-11-29
+        	描述：
+   clear()： 删除所有值；
+ getItem(name)：根据指定的名字name 获取对应的值。
+ key(index)：获得index 位置处的值的名字。
+ removeItem(name)：删除由name 指定的名值对儿。
+ setItem(name, value)：为指定的name 设置一个对应的值。
+        -->
+<script>
+            var storage=window.localStorage,
+			    //session=window.sessionStorage;
+			/*写入方法*/
+			storage["a"]=1;//写入a字段
+			storage.b=2;//写入b字段；
+			storage.setItem("c",3);//写入c字段；
+			
+			/*读取方法*/
+			console.log(storage.a);
+			console.log(storage['b']);
+			console.log(storage.getItem(c));
+			
+			/*清除方法 将localStorage的所有内容清除*/
+			storage.clear(); 
+			
+			//移除特定的键值
+			storage.removeItem('a');﻿
+		</script>
+	</body>
+
+</html>
