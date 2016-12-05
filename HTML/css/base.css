@@ -2,11 +2,13 @@
 	margin: 0;
 	padding: 0;
 }
-
+/*固定宽度布局转换成弹性布局是相对简单的任务，技巧是设置基本字号，让1em大致相当于10像素*/
 body {
 	font-family: "Myriad Pro", Frutiger, "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", Verdana, sans-serif;
-	/*font-size: 1.4em;*/
-	padding: 20px;
+	/*大多数浏览器的默认字号是16像素，10像素大约是16像素的62.5%,所以主题上将字号设置为62.5%;*/
+	font-size: 62.5%;
+	line-height: 1.6;
+	text-align:center;
 }
 
 a {
@@ -21,7 +23,28 @@ a {
 	width: 960px;
 	margin: 0 auto;
 }
-.w1200{
-	width:1200px;
-	margin:0 auto;
+
+.w1200 {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.w920 {
+	/*适用于分辨率1024X768*/
+	width: 920px;
+	margin: 0 auto;
+	background:url(../img/nav-bg-fixed.gif) repeat left top;
+}
+
+.clearfix {
+	*zoom:1;
+}
+
+.clearfix:after {
+	content: ".";
+	height: 0;
+	visibility: hidden;
+	display: block;
+	font-size: ;
+	clear: both;
 }

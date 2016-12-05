@@ -3,27 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<script type="text/javascript" src="../js/lib/jquery-2.1.1.js" ></script>
+		
 	</head>
 	<body>
+		<div id="div1"></div>
 		<script>
-			var storage=window.localStorage;
-			var session=window.sessionStorage;
-			/*写入方法*/
-			storage["a"]=1;//写入a字段
-			storage.b=2;//写入b字段；
-			storage.setItem("c",3);//写入c字段；
-			
-			/*读取方法*/
-			console.log(storage.a);
-			console.log(storage['b']);
-			console.log(storage.getItem(c));
-			
-			
-			/*清除方法 将localStorage的所有内容清除*/
-			storage.clear(); 
-			
-			//移除特定的键值
-			storage.removeItem('a');
+		$(function(){
+			var d=$("#div1").contents().length;
+			console.log(d);
+		})
 		</script>
 	</body>
 </html>

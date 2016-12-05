@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/base.css" />
+		<style>
+			#header {
+				height: 80px;
+				background: #333333;
+			}
+			
+			#footer {
+				height: 50px;
+				background: #486B02;
+			}
+			
+			#content {
+				overflow: hidden;
+				margin: 20px 0;
+			}
+			
+			#content .primary {
+				float: right;
+				display: inline;
+				width: 670px;
+				height: 700px;
+				/*background: #FD9933;*/
+			}
+			
+			#content .secondary {
+				float: left;
+				display: inliine;
+				width: 230px;
+				height: 200px;
+				background: #6DA203;
+			}
+			
+			#content .sub-primary {
+				float: left;
+				display: inline;
+				background: #aaa;
+				width: 470px;
+				height: 700px;;
+			}
+			
+			#content .sub-secondary {
+				float: right;
+				width: 180px;
+				display: inline;
+				background: #bbb;
+				height:700px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="w920">
+			<div id="header"></div>
+			<div id="content">
+				<div class="primary">
+					<div class="sub-primary"></div>
+					<div class="sub-secondary"></div>
+				</div>
+				<div class="secondary"></div>
+			</div>
+			<div id="footer"></div>
+		</div>
+	</body>
+
+</html>
