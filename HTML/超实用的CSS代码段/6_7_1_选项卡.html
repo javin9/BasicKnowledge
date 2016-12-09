@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				vertical-align: baseline;
+			}
+			
+			.clear {
+				clear: both;
+			}
+			
+			.cf {}
+			
+			.cf:after {
+				display: block;
+				content: '.', ;
+				visibility: hidden;
+				font-size: 0;
+				height: 0;
+				clear: both;
+			}
+			
+			body {
+				padding: 50px;
+			}
+			
+			.gallery-tab {
+				width: 410px;
+				text-align: center;
+				margin-bottom:-5px;
+				/*border: 1px solid #111111;*/
+			}
+			
+			.gallery-tab ul {
+				display: inline-block;
+				*display: inline-block;
+				*zoom: 1;
+				list-style-type: none;
+				overflow: hidden;
+			}
+			
+			.gallery-tab ul li {
+				float: left;
+			}
+			
+			.gallery-tab ul li+li {
+				margin-left: 10px;
+			}
+			
+			.gallery-tab ul .tab {
+				display: block;
+				background: #00BFFF;
+				color: #fff;
+				padding: 10px 20px;
+				cursor: pointer;
+				border-left: 1px solid #111111;
+				border-right: 1px solid #111111;
+				border-top: 1px solid #111111;
+				border-bottom: 1px solid #111111;
+				/*border-radius: 5px;*/
+			}
+			
+			.gallery-tab ul .on {
+				background: #FFD800;
+				color: #000;
+				border-bottom: 0;
+			}
+			
+			.gallery-content {
+				width: 410px;
+				border: 1px solid #000;
+				border-right: 1px solid #000;
+				border-bottom: 1px solid #000;
+			}
+			
+			.gallery-content img {
+				float: left;
+				padding: 10px;
+			}
+			.gallery-content div{
+				display: none;
+			}
+			.gallery-content .show {
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class='gallery'>
+			<div class="gallery-tab">
+				<ul>
+					<li><span class="on tab">新闻</span></li>
+					<li><span class='tab'>新闻</span></li>
+					<li><span class='tab'>新闻</span></li>
+					<li><span class='tab'>新闻</span></li>
+					<li><span class='tab'>新闻</span></li>
+				</ul>
+			</div>
+			<div class='gallery-content'>
+				<div class='show'>
+					<p>
+						111成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<p>
+						成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<img src="img/chagall.jpg" />
+
+					<p>
+						成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<p class="clear"></p>
+				</div>
+				<div class='hide'>
+					<p>
+						222成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<p>
+						成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<img src="img/chagall.jpg" />
+
+					<p>
+						成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<p class="clear"></p>
+				</div>
+				<div class='hide'>
+					<p>
+						333成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<p>
+						成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<img src="img/chagall.jpg" />
+
+					<p>
+						成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<p class="clear"></p>
+				</div>
+				<div class='hide'>
+					<p>
+						444成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<p>
+						成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<img src="img/chagall.jpg" />
+
+					<p>
+						成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<p class="clear"></p>
+				</div>
+				<div class='hide'>
+					<p>
+						444成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<p>
+						成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<img src="img/chagall.jpg" />
+
+					<p>
+						成都人终于体验到了“为人民服雾”的光荣时刻，从前只是常常在新闻中看到北京同胞们艰苦卓绝的奋斗过程，如今感同身受，广大成都人民感叹果然实践出真知，雾霾真的如此强大。
+					</p>
+					<p class="clear"></p>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../超实用的CSS代码段/js/jquery.js"></script>
+		<script>
+			$(function() {
+				$(".gallery-tab span").click(function() {
+					var that = $(this),
+					li_parent=that.parent('li'),
+					index=li_parent.index();
+					li_parent.siblings().find('span.on').removeClass('on');
+					that.addClass('on');
+					$('.gallery-content>div').eq(index).addClass('show').siblings().removeClass('show');
+					
+				});
+			});
+		</script>
+	</body>
+
+</html>

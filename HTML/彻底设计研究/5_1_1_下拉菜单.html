@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #menu {
+            list-style: none;
+            width: 610px;
+            font: 14px Arial;
+        }
+
+            #menu li {
+                float: left;
+                margin-right: 1px;
+                width: 150px;
+            }
+
+                /*#menu li dl {
+                    padding-bottom: 10px;
+                    background: #cb6;
+                }*/
+
+                #menu li dt {
+                    padding: 5px;
+                    text-align: center;
+                    border-bottom: 1px solid #b00;
+                    background-color: #ed0;
+                }
+
+                #menu li a, #menu li a:visited {
+                    text-decoration: none;
+                    color: #333;
+                    display: block;
+                }
+
+                #menu li dd {
+                    color: #fff;
+                    background-color: #47a;
+                    text-align: center;
+                    display: none;
+                }
+
+                #menu dl:hover dd {
+                    display: block;
+                }
+
+                #menu li dd a:hover {
+                    background: #147;
+                    color: #9cf;
+                }
+
+                #menu li dd.last {
+                    border-bottom: 1px solid #b00;
+                }
+    </style>
+</head>
+<body>
+    dl：相当于ul；
+    dt和dd分别称为定义标题和定义描述 相当于li
+
+    <br />
+    <br />
+    <br />
+
+    <ul id="menu">
+        <li>
+            <dl>
+                <dt><a href="#">清华大学</a></dt>
+                <dd><a href="#">清华大学</a></dd>
+                <dd><a href="#">清华大学</a></dd>
+                <dd><a href="#">清华大学</a></dd>
+                <dd><a href="#">清华大学</a></dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt><a href="#">清华大学</a></dt>
+                <dd><a href="#">清华大学</a></dd>
+                <dd><a href="#">清华大学</a></dd>
+                <dd><a href="#">清华大学</a></dd>
+                <dd><a href="#">清华大学</a></dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt><a href="#">清华大学</a></dt>
+                <dd><a href="#">清华大学</a></dd>
+                <dd><a href="#">清华大学</a></dd>
+                <dd><a href="#">清华大学</a></dd>
+                <dd><a href="#">清华大学</a></dd>
+            </dl>
+        </li>
+    </ul>
+    <!--<input type="search" value="" onchange="alert(0);" />-->
+</body>
+</html>

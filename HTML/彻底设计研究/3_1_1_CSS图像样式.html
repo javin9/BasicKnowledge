@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        h1 {
+            background: url('../520UED/images/logo.png') no-repeat;
+            /*background-position:right;*/
+            height: 27px;
+            /*float:left;*/
+        }
+            /*Father Image Replacement 替换方法*/
+            h1 span.fir {
+                display: none; /*设置为不显示，目的是把原来文本显示的文字隐藏起来*/
+            }
+            /*Phark图像替换方法*/
+        h1.park{
+            text-indent:-9999em;
+        }
+        .hh {
+            width: 112px;
+            height: 27px;
+            font-size:0;
+            background: url(../520UED/images/logo.png) no-repeat left top;
+        }
+    </style>f
+</head>
+<body>
+    <br />
+    1.背景图像
+    同时设置背景图像和背景颜色，背景图像【没有】覆盖的地方就按照设置的背景颜色显示。
+
+    2.标题的图像替换
+    核心思想：使用HTML中的文字仍以文本的形式【存在】，便于维持页面的内容和结构的完整性，然后通过css使文字不【显示】在页面上，而使图片以【背景图像】的形式出现
+
+            方法一：FIR方法
+            方法二：Park方法
+            方法三：
+    <br />
+    <h1><span class="fir">Head Line</span></h1>
+    <h1 class="park">Head Line</h1>
+
+    <br />
+    <h2><span></span>Head Line</h2>
+
+    <h1 class="hh">Head Line</h1>
+</body>
+</html>

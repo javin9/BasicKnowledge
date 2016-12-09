@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        /*标记选择器*/
+        p {
+            color: deepskyblue;
+        }
+        /*类选择器*/
+        .special {
+            color: green;
+        }
+        /*Id选择器*/
+        .spId {
+            color: aquamarine;
+        }
+        /*交集选择器 格式：标记选择器.类选择器     *必须以标记选择器开头*/
+        p.special {
+            color: red;
+        }
+
+        /*交集选择器 格式：标记选择器.Id选择器    *必须以标记选择器开头*/
+        h2.spId{
+            color:blanchedalmond;
+        }
+        /*并集选择器 格式：选择器，选择器，选择器   *任何选择器已逗号间隔*/
+        h2,.special,p.special{
+            color:blue;
+        }
+        /*后代选择器 格式：选择器 选择器   *中间用空格隔开*/
+        p span{
+            color:ButtonFace;
+        }
+        /*子选择器 格式：选择器>选择器    **/
+        h2>span{
+            color:blanchedalmond;
+        }
+
+        /*
+            css:继承性和叠加性质
+            总结;行内样式>ID样式>类别样式>标记样式*/
+    </style>
+</head>
+<body>
+    
+    <p>p 时间发咯我就发了世纪东方老师教的福利局 </p>
+    <p class="special">p class="special"时间发咯我就发了世纪东方老师教的福利局 </p>
+    <p id="spId">p spId="spId"时间发咯我就发了世纪东方老师教的福利局 </p>
+    <h2>h2 时间发咯我就发了世纪东方老师教的福利局 </h2>
+    <h2 class="special">h2 class="special" 时间发咯我就发了世纪东方老师教的福利局 </h2>
+    <h2 id="spId">h2 class="special" 时间发咯我就发了世纪东方老师教的福利局 </h2>
+    <p><span>无奇偶盘文件而欧文劲儿了我和老人</span></p>
+    <h2><span>无奇偶盘文件而欧文劲儿了我和老人                 <span>离开家失联飞机O(∩_∩)O好的︿(￣︶￣)︿︿(￣︶￣)︿</span></span></h2>
+</body>
+</html>

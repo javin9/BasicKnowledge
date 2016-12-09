@@ -1,178 +1,214 @@
+body {
+	line-height: 1.5;
+}
+
 #header {
-				width: 100%;
-				background: #0A4E8A;
-				border-top: 10px solid #083E6E;
-			}
-			
-			ul {
-				list-style-type: none;
-			}
-			
-			#header ul {
-				overflow: hidden;
-			}
-			
-			#header ul li {
-				float: left;
-			}
-			
-			#header ul li a {
-				width: 171px;
-				font-size: 2em;
-				border-left: 1px solid #083E6E;
-				display: block;
-				text-align: center;
-				padding: 10px 10px;
-				color: #fff;
-				font-family: "微软雅黑";
-				background-color: #0A4E8A;
-			}
-			
-			#header ul li:last-child a {
-				border-right: 1px solid #083E6E;
-			}
-			
-			#header ul li a:hover,
-			#header ul li a:focus {
-				background: #083E6E;
-			}
-			
-			#content {
-				background: #D2D8DE;
-				overflow: hidden;
-				padding-top: 20px;
-				/*margin-top:10px;*/
-			}
-			
-			#content .primary {
-				float: right;
-				display: inline;
-				width: 75%;
-			}
-			
-			#content .primary div {
-				border: 1px solid #fff;
-				border-radius: 15px;
-				background: #fff;
-				margin-bottom: 20px;
-			}
-			
-			#content .primary div h3 {
-				border-bottom: 1px solid #ccc;
-				padding-top: 20px;
-				padding-bottom: 20px;
-				padding-left: 30px;
-			}
-			
-			#content .primary div h3 a {
-				color: #000;
-				font-family: "微软雅黑";
-			}
-			
-			#content .primary div p {
-				color: #666666;
-				font-size: 16px;
-				text-indent: 10px;
-				font-family: "微软雅黑";
-				padding: 10px 30px 10px 30px;
-			}
-			
-			#content .secondary {
-				float: left;
-				display: inline;
-				width: 22%;
-				/*background:#fff;*/
-				/*border:1px solid #fff;*/
-				border-radius: 5px;
-			}
-			
-			.secondary .sencod-h5 {
-				padding: 5px 0px;
-				text-align: center;
-				color: #fff;
-				background: #0A4E8A;
-				border: 1px solid #0A4E8A;
-				border-radius: 10px 10px 0px 0px;
-			}
-			
-			.secondary .second-ul {
-				background: #fff;
-				border-radius: 0px 0px 10px 10px;
-			}
-			
-			.secondary .second-ul li a {
-				padding: 8px 0px 8px 10px;
-				color: #000000;
-				display: block;
-				border-bottom: 1px dashed;
-				font-size: 16px;
-			}
-			
-			.secondary .second-ul li:last-child a {
-				border-bottom: none;
-			}
-			
-			.secondary .second-ul li a:hover,
-			.secondary .second-ul li a:focus {
-				color: #ED8725;
-			}
-			.section{
-				margin-bottom: 40px;
-			}
-			.section .second-contact{
-				background:#fff;
-				border-radius:10px;
-			}
-			.section .second-contact li{
-				padding: 8px 0px 8px 10px;
-				border-bottom: 1px dashed;
-				font-size: 16px;
-				color: #000000;
-			}
-			.section .second-contact li:last-child{
-				border:0px;
-			}
-		    .section .second-contact2 {
-		       border-radius: 0px 0px 10px 10px;
-		    }
-		    #footer{
-		    	width:100%;
-		    	padding:20px 0;
-		    	background: #666666;
-		    }
-		    #footer .wrap{
-		    	height: 60px;
-		    	text-align:center;
-		    	background: #666666;
-		    	overflow: hidden;
-		    	position:relative;
-		        padding:10px 0;
-		    }
-		    #footer .link-h5{
-		    	width:160px;
-		    	height:40px;
-		    	line-height: 40px;
-		    	margin-left: 50px;;
-		    	position:absolute;
-		    	left:30%;
-		    	color:#fff;
-		    }
-		     #footer ul{
-		     	overflow:hidden;
-		    	height:40px;
-		    	line-height:40px;
-		    	position:absolute;
-		    	left:50%;
-		    }
-		    #footer ul li{
-		    	 float:left;
-		    }
-		     #footer ul li a{
-		        padding:10px;
-		    	color:#fff;
-		    	font-size:16px;
-		    	/*border-right:1px solid #fff;*/
-		    }
-		    #footer ul li:last-child a{
-		    	border:none;
-		    }
+	width: 100%;
+	background: #0A4E8A;
+	border-top: 10px solid #083E6E;
+}
+#header .nav {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+#header ul {
+	overflow: hidden;
+	float: left;
+}
+
+#header .main-nav li {
+	float: left;
+	width: 240px;
+}
+
+#header .main-nav li a {
+	font-size: 2em;
+	display: block;
+	text-align: center;
+	padding: 10px 50px;
+	color: #fff;
+	font-family: "微软雅黑";
+	background-color: #0A4E8A;
+}
+#header .main-nav li a.last
+{
+	border-right: 2px solid #083E6E;
+}
+
+#header .main-nav li a {
+	border-left: 2px solid #083E6E;
+}
+
+#header ul li a:hover,
+#header ul li a:focus {
+	background: #083E6E;
+}
+
+#header .sub-nav {
+	width: 240px;
+	position: absolute;
+	left: -999em;
+}
+
+#header .main-nav li:hover ul {
+	left: auto;
+}
+
+#header .sub-nav li {
+	border-top: 2px solid #083E6E;
+}
+
+#content {
+	background: #D2D8DE;
+	overflow: hidden;
+	padding-top: 20px;
+	/*margin-top:10px;*/
+}
+
+#content .primary {
+	float: right;
+	display: inline;
+	width: 75%;
+}
+
+#content .primary div {
+	border: 1px solid #fff;
+	border-radius: 15px;
+	background: #fff;
+	margin-bottom: 20px;
+}
+
+#content .primary div h3 {
+	border-bottom: 1px solid #ccc;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 30px;
+}
+
+#content .primary div h3 a {
+	color: #000;
+	font-family: "微软雅黑";
+}
+
+#content .primary div p {
+	color: #666666;
+	font-size: 16px;
+	text-indent: 10px;
+	font-family: "微软雅黑";
+	padding: 10px 30px 10px 30px;
+}
+
+#content .secondary {
+	float: left;
+	display: inline;
+	width: 22%;
+	/*background:#fff;*/
+	/*border:1px solid #fff;*/
+	border-radius: 5px;
+}
+
+.secondary .sencod-h5 {
+	padding: 5px 0px;
+	text-align: center;
+	color: #fff;
+	background: #0A4E8A;
+	border: 1px solid #0A4E8A;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.secondary .second-ul {
+	background: #fff;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.secondary .second-ul li a {
+	padding: 8px 0px 8px 10px;
+	color: #000000;
+	display: block;
+	border-bottom: 1px dashed;
+	font-size: 16px;
+}
+
+.secondary .second-ul li:last-child a {
+	border-bottom: none;
+}
+
+.secondary .second-ul li a:hover,
+.secondary .second-ul li a:focus {
+	color: #ED8725;
+}
+
+.section {
+	margin-bottom: 40px;
+}
+
+.section .second-contact {
+	background: #fff;
+	border-radius: 10px;
+}
+
+.section .second-contact li {
+	padding: 8px 0px 8px 10px;
+	border-bottom: 1px dashed;
+	font-size: 16px;
+	color: #000000;
+}
+
+.section .second-contact li:last-child {
+	border: 0px;
+}
+
+.section .second-contact2 {
+	border-radius: 0px 0px 10px 10px;
+}
+
+.footer-placeholder {
+	width: 100%;
+	margin: 0 auto;
+	padding-bottom: 100px;
+}
+
+#footer {
+	background: #666666;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+}
+
+.wrap {
+	width: 960px;
+	text-align: center;
+	margin: 0 auto;
+	height: 100%;
+}
+
+#footer ul {
+	display: inline-block;
+	*display: inline-block;
+	*zoom: 1;
+	/*overflow:hidden;*/
+}
+
+#footer ul li.link {
+	color: #fff;
+	font-size: 20px;
+}
+
+#footer ul li {
+	display: inline-block;
+	*display: inline-block;
+	*zoom: 1;
+}
+
+#footer ul li a {
+	padding: 10px;
+	color: #fff;
+	font-size: 16px;
+}
+
+#footer ul li:last-child a {
+	border: none;
+}
