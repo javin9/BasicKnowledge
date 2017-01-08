@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        .cf:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: "";
+            clear: both;
+            height: 0;
+        }
+
+        *.cf {
+            zoom: 1;
+        }
+        body {
+            margin: 15px;
+            font-family: Arial;
+            font-size: 12px;
+        }
+
+        .father {
+            background-color: #ffff99;
+            border: 1px solid #111111;
+        }
+
+            .father div {
+                padding: 10px;
+                margin: 15px;
+                border: 1px dashed #111;
+            }
+
+            .father p {
+                border: 1px solid #ff0000;
+                background-color: #ffd800;
+                /*clear:left;*/
+            }
+
+        .son1 {
+            float: left;
+            background-color: #b200ff;
+        }
+
+        .son2 {
+            float: left;
+            height: 30px;
+            background-color: #0026ff;
+        }
+
+        .son3 {
+            float: right;
+            height: 50px;
+            background-color: #808080;
+        }
+    </style>
+</head>
+<body>
+    盒子的浮动：对父类的影响和对自己的影响
+       对父类的影响：不会撑起父类宽高
+       对自己影响：宽度由自己的内容决定，自己撑起,自动收缩
+
+    4.1   盒子的浮动
+    设置float:left或者float:right 元素就会向起父元素左侧或者右侧紧靠，同时注意：盒子的宽度不在伸展，而是根据盒子里面的内容的宽度来确定
+    4.1.8  清除浮动的影响
+            第一种： 清除前一个元素的浮动 给自己加clear:left;
+           第二种：给父类加类名 .clearfix
+
+    4.1.9 扩展父类盒子的高度 
+               方法：给父类添加.clearfix
+    <br />
+    <br />
+    <div class="father">
+        <div class="son1">son1son1</div>
+        <div class="son2">son2son2</div>
+        <div class="son3">son3son3</div>
+        <p>  设置float:left或者float:right 元素就会向起父元素左侧或者右侧紧靠，同时注意：盒子的宽度不在伸展，而是根据盒子里面的内容的宽度来确定 设置float:left或者float:right 元素就会向起父元素左侧或者右侧紧靠，同时注意：盒子的宽度不在伸展，而是根据盒子里面的内容的宽度来确定 设置float:left或者float:right 元素就会向起父元素左侧或者右侧紧靠，同时注意：盒子的宽度不在伸展，而是根据盒子里面的内容的宽度来确定</p>
+    </div>
+</body>
+</html>

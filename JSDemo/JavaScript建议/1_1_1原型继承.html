@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		/*
+		 * Author:Cupid
+		*/
+		//A类
+			function A(x){
+				this.x=x;
+				this.getX=function(){
+					return this.x;
+				}
+			}
+			A.prototype.getXX=function(){
+				return Math.pow(this.x,2);
+			}
+			//B类
+			function B(y){
+				this.y=y;
+				this.getY=function(){
+					return this.y;
+				}
+			}
+			
+		  B.prototype=new A(2);//用原型对象继承 A的实例
+		  
+		  B.prototype.getYY=function(){
+		  	return Math.pow(this.y,2);
+		  }
+		  
+		  var b=new B(2);
+		  b.getX();//2
+		  b.getXX();//4
+		  b.getY();//2
+		  b.getYY();//4
+		  
+		  /*
+		   * 缺点：、
+		   * 1.由于每个类型只有一个原型，因此他不支持多重继承
+		   * 2.不能很好的支持多参数或者动态参数的父类。
+		   * 3.在原型继承截断，用户还不能决定什么参数来实例化构造函数
+		   */
+		</script>
+	</body>
+</html>

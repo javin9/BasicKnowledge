@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;/**/
+				padding: 0;
+			}
+			.nav1{
+				text-align: center;/*设定居中*/
+				background:#008000;
+			}
+			.nav1 ul{
+				list-style-type: none;
+				display:inline-block;/*将对象设置为内连对象，但是对象以块状元素呈现*/
+				*display:inline-block;/*支持IE8以下浏览器*/
+				*zoom:1;/*支持IE8以下浏览器*/
+				overflow:hidden;
+			}
+			.nav1 ul li{
+				float:left;
+				display:inline;
+			}
+			.nav1 ul li+li{
+				margin-left:20px;
+			}
+			.nav1 ul li a{ 	
+				text-decoration:none;
+				color:#fff;
+				display:block;
+				/*width:40px;*/
+				padding:10px 20px;
+				background:#0A4E8A;
+			}
+			
+			/*用display:table实现方式*/
+			.nav2{
+				display:table;
+				margin:0 auto;
+			}
+			.nav2 li{
+				display:table-cell;
+			}
+			.nav2 li+li{
+				padding-left:20px;
+			}
+			.nav2 li a{
+				display:block;
+				 padding:10px 20px;
+				 background:#444444;
+				 color:#fff;
+				 text-decoration:none;
+			}
+			
+			/*固定宽度居中*/
+			.content{
+				width:300px;
+				height:20px;
+				background:#666666;
+				color:#fff;
+				margin:0 auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h3></h3>
+		<header>
+			<!--
+            	作者：1330361087@qq.com
+            	时间：2016-12-06
+            	描述：父类元素和子类元素都没有定义宽度的情况下水平居中
+            -->
+			<nav class='nav1'>
+				<ul>
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">首页</a>
+					</li>
+				</ul>
+			</nav>
+			<br>
+			<nav class='nav2'>
+				<ul>
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">首页</a>
+					</li>
+				</ul>
+			</nav>
+			<br>
+			<!--
+            	作者：1330361087@qq.com
+            	时间：2016-12-06
+            	描述：固定宽度居中  此方法只能进行水平的居中，且对浮动元素或绝对定位元素无效
+            -->
+             <div class="content">
+             	固定宽度居中主要内容
+             </div>
+		</header>
+	</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/base.css" />
+		<style>
+			
+			#header{
+			  height: 80px;
+			  background:#333333;
+			 
+			}
+			#footer{
+				height:50px;
+				background:#486B02;
+			}
+			#content{
+				/*overflow:hidden;*/
+				margin:20px 0;
+			}
+			#content .primary{
+				float:right;
+				width:650px;
+				height:600px;
+				background:#ED8725;
+				display:inline;
+			}
+			#content .secondary{
+				float:left;
+				display:inline;
+				width:250px;
+				height:200px;
+				background:#FF0000;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="w920">
+			<div id="header"></div>
+			<div id="content" class="clearfix">
+				<div class="primary"></div>
+				<div class="secondary"></div>
+			</div>
+			<div id="footer"></div>
+		</div>
+	</body>
+</html>

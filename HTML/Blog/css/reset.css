@@ -1,0 +1,168 @@
+@charset "utf-8";
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size:  100%;
+	font: inherit;
+	vertical-align: baseline;
+	outline: none;
+	box-sizing: border-box;
+}
+
+html,body {
+	height: 100%;
+}
+
+
+/* 总是显示滚动条 */
+
+body {
+	font-size: 100%;
+	line-height: 1;
+	font-family: Arial, Tahoma, Verdana, sans-serif;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+img {
+	border: 0;
+	max-width: 100%;
+}
+a{
+	color:#000000;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+strong {
+	font-weight: bold;
+}
+
+input,textarea {
+	outline: none;
+}
+input:focus,
+textarea:focus {
+	outline: none
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	font-weight: inherit
+}
+
+h1 {
+	font-size: 46px;
+	line-height: 50px
+}
+
+h2 {
+	font-size: 35px;
+	line-height: 1.5;
+	margin-bottom: 10px
+}
+
+h3 {
+	font-size: 28px;
+	line-height: 34px;
+	margin-bottom: 8px
+}
+
+h4 {
+	font-size: 18px;
+	line-height: 18px;
+	margin-bottom: 5px
+}
+
+h5 {
+	font-size: 17px;
+	line-height: 24px
+}
+
+h6 {
+	font-size: 14px;
+}
+
+.fl {
+	float: left;
+	display:inline;
+}
+
+.fr {
+	float: right;
+	display:inline;
+}
+
+
+.clear {
+	clear:both;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+*.clearfix {
+	zoom: 1;
+}

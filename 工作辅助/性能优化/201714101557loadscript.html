@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../HTML/Blog/js/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function loadScript(src, fn, charset) {
+				var script = document.createElement('script');
+				script.type = 'text/javascript';
+				if(!!script.readyState) {
+					//IE
+					script.onreadystatechange = function() {
+						if(script.readyState === "loaded" || script.readyState === "complete") {
+							script.onreadystatechange = null;
+							typeof fn === "function" && fn();
+						}
+					}
+				} else {
+					script.onload = function() {
+						typeof fn === "function" && fn();
+					}
+				}
+				script.src = src;
+				document.getElementsByTagName("head")[0].appendChild(script);
+			}
+			//
+			function loadJs(url, callback, charset) {
+				var head = document.getElementsByTagName("head")[0];
+				var script = document.createElement("script");
+				if(!!charset) {
+					script.charset = "utf-8";
+				}
+				script.src = url;
+				script.onload = script.onreadystatechange = function() {
+					var f = script.readyState;
+					if(f && f != "loaded" && f != "complete") {
+						return;
+					}
+					script.onload = script.onreadystatechange = null;
+					head.removeChild(script);
+					typeof callback === "function" && callback();
+				};
+				head.appendChild(script);
+			}
+
+			// js同步加载
+			function getScripts(i, linkArray, fn) {
+				env || getEnv();
+				var script = document.createElement('script');
+				script.type = 'text/javascript';
+				script.src = linkArray[i];
+				var head = document.head || document.getElementsByTagName('head')[0];
+				head.appendChild(script);
+				var f = script.readyState;
+				if(env.ie && 'onreadystatechange' in script && !('draggable' in script)) { //ie浏览器使用以下方式加载
+					script.onreadystatechange = function() {
+						if(/loaded|complete/.test(script.readyState)) {
+							script.onreadystatechange = null;
+							if(i === linkArray.length - 1) {
+								typeof fn === "function" && fn();
+							} else {
+								getScripts(++i, linkArray, fn);
+							}
+						}
+					};
+				} else {
+					script.onload = function() {
+						if(i === linkArray.length - 1) {
+							typeof fn === "function" && fn();
+						} else {
+							getScripts(++i, linkArray, fn);
+						}
+					};
+				}
+			}
+			// js存在依赖关系 依次加载
+			getScripts(0, ['http://caibaojian.com/demo/base.js', 'http://caibaojian.com/demo/reset.js'], function() {
+				alert('callback');
+			});
+		</script>
+		<script type="text/javascript">
+			loadJs('../../HTML/Blog/js/jquery-2.1.1.js');
+			// js同步加载
+		</script>
+
+	</body>
+
+</html>

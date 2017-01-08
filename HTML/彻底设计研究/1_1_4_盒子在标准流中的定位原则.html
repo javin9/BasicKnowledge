@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        span{
+            text-align:center;
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:12px;
+            padding:10px;
+            border:1px solid #000000;
+        }
+        span.left{
+            margin-right:30px;
+            background-color:#00ff21;
+        }
+        span.right{
+            margin-left:-53px;
+            background-color:ButtonFace;
+        }
+    </style>
+</head>
+<body>
+    margin则用于调整不同的盒子之间的位置关系，padding只存在于一个盒子内部。所以布局需要注意margin
+    
+    3.6.1 行内元素之间的水平margin
+                       ----margin-left + margin-right
+    3.6.2 块级元素之间的竖直margin
+                     --两个块级元素之间的距离 是margin-bottom和margin-top两者中的最大者。 
+                    这种现象被称为 【“塌陷”】。较小的margin【塌陷】到了较大的margin中。浮动不会出现【塌陷】的问题
+    3.6.3 嵌套盒子之间的margin
+                       father的padding加上son的margin
+
+    3.6.4  将margin设置为负值
+              1.父子关系时候，通过设置子块的margin参数为负数，可以将子块从父块中 “分离”出来。
+               2.平级关系时候 相互紧靠
+    <span class="left">11111111111</span><span class="right">2222222</span>
+</body>
+</html>

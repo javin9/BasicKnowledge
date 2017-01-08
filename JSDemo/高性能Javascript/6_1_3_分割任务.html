@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function  multistep(steps,arg,callback){
+				var tasks=steps.concat();//格隆数组
+			   setTimeout(function(){
+			   	var task=task.shift();
+			   	task.apply(null,arg||[]);
+			   	//检查是否还有其他任务
+			   	if (!!tasks.length) {
+			   		setTimeout(arguments.callee,25)
+			   	}else{
+			   		callback();
+			   	}
+			   },25)
+			}
+		</script>
+	</body>
+</html>

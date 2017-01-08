@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body {
+				/*此外，接下来的直接子元素也会使用百分比的写法，百分比的写法必须在直接父元素有确定的高度定义时才有效。*/
+				height: 100%;
+				/*当网页内容不足的时候，body和html的实际高度可能小于浏览器的可视范围，因此给body和html写上高度100%*/
+			}
+			
+			.wrapper {
+				min-height: 100%;
+				margin-bottom: -120px;/*假定页脚的高度为120px*/
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<body>
+			<div class="wrapper">
+				<!--网页内容-->
+				<div class="footer_placeholder"></div>
+			</div>
+			<div class="footer">
+				<!--页脚-->
+			</div>
+		</body>
+	</body>
+
+</html>

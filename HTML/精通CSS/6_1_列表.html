@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/base.css" />
+		<style>
+			ul {
+				list-style-type: none;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			.nav1 li {
+				background: url(../img/tick.png) 0 50% no-repeat;
+				padding-left: 30px;
+				border: 1px solid #223EC4;
+				width: 100px;
+				text-align: center;
+			}
+			
+			ul.nav2 {
+				width: 8em;
+				background-color: #8BD400;
+				border: 1px solid #486B02;
+			}
+			
+			ul.nav2 a {
+				color: #2B3F00;
+				display: block;
+				border-top: 1px solid #E4FFD3;
+				border-bottom: 1px solid #486b02;
+				background: url(../img/tick.png) 0 50% no-repeat;
+				padding: 0.5em 1em;
+			}
+			
+			ul.nav2 a:last-child {
+				border-bottom: 0;
+			}
+			
+			ul.nav2 a:hover,
+			ul.nav2 a:focus,
+			ul.nav2 {
+				color: #e4ffd3;
+				background-color: #6da203;
+			}
+			
+			ul.nav2 li {
+				display: inline;
+			}
+			
+			ul.pagination li {
+				float: left;
+				margin-right: 0.6em;
+			}
+			
+			ul.pagination li a {
+				display: block;
+				border: 1px solid #808080;
+				padding: 0.2em 0.5em;
+			}
+			
+			ul.pagination li a.selected {
+				background-color: #333333;
+			}
+			
+			ul.pagination li a:hover,
+			ul.pagination li a:focus {
+				background-color: blue;
+				color: white;
+			}
+			
+			ul.pagination a[ref='prev'],
+			ul.pagination a[ref='next'] {
+				border: none;
+			}
+			
+			ul.pagination a[ref='prev']:before {
+				content: "\00AB";
+				padding-right: 0.5em;
+			}
+			
+			ul.pagination a[ref='next']:after {
+				content: '\00BB';
+				padding-left: 0.5em;
+			}
+			ul.hoz{
+				/*width:72em;*/
+				margin:0 auto;
+				/*解决float*/
+				overflow:hidden;
+			}
+			ul.hoz li{
+				float: left;
+			}
+			ul.hoz li a{
+				/*margin：0 auto；*/
+				text-align: center;
+				width:120px;
+				display:block;
+				background-color:#FD9933;
+				padding:1em 3em;
+				color:#ffffff;
+				border-right:1px solid #ED8725;
+			}
+			ul.hoz li:last-child a{
+				border:0;
+			}
+			ul.hoz li a:hover,
+			ul.hoz li a:focus{
+				background-color:#ED8725;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul class="nav1">
+			<li>Read emails</li>
+			<li>Read emails</li>
+			<li>Read emails</li>
+			<li>Read emails</li>
+			<li>Read emails</li>
+		</ul>
+		<ul class="nav2">
+
+			<li>
+				<a href='#'>Read emails</a>
+			</li>
+			<li>
+				<a href='#'>Read emails</a>
+			</li>
+			<li>
+				<a href='#'>Read emails</a>
+			</li>
+			<li>
+				<a class="selected" href='#'>Read emails</a>
+			</li>
+			<li>
+				<a href='#'>Read emails</a>
+			</li>
+			<li>
+				<a href='#'>Read emails</a>
+			</li>
+			<li>
+				<a href='#'>Read emails</a>
+			</li>
+		</ul>
+		<br />
+		<ul class="pagination">
+			<li>
+				<a href="href" ref="prev">Prev</a>
+			</li>
+			<li>
+				<a href="href">1</a>
+			</li>
+			<li>
+				<a href="href">2</a>
+			</li>
+			<li>
+				<a href="href">3</a>
+			</li>
+			<li>
+				<a href="href">4</a>
+			</li>
+			<li>
+				<a class="selected" href="href">5</a>
+			</li>
+			<li>
+				<a href="href">6</a>
+			</li>
+			<li>
+				<a href="href">7</a>
+			</li>
+			<li>
+				<a href="href" ref="next">Next</a>
+			</li>
+		</ul>
+
+		<br />
+		<br /><br /><br />
+		<ul class="hoz">
+			<li>
+				<a href="#">Home</a>
+			</li>
+			<li>
+				<a href="#">BUy Car</a>
+			</li>
+			<li>
+				<a href="#">Sell Car</a>
+			</li>
+			<li>
+				<a href="#">PingGu</a>
+			</li>
+			<li>
+				<a href="#">Bangmai</a>
+			</li>
+			<li>
+				<a href="#">JingxiaoShang</a>
+			</li>
+		</ul>
+	</body>
+
+</html>
