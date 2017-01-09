@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/require.js"></script>
+		<script>
+			require.config({
+				baseUrl: 'js',
+				path: {
+					'jquery': ['jquery.js?v=233'],
+					'a': ['a.js'],
+					'underscore': 'underscore.js'
+				}
+			});
+			//第二种写法
+			require(['jquery', 'a', 'underscore'], function($, a, _) {
+				a.showName();
+				$(function() {
+					$("#btn").click(function() {
+						console.log($("#mobile").val());
+					});
+				});
+				_.each([1, 3, 5], function(i) {
+                      console.log(i*i);
+				})
+			});
+		</script>
+	</head>
+
+	<body>
+		<div><input type="text" id="mobile" /> <button id="btn">按钮</button></buttong>
+		</div>
+	</body>
+
+</html>

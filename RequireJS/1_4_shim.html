@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/require.js"  data-main="js/main.js"></script>
+		<script>
+			/*
+			 * 解释一下，加载requirejs脚本的script标签加入了data-main属性，这个属性指定的js将在加载完reuqire.js后处理，
+			 * 我们把require.config的配置加入到data-main后，
+			 * 就可以使每一个页面都使用这个配置，
+			 * 然后页面中就可以直接使用require来加载所有的短模块名data-main还有一个重要的功能，
+			 * 当script标签指定data-main属性时，require会默认的将data-main指定的js为根路径，
+			 * 是什么意思呢？如上面的data-main="js/main"设定后，
+			 * 我们在使用require(['jquery'])后(不配置jquery的paths)，require会自动加载js/jquery.js这个文件，
+			 * 而不是jquery.js，相当于默认配置了：
+			 * */
+			require(['jquery', 'a', 'underscore'], function($, a, _) {
+				a.showName();
+				$(function() {
+					$("#btn").click(function() {
+						console.log($("#mobile").val());
+					});
+				});
+				_.each([1, 3, 5], function(i) {
+                      console.log(i*i);
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div><input type="text" id="mobile" /> <button id="btn">按钮</button></buttong>
+		</div>
+	</body>
+</html>
