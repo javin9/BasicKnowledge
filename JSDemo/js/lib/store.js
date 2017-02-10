@@ -1,6 +1,5 @@
-"use strict"
-
-module.exports = (function() {
+var store = (function() {
+	"use strict";
 	// Store.js
 	var store = {},
 		win = (typeof window != 'undefined' ? window : global),
@@ -8,39 +7,69 @@ module.exports = (function() {
 		localStorageName = 'localStorage',
 		scriptTag = 'script',
 		storage;
-
+	/*
+	 * loacalStorage是否可用;
+	 */
 	store.disabled = false;
-	store.version = '1.3.20';
-	store.set = function(key, value) {};
-	store.get = function(key, defaultVal) {};
+	/*
+	 * 版本号
+	 */
+	store.version = '1.0.0';
+	/*
+	 * 设置localStorage的值 设置成功返回设置的值 设置失败返回false
+	 * @param key (string)
+	 * @param value (string) 如果value没传入，相当于删除操作
+	 * @param expireTimeInSecond 过期时间 单位秒  ,undefined、0、string字符串、NaN、-1,空字符串 都视为没有设置过期时间；
+	 * @returns 真实给localStorage设置上的值
+	 */
+	store.set = function(key, value, expireTimeInSecond) {}
+		/*
+		 * 获取value值
+		 * @param kye(string)
+		 * @returns 返回值，如果获取不到或者失败，返回null
+		 */
+	store.get = function(key) {}
+		/*
+		 * 判断有没有key
+		 * @param key(string)
+		 * @returns true 或者 false；
+		 */
 	store.has = function(key) {
-		return !!store.get(key);
-	};
-	store.remove = function(key) {};
-	store.clear = function() {};
+			var value = store.get(key);
+			return value === undefined || value === null ? false : true;
+		}
+		/*
+		 * 删除操作
+		 * @param key(string)
+		 */
+	store.remove = function(key) {}
+		/*
+		 * 清空所有的存储
+		 */
+	store.clear = function() {}
 	store.transact = function(key, defaultVal, transactionFn) {
-		if(!transactionFn) {
+		if(transactionFn == null) {
 			transactionFn = defaultVal;
 			defaultVal = null;
 		}
-		if(!defaultVal) {
+		if(defaultVal == null) {
 			defaultVal = {};
 		}
 		var val = store.get(key, defaultVal);
-		transactionFn(val);
-		store.set(key, val);
-	};
+		var ret = transactionFn(val);
+		store.set(key, ret === undefined ? val : ret);
+	}
 	store.getAll = function() {
 		var ret = {};
 		store.forEach(function(key, val) {
 			ret[key] = val;
-		});
+		})
 		return ret;
 	}
-	store.forEach = function() {};
+	store.forEach = function() {}
 	store.serialize = function(value) {
 		return JSON.stringify(value);
-	};
+	}
 	store.deserialize = function(value) {
 		if(typeof value !== 'string') {
 			return undefined;
@@ -52,7 +81,9 @@ module.exports = (function() {
 		}
 	}
 
-	//判断是否支持localStorage
+	// Functions to encapsulate questionable FireFox 3.6.13 behavior
+	// when about.config::dom.storage.enabled === false
+	// See https://github.com/marcuswestin/store.js/issues#issue/13
 	function isLocalStorageNameSupported() {
 		try {
 			return(localStorageName in win && win[localStorageName]);
@@ -60,70 +91,111 @@ module.exports = (function() {
 			return false;
 		}
 	}
-
 	if(isLocalStorageNameSupported()) {
 		storage = win[localStorageName];
-		store.set = function(key, val) {
-			if(!val) {
-				return store.remove(key);//如果传入的为空，删除key
+		store.set = function(key, val, expireTimeInSecond) {
+			var realValue = {};
+			if(!key) {
+				return false; //如果key未负值，则直接返回
 			}
-			storage.setItem(key, store.serialize(val));
+			//为空则删除
+			if(val === undefined) {
+				return store.remove(key);
+			}
+			realValue.value = val;
+			//过期时间处理,如果没有输入，则默认是没设置；
+			expireTimeInSecond = Number(expireTimeInSecond);
+			if(!expireTimeInSecond) {
+				expireTimeInSecond = -1; //没设置过期时间
+			}
+			realValue.expires = expireTimeInSecond === -1 ? -1 : Date.now() + expireTimeInSecond * 1000;
+			//存储
+			storage.setItem(key, store.serialize(realValue));
 			return val;
-		};
-		store.get = function(key, defaultVal) {//如果取出职位undefined，则给默认值
-			var val = store.deserialize(storage.getItem(key));
-			return(!!val?defaultVal : val);
-		};
+		}
+		store.get = function(key) {
+			if(typeof key !== 'string') {
+				return null;
+			}
+
+			var tempVal = null;
+
+			try {
+				tempVal = storage.getItem(key);
+			} catch(e) {
+				return null;
+			}
+
+			if(!tempVal) {
+				return null;
+			}
+			var valueObj = store.deserialize(tempVal);
+			if(!!valueObj) {
+				var expires = valueObj.expires; //过期时间
+				//没有设置过期时间
+				if(expires === -1) {
+					return valueObj.value;
+				}
+				//大于过期时间
+				if(Date.now() > expires) {
+					// 过期处理
+					store.remove(key);
+					return null;
+				}
+
+				return valueObj.value;
+			} else {
+				return null;
+			}
+		}
 		store.remove = function(key) {
-			storage.removeItem(key);
-		};
+			if(typeof key !== 'string') {
+				return;
+			}
+			try {
+				storage.removeItem(key);
+			} catch(e) {
+				console.log(e);
+			}
+		}
 		store.clear = function() {
 			storage.clear();
-		};
+		}
 		store.forEach = function(callback) {
-			for(var i = 0,len=storage.length;i<len; i++) {
+			for(var i = 0; i < storage.length; i++) {
 				var key = storage.key(i);
-			typeof callback==="function"&&callback(key, store.get(key));
+				callback(key, store.get(key));
 			}
-		};
+		}
 	} else if(doc && doc.documentElement.addBehavior) {
+		console.log('ddd');
 		var storageOwner,
-			storageContainer
-			// Since #userData storage applies only to specific paths, we need to
-			// somehow link our data to a specific path.  We choose /favicon.ico
-			// as a pretty safe option, since all browsers already make a request to
-			// this URL anyway and being a 404 will not hurt us here.  We wrap an
-			// iframe pointing to the favicon in an ActiveXObject(htmlfile) object
-			// (see: http://msdn.microsoft.com/en-us/library/aa752574(v=VS.85).aspx)
-			// since the iframe access rules appear to allow direct access and
-			// manipulation of the document element, even for a 404 page.  This
-			// document can be used instead of the current document (which would
-			// have been limited to the current path) to perform #userData storage.
+			storageContainer;
 		try {
-			storageContainer = new ActiveXObject('htmlfile')
-			storageContainer.open()
-			storageContainer.write('<' + scriptTag + '>document.w=window</' + scriptTag + '><iframe src="/favicon.ico"></iframe>')
-			storageContainer.close()
-			storageOwner = storageContainer.w.frames[0].document
-			storage = storageOwner.createElement('div')
+			storageContainer = new ActiveXObject('htmlfile');
+			storageContainer.open();
+			storageContainer.write('<' + scriptTag + '>document.w=window</' + scriptTag + '><iframe src="/favicon.ico"></iframe>');
+			storageContainer.close();
+			storageOwner = storageContainer.w.frames[0].document;
+			storage = storageOwner.createElement('div');
 		} catch(e) {
 			// somehow ActiveXObject instantiation failed (perhaps some special
 			// security settings or otherwse), fall back to per-path storage
-			storage = doc.createElement('div')
-			storageOwner = doc.body
+			storage = doc.createElement('div');
+			storageOwner = doc.body;
 		}
 		var withIEStorage = function(storeFunction) {
 			return function() {
-				var args = Array.prototype.slice.call(arguments, 0)
-				args.unshift(storage)
-					// See http://msdn.microsoft.com/en-us/library/ms531081(v=VS.85).aspx
-					// and http://msdn.microsoft.com/en-us/library/ms531424(v=VS.85).aspx
-				storageOwner.appendChild(storage)
-				storage.addBehavior('#default#userData')
-				storage.load(localStorageName)
-				var result = storeFunction.apply(store, args)
-				storageOwner.removeChild(storage)
-				return result
+				var args = Array.prototype.slice.call(arguments, 0);
+				args.unshift(storage);
+				// See http://msdn.microsoft.com/en-us/library/ms531081(v=VS.85).aspx
+				// and http://msdn.microsoft.com/en-us/library/ms531424(v=VS.85).aspx
+				storageOwner.appendChild(storage);
+				storage.addBehavior('#default#userData');
+				storage.load(localStorageName);
+				var result = storeFunction.apply(store, args);
+				storageOwner.removeChild(storage);
+				return result;
 			}
 		}
 
@@ -132,39 +204,81 @@ module.exports = (function() {
 		// See https://github.com/marcuswestin/store.js/issues/83
 		var forbiddenCharsRegex = new RegExp("[!\"#$%&'()*+,/\\\\:;<=>?@[\\]^`{|}~]", "g")
 		var ieKeyFix = function(key) {
-			return key.replace(/^d/, '___$&').replace(forbiddenCharsRegex, '___')
+			return key.replace(/^d/, '___$&').replace(forbiddenCharsRegex, '___');
 		}
 		store.set = withIEStorage(function(storage, key, val) {
-			key = ieKeyFix(key)
-			if(val === undefined) {
-				return store.remove(key)
+			var realValue = {};
+			key = ieKeyFix(key);
+			if(!key) {
+				return false; //如果key未负值，则直接返回
 			}
-			storage.setAttribute(key, store.serialize(val))
-			storage.save(localStorageName)
-			return val
+			if(val === undefined) {
+				return store.remove(key);
+			}
+
+			realValue.value = val;
+
+			//过期时间处理,如果没有输入，则默认是没设置；
+			expireTimeInSecond = Number(expireTimeInSecond);
+			if(!expireTimeInSecond) {
+				expireTimeInSecond = -1; //没设置过期时间
+			}
+			realValue.expires = expireTimeInSecond === -1 ? -1 : Date.now() + expireTimeInSecond * 1000;
+
+			storage.setAttribute(key, store.serialize(realValue));
+			storage.save(localStorageName);
+			return val;
 		})
-		store.get = withIEStorage(function(storage, key, defaultVal) {
-			key = ieKeyFix(key)
-			var val = store.deserialize(storage.getAttribute(key))
-			return(val === undefined ? defaultVal : val)
+		store.get = withIEStorage(function(storage, key) {
+			key = ieKeyFix(key);
+			if(typeof key !== 'string') {
+				return null;
+			}
+			var tempVal = null;
+			try {
+				tempVal = storage.getAttribute(key);
+			} catch(e) {
+				return null;
+			}
+			if(!tempVal) {
+				return null;
+			}
+			var valueObj = store.deserialize(tempVal);
+			if(!!valueObj) {
+				var expires = valueObj.expires; //过期时间
+				//没有设置过期时间
+				if(expires === -1) {
+					return valueObj.value;
+				}
+				//大于过期时间
+				if(Date.now() > expires) {
+					// 过期处理
+					store.remove(key);
+					return null;
+				}
+
+				return valueObj.value;
+			} else {
+				return null;
+			}
 		})
 		store.remove = withIEStorage(function(storage, key) {
-			key = ieKeyFix(key)
-			storage.removeAttribute(key)
-			storage.save(localStorageName)
+			key = ieKeyFix(key);
+			storage.removeAttribute(key);
+			storage.save(localStorageName);
 		})
 		store.clear = withIEStorage(function(storage) {
-			var attributes = storage.XMLDocument.documentElement.attributes
-			storage.load(localStorageName)
+			var attributes = storage.XMLDocument.documentElement.attributes;
+			storage.load(localStorageName);
 			for(var i = attributes.length - 1; i >= 0; i--) {
-				storage.removeAttribute(attributes[i].name)
+				storage.removeAttribute(attributes[i].name);
 			}
-			storage.save(localStorageName)
+			storage.save(localStorageName);
 		})
 		store.forEach = withIEStorage(function(storage, callback) {
-			var attributes = storage.XMLDocument.documentElement.attributes
+			var attributes = storage.XMLDocument.documentElement.attributes;
 			for(var i = 0, attr; attr = attributes[i]; ++i) {
-				callback(attr.name, store.deserialize(storage.getAttribute(attr.name)))
+				callback(attr.name, store.deserialize(storage.getAttribute(attr.name)));
 			}
 		})
 	}

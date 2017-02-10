@@ -1,0 +1,307 @@
+.public-header {
+	height: 110px;
+}
+
+.public-header-logo {
+	margin-top: 40px;
+	float: left;
+	display: inline;
+}
+
+.public-header-logo a {
+	display: block;
+	text-indent: -999em;
+	width: 68px;
+	height: 29px;
+	background: url(../image/logo.png) no-repeat left top;
+}
+
+.heaer-nav {
+	float: right;
+	display: inline;
+	margin-top: 44px;
+}
+
+.header-nav-item {
+	margin-left: 50px;
+	float: left;
+	display: inline;
+}
+
+.header-nav-item a {
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color: #3b3b3b;
+}
+
+.header-nav-item a:hover {
+	text-decoration: underline;
+}
+
+.container {
+	position: relative;
+	width: 1100px;
+	margin: 0 auto;
+}
+
+.public-footer {
+	background: #3b3b3b;
+	height: 218px;
+	padding-top: 100px;
+}
+
+.public-footer .footer-cols {
+	float: left;
+	display: inline;
+	width: 230px;
+	margin-right: 60px;
+	font-size: 16px;
+	line-height: 1.8em;
+	font-family: "微软雅黑";
+	color: #fff;
+}
+
+.public-footer .footer-cols.last-cols {
+	margin-right: 0px;
+}
+
+.public-footer .footer-logo {
+	width: 69px;
+	height: 30px;
+	background: url(../image/logo_footer.png) no-repeat left top;
+}
+
+
+/*banner*/
+
+.index-banner {
+	position: relative;
+}
+
+.index-banner-bg {
+	height: 570px;
+	overflow: hidden;
+}
+
+.index-banner-txt {
+	position: absolute;
+	top: 210px;
+	width: 776px;
+	left: 50%;
+	margin-left: -388px;
+}
+
+.banner-logo {
+	height: 117px;
+	background: url(../image/baner_txt.png) no-repeat left top;
+}
+
+.banner-txt {
+	margin-top: 20px auto 0 auto;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	color: #fff;
+	text-align: center;
+	;
+}
+
+.line {
+	display: inline-block;
+	border-top: 1px solid #fff;
+	width: 40px;
+	vertical-align: middle;
+}
+
+.line-left {
+	margin-right: 28px;
+}
+
+.line-right {
+	margin-left: 28px;
+}
+
+.index-menu {
+	position: relative;
+	border-top: 4px solid #f34949;
+}
+
+.menu-tip {
+	width: 155px;
+	height: 55px;
+	margin: 0 auto;
+	background: url('../image/menu_tip_bg.png') no-repeat left top;
+	font-size: 20px;
+	font-family: "微软雅黑";
+	color: #fff;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.index-list {
+	margin-top: 81px;
+	overflow: hidden;
+}
+
+.index-list .list-title {
+	width: 230px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.index-list .list-title h1 {
+	font-size: 16px;
+	color: #555555;
+}
+
+.index-list .list-title p {
+	margin-top: 10px;
+	font-size: 12px;
+	color: #b7b7b7;
+}
+
+.index-list ul {
+	width: 1160px;
+}
+
+.index-list ul li {
+	float: left;
+	display: inline;
+	width: 520px;
+	margin-bottom: 60px;
+	margin-right: 60px;
+}
+
+
+/*.list-price{
+	float:right;
+	display:inline;
+}*/
+
+.list-li .list-line {
+	width: 192px;
+	border-top: 1px solid #e3e1e1;
+	margin-top: 10px;
+}
+
+.index-menu-btn {
+	display: block;
+	margin: 0 auto;
+	width: 100px;
+	height: 12px;
+	border: 1px solid #d7d5d5;
+	font-size: 12px;
+	font-family: "times new roman";
+	color: #bcbcbc;
+	text-align: center;
+	vertical-align: middle;
+	padding: 10px 15px;
+}
+
+.index-menu-btn .icon {
+	display: inline-block;
+	width: 11px;
+	height: 7px;
+	background: url('../image/loadmore_icon.png') no-repeat left top;
+}
+
+
+/*pannel*/
+
+.pannel-header {
+	margin-top: 200px;
+}
+
+.pannel-header h3 {
+	font-size: 20px;
+	font-weight: bold;
+	color: #3b3b3b;
+	margin-right: 20px;
+}
+
+.pannel-header .header-line {
+	width: 200px;
+	border-top: 2px solid #e5e3e3;
+	margin-top: 10px;
+}
+
+.header-btns-group {
+	font-size: 0;
+	/*行内元素有5像素的间距，这里是去掉子类行内元素间距*/
+}
+
+.header-btns-group .btns-item {
+	display: inline-block;
+	margin-left: 11px;
+	width: 9px;
+	height: 9px;
+	background: #dedede;
+	border-radius: 50%;
+}
+
+.header-btns-group .btns-item.active {
+	background-color: #9b9b9b;
+}
+
+.index-pannel-body {
+	margin-top: 75px;
+}
+
+.index-food-list {
+	overflow: hidden;
+}
+
+.index-food-list-ul {
+	width: 1160px;
+}
+
+.index-food-list .food-list-li {
+	width: 230px;
+	margin-right: 60px;
+	font-family: "微软雅黑";
+	color: #555555;
+	font-size: 16px;
+}
+
+.index-food-list .food-list-li .food-img {
+	width: 232px;
+	height: 204px;
+}
+
+.food-list-li .fond-detail {
+	margin-top: 30px;
+}
+
+.food-score-group {
+	margin-top: 10px;
+	font-size: 0;
+}
+
+.food-score-group .food-star {
+	display: inline-block;
+	margin-left: 5px;
+	width: 12px;
+	height: 12px;
+	background: url(../image/star.jpg) no-repeat;
+}
+
+.food-score-group .food-star.no-star {
+	background-position: 0 -12px;
+}
+
+.food-image-left {
+	width: 370px;
+	height: 432px;
+}
+
+.food-image-right li{
+	float:left;
+	display: inline;
+}
+.food-image-right li img{
+	width:365px;
+	height:216px;
+}
+.index-pannel-de{
+	padding-bottom: 200px;
+}

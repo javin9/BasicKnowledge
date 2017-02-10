@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var params = {
+				lowprice: 0,
+				highprice: 9999,
+				lowmileage: 0,
+				highmileage: 9999,
+				level: null,
+				lowexhaust: 0,
+				highexhaust: 9999,
+				gearbox: null,
+				emission: null,
+				carsource1l: 0, //个人和商家 个人：1，商家：2
+				iswarranty: 0, //保障车 0：不是，1：是
+				isauthenticated: 0, //认证车 0：不是，1：是
+				isnewcar: 0, //准新车  0：不是，1：是
+				ispicture: 0, //有图 0：不是，1：是
+				ishelpbuy: 0 //帮买车源 0：不是，1：是
+			};
+
+			Object.extend = function(destination, source) {
+				if(!destination) return source;
+				for(var property in source) {
+					if(!destination[property]) {
+						destination[property] = source[property];
+					}
+				}
+				return destination;
+			}
+
+			function ConvertJsonToUrl(params, exclude) {
+				if(!(Object.prototype.toString.call(exclude) === '[object Array]')) {
+					exclude = [];
+				}
+				var returnUrl = "",
+					tempVal = null,
+					i=1;
+				for(var item in params) {
+					tempVal = params[item];
+					if(exclude.indexOf(tempVal) > -1) {
+						continue;
+					} else {
+						if (i!==1) {
+							returnUrl += "&";
+						}
+						returnUrl += item;
+						returnUrl += "=";
+						returnUrl += params[item];
+						i++;
+					}
+				}
+				return returnUrl;
+			}
+			
+			var Type = {};
+			for(var i = 0, tpe; type = ["String", "Array", "Number"][i++];) {
+				(function(type) {
+					Type['is' + type] = function(obj) {
+						return Object.prototype.toString.call(obj) === '[object ' + type + ']';
+					}
+				})(type)
+			}
+			console.log(Type.isString("d"));
+			console.log(Type.isArray([]));
+			console.log(Type.isArray(''));
+			
+			console.log(ConvertJsonToUrl(params));
+			console.log(ConvertJsonToUrl(params,[null,undefined,0,9999]));
+		</script>
+	</body>
+
+</html>

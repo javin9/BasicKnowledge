@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#q").click(function() {
+					console.log('d');
+					$("#q").attr('href', 'tel:18600408090');
+
+				});
+
+			});
+
+			$(".city-box").on('touchmove', function(e) {
+				e.preventDefault();
+				return !1;
+			});
+			$(".city-box").unbind("touchmove", function(e) {
+				e.preventDefault();
+				return !1;
+			});
+		</script>
 	</head>
+
 	<body>
+		<a href="javascript:;" id='q'>ananiananananan</a>
 	</body>
+
 </html>
