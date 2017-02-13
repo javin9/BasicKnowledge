@@ -4,36 +4,46 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.clearfix:after {
+				visibility: hidden;
+				display: block;
+				font-size: 0;
+				content: "";
+				clear: both;
+				height: 0;
+			}
+			
+			*.clearfix {
+				zoom: 1;
+			}
+			
+			.outer {
+				background: #008000;
+				height: 200px;
+			}
+			
+			.inner {
+				background-color: #000;
+				height: 100px;
+				width: 100px;
+				margin-top: 50px;
+				float: left;
+			}
+		</style>
 	</head>
 
 	<body>
 		<script type="text/javascript">
-	
-			var defaultparams = {
-				lowage: 0,
-				highage: 9999,
-				lowmileage: 0,
-				highmileage: 9999,
-				level: null,
-				lowexhaust: 0,
-				highexhaust: 9999,
-				gearbox: null,
-				emission: null,
-				carsource1l: 0, //个人和商家 个人：1，商家：2
-				iswarranty: 0, //保障车 0：不是，1：是
-				isauthenticated: 0, //认证车 0：不是，1：是
-				isnewcar: 0, //准新车  0：不是，1：是
-				ispicture: 0, //有图 0：不是，1：是
-				ishelpbuy: 0 //帮买车源 0：不是，1：是
-			};
-			for(var i in defaultparams) {
-                  console.log(i);
-			}
-//			var d="A  SD  F".replace(/^\s\s*/g, '').replace(/\s\s*$/g, '');
-var d="A  SD  F".replace(/^\s\s*/g, '').replace(/\s+/g,"");
-			console.log(d);
-		console.log("奥迪".length);	
 		</script>
+		<div class="outer clearfix">
+			<div class="inner"></div>
+		</div>
 	</body>
 
 </html>
