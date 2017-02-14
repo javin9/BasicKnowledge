@@ -107,6 +107,7 @@
 .index-banner {
 	position: relative;
 	height: 560px;
+	overflow: hidden;
 }
 
 .banner-img {
@@ -115,31 +116,111 @@
 	left: 50%;
 	margin-left: -750px;
 }
-.banner-container{
-	position:absolute;
-	top:176px;
-	width:1030px;
-	left:50%;
-	margin-left:-550px;
-	height:384px;
-	padding-left:80px;
+
+.banner-container {
+	position: absolute;
+	top: 176px;
+	width: 1030px;
+	left: 50%;
+	margin-left: -550px;
+	height: 384px;
+	padding-left: 80px;
 }
-.banner-title{
-	font-size:34px;
-	font-family:"微软雅黑";
-	font-weight:bold;
-	color:#525252;
-	width:480px;
-	height:24px;
-	line-height:24px;;
+
+.banner-title {
+	font-size: 34px;
+	font-family: "open_bold";
+	font-weight: bold;
+	color: #525252;
+	width: 480px;
+	height: 24px;
+	line-height: 24px;
+	;
 }
-.banner-sub-title{
-	
-	font-size:16px;
-	font-family: "微软雅黑";
-	color:#6e6c6c;
+
+.banner-sub-title {
+	font-size: 16px;
+	font-family: "open_bold";
+	color: #6e6c6c;
 	line-height: 28px;
-	width:560px;
-	height:45px;
-	margin-top:40px;
+	width: 560px;
+	height: 45px;
+	margin-top: 40px;
+}
+
+.dowload-apk {
+	font-size: 0;
+}
+
+.dowload-apk a {
+	margin-top: 36px;
+	display: inline-block;
+	text-align: center;
+	border: 1px solid #525252;
+	height: 16px;
+	padding: 21px 0px;
+	font-size: 16px;
+	font-family: "open_bold";
+	color: #717172;
+}
+
+.android-apk {
+	width: 224px;
+	margin-right: 20px;
+}
+
+.android-apk span {
+	display: inline-block;
+	width: 14px;
+	height: 16px;
+	background: url(../img/download_apk.png) no-repeat -12px top;
+	margin-right: 20px;
+}
+
+.ios-apk {
+	width: 210px;
+}
+
+.ios-apk span {
+	display: inline-block;
+	width: 12px;
+	height: 16px;
+	background: url(../img/download_apk.png) no-repeat left top;
+	margin-right: 20px;
+}
+
+
+/*dddddddddddddd*/
+
+.index-feature {
+	background: #f3f3f3;
+	text-align: center;
+	font-size: 0;
+	height:100px;
+}
+
+.index-feature-wrap {
+	width: 1100px;
+	margin-top:27px;
+	display: inline-block;
+}
+.index-feature-item {
+	/*float: left;*/
+	width: 132px;
+	height: 45px;
+	margin-left: 140px;
+	display: inline-block;
+}
+
+.index-feature-item img {
+
+	
+}
+.facebook_banner{
+	height:40px;
+	padding-top:5px;
+}
+.yahoo_banner{
+	height:38px;
+	padding-top:7px;
 }
