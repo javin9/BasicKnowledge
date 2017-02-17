@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ljj.cn</title>
+    <style>
+        .box1{
+            width: 400px;
+            height: 100px;
+            background-color: hotpink;
+            margin-bottom: 100px;
+        }
+        .box2{
+            width: 400px;
+            height: 100px;
+            background-color: yellowgreen;
+            margin-top: 140px;
+        }
+        /*
+            margin叠加，并不算bug，他只是官方标准的一个规定而已：
+        
+            当两个元素为兄弟关系的时候：一个有下边距，一个有上边距，那么这两个间距中，较大的保留，较小的消失。
+        
+            英文原文：
+            When two margins collide, for example when one block level element has a bottom margin set, immediately followed by another block level element with a top margin, the larger of the two margins remains, and the smaller one collapses and disappears.
+        */
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

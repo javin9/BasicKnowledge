@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ljj.cn</title>
+    <style>
+        .box{
+            width: 305px;
+            height: 305px;
+            border: solid 1px red;
+            position: relative;
+            /*
+                定位单像素bug：
+                    产生：在IE6，如果绝对定位被参考的元素（有定位的父级），是单数的情况下，会产生定位单像素bug
+                    解决： 
+                        1 避免使用单数
+                        2 使用hack
+                            _属性:值; 专门给ie6用的
+            */
+        }
+        .pos{
+            position: absolute;
+            right: 0; bottom: 0;
+            _right: -1px; _bottom: -1px;
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="pos"></div>
+    </div>
+</body>
+</html>

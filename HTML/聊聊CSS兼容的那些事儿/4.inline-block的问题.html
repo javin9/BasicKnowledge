@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ljj.cn</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            display: inline-block;
+            *display:inline;
+            *zoom:1;
+            /*
+                块元素的：
+                    inline-block
+                    在IE6、7下无效的。
+                    解决：
+                        1 要么绕开
+                        2 *display:inline; *zoom:1;
+					
+					拓展：行内元素想给宽高了，才给inline-block;
+            */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>

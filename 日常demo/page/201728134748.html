@@ -12,12 +12,12 @@
 			
 			.hedaer-logo {
 				float: left;
-				width:100px;
-				
+				width: 100px;
 				background-color: #0026FF;
 			}
-			.hedaer-logo a{
-				height:100px;
+			
+			.hedaer-logo a {
+				height: 100px;
 			}
 		</style>
 	</head>
@@ -30,7 +30,33 @@
 		</div>
 
 		<script type="text/javascript">
-			window.location.href = "tel:18600408090";
+			
+			function log(msg) {
+				console.log(msg);
+			}
+			
+			log(1);//1
+			log(2,1);//2
+
+
+			function log2() {
+				//console.log(arguments);
+				console.log.apply(console,arguments);
+			}
+
+			log2(1,3,5);//
+			log2(1, 2);
+			
+			console.log('--------------------------------------');
+			
+			function func(a){
+              console.log(a);
+			}
+			function f2(){
+				func(arguments);
+				func.apply(this,arguments);
+			}
+			f2(1,3,3,3,3,3,3,5);
 		</script>
 	</body>
 

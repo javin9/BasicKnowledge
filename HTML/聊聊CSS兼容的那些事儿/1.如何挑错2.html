@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ljj.cn</title>
+    <style>
+        .box1{
+            width: 300px;
+            height: 300px;
+            background: red;
+            border: solid 20px yellowgreen;
+            /*
+            通过背景去找：
+                如果有颜色，代表物体是有样式的
+                如果没有，那就尝试下面的内容。
+            
+                在页面中，高度为0，有这么几种情况：
+                    1 样式没给上
+                        - 没有样式就没有高度
+                    2 子元素浮动了，会导致父级没有高度
+                    3 子元素定位的时候，会导致父级没有高度
+            */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

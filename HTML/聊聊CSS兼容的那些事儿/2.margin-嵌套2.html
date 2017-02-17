@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ljj.cn</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+        .cont{
+            width: 200px;
+            height: 100px;
+            background-color: yellowgreen;
+            margin-top: 80px;
+        }
+        
+        /*
+            原则：
+                margin的上下值，尽量使用下边距（margin-bottom）
+        */
+        
+/*
+        .box:before{
+            content: "";
+            display: table;
+        }
+*/
+        
+        /* 完整版的clearfix */
+        .clearfix:after,.clearfix:before{
+            content: "";
+            display: table;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .clearfix{
+            *zoom:1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <div class="cont"></div>
+    </div>
+</body>
+</html>

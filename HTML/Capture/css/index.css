@@ -162,16 +162,14 @@
 	font-size: 16px;
 	font-family: "open_bold";
 	color: #717172;
-}
-
-.android-apk {
 	width: 224px;
 	margin-right: 20px;
 }
 
 .android-apk span {
 	display: inline-block;
-	width: 14px;
+	vertical-align: middle;
+	width: 16px;
 	height: 16px;
 	background: url(../img/download_apk.png) no-repeat -12px top;
 	margin-right: 20px;
@@ -183,6 +181,7 @@
 
 .ios-apk span {
 	display: inline-block;
+	vertical-align: middle;
 	width: 12px;
 	height: 16px;
 	background: url(../img/download_apk.png) no-repeat left top;
@@ -196,14 +195,15 @@
 	background: #f3f3f3;
 	text-align: center;
 	font-size: 0;
-	height:100px;
+	height: 100px;
 }
 
 .index-feature-wrap {
 	width: 1100px;
-	margin-top:27px;
+	margin-top: 27px;
 	display: inline-block;
 }
+
 .index-feature-item {
 	/*float: left;*/
 	width: 132px;
@@ -212,15 +212,273 @@
 	display: inline-block;
 }
 
-.index-feature-item img {
+.index-feature-item img {}
 
-	
+.facebook_banner {
+	height: 40px;
+	padding-top: 5px;
 }
-.facebook_banner{
-	height:40px;
-	padding-top:5px;
+
+.yahoo_banner {
+	height: 38px;
+	padding-top: 7px;
 }
-.yahoo_banner{
-	height:38px;
-	padding-top:7px;
+
+.index-about {
+	background: #faf9f9;
+}
+
+.index-about-container {
+	position: relative;
+	height: 705px;
+	padding-top: 100px;
+}
+
+.index-about-iphone-img {
+	margin-left: 100px;
+	width: 277px;
+	height: 567px;
+}
+
+.index-about-right {
+	position: absolute;
+	left: 50%;
+	top: 100px;
+}
+
+.index-about-right .title {
+	font-size: 36px;
+	font-family: "open_bold";
+	color: #717172;
+}
+
+.index-about-right .content {
+	margin-top: 16px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color: #a29f9f;
+	line-height: 1.8;
+}
+
+.index-about-right .icons {
+	margin-top: 30px;
+}
+
+.icons li {
+	margin-top: 20px;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: #6d6c6c;
+}
+
+.icons li span {
+	width: 22px;
+	height: 20px;
+	display: inline-block;
+	margin-right: 30px;
+}
+
+.about-icon1 {
+	background: url(../img/about_icon.png) no-repeat left top;
+}
+
+.about-icon2 {
+	background: url(../img/about_icon.png) no-repeat -22px top;
+}
+
+.about-icon3 {
+	background: url(../img/about_icon.png) no-repeat -44px top;
+}
+
+.about-icon4 {
+	background: url(../img/about_icon.png) no-repeat -66px top;
+}
+
+.about-icon5 {
+	background: url(../img/about_icon.png) no-repeat -88px top;
+}
+
+.video-group {
+	margin-top: 60px;
+}
+
+.video-group-btn {
+	position: relative;
+	display: inline-block;
+	border: 1px solid #525252;
+	width: 262px;
+	height: 58px;
+	text-align: center;
+	line-height: 58px;
+	vertical-align: middle;
+	margin-right: 40px;
+}
+
+.video-group-btn .btn-icon {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin-right: 10px;
+	vertical-align: middle;
+	background: url(../img/videoplay.png) no-repeat left top;
+}
+
+.video-group-btn .txt {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+
+/*app-feature-container*/
+
+.app-feature {
+	background: #43bb7b;
+}
+
+.app-feature-container {
+	height: 704px;
+}
+
+.app-feature-container-ul {
+	width: 1190px;
+	overflow: hidden;
+}
+
+.app-feature-container-ul li {
+	float: left;
+	width: 313px;
+	margin-right: 80px;
+	margin-top: 100px;
+}
+
+.feature-icon {
+	height: 32px;
+}
+
+.feature-title {
+	font-size: 20px;
+	line-height: 26px;
+	font-family: "times new roman";
+	color: #ffffff;
+	text-align: center;
+	margin-top: 48px;
+}
+
+.feature-content {
+	margin-top: 35px;
+	font-size: 16px;
+	line-height: 28px;
+	font-family: "微软雅黑";
+	color: #fff;
+	text-align: center;
+}
+
+
+/*jondce*/
+
+.jondce {
+	background-color: #faf9f9;
+}
+
+.jondce .jondce-container {
+	padding: 100px 0;
+	height: 280px;
+}
+
+.jondce-container p.content {
+	width: 820px;
+	margin: 0 auto;
+	font-size: 18px;
+	line-height: 36px;
+	color: #767272;
+	font-family: "微软雅黑";
+	text-align: center;
+}
+
+.jondce-container h3 {
+	font-family: "times new roman";
+	font-size: 16px;
+	text-align: center;
+	color: #4b4848;
+	margin-top: 50px;
+}
+
+.jondce-container .sub-content {
+	text-align: center;
+	font-size: 14px;
+	line-height: 20px;
+	color: #6f6d6d;
+}
+
+.oriation {
+	margin-top: 40px;
+	text-align: center;
+	font-size: 0;
+}
+
+.oriation a {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}
+
+.oriation a.left {
+	margin-right: 40px;
+	background: url(../img/ori.png) no-repeat left top;
+}
+
+.oriation a.right {
+	background: url(../img/ori.png) no-repeat -32px top;
+}
+
+
+/*index-emai*/
+
+.index-emai {
+	background-color: #42be7c;
+}
+
+.index-email-container {
+	height: 220px;
+	padding-top: 100px;
+}
+
+.index-email-container p {
+	text-align: center;
+	font-size: 20px;
+	font-family: "微软雅黑";
+	color: #fff;
+}
+
+.emial-container {
+	text-align: center;
+	font-size: 0;
+	margin-top:50px;
+}
+
+.emial-container input {
+	width: 300px;
+	height: 50px;
+	color: #84d3a6;
+	padding: 0 20px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: -4px
+}
+
+.email-btn {
+	display: inline-block;
+	width: 60px;
+	height:50px;
+	line-height: 50px;
+	background:#fff;
+	vertical-align: middle;
+}
+
+.email-btn .icons {
+	display: inline-block;
+	width: 20px;
+	height: 15px;
+	background: url(../img/email.png) no-repeat left top;
+	vertical-align: middle;
 }

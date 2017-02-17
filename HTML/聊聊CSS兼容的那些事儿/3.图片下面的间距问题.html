@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ljj.cn</title>
+    <style>
+        .box{
+            border:solid 2px yellowgreen;
+        }
+        .cont{
+            height: 100px;
+            background-color: red;
+        }
+        img{
+/*            display: block;*/
+            vertical-align: top;
+        }
+        /*
+            图片下间距的问题：
+                在任何情况下，图片下面都会有三个像素的间距
+                解决： display:block || vertical-align: top/middle/bottom;
+        */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="img/1.jpg" alt="">
+<!--       <div class="cont"></div>-->
+    </div>
+</body>
+</html>

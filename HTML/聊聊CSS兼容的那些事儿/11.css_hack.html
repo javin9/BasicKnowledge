@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ljj.cn</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            *background-color: green; /* *属性: ... 给ie67的*/
+            _background-color: red; /* _开头的 是给ie6用的*/
+            background-color: yellow\0; /* 值的后面添加\0,给ie8以上的（包含 8 9 10 11） */
+            background-color: deepskyblue\9; /*IE6-10*/
+            width:100px\9;
+            
+/*
+            filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#7F000000', endColorstr='#7F000000');
+            background-color:rgba(0,0,0,0.5);
+*/
+        }
+        
+        /*IE9, 在后面添加 \0 */
+        :root .box{
+            filter: none\0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

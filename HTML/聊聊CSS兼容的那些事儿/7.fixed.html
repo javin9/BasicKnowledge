@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ljj.cn</title>
+    <style>
+        body{
+            height: 4000px;
+        }
+        .box{
+            position: fixed;
+            /*
+                ie不支持fixed
+                    解决：
+                        1 使用css表达式（不推荐使用）
+                        2 使用js来完成模拟的固定定位。
+            */
+            right: 0; bottom: 0; 
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

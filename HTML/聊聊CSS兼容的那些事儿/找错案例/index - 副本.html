@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ljj.cn</title>
+    <link rel="stylesheet" href="style/reset.css" type="text/css">
+    <link rel="stylesheet" href="style/common.css" type="text/css">
+</head>
+<body>
+    <!--
+       布局    .g
+       模块    .m / .mod
+       元件    .u
+       公用    .c
+       
+       
+       命名：i am teacher
+           驼峰式命名： iAmTeacher
+           匈牙利命名： i_am_teacher / i-am-teacher
+    -->
+    
+    <div class="g_header">
+        <div class="g_header_ct cw">
+            <ul class="m_hd_list m_hd_lc fl">
+                <li><span class="cc_orgin">亲，请</span><a href="#" class="cc_orgin u_link">登录</a></li>
+                <li><a href="#" class="u_link">免费注册</a></li>
+            </ul>
+            <ul class="m_hd_list fr">
+                <li>
+                    <a href="#" class="u_drop_down">我的淘宝<i class="u_dwi"></i></a>
+                    <div class="m_d_menu m_dl">
+                        <dl class="m_menu_ct">
+                            <dd><a href="#">已买到的宝贝</a></dd>
+                            <dd><a href="#">店铺动态</a></dd>
+                            <dd><a href="#">好友动态</a></dd>
+                        </dl>
+                    </div>
+                </li>
+                <li class="cur">
+                    <a href="#" class="u_drop_down"><i class="u_icar"></i>购物车<span class="cc_org_dark pl2">0</span><i class="u_dwi"></i></a>
+                    <div class="m_d_menu m_dl">
+                        <div class="m_shopcar z_shop_open">
+                            <!--有商品的状态-->
+                            <div class="u_shop_list">
+                                <p class="u_shop_tit"><strong>最近加入的宝贝：</strong></p>
+                                <dl class="u_shop_item">
+                                    <dt><img src="image/img_demo.jpg" alt=""></dt>
+                                    <dd>
+                                        <p><a href="#" class="u_text_link fl">夏季新款低腰修身显瘦夏季新款低腰修身显瘦</a><span class="u_money fr">¥89.00</span></p>
+                                        <p><span class="u_color fl">颜色分类:黑色尺寸:S</span><a href="#" class="u_del fr">删除</a></p>
+                                    </dd>
+                                </dl>
+                                <dl class="u_shop_item">
+                                    <dt><img src="image/img_demo.jpg" alt=""></dt>
+                                    <dd>
+                                        <p><a href="#" class="u_text_link fl">夏季新款低腰修身显瘦夏季新款低腰修身显瘦</a><span class="u_money fr">¥89.00</span></p>
+                                        <p><span class="u_color fl">颜色分类:黑色尺寸:S</span><a href="#" class="u_del fr">删除</a></p>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!--没有商品的状态-->
+                            <div class="u_lookLink"><span>您购物车里还没有任何宝贝。</span><a href="#">查看我的购物车</a></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="u_drop_down"><i class="u_icar"></i>收藏夹<i class="u_dwi"></i></a>
+                </li>
+                <li><a href="#" class="u_link">我要逛</a></li>
+                <li><a href="#" class="u_link">卖家中心</a></li>
+                <li><a href="#" class="u_link">手机版</a></li>
+                <li><a href="#" class="u_link">联系客服</a></li>
+                <li>
+                    <a href="#" class="u_drop_down"><i class="u_iweb"></i>网站导航<i class="u_dwi"></i></a>
+                    <div class="m_d_menu m_dr">
+                        <div class="m_iWeb clearfix">
+                            <div class="m_iWeb_item">
+                                <div class="m_iWeb_ic sh_1">
+                                    <h3 class="u_iwTit">主题市场</h3>
+                                    <ul class="clearfix">
+                                        <li><a href="#">爱美女人</a></li>
+                                        <li><a href="#">品质男人</a></li>
+                                        <li><a href="#">跳蚤街</a></li>
+                                        <li><a href="#">全球购</a></li>
+                                        <li><a href="#">品牌街</a></li>
+                                        <li><a href="#">生活服务</a></li>
+                                        <li><a href="#">我要结婚</a></li>
+                                        <li><a href="#">辣妈萌宝</a></li>
+                                        <li><a href="#">车生活</a></li>
+                                        <li><a href="#">淘创意</a></li>
+                                        <li><a href="#">爱美妆</a></li>
+                                        <li><a href="#">运动户外</a></li>
+                                        <li><a href="#">家用电器</a></li>
+                                        <li><a href="#">私人定制</a></li>
+                                        <li><a href="#">狠爱</a></li>
+                                        <li><a href="#">网络游戏</a></li>
+                                        <li><a href="#">品牌控</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="m_iWeb_item">
+                                <div class="m_iWeb_ic sh_2">
+                                    <h3 class="u_iwTit">主题市场</h3>
+                                    <ul class="clearfix">
+                                        <li><a href="#">爱美女人</a></li>
+                                        <li><a href="#">品质男人</a></li>
+                                        <li><a href="#">跳蚤街<i></i></a></li>
+                                        <li><a href="#">全球购</a></li>
+                                        <li><a href="#">品牌街</a></li>
+                                        <li><a href="#">生活服务</a></li>
+                                        <li><a href="#">我要结婚</a></li>
+                                        <li><a href="#">辣妈萌宝</a></li>
+                                        <li><a href="#">车生活</a></li>
+                                        <li><a href="#">淘创意</a></li>
+                                        <li><a href="#">爱美妆</a></li>
+                                        <li><a href="#">运动户外</a></li>
+                                        <li><a href="#">家用电器</a></li>
+                                        <li><a href="#">私人定制</a></li>
+                                        <li><a href="#">狠爱</a></li>
+                                        <li><a href="#">网络游戏</a></li>
+                                        <li><a href="#">品牌控</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="m_iWeb_item">
+                                <div class="m_iWeb_ic sh_3">
+                                    <h3 class="u_iwTit">主题市场</h3>
+                                    <ul class="clearfix">
+                                        <li><a href="#">爱美女人</a></li>
+                                        <li><a href="#">品质男人</a></li>
+                                        <li><a href="#">跳蚤街</a></li>
+                                        <li><a href="#">全球购</a></li>
+                                        <li><a href="#">品牌街</a></li>
+                                        <li><a href="#">生活服务</a></li>
+                                        <li><a href="#">我要结婚</a></li>
+                                        <li><a href="#">辣妈萌宝</a></li>
+                                        <li><a href="#">车生活</a></li>
+                                        <li><a href="#">淘创意</a></li>
+                                        <li><a href="#">爱美妆</a></li>
+                                        <li><a href="#">运动户外</a></li>
+                                        <li><a href="#">家用电器</a></li>
+                                        <li><a href="#">私人定制</a></li>
+                                        <li><a href="#">狠爱</a></li>
+                                        <li><a href="#">网络游戏</a></li>
+                                        <li><a href="#">品牌控</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="m_iWeb_item">
+                                <div class="m_iWeb_ic sh_4">
+                                    <h3 class="u_iwTit">主题市场</h3>
+                                    <ul class="clearfix">
+                                        <li><a href="#">爱美女人</a></li>
+                                        <li><a href="#">品质男人</a></li>
+                                        <li><a href="#">跳蚤街</a></li>
+                                        <li><a href="#">全球购</a></li>
+                                        <li><a href="#">品牌街</a></li>
+                                        <li><a href="#">生活服务</a></li>
+                                        <li><a href="#">我要结婚</a></li>
+                                        <li><a href="#">辣妈萌宝</a></li>
+                                        <li><a href="#">车生活</a></li>
+                                        <li><a href="#">淘创意</a></li>
+                                        <li><a href="#">爱美妆</a></li>
+                                        <li><a href="#">运动户外</a></li>
+                                        <li><a href="#">家用电器</a></li>
+                                        <li><a href="#">私人定制</a></li>
+                                        <li><a href="#">狠爱</a></li>
+                                        <li><a href="#">网络游戏</a></li>
+                                        <li><a href="#">品牌控</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="g_search clearfix">
+        <div class="g_search_lc">
+            <span class="u_seldown">宝贝</span>
+            <div class="u_input">
+                <p><i class="u_search_icon"></i>搜“虾米音乐”试试，领8元音乐礼包</p>
+                <input type="text">
+            </div>
+            <input type="submit" class="u_submit" value="">
+        </div>
+        <a href="#" class="u_seniorLink">高级搜索</a>
+    </div>
+    
+    <!--首屏-->
+    <div class="cw clearfix">
+        <div class="gInNav fl">
+            <h3 class="u_in_tit">商品服务分类</h3>
+            <ul class="m_in_list">
+                <li>
+                    <div class="c_in_item">
+                        <i class="icon_nav iic_01"></i><a href="#">服装内衣</a><i class="icon_jt"></i>
+                    </div>
+                </li>
+                <li>
+                    <div class="c_in_item">
+                        <i class="icon_nav iic_02"></i><a href="#">鞋包配饰</a><i class="icon_jt"></i>
+                    </div>
+                </li>
+                <li class="">
+                    <div class="c_in_item">
+                        <i class="icon_nav iic_03"></i><a href="#">运动户外</a><i class="icon_jt"></i>
+                    </div>
+                    <div class="m_in_showBox">
+                        
+                    </div>
+                </li>
+                <li><i class="icon_nav iic_04"></i><a href="#">珠宝手表</a><i class="icon_jt"></i></li>
+                <li><i class="icon_nav iic_05"></i><a href="#">手机数码</a><i class="icon_jt"></i></li>
+                <li><i class="icon_nav iic_06"></i><a href="#">家电办公</a><i class="icon_jt"></i></li>
+                <li><i class="icon_nav iic_07"></i><a href="#">护肤彩妆</a><i class="icon_jt"></i></li>
+                <li><i class="icon_nav iic_08"></i><a href="#">母婴用品</a><i class="icon_jt"></i></li>
+                <li><i class="icon_nav iic_09"></i><a href="#">家纺居家</a><i class="icon_jt"></i></li>
+                <li><i class="icon_nav iic_10"></i><a href="#">家具建材</a><i class="icon_jt"></i></li>
+                <li><i class="icon_nav iic_11"></i><a href="#">美食特产</a><i class="icon_jt"></i></li>
+                <li><i class="icon_nav iic_12"></i><a href="#">日用百货</a><i class="icon_jt"></i></li>
+                <li><i class="icon_nav iic_13"></i><a href="#">汽车摩托</a><i class="icon_jt"></i></li>
+                <li><i class="icon_nav iic_14"></i><a href="#">文化娱乐</a><i class="icon_jt"></i></li>
+                <li><i class="icon_nav iic_15"></i><a href="#">本地生活</a><i class="icon_jt"></i></li>
+                <li><i class="icon_nav iic_16"></i><a href="#">虚拟服务</a><i class="icon_jt"></i></li>
+            </ul>
+        </div>
+        <div class="gInCont fr">
+            
+        </div>
+    </div>
+    
+    
+    <div class="g_main cw clearfix">
+        <div class="g_ml fl">
+            <div class="m_mb">
+                <h3 class="u_tit">测试</h3>
+                <div class="clearfix">
+                    <div class="m_w2">
+                        <div class="m_imgList">
+                            <img src="image/1.jpg" class="u_big_img" alt="">
+                            <p class="u_img_t b pt">时尚平板电脑 精选试用</p>
+                            <p class="u_img_t"><a href="#">vip专享</a><span>|</span><a href="#">5s免费</a><span>|</span><a href="#">5s免费</a></p>
+                        </div>
+                    </div>
+                    <div class="m_w2">
+                        <div class="m_imgList">
+                            <img src="image/1.jpg" class="u_big_img" alt="">
+                            <p class="u_img_t b pt">时尚平板电脑 精选试用</p>
+                            <p class="u_img_t"><a href="#">vip专享</a><span>|</span><a href="#">5s免费</a><span>|</span><a href="#">5s免费</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m_mb">
+                <h3 class="u_tit">测试</h3>
+                <div class="clearfix">
+                    <div class="m_w2">
+                        <div class="m_imgList">
+                            <img src="image/3.jpg" class="u_big2" alt="">
+                        </div>
+                    </div>
+                    <div class="m_w2">
+                        <div class="pl">
+                            <div class="clearfix">
+                                <div class="m_img_sm m_w2">
+                                    <img src="image/1.jpg" class="u_sm_img" alt="">
+                                    <p class="u_img_t pts">时尚平板</p>
+                                </div>
+                                <div class="m_img_sm m_w2">
+                                    <img src="image/1.jpg" class="u_sm_img" alt="">
+                                    <p class="u_img_t pts">时尚平板</p>
+                                </div>
+                            </div>
+                            <div class="m_links pt16 clearfix">
+                                <a href="">测试文字</a>
+                                <a href="">测试文字</a>
+                                <a href="">测试文字</a>
+                                <a href="">测试文字</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m_mb">
+                <h3 class="u_tit">测试</h3>
+                <div class="clearfix">
+                    <div class="m_w2">
+                        <div class="m_imgList">
+                            <img src="image/1.jpg" class="u_big_img" alt="">
+                            <p class="u_img_t b pt">时尚平板电脑 精选试用</p>
+                            <p class="u_img_t"><a href="#">vip专享</a><span>|</span><a href="#">5s免费</a><span>|</span><a href="#">5s免费</a></p>
+                        </div>
+                    </div>
+                    <div class="m_w2">
+                        <div class="ml pl dashed dl">
+                            <div class="m_img_r">
+                                <img src="image/1.jpg" class="u_sm_img" alt="">
+                                <p class="u_img_t b pt18">时尚平板电脑 精选试用</p>
+                            </div>
+                            <div class="m_img_r dashed dt">
+                                <img src="image/1.jpg" class="u_sm_img" alt="">
+                                <p class="u_img_t b pt18">时尚平板电脑 精选试用</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m_mb">
+                <h3 class="u_tit">测试</h3>
+                <div class="clearfix">
+                    <div class="m_w2">
+                        <div class="m_imgList">
+                                <img src="image/2.jpg" class="u_de_img" alt="">
+                                <div class="u_img_cont">
+            <p class="u_img_t b pt">时尚平板电脑 精选试用</p>
+            <p class="u_img_t"><a href="#">vip专享</a><span>|</span><a href="#">5s免费</a><span>|</span><a href="#">5s免费</a></p>
+        </div>
+                            </div>
+                    </div>
+                    <div class="m_w2">
+                        <div class="pl">
+                            <div class="clearfix">
+                                <div class="m_img_sm m_w2">
+                                    <img src="image/1.jpg" class="u_sm_img" alt="">
+                                    <p class="u_img_t pts">时尚平板</p>
+                                </div>
+                                <div class="m_img_sm m_w2">
+                                    <img src="image/1.jpg" class="u_sm_img" alt="">
+                                    <p class="u_img_t pts">时尚平板</p>
+                                </div>
+                            </div>
+                            <div class="m_links pt16 clearfix">
+                                <a href="">测试文字</a>
+                                <a href="">测试文字</a>
+                                <a href="">测试文字</a>
+                                <a href="">测试文字</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ljj.cn</title>
+    <style>
+        body{
+/*            background-color: hotpink;*/
+        }
+        /*
+            input 默认样式：
+                默认的
+                上下padding  去掉
+                border 一般时候我们都是模拟
+                焦点去掉（光标点击到输入框的时候，所产生的蓝色高亮。）
+        
+                IE6，要使用background-color:transparent; 去配合
+        
+            input的问题：
+                1 在ie8(含)以下，光标上下不居中的问题
+                    - line-height:height;
+                2 在IE高版本下的特殊展示状态
+                3 
+                    3-1 _background-attachment: fixed;
+                    3-2 推荐：
+        */
+        input{padding: 0; border: none;  outline: none; background-color: transparent;}
+        
+        .abc{
+            height: 35px;
+            width: 300px;
+            line-height: 35px;
+            background: url(img/reg_bg.jpg) left top no-repeat;
+            _background-attachment: fixed;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <input type="text" class="abc">
+</body>
+</html>

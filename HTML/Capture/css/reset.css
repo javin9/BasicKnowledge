@@ -6,7 +6,6 @@
 	font-family: "微软雅黑", "Helvetica", "Arial", "Tahoma";
 }
 
-
 ul,
 ol,
 li {
@@ -19,6 +18,9 @@ li {
 img {
 	border: 0;
 	display: block;
+	/*去掉2像素的高度方法*/
+	vertical-align: top;
+	/*去掉3像素的高度方法*/
 	margin: 0 auto;
 }
 
@@ -47,12 +49,14 @@ textarea {
 
 .fl {
 	float: left;
-	display: inline;
+	*display: inline;
+	/*块元素浮动的  IE6，7的双边锯问题*/
 }
 
 .fr {
 	float: right;
-	display: inline;
+	*display: inline;
+	/*块元素浮动的  IE6，7的双边锯问题*/
 }
 
 
@@ -78,4 +82,41 @@ h4,
 h5,
 h6 {
 	font-weight: normal
+}
+
+input {
+	outline: none;
+	border: none;
+	background-color: transparent;
+	_background-attachment: fixed;
+}
+
+input {
+	padding: 0;
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+
+
+/*去掉IE的x*/
+
+ ::-ms-clear {
+	display: none;
+}
+
+
+/*去掉IE的查看密码*/
+
+ ::-ms-reveal {
+	display: none;
+}
+
+em,
+i {
+	font-style: normal;
+}
+
+textarea {
+	resize: none;
 }
