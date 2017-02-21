@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas {
+				width: 300px;
+				height: 200px;
+				background-color: #00BFFF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<input type="text" name="email" id="email" value="" />
+		<canvas></canvas>
+		<script src="../js/lib/utils.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/lib/Rx.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			log(Rx);
+			const Observable = Rx.Observable;
+			const input = document.querySelector('input');
+
+			var search$ = Observable.fromEvent(input, 'input')
+				.map(e => e.target.value)
+				.filter(value => value.length >= 1)
+				.throttleTime(100)
+				.distinctUntilChanged()
+				//				.switchMap(term => Observable.fromPromise(term))
+				.subscribe(
+					x => log(x),
+					err => console.error(err)
+				);
+
+			const canvas = document.querySelector('canvas')
+			const ctx = canvas.getContext('2d')
+			ctx.beginPath()
+
+			const move$ = Rx.Observable.fromEvent(canvas, 'mousemove')
+				.map(e => ({ x: e.offsetX, y: e.offsetY }))
+
+			const diff$ = move$
+				.zip(move$.skip(1), (first, sec) => ([first, sec]))
+
+			diff$
+				.subscribe(draw)
+
+			function draw([first, sec]) {
+				console.log(first)
+				ctx.moveTo(first.x, first.y)
+				ctx.lineTo(sec.x, sec.y)
+				ctx.stroke()
+			}
+		</script>
+	</body>
+
+</html>

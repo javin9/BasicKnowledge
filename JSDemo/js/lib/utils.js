@@ -10,6 +10,9 @@ var Type = (function() {
 	return Type;
 })();
 
+/*
+ * 
+ */
 function convertJsonToUrl(params, exclude) {
 	if(!(Object.prototype.toString.call(exclude) === '[object Array]')) {
 		exclude = [];
@@ -32,4 +35,10 @@ function convertJsonToUrl(params, exclude) {
 		}
 	}
 	return returnUrl;
+}
+/*
+ * 记录日志
+ */
+function log(){
+	console.log.apply(console,arguments);
 }
