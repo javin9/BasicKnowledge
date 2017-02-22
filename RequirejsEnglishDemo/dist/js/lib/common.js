@@ -1,1 +1,0 @@
-define([],function(){function n(){}n.prototype.info=function(n){console.log(n)}});

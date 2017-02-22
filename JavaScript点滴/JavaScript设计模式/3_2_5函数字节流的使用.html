@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        //函数字节流
+        var throttle = function (fn, interval) {
+            var _self = fn,//保留需要延迟执行的函数引用
+                timer,//定时器
+                _firstTime = true;
+            return function () {
+                var _args = arguments,
+                    _me = this;
+                if (_firstTime) {//如果是第一次执行不需要延迟执行
+                    _self.apply(_me, _args);
+                    return _firstTime = false;
+                }
+                if (timer) {
+                    return false;//如果定时器还在说明前一次执行还没有完毕
+                }
+                timer = setTimeout(function () {
+                    clearTimeout(timer);//清除掉上一次的操作
+                    timer = null;
+                    _self.apply(_me, _args);
+                }, interval || 500);
+            }
+        };
+
+        window.onresize = throttle(function () {
+            console.log(1);
+        });
+        //分时函数
+        var timerChunk = function (arr,fn,count) {
+            var obj,
+                   t;
+            var len = arr.length;
+            var start = function () {
+                for (var i=0;i<Math.min(count||1,len);i<Math.min(count||1,len);i++) {
+                    var obj=arr.shift();//关键点：取出第一个，并且原来的数组，减掉了第一个
+                    fn(obj);
+                }
+                return function(){
+                    t=setInterval(function(){
+                        if (arr.len==0) {
+                            return clearInterval(t);
+                        }
+                        start();
+                    },200);
+                }
+            }
+            //惰性加载函数
+            var addEvent=function(ele,type,handler){
+                if (window.addEventListener) {
+                    addEvent=function(ele,type,handler){
+                        ele.addEventListener(type,handler,false);
+                    }
+                }else if(window.addEvent) {
+                    addEvent=function(ele,type,handler){
+                        ele.attachEvent("on"+type,handler);
+                    }
+                }
+                addEvent(ele,type,handler);
+            }
+        }
+    </script>
+</body>
+</html>

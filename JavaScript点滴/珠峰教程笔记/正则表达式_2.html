@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../Script/jquery-2.1.1.js"></script>
+    <script type="text/javascript">
+     
+        window.onload = function () {
+
+            var stree = 'FSFSFS  current  oooo ';
+            stree.replace('current', '');
+            console.log(stree);
+            console.log(stree.replace('current', ''));
+            //注意正则加了g,就对正则属性LastIndex属性更改
+            var reg = /\d+/g;
+            var reee = /\d/g;
+            var r1 = reg.test('12312shfskhdf');//false
+            console.log(r1);
+            console.log(reg.lastIndex);
+            //var r2 = reg.test('sdfssdfsf123123');//true;
+            //console.log(r2);
+            //console.log(reg.lastIndex);
+
+            //console.log("对比一下上下两种写法的区别");
+            //console.log(reg.test('12312shfskhdf'));
+            //console.log(reg.lastIndex);
+            //console.log(reg.test('sdfssdfsf123123'));
+            //console.log(reg.lastIndex);
+
+
+            //var reg2 = /(\d)(\d)(\d)/;
+            //var str = "97312shfskhdf";
+
+            //reg2.test(str);
+            //console.log(RegExp.$1);
+            //console.log(RegExp.$2);
+            //console.log(RegExp.$3);
+
+            //var reg3 = /\d+/g;
+            //var str3 = "dsf34753094sdfsdf";
+            //var str31 = "dsfsdfsdfsdfsdfs345345345s";
+            //console.log(str3.search(reg3));
+            //console.log(str31.search(reg3));
+
+            ////分解年月日时分秒
+            //var str4 = '2015-7-7 22:59:11';
+            //var result = str4.split(/-|[ ]+|:/);//按照减号 空格 冒号 分解
+            //// var result = str4.split(/[ -:]/);//按照减号 空格 冒号 分解[]内必须是连续的
+            //console.log(result);
+
+            //var oldStr = "";
+            //var str5 = '32453453455555555559999997263849';
+            //var str6 = str5.replace(/(\d)\1/g, function (s1, s2, i, input) {
+            //    //s1整个正则捕获的内容
+            //    //s2 第一个分组的内容
+            //    //console.log(s1);
+            //    //console.log(s2);
+            //    var newStr = s2;
+            //    if (newStr == oldStr) {
+            //        return '';
+            //    } else {
+            //        oldStr = s2;
+            //        return s2;
+            //    }
+            //});//连续重复出现的数字
+            //console.log(str5);
+            //console.log(str6);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

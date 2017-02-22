@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        var minConsole = (function () {
+            var cache = [];
+            var handler = function (ev) {
+                if (ev.keyCode === 113) {
+                    var script = document.createElement("script");
+                    script.src = "minConsole.js";
+                    script.onload = function () {
+                        for (var i = 0, len = cache.length, fn; i < len; i++) {
+                            fn = cache[i];
+                            fn();
+                        }
+                    }
+                    document.querySelector("head").appendChild(script);
+                    document.body.removeEventListener("keydown", handler);//只加载一次minConsole.js
+                }
+            }
+            document.body.addEventListener("keydown", handler, false);
+            return {
+                log: function () {
+                    var args = arguments;
+                    cache.push(function () {
+                        return minConsole.log.apply(minConsole,args);
+                    });
+                }
+            };
+        })();
+        minConsole.log(11);
+    </script>
+</body>
+</html>

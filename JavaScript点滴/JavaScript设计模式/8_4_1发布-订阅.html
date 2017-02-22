@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        var saleOffices = {};//定义售楼处
+        saleOffices.clientlists = [];//缓存列表，存放订阅者的回调函数
+        saleOffices.listen = function (fn) {//添加订阅者
+            saleOffices.clientlists.push(fn);//订阅者消息放到缓存列表
+        }
+        saleOffices.trigger = function () {
+            for (var i = 0, len = saleOffices.clientlists.length; i < len; i++) {
+                var fn = saleOffices.clientlists[i];
+                fn.apply(this, arguments);
+            }
+        }
+        //简单的测试
+        saleOffices.listen(function (price, size) {
+            console.log("价格=" + price);
+            console.log("大小="+size);
+        });
+        saleOffices.listen(function (price, size) {
+            console.log("我想要的价格=" + price);
+            console.log("大小=" + size);
+        });
+
+        saleOffices.trigger(45454, 234783);
+    </script>
+</body>
+</html>

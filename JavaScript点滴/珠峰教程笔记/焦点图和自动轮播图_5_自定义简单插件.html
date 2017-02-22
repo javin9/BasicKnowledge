@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            width: 400px;
+            height: 260px;
+            position: relative;
+            margin: 50px auto;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+
+            #outer .carousel_left {
+                position: absolute;
+                background: #0094ff;
+                top: 50%;
+                left: 0;
+                width: 50px;
+                height: 50px;
+                z-index: 10;
+                cursor: pointer;
+            }
+
+            #outer .carousel_right {
+                position: absolute;
+                top: 50%;
+                background: #0094ff;
+                width: 50px;
+                height: 50px;
+                right: 0;
+                z-index: 10;
+                cursor: pointer;
+            }
+
+        .carousel_inner {
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+            .carousel_inner .carousel_part {
+                float: left;
+                width: 400px;
+                height: 260px;
+            }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div class="carousel_left">左侧按钮</div>
+        <div class="carousel_inner">
+            <div class="carousel_part" style="background: #808080;">一一一一一首页</div>
+            <div class="carousel_part" style="background:green;">二二二二二图片二</div>
+            <div class="carousel_part" style="background:#00ff21;">三三三三三图片三</div>
+            <div class="carousel_part" style="background:red">四四四四四图片四</div>
+            <div class="carousel_part" style="background:purple">五五五五四图片四</div>
+        </div>
+        <div class="carousel_right">右侧按钮</div>
+    </div>
+    <script src="../Script/jquery-2.1.1.js"></script>
+    <script type="text/javascript">
+        (function ($, window, document) {
+            //默认参数
+            var defaults = {
+                longtimer: 300,//每次运行的时间
+                isauto: false,//是否自动播放
+                distance: 0,
+                attr: "left",
+                leftEndCallback: function () {
+
+                },
+                rightEndCallback: function () {
+
+                },
+                moveCallBack: function () {
+
+                }
+            };
+            function Carousel(ele, options) {
+                this.ele = ele;
+                this.options = options;
+
+                this._carousel_inner = "";
+                this._carousel_part = "";
+                this._carousel_part_count = 0;
+                this._carousel_part_width = 0;
+                this._step = 0;
+                this._init();
+            }
+
+            var timer = null;
+            Carousel.prototype = {
+                _init: function () {
+                    console.log("init");
+                    var that = this,
+                    carousel_outer = that.ele;
+                    this._setInitState(carousel_outer);//
+                    this._bindEvent(carousel_outer);
+                    //this._autoMove();
+                },
+                _bindEvent: function (carousel_outer) {
+                    //左侧按钮
+                    var that = this;
+                    carousel_outer.on("click", ".carousel_left", function () {
+                        if (that._step > 0) {
+                            that._step--;
+                        }
+                        else {
+                            //that._step = that._carousel_part_count - 1;
+                            //TODO：到头了
+                        }
+                        that._move();
+                        // var step = that._step,
+                        //target = that._carousel_part_width * (-step);//目标位置
+                        // that.buffer(that._carousel_inner[0], "left", target);
+                    });
+                    //右侧按钮 下一个按钮被点击
+                    carousel_outer.on("click", ".carousel_right", function () {
+                        if (that._step < that._carousel_part_count - 1) {
+                            that._step++;
+                        }
+                        else {
+                            //that._step = 0;
+                            //TODO：到头了
+                        }
+                        that._move();
+                        // var step = that._step,
+                        //target = that._carousel_part_width * (-step);//目标位置
+                        // that.buffer(that._carousel_inner[0], "left", target);
+                    });
+                },
+                _move: function () {
+                    var that = this,
+                     step = that._step,
+                    target = that._carousel_part_width * (-step);
+                    buffer(that._carousel_inner[0], "left", target);
+                },
+                _autoMove: function () {
+                    console.log(this);
+                    function autoMove() {
+
+                    }
+                    //var that = this,
+                    //    step = that._step;
+                    //if (step <= that._carousel_part_count - 1) {
+                    //    that._step++;
+                    //} else {
+                    //    that._step = 0;
+                    //}
+                    //step = that._step;
+                    //var target = that._carousel_part_width * (-step);
+
+                    //buffer(that._carousel_inner[0], "left", target);
+                    window.setTimeout(arguments.callee, 1000);
+                },
+                _setInitState: function (carousel_outer) {
+                    this._carousel_inner = carousel_outer.find(".carousel_inner");//innder object
+                    this._carousel_part = this._carousel_inner.find(".carousel_part");//object
+                    this._carousel_part_count = this._carousel_part.length || 0;//数量  number
+                    this._carousel_part_width = this._carousel_part.eq(0).width();//number
+                    var carousel_inner_width = this._carousel_part_count * this._carousel_part_width;//mumber
+                    this._carousel_inner.css({ "width": carousel_inner_width });
+
+                    //TODO:其它逻辑
+                }
+            };
+            //获取样式
+            function getCss(ele, attr) {
+                if (typeof getComputedStyle == "function") {
+                    return parseFloat(getComputedStyle(ele, null)[attr]);
+                } else {
+                    return parseFloat(ele.currentStyle[attr]);
+                }
+            }
+            //buffer函数
+            function buffer(ele, attr, target, fnCallback) {
+                var that = this;
+                window.clearTimeout(ele.timer);//清除上一次缓存
+                _buffer();
+                function _buffer() {
+                    var cur = getCss(ele, attr);
+                    var nSpeed = (target - cur) / 10;//算出一个速度 越来越慢的效果
+                    nSpeed = nSpeed > 0 ? Math.ceil(nSpeed) : Math.floor(nSpeed);//目的取整用，因为无法取得 每次移动的距离
+                    ele.style[attr] = cur + nSpeed + "px"; //方向 自己会根据nSpeed；判断，所以这里只有一句代码；
+                    if (nSpeed) {
+                        ele.timer = window.setTimeout(_buffer, 30);
+                    } else {
+                        typeof callback == "function" && callbackcall(ele);//同样的功能不用两次，方法相同，用在不同的元素的上面//让回调方法里的this指向当前运动的这个元素
+                        ele.timer = null;
+                    }
+                }
+            }
+            //autoMove
+            function autoMove() {
+
+            }
+            $.fn.Carousel = function (options) {
+                options = $.extend({}, defaults, options || {});
+                console.log($(this));
+                var that = $(this);
+                if (that.length>0) {
+                    return new Carousel($(this), options);
+                }
+                return false;
+            };
+        })(jQuery, window, document);
+        //
+        $(function () {
+            $("#outer").Carousel({
+                distance: 400
+            });
+            //$("#ddd").Carousel({
+            //    distance: 400
+            //});
+        })
+    </script>
+</body>
+</html>

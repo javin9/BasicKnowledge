@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script>
+        var str = "{IMG12345678}{IMG23456789}{IMG34567891}天才在线{IMG45678912}我是中国人{IMG56789123}{IMG56789456}";
+        var reg = /({IMG\w{8}})+/g;
+
+        var resultt = str.replace(reg, function (item, s1,r) {
+            console.log(item);
+            console.log(r);
+         
+            return '<div>' + item + '</div>';
+        });
+        console.log(resultt);
+
+
+
+        var resultt1 = str.replace(reg, function () {
+            return '<div>' + arguments[0] + '</div>';
+        });
+        console.log(resultt1);
+
+        var str1 = "ssssdfhlksjdhflkshdddaaadddfdfsdf";
+        var i = 0;
+        /*没有分组*/
+        var result = str1.replace(/s/g, function (item, i, input) {
+            //item :当前匹配什么内容
+            //i:当前str的位置
+            //input：当前输入的字符串
+            console.log(i);//0,1,2,3
+            return "AAAA";
+        });
+
+        console.log(result);
+
+
+
+        var str3 = "8878464";
+        var a = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];
+
+        var resutl3 = str3.replace(/\d/g, function (str) {
+            return a[str];
+        });
+        console.log(resutl3);
+        /*有分组*/
+
+
+        var str4 = "856878464";
+        var result4 = str4.replace(/(\d)/g, function (item, s1, i, input) {
+            //item :当前匹配什么内容
+            //s1:分组的内容
+            //i:当前str的位置
+            //input：当前输入的字符串
+        })
+
+
+        var str = "{IMG12345678}{IMG23456789}     {IMG34567891}天才在线{IMG45678912}我是中国人{IMG56789123}                  {IMG56789456}";
+
+        var resultwrw = str.replace(/}\s+{/g, '}{')
+
+        var resultwrw = resultwrw.replace(reg, function (item, s1, r) {
+            console.log(item);
+            console.log(r);
+            return '<div>' + item + '</div>';
+        });
+        console.log(resultwrw);
+
+
+        var regHtml = /<[^>]+>/g;
+        console.log(regHtml.test(""));
+
+    </script>
+    <script>
+        console.log('---------------------------------------------------------------');///}<p><\/p>{/,"}{"
+        var strrr = '';
+
+        String.prototype.trim = function () {
+            return this.replace(/(^\s*)|(\s*$)/g, "");
+        }
+
+        console.log("AA  ".trim());
+        console.log("  AA".trim());
+        console.log("  AA  ".trim());
+        var dfd = "  AA  ".trim();
+        console.log(dfd.length);
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

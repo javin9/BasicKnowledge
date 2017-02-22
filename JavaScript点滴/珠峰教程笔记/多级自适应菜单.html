@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../Script/DOM.js"></script>
+    <script src="../Script/dom2.js"></script>
+    <script>
+        var oMenu = document.getElementById("menu");
+        oMenu.onclick = function (e) {
+            e = e || window.event;
+            var target = e.target || e.srcElement;
+            if (target.className == "SPAN") {
+                var oUl = DOM.nextSiblings(target)[0];
+                if (oUl) {
+                    if (oUl.style.display == "none") {
+                        oUl.style.display = 'block';
+                    } else {
+                        oUl.style.display = 'none';
+                    }
+                }
+            }
+        };
+        //另一种思路,
+        var oUls = oMenu.getElementsByTagName('ul');
+        for (var i = 0, len = oUls.length; i < len; i++) {
+            var thisUl = oUls.item(i);
+            if (thisUl.parentNode.tagName == "LI") {
+                thisUl.style.display = 'none';
+                DOM.preSiblings(thisUl)[0].style.background = "green";
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+   <script type="text/javascript">
+       var Iterator = function (obj) {
+           var current = 0;
+           var next = function () {
+               current += 1;
+           }
+           var idDone = function () {
+               return current >= obj.length;
+           }
+           var getcurrenttItem = function () {
+               return obj[current];
+           }
+           return {
+               next: next,
+               idDone:idDone,
+               getcurrenttItem: getcurrenttItem
+           }
+       }
+       new Date().getTime()
+       var compare = function (arr1,arr2) {
+           var iterator1 = Iterator(arr1);
+           var iterator2 = Iterator(arr2);
+          // var result = true;
+           while (!iterator1.idDone()&&!iterator2.idDone()) {
+               if (iterator1.getcurrenttItem()!=iterator2.getcurrenttItem()) {
+                   return false;
+               }
+               iterator1.next();
+               iterator2.next();
+           }
+       }
+   </script>
+</body>
+</html>

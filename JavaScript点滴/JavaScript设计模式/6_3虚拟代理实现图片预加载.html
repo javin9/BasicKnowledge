@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        var creatImg = (function () {
+            var imgNode = document.createElement('img');
+            document.body.appendChild(imgNode);
+
+            return {
+                setSrc: function (src) {
+                    imgNode.src = src;
+                }
+            }
+        })();
+
+        var proxyImg = (function () {
+            var img = new Image();
+            img.onload = function () {
+                creatImg.setSrc(this.src);//this指的是当前img对象
+            }
+            return {
+                setSrc: function (src) {
+                    creatImg.setSrc('');//默认loading图
+                    img.src = src;
+                }
+            }
+        })();
+    </script>
+</body>
+</html>

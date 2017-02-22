@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        /*三种等效的方式*/
+        //1:闭包形式的写法
+        var extent = function () {
+            var value = 0;
+            return {
+                call: function () {
+                    value++;
+                    console.log(value);
+                }
+            }
+        }
+        var extent = extent();
+        extent.call();//输出：1
+        extent.call();//输出：2
+        extent.call();//输出：3
+
+        //2:面向对象的写法，就是：
+        var extent = {
+            value: 0,
+            call: function () {
+                this.value++;
+                console.log(this.value);
+            }
+        };
+        extent.call();//输出：1
+        extent.call();//输出：2
+        extent.call();//输出：3
+        //3：
+        var Extent = function () {
+            this.value = 0;
+        };
+        Extent.prototype.call = function () {
+            this.value++;
+            console.log(this.value);
+        }
+        var extent = new Extent();
+        extent.call();//输出：1
+        extent.call();//输出：2
+        extent.call();//输出：3
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="../Script/jquery-2.1.1.js"></script>
+</head>
+<body>
+    <ul id="menu">
+        <li >AAA</li>b
+        <li>BBB</li>
+        <li>CCCC</li>
+        <li>DDD</li>
+    </ul>
+    <ul id="news">
+        <li>AAA</li>
+        <li>BBB</li>
+        <li>CCCC</li>
+        <li>DDD</li>
+    </ul>
+    <div id="div1" data-type="div1">测试</div>
+   <script type="text/javascript">
+       $(function () {
+           $("#menu li").data("type", "menu");
+           console.log($("#menu li").first());
+           $("#news li").data("type", "news");
+           $("#div1").data("type", "div2");
+           console.log($("#div1").data("type"));
+       })
+   </script>
+</body>
+</html>

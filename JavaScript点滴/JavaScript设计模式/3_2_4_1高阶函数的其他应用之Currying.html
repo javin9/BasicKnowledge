@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        //，一个简单的求和函数
+        function add(x, y) {
+            return x + y;
+        }
+        console.log(add(1, 3));
+        //currying的实现方式
+        function curry_add(y) {
+            return function (x) {
+                return y + x;
+            }
+        }
+        console.log(curry_add(3)(1));
+
+        var currying = function (fn) {
+            var args = [];              
+            return function () {
+                if (arguments.length===0) {
+                    return fn.apply(this, args);
+                } else {
+                    Array.prototype.push.apply(args, arguments);
+                    return arguments.callee;
+                }
+            }                                                                                                                                                
+        }
+    </script>
+</body>
+</html>

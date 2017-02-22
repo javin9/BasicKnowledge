@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../Script/jquery-2.1.1.js"></script>
+    <script src="../Script/validator/validatorJs.js"></script>
+</head>
+<body>
+    <form id="formId">
+        <input type="text" name="userName" id="userName" />
+        <input type="text" name="password" id="password" />
+        <input type="text" name="phone" id="phone" />
+        <button type="button" id="btn">提交</button>
+    </form>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn").click(function () {
+                var formId = document.getElementById("formId");
+                var func = function () {
+                    var validator = new Validator();
+                    validator.add("userName", [{
+                        strategy: "isNoEmpty",
+                        errorMsg: "用户名不能为空",
+                        callback: function () {
+                            console.log("dfadasdfs");
+                        }
+                    }]);
+                    validator.add(formId.phone, [{
+                        strategy: "isMobile"
+                    }]);
+                    var arr = validator.start();
+                    return arr;
+                };
+                var arr = func();
+                if (arr.length > 0) {
+                    for (var i = 0, len = arr.length; i < len; i++) {
+                        (function (i) {
+                            var item = arr[i];
+                            item.dom.value = item.errorMsg;
+                        })(i);
+                    }
+                }
+            });
+        })
+    </script>
+    <textarea maxlength="100" placeholder="" ></textarea>
+</body>
+</html>

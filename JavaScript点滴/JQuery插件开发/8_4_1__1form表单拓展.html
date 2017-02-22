@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../Script/jquery-2.1.1.js"></script>
+</head>
+<body>
+    <form id='addForm' type='post'>
+        <label for='uname'>用户名</label>：<input type='text' name='uname' id='uname'><br>
+        <label for='mobileIpt'>手机号：</label><input type='text' name='mobileIpt' id='mobileIpt'><br>
+        <label for='birthday'>生日：</label><input type='text' name='birthday'><br>
+        <input type='button' value='提交' id="submit_btn" />
+    </form>
+    <script type="text/javascript">
+        /*
+        所以，本文要说的是，在jquery的ajax函数中，可以传入3种类型的数据
+
+1.文本："uname=alice&mobileIpt=110&birthday=1983-05-12"
+
+2.json对象：{uanme:'vic',mobileIpt:'110',birthday:'2013-11-11'}
+
+3.json数组：
+
+[
+    {"name":"uname","value":"alice"},
+    {"name":"mobileIpt","value":"110"},
+    {"name":"birthday","value":"2012-11-11"}
+]
+所以，我们可以一键获取表单并提交，非常方便。
+
+        */
+        $(function () {
+            $(document).on("click", "#submit_btn", function () {
+                console.log($("#addForm").serialize());
+                console.log($("#addForm").serializeArray());
+                console.log($.param($("#addForm").serializeArray()));
+                $("#addForm").serialize();
+                $("#addForm").serializeArray();
+                $.ajax({
+                    type: 'post',
+                    url: '/Handler/jsontest.ashx',
+                    data: $("#addForm").serializeArray(),
+                    success: function (json) {
+                        console.log(json);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
