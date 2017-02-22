@@ -55,14 +55,52 @@
 		<!--emba-header start-->
 		<div class="emba-header w1200">
 			<div class="clearfix emba-header-container">
-				<div class="emba-header-item emba-header-left">
+				<div class="emba-header-item emba-header-left fl">
 					<a class="emba-logo" href="#">
 						<img class="emba-logo-img" src="images/logo.gif" />
 					</a>
 				</div>
-				<div class="emba-header-item emba-header-right">
-					<div class="emba-header-right-top"></div>
-					<div class="emba-header-right-bottom"></div>
+				<div class="emba-header-item emba-header-right fr">
+					<div class="emba-header-right-top clearfix">
+						<a href="#" class="wechat fr">
+							<img class='wechat-img' src='images/wechat.gif' />
+						</a>
+
+						<img class="number fr" src="images/number.gif" />
+
+						<span class='txt fr'>全国统一咨询热线：</span>
+					</div>
+					<div class="emba-header-right-bottom">
+						<ul class="clearfix emba-header-nav">
+							<li class="emba-header-nav-item">
+								<a href="#" class='item-a'>教授研究</a>
+							</li>
+							<li class="emba-header-nav-item">
+								<a href="#" class='item-a'>金融MBC</a>
+							</li>
+							<li class="emba-header-nav-item">
+								<a href="#" class='item-a'>英文MBA</a>
+							</li>
+							<li class="emba-header-nav-item">
+								<a href="#" class='item-a'>EMBA</a>
+							</li>
+							<li class="emba-header-nav-item">
+								<a href="#" class='item-a'>企业家学者项目</a>
+							</li>
+							<li class="emba-header-nav-item">
+								<a href="#" class='item-a'>EE高层管理教育</a>
+							</li>
+							<li class="emba-header-nav-item">
+								<a href="#" class='item-a'>创创社区</a>
+							</li>
+							<li class="emba-header-nav-item">
+								<a href="#" class='item-a'>研究</a>
+							</li>
+							<li class="emba-header-nav-item">
+								<a href="#" class='item-a'>创创社区</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 
 			</div>
@@ -70,15 +108,68 @@
 		<!--emba-header end-->
 
 		<!--emba-nav start-->
-		<div class="emba-nav"></div>
+		<div class="emba-nav">
+			<div class="w1200">
+				<ul class="clearfix emba-nav-ul">
+					<li class="emba-nav-item">
+						<a href="#" class="nav-item">EMBA</a>
+					</li>
+					<li class="emba-nav-item">
+						<a href="#" class="nav-item">首页</a>
+					</li>
+					<li class="emba-nav-item">
+						<a href="#" class="nav-item">项目介绍</a>
+					</li>
+					<li class="emba-nav-item">
+						<a href="#" class="nav-item">教授团队</a>
+					</li>
+					<li class="emba-nav-item">
+						<a href="#" class="nav-item">申请详解</a>
+					</li>
+					<li class="emba-nav-item">
+						<a href="#" class="nav-item">EMBA校友</a>
+					</li>
+					<li class="emba-nav-item">
+						<a href="#" class="last"><span>现在申请</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
 		<!--emba-nav end-->
 
 		<!--emba-banner start-->
-		<div class="emba-banner"></div>
+		<div class="emba-banner">
+			<ul class="emba-banner-ul">
+				<li class="emba-banner-li">
+					<a href="#" class="banner-a">
+						<img class="banner-img" src='images/banner/banner_1.jpg' />
+					</a>
+				</li>
+				<li class="emba-banner-li">
+					<a href="#" class="banner-a">
+						<img class="banner-img" src='images/banner/banner_2.png' />
+					</a>
+				</li>
+				<li class="emba-banner-li">
+					<a href="#" class="banner-a">
+						<img class="banner-img" src='images/banner/banner_3.jpg' />
+					</a>
+				</li>
+			</ul>
+			<div class="banner-icon">
+				<a href="#" class="icon icon-active"></a>
+				<a href="#" class="icon"></a>
+				<a href="#" class="icon"></a>
+			</div>
+		</div>
 		<!--emba-banner end-->
 
 		<!--emba-news start-->
-		<div class="emba-news"></div>
+		<div class="emba-news">
+			<div class="emba-news-background-img">
+				<img src="images/news_bc.jpg" />
+			</div>
+		</div>
 		<!--emba-news end-->
 
 		<!--emba-student start-->
@@ -88,6 +179,27 @@
 		<!--public-footer start-->
 		<div class="public-footer"></div>
 		<!--public-footer end-->
+		<script src="../../JavaScript点滴/js/lib/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				(function() {
+					var ul = $('.emba-banner-ul'),
+						li = ul.find('li'),
+						index = 0,
+						aIcon=$(".banner-icon a");
+					    setInterval(function() {
+					    index++;
+					    if(index === li.length) {
+							index = 0;
+						}
+						li.eq(index).css("opacity", "1").siblings("li").css("opacity", "0");
+						aIcon.eq(index).addClass("icon-active").siblings('a').removeClass("icon-active");
+					}, 3000);
+					
+				})();
+
+			});
+		</script>
 	</body>
 
 </html>
