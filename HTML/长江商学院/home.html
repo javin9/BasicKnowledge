@@ -11,6 +11,13 @@
 	</head>
 
 	<body>
+		<div class="right-sidebar">
+			<ul class="right-sidebar-ul">
+				<li class="siderbar-item"><a href="#" class="item-one"></a></li>
+				<li class="siderbar-item"><a href="#" class="item-two"></a></li>
+				<li class="siderbar-item"><a href="#" class="item-third"></a></li>
+			</ul>
+		</div>
 		<!--public-header start-->
 		<div class="public-header">
 			<div class="w1200">
@@ -166,8 +173,40 @@
 
 		<!--emba-news start-->
 		<div class="emba-news">
-			<div class="emba-news-background-img">
-				<img src="images/news_bc.jpg" />
+			<div class="w1200 emba-news-container clearfix">
+				<div class="left fl">
+					<img src="images/emba-nws.png" />
+				</div>
+				<div class="right fl">
+					<ul class="clearfix emba-news-ul">
+						<li class="emba-news-li">
+							<a href="#" class="emba-news-a">
+								<img src="images/news_1.jpg" />
+							</a>
+							<h3 class="emba-news-title">25期2班台北毕业学习公益行那一年我們在台北</h3>
+							<p class="emba-news-content">10月21日对我来说，这是个令人激动的日子——长江EMBA25期2班同学们的毕业旅行。大家飘洋过海…<a href="#">更多</a></p>
+						</li>
+						<li class="emba-news-li">
+							<a href="#" class="emba-news-a">
+								<img src="images/news_2.jpg" />
+							</a>
+							<h3 class="emba-news-title">25期2班台北毕业学习公益行那一年我們在台北</h3>
+							<p class="emba-news-content">10月21日对我来说，这是个令人激动的日子——长江EMBA25期2班同学们的毕业旅行。大家飘洋过海…<a href="#">更多</a></p>
+						</li>
+						<li class="emba-news-li">
+							<a href="#" class="emba-news-a">
+								<img src="images/news_2.jpg" />
+							</a>
+							<h3 class="emba-news-title">25期2班台北毕业学习公益行那一年我們在台北</h3>
+							<p class="emba-news-content">10月21日对我来说，这是个令人激动的日子——长江EMBA25期2班同学们的毕业旅行。大家飘洋过海…<a href="#">更多</a></p>
+						</li>
+					</ul>
+
+					<a href="#" class="more-news">
+						查看更多
+					</a>
+
+				</div>
 			</div>
 		</div>
 		<!--emba-news end-->
@@ -176,8 +215,49 @@
 		<div class="emba-student"></div>
 		<!--emba-student end-->
 
+		<!--emba-contact start-->
+		<div class="emba-contact">
+			<div class="w1200 clearfix">
+				<div class="contact-item">
+					<a href="#" class="icon">
+						<img src="images/icon_1.jpg" />
+					</a>
+					<p>视频资料</p>
+				</div>
+				<div class="contact-item">
+					<a href="#" class="icon">
+						<img src="images/icon_2.jpg" />
+					</a>
+					<p>视频资料</p>
+				</div>
+				<div class="contact-item">
+					<a href="#" class="icon">
+						<img src="images/icon_3.jpg" />
+					</a>
+					<p>视频资料</p>
+				</div>
+				<div class="contact-item">
+					<a href="#" class="icon">
+						<img src="images/icon_4.jpg" />
+					</a>
+					<p>视频资料</p>
+				</div>
+			</div>
+
+		</div>
+		<!--emba-contact end-->
+
 		<!--public-footer start-->
-		<div class="public-footer"></div>
+		<div class="public-footer">
+			<div class="w1200 public-footer-container clearfix">
+				<p class="left fl">© 长江商学院版权所有 粤ICP备12034584号 京公网安备11010102000785号</p>
+				<div class="right fr">
+					<a href="#">友情链接</a>
+					<a href="#">友情链接</a>
+					<a href="#">友情链接</a>
+				</div>
+			</div>
+		</div>
 		<!--public-footer end-->
 		<script src="../../JavaScript点滴/js/lib/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
@@ -186,17 +266,25 @@
 					var ul = $('.emba-banner-ul'),
 						li = ul.find('li'),
 						index = 0,
-						aIcon=$(".banner-icon a");
-					    setInterval(function() {
-					    index++;
-					    if(index === li.length) {
+						aIcon = $(".banner-icon a");
+					setInterval(function() {
+						index++;
+						if(index === li.length) {
 							index = 0;
 						}
 						li.eq(index).css("opacity", "1").siblings("li").css("opacity", "0");
 						aIcon.eq(index).addClass("icon-active").siblings('a').removeClass("icon-active");
 					}, 3000);
-					
+
 				})();
+
+				//动画
+				$(".contact-item a.icon").mouseenter(function() {
+					$(this).addClass('a-bounce');
+
+				}).mouseleave(function() {
+					$(this).removeClass("a-bounce");
+				});
 
 			});
 		</script>
