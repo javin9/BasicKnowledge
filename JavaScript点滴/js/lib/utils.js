@@ -39,6 +39,26 @@ function convertJsonToUrl(params, exclude) {
 /*
  * 记录日志
  */
-function log(){
-	console.log.apply(console,arguments);
+function log() {
+	console.log.apply(console, arguments);
+}
+
+//获取样式的值
+function getStyleValue(element, name) {
+	var value = null;
+	if(!element || !name) {
+		return value;
+	}
+
+	value = element.style[name];
+	if(!!value) {
+		return value;
+	}
+
+	if(!window.getComputedStyle) {
+		value = window.getComputedStyle(element, null).getPropertyValue(name);
+	} else {
+		value = element.currentStyle[value];
+	}
+	return value;
 }
