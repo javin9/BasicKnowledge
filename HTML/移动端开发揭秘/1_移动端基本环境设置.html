@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--
+			viewport视口（可视区窗口）
+			默认不设置viewport一般可是去宽度在移动端是980
+			1:width 可视区宽度（number||device-width）
+			    number在android设置一般不起作用；一般选择device-width
+			2:user-scalable 是否允许用户缩放（yes||no） 
+			    注意：ios10无效
+			3:initial-scale   初始比例 
+			4:minmum-scale  最小缩放比例
+			5:maxmun-scale 最大缩放比例
+		-->
+		<meta name="viewport" content="width=device-width,user-scalable=no"  />
+		<title>基本设置</title>
+		<style type="text/css">
+			.box{
+				width:300px;
+				height:300px;
+				margin:0 auto;
+				background-color: #0026FF;
+			}
+		</style>
+		<script type="text/javascript">
+			console.log(window.devicePixelRatio);//像素比
+			/*
+			 *把一个css像素，放大至N个设备像素是显示
+			 * */
+			
+		</script>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>
