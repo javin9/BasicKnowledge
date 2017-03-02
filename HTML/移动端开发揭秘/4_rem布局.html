@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="idth=device-width,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<style type="text/css">
+			div{
+				float:left;
+				box-sizing: border-box;/*border包括在width中*/
+				height: 80px;
+				width:80px;
+				border:1px solid red;
+			}
+		</style>
+		<script>
+			(function(){
+				var html=document.documentElement;
+				var hW=html.getBoundingClientRect().width;
+				console.log(hW);
+				html.style.fontSize=hW/15+"px";
+			})();
+		</script>
+	</head>
+
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+
+</html>

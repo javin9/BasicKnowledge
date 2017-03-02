@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<style type="text/css">
+			html {
+				height: 100%;
+				overflow: hidden;
+				/*去掉页面默认滚动条*/
+			}
+			
+			body {
+				height: 100%;
+				margin: 0;
+				overflow: auto;
+				
+				position:relative;/*解决IOS滚动条超出问题*/
+			}
+			
+			#wrap{
+				height: 100%;
+				overflow:auto;
+			}
+			header {
+				position: absolute;
+				width: 100%;
+				height: 40px;
+				background-color: #0026FF;
+				color: #fff;
+			}
+			
+			section {
+				margin: 0 auto;
+				padding-top: 40px;
+			}
+		</style>
+		<script type="text/javascript">
+			(function() {
+				var w = window.screen.width; //屏幕宽度
+				var targetN = 320;
+				/*控制缩放比例*/
+				var scale = w / targetN;
+
+				var meta = document.createElement('meta');
+				meta.name = "viewport";
+				meta.content = "width=device-width,user-scalable=no,initial-scale=" + scale + ",minmum-scale=" + scale + ",maxmun-scale=" + scale;
+
+				document..head.appendChild(meta);
+			})();
+		</script>
+	</head>
+
+	<body>
+		<!--
+			1:百分比适配  width一般用，height不能用
+			2:viewport适配
+			
+		-->
+		<div id="wrap">
+			<header>我是头部</header>
+			<section>
+				我是头部<br /> 我是头部
+				<br /> 我是头部
+				<br /> 我是头部
+				<br /> 我是头部
+				<br /> 我是头部
+				<br /> 我是头部
+				<br /> 我是头部
+				<br /> 我是头部<br /> 我是头部
+
+				<br /> 我是头部
+				<br /> 我是头部<br />
+			</section>
+		</div>
+	</body>
+
+</html>
