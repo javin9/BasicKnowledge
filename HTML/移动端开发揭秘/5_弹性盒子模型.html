@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<style>
+			.box {
+				height: 500px;
+				border: 1px solid #000;
+				/*display:flex;*/
+				/*新版的弹性盒子模型*/
+				/*display: -webkit-box;/*老板盒子模型*/
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			
+			.box div {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				border: 1px solid #000000;
+				background-color: #0026FF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+
+</html>

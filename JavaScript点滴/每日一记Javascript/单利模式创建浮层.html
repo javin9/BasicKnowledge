@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			button{
+				margin:0 10px;
+			}
+		</style>
+	</head>
+	<body>
+	   <button class="btnDiv">创建一个div</button> <button class="btnP">创建一个P banner</button>
+		<script type="text/javascript">
+			var getSingle=function (fn){
+				var result=null;
+				return function(){
+					if(!result){
+						console.log("dddd");
+						result=fn.apply(this,arguments);
+					}
+					return result;
+				}
+			}
+			
+			var createDiv=function(){
+				var div=document.createElement('div');
+				div.innerText="我是div";
+				div.style.cssText="width:100px;height:100px;margin:0 auto;background-color:#0000FF;";
+				document.body.appendChild(div);
+				return div;
+			}
+			
+			var createP=function(){
+				var p=document.createElement('p');
+				p.innerText="我是P标签";
+				p.style.cssText="width:100px;height:100px;margin:5 auto;background-color:#000;";
+				document.body.appendChild(p);
+				return p;
+			}
+			var createDivProxy= getSingle(createDiv);
+			var createPProxy=getSingle(createP);
+			document.querySelector('.btnDiv').addEventListener("click",function(){
+				var div=createDivProxy();
+				console.log(div.innerText);
+			});
+			document.querySelector('.btnP').addEventListener("click",function(){
+				var p=createPProxy();
+				console.log(p.innerText);
+			});
+		</script>
+	</body>
+</html>
