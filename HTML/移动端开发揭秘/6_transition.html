@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no" />
+		<meta name="x5-orientation" content="portrait" />
+		<meta name="x5-fullscreen" content="true" />
+		<meta name="screen-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<title></title>
+		<style type="text/css">
+			.box{
+				margin:0 auto;
+				margin-top:4rem;
+				width:8rem;
+				height:8rem;
+				background:#006EB3;
+				transition:all 3s;
+				transform-origin: left top;
+				-webkit-transform-origin: left top;
+			}
+		</style>
+		<script type="text/javascript">
+			var html=document.documentElement;
+				var hW=html.getBoundingClientRect().width;
+				html.style.fontSize=hW/15+"px";
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<img src=""/>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				document.addEventListener('touchstart',function(ev){
+					ev.preventDefault();
+				});
+				document.removeEventListener('touchstart')
+				var div=document.querySelector(".box");
+				div.addEventListener('touchend',function(){
+					//div.style.webkitTransform='skew(30deg,30deg)';
+					//div.style.webkitTransform="rotate(360deg)";
+					div.style.webkitTransform="scale(0.5)";
+					
+				});
+				
+			};
+		</script>
+    </body>
+</html>
