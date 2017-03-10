@@ -16,7 +16,6 @@
 				var result=null;
 				return function(){
 					if(!result){
-						console.log("dddd");
 						result=fn.apply(this,arguments);
 					}
 					return result;
