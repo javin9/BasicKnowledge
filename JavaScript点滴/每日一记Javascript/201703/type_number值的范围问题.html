@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			window.c = function(e) {
+				if(e.currentTarget.validity.valid) {
+					console.log(e.currentTarget.value);
+				}
+			}
+			//如果输入不合法，valid 返回 false。如果用户清空了 <input>，valid 是 true。
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/*
+			  for(var i = 0; i < 6; i++) {
+				(function(i) {
+					setTimeout(function() {
+						console.log("i="+i);
+					}, 3000);
+				})(i);
+
+			}
+			
+			for(var k = 0; k < 6; k++) {
+				
+					setTimeout((function(k) {
+						console.log("k="+k);
+					})(k), 5000);
+				
+
+			}
+			 * */
+			
+			for(var k = 0; k < 6; k++) {
+				
+					setTimeout((function(k) {
+						return function(){
+							console.log("k="+k);
+						}
+					})(k), 3000);
+				
+
+			}
+		</script>
+	</body>
+
+</html>
