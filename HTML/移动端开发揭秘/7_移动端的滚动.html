@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no" />
+
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body {
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			ul,
+			ol,
+			li {
+				list-style: none;
+			}
+			
+			.header {
+				height: 40px;
+				font-size: 20px;
+				color: #fff;
+				text-align: center;
+				background: #000;
+				line-height: 40px;
+			}
+			
+			.footer {
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: 40px;
+				line-height: 40px;
+				color: #fff;
+				text-align: center;
+				background: #000;
+			}
+			
+			.wrapper {
+				position: absolute;
+				top: 40px;
+				left: 0;
+				right: 0;
+				overflow: hidden;
+			}
+			
+			.li-item {
+				line-height: 20px;
+				text-align: center;
+				border-top: 1px solid #FF4400;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="header">我的小屋子</header>
+		<section class='wrapper'>
+			<ul id="list"></ul>
+		</section>
+		<footer class="footer"></footer>
+		<script src="../../JavaScript点滴/js/lib/m.Tween2.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				createLi();
+				var list = document.querySelector('#list');
+				var listH=list.clientHeight;
+				//设置translate
+				//css(list, "translateY", 100);
+				//获取translate
+				//console.log(css(list, "translateY"));
+				//3D 效果
+				css(list, "translateZ", 0.01);
+
+				var startPoint = 0,
+					startEl = 0,
+					lastY = 0,
+					lastDis = 0,
+					lasttime = null,
+					timedis = null;
+				list.addEventListener("touchstart", function(e) {
+					startPoint = e.changedTouches[0].pageY;
+					startEl = css(list, "translateY");
+					lastY = startEl;
+					lastDis = 0;
+					lasttime = Date.now(); //上一次的时间
+				});
+				list.addEventListener("touchmove", function(e) {
+					var nowPoint = e.changedTouches[0].pageY;
+					var distance = nowPoint - startPoint;
+					var translateY = distance + startEl;
+					css(list, "translateY", translateY);
+					lastDis =translateY- lastY;
+					var currentTime = Date.now();
+					timedis = currentTime - lasttime;
+					lasttime = currentTime;
+				});
+				list.addEventListener("touchend", function(e) {
+					console.log(lastDis / timedis);
+					var speed = lastDis / timedis;
+					var target = Math.round(speed * 10) + css(list, "translateY");
+					console.log(target);
+
+					MTween({
+						el: list,
+						target: { translateY: target },
+						time: Math.abs(parseInt(target * 1.5)),
+						type: "easeOut",
+						callIn: function() {
+							console.log(1);
+						}
+					});
+				});
+
+			}
+
+			function createLi() {
+				var list = document.querySelector("#list"),
+					lisListString = "";
+				for(var i = 0; i < 100; i++) {
+					lisListString += "<li class='li-item'>我是第" + i + "个li</li>"
+				}
+				list.innerHTML = lisListString;
+			}
+		</script>
+	</body>
+
+</html>

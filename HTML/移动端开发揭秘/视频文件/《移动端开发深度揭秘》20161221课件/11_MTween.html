@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Document</title>
+<style type="text/css">
+	#box {
+		width: 100px;
+		height: 100px;
+		border: 1px solid #000;
+		padding: 100px;
+	}
+	#div {
+		height: 100px;
+		background: red;
+	}
+</style>
+<script type="text/javascript" src="js/m.Tween2.js"></script>
+<script type="text/javascript">
+window.onload = function(){
+	var div = document.querySelector('#div');
+	// cssTransform(div,"scale",0);
+	// cssTransform(div,"rotate",720);
+	// console.log(cssTransform(div,"scale"));
+	fn1();
+	function fn1(){
+		MTween({
+			el: div,
+			target: {
+				scale: 0,
+				rotate: 720
+			},
+			time: 2000,
+			type: "easeOut",
+			callBack: fn2
+		});
+	}
+	function fn2(){
+		MTween({
+			el: div,
+			target: {
+				scale: 100,
+				rotate: 0
+			},
+			time: 2000,
+			type: "easeOut",
+			callBack: fn1
+		});
+	}
+	
+};
+</script>
+</head>
+<body>
+<div id="box">
+	<div id="div"></div>
+</div>
+</body>
+</html>
