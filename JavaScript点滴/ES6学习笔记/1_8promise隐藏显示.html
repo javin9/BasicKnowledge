@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.msgbox {
+				display: none;
+				width: 500px;
+				height: 500px;
+				background-color: #007AFF;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button class='btn'>点击显示隐藏切换</button>
+		<div class='msgbox'></div>
+		<script type="text/javascript">
+			var flag = false;
+			document.querySelector('.btn').addEventListener('click',show, false);
+
+			function show() {
+				flag = !flag;
+				var promise1 = new Promise(function(reolve, reject) {
+                  flag?reolve():reject();
+				});
+				promise1.then(function(){
+					console.log('reolve');
+					document.querySelector('.msgbox').style.display='block';
+				}).catch(function(){
+					console.log('reject');
+					document.querySelector('.msgbox').style.display='none';
+				});
+              //return promise1;
+			}
+		</script>
+	</body>
+
+</html>

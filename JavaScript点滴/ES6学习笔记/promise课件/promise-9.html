@@ -1,0 +1,33 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+*{margin: 0;padding: 0;list-style: none;}
+#div1{width: 100px;height: 100px;background: #ccc;border: 1px solid black;}
+
+    </style>
+</head>
+<body> 
+<input value="btn" id='btn' type="button">
+<div id='div1'></div>
+<script type="text/javascript">
+	var changeNode = true;
+	btn.addEventListener('click',show,false);
+
+	function show(){
+		changeNode = !changeNode;
+		return new Promise(function (resolve,reject){
+			changeNode?resolve():reject();
+		}).then(function(){
+			div1.style.display = 'block';
+		}).catch(function(){
+			div1.style.display = 'none';
+		});
+	}
+
+
+</script>
+</body>
+</html>

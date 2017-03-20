@@ -1,0 +1,27 @@
+
+
+Promise ->
+          -成功
+          -失败
+
+        ->决定去做这个事
+        ->我放弃做这个事
+
+Promise - 
+        两个参数
+        resolve -> 决定 then 第一个函数
+        reject  -> 放弃 catch
+
+
+静态的方法
+Promise.reject().then().catch(function(){})
+
+Promise.resolve().then(function(){})
+
+race -> 竞速竞赛
+
+一堆的promise 实例 谁先过来我就先算谁的
+先成功 -》 成功
+先失败 -》 失败
+
+all -> 所有的类型 只要有失败的 就会走catch
