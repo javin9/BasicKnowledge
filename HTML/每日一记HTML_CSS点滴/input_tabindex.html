@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="height:auto;">
+		<input type="text" name="my1" id="my1" value="" />
+		<input type="text" name="my" id="my" value="" tabindex="1" />
+		<script src="../../JavaScript点滴/js/lib/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			window.onload=function(){
+		     
+			var input=document.querySelector('#my');
+			console.log($(input)[0].tabIndex)
+			};
+			
+		  $('#my').keyup(function(){
+		  	console.log($(this)[0].tabIndex);
+		  });
+		</script>
+	</body>
+</html>

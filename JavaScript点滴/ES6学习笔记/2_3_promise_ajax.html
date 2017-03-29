@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/lib/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var f1 = function() {
+				return new Promise(function(resolve, reject) {
+					console.log("进入f1的promise");
+					$.ajax({
+						type: 'get',
+						url: 'data/1.txt',
+						success: function(data) {
+							console.log("进入f1的success");
+							resolve(data);
+						}
+					});
+				});
+			};
+			var f2 = function(param) {
+				return new Promise(function(resolve, reject) {
+				console.log("进入f2的promise");
+				console.log("我接到了_f1的数据——"+param);
+					$.ajax({
+						type: 'get',
+						url: 'data/2.txt',
+						success: function(data) {
+							console.log("进入f2的success");
+						
+							resolve(data);
+						}
+					});
+				});
+			}
+			var f3 = function(param) {
+				return new Promise(function(resolve, reject) {
+				console.log("进入f3的promise");
+				console.log("我接到了_f2的数据——"+param);
+					$.ajax({
+						type: 'get',
+						url: 'data/3.txt',
+						success: function(data) {
+							console.log("进入f3的success");
+							resolve(data);
+						}
+					});
+				});
+			};
+			
+			f1()
+			.then(function(param){
+				console.log('第一个then');
+				return f2(param);
+			})
+			.then(function(param){
+				f3(param);
+			});
+		</script>
+	</body>
+
+</html>
