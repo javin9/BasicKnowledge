@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//浏览器兼容性问题
+			
+			var name = ["p1", "p2", "p3", "p4", "p5"];
+			
+			var nameString = ['p1', 'p2', 'p3', 'p4', 'p5'];
+			
+			var nameNumber = [1,2,3,4,5,6,7,8,9];
+			
+			function add(){
+				console.log(arguments);
+//				console.log('------------------------------');
+//				console.log(ext);
+//				console.log(typeof arr);
+//				console.log(arr);
+				
+				
+			}
+			
+			add(name,1);//p1,p2,p3,p4,p5 
+			add(nameString,2);//["p1", "p2", "p3", "p4", "p5"]
+			add(nameNumber,3);//[1, 2, 3, 4, 5, 6, 7, 8, 9]
+		</script>
+	</body>
+</html>
