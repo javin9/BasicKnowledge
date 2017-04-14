@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var gps = navigator.geolocation; //.getCurrentPosition(showPosition);
+			if(gps) {
+				gps.getCurrentPosition(function(position) {
+					console.log(position);
+				}, function(error) {
+					console.log(error);
+					alert(error.code+":"+error.message);
+				},{
+					 //指示浏览器获取高精度的位置，默认为false
+					enableHighAccuracy: true,
+					// 指定获取地理位置的超时时间，默认不限时，单位为毫秒
+					timeout: 5000,
+					// 最长有效期，在重复获取地理位置时，此参数指定多久再次获取位置。
+					maximumAge: 1000
+				})
+			} else {
+				console.log('no gps');
+			}
+			console.log(gps);
+		</script>
+	</body>
+
+</html>

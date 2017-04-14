@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        div{width:100%;height:500px;background:#ffffff;border:1px solid;}
+        p{margin-bottom:10px;}
+        .p1 {
+            width: 50px;
+            height: 50px;
+            background: #0026ff;
+            float: left;
+        }
+        .p2 {
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+        }
+        .p3 {
+            width: 100px;
+            height: 100px;
+            background: #00ff21;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="p1"></p>
+        <p class="p2"></p>
+       <p class="p3"></p>
+    </div>
+    <script>
+        window.dv = [1, 3];
+        var obj = {
+            a: 1,
+            _b:2
+        }
+        console.log(obj);
+        console.log(obj._b);
+        var dv = dv || [];
+        console.log(dv);
+    </script>
+</body>
+</html>

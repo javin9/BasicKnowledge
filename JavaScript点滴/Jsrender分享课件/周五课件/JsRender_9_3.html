@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../../css/base.css" rel="stylesheet" />
+    <link href="../../css/table_css.css" rel="stylesheet" />
+    <script src="/Script/jquery-2.1.1.js"></script>
+    <script src="../../Script/jsrender.js"></script>
+</head>
+<body>
+    <table class="imagetable " id="bookTableId">
+        <thead><tr><th>电影名称</th><th>译</th><th>语言</th></tr></thead>
+        <tbody id="movieList"></tbody>
+    </table>
+    <span id="change">change</span>
+    <script type="text/javascript">
+        $(function () { 
+        });
+
+    </script>
+    <script type="text/html" id="movieTemplate">
+
+        {{if #getIndex()<=1}}
+        <tr>
+            <td>{{>name}}</td>
+            <td>{{>cn_Name}}</td>
+            <td>
+                {{for languages}}
+                {{:#parent.data.length}}
+                <br />
+                {{:#parent.parent.data.name}}
+                <br />
+                {{:#getIndex()+1}} :<em>{{:#data}}</em>
+                {{/for}}
+            </td>
+        </tr>
+        {{/if}}
+    </script>
+    <script type="text/javascript">
+        $(function () {
+             { data: movies }
+            var movies = [
+            {
+                name: "Meet Joe Black",
+                cn_Name: "《第六感生死恋》",
+                languages: ["English","French","Chinese"]
+            },
+            {
+                name: "Eyes Wide Shut",
+                cn_Name: "《大开眼戒》",
+                languages:["French","Spanish"]
+            },
+            {
+                name: "The Mighty",
+                cn_Name: "《陪着你走》"
+            },
+            {
+                name: "City Hunter",
+                cn_Name: "城市猎人",
+                languages: ["Mandarin","Chinese"]
+            }
+            ];
+
+            $("#movieList").html(
+                $("#movieTemplate").render(movies)
+            );
+
+        })
+    </script>
+</body>
+</html>

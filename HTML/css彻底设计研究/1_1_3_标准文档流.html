@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        .div1 {
+        width:400px;
+        height:100px;
+        background:#00ff21;
+        }
+        .div2 {
+            width: 400px;
+            height: 100px;
+            background: #808080;
+        }
+    </style>
+</head>
+<body>
+    CSS控制网页的表现形式
+    HTML控制网页的内容结构
+    标准流：不使用CSS规则时，各种元素的排列规则；
+
+    1.块级元素（block level）
+                     ---用于自己的区域
+                    div：他的左右元素会自动换行。 【注意：块级元素即使设置了宽度，仍然是独占一行的】
+    2.行内元素(inline)
+                    ---没有自己的区域
+                   span：仅仅是一个行内元素，他前后不会换行。纯粹是应用样式，当其它行内元素都不合适的时候，就可以使用
+    。行内元素的水平方向的padding-left,padding-right,margin-left,margin-right 都产生边距效果，但是竖直方向的padding-top,padding-bottom,margin-top,margin-bottom都不会产生边距效果。【水平方向有效，竖直方向无效】
+    <span></span>元素
+
+    渲染顺序 
+      从根节点-叶子
+      该分配区域的分配区域，该设置颜色的设置颜色，等等；
+   <br />
+    <div class="div1"></div>
+    <div class="div2"></div>
+</body>
+</html>

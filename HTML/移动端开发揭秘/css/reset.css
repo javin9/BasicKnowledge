@@ -1,16 +1,11 @@
-	*{
-				margin:0;
-				padding:0;
-			}
-			di
+*{margin:0;padding:0;}
 
-body{
-	font-family: helvetica;
-}
+body{font-family: helvetica;}
 
 body *{
 	-webkit-text-size-adjust:none;/*禁止文字缩放*/
 	-webkit-user-select: none;/*禁止选中*/
+	font-family: helvetica;
 }
 /*清除点击默认阴影*/
 a,
@@ -25,3 +20,19 @@ button{
 	border-radius: 0;
 }
 
+a{
+	text-decoration: none;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+
+
+/*img默认样式*/
+
+img {
+	/*去掉2像素的高度方法*/
+	vertical-align: top;
+}

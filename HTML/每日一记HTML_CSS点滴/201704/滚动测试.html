@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body {
+				height: 100%;
+				position: relative;
+				/*overflow: hidden;*/  /*加词句代码，就去掉了默认的滚动条*/
+			}
+			
+			ul,
+			ol,
+			li {
+				list-style: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul id="list">
+		</ul>
+		<script type="text/javascript">
+			function createLi() {
+				var list = document.querySelector("#list"),
+					lisListString = "";
+				for(var i = 0; i < 100; i++) {
+					lisListString += "<li class='li-item'>我是第" + i + "个li</li>"
+				}
+				list.innerHTML = lisListString;
+			}
+			createLi();
+		</script>
+
+	</body>
+
+</html>

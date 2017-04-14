@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="../Script/jquery-2.1.1.js"></script>
+    <script src="../Script/jsrender.js"></script>
+</head>
+<body>
+    <a href="../demos.html">JsRender Demos</a><br />
+    <h3>Using {{for}} to render hierarchical data - inline nested template.</h3>
+    <script id="movieTemplate" type="text/x-jsrender">
+        <tr>
+            <td>{{>title}}</td>
+            <td>
+                {{for }}
+                <div class="{{:#index%2 ? 'even' : 'odd'}}"></div>
+                <div>
+                    <em>{{>name}}</em>
+                </div>
+                {{else}}
+                No alternate languages
+                {{/for}}
+            </td>
+        </tr>
+    </script>
+    <table>
+        <thead><tr><th>Title</th><th>Languages</th></tr></thead>
+        <tbody id="movieList"></tbody>
+    </table>
+    <script type="text/javascript">
+
+        var movies = [
+            {
+                title: "Meet Joe Black",
+                languages: [
+                    { name: "English" },
+                    { name: "French" }
+                ],
+                times:1
+            },
+            {
+                title: "Eyes Wide Shut",
+                languages: [
+                    { name: "French" },
+                    { name: "Mandarin" },
+                    { name: "Spanish" }
+                ],
+                times: 1
+            },
+            {
+                title: "The Inheritance",
+                languages: [
+                    { name: "English" },
+                    { name: "German" }
+                ],
+                times: 1
+            },
+            {
+                title: "Local Story",
+                languages: []
+            },
+            {
+                title: "My Home Video"
+            }
+        ];
+
+        $("#movieList").html(
+            $("#movieTemplate").render(movies)
+        );
+
+    </script>
+</body>
+</html>

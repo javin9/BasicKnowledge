@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../Script/jquery-2.1.1.js"></script>
+    <script src="../Script/jsrender.js"></script>
+</head>
+<body>
+    <script id="peopleTemplate" type="text/x-jsrender">
+        <div>
+            {{:name}} lives in {{for address tmpl="#addressTemplate" /}}
+        </div>
+    </script>
+
+    <script id="addressTemplate" type="text/x-jsrender">
+        <b>{{>city}}</b>
+    </script>
+
+    <div id="result"></div>
+
+    <script type="text/javascript">
+        var people = [{
+            "name": "Pete",
+            "address": {
+                "city": "Seattle"
+            }
+        },
+  {
+      "name": "Heidi",
+      "address": {
+          "city": "Sidney"
+      }
+  }];
+
+        var html = $("#peopleTemplate").render(people);
+
+        $("#result").html(html);
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/base.css" rel="stylesheet" />
+    <link href="../css/chaoji/213.css" rel="stylesheet" />
+    <script src="../js/chaoji/213.js"></script>
+    <script>
+        var pics = document.getElementById('pics');
+        var pics_pre = getbyclass(pics, 'pics_pre')[0];
+        var pics_nex = getbyclass(pics, 'pics_next')[0];
+        var pics_list = getbyclass(pics, 'pics_list')[0];
+        var pics_ul = pics.getElementsByTagName('ul')[0];
+        var pics_lis = pics.getElementsByTagName('li');
+
+        var inow = 0;
+        for (var i = 0; i < pics_lis.length; i++) {
+            var list = document.createElement('li');
+            pics_list.appendChild(list);
+        }
+
+        var list_li = pics_list.getElementsByTagName('li');
+        for (var i = 0; i < pics_list.length; i++) {
+
+        }
+
+    </script>
+</head>
+<body>
+    <div id="pics">
+        <ul class="pics">
+            <li>
+                <a href="javascript:void(0);">
+                    <img src="../img/csschaoji/img213/1.jpg" />
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img src="../img/csschaoji/img213/2.jpg" />
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img src="../img/csschaoji/img213/3.jpg" />
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img src="../img/csschaoji/img213/4.jpg" />
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img src="../img/csschaoji/img213/5.jpg" />
+                </a>
+            </li>
+        </ul>
+        <span class="pics_pre"></span><span class="pics_next"></span>
+        <ul class="pics_list"></ul>
+    </div>
+</body>
+</html>

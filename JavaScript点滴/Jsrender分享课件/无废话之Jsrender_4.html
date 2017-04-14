@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="css/demos.css" rel="stylesheet" />
+    <link href="css/carlist.css" rel="stylesheet" />
+    <style>
+        .even {
+            background: #4cff00;
+        }
+
+        .odd {
+            background: #ff6a00;
+        }
+    </style>
+    <script src="../Script/jquery-2.1.1.js"></script>
+    <script src="../Script/jsrender.js"></script>
+</head>
+<body>
+    <table>
+        <thead><tr><th>车的名字</th><th>产地</th></tr></thead>
+        <tbody id="movieList"></tbody>
+    </table>
+    <!--模板-->
+    <script id="movieTemplate" type="text/x-jsrender">
+        <tr>
+            <td>{{>carname}}</td>
+            <td>
+                {{for orign}}
+                <div class="{{:#index%2 ? 'even' : 'odd'}}"><em>{{>name}}</em></div>
+                {{else}}
+                没有写明产地
+                {{/for}}
+            </td>
+        </tr>
+    </script>
+
+
+    <script type="text/javascript">
+
+        var movies = [
+            {
+                carname: "奔驰",
+                orign: [{ name: "中国" }, { name: "美国" }]
+            },
+            {
+                carname: "大众",
+                orign: [{ name: "德国" }, { name: "日本" }, { name: "中国" }]
+            },
+            {
+                carname: "宝马",
+                orign: [{ name: "德国" }, { name: "日本" }]
+            },
+            {
+                carname: "现代",
+                languages: []
+            },
+            {
+                carname: "比亚迪"
+            }
+        ];
+
+        $("#movieList").html(
+            $("#movieTemplate").render(movies)
+        );
+
+    </script>
+</body>
+</html>

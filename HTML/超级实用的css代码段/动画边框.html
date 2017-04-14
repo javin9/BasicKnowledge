@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/base.css" rel="stylesheet" />
+    <script src="../js/lib/prefixfree.js"></script>
+    <style>
+        .img {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            width: 310px;
+            height: 232px;
+        }
+
+        #demo {
+            width: 310px;
+            padding: 10px;
+            position: absolute;
+            left: 200px;
+            border: 1px solid;
+        }
+
+        .animation_border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0px;
+            bottom: 0px;
+            background-image: -webkit-linear-gradient(45deg,red 25%,transparent 25%,transparent 50%,red 50%,red 75%,transparent);
+            background-image: -webkit-linear-gradient(45deg,red 25%,transparent 25%,transparent 50%,red 50%,red 75%,transparent);
+            background-size: 30px 30px;
+            opacity: 0;
+            -webkit-transition: opacity 0.3s ease;
+        }
+
+            .animation_border:hover {
+                opacity: 1;
+            }
+
+        @-webkit-keyframes animate {
+            from; {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 50px 47px;
+            }
+        }
+
+        .animation_border {
+            animation: animate 0.5s infinite linear;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo">
+        <div class="animation_border"></div>
+        <img id="img" src="../img/34.jpg" />
+    </div>
+</body>
+</html>

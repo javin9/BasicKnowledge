@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/base.css" rel="stylesheet" />
+    <style>
+        #show_bigger_pic {
+            position: absolute;
+            width: 500px;
+            height: 400px;
+            top: 200px;
+            left: 200px;
+        }
+
+        .small_pic_div {
+            width: 240px;
+            height: 240px;
+            border: 1px solid;
+            float: left;
+            position: relative;
+        }
+
+        .big_pic_div {
+            width: 240px;
+            height: 240px;
+            border: 1px solid;
+            float: left;
+            margin-left: 10px;
+            display: none;
+            overflow: hidden;
+        }
+
+            .big_pic_div img {
+                position: relative;
+            }
+
+        .cover {
+            width: 240px;
+            height: 240px;
+            position: absolute;
+            border: 1px solid;
+            z-index: 2;
+            left: 0px;
+            top: 0px;
+        }
+
+        .float_span {
+            width: 155px;
+            height: 155px;
+            position: absolute;
+            left: 0;
+            top: 0px;
+            z-index: 1;
+            background-color: #b2dfee;
+            opacity: 0.5;
+            display: none;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="show_bigger_pic">
+        <span class="cover"></span>
+        <span class="float_span"></span>
+        <div class="small_pic_div">
+            <img src="../img/csschaoji/small.jpg" />
+        </div>
+        <div class="big_pic_div">
+            <img src="../img/csschaoji/big.jpg" />
+        </div>
+    </div>
+    <script type="text/javascript">
+        //获取指定父元素的指定类的子元素的函数
+        function gbc(parent, tclass) {
+            var allclass = parent.getElementsByTagName('*');//获取所有标签
+            var result = [];
+            for (var i = 0; i < allclass.length; i++) {
+                if (allclass[i].cl) {
+
+                }
+                result.push(allclass[i]);
+            }
+        }
+    </script>
+</body>
+</html>
