@@ -9,17 +9,16 @@
         .even {
             background: #4cff00;
         }
-
         .odd {
             background: #ff6a00;
         }
     </style>
-    <script src="../Script/jquery-2.1.1.js"></script>
-    <script src="../Script/jsrender.js"></script>
+    <script src="../js/lib/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
+   <script src="../js/lib/jsrender.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
     <table>
-        <thead><tr><th>车的名字</th><th>产地</th></tr></thead>
+        <thead><tr><th>车的名字</th><th>产地</th></tr></thead>      
         <tbody id="movieList"></tbody>
     </table>
     <!--模板-->
@@ -41,7 +40,7 @@
 
         var movies = [
             {
-                carname: "奔驰",
+                carnamew: "奔驰",
                 orign: [{ name: "中国" }, { name: "美国" }]
             },
             {
@@ -60,9 +59,10 @@
                 carname: "比亚迪"
             }
         ];
-
+var result=$("#movieTemplate").render(movies);
+console.log(result);
         $("#movieList").html(
-            $("#movieTemplate").render(movies)
+            //$("#movieTemplate").render(movies)
         );
 
     </script>
