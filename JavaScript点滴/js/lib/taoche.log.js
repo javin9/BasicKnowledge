@@ -2,7 +2,7 @@
  * Error自动采集日志,不需要手动调用，会自动捕获错误，上传到服务器
  */
 window.onerror = function(msg, url, row, col, error) {
-
+	console.log(error);
 	var parameters = {
 		msg: msg,
 		url: url,
@@ -11,10 +11,10 @@ window.onerror = function(msg, url, row, col, error) {
 		error: !!error.stack ? error.stack : ''
 	};
 	console.log(parameters);
-	sendData({
-		postData: parameters,
-		url: 'http://www.demo.com/handler/logerror.ashx'
-	});
+//	sendData({
+//		postData: parameters,
+//		url: 'http://www.demo.com/handler/logerror.ashx'
+//	});
 };
 
 

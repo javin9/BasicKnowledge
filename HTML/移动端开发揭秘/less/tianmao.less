@@ -1,0 +1,26 @@
+@r: 50rem;
+.rows {
+    display: -webkit-box;
+    display: flex;
+    div {
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        width: 0px;
+        a {
+            font-size: 22/@r;
+            color: #666;
+            text-align: center;
+            line-height: 52/@r;
+            display: block;
+        }
+        a:before {
+            content: '';
+            display: block;
+            margin: 0 auto;
+            width: 86/@r;
+            height: 85/@r;
+            background-image: url(../img/01.png);
+            background-size: 86/@r 85/@r ;
+        }
+    }
+}

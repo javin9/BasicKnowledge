@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="" name="txt" id="txt" value="" />
+		<script type="text/javascript">
+			// 防抖动函数
+			function debounce(func, wait, immediate) {
+				var timeout;
+				return function() {
+					var context = this,
+						args = arguments;
+					var later = function() {
+						timeout = null;
+						if(!immediate) func.apply(context, args);
+					};
+					var callNow = immediate & !timeout;
+					clearTimeout(timeout);
+					timeout = setTimeout(later, wait);
+					if(callNow) func.apply(context, args);
+				};
+			};
+			document.querySelector("#txt").onkeyup = debounce(function() {
+				console.log('erer');
+			}, 1000);
+		</script>
+	</body>
+
+</html>

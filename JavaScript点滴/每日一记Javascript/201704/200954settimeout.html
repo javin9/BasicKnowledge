@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var time=null;
+			 time=window.setTimeout(function(){
+				console.log('time');
+				clearTimeout(time);
+				time=null;
+				console.log(time);
+			},1000);
+			
+			
+		</script>
+	</body>
+</html>
