@@ -1,0 +1,4792 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+/*
+Append File:/2sc/m/CarList/CarList.js
+*/
+
+var httpValue = $("#hdhttpvalue") && $("#hdhttpvalue") != undefined && $("#hdhttpvalue").val() != undefined ? $("#hdhttpvalue").val() : "";
+
+var Menu = new Object();
+Menu.Init = function () {
+    var _this = this;
+    this.body = $("body");
+    this.menu = $("#menu");
+    this.menupop = $("#menupop");
+    this.menu.on("click", function () {
+        if (_this.menupop.hasClass("fn-hide")) {
+            _this.menupop.removeClass("fn-hide");
+        }
+        else {
+            _this.menupop.addClass("fn-hide");
+        }
+    });
+
+    this.body.on("click", function (event) {
+        if (event.target.id != "menu") {
+            _this.menupop.addClass("fn-hide");
+        }
+    })
+
+    var isShowTool =Tool.GetNumber($.getCookie('isShowTool2'));
+    if (isShowTool == 1) {
+        this.menupop.addClass("fn-hide");
+    
+    }
+    else {
+        this.menupop.removeClass("fn-hide");
+        $.setCookie('isShowTool2', '1', { domain: window.location.hostname, expireHours: 24 * 365 });
+    }
+ 
+
+}
+
+function SelectChange(option) {
+    window.location.href = option.value;
+};
+
+var CarList = new Object();
+CarList.Init = function () {  
+    var _this = this;
+    this.carList = $("#CarList");
+    this.filter = $("#carlistfilter");
+    this.loading = $("#spanloading");
+    this.totalnum = Tool.GetNumber($("#carlisttotalnum").val());
+
+    this.isload = true;
+    this.window = $(window);
+    this.filterinfo = SolrFilterInfo.Convert(_this.filter.val());
+    this.row = Tool.GetNumber(_this.filterinfo.Rows);
+    
+    HttpsDomain.Init($("#brand-filter"), "data-url");
+
+    this.window.scroll(function () {
+        var height = getScrollTop();
+        var page = pageSize();
+
+        if ($("#hdfpageswitchtype").val() == '0') {
+            _this.reload = false;
+            if ($("#hdreloadpage").val() == 1) {
+                _this.reload = true;
+            }
+            if ((height + page.WindowHeight) + 400 > page.PageHeight) {
+
+                if ((_this.totalnum < _this.row * _this.filterinfo.PageIdx) || _this.totalnum == 0)
+                    _this.isload = false;
+
+                if (_this.isload) {
+                    _this.isload = false;
+                    var ref = "";
+                    if (_this.filterinfo.BuilderUrl(102215).indexOf("http:") == 0 || _this.filterinfo.BuilderUrl(102215).indexOf("https:") == 0) {
+                        ref = _this.filterinfo.BuilderUrl(102215);
+                    } else if (_this.filterinfo.BuilderUrl(102215).indexOf("//m.che168.com") == 0) {
+                        ref = (httpValue == '' ? "http:" : httpValue) + _this.filterinfo.BuilderUrl(102215);
+                    } else {
+                        ref = (httpValue == '' ? "http:" : httpValue) + "//m.che168.com" + _this.filterinfo.BuilderUrl(102215);
+                    }
+                    _this.filterinfo.PageIdx++;
+                    var cur = "";
+                    if (_this.filterinfo.BuilderUrl(102215).indexOf("http:") == 0 || _this.filterinfo.BuilderUrl(102215).indexOf("https:") == 0) {
+                        cur = _this.filterinfo.BuilderUrl(102215);
+                    } else if (_this.filterinfo.BuilderUrl(102215).indexOf("//m.che168.com") == 0) {
+                        cur = (httpValue == '' ? "http:" : httpValue) + _this.filterinfo.BuilderUrl(102215);
+                    } else {
+                        cur = (httpValue == '' ? "http:" : httpValue) + "//m.che168.com" + _this.filterinfo.BuilderUrl(102215);
+                    }
+                    _this.filterinfo.PageIdx--;
+                    SenPvAreaIdOrder(2000000, ref, cur, 0, 0);
+
+                    if (_this.filterinfo.PageIdx % 3 == 0) {
+                        $("#divpager").removeClass('fn-hide');
+                        _this.loading.hide();
+                    } else {
+                        $("#divpager").addClass('fn-hide');
+                        _this.loading.show();
+                        _this.LoadCarList();
+                    }
+                } else {
+                    if (_this.reload) {
+                        $("#divpager").removeClass('fn-hide');
+                        _this.loading.hide();
+                    }
+                }
+            }
+        }
+        else {
+            if (_this.filterinfo.PageIdx < 200 && (height + page.WindowHeight) + 30 > page.PageHeight) {
+                if ((_this.totalnum < _this.row * _this.filterinfo.PageIdx) || _this.totalnum == 0)
+                    _this.isload = false;
+                if (_this.isload) {
+                    _this.isload = false;
+                    var ref = "";
+                    if(_this.filterinfo.BuilderUrl(102215).indexOf("http:") == 0 || _this.filterinfo.BuilderUrl(102215).indexOf("https:") == 0){
+                        ref = _this.filterinfo.BuilderUrl(102215);
+                    }else if(_this.filterinfo.BuilderUrl(102215).indexOf("//m.che168.com")==0){
+                        ref = (httpValue == '' ? "http:" : httpValue) + _this.filterinfo.BuilderUrl(102215);
+                    }else{
+                        ref = (httpValue == '' ? "http:" : httpValue) + "//m.che168.com" + _this.filterinfo.BuilderUrl(102215);
+                    }
+                    _this.filterinfo.PageIdx++;
+                    var cur = "";
+                    if (_this.filterinfo.BuilderUrl(102215).indexOf("http:") == 0 || _this.filterinfo.BuilderUrl(102215).indexOf("https:") == 0) {
+                        cur = _this.filterinfo.BuilderUrl(102215);
+                    } else if (_this.filterinfo.BuilderUrl(102215).indexOf("//m.che168.com") == 0) {
+                        cur = (httpValue == '' ? "http:" : httpValue) + _this.filterinfo.BuilderUrl(102215);
+                    } else {
+                        cur = (httpValue == '' ? "http:" : httpValue) + "//m.che168.com" + _this.filterinfo.BuilderUrl(102215);
+                    }
+                    _this.filterinfo.PageIdx--;
+                    SenPvAreaIdOrder(2000000, ref, cur, 0, 0);
+                    _this.loading.show();
+                    _this.LoadCarList();
+                }
+            }
+        }
+    });
+    //加载车源
+    this.LoadCarList = function () {
+        var isiphonehttps = (/iphone/.test(navigator.userAgent.toLowerCase()) || /ipad/.test(navigator.userAgent.toLowerCase()) || /ipod/.test(navigator.userAgent.toLowerCase())) ? true : false;
+        var _url = isiphonehttps ? httpValue + "//m.che168.com/handler/carlist/getcarlist.ashx?rand=2012&safe=" + $("#hdpageswitchsafe").val() : "/handler/carlist/getcarlist.ashx?rand=2012&safe=" + $("#hdpageswitchsafe").val();
+        var _data = this.filterinfo.ToString();
+        $.ajax({
+            type: 'get',
+            url: _url+'&v=20170320',
+            data: _data,
+            dataType: "html",
+            success: function (data) {
+                var html = $(data);
+                if ($("#hdfpageswitchtype").val() == "3" || $("#hdfpageswitchtype").val() == "5") {
+                    var protocal = window.location.protocol;
+                    html.find("a").each(function () {
+                        var url = $.trim($(this).attr("href"));
+                        if (url.indexOf('//') == 0) {
+                            url = protocal + url;
+                        }
+                        if (/^#+$/.test(url)) {
+                            return;
+                        }
+                        if (string.IsNullOrEmpty(url)) {
+                            return;
+                        }
+                        if (/^javascript:.*$/.test(url)) {
+                            return;
+                        }
+                        if (url.indexOf("autohome:") > -1) {
+                            return;
+                        } else {
+                            var passurl = "";
+                            url = url.replace(/#/g, "&");
+
+                            if (url.indexOf("http") == 0 || url.indexOf("https") == 0) {
+                                // 因主软件内嵌时无referer，所以将referer做为车源详情页url中的参数传递
+                                url = encodeURIComponent(url + "&ref=" + encodeURIComponent(encodeURIComponent(location.href)));
+                                passurl = "autohome://insidebrowser?url=" + url;
+                            }
+                            else {
+                                url = protocal + "//m.che168.com" + url + "&ref=" + encodeURIComponent(encodeURIComponent(location.href));
+                                url = encodeURIComponent(url);
+                                passurl = "autohome://insidebrowser?url=" + url;
+                            }
+                            $(this).attr("href", passurl);
+                        }
+                    });
+                }
+
+                _this.carList.append(html);
+                _this.filterinfo.PageIdx++;
+                var curUrl = location.href;
+                if ($("#hdfpageswitchtype").val() == '0') {
+                    if (_this.filterinfo.PageIdx % 3 == 0) {
+                        if (curUrl.indexOf('?') > -1) {
+                            showCarInfo(curUrl.split('?')[0] + 'page' + (_this.filterinfo.PageIdx - 1) + '/#' + curUrl.split('?')[1], curUrl.split('?')[0] + 'page' + _this.filterinfo.PageIdx + '/#' + curUrl.split('?')[1], _this.filterinfo.Rows * 2);
+
+                        } else {
+                            showCarInfo(curUrl + 'page' + (_this.filterinfo.PageIdx - 1) + '/', curUrl + 'page' + _this.filterinfo.PageIdx + '/', _this.filterinfo.Rows * 2);
+                        }
+                    } else {
+                        if (curUrl.indexOf('?') > -1) {
+                            showCarInfo(curUrl.split('?')[0] + 'page' + (_this.filterinfo.PageIdx - 1) + '/#' + curUrl.split('?')[1], curUrl.split('?')[0] + 'page' + _this.filterinfo.PageIdx + '/#' + curUrl.split('?')[1], _this.filterinfo.Rows);
+
+                        } else {
+                            showCarInfo(curUrl + 'page' + (_this.filterinfo.PageIdx - 1) + '/', curUrl + 'page' + _this.filterinfo.PageIdx + '/', _this.filterinfo.Rows);
+                        }
+                    }
+                } else {
+                    if (curUrl.indexOf('?') > -1) {
+                        showCarInfo(curUrl.split('?')[0] + 'page' + (_this.filterinfo.PageIdx - 1) + '/#' + curUrl.split('?')[1], curUrl.split('?')[0] + 'page' + _this.filterinfo.PageIdx + '/#' + curUrl.split('?')[1], (_this.filterinfo.PageIdx - 1) * _this.filterinfo.Rows);
+
+                    } else {
+                        showCarInfo(curUrl + 'page' + (_this.filterinfo.PageIdx - 1) + '/', curUrl + 'page' + _this.filterinfo.PageIdx + '/', (_this.filterinfo.PageIdx - 1) * _this.filterinfo.Rows);
+                    }
+                }
+
+                ATagBindClick();
+            },
+            complete: function () {
+                _this.isload = true;
+                _this.loading.hide();
+            },
+			error:function( jqXHR, textStatus, errorThrown)
+			{
+				if(textStatus=="timeout")
+					alert("网络异常");
+			}
+        });
+        /* 点击更多车源加载PV */
+  
+
+    }
+
+}
+
+var CarBrand = new Object();
+CarBrand.Init = function () {
+    var _this = this;
+    this.filter = $("#carlistfilter");
+    this.brand = $(".carbrand");
+    this.allbrand = $("#carallbrand");
+
+    this.brand.each(function () {
+        HttpsDomain.Init($(this), "data-url");
+    });
+
+    this.brand.on("click", function () {
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.filter.val());
+        solrfilterInfo.BrandPinyin = $(this).data("pinyin");
+        solrfilterInfo.BrandId =Tool.GetNumber($(this).data("brandid"));
+        _this.filter.val(solrfilterInfo.ToJString());
+    });
+
+    this.allbrand.on("click", function () {
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.filter.val());
+        solrfilterInfo.BrandPinyin = "";
+        solrfilterInfo.BrandId = 0;
+        _this.filter.val(solrfilterInfo.ToJString());
+        window.location = solrfilterInfo.BuilderUrl(101814)
+    });
+}
+
+var CarBrandMore = new Object();
+CarBrandMore.Init = function () {
+    var _this = this;
+    this.filter = $("#filtermore");
+    this.btnfiltermore = $("#btnfiltermore");
+    this.brand = $(".carbrandmore");
+    this.allbrandmore = $("#carallbrandmore");
+    this.blockbrandmore = $("#blockbrandmore");
+
+    this.brand.each(function () {
+        HttpsDomain.Init($(this), "data-url");
+    });
+
+    this.brand.on("click", function () {
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.filter.val());
+        solrfilterInfo.BrandPinyin = $(this).data("pinyin");
+        solrfilterInfo.BrandId = Tool.GetNumber($(this).data("brandid"));
+        
+        Base.filter = _this.filter;
+        Base.submit = _this.btnfiltermore;
+        Base.isajax = false;
+        Base.submit.removeClass("disabled");
+        Base.submit.html("确定");
+        $(".carbrandmore").each(function () {
+            if ($(this).data("pinyin") === solrfilterInfo.BrandPinyin) {
+                $(this).parent('li').addClass('active');
+                _this.blockbrandmore.text($(this).text().trim());
+                _this.blockbrandmore.addClass('active');
+            }
+            else {
+                $(this).parent('li').removeClass('active');
+            }
+        });
+        Base.Ajax(solrfilterInfo, 103759);
+        Base.submit.unbind("click").click(function () {
+            var url = $(this).attr("_href");
+            if (url.indexOf("javascript") == -1) {
+                $.replace.closeAll('.replace', function () {
+                    window.location = url;
+                });
+            }
+        })
+    });
+
+    this.allbrandmore.on("click", function () {
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.filter.val());
+        solrfilterInfo.BrandPinyin = "";
+        solrfilterInfo.BrandId = 0;
+        
+        Base.filter = _this.filter;
+        Base.submit = _this.btnfiltermore;
+        Base.isajax = false;
+        Base.submit.removeClass("disabled");
+        Base.submit.html("确定");
+        
+        Base.Ajax(solrfilterInfo, 103759);
+        Base.submit.unbind("click").click(function () {
+            var url = $(this).attr("_href");
+            if (url.indexOf("javascript") == -1) {
+                $.replace.closeAll('.replace', function () {
+                    window.location = url;
+                });
+            }
+        })
+    });
+}
+
+var CarSeries = new Object();
+CarSeries.Init = function ()
+{
+    var _this = this;
+    this.filter = $("#carlistfilter");
+    this.series = $(".carseries");
+    this.allseries = $("#allseries");
+    this.seriesspec = $(".carseriesspec");
+
+    this.seriesspec.each(function () {
+        HttpsDomain.Init($(this), "data-url");
+    });
+   
+    this.series.on("click", function () {
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.filter.val());
+        solrfilterInfo.SeriesPinyin = $(this).data("pinyin");
+        solrfilterInfo.SeriesId = [];
+        solrfilterInfo.SpecId = [];
+        solrfilterInfo.SeriesYearId = [];
+        solrfilterInfo.SeriesId.push(Tool.GetNumber($(this).data("seriesid")));
+        var classid = Tool.GetNumber($(this).data("classid"));
+        if (classid != 0)
+        {
+            solrfilterInfo.ClassId = [];
+            solrfilterInfo.ClassId.push(classid);
+            solrfilterInfo.ClassPinyin = $(this).data("classpinyin");
+        }
+        _this.filter.val(solrfilterInfo.ToJString());
+        var url=solrfilterInfo.BuilderUrl(101814);
+        $.replace.closeAll('.replace', function () {
+            window.location = url;
+        });
+    });
+
+    this.allseries.on("click", function () {
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.filter.val());
+        solrfilterInfo.SeriesPinyin = "";
+        solrfilterInfo.SeriesId = []
+        solrfilterInfo.SpecId = [];
+        solrfilterInfo.SeriesYearId = [];
+        _this.filter.val(solrfilterInfo.ToJString());
+        var url=solrfilterInfo.BuilderUrl(101814);
+        $.replace.closeAll('.replace', function () {
+            window.location = url;
+        });
+    });
+
+    this.seriesspec.on("click", function () {
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.filter.val());
+        solrfilterInfo.SeriesPinyin = "";
+        solrfilterInfo.SeriesId = []
+        solrfilterInfo.SpecId = [];
+        solrfilterInfo.SeriesYearId = [];
+        solrfilterInfo.SeriesPinyin = $(this).data("pinyin");
+        solrfilterInfo.SeriesId.push(Tool.GetNumber($(this).data("seriesid")));
+        solrfilterInfo.ClassPinyin = "";
+        solrfilterInfo.ClassId = [];
+        solrfilterInfo.ClassId.push(Tool.GetNumber($(this).data("classid")));
+        _this.filter.val(solrfilterInfo.ToJString());
+    })
+}
+
+var CarSeriesMore = new Object();
+CarSeriesMore.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.filter = $("#filtermore");
+    this.btnfiltermore = $("#btnfiltermore");
+    this.series = $(".carseriesmore");
+    this.allseries = $("#allseriesmore");
+    this.seriesspec = $(".carseriesspecmore");
+    this.blockbrandmore = $("#blockbrandmore");
+
+    this.seriesspec.each(function () {
+        HttpsDomain.Init($(this), "data-url");
+    });
+
+    this.series.on("click", function () {
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.filter.val());
+        solrfilterInfo.SeriesPinyin = $(this).data("pinyin");
+        solrfilterInfo.SeriesId = [];
+        solrfilterInfo.SpecId = [];
+        solrfilterInfo.SeriesYearId = [];
+        solrfilterInfo.SeriesId.push(Tool.GetNumber($(this).data("seriesid")));
+        var classid = Tool.GetNumber($(this).data("classid"));
+        if (classid != 0) {
+            solrfilterInfo.ClassId = [];
+            solrfilterInfo.ClassId.push(classid);
+            solrfilterInfo.ClassPinyin = $(this).data("classpinyin");
+        }
+
+        var seriesname = $(this).text().trim();
+        Base.filter = _this.filter;
+        Base.submit = _this.btnfiltermore;
+        Base.isajax = false;
+        Base.submit.removeClass("disabled");
+        Base.submit.html("确定");
+        $(".carbrandmore").each(function () {
+            if ($(this).data("pinyin") === solrfilterInfo.BrandPinyin) {
+                $(this).parent('li').addClass('active');
+                if (_this.blockbrandmore.text().indexOf(seriesname) === -1) {
+                    _this.blockbrandmore.text(_this.blockbrandmore.text() + " " + seriesname);
+                    _this.blockbrandmore.addClass('active');
+                }
+            }
+            else {
+                $(this).parent('li').removeClass('active');
+            }
+        });
+        Base.Ajax(solrfilterInfo, 103759);
+        Base.submit.unbind("click").click(function () {
+            var url = $(this).attr("_href");
+            if (url.indexOf("javascript") == -1) {
+                $.replace.closeAll('.replace', function () {
+                    window.location = url;
+                });
+            }
+        })
+        $.replace.navigateTo($(".aside-block-filter"));
+    });
+
+    this.allseries.on("click", function () {
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.filter.val());
+        solrfilterInfo.SeriesPinyin = "";
+        solrfilterInfo.SeriesId = []
+        solrfilterInfo.SpecId = [];
+        solrfilterInfo.SeriesYearId = [];
+
+        Base.filter = _this.filter;
+        Base.submit = _this.btnfiltermore;
+        Base.isajax = false;
+        Base.submit.removeClass("disabled");
+        Base.submit.html("确定");
+        
+        Base.Ajax(solrfilterInfo, 103759);
+        Base.submit.unbind("click").click(function () {
+            var url = $(this).attr("_href");
+            if (url.indexOf("javascript") == -1) {
+                $.replace.closeAll('.replace', function () {
+                    window.location = url;
+                });
+            }
+        })
+        $.replace.navigateTo($(".aside-block-filter"));
+    });
+
+    this.seriesspec.on("click", function () {
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.filter.val());
+        solrfilterInfo.SeriesPinyin = "";
+        solrfilterInfo.SeriesId = []
+        solrfilterInfo.SpecId = [];
+        solrfilterInfo.SeriesYearId = [];
+        solrfilterInfo.SeriesPinyin = $(this).data("pinyin");
+        solrfilterInfo.SeriesId.push(Tool.GetNumber($(this).data("seriesid")));
+        solrfilterInfo.ClassPinyin = "";
+        solrfilterInfo.ClassId = [];
+        solrfilterInfo.ClassId.push(Tool.GetNumber($(this).data("classid")));
+        _this.filter.val(solrfilterInfo.ToJString());
+        if ($("#specmore_submit").attr("id")) {
+            Base.ReInit($("#filtermore"), $("#specmore_submit"));
+            carspecmore.Init();
+            $(".spec_radio").prop("checked", false);
+            $(".spec_checkbox").prop("checked", false);
+            $("#radiospecall").prop("checked", false);
+        }
+    })
+}
+
+var Base = new Object()
+Base.Init = function () {
+    this.filter = $("#filterprice");
+    this.submit = $("#btnprice");
+    this.isajax = false;
+
+    this.submit.unbind("click").click(function () {
+      var url=$(this).attr("_href");
+        if(url.indexOf("javascript")==-1)
+        {
+            $.replace.closeAll('.replace', function () {
+                window.location = url;
+            });
+        }
+    })
+}
+Base.ReInit = function (filter, submit) {
+    this.filter = filter;
+    this.submit = submit;
+    this.isajax = false;
+    this.submit.removeClass("disabled");
+    this.submit.html("确定");
+    this.Ajax(SolrFilterInfo.Convert(this.filter.val()));
+
+    if (this.submit.attr("id") == "specmore_submit") {
+        this.submit.unbind("click").click(function () {
+            Base.filter = $("#filtermore");
+            Base.submit = $("#btnfiltermore");
+            Base.isajax = false;
+            Base.submit.removeClass("disabled");
+            Base.submit.html("确定");
+            var filterinfo = SolrFilterInfo.Convert(Base.filter.val());
+            $(".carbrandmore").each(function () {
+                if ($(this).data("pinyin") === filterinfo.BrandPinyin) {
+                    $(this).parent('li').addClass('active');
+
+                    var seriesname = "";
+                    $(".carseriesmore").each(function () {
+                        if ($(this).data("pinyin") === filterinfo.SeriesPinyin) {
+                            seriesname = $(this).text().trim();
+                        }
+                    });
+
+                    if ($("#blockbrandmore").text().indexOf(seriesname) === -1) {
+                        $("#blockbrandmore").text($("#blockbrandmore").text() + " " + seriesname);
+                        $("#blockbrandmore").addClass('active');
+                    }
+                }
+                else {
+                    $(this).parent('li').removeClass('active');
+                }
+            });
+            Base.Ajax(filterinfo, 103759);
+            Base.submit.unbind("click").click(function () {
+                var url = $(this).attr("_href");
+                if (url.indexOf("javascript") == -1) {
+                    $.replace.closeAll('.replace', function () {
+                        window.location = url;
+                    });
+                }
+            })
+            $.replace.navigateTo($(".aside-block-filter"));
+        })
+    }
+    else {
+        this.submit.unbind("click").click(function () {
+            var url = $(this).attr("_href");
+            if (url.indexOf("javascript") == -1) {
+                $.replace.closeAll('.replace', function () {
+                    window.location = url;
+                });
+            }
+        })
+    }
+}
+Base.SetParam = function (filterinfo, pv, num, allnum) {
+    this.submit.html("一共有" + num + "车源");
+    if (num > 0) {
+        filterinfo.PageIdx = 1;
+        this.submit.attr("_href", filterinfo.BuilderUrl(pv));
+        this.submit.removeClass("disabled");
+    }
+    else {
+        if (this.submit) {
+            if (this.submit.attr("id") === "spec_submit") {
+                if (allnum > 0) {
+                    this.submit.html("无结果，全国" + allnum + "辆车源");
+                    this.submit.attr("_href", filterinfo.BuilderUrl(pv));
+                    this.submit.removeClass("disabled");
+                } else {
+                    this.submit.html("暂无车源，查看外地或相似车");
+                    this.submit.attr("_href", filterinfo.BuilderUrl(pv));
+                    this.submit.removeClass("disabled");
+                }
+            } else if (this.submit.attr("id") === "specmore_submit") {
+                if (allnum > 0) {
+                    this.submit.html("无结果，全国" + allnum + "辆车源");
+                    this.submit.attr("_href", filterinfo.BuilderUrl(pv));
+                    this.submit.removeClass("disabled");
+                } else {
+                    this.submit.html("暂无车源，查看外地或相似车");
+                    this.submit.attr("_href", filterinfo.BuilderUrl(pv));
+                    this.submit.removeClass("disabled");
+
+                    $("#btnfiltermore").html("暂无车源，查看外地或相似车");
+                    $("#btnfiltermore").attr("_href", filterinfo.BuilderUrl(pv));
+                    $("#btnfiltermore").removeClass("disabled");
+                }
+            } else {
+                if ($("#specmore_submit").text() != "确定") {
+                    if (allnum > 0) {
+                        this.submit.html("无结果，全国" + allnum + "辆车源");
+                        this.submit.attr("_href", filterinfo.BuilderUrl(pv));
+                        this.submit.removeClass("disabled");
+                    } else {
+                        this.submit.html("暂无车源，查看外地或相似车");
+                        this.submit.attr("_href", filterinfo.BuilderUrl(pv));
+                        this.submit.removeClass("disabled");
+                    }
+                } else {
+                    this.submit.attr("_href", "javascript:void(0)");
+                    this.submit.addClass("disabled");
+                }
+            }
+        }
+    }
+    this.filter.val(filterinfo.ToJString());
+    this.isajax = false;
+}
+Base.Ajax = function (filterinfo, pv, callback) {
+    var isiphonehttps = (/iphone/.test(navigator.userAgent.toLowerCase()) || /ipad/.test(navigator.userAgent.toLowerCase()) || /ipod/.test(navigator.userAgent.toLowerCase())) ? true : false;
+    var _url = isiphonehttps ? httpValue + "//m.che168.com/handler/carlist/GetCarNumber.ashx?rand=2012" : "/handler/carlist/GetCarNumber.ashx?rand=2012";
+    var _data = filterinfo.ToString();
+    var _this = this;
+    if (!_this.isajax) {
+        _this.isajax = true;
+        $.ajax({
+            url: _url,
+            data: _data,
+            dataType: "json",
+            success: function (data) {
+                var num = Tool.GetNumber(data.number);
+                var allnum = Tool.GetNumber(data.allnumber);
+                _this.SetParam(filterinfo, pv, num, allnum);
+                if (callback) {
+                    callback(num);
+                }
+
+            },
+            complete: function () {
+                _this.isajax = false;
+            }
+        });
+    }
+}
+Base.Clear = function () {
+    var solrfilterInfo = SolrFilterInfo.Convert(this.filter.val());
+    solrfilterInfo.MinPrice = 0;
+    solrfilterInfo.MaxPrice = 0;
+    solrfilterInfo.ClassId = [];
+    solrfilterInfo.ClassPinyin = "";
+    solrfilterInfo.MinAge = 0;
+    solrfilterInfo.MaxAge = 0;
+    solrfilterInfo.MinMileage = 0;
+    solrfilterInfo.MaxMileage = 0;
+    solrfilterInfo.Gearbox = 0;
+    solrfilterInfo.Source = [];
+    solrfilterInfo.DisplacementId = [];
+    solrfilterInfo.EnvironmentId = [];
+    solrfilterInfo.Option = [];
+    solrfilterInfo.Seat = [];
+    solrfilterInfo.Fuel = [];
+    solrfilterInfo.PowerTrain = [];
+    solrfilterInfo.Structure = [];
+    solrfilterInfo.Color = [];
+    solrfilterInfo.Nationality = [];
+    solrfilterInfo.CountryType = [];
+    solrfilterInfo.ExtendRepair = 0;
+    solrfilterInfo.HasWarranty = 0;
+    solrfilterInfo.HasPhoto = 1;
+    solrfilterInfo.HasDiscountPrice = 0;
+	solrfilterInfo.IsVincodeStatus = 0;
+    solrfilterInfo.BrandPinyin = "";
+    solrfilterInfo.BrandId = 0;
+    solrfilterInfo.SeriesPinyin = 0;
+    solrfilterInfo.SeriesId = [];
+    solrfilterInfo.SeriesYearId = [];
+    solrfilterInfo.SpecId = [];
+    this.Ajax(solrfilterInfo);
+}
+
+//价钱
+var Price = new Object()
+Price.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.title = $("#selectprice");
+    this.price = $(".spanprice");//价钱
+    this.customprice = $("#customprice"); //自定义
+    this.custompricepop = $("#custompricepop");
+    this.txtmaxprice = $("#txtcustommaxprice");//自定义最大值
+    this.txtminprice = $("#txtcustomminprice");//自定义最小值
+    this.btnsure = $("#btncustomprice");//确定
+    this.newfilter = $("#newfilterprice");
+    this.reg = /\d(\.\d+)?/
+    this.isshowcustom = false;
+
+    //选价钱
+    this.price.on("click", function () {
+        var span = $(this);
+        _this.customprice.removeClass("active");
+        _this.custompricepop.addClass("fn-hide");
+        _this.isshowcustom = false;
+        var filterinfo = SolrFilterInfo.Convert(_this.newfilter.val());
+        filterinfo.MinPrice = Tool.GetNumber(span.attr("minprice"));
+        filterinfo.MaxPrice = Tool.GetNumber(span.attr("maxprice"));
+        filterinfo.CustomPrice = 0;
+        _this.price.removeClass("active");
+        span.addClass("active");
+        _this.newfilter.val(filterinfo.ToJString());
+        var url = filterinfo.BuilderUrl(103758);
+        $.replace.closeAll('.replace', function () {
+            window.location = url;
+        });
+    });
+
+    this.btnsure.on("click", function () {
+        keyup();
+        if ($(this).hasClass("active")) {
+            var maxprice = Tool.GetNumber(_this.txtmaxprice.val());
+            var minprice = Tool.GetNumber(_this.txtminprice.val());
+            _this.custompricepop.addClass("fn-hide");
+            var filterinfo = SolrFilterInfo.Convert(_this.newfilter.val());
+            if (maxprice > 2000)
+                maxprice = 2000;
+            if (minprice > 2000)
+                minprice = 2000;
+            if (minprice > maxprice && maxprice > 0) {
+                filterinfo.MinPrice = maxprice;
+                filterinfo.MaxPrice = minprice;
+            } else {
+                filterinfo.MinPrice = minprice;
+                filterinfo.MaxPrice = maxprice;
+            }
+            filterinfo.CustomPrice = 1;
+            _this.newfilter.val(filterinfo.ToJString());
+            var url = filterinfo.BuilderUrl(103758);
+            $.replace.closeAll('.replace', function () {
+                window.location = url;
+            });
+        }
+    });
+    var keyup = function () {
+        var maxprice = _this.txtmaxprice.val();
+        var minprice = _this.txtminprice.val();
+        if (_this.reg.test(maxprice) || _this.reg.test(minprice)) {
+            maxprice = Tool.GetNumber(maxprice);
+            minprice = Tool.GetNumber(minprice);
+            _this.btnsure.addClass("active");
+        } else {
+            _this.btnsure.removeClass("active");
+        }
+    }
+    var keydown = function (event) {
+        var keycode = event.which;
+        if ((keycode >= 48 && keycode <= 57) || (keycode >= 96 && keycode <= 105) || keycode == 8 || keycode == 46) {
+
+        }
+        else {
+            event.stopPropagation();
+            event.preventDefault();
+        }
+
+    }
+    this.txtmaxprice.on("keyup", keyup).on("keydown", keydown);
+    this.txtminprice.on("keyup", keyup).on("keydown", keydown);
+}
+
+//级别
+var Level = new Object();
+Level.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.level = $(".carclass");//选项
+    this.selectclass = $("#selectclass");//选中;
+    this.btnsure = $("#btncustomlevel")//确定
+    this.newfilter = $("#newfilterlevel");
+    this.classpinyin = [];
+    this.classname = [];
+    this.classid = [];
+    this.limit = null; //不限
+
+    this.InitSelect();
+
+    this.level.on("click", function () {
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.newfilter.val());
+        var classid = Tool.GetNumber($(this).attr("classid"));
+        var classpinyin = $(this).attr("classpinyin");
+        var classname = $(this).html();
+        if (classpinyin) {
+            _this.limit.removeClass("active");
+            if (!$(this).hasClass("active")) { //被选中
+                if (_this.classpinyin.length >= 3)
+                    return;
+                _this.classpinyin.push(classpinyin);
+                _this.classname.push(classname);
+                _this.classid.push(classid);
+                $(this).addClass("active");
+            }
+            else { //取消选中
+                var k = 0;
+                for (var i = 0; i < _this.classpinyin.length; i++) {
+                    if (_this.classpinyin[i] == classpinyin) {
+                        k++;
+                        continue;
+                    }
+                    _this.classpinyin[i - k] = _this.classpinyin[i];
+                    _this.classname[i - k] = _this.classname[i];
+                    _this.classid[i - k] = _this.classid[i];
+                }
+                _this.classpinyin.length = _this.classpinyin.length - k;
+                _this.classname.length = _this.classname.length - k;
+                _this.classid.length = _this.classid.length - k
+                if (_this.classname.length == 0) {
+                    _this.setLimit(solrfilterInfo);
+                    return;
+                }
+
+                $(this).removeClass("active");
+            }
+        }
+        else {  //不限
+            _this.setLimit(solrfilterInfo)
+        }
+    });
+
+    this.btnsure.on("click", function () {
+        var filterinfo = SolrFilterInfo.Convert(_this.newfilter.val());
+        filterinfo.ClassPinyin = _this.classpinyin.join('-');
+        filterinfo.ClassId = _this.classid;
+        _this.newfilter.val(filterinfo.ToJString());
+        var url = filterinfo.BuilderUrl(103757);
+        $.replace.closeAll('.replace', function () {
+            window.location = url;
+        });
+    });
+}
+
+Level.InitSelect = function () {
+    var _this = this;
+    var selectclassid = this.selectclass.attr("classid");
+    var selectclasspinyin = this.selectclass.attr("classpinyin");
+    var classpinyin = selectclasspinyin.split('-');
+    var classid = selectclassid.split('-');
+    this.level.each(function () {
+        var itemclasspinyin = $(this).attr("classpinyin");
+        if (itemclasspinyin) {
+            if (classpinyin.contains(itemclasspinyin)) {
+                _this.classpinyin.push($(this).attr("classpinyin"));
+                _this.classname.push($(this).html());
+                _this.classid.push(Tool.GetNumber($(this).attr("classid")));
+                $(this).addClass("active");
+            }
+            else {
+                $(this).removeClass("active");
+            }
+        }
+        else {
+            _this.limit = $(this);
+            if (classpinyin.length == 0 || classpinyin.contains(itemclasspinyin)) {
+                $(this).addClass("active");
+            } else {
+                $(this).removeClass("active");
+            }
+        }
+    });
+}
+
+Level.setLimit = function (solrfilterInfo) {
+    var _this = this;
+    solrfilterInfo.ClassPinyin = "";
+    solrfilterInfo.ClassId = [];
+    this.classpinyin = [];
+    this.classname = [];
+    this.classid = [];
+    this.level.removeClass("active");
+    this.limit.addClass("active");
+}
+
+//业务说明浮层
+var FloatLayer = new Object()
+FloatLayer.Init = function () {
+    var _this = this;
+    this.frombaidu = $("#hdfrombaidu");
+    this.showcheckcar = $("#hdshowcheckcar");
+    this.autonomous = $("#hdautonomous");
+    this.authenticate = $("#hdauthenticate");
+
+    var isFloatLayer = $.getCookie('isFloatLayer', '0');
+    if ((_this.frombaidu.val() == 1 || isFloatLayer == '3') && (_this.showcheckcar.val() == 1 || _this.autonomous.val() == 1 || _this.authenticate.val() == 1)) {
+        if (isFloatLayer == '0' || isFloatLayer == '2' || isFloatLayer == '3') {
+            $.pop.open("pop-business");
+            $.setCookie('isFloatLayer', '1', { domain: '.che168.com', expireHours: 24 * 30 * 12 });
+        }
+    }
+}
+
+//https处理
+var HttpsDomain = new Object();
+HttpsDomain.Init = function (dataUrl, attr) {
+    var isiphonehttps = (/iphone/.test(navigator.userAgent.toLowerCase()) || /ipad/.test(navigator.userAgent.toLowerCase()) || /ipod/.test(navigator.userAgent.toLowerCase())) ? true : false;
+
+    if (isiphonehttps) {
+        var dataurl = dataUrl.attr(attr);
+        if (dataurl) {
+            if (dataurl.indexOf("//m.che168.com") == 0) {
+                dataUrl.attr(attr, httpValue + dataurl);
+            } else {
+                dataUrl.attr(attr, httpValue + "//m.che168.com" + dataurl);
+            }
+        }
+    }
+}
+
+$(function () {
+    Menu.Init();
+    CarList.Init();
+    Base.Init();
+    
+    $("#filtermorehref").click(function () {
+        Base.ReInit($("#filtermore"), $("#btnfiltermore"));
+    });
+    $("#filterQiuck").find("a").each(function () {
+        
+        HttpsDomain.Init($(this),'href');
+    });
+    $("#filterSort").find("a").bind("click", function () {
+        HttpsDomain.Init($(this), '_href');
+        var url = $(this).attr("_href");
+	    window.location = url;
+	});
+
+    Price.Init();
+    Level.Init();
+	var filterinfo = SolrFilterInfo.Convert(Base.filter.val());
+	Base.Ajax(filterinfo, 101813);
+	FloatLayer.Init();
+})
+
+/*
+Append File:/2sc/m/CarList/FilterMore.js
+*/
+
+var MoreCarBrand = new Object();
+
+
+MoreCarBrand.Clear = function () {
+    $(".list-brand li").removeClass("active");
+    $("#blockbrandmore").removeClass("active");
+    $("#blockbrandmore").text("更多")
+};
+
+//价钱
+var MorePrice = new Object()
+MorePrice.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.moreprice = $(".morespanprice");//价钱
+    this.moretxtmaxprice = $("#moretxtcustommaxprice");//自定义最大值
+    this.moretxtminprice = $("#moretxtcustomminprice");//自定义最小值
+    this.morebtnsure = $("#morebtncustomprice")//确定
+    this.reg = /\d(\.\d+)?/
+    
+    //选价钱
+    this.moreprice.on("click", function () {
+        if (!_this.base.isajax) {
+            var span = $(this);
+            _this.isshowcustom = false;
+            var filterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+            filterinfo.MinPrice = Tool.GetNumber(span.attr("minprice"));
+            filterinfo.MaxPrice = Tool.GetNumber(span.attr("maxprice"));
+            filterinfo.CustomPrice = 0;
+            _this.base.Ajax(filterinfo, 103759);
+            _this.moreprice.removeClass("active");
+            span.addClass("active");
+        }
+    });
+
+    this.morebtnsure.on("click", function () {
+        keyup();
+        if ($(this).hasClass("active")) {
+            _this.moreprice.removeClass("active");
+            var maxprice = Tool.GetNumber(_this.moretxtmaxprice.val());
+            var minprice = Tool.GetNumber(_this.moretxtminprice.val());
+            var filterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+            if (maxprice > 2000)
+                maxprice = 2000;
+            if (minprice > 2000)
+                minprice = 2000;
+            if (minprice > maxprice && maxprice > 0) {
+                filterinfo.MinPrice = maxprice;
+                filterinfo.MaxPrice = minprice;
+            } else {
+                filterinfo.MinPrice = minprice;
+                filterinfo.MaxPrice = maxprice;
+            }
+            filterinfo.CustomPrice = 1;
+            _this.base.Ajax(filterinfo, 103759);
+        }
+    });
+    var keyup = function () {
+        var maxprice = _this.moretxtmaxprice.val();
+        var minprice = _this.moretxtminprice.val();
+        if (_this.reg.test(maxprice) || _this.reg.test(minprice)) {
+            maxprice = Tool.GetNumber(maxprice);
+            minprice = Tool.GetNumber(minprice);
+            _this.morebtnsure.addClass("active");
+        } else {
+            _this.morebtnsure.removeClass("active");
+        }
+    }
+    var keydown = function (event) {
+        var keycode = event.which;
+        if ((keycode >= 48 && keycode <= 57) || (keycode >= 96 && keycode <= 105) || keycode == 8 || keycode == 46) {
+
+        }
+        else {
+            event.stopPropagation();
+            event.preventDefault();
+        }
+
+    }
+    this.moretxtmaxprice.on("keyup", keyup).on("keydown", keydown);
+    this.moretxtminprice.on("keyup", keyup).on("keydown", keydown);
+}
+
+MorePrice.Clear = function () {
+    this.moretxtmaxprice.val('');
+    this.moretxtminprice.val('');
+    this.moreprice.removeClass("active");
+    this.morebtnsure.removeClass("active");
+}
+
+//级别
+var MoreLevel = new Object();
+MoreLevel.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.morelevel = $(".morecarclass");//选项
+    this.moreselectclass = $("#moreselectclass");//选中;
+    this.classpinyin = [];
+    this.classname = [];
+    this.classid = [];
+    this.limit = null; //不限
+
+    this.InitSelect();
+
+    this.morelevel.on("click", function () {
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        var classid = Tool.GetNumber($(this).attr("classid"));
+        var classpinyin = $(this).attr("classpinyin");
+        var classname = $(this).html();
+        if (classpinyin) {
+            _this.limit.removeClass("active");
+            if (!$(this).hasClass("active")) { //被选中
+                if (_this.classpinyin.length >= 3)
+                    return;
+                _this.classpinyin.push(classpinyin);
+                _this.classname.push(classname);
+                _this.classid.push(classid);
+                $(this).addClass("active");
+                solrfilterInfo.ClassId.push(classid);
+                solrfilterInfo.ClassPinyin = _this.classpinyin.join("-");
+                _this.base.Ajax(solrfilterInfo, 103759);
+            }
+            else { //取消选中
+                var k = 0;
+                for (var i = 0; i < _this.classpinyin.length; i++) {
+                    if (_this.classpinyin[i] == classpinyin) {
+                        k++;
+                        continue;
+                    }
+                    _this.classpinyin[i - k] = _this.classpinyin[i];
+                    _this.classname[i - k] = _this.classname[i];
+                    _this.classid[i - k] = _this.classid[i];
+                }
+                _this.classpinyin.length = _this.classpinyin.length - k;
+                _this.classname.length = _this.classname.length - k;
+                _this.classid.length = _this.classid.length - k
+                if (_this.classname.length == 0) {
+                    _this.setLimit(solrfilterInfo);
+                    return;
+                }
+
+                $(this).removeClass("active");
+                solrfilterInfo.ClassPinyin = _this.classpinyin.join('-');
+                solrfilterInfo.ClassId = _this.classid;
+
+                _this.base.Ajax(solrfilterInfo, 103759);
+            }
+        }
+        else {  //不限
+            _this.setLimit(solrfilterInfo)
+        }
+    });
+}
+
+MoreLevel.InitSelect = function () {
+    var _this = this;
+    var selectclassid = this.moreselectclass.attr("classid");
+    var selectclasspinyin = this.moreselectclass.attr("classpinyin");
+    var classpinyin = selectclasspinyin.split('-');
+    var classid = selectclassid.split('-');
+    this.morelevel.each(function () {
+        var itemclasspinyin = $(this).attr("classpinyin");
+        if (itemclasspinyin) {
+            if (classpinyin.contains(itemclasspinyin)) {
+                _this.classpinyin.push($(this).attr("classpinyin"));
+                _this.classname.push($(this).html());
+                _this.classid.push(Tool.GetNumber($(this).attr("classid")));
+                $(this).addClass("active");
+            }
+            else {
+                $(this).removeClass("active");
+            }
+        }
+        else {
+            _this.limit = $(this);
+            if (classpinyin.length == 0 || classpinyin.contains(itemclasspinyin)) {
+                $(this).addClass("active");
+            } else {
+                $(this).removeClass("active");
+            }
+        }
+    });
+}
+
+MoreLevel.Clear = function () {
+    this.morelevel.removeClass("active");
+    //$('#morelevel_0').addClass('active');
+    this.classpinyin = [];
+    this.classname = [];
+    this.classid = [];
+}
+
+MoreLevel.setLimit = function (solrfilterInfo) {
+    var _this = this;
+    solrfilterInfo.ClassPinyin = "";
+    solrfilterInfo.ClassId = [];
+    this.classpinyin = [];
+    this.classname = [];
+    this.classid = [];
+    _this.base.Ajax(solrfilterInfo, 103759);
+    this.morelevel.removeClass("active");
+    this.limit.addClass("active");
+}
+
+//车龄
+var MoreAge = new Object()
+MoreAge.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.customage = $("#customage");
+    this.txtminage = $("#moreminage");
+    this.txtmaxage = $("#moremaxage");
+    this.loadInnerAge = $("#loadInnerAge");
+    this.rangeAge = $("#rangeAge");
+    this.reg = /\d(\.\d+)?/
+
+    this.customage.on("touchmove", function () {
+        var maxage = Tool.GetNumber(_this.txtmaxage.data('num'));
+        var minage = Tool.GetNumber(_this.txtminage.data('num'));
+        if (maxage == 12) {
+            maxage = 0;
+        }
+        var filterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        filterinfo.MinAge = minage
+        filterinfo.MaxAge = maxage;
+        _this.base.Ajax(filterinfo, 103759);
+    })
+}
+
+MoreAge.Clear = function () {
+    this.customage.attr("data-value", "0,12");
+    this.txtminage.attr("style", "left: 0%;");
+    this.txtminage.data("num", "0");
+    this.txtmaxage.attr("style", "left: 100%;");
+    this.txtmaxage.data("num", "12");
+    this.loadInnerAge.attr("style", "left: 0%; width: 100%;");
+    this.rangeAge.text("不限车龄");
+}
+
+//里程
+var MoreMileage = new Object()
+MoreMileage.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.custommileage = $("#custommileage");
+    this.txtmaxmileage = $("#moremaxmileage");
+    this.txtminmileage = $("#moreminmileage");
+    this.loadInnerMile = $("#loadInnerMile");
+    this.rangeMile = $("#rangeMile");
+    this.reg = /\d(\.\d+)?/
+
+    this.custommileage.on("touchmove", function () {
+        var minmileage = Tool.GetNumber(_this.txtminmileage.data('num'));
+        var maxmileage = Tool.GetNumber(_this.txtmaxmileage.data('num'));
+        if (maxmileage == 12) {
+            maxmileage = 0;
+        }
+        var filterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        filterinfo.MinMileage = minmileage
+        filterinfo.MaxMileage = maxmileage
+        filterinfo.CustomPrice = 1;
+        _this.base.Ajax(filterinfo, 103759);
+    })
+}
+
+MoreMileage.Clear = function () {
+    this.custommileage.attr("data-value", "0,12");
+    this.txtminmileage.attr("style", "left: 0%;");
+    this.txtminmileage.data("num", "0");
+    this.txtmaxmileage.attr("style", "left: 100%;");
+    this.txtmaxmileage.data("num", "12");
+    this.loadInnerMile.attr("style", "left: 0%; width: 100%;");
+    this.rangeMile.text("不限里程");
+}
+
+//变速箱
+var GearBox = new Object();
+GearBox.Init = function () {
+    var _this = this;
+    this.gearbox = $(".gearbox");
+    this.title = $("#selectgearbox");
+    this.selectgearbox = $("#selectgearbox");
+    this.gearboxname = "";
+    this.base = Base;
+    this.limit = null;
+    this.before = null;
+
+    this.InitSelect();
+
+    this.gearbox.on("click", function () {
+        var gearbox = Tool.GetNumber($(this).attr("gearbox"));
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        if (!$(this).hasClass("active")) {//被选中
+            if (_this.before == null) {
+                solrfilterInfo.Gearbox = gearbox;
+                _this.before = $(this);
+            }
+            else {
+                _this.before.removeClass("active");
+                solrfilterInfo.Gearbox = gearbox;
+                _this.before = $(this);
+            }
+            $(this).addClass("active");
+            _this.title.html($(this).html());
+            if (gearbox == 0) {
+                _this.title.removeClass("active");
+            }
+            else {
+                _this.title.addClass("active");
+            }
+            _this.base.Ajax(solrfilterInfo, 103759);
+        }
+
+    });
+}
+GearBox.InitSelect = function () {
+    var _this = this;
+    var selectgearbox = Tool.GetNumber(this.selectgearbox.attr("gearbox"));
+    this.gearbox.each(function () {
+        var gearbox = Tool.GetNumber($(this).attr("gearbox"));
+        if (gearbox == 0) { //不限
+            _this.limit = $(this);
+            if (selectgearbox == gearbox) {
+                _this.gearbox.removeClass("active");
+                $(this).addClass("active");
+                _this.title.removeClass("active");
+                _this.before = $(this);
+            } else {
+                $(this).removeClass("active");
+            }
+        }
+        else {
+            if (selectgearbox == gearbox) {
+                $(this).addClass("active");
+                _this.before = $(this);
+            } else {
+                $(this).removeClass("active");
+            }
+        }
+    })
+
+}
+GearBox.Clear = function () {
+    this.title.removeClass("active");
+    this.title.html("不限");
+    this.before = null;
+    this.gearbox.removeClass("active");
+    //$('#gearbox_0').addClass('active');
+}
+
+//来源
+var Source = new Object()
+Source.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.source = $(".source");//选项
+    this.title = $("#sourceselect");//标题
+    this.selectsource = $("#sourceselect");//选中;
+    this.sourcename = [];
+    this.limit = null; //不限
+
+    this.InitSelect();
+
+    this.source.on("click", function () {
+        var sourceid = Tool.GetNumber($(this).attr("sourceid"));
+        var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        if (sourceid != 0) {
+            _this.limit.removeClass("active");
+            if ($(this).hasClass("active")) { //取消选中
+                $(this).removeClass("active");
+                solrfilterinfo.Source.remove(sourceid);
+                _this.sourcename.remove($(this).html());
+                if (solrfilterinfo.Source.length == 0) {
+                    _this.setLimit(solrfilterinfo);
+                    return;
+                }
+
+            }
+            else { //选中
+                if (_this.sourcename.length >= 3)
+                    return;
+                $(this).addClass("active");
+                _this.sourcename.push($(this).html());
+                solrfilterinfo.Source.push(sourceid);
+
+            }
+            _this.title.html(_this.sourcename.join('、'));
+            _this.title.addClass("active");           
+            solrfilterinfo.Activitytype = 0;
+            _this.base.Ajax(solrfilterinfo, 103759);
+
+        }
+        else {//不限
+            _this.setLimit(solrfilterinfo);
+
+        }
+    });
+}
+
+Source.InitSelect = function () {
+    var _this = this;
+    var sourceidList = this.selectsource.attr("sourceid").split('-');
+    this.source.each(function () {
+        var sourceid = Tool.GetNumber($(this).attr("sourceid"));
+        if (sourceid == 0)//不限
+        {
+            _this.limit = $(this);
+            if (sourceidList.contains(sourceid)) {
+                $(this).addClass("active");
+                _this.title.removeClass("active");
+            } else {
+                $(this).removeClass("active");
+            }
+        }
+        else {
+            if (sourceidList.contains(sourceid)) {
+                $(this).addClass("active");
+                _this.sourcename.push($(this).html());
+            } else {
+                $(this).removeClass("active");
+            }
+        }
+    });
+}
+
+Source.setLimit = function (solrfilterInfo) {
+    var _this = this;
+    _this.title.html("不限");
+    _this.title.removeClass("active");
+    _this.source.removeClass("active")
+    _this.limit.addClass("active");
+    var source=[];
+    if (solrfilterInfo.Source.contains(5))
+    {
+        source.push(5);
+    }
+    if (solrfilterInfo.Source.contains(6))
+    {
+        source.push(6);
+    }
+    solrfilterInfo.Source = source;
+    solrfilterInfo.Activitytype = 0;
+    _this.base.Ajax(solrfilterInfo, 103759);
+    _this.sourcename = [];
+}
+
+Source.Clear = function ()
+{
+    this.title.removeClass("active");
+    this.title.html("不限");
+    this.sourcename = [];
+    this.source.removeClass("active");
+    //$('#source_0').addClass('active');
+}
+
+//排量
+var Displacement = new Object();
+Displacement.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.displacement = $(".displacement");
+    this.title = $("#selectdisplacment");
+    this.selectdisplacement = $("#selectdisplacment");
+    this.limit = null;
+    this.displacementname = [];
+
+    this.InitSelect();
+
+    this.displacement.on("click", function () {
+        var displaceid = Tool.GetNumber($(this).attr("displaceid"));
+        var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        if (displaceid != 0) {
+            _this.limit.removeClass("active");
+            if ($(this).hasClass("active")) { //取消选中
+                $(this).removeClass("active");
+                solrfilterinfo.DisplacementId.remove(displaceid);
+                _this.displacementname.remove($(this).html());
+                if (solrfilterinfo.DisplacementId.length == 0) {
+                    _this.setLimit(solrfilterinfo);
+                    return;
+                }
+            }
+            else { //选中
+                if (_this.displacementname.length >= 3)
+                    return;
+                $(this).addClass("active");
+                _this.displacementname.push($(this).html());
+                solrfilterinfo.DisplacementId.push(displaceid);
+            }
+            _this.title.html(_this.displacementname.join('、'));
+            _this.title.addClass("active");
+            _this.base.Ajax(solrfilterinfo, 103759);
+        }
+        else {//不限
+            _this.setLimit(solrfilterinfo);
+
+        }
+    });
+}
+
+Displacement.InitSelect = function () {
+    var _this = this;
+    var selectdispalcementidList = this.selectdisplacement.attr("displaceid").split("-");
+    this.displacement.each(function () {
+        var displacementid = Tool.GetNumber($(this).attr("displaceid"));
+        if (displacementid == 0) { //不限
+            _this.limit = $(this);
+            if (selectdispalcementidList.contains(displacementid)) {
+                $(this).addClass("active");             
+            } else {
+                $(this).removeClass("active");
+            }
+        }
+        else {
+            if (selectdispalcementidList.contains(displacementid)) {
+                $(this).addClass("active");
+                _this.displacementname.push($(this).html());
+            } else {
+                $(this).removeClass("active");
+            }
+        }
+    });
+}
+
+Displacement.setLimit = function (solrfilterInfo) {
+    var _this = this;
+    _this.title.html("不限");
+    _this.title.removeClass("active");
+    _this.displacement.removeClass("active")
+    _this.limit.addClass("active");
+    solrfilterInfo.DisplacementId = [];
+    _this.base.Ajax(solrfilterInfo, 103759);
+    _this.displacementname = [];
+}
+
+Displacement.Clear = function ()
+{
+    this.displacementname = [];
+    this.title.html("不限");
+    this.title.removeClass("active");
+    this.displacement.removeClass("active");
+    //$('#displace_0').addClass('active');
+}
+
+//排放标准
+var Environmental = new Object();
+Environmental.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.environment = $(".environment")
+    this.title = $("#selectenvironment");
+    this.selectenvironment = $("#selectenvironment");
+    this.potion = $("#environmentpotion");
+    this.environmentname = [];
+
+    this.InitSelect();
+    
+    this.environment.on("click", function () {
+        var environmentid = Tool.GetNumber($(this).attr("environmentid"));
+        var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        if (environmentid != 0) {
+            _this.limit.removeClass("active");
+            if ($(this).hasClass("active")) { //取消选中
+                $(this).removeClass("active");
+                solrfilterinfo.EnvironmentId.remove(environmentid);
+                _this.environmentname.remove($(this).text());
+                if (solrfilterinfo.EnvironmentId.length == 0) {
+                    _this.setLimit(solrfilterinfo);
+                    return;
+                }
+
+            }
+            else { //选中
+                if (_this.environmentname.length >= 3)
+                    return;
+                $(this).addClass("active");
+                _this.environmentname.push($(this).text());
+                solrfilterinfo.EnvironmentId.push(environmentid);
+
+            }
+            _this.title.html(_this.environmentname.join('、'));
+            _this.title.addClass("active");
+            _this.base.Ajax(solrfilterinfo, 103759);
+
+        }
+        else {//不限
+            _this.setLimit(solrfilterinfo);
+        }
+    });
+
+}
+
+Environmental.InitSelect = function () {
+    var _this = this;
+    var selectenvironmentlist = this.selectenvironment.attr("environmentid").split('-');
+    this.environment.each(function () {
+        var environmentid = Tool.GetNumber($(this).attr("environmentid"));
+        if (environmentid == 0) {
+            _this.limit = $(this);
+            if (selectenvironmentlist.contains(environmentid)) {
+                $(this).addClass("active");
+            } else {
+                $(this).removeClass("active");
+            }
+        }
+        else {
+            if (selectenvironmentlist.contains(environmentid)) {
+                $(this).addClass("active");
+                _this.environmentname.push($(this).text());
+            } else {
+                $(this).removeClass("active");
+            }
+        }
+    });
+}
+
+Environmental.setLimit = function (solrfilterInfo) {
+    var _this = this;
+    _this.title.html("不限");
+    _this.title.removeClass("active");
+    _this.environment.removeClass("active")
+    _this.limit.addClass("active");
+    solrfilterInfo.EnvironmentId = [];
+    _this.base.Ajax(solrfilterInfo, 103759);
+    _this.environmentname = [];
+}
+Environmental.Clear = function () {
+    this.environmentname = [];
+    this.title.html("不限");
+    this.title.removeClass("active");
+    this.environment.removeClass("active");
+    //$('#environment_0').addClass('active');
+}
+
+//配置
+var Option = new Object();
+Option.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.option = $(".option")
+    this.title = $("#selectoption");
+    this.selectoption = $("#selectoption");
+    this.potion = $("#optionpotion");
+    this.optionname = [];
+    this.option.addClass("fn-hide").removeClass("active");
+    this.InitSelect();
+    this.potion.parent().on("click", function () {
+        if (_this.potion.hasClass("icon-arrow-up")) {
+            _this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+            _this.option.addClass("fn-hide");
+        }
+        else {
+            _this.potion.removeClass("icon-arrow-down").addClass("icon-arrow-up");
+            _this.option.removeClass("fn-hide");
+        }
+    });
+    this.option.on("click", function () {
+        var optionid = Tool.GetNumber($(this).attr("optionid"));
+        var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        if (optionid != 0) {
+            _this.limit.removeClass("active");
+            if ($(this).hasClass("active")) { //取消选中
+                $(this).removeClass("active");
+                solrfilterinfo.Option.remove(optionid);
+                _this.optionname.remove($(this).html());
+                if (solrfilterinfo.Option.length == 0) {
+                    _this.setLimit(solrfilterinfo);
+                    return;
+                }
+
+            }
+            else { //选中
+                if (_this.optionname.length >= 3)
+                    return;
+                $(this).addClass("active");
+                _this.optionname.push($(this).html());
+                solrfilterinfo.Option.push(optionid);
+
+            }
+            _this.title.html(_this.optionname.join('、'));
+            _this.title.addClass("active");
+            _this.base.Ajax(solrfilterinfo, 103759);
+
+        }
+        else {//不限
+            _this.setLimit(solrfilterinfo);
+
+        }
+    });
+}
+Option.InitSelect = function () {
+    var _this = this;
+    var selectoptionList = this.selectoption.attr("optionid").split('-');
+    this.option.each(function () {
+        var optionid = Tool.GetNumber($(this).attr("optionid"));
+        if (optionid == 0) {
+            _this.limit = $(this);
+            if (selectoptionList.contains(optionid)) {
+                $(this).addClass("active");
+            }
+        }
+        else {
+            if (selectoptionList.contains(optionid)) {
+                $(this).addClass("active");
+                _this.optionname.push($(this).html());
+            }
+        }
+    });
+}
+Option.setLimit = function (solrfilterInfo) {
+    var _this = this;
+    _this.title.html("不限");
+    _this.title.removeClass("active");
+    _this.option.removeClass("active")
+    _this.limit.addClass("active");
+    solrfilterInfo.Option = [];
+    _this.base.Ajax(solrfilterInfo, 103759);
+    _this.optionname = [];
+}
+Option.Clear = function () {
+    this.optionname = [];
+    this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+    this.option.addClass("fn-hide").removeClass("active");
+    this.title.html("不限");
+    this.title.removeClass("active");
+}
+
+//座位
+var Seat = new Object()
+Seat.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.seat = $(".seat")
+    this.title = $("#selectseat");
+    this.selectoption = $("#selectseat");
+    this.potion = $("#seatpotion");
+    this.seatname = [];
+    this.seat.addClass("fn-hide").removeClass("active");
+    this.InitSelect();
+    this.potion.parent().on("click", function () {
+        if (_this.potion.hasClass("icon-arrow-up")) {
+            _this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+            _this.seat.addClass("fn-hide");
+        }
+        else {
+            _this.potion.removeClass("icon-arrow-down").addClass("icon-arrow-up");
+            _this.seat.removeClass("fn-hide");
+        }
+    });
+    this.seat.on("click", function () {
+        var seatid = Tool.GetNumber($(this).attr("seatid"));
+        var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        if (seatid != 0) {
+            _this.limit.removeClass("active");
+            if ($(this).hasClass("active")) { //取消选中
+                $(this).removeClass("active");
+                solrfilterinfo.Seat.remove(seatid);
+                _this.seatname.remove($(this).html());
+                if (solrfilterinfo.Seat.length == 0) {
+                    _this.setLimit(solrfilterinfo);
+                    return;
+                }
+
+            }
+            else { //选中
+                if (_this.seatname.length >= 3)
+                    return;
+                $(this).addClass("active");
+                _this.seatname.push($(this).html());
+                solrfilterinfo.Seat.push(seatid);
+
+            }
+            _this.title.html(_this.seatname.join('、'));
+            _this.title.addClass("active");
+            _this.base.Ajax(solrfilterinfo, 103759);
+
+        }
+        else {//不限
+            _this.setLimit(solrfilterinfo);
+        }
+    });
+}
+Seat.InitSelect = function () {
+    var _this = this;
+    var selectseatList = this.selectoption.attr("seatid").split('-');
+    this.seat.each(function () {
+        var seatid = Tool.GetNumber($(this).attr("seatid"));
+        if (seatid == 0) {
+            _this.limit = $(this);
+            if (selectseatList.contains(seatid)) {
+                $(this).addClass("active");
+            }
+        }
+        else {
+            if (selectseatList.contains(seatid)) {
+                $(this).addClass("active");
+                _this.seatname.push($(this).html());
+            }
+        }
+    });
+}
+Seat.setLimit = function (solrfilterInfo) {
+    var _this = this;
+    _this.title.html("不限");
+    _this.title.removeClass("active");
+    _this.seat.removeClass("active")
+    _this.limit.addClass("active");
+    solrfilterInfo.Option = [];
+    _this.base.Ajax(solrfilterInfo, 103759);
+    _this.seatname = [];
+}
+Seat.Clear = function () {
+    this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+    this.seat.addClass("fn-hide").removeClass("active");
+    this.seatname = [];
+    this.title.html("不限");
+    this.title.removeClass("active");
+}
+
+//燃料
+var Fuel = new Object();
+Fuel.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.fuel = $(".fuel");
+    this.title = $("#selectfuel");
+    this.selectfuel = $("#selectfuel");
+    this.potion = $("#fuelpotion");
+    this.limit = null;
+    this.fuelname = [];
+    this.fuel.addClass("fn-hide").removeClass("active");
+    this.InitSelect();
+    this.potion.parent().on("click", function () {
+        if (_this.potion.hasClass("icon-arrow-up")) {
+            _this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+            _this.fuel.addClass("fn-hide");
+        }
+        else {
+            _this.potion.removeClass("icon-arrow-down").addClass("icon-arrow-up");
+            _this.fuel.removeClass("fn-hide");
+        }
+    });
+
+    this.fuel.on("click", function () {
+        _this.potion.parent().find("b").html("");
+        var fuelid = Tool.GetNumber($(this).attr("fuelid"));
+        var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        if (fuelid != 0) {
+            _this.limit.removeClass("active");
+            if ($(this).hasClass("active")) { //取消选中
+                $(this).removeClass("active");
+                solrfilterinfo.Fuel.remove(fuelid);
+                _this.fuelname.remove($(this).html());
+                if (solrfilterinfo.Fuel.length == 0) {
+                    _this.setLimit(solrfilterinfo);
+                    return;
+                }
+
+            }
+            else { //选中
+                if (_this.fuelname.length >= 3)
+                    return;
+                $(this).addClass("active");
+                _this.fuelname.push($(this).html());
+                solrfilterinfo.Fuel.push(fuelid);
+
+            }
+            _this.title.html(_this.fuelname.join('、'));
+            _this.title.addClass("active");
+            _this.base.Ajax(solrfilterinfo, 103759);
+
+        }
+        else {//不限
+            _this.setLimit(solrfilterinfo);
+
+        }
+    });
+}
+Fuel.InitSelect = function () {
+    var _this = this;
+    var selectfuelList = this.selectfuel.attr("fuelid").split('-');
+    _this.potion.parent().find("b").html("");
+    this.fuel.each(function () {
+        var fuelid = Tool.GetNumber($(this).attr("fuelid"));
+        if (fuelid == 0) {
+            _this.limit = $(this);
+            if (selectfuelList.contains(fuelid)) {
+                $(this).addClass("active");
+                _this.potion.parent().find("b").html("（汽油、柴油、电动、油电混合）");
+            }
+        }
+        else {
+            if (selectfuelList.contains(fuelid)) {
+                $(this).addClass("active");
+                _this.fuelname.push($(this).html());
+
+            }
+        }
+    });
+}
+Fuel.setLimit = function (solrfilterInfo) {
+    var _this = this;
+    _this.title.html("不限");
+    _this.title.removeClass("active");
+    _this.fuel.removeClass("active")
+    _this.limit.addClass("active");
+    solrfilterInfo.Fuel = [];
+    _this.base.Ajax(solrfilterInfo, 103759);
+    _this.fuelname = [];
+    _this.potion.parent().find("b").html("（汽油、柴油、电动、油电混合）");
+}
+
+Fuel.Clear = function () {
+    this.fuelname = [];
+    this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+    this.fuel.addClass("fn-hide").removeClass("active");
+    this.title.html("不限");
+    this.title.removeClass("active");
+}
+
+//驱动
+var Power = new Object()
+Power.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.power = $(".power");
+    this.title = $("#selectpower");
+    this.selectpower = $("#selectpower");
+    this.potion = $("#powerpotion");
+    this.limit = null;
+    this.powername = [];
+    this.power.addClass("fn-hide").removeClass("active");
+    this.InitSelect();
+    this.potion.parent().on("click", function () {
+        if (_this.potion.hasClass("icon-arrow-up")) {
+            _this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+            _this.power.addClass("fn-hide");
+        }
+        else {
+            _this.potion.removeClass("icon-arrow-down").addClass("icon-arrow-up");
+            _this.power.removeClass("fn-hide");
+        }
+    });
+    this.power.on("click", function () {
+        var powerid = Tool.GetNumber($(this).attr("powerid"));
+        var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        _this.potion.parent().find("b").html("");
+        if (powerid != 0) {
+            _this.limit.removeClass("active");
+            if ($(this).hasClass("active")) { //取消选中
+                $(this).removeClass("active");
+                solrfilterinfo.PowerTrain.remove(powerid);
+                _this.powername.remove($(this).html());
+                if (solrfilterinfo.PowerTrain.length == 0) {
+                    _this.setLimit(solrfilterinfo);
+                    return;
+                }
+
+            }
+            else { //选中
+                if (_this.powername.length >= 3)
+                    return;
+                $(this).addClass("active");
+                _this.powername.push($(this).html());
+                solrfilterinfo.PowerTrain.push(powerid);
+
+            }
+            _this.title.html(_this.powername.join('、'));
+            _this.title.addClass("active");
+            _this.base.Ajax(solrfilterinfo, 103759);
+
+        }
+        else {//不限
+            _this.setLimit(solrfilterinfo);
+
+        }
+    });
+}
+Power.Clear = function () {
+    this.powername = [];
+    this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+    this.power.removeClass("active").removeClass("active");
+    this.power.addClass("fn-hide");
+    this.title.html("不限");
+    this.title.removeClass("active");
+}
+
+Power.InitSelect = function () {
+    var _this = this;
+    _this.potion.parent().find("b").html("");
+    var selectPowerList = this.selectpower.attr("powerid").split('-');
+    this.power.each(function () {
+        var powerid = Tool.GetNumber($(this).attr("powerid"));
+        if (powerid == 0) {
+            _this.limit = $(this);
+            if (selectPowerList.contains(powerid)) {
+                $(this).addClass("active");
+                _this.potion.parent().find("b").html("（前驱、后驱、四驱）");
+            }
+        }
+        else {
+            if (selectPowerList.contains(powerid)) {
+                $(this).addClass("active");
+                _this.powername.push($(this).html());
+            }
+        }
+    });
+
+}
+
+Power.setLimit = function (solrfilterInfo) {
+    var _this = this;
+    _this.title.html("不限");
+    _this.title.removeClass("active");
+    _this.power.removeClass("active")
+    _this.limit.addClass("active");
+    solrfilterInfo.PowerTrain = [];
+    _this.base.Ajax(solrfilterInfo, 103759);
+    _this.powername = [];
+    _this.potion.parent().find("b").html("（前驱、后驱、四驱）");
+}
+
+//结构
+var Struct = new Object();
+Struct.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.struct = $(".struct")
+    this.title = $("#selectstruct");
+    this.selectstruct = $("#selectstruct");
+    this.potion = $("#structpotion");
+    this.sturctname = [];
+    this.struct.addClass("fn-hide").removeClass("active");
+    this.InitSelect();
+    this.potion.parent().on("click", function () {
+        if (_this.potion.hasClass("icon-arrow-up")) {
+            _this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+            _this.struct.addClass("fn-hide");
+        }
+        else {
+            _this.potion.removeClass("icon-arrow-down").addClass("icon-arrow-up");
+            _this.struct.removeClass("fn-hide");
+        }
+    });
+    this.struct.on("click", function () {
+        var structid = Tool.GetNumber($(this).attr("structid"));
+        var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        _this.potion.parent().find("b").html("");
+        if (structid != 0) {
+            _this.limit.removeClass("active");
+            if ($(this).hasClass("active")) { //取消选中
+                $(this).removeClass("active");
+                solrfilterinfo.Structure.remove(structid);
+                _this.sturctname.remove($(this).html());
+                if (solrfilterinfo.Structure.length == 0) {
+                    _this.setLimit(solrfilterinfo);
+                    return;
+                }
+
+            }
+            else { //选中
+                if (_this.sturctname.length >= 3)
+                    return;
+                $(this).addClass("active");
+                _this.sturctname.push($(this).html());
+                solrfilterinfo.Structure.push(structid);
+
+            }
+            _this.title.html(_this.sturctname.join('、'));
+            _this.title.addClass("active");
+            _this.base.Ajax(solrfilterinfo, 103759);
+
+        }
+        else {//不限
+            _this.setLimit(solrfilterinfo);
+        }
+    });
+}
+Struct.InitSelect = function () {
+    var _this = this;
+    var selectstructlist = this.selectstruct.attr("structid").split('-');
+    this.potion.parent().find("b").html("");
+    this.struct.each(function () {
+        var structid = Tool.GetNumber($(this).attr("structid"));
+        if (structid == 0) {
+            _this.limit = $(this);
+            if (selectstructlist.contains(structid)) {
+                $(this).addClass("active");
+                _this.potion.parent().find("b").html("（两厢、三厢、掀背、旅行）");
+            }
+        }
+        else {
+            if (selectstructlist.contains(structid)) {
+                $(this).addClass("active");
+                _this.sturctname.push($(this).html());
+            }
+        }
+    });
+}
+Struct.setLimit = function (solrfilterInfo) {
+    var _this = this;
+    _this.title.html("不限");
+    _this.title.removeClass("active");
+    _this.struct.removeClass("active")
+    _this.limit.addClass("active");
+    solrfilterInfo.Structure = [];
+    _this.base.Ajax(solrfilterInfo, 103759);
+    _this.sturctname = [];
+    this.potion.parent().find("b").html("（两厢、三厢、掀背、旅行）");
+}
+Struct.Clear = function () {
+    this.sturctname = [];
+    this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+    this.struct.addClass("fn-hide").removeClass("active");
+    this.title.html("不限");
+    this.title.removeClass("active");
+}
+
+//颜色
+var Color = new Object()
+Color.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.color = $(".color")
+    this.title = $("#selectcolor");
+    this.selectcolor = $("#selectcolor");
+    this.potion = $("#colorpotion");
+    this.colorname = [];
+    this.color.addClass("fn-hide").removeClass("active");
+    this.InitSelect();
+    this.potion.parent().on("click", function () {
+        if (_this.potion.hasClass("icon-arrow-up")) {
+            _this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+            _this.color.addClass("fn-hide");
+        }
+        else {
+            _this.potion.removeClass("icon-arrow-down").addClass("icon-arrow-up");
+            _this.color.removeClass("fn-hide");
+        }
+    });
+    this.color.on("click", function () {
+        var colorid = Tool.GetNumber($(this).attr("colorid"));
+        var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        if (colorid != 0) {
+            _this.limit.removeClass("active");
+            if ($(this).hasClass("active")) { //取消选中
+                $(this).removeClass("active");
+                solrfilterinfo.Color.remove(colorid);
+                _this.colorname.remove($(this).text());
+                if (solrfilterinfo.Color.length == 0) {
+                    _this.setLimit(solrfilterinfo);
+                    return;
+                }
+
+            }
+            else { //选中
+                if (_this.colorname.length >= 3)
+                    return;
+                $(this).addClass("active");
+                _this.colorname.push($(this).text());
+                solrfilterinfo.Color.push(colorid);
+
+            }
+            _this.title.html(_this.colorname.join('、'));
+            _this.title.addClass("active");
+            _this.base.Ajax(solrfilterinfo, 103759);
+
+        }
+        else {//不限
+            _this.setLimit(solrfilterinfo);
+        }
+    });
+}
+Color.InitSelect = function () {
+    var _this = this;
+    var selectcolorlist = this.selectcolor.attr("colorid").split('-');
+    this.color.each(function () {
+        var colorid = Tool.GetNumber($(this).attr("colorid"));
+        if (colorid == 0) {
+            _this.limit = $(this);
+            if (selectcolorlist.contains(colorid)) {
+                $(this).addClass("active");
+            }
+        }
+        else {
+            if (selectcolorlist.contains(colorid)) {
+                $(this).addClass("active");
+                _this.colorname.push($(this).text());
+            }
+        }
+    });
+}
+Color.setLimit = function (solrfilterInfo) {
+    var _this = this;
+    _this.title.html("不限");
+    _this.title.removeClass("active");
+    _this.color.removeClass("active")
+    _this.limit.addClass("active");
+    solrfilterInfo.Color = [];
+    _this.base.Ajax(solrfilterInfo, 103759);
+    _this.colorname = [];
+}
+Color.Clear = function () {
+    this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+    this.color.addClass("fn-hide").removeClass("active");
+    this.colorname = [];
+    this.title.html("不限");
+    this.title.removeClass("active");
+}
+
+//国别
+var Nationality = new Object()
+Nationality.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.nation = $(".nationality")
+    this.title = $("#selectnationality");
+    this.selectnation = $("#selectnationality");
+    this.potion = $("#nationalitypotion");
+    this.nationname = [];
+    this.nation.addClass("fn-hide").removeClass("active");
+    this.InitSelect();
+    this.potion.parent().on("click", function () {
+        if (_this.potion.hasClass("icon-arrow-up")) {
+            _this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+            _this.nation.addClass("fn-hide");
+        }
+        else {
+            _this.potion.removeClass("icon-arrow-down").addClass("icon-arrow-up");
+            _this.nation.removeClass("fn-hide");
+        }
+    });
+    this.nation.on("click", function () {
+        var nationid = Tool.GetNumber($(this).attr("nationalityid"));
+        var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        if (nationid != 0) {
+            _this.limit.removeClass("active");
+            if ($(this).hasClass("active")) { //取消选中
+                $(this).removeClass("active");
+                solrfilterinfo.Nationality.remove(nationid);
+                _this.nationname.remove($(this).html());
+                if (solrfilterinfo.Nationality.length == 0) {
+                    _this.setLimit(solrfilterinfo);
+                    return;
+                }
+
+            }
+            else { //选中
+                if (_this.nationname.length >= 3)
+                    return;
+                $(this).addClass("active");
+                _this.nationname.push($(this).html());
+                solrfilterinfo.Nationality.push(nationid);
+
+            }
+            _this.title.html(_this.nationname.join('、'));
+            _this.title.addClass("active");
+            _this.base.Ajax(solrfilterinfo, 103759);
+
+        }
+        else {//不限
+            _this.setLimit(solrfilterinfo);
+        }
+    });
+}
+Nationality.InitSelect = function () {
+    var _this = this;
+    var selectnatonlist = this.selectnation.attr("nationalityid").split('-');
+    this.nation.each(function () {
+        var nationid = Tool.GetNumber($(this).attr("nationalityid"));
+        if (nationid == 0) {
+            _this.limit = $(this);
+            if (selectnatonlist.contains(nationid)) {
+                $(this).addClass("active");
+            }
+        }
+        else {
+            if (selectnatonlist.contains(nationid)) {
+                $(this).addClass("active");
+                _this.nationname.push($(this).html());
+            }
+        }
+    });
+}
+Nationality.setLimit = function (solrfilterInfo) {
+    var _this = this;
+    _this.title.html("不限");
+    _this.title.removeClass("active");
+    _this.nation.removeClass("active")
+    _this.limit.addClass("active");
+    solrfilterInfo.Nationality = [];
+    _this.base.Ajax(solrfilterInfo, 103759);
+    _this.nationname = [];
+}
+Nationality.Clear = function () {
+    this.nationname = [];
+    this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+    this.nation.addClass("fn-hide").removeClass("active");
+    this.title.html("不限");
+    this.title.removeClass("active");
+}
+
+var CountryType = new Object();
+CountryType.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.country = $(".countrytype")
+    this.title = $("#selectcountrytype");
+    this.selectcounty = $("#selectcountrytype");
+    this.potion = $("#countrypepotion");
+    this.countryname = [];
+    this.country.addClass("fn-hide").removeClass("active");
+    this.InitSelect();
+    this.potion.parent().on("click", function () {
+        if (_this.potion.hasClass("icon-arrow-up")) {
+            _this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+            _this.country.addClass("fn-hide");
+        }
+        else {
+            _this.potion.removeClass("icon-arrow-down").addClass("icon-arrow-up");
+            _this.country.removeClass("fn-hide");
+        }
+    });
+    this.country.on("click", function () {
+        var countyid = Tool.GetNumber($(this).attr("countrytypeid"));
+        _this.potion.parent().find("b").html("");
+        var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        if (countyid != 0) {
+            _this.limit.removeClass("active");
+            if ($(this).hasClass("active")) { //取消选中
+                $(this).removeClass("active");
+                solrfilterinfo.CountryType.remove(countyid);
+                _this.countryname.remove($(this).html());
+                if (solrfilterinfo.CountryType.length == 0) {
+                    _this.setLimit(solrfilterinfo);
+                    return;
+                }
+
+            }
+            else { //选中
+                if (_this.countryname.length >= 3)
+                    return;
+                $(this).addClass("active");
+                _this.countryname.push($(this).html());
+                solrfilterinfo.CountryType.push(countyid);
+
+            }
+            _this.title.html(_this.countryname.join('、'));
+            _this.title.addClass("active");
+            _this.base.Ajax(solrfilterinfo, 103759);
+
+        }
+        else {//不限
+            _this.setLimit(solrfilterinfo);
+        }
+    });
+}
+CountryType.InitSelect = function () {
+    var _this = this;
+    this.potion.parent().find("b").html("");
+    var selectcountrylist = this.selectcounty.attr("countrytypeid").split('-');
+    this.country.each(function () {
+        var countryid = Tool.GetNumber($(this).attr("countrytypeid"));
+        if (countryid == 0) {
+            _this.limit = $(this);
+            if (selectcountrylist.contains(countryid)) {
+                $(this).addClass("active");
+                _this.potion.parent().find("b").html("（合资、中国、进口）");
+            }
+        }
+        else {
+            if (selectcountrylist.contains(countryid)) {
+                $(this).addClass("active");
+                _this.countryname.push($(this).html());
+            }
+        }
+    });
+}
+CountryType.setLimit = function (solrfilterInfo) {
+    var _this = this;
+    _this.title.html("不限");
+    _this.title.removeClass("active");
+    _this.country.removeClass("active")
+    _this.limit.addClass("active");
+    solrfilterInfo.CountryType = [];
+    _this.base.Ajax(solrfilterInfo, 103759);
+    _this.countryname = [];
+    this.potion.parent().find("b").html("（合资、中国、进口）");
+}
+CountryType.Clear = function ()
+{
+    this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+    this.country.addClass("fn-hide").removeClass("active");
+    this.title.html("不限");
+    this.title.removeClass("active");
+    this.countryname = [];
+}
+
+var CarProtected = new Object()
+CarProtected.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.title = $("#selectprotected");
+    this.selectprotected = $("#selectprotected");
+    this.potion = $("#protectedpotion");//箭头
+    this.protected = $(".protected"); //选项
+    this.protected.addClass("fn-hide").removeClass("active");
+    this.limit = null;
+    this.before = null;
+    this.InitSelect();
+    this.potion.parent().on("click", function () {
+        if (_this.potion.hasClass("icon-arrow-up")) {
+            _this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+            _this.protected.addClass("fn-hide");
+        }
+        else {
+            _this.potion.removeClass("icon-arrow-down").addClass("icon-arrow-up");
+            _this.protected.removeClass("fn-hide");
+        }
+    });
+
+    this.protected.on("click", function () {
+        var protectedid = Tool.GetNumber($(this).attr("protectedid"));
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        if (!$(this).hasClass("active")) {//被选中
+            if (_this.before == null) {
+                if (protectedid == 1)//原厂质保
+                {
+                    solrfilterInfo.HasWarranty = 1;
+                    solrfilterInfo.ExtendRepair = 0;
+                }
+                else if (protectedid == 2) {
+                    solrfilterInfo.ExtendRepair = 1;
+                    solrfilterInfo.HasWarranty = 0;
+                }
+                else if (protectedid == 0) {
+                    solrfilterInfo.ExtendRepair = 0;
+                    solrfilterInfo.HasWarranty = 0;
+
+                }
+                _this.before = $(this);
+            }
+            else {
+                if (protectedid == 1)//原厂质保
+                {
+                    solrfilterInfo.HasWarranty = 1;
+                    solrfilterInfo.ExtendRepair = 0;
+                }
+                else if (protectedid == 2) {
+                    solrfilterInfo.ExtendRepair = 1;
+                    solrfilterInfo.HasWarranty = 0;
+                }
+                else if (protectedid == 0) {
+                    solrfilterInfo.ExtendRepair = 0;
+                    solrfilterInfo.HasWarranty = 0;
+
+                }
+                _this.before.removeClass("active");
+                _this.before = $(this);
+            }
+            $(this).addClass("active");
+            _this.title.html($(this).html());
+            if (protectedid == 0) {
+                _this.title.removeClass("active");
+            }
+            else {
+                _this.title.addClass("active");
+            }
+            _this.base.Ajax(solrfilterInfo, 103759);
+        }
+
+    });
+}
+CarProtected.InitSelect = function () {
+    var _this = this;
+    var carprotectedid = Tool.GetNumber(this.selectprotected.attr("protectedid"));
+    this.protected.each(function () {
+        var protectedid = Tool.GetNumber($(this).attr("protectedid"));
+        if (carprotectedid == protectedid) {
+
+            if (protectedid == 0) {
+                _this.limit = $(this);
+                _this.protected.removeClass("active");
+            }
+            $(this).addClass("active");
+            _this.before = $(this);
+        }
+    });
+
+}
+CarProtected.Clear = function ()
+{
+    this.potion.removeClass("icon-arrow-up").addClass("icon-arrow-down");
+    this.protected.addClass("fn-hide").removeClass("active");
+    this.title.html("不限");
+    this.title.removeClass("active");
+   
+}
+var OtherMessage = new Object();
+
+OtherMessage.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.other = $(".othermessage");
+    this.other.on("click", function () {
+
+        var solrfilterInfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        var otherid = Tool.GetNumber($(this).attr("otherid"));
+        var flage = $(this).prop("checked");
+        if (otherid == 1) {
+            if (flage) {
+                solrfilterInfo.SellState = 0;
+            }
+            else {
+                solrfilterInfo.SellState = 9;
+            }
+        }
+        else if (otherid == 2) {
+            if (flage) {
+                solrfilterInfo.HasPhoto = 0;
+            }
+            else {
+                solrfilterInfo.HasPhoto = 1;
+            }
+        }
+        _this.base.Ajax(solrfilterInfo, 103759);
+
+    });
+}
+OtherMessage.Clear = function ()
+{
+ 
+    $("#checkphoto").prop("checked", false);
+}
+
+/*start 分期购车*/
+
+var HasDiscountPrice =  new Object();
+
+HasDiscountPrice.Init = function(){
+	var _this = this;
+    this.base = Base;
+    this.other = $("#HasDiscountPrice");
+
+    /* start 是否显示分期购车 */
+
+    var uarea = $.getCookie("uarea");
+    if (uarea) {
+        var areaArr = uarea.split('|');
+        if (areaArr.length > 1) {
+            var cityid = parseInt(areaArr[0]);
+            if (cityid < 0) return;
+            if (cityid == 0) {
+                this.other.bind("click", HasDiscountPrice.AttachEvent);
+                this.other.parent().css("display", "block");
+            } else {
+                $.ajax({
+                    url: "/Handler/Financial/FinancialCityExit.ashx?v=201612080951&cityid=" + cityid,
+                    type: 'GET',
+                    ansyc: true,
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data && data.returncode == 0 && data.result) {
+                            var $obj = $("#HasDiscountPrice");
+                            $obj.bind("click", HasDiscountPrice.AttachEvent);
+                            $obj.parent().css("display", "block");
+                        };
+                    }
+                });
+            };
+        };
+    };
+
+    /* end 是否显示分期购车 */
+};
+
+HasDiscountPrice.AttachEvent = function () {
+    var _this = this;
+    this.base = Base;
+    this.other = $("#HasDiscountPrice");
+    var solrfilterInfo = SolrFilterInfo.Convert(_this.base.filter.val());
+    var otherid = Tool.GetNumber(this.other.val());
+    var flage = this.other.prop("checked");
+    if (flage) {
+        solrfilterInfo.HasDiscountPrice = 8;
+    } else {
+        solrfilterInfo.HasDiscountPrice = 0;
+    }
+    _this.base.Ajax(solrfilterInfo, 103759);
+}
+
+HasDiscountPrice.Clear = function ()
+{
+    $("#HasDiscountPrice").prop("checked", false);
+}
+
+/*end 分期购车*/
+
+/*start维修保养记录可查*/
+var IsVincodeStatus = new Object();
+
+IsVincodeStatus.Init = function () {
+    var _this = this;
+    this.base = Base;
+    this.other = $("#IsVincodeStatus");
+    this.other.on("click", function () {
+		var solrfilterInfo = SolrFilterInfo.Convert(_this.base.filter.val());
+		var flage = $(this).prop("checked");
+		if (flage){
+			solrfilterInfo.IsVincodeStatus = 100;
+		}
+		else{
+			solrfilterInfo.IsVincodeStatus =0;
+		}
+		
+		_this.base.Ajax(solrfilterInfo, 103759);
+    });
+}
+
+IsVincodeStatus.Clear = function (){
+    $("#IsVincodeStatus").prop("checked", false);
+}
+/*end维修保养记录可查*/
+
+$(function () {
+    /*Base.Init();*/
+
+    MorePrice.Init();
+    MoreLevel.Init();
+    MoreAge.Init();
+    MoreMileage.Init();
+    GearBox.Init();
+    Source.Init();
+    Displacement.Init();
+    Environmental.Init();
+    Option.Init();
+    Seat.Init();
+    Fuel.Init();
+    Power.Init();
+    Color.Init();
+    Struct.Init();
+    Nationality.Init();
+    CountryType.Init();
+    CarProtected.Init();
+    OtherMessage.Init();
+	HasDiscountPrice.Init();
+	IsVincodeStatus.Init();
+	$("#clearfilter").on("click", function () {
+	    MoreCarBrand.Clear();
+	    MorePrice.Clear();
+	    MoreLevel.Clear();
+	    MoreAge.Clear();
+	    MoreMileage.Clear();
+	    GearBox.Clear();
+        Source.Clear();
+        Displacement.Clear();
+        Environmental.Clear();
+        Option.Clear();
+        Seat.Clear();
+        Fuel.Clear();
+        Power.Clear();
+        Struct.Clear();
+        Color.Clear();
+        Nationality.Clear();
+        CountryType.Clear();
+        CarProtected.Clear();
+        OtherMessage.Clear();
+		HasDiscountPrice.Clear();
+		IsVincodeStatus.Clear();
+        Base.Clear();
+
+    })
+});
+
+/*
+Append File:/2sc/m/CarList/Command.js
+*/
+
+function StringBuffer() {
+    this.__strings__ = [];
+};
+StringBuffer.prototype.Append = function (str) {
+    this.__strings__.push(str);
+    return this;
+};
+//格式化字符串
+StringBuffer.prototype.AppendFormat = function (str) {
+    for (var i = 1; i < arguments.length; i++) {
+        var parent = "\\{" + (i - 1) + "\\}";
+        var reg = new RegExp(parent, "g")
+        str = str.replace(reg, arguments[i]);
+    }
+
+    this.__strings__.push(str);
+    return this;
+}
+StringBuffer.prototype.ToString = function () {
+    return this.__strings__.join('');
+};
+StringBuffer.prototype.empty = function () {
+    this.__strings__.length = 0;
+}
+StringBuffer.prototype.size = function () {
+    return this.__strings__.length;
+}
+String.IsNullOrEmpty = function (str) {
+    if (typeof (str) !== "string")
+        return true;
+    if ($.trim(str) == "")
+        return true;
+    return false;
+};
+String.Empty = "";
+String.Join = function (char, array) {
+    return array.join(char);
+}
+String.Format = function (str) {
+    for (var i = 1; i < arguments.length; i++) {
+        var parent = "\\{" + (i - 1) + "\\}";
+        var reg = new RegExp(parent, "g")
+        str = str.replace(reg, arguments[i]);
+    }
+    return str;
+}
+String.prototype.getByteLen = function () {
+    var len = 0;
+    for (var i = 0; i < this.length; i++) {
+        if (this.charAt(i).match(/[^x00-xff]/ig) != null) //全角
+            len += 2;
+        else
+            len += 1;
+    };
+    return len;
+}
+String.IsNullOrEmpty = function (str) {
+    if (typeof (str) !== "string")
+        return true;
+    if ($.trim(str) == "")
+        return true;
+    return false;
+};
+var string = String;
+
+
+var Tool = {};
+//数组是否包含元素
+Tool.Exist = function (array, item) {
+    if (array) {
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] == item)
+                return true;
+        }
+    }
+    return false;
+};
+//转换数字型
+Tool.GetNumber = function (str) {
+    switch (typeof (str)) {
+        case "number":
+            return str;
+        case "undefined":
+        case "obj":
+        case "function":
+            return 0;
+        case "boolean":
+            return Number(str);
+    }
+
+    var reg = /^[0-9]+.?[0-9]*$/;
+    if (reg.test(str))
+        return Number(str);
+    return 0;
+};
+
+//获取相对高度
+var offsetPageSize = function (obj) {
+    var x = 0;
+    var y = 0;
+    var el = obj;
+    while (el.offsetParent) {
+        x += el.offsetLeft;
+        y += el.offsetTop;
+        el = el.offsetParent
+    }
+    return { "Left": x, "Top": y };
+}
+
+
+
+//获取页面高度
+var pageSize = function () {
+    var _rootEl = (document.compatMode == "CSS1Compat"
+    ? document.documentElement
+    : document.body);
+    var xScroll, yScroll;
+
+    if (window.innerHeight && window.scrollMaxY) {
+        xScroll = _rootEl.scrollWidth;
+        yScroll = window.innerHeight + window.scrollMaxY
+    } else if (_rootEl.scrollHeight > _rootEl.offsetHeight) {
+        xScroll = _rootEl.scrollWidth;
+        yScroll = _rootEl.scrollHeight + 20
+    } else {
+        xScroll = _rootEl.offsetWidth;
+        yScroll = _rootEl.offsetHeight
+    }
+    var windowWidth, windowHeight;
+    if (self.innerHeight) {
+        windowWidth = self.innerWidth;
+        windowHeight = self.innerHeight
+    } else if (_rootEl && _rootEl.clientHeight) {
+        windowWidth = _rootEl.clientWidth;
+        windowHeight = _rootEl.clientHeight
+    } else if (_rootEl) {
+        windowWidth = _rootEl.clientWidth;
+        windowHeight = _rootEl.clientHeight
+    }
+    if (yScroll < windowHeight) {
+        pageHeight = windowHeight
+    } else {
+        pageHeight = _rootEl.scrollHeight
+    }
+    if (xScroll < windowWidth) {
+        pageWidth = windowWidth
+    } else {
+        pageWidth = xScroll
+    }
+    return { "PageWidth": pageWidth, "PageHeight": pageHeight, "WindwoWidth": windowWidth, "WindowHeight": windowHeight };
+}
+//获取滚动条高度
+var getScrollTop = function () {
+    if ('pageYOffset' in window) {
+        return window.pageYOffset;
+    } else if (document.compatMode === "BackCompat") {
+        return document.body.scrollTop;
+    } else {
+        return document.documentElement.scrollTop;
+    }
+}
+
+function clone(oldObj) { //复制对象方法
+    if (typeof (oldObj) != 'object') return oldObj;
+    if (oldObj == null) return oldObj;
+    var newObj = new Object();
+    for (var i in oldObj)
+        newObj[i] = clone(oldObj[i]);
+    return newObj;
+};
+function extend() { //扩展对象
+    var args = arguments;
+    if (args.length < 2) return;
+    var temp = clone(args[0]); //调用复制对象方法
+    for (var n = 1; n < args.length; n++) {
+        for (var i in args[n]) {
+            temp[i] = args[n][i];
+        }
+    }
+    return temp;
+}
+
+//是否包含元素
+Array.prototype.contains = function (obj)
+{
+    for (var i = 0; i < this.length; i++)
+    {
+        if(this[i]==obj)
+            return true
+    }
+    return false;
+}
+//移除指定元素
+Array.prototype.remove = function (obj)
+{
+    var k = 0;
+    for (var i = 0; i < this.length; i++)
+    {
+        if (this[i] == obj)
+        {
+            k++;
+            continue;
+        }
+        this[i-k]=this[i];
+    }
+    this.length = this.length - k;
+}
+//遍历
+Array.prototype.each = function (callback)
+{
+    if (typeof (callback) == "function") {
+        for (var i = 0; i < this.length; i++) {
+            callback(this[i],i);
+        }
+    }
+}
+
+
+$.setCookie = function (name, value, option) {
+    var str = name + '=' + escape(value);
+    if (option) {
+        if (option.expireHours) {
+            var d = new Date();
+            d.setTime(d.getTime() + option.expireHours * 3600 * 1000);
+            str += '; expires=' + d.toGMTString();
+        }
+        if (option.path) str += '; path=' + option.path; else str += '; path=/';
+        if (option.domain) str += '; domain=' + option.domain;
+        if (option.secure) str += '; true';
+    }
+    document.cookie = str;
+};
+
+$.getCookie = function (name, defaultValue) {
+    var coObj = document.cookie, coLen = coObj.length, start = 0, end = 0;
+    if (coLen > 0) {
+        start = coObj.indexOf(name + "=");
+        if (start != -1) {
+            start = start + name.length + 1;
+            end = coObj.indexOf(";", start);
+            if (end == -1) end = coLen;
+            return unescape(coObj.substring(start, end));
+        }
+    }
+    if (typeof (defaultValue) == "undefined")
+        return "";
+    return defaultValue;
+};
+$.LoadJs = function (o, callback) {
+    if (!o) return;
+
+    var script, abort = null, abortTime,
+        head = document.head || document.getElementsByTagName("head")[0] || document.documentElement;
+
+    script = document.createElement("script");
+    script.async = o.type.toLowerCase();
+    if (o.scriptCharset) {
+        script.charset = o.scriptCharset;
+    }
+    script.src = o.url;
+    if (o.timeout > 0) abortTime = setTimeout(function () {
+        abort();
+        callback && callback(408, "failure");
+    }, o.timeout);
+    script.onload = script.onreadystatechange = function (_, isAbort) {
+        if (isAbort || !script.readyState || /loaded|complete/.test(script.readyState)) {
+            script.onload = script.onreadystatechange = null;
+            if (head && script.parentNode) {
+                head.removeChild(script);
+            }
+            script = undefined;
+            if (!isAbort) {
+                clearTimeout(abortTime);
+                callback && callback(200, "success");
+            }
+        }
+    };
+    script.onerror = function () {
+        abort();
+        callback && callback(500, "failure");
+    }
+    head.insertBefore(script, head.firstChild);
+
+    abort = function () {
+        if (script) {
+            script.onload(0, 1);
+        }
+    }
+};
+
+/*
+Append File:/2sc/m/Tools.js
+*/
+/*20151218 sunping M端公用方法脚本类 */
+var Tools = function () {
+    var ithis = this;
+    /*获取地址栏参数值*/
+    this.GetRequest = function (sourcename) {
+        var cUrl = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (cUrl.indexOf("?") != -1) {
+            var str = cUrl.substr(1);
+            var strs = str.split("&");
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest[sourcename];
+    };
+
+    this.GetSourceName = function() {
+        var sourcename = ithis.GetRequest("sourcename");
+        if (sourcename) {
+            if (",meituan,weizhang,main,baojia,mainapp,baojiazuche,didapinche,songguojiakao,pinganmap,".indexOf(',' + sourcename + ',') > -1) {
+                return sourcename;
+            } else {
+                return '';
+            }
+        }
+        return sourcename;
+    };
+
+    //给传递的地址加上当前url的sourcename值，没有返回原地址
+    this.ToUrl = function (url) {
+        var sourcename = ithis.GetSourceName();
+        var safe = ithis.GetRequest("safe");
+        if (sourcename != null && sourcename.length > 0) {
+            var splitindex = url.indexOf('?');
+            var before = '', end = '';
+            if (splitindex > -1) {
+                before = url.substr(0, splitindex);
+                end = url.substr(splitindex + 1);
+                url = before + "?sourcename=" + sourcename + "&safe=" + safe + "&" + end;
+            } else {
+                splitindex = url.indexOf('#');
+                if (splitindex > -1) {
+                    before = url.substr(0, splitindex);
+                    end = url.substr(splitindex);
+                    url = before + "?sourcename=" + sourcename + "&safe=" + safe + end;
+                } else {
+                    url += "?sourcename=" + sourcename + "&safe=" + safe;
+                }
+            }
+        }
+        return url;
+    };
+};
+
+var tools = new Tools();
+
+
+
+
+/*
+Append File:/2sc/m/CarList/SolrFilterInfo.js
+*/
+
+var httpValue = $("#hdhttpvalue") && $("#hdhttpvalue") != undefined && $("#hdhttpvalue").val() != undefined ? $("#hdhttpvalue").val() : "";
+
+function SolrFilterInfo() {   /// <summary>
+    /// 搜索返回结果集的行数
+    /// </summary>
+    this.Rows = 0;
+    /// <summary>
+    /// 结果分页页码
+    /// </summary>
+    this.PageIdx = 0;
+    /// <summary>
+    /// 搜索关键词
+    /// </summary>
+    this.KeyWord = 0;
+    /// <summary>
+    /// 车源Id
+    /// </summary>
+    this.InfoId = 0;
+    /// <summary>
+    /// 地区拼音
+    /// </summary>
+    this.AreaPinyin = "";
+    /// <summary>
+    /// 地区名称
+    /// </summary>
+    this.AreaName = "";
+    /// <summary>
+    /// 地区Id
+    /// </summary>
+    this.AreaId = 0;
+    /// <summary>
+    /// 省份Id
+    /// </summary>
+    this.ProvinceId = 0;
+    /// <summary>
+    /// 城市Id
+    /// </summary>
+    this.CityId = 0;
+    /// <summary>
+    /// 价格区间（开始）
+    /// </summary>
+    this.MinPrice = 0;
+    /// <summary>
+    /// 价格区间（结束）
+    /// </summary>
+    this.MaxPrice = 0;
+    /// <summary>
+    /// 是否为自定义价格区间（0：默认为固定价格区间，但如果价格区间不在固定区间时自动切换为自定义区间、1：自定义价格区间、2：固定价格区间）
+    /// </summary>
+    this.CustomPrice = 0;
+    /// <summary>
+    /// 级别拼音
+    /// </summary>
+    this.ClassPinyin = "";
+    /// <summary>
+    /// 级别Id
+    /// </summary>
+    this.ClassId = [];
+    /// <summary>
+    /// 品牌拼音
+    /// </summary>
+    this.BrandPinyin = "";
+    /// <summary>
+    /// 品牌Id
+    /// </summary>
+    this.BrandId = 0;
+    /// <summary>
+    /// 车系拼音
+    /// </summary>
+    this.SeriesPinyin = 0;
+    /// <summary>
+    /// 车系Id
+    /// </summary>
+    this.SeriesId = [];
+    /// <summary>
+    /// 车系年代款id
+    /// </summary>
+    this.SeriesYearId = [];
+    /// <summary>
+    /// 车型id
+    /// </summary>
+    this.SpecId = [];
+    /// <summary>
+    /// 车龄（开始）
+    /// </summary>
+    this.MinAge = 0;
+    /// <summary>
+    /// 车龄（结束）
+    /// </summary>
+    this.MaxAge = 0;
+    /// <summary>
+    /// 里程
+    /// </summary>
+    this.MileageId = 0;
+    /// <summary>
+    /// 量程（开始）
+    /// </summary>
+    this.MinMileage = 0;
+    /// <summary>
+    /// 量程（结束）
+    /// </summary>
+    this.MaxMileage = 0;
+    /// <summary>
+    /// 驱动方式
+    /// </summary>
+    this.PowerTrain = [];
+    /// <summary>
+    /// 变速箱
+    /// </summary>
+    this.Gearbox = 0;
+    /// <summary>
+    /// 排量id
+    /// </summary>
+    this.DisplacementId = [];
+    /// <summary>
+    /// 排量（开始）
+    /// </summary>
+    this.MinDisplacement = [];
+    /// <summary>
+    /// 排量（结束）
+    /// </summary>
+    this.MaxDisplacement = [];
+	
+	/// <summary>
+    /// 排放标准
+    ///</summary>
+	this.EnvironmentId=[];
+	
+    /// <summary>
+    /// 车身结构
+    /// </summary>
+    this.Structure = [];
+    /// <summary>
+    /// 国别（1：合资，2：自主，3：进口）
+    /// </summary>
+    this.CountryType = [];
+
+    /// <summary>
+    /// 国籍
+    /// </summary>
+    this.Nationality = [];
+    /// <summary>
+    /// 燃料
+    /// </summary>
+    this.Fuel = [];
+    /// <summary>
+    /// 座位
+    /// </summary>
+    this.Seat = [];
+    /// <summary>
+    /// 配置
+    /// </summary>
+    this.Option = [];
+    /// <summary>
+    /// 颜色
+    /// </summary>
+    this.Color = [];
+    /// <summary>
+    /// 原厂质保期内
+    /// </summary>
+    this.HasWarranty = 0;
+    /// <summary>
+    /// 延长质保
+    /// </summary>
+    this.ExtendRepair = 0;
+    /// <summary>
+    /// 是否是准新车
+    /// </summary>
+    this.IsNewCar = 0;
+    /// <summary>
+    /// 是否有图
+    /// </summary>
+    this.HasPhoto = 0;
+    /// <summary>
+    /// 销售状态（5：已售，9：在售）
+    /// </summary>
+    this.SellState = 0;
+    /// <summary>
+    /// 是否有保证金
+    /// </summary>
+    this.BailType = 0;
+    /// <summary>
+    /// 车源类型（0：全部、1：个人、2：商家、3：认证商家、4保障车）
+    /// </summary>
+    this.Source = [];
+    /// <summary>
+    /// 认证商家id
+    /// </summary>
+    this.CreditId = 0;
+    /// <summary>
+    /// 是否只包含特价车(1：是，0：否）
+    /// </summary>
+    this.HasDiscountPrice = 0;
+
+    /// <summary>
+    /// 0：大图模式，1：列表视图模式
+    /// </summary>
+    this.ListView = 0;
+    /// <summary>
+    /// 排序依赖的字段
+    /// </summary>
+    this.Sort = 0;
+    /// <summary>
+    /// 展开的一组条件（该值是一个按位“与”计算后的一个值。1：量程，2：排量，4：变速箱，8：驱动方式，16：属性（国别），32：车身结构，64：颜色 128:国籍 256 燃料 512 座位 1024 配置 ）
+    /// </summary>
+    this.Expando = 0;
+    /// <summary>
+    /// （已经弃用）网页定位标识，1：筛选条件位置，2：结果列表位置，3：TAB位置
+    /// </summary>
+    this.PagePosition = 0;
+    /// <summary>
+    /// 最后一次选择的条件，21：里程、22：排量、23：变速箱。应用场景：当用户点击“里程...”按钮时，展示出来的量程高亮显示。
+    /// </summary>
+    this.LastFilter = 0;
+    /// <summary>
+    /// 商家ID
+    /// </summary>
+    this.DealerId = 0;
+    /// <summary>
+    /// vin码状态 状态是否选中
+    /// </summary>
+    this.IsVincodeStatus = 0;
+    /// <summary>
+    /// 是否多选
+    /// </summary>
+    this.IsMultipleSelect = false;
+    ///外部链接（美团、违章）
+    this.SourceName = "";
+
+    this.Safe=0;
+}
+
+
+SolrFilterInfo.prototype.BuilderUrl = function (pv) {
+    var url = new StringBuffer();
+    var isiphonehttps = (/iphone/.test(navigator.userAgent.toLowerCase()) || /ipad/.test(navigator.userAgent.toLowerCase()) || /ipod/.test(navigator.userAgent.toLowerCase())) ? true : false;
+    //segments
+    url.Append('/').Append(this.AreaPinyin ? this.AreaPinyin : "china");
+    var urlnothing = true;
+    if (this.BrandPinyin) {
+        urlnothing = false;
+        url.Append('/').Append(this.BrandPinyin);
+        //url segments:品牌/车系/s车型
+        if (this.SeriesPinyin) {
+            url.Append('/').Append(this.SeriesPinyin);
+            if (this.SpecId.length > 0) {
+                url.Append('/').Append('s').Append(this.SpecId.join("-"));
+            }
+        }
+            //url segments:品牌/级别
+        else if (this.ClassPinyin) {
+            url.Append('/').Append(this.ClassPinyin);
+        }
+    } else if (this.ClassPinyin && !this.SeriesPinyin) {
+        urlnothing = false;
+        url.Append('/').Append(this.ClassPinyin);
+    }
+    if (this.MinPrice > 0 || this.MaxPrice > 0) //价格
+    {
+        urlnothing = false;
+        url.Append('/').Append(this.MinPrice + "_" + this.MaxPrice);
+    }
+    url.Append('/');
+
+    //....../a0_0msdgscncgpiltocspex/
+    if (this.BuidParam(url)) {
+        urlnothing = false;
+    }
+
+    //china/list/
+    if (urlnothing) {
+        url.Append("list/");
+    }
+
+    //kw
+    if (this.KeyWord) {
+        if (pv) {
+            if (string.IsNullOrEmpty(this.SourceName)) {
+                url.Append("?kw=" + this.KeyWord + "&pvareaid=" + pv);
+            }
+            else {
+                url.Append("?kw=" + this.KeyWord + "&sourcename=" + this.SourceName + '&safe=' + $("#hdpageswitchsafe").val() + "&pvareaid=" + pv)
+            }
+        }
+        else {
+            if (!string.IsNullOrEmpty(this.SourceName)) {
+                url.Append("?kw=" + this.KeyWord + "&sourcename=" + this.SourceName + '&safe=' + $("#hdpageswitchsafe").val());
+            }
+        }
+    } else {
+        if (pv) {
+            if (string.IsNullOrEmpty(this.SourceName)) {
+                url.Append("?pvareaid=" + pv);
+            }
+            else {
+                url.Append("?sourcename=" + this.SourceName + '&safe=' + $("#hdpageswitchsafe").val() + "&pvareaid=" + pv)
+            }
+        }
+        else {
+            if (!string.IsNullOrEmpty(this.SourceName)) {
+                url.Append("?sourcename=" + this.SourceName + '&safe=' + $("#hdpageswitchsafe").val());
+            }
+        }
+    }
+    return isiphonehttps ? httpValue + "//m.che168.com" + url.ToString() : url.ToString();
+}
+SolrFilterInfo.prototype.BuidParam = function (output) {
+
+    if (this.MinAge > 0 || this.MaxAge > 0 || this.MileageId > 0 || this.MinMileage > 0 || this.MaxMileage > 0 || 
+        this.Source.length > 0 || this.DisplacementId.length > 0 || this.Gearbox > 0 ||
+        this.Structure.length > 0 || this.Color.length > 0 || this.IsNewCar > 0 ||
+        this.ExtendRepair > 0 || this.ListView > 0 ||
+        this.CreditId > 0 || 
+        this.CountryType.length > 0 ||
+        this.CustomPrice > 0 || 
+		this.EnvironmentId.length >0 ||
+        this.PowerTrain.length > 0 || this.SeriesYearId.length > 0 ||
+        this.Sort > 0 || this.DealerId > 0 || this.Nationality.length > 0 || this.Seat.length > 0 || this.Fuel.length > 0 || 
+		this.Option.length > 0 || this.HasWarranty > 0 || this.HasPhoto === 1 || this.HasDiscountPrice === 8 || this.IsVincodeStatus==100) {
+        //大把的参数...
+
+        output.Append('a').Append(this.MinAge).Append('_').Append(this.MaxAge)
+            .Append('m').Append(this.MileageId > 0 ? this.MileageId : string.Empty)
+            .Append('s').Append(this.Source.length > 0 ? this.Source.join("-") : string.Empty);
+
+        output.Append('d');
+        if (this.DisplacementId.length > 0) {
+            output.Append(this.DisplacementId.join('-'));
+        }
+		
+        output.Append('g').Append(this.Gearbox > 0 ? this.Gearbox : string.Empty);
+
+        output.Append('s');
+        if (this.Structure.length > 0) {
+            output.Append(this.Structure.join('-'));
+        }
+        output.Append('c');
+        if (this.Color.length > 0) {
+            output.Append(this.Color.join('-'));
+        }
+        output.Append("nc").Append(this.IsNewCar > 0 ? this.IsNewCar : string.Empty)
+            .Append("gp").Append(this.ExtendRepair > 0 ? this.ExtendRepair : string.Empty)
+            .Append('i').Append("")
+            .Append("lt").Append(this.ListView > 0 ? this.ListView : string.Empty)
+            .Append('o').Append(this.Sort > 0 ? this.Sort : string.Empty)
+            .Append('c').Append(this.CreditId > 0 ? this.CreditId : string.Empty)
+            .Append('s')
+            .Append('p');
+        output.Append(this.PageIdx);
+        //ex
+        output.Append("ex");
+        if (this.CountryType.length > 0) {
+
+            output.Append('c');
+            output.Append(this.CountryType.join('-'));
+
+        }
+        if (this.HasDiscountPrice > 0) //是否特价车
+        {
+            output.Append('d').Append(this.HasDiscountPrice);
+        }
+        if (this.BailType > 0) //是否保证金
+        {
+            output.Append('t').Append(this.BailType);
+        }
+        if (this.HasPhoto > 0) //是否有招聘
+        {
+            output.Append('p').Append(this.HasPhoto);
+        }
+		if (this.IsVincodeStatus > 0) //维修保养记录是否可查
+        {
+            output.Append('v').Append(this.IsVincodeStatus);
+        }
+        if (this.HasWarranty > 0) //是否原厂质保
+        {
+            output.Append('w').Append(this.HasWarranty);
+        }
+        if (this.CustomPrice > 0) {
+            output.Append('u').Append(this.CustomPrice);
+        }
+        if (this.Expando > 0) {
+            output.Append('e').Append(this.Expando);
+        }
+        if (this.PowerTrain.length > 0) {
+            output.Append('r');
+            output.Append(this.PowerTrain.join('-'));
+        }
+
+        if (this.SeriesYearId.length > 0) {
+
+            output.Append('s');
+            output.Append(this.SeriesYearId.join('-'));
+
+        }
+
+        if (this.DealerId > 0) {
+            output.Append('g').Append(this.DealerId);
+        }
+        if (this.Nationality.length > 0) {
+            output.Append('n').Append(this.Nationality.join('-'));
+        }
+        if (this.Fuel.length > 0) {
+            output.Append('f').Append(this.Fuel.join('-'));
+        }
+        if (this.Seat.length > 0) {
+            output.Append("z").Append(this.Seat.join('-'));
+        }
+        if (this.Option.length > 0) {
+            output.Append("l").Append(this.Option.join('-'));
+        }
+        if (this.MinMileage > 0 || this.MaxMileage > 0) {
+            output.Append("m").Append(this.MinMileage + "_" + this.MaxMileage);
+        }
+        if (this.ClassId.length > 0 && !string.IsNullOrEmpty(this.SeriesPinyin))
+        {
+            output.Append("x").Append(this.ClassId.join('-'));
+        }
+        if (this.Activitytype > 0)
+        {
+            output.Append("a").Append(this.Activitytype);
+        }
+		if(this.EnvironmentId.length>0)
+		{
+			output.Append("h").Append(this.EnvironmentId.join('-'));
+		}
+        output.Append('/');
+        return true;
+    }
+    return false;
+};
+
+SolrFilterInfo.prototype.ToString = function () {
+    var builder = new StringBuffer()
+        .Append("area=").Append(this.AreaPinyin).Append('&')
+        .Append("brand=").Append(this.BrandPinyin).Append('&')
+        .Append("ls=").Append(string.IsNullOrEmpty(this.SeriesPinyin) ? this.ClassPinyin : this.SeriesPinyin).Append('&')
+        .Append("spec=").Append(string.Join("-", this.SpecId)).Append('&')
+        .Append("minPrice=").Append(this.MinPrice).Append('&')
+        .Append("maxPrice=").Append(this.MaxPrice).Append('&')
+        .Append("minRegisteAge=").Append(this.MinAge).Append('&')
+        .Append("maxRegisteAge=").Append(this.MaxAge).Append('&')
+        .Append("MileageId=").Append(this.MileageId).Append('&')
+        .Append("disp=").Append(string.Join("-", this.DisplacementId)).Append('&')
+	    .Append("stru=").Append(string.Join("-", this.Structure)).Append('&')
+        .Append("gb=").Append(this.Gearbox).Append('&')
+        .Append("color=").Append(string.Join("-", this.Color)).Append('&')
+        .Append("source=").Append(string.Join("-", this.Source)).Append('&')
+        .Append("listview=").Append(this.ListView).Append('&')
+        .Append("sell=").Append(this.SellState == 9 ? 1 : 0).Append('&')
+        .Append("newCar=").Append(this.IsNewCar).Append('&')
+        .Append("credit=").Append(this.CreditId).Append('&')
+        .Append("sort=").Append(this.Sort).Append('&')
+        .Append("extrepair=").Append(this.ExtendRepair).Append("&")
+        .Append("page=").Append(this.PageIdx).Append("&")
+        .Append("kw=").Append(this.KeyWord).Append("&")
+        .Append("ex=").AppendFormat("c{0}d{11}t{1}p{2}w{3}r{4}u{5}e{6}s{7}a{8}o{9}i{10}g{12}n{13}f{14}z{15}l{16}k{17}v{18}a{19}m{20}x{21}b{22}y{23}h{24}", string.Join("-", this.CountryType), this.BailType, this.HasPhoto, this.HasWarranty, string.Join("-", this.PowerTrain), this.CustomPrice, this.Expando, string.Join("-", this.SeriesYearId), this.PagePosition, this.LastFilter, this.InfoId, this.HasDiscountPrice, this.DealerId, string.Join("-", this.Nationality), string.Join("-", this.Fuel), string.Join("-", this.Seat), string.Join("-", this.Option), this.IsCheckCar, this.IsVincodeStatus, this.Activitytype, this.MinMileage + "_" + this.MaxMileage, this.ClassId.join('-'), this.OccupationCarPlaceCnt, this.PageOffset,string.Join("-",this.EnvironmentId));
+    if (!string.IsNullOrEmpty(this.SourceName))
+        builder.Append("&sourcename=" + this.SourceName);
+
+    if(this.Safe>0){
+        builder.Append("&safe="+this.Safe);
+    }
+ 
+    return builder.ToString();
+}
+
+
+SolrFilterInfo.prototype.ToJString = function () {
+    var builder = new StringBuffer()
+        .Append("area=").Append(this.AreaPinyin).Append('&')
+        .Append("brand=").Append(this.BrandPinyin).Append('&')
+    if (string.IsNullOrEmpty(this.SeriesPinyin))
+        builder.Append("class=").Append(this.ClassPinyin).Append("&");
+    else {
+        builder.Append("series=").Append(this.SeriesPinyin).Append("&");
+    }
+    //  .Append("ls=").Append(string.IsNullOrEmpty(this.SeriesPinyin) ? this.ClassPinyin : this.SeriesPinyin).Append('&')
+    builder.Append("spec=").Append(string.Join("-", this.SpecId)).Append('&')
+        .Append("minPrice=").Append(this.MinPrice).Append('&')
+        .Append("maxPrice=").Append(this.MaxPrice).Append('&')
+        .Append("minRegisteAge=").Append(this.MinAge).Append('&')
+        .Append("maxRegisteAge=").Append(this.MaxAge).Append('&')
+        .Append("MileageId=").Append(this.MileageId).Append('&')
+        .Append("disp=").Append(string.Join("-", this.DisplacementId)).Append('&')
+		.Append("stru=").Append(string.Join("-", this.Structure)).Append('&')
+        .Append("gb=").Append(this.Gearbox).Append('&')
+        .Append("color=").Append(string.Join("-", this.Color)).Append('&')
+        .Append("source=").Append(string.Join("-", this.Source)).Append('&')
+        .Append("listview=").Append(this.ListView).Append('&')
+        .Append("sell=").Append(this.SellState == 9 ? 1 : 0).Append('&')
+        .Append("newCar=").Append(this.IsNewCar).Append('&')
+        .Append("credit=").Append(this.CreditId).Append('&')
+        .Append("sort=").Append(this.Sort).Append('&')
+        .Append("page=").Append(this.PageIdx).Append("&")
+        .Append("extrepair=").Append(this.ExtendRepair).Append("&")
+        .Append("kw=").Append(this.KeyWord).Append("&")
+        .Append("ex=").AppendFormat("c{0}d{11}t{1}p{2}w{3}r{4}u{5}e{6}s{7}a{8}o{9}i{10}g{12}n{13}f{14}z{15}l{16}k{17}v{18}a{19}m{20}x{21}b{22}y{23}h{24}", string.Join("-", this.CountryType), this.BailType, this.HasPhoto, this.HasWarranty, string.Join("-", this.PowerTrain), this.CustomPrice, this.Expando, string.Join("-", this.SeriesYearId), this.PagePosition, this.LastFilter, this.InfoId, this.HasDiscountPrice, this.DealerId, string.Join("-", this.Nationality), string.Join("-", this.Fuel), string.Join("-", this.Seat), string.Join("-", this.Option), this.IsCheckCar, this.IsVincodeStatus, this.Activitytype, this.MinMileage + "_" + this.MaxMileage, this.ClassId.join('-'), this.OccupationCarPlaceCnt, this.PageOffset,string.Join("-",this.EnvironmentId));
+    if (!string.IsNullOrEmpty(this.SourceName))
+    {
+        builder.Append("&sourcename=" + this.SourceName);
+    }
+
+    if(this.Safe>0){
+        builder.Append("&safe="+this.Safe);
+    }
+
+    return builder.ToString();
+}
+
+SolrFilterInfo.Convert = function (str) {
+    var solrFilterInfo = new SolrFilterInfo();
+    if (str.indexOf("&") > -1) {
+        var array = str.split("&");
+        for (var j = 0; j < array.length; j++) {
+            var temparray = array[j].split("=");
+            switch (temparray[0]) {
+                case "sourcename":
+                    solrFilterInfo.SourceName = temparray[1];
+                    break;
+                case 'safe':
+                    solrFilterInfo.Safe=temparray[1];
+                    break;
+                case "extrepair":
+                    solrFilterInfo.ExtendRepair = Tool.GetNumber(temparray[1]);
+                    break;
+                case "row":
+                    solrFilterInfo.Rows = temparray[1];
+                    break;
+                case "area":
+                    solrFilterInfo.AreaPinyin = temparray[1];
+                    break;
+                case "brand":
+                    solrFilterInfo.BrandPinyin = temparray[1];
+                    break;
+                case "series":
+                    solrFilterInfo.SeriesPinyin = temparray[1];
+                    break;
+                case "class":
+                    solrFilterInfo.ClassPinyin = temparray[1];
+                    break;
+                case "spec":
+                    {
+                        var ary = temparray[1].split("-");
+                        var k = 0;
+                        for (var i = 0; i < ary.length; i++) {
+                            var tempid = Tool.GetNumber(ary[i]);
+                            if (tempid != 0) {
+                                solrFilterInfo.SpecId[k] = tempid;
+                                k++;
+                            }
+                        }
+                        break;
+                    }
+                case "minPrice":
+                    solrFilterInfo.MinPrice = Tool.GetNumber(temparray[1]);
+                    break;
+                case "maxPrice":
+                    solrFilterInfo.MaxPrice = Tool.GetNumber(temparray[1]);
+                    break;
+                case "minRegisteAge":
+                    solrFilterInfo.MinAge = Tool.GetNumber(temparray[1]);
+                    break;
+                case "maxRegisteAge":
+                    solrFilterInfo.MaxAge = Tool.GetNumber(temparray[1]);
+                    break;
+                case "MileageId":
+                    solrFilterInfo.MileageId = Tool.GetNumber(temparray[1]);
+                    break;
+                case "disp":
+                    {
+                        var ary = temparray[1].split("-");
+                        var k = 0;
+                        for (var i = 0; i < ary.length; i++) {
+                            var tempid = Tool.GetNumber(ary[i]);
+                            if (tempid != 0) {
+                                solrFilterInfo.DisplacementId[i] = tempid;
+                                k++;
+                            }
+                        }
+                        break;
+                    }
+                case "stru":
+                    {
+                        var ary = temparray[1].split("-");
+                        var k = 0;
+                        for (var i = 0; i < ary.length; i++) {
+                            var tempid = Tool.GetNumber(ary[i]);
+                            if (tempid != 0) {
+                                solrFilterInfo.Structure[i] = tempid;
+                                k++;
+                            }
+                        }
+                        break;
+                    }
+                    break;
+                case "gb":
+                    solrFilterInfo.Gearbox = Tool.GetNumber(temparray[1]);
+                    break;
+                case "color":
+                    {
+                        var ary = temparray[1].split("-");
+                        var k = 0;
+                        for (var i = 0; i < ary.length; i++) {
+                            var tempid = Tool.GetNumber(ary[i]);
+                            if (tempid != 0) {
+                                solrFilterInfo.Color[i] = tempid;
+                                k++;
+                            }
+                        }
+                        break;
+                    }
+			    case "source":
+                    {
+                        var ary = temparray[1].split("-");
+                        var k = 0;
+                        for (var i = 0; i < ary.length; i++) {
+                            var tempid = Tool.GetNumber(ary[i]);
+                            if (tempid != 0) {
+                                solrFilterInfo.Source[i] = tempid;
+                                k++;
+                            }
+                        }
+                        break;
+                    }
+                case "listview":
+                    solrFilterInfo.ListView = Tool.GetNumber(temparray[1]);
+                    break;
+                case "sell":
+                    solrFilterInfo.SellState = Tool.GetNumber(temparray[1]) == 1 ? 9 : 5;
+                    break;
+                case "newCar":
+                    solrFilterInfo.IsNewCar = Tool.GetNumber(temparray[1]);
+                    break;
+                case "credit":
+                    solrFilterInfo.CreditId = Tool.GetNumber(temparray[1]);
+                    break;
+                case "page":
+                    solrFilterInfo.PageIdx = Tool.GetNumber(temparray[1]);
+                    break;
+                case "sort":
+                    solrFilterInfo.Sort = Tool.GetNumber(temparray[1]);
+                    break;
+                case "kw":
+                    solrFilterInfo.KeyWord = temparray[1];
+                    break;
+                case "ex":
+                    var reg = new RegExp("(c\\d(-\\d)*)|(d\\d)|(t\\d)|(p\\d)|(w\\d)|(r\\d(-\\d)*)|(u\\d)|(e\\d+)|(s\\d+(-\\d+)*)|(o\\d+)|(i\\d+)|(g\\d+)|(n\\d+(-\\d+)*)|(f\\d+(-\\d+)*)|(z\\d+(-\\d+)*)|(l\\d+(-\\d+)*)|(k\\d+)|(v\\d+)|(a\\d+)|(m\\d+_\\d+)|(x\\d+(-\\d+)*)|(b\\d+)|(y\\d+)|(h\\d+(-\\d+)*)", "g");
+                    var mathm = temparray[1].match(reg);
+                    if (ary != null) {
+                        for (var k = 0; k < mathm.length; k++) {
+                            if (mathm[k].Length <= 1) {
+                                continue;
+                            }
+                            var value = mathm[k].substring(1);
+                            var char = mathm[k].substring(0, 1);
+                            switch (char) {
+                                case 'c': //国别
+                                    {
+                                        var val = value.split('-');
+                                        for (var i = val.length - 1; i >= 0; i--) {
+                                            var temp = Tool.GetNumber(val[i]);
+                                            if (temp > 0)
+                                                solrFilterInfo.CountryType.push(temp);
+                                        }
+                                    }
+                                    break;
+                                case 'd': //特价车
+                                    solrFilterInfo.HasDiscountPrice = Tool.GetNumber(value);
+                                    break;
+                                case 't': //保证金
+                                    solrFilterInfo.BailType = Tool.GetNumber(value);
+                                    break;
+                                case 'p': //是否有图片
+                                    solrFilterInfo.HasPhoto = Tool.GetNumber(value);
+                                    break;
+                                case 'w': //原厂质保
+                                    solrFilterInfo.HasWarranty = Tool.GetNumber(value);
+                                    break;
+                                case 'r': //驱动方式
+                                    {
+                                        var val = value.split('-');
+                                        for (var i = val.length - 1; i >= 0; i--) {
+                                            var temp = Tool.GetNumber(val[i]);
+                                            if (temp > 0)
+                                                solrFilterInfo.PowerTrain.push(temp);
+                                        }
+                                    }
+                                    break;
+                                case 'u': //是否之定义价钱
+                                    solrFilterInfo.CustomPrice = Tool.GetNumber(value);
+                                    break;
+                                case 'e': //展开条件
+                                    {
+                                        solrFilterInfo.Expando = Tool.GetNumber(value);
+                                        break;
+                                    }
+                                case 's': //车型年代款
+                                    {
+                                        var val = value.split('-');
+                                        for (var i = val.length - 1; i >= 0; i--) {
+                                            var temp = Tool.GetNumber(val[i]);
+                                            if (temp > 0)
+                                                solrFilterInfo.SeriesYearId.push(temp);
+                                        }
+                                    }
+                                    break;
+                                case 'o': //最后一次选着条件
+                                    solrFilterInfo.LastFilter = Tool.GetNumber(value);
+                                    break;
+                                case 'i': //车源id
+                                    solrFilterInfo.InfoId = Tool.GetNumber(value);
+                                    break;
+                                case 'g': //商家id
+                                    solrFilterInfo.DealerId = Tool.GetNumber(value);
+                                    break;
+                                case 'n': //国籍
+                                    {
+                                        var val = value.split('-');
+                                        for (var i = val.length - 1; i >= 0; i--) {
+                                            var temp = Tool.GetNumber(val[i]);
+                                            if (temp > 0)
+                                                solrFilterInfo.Nationality.push(temp);
+                                        }
+                                    }
+                                    break;
+                                case 'f': //燃料
+                                    {
+                                        var val = value.split('-');
+                                        for (var i = val.length - 1; i >= 0; i--) {
+                                            var temp = Tool.GetNumber(val[i]);
+                                            if (temp > 0) {
+                                                solrFilterInfo.Fuel.push(temp);
+                                            }
+                                        }
+                                    }
+                                    break;
+                                case 'z': //座位
+                                    {
+                                        var val = value.split('-');
+                                        for (var i = val.length - 1; i >= 0; i--) {
+                                            var temp = Tool.GetNumber(val[i]);
+                                            if (temp > 0) {
+                                                solrFilterInfo.Seat.push(temp);
+                                            }
+                                        }
+                                    }
+                                    break;
+                                case 'l': //配置
+                                    {
+                                        var val = value.split('-');
+                                        for (var i = val.length - 1; i >= 0; i--) {
+                                            var temp = Tool.GetNumber(val[i]);
+                                            if (temp > 0) {
+                                                solrFilterInfo.Option.push(temp);
+                                            }
+                                        }
+
+                                    }
+                                    break;
+                                case 'k'://检车车源
+                                    {
+                                        solrFilterInfo.IsCheckCar = Tool.GetNumber(value);
+                                        break;
+                                    }
+
+                                case 'v'://vin码状态
+                                    {
+                                        solrFilterInfo.IsVincodeStatus = Tool.GetNumber(value);
+                                        break;
+                                    }
+                                case 'a':
+                                    solrFilterInfo.Activitytype = Tool.GetNumber(value);
+                                    break;
+                                case 'm':
+                                    {
+                                        var val = value.split("_");
+                                        solrFilterInfo.MaxMileage = Tool.GetNumber(val[1]);
+                                        solrFilterInfo.MinMileage = Tool.GetNumber(val[0]);
+                                    }
+                                    break;
+                                case 'x':
+                                    {
+                                        var val = value.split('-');
+                                        for (var i = val.length - 1; i >= 0; i--) {
+                                            var temp = Tool.GetNumber(val[i]);
+                                            if (temp > 0) {
+                                                solrFilterInfo.ClassId.push(temp);
+                                            }
+                                        }
+                                    }
+                                case 'b':
+                                    solrFilterInfo.OccupationCarPlaceCnt = Tool.GetNumber(value);
+                                    break;
+                                    // 页码偏移量
+                                case 'y':
+                                    solrFilterInfo.PageOffset = Tool.GetNumber(value);
+                                    break;
+								case 'h': //排放标准
+                                    {
+                                        var val = value.split('-');
+                                        for (var i = val.length - 1; i >= 0; i--) {
+                                            var temp = Tool.GetNumber(val[i]);
+                                            if (temp > 0) {
+                                                solrFilterInfo.EnvironmentId.push(temp);
+                                            }
+                                        }
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+
+
+                    break;
+            }
+        }
+    }
+    return solrFilterInfo;
+}
+
+
+/*
+Append File:/2sc/m/CarList/carspec.js
+*/
+var carspec = new Object();
+carspec.Init = function () {
+    var _this = this;
+    this.base = Base;
+
+    this.allselectnum = 0;
+    this.checkbox = $(".checkbox");//车型
+    this.num = 0;
+    this.allspec = $("#radiospecall");//全部车型
+    this.radio = $(".spec_radio");//年贷款
+    this.spec_checkbox = $(".spec_checkbox");//具体车型
+    this.potion = $(".popyear");//下拉按钮
+
+    this.potion.removeClass("icon-arrow-down").addClass("icon-arrow-up")
+    this.potion.on("click", function (event) {
+        var yearid = Tool.GetNumber($(this).attr("yearid"));
+        var pop = $("#year_spec_" + yearid);
+        if ($(this).hasClass("icon-arrow-up"))  //显示
+        {
+            $(this).removeClass("icon-arrow-up").addClass("icon-arrow-down");
+            pop.addClass("fn-hide")
+        }
+        else {
+            $(this).removeClass("icon-arrow-down").addClass("icon-arrow-up");
+            pop.removeClass("fn-hide");
+        }
+        event.cancelBubble = true;
+        event.stopPropagation();
+        event.preventDefault();
+    });
+    //全选
+    this.allspec.on("change", function () {
+        if ($(this).prop("checked")) {
+            var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+            solrfilterinfo.SpecId = [];
+            solrfilterinfo.SeriesYearId = [];
+            _this.base.Ajax(solrfilterinfo, 101814);
+            _this.checkbox.prop("checked", true);
+            _this.radio.prop("checked", true);
+            _this.spec_checkbox.prop("checked", true);
+        }
+        else {
+            _this.radio.prop("checked", false);
+            _this.checkbox.prop("checked", false);
+            _this.spec_checkbox.prop("checked", false);
+            var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+            solrfilterinfo.SpecId = [];
+            solrfilterinfo.SeriesYearId = [];
+            _this.base.Ajax(solrfilterinfo, 101814);
+
+        }
+    });
+
+    //选着年贷款
+    this.radio.on("change", function () {
+        var yearid = Tool.GetNumber($(this).attr("yearid"));
+        var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        if ($(this).prop("checked")) {
+            if (!solrfilterinfo.SeriesYearId.contains(yearid)) {
+                solrfilterinfo.SeriesYearId.push(yearid);
+            }
+            $(".spec" + yearid).each(function () {
+                solrfilterinfo.SpecId.remove(Tool.GetNumber($(this).attr("specid")))
+            }).prop("checked", true)
+
+            _this.base.Ajax(solrfilterinfo, 101814);
+            var num = 0;
+            _this.radio.each(function () {
+                if ($(this).prop("checked"))
+                    num++;
+            });
+            if (_this.radio.size() == num) {
+                _this.allspec.prop("checked", true);
+            }
+            else {
+                _this.allspec.prop("checked", false);
+            }
+
+        }
+        else {
+            solrfilterinfo.SeriesYearId.remove(yearid);
+            $(".spec" + yearid).each(function () {
+                solrfilterinfo.SpecId.remove(Tool.GetNumber($(this).attr("specid")))
+            }).prop("checked", false)
+            _this.base.Ajax(solrfilterinfo, 101814);
+            _this.allspec.prop("checked", false);
+        }
+
+    });
+    //选着车型
+    this.spec_checkbox.on("change", function () {
+        var yearid = Tool.GetNumber($(this).attr("yearid"));
+        var specid = Tool.GetNumber($(this).attr("specid"));
+        if ($(this).prop("checked")) {
+            if (_this.checkbox.filter(":checked").size() > 20) {
+                $(this).prop("checked", false)
+                return;
+            }
+            var num = Tool.GetNumber($("#year_" + yearid).attr("num"));
+            if (num == $(".spec" + yearid + ":checked").size()) {
+                $("#year_" + yearid).prop("checked", true).trigger("change");
+            }
+            else {
+                var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+                if (!solrfilterinfo.SpecId.contains(specid)) {
+                    solrfilterinfo.SpecId.push(specid);
+                }
+                _this.base.Ajax(solrfilterinfo, 101814);
+            }
+        }
+        else {
+
+            var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+            var isall = _this.allspec.prop("checked");
+            if (isall) {
+                _this.radio.each(function () {
+                    var ryearid = Tool.GetNumber($(this).attr("yearid"));
+                    if ($(this).prop("checked") && ryearid != 0) {
+                        if (!solrfilterinfo.SeriesYearId.contains(ryearid)) {
+                            solrfilterinfo.SeriesYearId.push(ryearid);
+                        }
+                    }
+                });
+            }
+            
+            if (solrfilterinfo.SeriesYearId.contains(yearid)) {
+                $(".spec" + yearid + ":checked").each(function () {
+                    var specid = Tool.GetNumber($(this).attr("specid"));
+                    if (!solrfilterinfo.SpecId.contains(specid)) {
+                        solrfilterinfo.SpecId.push(specid);
+                    }
+                })
+            }
+
+            _this.allspec.prop("checked", false); //取消全选
+            $("#year_" + yearid).prop("checked", false); //去掉年贷款
+            solrfilterinfo.SpecId.remove(specid);
+            solrfilterinfo.SeriesYearId.remove(yearid);
+            _this.base.Ajax(solrfilterinfo, 101814);
+
+        }
+    });
+
+
+
+}
+
+var carspecmore = new Object();
+carspecmore.Init = function () {
+    var _this = this;
+    this.base = Base;
+
+    this.allselectnum = 0;
+    this.checkbox = $(".checkbox");//车型
+    this.num = 0;
+    this.allspec = $("#radiospecall");//全部车型
+    this.radio = $(".spec_radio");//年贷款
+    this.spec_checkbox = $(".spec_checkbox");//具体车型
+    this.potion = $(".popyear");//下拉按钮
+
+    this.potion.removeClass("icon-arrow-down").addClass("icon-arrow-up")
+    this.potion.on("click", function (event) {
+        var yearid = Tool.GetNumber($(this).attr("yearid"));
+        var pop = $("#year_spec_" + yearid);
+        if ($(this).hasClass("icon-arrow-up"))  //显示
+        {
+            $(this).removeClass("icon-arrow-up").addClass("icon-arrow-down");
+            pop.addClass("fn-hide")
+        }
+        else {
+            $(this).removeClass("icon-arrow-down").addClass("icon-arrow-up");
+            pop.removeClass("fn-hide");
+        }
+        event.cancelBubble = true;
+        event.stopPropagation();
+        event.preventDefault();
+    });
+    //全选
+    this.allspec.on("change", function () {
+        if ($(this).prop("checked")) {
+            var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+            solrfilterinfo.SpecId = [];
+            solrfilterinfo.SeriesYearId = [];
+            _this.base.Ajax(solrfilterinfo, 101814);
+            _this.checkbox.prop("checked", true);
+            _this.radio.prop("checked", true);
+            _this.spec_checkbox.prop("checked", true);
+        }
+        else {
+            _this.radio.prop("checked", false);
+            _this.checkbox.prop("checked", false);
+            _this.spec_checkbox.prop("checked", false);
+            var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+            solrfilterinfo.SpecId = [];
+            solrfilterinfo.SeriesYearId = [];
+            _this.base.Ajax(solrfilterinfo, 101814);
+
+        }
+    });
+
+    //选着年贷款
+    this.radio.on("change", function () {
+        var yearid = Tool.GetNumber($(this).attr("yearid"));
+        var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+        if ($(this).prop("checked")) {
+            if (!solrfilterinfo.SeriesYearId.contains(yearid)) {
+                solrfilterinfo.SeriesYearId.push(yearid);
+            }
+            $(".spec" + yearid).each(function () {
+                solrfilterinfo.SpecId.remove(Tool.GetNumber($(this).attr("specid")))
+            }).prop("checked", true)
+
+            _this.base.Ajax(solrfilterinfo, 101814);
+            var num = 0;
+            _this.radio.each(function () {
+                if ($(this).prop("checked"))
+                    num++;
+            });
+            if (_this.radio.size() == num) {
+                _this.allspec.prop("checked", true);
+            }
+            else {
+                _this.allspec.prop("checked", false);
+            }
+
+        }
+        else {
+            solrfilterinfo.SeriesYearId.remove(yearid);
+            $(".spec" + yearid).each(function () {
+                solrfilterinfo.SpecId.remove(Tool.GetNumber($(this).attr("specid")))
+            }).prop("checked", false)
+            _this.base.Ajax(solrfilterinfo, 101814);
+            _this.allspec.prop("checked", false);
+        }
+
+    });
+    //选着车型
+    this.spec_checkbox.on("change", function () {
+        var yearid = Tool.GetNumber($(this).attr("yearid"));
+        var specid = Tool.GetNumber($(this).attr("specid"));
+        if ($(this).prop("checked")) {
+            if (_this.checkbox.filter(":checked").size() > 20) {
+                $(this).prop("checked", false)
+                return;
+            }
+            var num = Tool.GetNumber($("#year_" + yearid).attr("num"));
+            if (num == $(".spec" + yearid + ":checked").size()) {
+                $("#year_" + yearid).prop("checked", true).trigger("change");
+            }
+            else {
+                var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+                if (!solrfilterinfo.SpecId.contains(specid)) {
+                    solrfilterinfo.SpecId.push(specid);
+                }
+                _this.base.Ajax(solrfilterinfo, 101814);
+            }
+        }
+        else {
+
+            var solrfilterinfo = SolrFilterInfo.Convert(_this.base.filter.val());
+            var isall = _this.allspec.prop("checked");
+            if (isall) {
+                _this.radio.each(function () {
+                    var ryearid = Tool.GetNumber($(this).attr("yearid"));
+                    if ($(this).prop("checked") && ryearid != 0) {
+                        if (!solrfilterinfo.SeriesYearId.contains(ryearid)) {
+                            solrfilterinfo.SeriesYearId.push(ryearid);
+                        }
+                    }
+                });
+            }
+
+            if (solrfilterinfo.SeriesYearId.contains(yearid)) {
+                $(".spec" + yearid + ":checked").each(function () {
+                    var specid = Tool.GetNumber($(this).attr("specid"));
+                    if (!solrfilterinfo.SpecId.contains(specid)) {
+                        solrfilterinfo.SpecId.push(specid);
+                    }
+                })
+            }
+
+            _this.allspec.prop("checked", false); //取消全选
+            $("#year_" + yearid).prop("checked", false); //去掉年贷款
+            solrfilterinfo.SpecId.remove(specid);
+            solrfilterinfo.SeriesYearId.remove(yearid);
+            _this.base.Ajax(solrfilterinfo, 101814);
+
+        }
+    });
+}
+
+
+
+/*
+Append File:/2sc/m/EvnetClickTrack.js
+*/
+
+var hdhttpvalue = $("#hdhttpvalue") && $("#hdhttpvalue") != undefined && $("#hdhttpvalue").val() != undefined ? $("#hdhttpvalue").val() : "";
+
+var tag = ["a", "div", "span", "i", "img", "em", "li", "ul", "section"];
+$("body").on("click",function (event) {
+    var obj = event.target;
+    var num = 0;
+    do {
+        var tagname = obj.tagName.toLowerCase();
+        var i = 0;
+        for (i = 0; i < tag.length; i++) {
+            if (tag[i] == tagname) {
+                if (obj.getAttribute("name") == "track") {
+                    trackClick($(obj).attr("eventkey"), $(obj).attr("infoid"));
+                    num = 3;
+                    break;
+                }
+
+            }
+        }
+        obj = obj.parentNode;
+        num++;
+    }
+    while ((num < 3));
+})
+// 记录点击
+function trackClick(eventKey, info) {
+    if (!info)
+        info = 0;
+    $.ajax({
+        type: "GET",
+        url: hdhttpvalue + "//collectionpv.che168.com/collect/page_event.ashx?eventkey=" + eventKey + '&info=' + info + '&ref=' + escape(document.referrer) + '&cur=' + escape(location.href) + '&rm=' + new Date().getTime(),
+        dataType: "jsonp"
+    });
+}
+
+/*
+Append File:/2sc/m/TransferCarShowInfo.js
+*/
+var hdhttpvalue = $("#hdhttpvalue") && $("#hdhttpvalue") != undefined && $("#hdhttpvalue").val() != undefined ? $("#hdhttpvalue").val() : "";
+
+function showCarInfo(reffer, curSourse, offset) {
+    var idList = "";
+    var liArray = $("#CarList").find("li.bo-b");
+
+    if (liArray != null && liArray.length > 0) {
+        for (var i = offset; i < liArray.length; i++) {
+            var li = $(liArray[i]);
+            if ($.trim(li.html()).length > 0) {
+                var link = $("#CarList").find("li");
+                var isRecom = li.attr('data-installment');
+                var pos = li.attr('data-pos');
+                var type = li.attr('data-type');
+                var rtype = li.attr('data-abtest');
+                var adid = li.attr('adid');
+                adid = adid || 0;
+                rtype = rtype || 0;
+                
+                if (li.attr('isafteraudit') == 1) {
+                    idList += li.attr('data') + "^" + isRecom + "^" + "0^10^" + pos + "^" + rtype + "^" + adid + "|";
+
+                } else {
+                    idList += li.attr('data') + "^" + isRecom + "^" + "0^" + type + "^" + pos + "^" + rtype + "^" + adid + "|";
+                }
+                li.find("a").bind("click", function () {
+                    var lit = $(this).parent();
+                    var InfoList;
+                    var isRecom = lit.attr('data-installment');
+                    var dealer_id = lit.attr('data').split('^')[0];
+                    var info_id = lit.attr('data').split('^')[1];
+                    var rtype = lit.attr('data-abtest');
+                    rtype = rtype || 0;
+                    var pos = lit.attr('data-pos');
+                    var otype = lit.attr('data-type');
+                    adid = lit.attr('adid');
+                    adid = adid || 0;
+                    if (lit.attr('isafteraudit') == 1) {
+                        otype = 10;
+                    }
+                    InfoList = dealer_id + "|" + info_id + "|" + isRecom + "|0|" + otype + "|" + pos + "|" + rtype + "|" + adid;
+                    
+                    new Image().src = window.location.protocol + '//collectionpv.che168.com/collect/page_event.ashx?eventkey=c_m_2sc_carlist_carclick_inlist&info=' + InfoList + '&ref=' + escape(document.referrer) + '&cur=' + escape(location.href) + '&rm=' + new Date().getTime();
+                    
+                    //$.ajax({
+                    //    type: "get",
+                    //    async: false,
+                    //    url: window.location.protocol + '//collectionpv.che168.com/collect/page_event.ashx?eventkey=c_m_2sc_carlist_carclick_inlist&info=' + InfoList + '&ref=' + escape(document.referrer) + '&cur=' + escape(location.href) + '&rm=' + new Date().getTime(),
+                    //    dataType: "jsonp"
+                    //});
+                }); 
+            }
+        }
+
+        if (reffer != '' && reffer !=null && reffer.length > 0 && offset == 0) {
+            if (curSourse.indexOf('?') > -1) {
+                reffer = curSourse.split('?')[0] + 'page' + (parseInt($(liArray[offset]).attr('data-page')) - 1) + '/#' + curSourse.split('?')[1];
+                curSourse = curSourse.split('?')[0] + 'page' + $(liArray[offset]).attr('data-page') + '/#' + curSourse.split('?')[1];
+            } else {
+                reffer = curSourse + 'page' + (parseInt($(liArray[offset]).attr('data-page')) - 1) + '/';
+                curSourse = curSourse + 'page' + $(liArray[offset]).attr('data-page') + '/';
+            }
+        }
+    }
+
+    var url = hdhttpvalue + '//collectionpv.che168.com/collect/page_event.ashx?eventkey=s_m_2sc_carlist_carshow&info=' + idList + '&ref=' + escape(reffer) + '&cur=' + escape(curSourse) + '&rm=' + new Date().getTime();
+    $.LoadJs({ 'url': url, 'type': 'true' }, null);
+};
+showCarInfo(document.referrer, location.href, 0);
+
+/* 
+var cpcCarShowPars = $("#CarList").attr("cpcCarShowPars");
+
+if (cpcCarShowPars) {
+    $.ajax({
+        type: "get",
+        url: hdhttpvalue + "//cpcclick.che168.com/show.ashx?info=" + cpcCarShowPars + '&ref=' + escape(document.referrer) + '&cur=' + escape(location.href),
+        dataType: "jsonp"
+    });
+}
+*/
+
+/* 逐条计算CPC车源展现 begin */
+
+function LoadlazyCpc() {
+    $("li[name='lazyloadcpc']").each(function () {
+        if ($(this).attr("lazyloadcpc") == null) {
+            return;
+        }
+        var wx = $(window).width() + $(window).scrollLeft();
+        var wy = $(window).height() + $(window).scrollTop();
+        var dx = $(this).offset().left;
+        var dy = $(this).offset().top;
+        if ((wx > dx) && (wy > dy)) {
+            var dealer_id = $(this).attr('data').split('^')[0];
+            var info_id = $(this).attr('data').split('^')[1];
+            var pos = $(this).attr('data-pos');
+            var adid = $(this).attr('adid');
+            var info = adid + "^" + info_id + "^" + dealer_id + "^" + pos;
+            $(this).removeAttr("lazyloadcpc");
+            $.ajax({
+                type: "get",
+                url: hdhttpvalue + "//cpcclick.che168.com/show.ashx?info=" + info + '&ref=' + escape(document.referrer) + '&cur=' + escape(location.href) + '&datafrom=1',
+                dataType: "jsonp"
+            });
+        }
+    });
+}
+
+$(function () {
+    LoadlazyCpc();
+    $(window).scroll(function () { LoadlazyCpc(); });
+});
+/* 逐条计算CPC车源展现 end */
+
+/*
+Append File:/2sc/m/ThousandFaces/CarClick.js
+*/
+function ATagBindClick() {
+    $(".list-base a").click(function () {
+        var li = $(this).parent();
+        var data = $(li).attr("data");
+        var infoid = 0;
+
+        if (data) {
+            var dataArray = data.split('^');
+            infoid = dataArray.length > 0 ? dataArray[1] : 0;
+        }
+
+        var page = $(li).attr("data-page");
+        var pos = $(li).attr("data-pos");
+        var abtest = $(li).attr("data-abtest");
+
+        if (abtest && parseInt(abtest) > 0) {
+            $.get("/handler/thousandfaces/carclick.ashx?infoid=" + infoid + "&page=" + page + "&pos=" + pos);
+        }
+    });
+}
+
+ATagBindClick();
+
+/*
+Append File:/2sc/m/DownAD.js
+*/
+var hdhttpvalue = $("#hdhttpvalue") && $("#hdhttpvalue") != undefined && $("#hdhttpvalue").val() != undefined ? $("#hdhttpvalue").val() : "";
+
+var arrayHtml = [];
+var ccid = 'ssc' + Math.ceil(Math.random() * 10);
+var classT = 'classT' + Math.ceil(Math.random() * 10);
+var classR = 'classR' + Math.ceil(Math.random() * 10);
+var refer = document.referrer;
+var lhref = window.location.href
+var appadfirst = $.getCookie('appadfirst', '');
+var hrefAD = '';//下载跳转url
+var u = navigator.userAgent;
+var os = 0;//操作系统默认ios  1是ios
+
+var m168_xia = 'http://app.autohome.com.cn/download/usedcar_m168_xia.apk';
+var m168_dingbu = 'http://app.autohome.com.cn/download/usedcar_m168_dingbu.apk';
+var m168_shang = 'http://app.autohome.com.cn/download/usedcar_m168_shang.apk'
+/* 所有页面二手车APP顶部显示推广 */
+function CloseAppTip() {
+    $("#" + ccid).hide();
+    $.setCookie('Mapplink', '1', { domain: '.che168.com', expireHours: 24 * 30 });
+}
+
+/* 所有需要隐藏下面推广条的判断都需要添加判断是否有这个变量否则会报错 */
+(function () {
+
+    var className = 'bc' + Math.ceil(Math.random() * 100);
+    var IsJJApp = $.getCookie('isFromApp', '');
+    var isHideAdJump = typeof (hideAdJump) !== 'undefined' ? hideAdJump : 0;
+    var isHidead = typeof (hidead) !== 'undefined' ? hidead : 0;
+    var curUrl = location.href.toLowerCase();
+
+    var hrefMessage = '';//消息流
+    var hrefDIV = '';//弹框
+
+    if (location.href.toLowerCase().indexOf('sourcename=weizhang') == -1 && location.href.toLowerCase().indexOf('sourcename=meituan') == -1
+       && location.href.toLowerCase().indexOf('sourcename=baojia') == -1 && location.href.toLowerCase().indexOf('sourcename=main') == -1
+       && location.href.toLowerCase().indexOf('sourcename=mainapp') == -1 && location.href.toLowerCase().indexOf('sourcename=baojiazuche') == -1
+       && location.href.toLowerCase().indexOf('sourcename=didapinche') == -1 && location.href.toLowerCase().indexOf('sourcename=songguojiakao') == -1
+        && location.href.toLowerCase().indexOf('sourcename=pinganmap') == -1
+       && !/auto_/.test(navigator.userAgent)
+       && IsJJApp !== '1' && isHideAdJump == 0 && isHidead == 0 && curUrl.indexOf('keepvalue') === -1) {
+
+        os = 1;
+        hrefAD = hdhttpvalue + '//a.app.qq.com/o/simple.jsp?pkgname=com.autohome.usedcar';
+        if (!isWeiXin() && (navigator.userAgent.match(/Android/i) != null || navigator.userAgent.match(/Linux/i) != null)) {
+            os = 0;
+            hrefAD = hdhttpvalue + '//t.cn/Rq8HPoI';
+        }
+
+        if (hrefAD != '') {
+            arrayHtml.push("<style media=\"screen\">");
+            arrayHtml.push("." + classT + "{position:relative;width:100%;height:2.8125rem;background-color:#f2f3f6}." + classT + " a{display:block;width:100%;height:2.8125rem}." + classT + " .hippo-gif{width:3.75rem;height:2.75rem;background:url(//x.autoimg.cn/2scimg/m/20161025/hippo-app.gif) no-repeat;background-size:3.75rem auto;float:left;margin-left:1.8125rem}." + classT + " img.adv-text{display:block;float:left;margin-left:.5625rem;width:9rem;height:2.75rem;background-size:9rem auto}." + classT + " .pulse{display:block;width:3.4375rem;height:1.25rem;text-align:center;font-size:.75rem;line-height:1.25rem;border:1px solid #4680d1;background:#fff;color:#4680d1;position:absolute;right:.8125rem;top:.78125rem;border-radius:5px}@-webkit-keyframes pulse{0%{-webkit-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}50%{-webkit-transform:scale3d(1.05, 1.05, 1.05);transform:scale3d(1.05, 1.05, 1.05)}100%{-webkit-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}}@keyframes pulse{0%{-webkit-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}50%{-webkit-transform:scale3d(1.05, 1.05, 1.05);transform:scale3d(1.05, 1.05, 1.05)}100%{-webkit-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}}." + classT + " .pulse{-webkit-animation-name:pulse;animation-name:pulse;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}." + classT + " i{display:inline-block;padding:.9375rem .4375rem;position:absolute;width:.9375rem;font-size:0.75rem;height:.9375rem;top:0;left:0;color:#498fdc}");
+            arrayHtml.push("." + classR + "{position:fixed;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);width:16.25rem;height:18.4375rem;z-index:100000;background-color:#fff;border-radius:0.59375rem}." + classR + " img.hippo{margin-top:-0.78125rem;width:16.25rem;height:5.78125rem}." + classR + " .profile{margin-top:1.5rem;color:#3f7bcf}." + classR + " .profile p{position:relative;padding-left:1.25rem;margin-left:4.375rem;margin-bottom:1.25rem;font-size:0.75rem;line-height:0.9375rem}." + classR + " .profile p .icon{position:absolute;left:0;top:0;width:0.9375rem;height:0.9375rem;background:url(//x.autoimg.cn/2scimg/m/20160620/app-service.png) no-repeat;background-size:5rem auto}." + classR + " .profile p .icon-fast{background-position:0 0}." + classR + " .profile p .icon-bell{background-position:-1.25rem 0}." + classR + " .profile p .icon-save{background-position:-2.5rem 0}." + classR + " .profile p .icon-speed{background-position:-3.75rem 0}." + classR + " .down-btn{display:block;width:10.9375rem;height:2.1875rem;text-align:center;line-height:2.1875rem;font-size:0.9375rem;color:#fff;background:#4680d1;position:absolute;bottom:0.9375rem;left:50%;margin-left:-5.46875rem;border-radius:5px}." + classR + " .close-btn{display:block;width:1.5rem;height:1.5rem;position:absolute;right:-0.625rem;top:-0.625rem}." + classR + " .close-btn img{width:1.5rem;height:1.5rem}");
+            arrayHtml.push(".download-gg {position: absolute;top: auto;right: auto;bottom: 0.0625rem;left: 0.0625rem;width: auto;height: auto;line-height: 1;font-size: 0.75rem;transform: scale(.83);-webkit-transform: scale(.83);border: 0;padding: 0;color: rgba(0, 0, 0, .2);background: none;}");
+            arrayHtml.push("</style>");
+
+            var typeEventkey = '';
+            if (urlType == 'list') {
+
+                typeEventkey = 'c_m_2sc_lb_topbanner_dl';
+            } else if (urlType == 'index') {
+                typeEventkey = 'c_m_2sc_sy_topbanner_dl';
+            } else {
+                typeEventkey = 'c_m_2sc_xq_topbanner_dl';
+            }
+
+            //百度聚合落地页隐藏下载banner
+            var bdpvareaid = parseInt(GetQueryString('pvareaid'), 0);
+            if (bdpvareaid != 103731) {
+                arrayHtml.push("<div  id='" + ccid + "'  class=\"" + classT + "\">");
+                arrayHtml.push("<a id=\"loadhref2\" onclick=\"eventkey('" + typeEventkey + "')\" href=\"javascript:openApp('m168_dingbu')\">");
+                arrayHtml.push("<div class=\"hippo-gif\"></div>");
+                arrayHtml.push("<img src=\"" + hdhttpvalue + "//x.autoimg.cn/2scimg/m/20160912/app-adv-new-v1.png\" alt=\"\" class=\"adv-text\">");
+                arrayHtml.push("<span class=\"pulse\">打开APP</span>");
+                arrayHtml.push("<span class=\"download-gg\">广告</span>");
+                arrayHtml.push("</a>");
+                arrayHtml.push("<i onclick=\"CloseAppTip();\" class=\"iconfont icon-cross-fine\"></i>");
+                arrayHtml.push("</div>");
+            }
+
+            refer = GetQueryString('ref');
+            if (refer == null || refer == '') {
+                refer = document.referrer;
+            }
+
+            //是否是百度推广来源
+            var isFromBaidu = false;
+            if (refer.indexOf('baidu') > -1 || refer.indexOf('https://www.baidu.com') > -1 || refer.indexOf('http://www.baidu.com') > -1) {
+                isFromBaidu = true;
+            }
+            if (refer.indexOf('baidu') > -1 || refer.indexOf('https://m.baidu.com') > -1 || refer.indexOf('http://m.baidu.com') > -1) {
+                isFromBaidu = true;
+            }
+
+            if (!isFromBaidu) {
+                if (appadfirst.length == 0) {
+                    var tcEventkey = '';
+                    if (urlType == 'list') {
+                        tcEventkey = 'c_m_2sc_lb_tc_dl';
+                    } else if (urlType == 'index') {
+                        tcEventkey = 'c_m_2sc_sy_tc_dl';
+                    } else {
+                        tcEventkey = 'c_m_2sc_xq_tc_dl';
+                    }
+
+                    arrayHtml.push("<div id='" + classR + "' class=\"" + classR + " fn-hide\">");
+                    arrayHtml.push("<img src=\"" + hdhttpvalue + "//x.autoimg.cn/2scimg/m/20160912/app-download.png\" class=\"hippo\">");
+                    arrayHtml.push("<div class=\"profile\">");
+                    arrayHtml.push("<p><i class=\"icon icon-fast\"></i>最快速的浏览体验</p>");
+                    arrayHtml.push("<p><i class=\"icon icon-bell\"></i>订阅车源实时提醒</p>");
+                    arrayHtml.push("<p><i class=\"icon icon-save\"></i>心仪车辆一键收藏</p>");
+                    arrayHtml.push("<p><i class=\"icon icon-speed\"></i>发车体验快速高效</p>");
+                    arrayHtml.push("</div>");
+                    arrayHtml.push("<a onmouseup=\"eventkey('" + tcEventkey + "');$('#advpop').hide();$('#maskdiv').hide();\"  id=\"loadhref\" href=\"javascript:openApp('m168_xia')\" class=\"down-btn\">立即打开</a>");
+                    arrayHtml.push("<a onclick=\"closeADDIV()\" class=\"close-btn pop-close\">");
+                    arrayHtml.push("<img src=\"//x.autoimg.cn/2scimg/m/20160517/close-btn.png\" />");
+                    arrayHtml.push("</div>");
+                }
+            } else {
+                closeADDIV();
+            }
+        }
+    }
+
+})();
+function closeADDIV() {
+    $.setCookie('appadfirst', '1', { domain: '.che168.com', expireHours: 24 * 30 });
+    $("#showCityPop").removeClass("fn-hide");
+    setTimeout(function () {
+        $("#showCityPop").addClass("fn-hide");
+    }, 3000);
+}
+
+function GetQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+}
+
+function waitAddHtml() {
+    $('.wrapper').length ? $('.wrapper').prepend(arrayHtml.join('')) : $('body').prepend(arrayHtml.join(''));
+    //$('body').prepend(arrayHtml.join(''));
+    $.pop.open(classR);
+    if ($("#loadhref2").length == 0) { return; }
+    /*处理顶部top的*/
+    //$("#loadhref2").attr('href', hrefAD);
+    /*处理信息内展示*/
+    
+    if ($('#loadhref').length > 0) {
+        $("#loadhref").attr('href', $("#loadhref").attr('href').replace(/★/g, ''));
+    }
+
+    var isMCookie = $.getCookie('Mapplink', '0');
+
+    if (appadfirst.length == 0) {
+        if (urlType.indexOf('list') > -1) {
+            eventkey('s_m_2sc_lb_tc');
+        } else if (urlType.indexOf('index') > -1) {
+            eventkey('s_m_2sc_sy_tc');
+        } else {
+            eventkey('s_m_2sc_xq_tc');
+        }
+    }
+    if (isMCookie == 0) {
+        $("#" + ccid + "").show();
+        if (urlType.indexOf('list') > -1) {
+            eventkey('s_m_2sc_lb_topbanner');
+        } else if (urlType.indexOf('index') > -1) {
+            eventkey('s_m_2sc_sy_topbanner');
+        } else {
+            eventkey('s_m_2sc_xq_topbanner');
+        }
+    } else {
+        $("#" + ccid + "").hide();
+    }
+}
+
+function eventkey(obj) {
+    if (obj == 'c_m_2sc_xq_tc_dl' || obj == 'c_m_2sc_sy_tc_dl' || obj == 'c_m_2sc_xq_tc_dl') {
+        $.setCookie('appadfirst', '1', { domain: '.che168.com', expireHours: 24 * 30 });
+    }
+    $.ajax({
+        type: "GET",
+        url: hdhttpvalue + "//collectionpv.che168.com/collect/page_event.ashx?eventkey=" + obj + "&info=0&ref=" + document.referrer + "&cur=" + location.href + "&rm=" + new Date().getTime(),
+        dataType: "jsonp"
+    });
+}
+//判断是否是微信
+function isWeiXin() {
+    var ua = window.navigator.userAgent.toLowerCase();
+    if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+setTimeout(waitAddHtml(), 3000);
+
+
+//if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+//    var loadDateTime = new Date();
+//    window.setTimeout(function () {
+//        var timeOutDateTime = new Date();
+//        if (timeOutDateTime - loadDateTime < 5000) {
+//            window.location = "要跳转的页面URL";
+//        } else {
+//            window.close();
+//        }
+//    },
+//    25);
+//    window.location = "usedcar://scheme.che168.com/launch";
+//} else if (navigator.userAgent.match(/android/i)) {
+//    var state = null;
+//    try {
+//        state = window.open("usedcar://scheme.che168.com/launch", '_blank');
+//    } catch (e) { }
+//    if (state) {
+//        window.close();
+//    } else {
+//        window.location = "要跳转的页面URL";
+//    }
+//}
+
+//var timeout, t = 1000, hasApp = true;
+function openApp(type) {
+    //var m168_xia = 'http://app.autohome.com.cn/download/usedcar_m168_xia.apk';
+    //var m168_dingbu = 'http://app.autohome.com.cn/download/usedcar_m168_dingbu.apk';
+    //var m168_shang = 'http://app.autohome.com.cn/download/usedcar_m168_shang.apk'
+
+
+
+    if (os == 0) {
+        if (type === 'm168_xia') {
+            hrefAD = hdhttpvalue + '//app.autohome.com.cn/download/usedcar_m168_xia.apk';
+        }
+        else if (type === 'm168_dingbu') {
+            hrefAD = hdhttpvalue + '//app.autohome.com.cn/download/usedcar_m168_dingbu.apk';
+        }
+        else if (type === 'm168_shang') {
+            hrefAD = hdhttpvalue + '//app.autohome.com.cn/download/usedcar_m168_shang.apk';
+        }
+        else if (type === 'erweima_csy') {
+            hrefAD = hdhttpvalue + '//app.autohome.com.cn/download/usedcar_erweima_csy.apk';
+        }
+        else if (type === 'huodong_dx') {
+            hrefAD = hdhttpvalue + '//app.autohome.com.cn/download/usedcar_huodong_dx.apk';
+        }
+    }
+    _openAppUrl("usedcar://che168.com/launch");
+    return false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //location.href = 'usedcar://che168.com/launch';
+    //location.href = '下载页';
+    //location.href = 'usedcar://che168.com/launch';
+    ////setTimeout(function () {
+    ////    location.href = hrefAD;
+    ////}, 250);
+    //setTimeout(function () {
+    //    location.reload();
+    //}, 1000);
+
+
+    //document.write("<script src='usedcar://che168.com/launch'><\/script>");
+
+
+    //return false;
+    //try {
+    //    $.ajax({ url: "usedcar://che168.com/launch", async: false }, function (obj) {
+    //        alert("3333333333"+obj);
+    //    });
+    //} catch (e) {
+
+    //}
+    //var ifr = $('<iframe id="ifr" style="height:0"></iframe>')
+    //ifr.attr('src', 'usedcar://che168.com/launch');
+    //$('body').append(ifr);
+
+    //setTimeout(function () {
+    //    location.href = hrefAD;
+    //}, 3000);
+}
+
+/* 逐条计算列表页下载展现 begin */
+function LoadlazyDown() {
+    $("a[mark='lazyloaddown']").each(function () {
+        if ($(this).attr("lazyloaddown") == null) {
+            return;
+        }
+        var wx = $(window).width() + $(window).scrollLeft();
+        var wy = $(window).height() + $(window).scrollTop();
+        var dx = $(this).offset().left;
+        var dy = $(this).offset().top;
+        if ((wx > dx) && (wy > dy)) {
+            var showkey = $(this).attr('showkey');
+            var infoid = $(this).attr('infoid');
+            
+            $(this).removeAttr("lazyloaddown");
+            $.ajax({
+                type: "get",
+                url: hdhttpvalue + '//collectionpv.che168.com/collect/page_event.ashx?eventkey=' + showkey + '&info=' + infoid + '&ref=' + escape(document.referrer) + '&cur=' + escape(location.href),
+                dataType: "jsonp"
+            });
+        }
+    });
+}
+
+$(function () {
+    LoadlazyDown();
+    $(window).scroll(function () { LoadlazyDown(); });
+});
+/* 逐条计算列表页下载展现 end */
+
+
+
+
+//$(function () {
+var lockCount = 0;
+function _openAppUrl(appUrl) {
+       
+        var ua = navigator.userAgent.toLocaleLowerCase(),
+            openBrowser = null,
+            deviceVersion = 0,
+            matchVersion = null,
+            openAppType = "",
+            downLoadUrl = hrefAD;
+
+            //在浏览器打开，判断是在移动端还是在PC端
+            if (matchVersion = navigator.userAgent.match(/OS\s*(\d+)/)) {
+                //赋值，并且判断
+                //IOS设备的浏览器
+                deviceVersion = matchVersion[1] || 0;
+
+                if (deviceVersion - 9 >= 0) {
+                    openAppType = "newType";
+                }
+            } else if (matchVersion = navigator.userAgent.match(/Android\s*(\d+)/)) {
+                //Android的设备
+                deviceVersion = matchVersion[1] || 0;
+
+                if (deviceVersion - 5 >= 0) {
+                    openAppType = "newType";
+                }
+
+            } else {
+                //PC端的设备
+                openAppType = "pc";
+            }
+
+
+            if (openAppType == "pc") {
+                _openAppUrl = function () {
+                    alert("DEMO，请在移动端的浏览器查看！");
+                }
+            } else if (openAppType == "newType") {
+                //使用新的方法，尝试打开APP
+                //IOS>9,Android>5的版本
+                _openAppUrl = function (url) {
+                    var history = window.history;
+                        body = $("body").eq(0),
+                       ifr = $('<iframe id=\'ifr\' style="height:0;display:none;"  src="' + downLoadUrl + '"></iframe>');
+
+                    body.append(ifr);
+                    $(window).on("popstate", function (e) {
+                        var state = history.state;
+
+                        if (!state) {
+                            ifr.addClass("dn");
+                        }
+                    });
+
+                    function _show() {
+                        history.pushState({}, "下载APP链接页", "");
+                        lock = true;
+                        lockCount++;
+                        if (lockCount == 2)
+                        {
+                            adDown();
+                        }
+                        
+                        //setTimeout(window.location.href = downLoadUrl, 5000);
+                        ifr.removeClass("dn");
+                    }
+                    
+                    _openAppUrl = function (url) {
+                        location.href = url;
+                        _show();
+                    }
+                    
+                    //setTimeout(window.location.href = downLoadUrl, 3000);
+                    _openAppUrl(url);
+
+                }
+            } else {
+                //使用计算时差的方案打开APP
+                var checkOpen = function (cb) {
+                    var _clickTime = +(new Date()),
+                        _count = 0,
+                        intHandle = 0;
+
+                    //启动间隔20ms运行的定时器，并检测累计消耗时间是否超过3000ms，超过则结束
+                    intHandle = setInterval(function () {
+                        _count++;
+                        var elsTime = +(new Date()) - _clickTime;
+
+                        if (_count >= 100 || elsTime > 3000) {
+                            clearInterval(intHandle);
+                            //计算结束，根据不同，做不同的跳转处理，0表示已经跳转APP成功了
+                            if (elsTime > 3000 || document.hidden || document.webkitHidden) {
+                                cb(0);
+                            } else {
+                                cb(1);
+                            }
+
+                        }
+                    }, 20);
+                }
+
+                _openAppUrl = function (url) {
+                    var ifr = document.createElement('iframe');
+
+                    ifr.src = url;
+                    ifr.style.display = 'none';
+
+                    checkOpen(function (opened) {
+                        if (opened === 1) {
+                            location.href = downLoadUrl;
+                        }
+                    });
+
+                    document.body.appendChild(ifr);
+
+                    setTimeout(function () {
+                        document.body.removeChild(ifr);
+                    }, 2000);
+                }
+
+            }
+
+
+        _openAppUrl(appUrl);
+
+    }
+
+    //var appUrl = "QDReader://";
+
+    //$("#tryOpenApp").on("click", function () {
+    //    _openAppUrl(appUrl);
+    //    return false;
+    //});
+
+//});
+function adDown() {
+   if (lock) {
+        window.location.href = hrefAD;
+    }
+}
+    
+
+/*
+Execute Time:5ms
+Create Time:2017/4/27 9:21:40
+*/
+
+		</script>
+	</body>
+</html>
