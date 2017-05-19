@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../../data/66.js" type="text/javascript" charset="utf-8"></script>
+
+	<body>
+		<script type="text/javascript">
+			function getArrayItems(arr, num) {
+				//新建一个数组,将传入的数组复制过来,用于运算,而不要直接操作传入的数组;
+				if(typeof arr === "object" && Object.prototype.toString.call(arr) === '[object Array]') {
+					var temp_array = [];
+					//深拷贝
+					for(var i = 0, len = arr.length; i < len; i++) {
+						temp_array.push(arr[i]);
+					}
+					if(arr.length <= num) {
+						return temp_array;
+					}
+					//取出的数值项,保存在此数组
+					var return_array = [];
+					for(var i = 0; i < num; i++) {
+						//判断如果数组还有可以取出的元素,以防下标越界
+						if(temp_array.length > 0) {
+							//在数组中产生一个随机索引
+							var arrIndex = Math.floor(Math.random() * temp_array.length);
+							//将此随机索引的对应的数组元素值复制出来
+							return_array[i] = temp_array[arrIndex];
+							//然后删掉此索引的数组元素,这时候temp_array变为新的数组
+							temp_array.splice(arrIndex, 1);
+						} else {
+							//数组中数据项取完后,退出循环,比如数组本来只有10项,但要求取出20项.
+							break;
+						}
+					}
+					return return_array;
+				} else {
+					return [];
+				}
+
+			}
+
+			console.log(getArrayItems([1, 5, 3, 6, 7, 8, 9], 2));
+
+			console.log(data);
+			console.log(data.Data.V);
+			var dav = data.Data.V;
+			var davObj = {};
+			var davArr=[];
+		
+			for(var i = 0, len = dav.length; i < len; i++) {
+				var item = dav[i],
+					key = item.userid;
+				if(!davObj[key]) {
+					davObj[key] = [];
+					davArr.push(key);
+				}
+				davObj[key].push(item);
+			}
+			var carArr=[];
+			console.log(davObj);
+			console.log(davArr);
+			var randomdav=[];
+			if (davArr.length>=8) {
+				randomdav=getArrayItems(davArr,1)
+				for (var i = 0; i < randomdav.length; i++) {
+					var itemArr= davObj[randomdav[i]];
+					var random=Math.random(0,itemArr.length);
+					
+				}
+			}
+			
+			
+			
+		</script>
+	</body>
+
+</html>
