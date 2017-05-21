@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+@-webkit-keyframes rotate {
+	0% {
+		-webkit-transform: rotateY(0deg);
+	}
+	100% {
+		-webkit-transform: rotateY(360deg);
+	}
+}
+@keyframes rotate {
+	0% {
+		transform: rotateY(0deg);
+	}
+	100% {
+		transform: rotateY(360deg);
+	}
+}
+body {
+	margin: 0;
+}
+body,
+html {
+	height: 100%;
+	position: relative;
+}
+#load {
+	height: 100%;
+	position: relative;
+	-webkit-perspective: 300px;
+	perspective: 300px;
+}
+#logo2,
+#logo3{
+	position: absolute;
+	top: 40%;
+	left: 30%;
+	width: 40%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	display: none;
+}
+#load img {
+	display: block;
+	width: 100%;
+	-webkit-animation: 2s infinite linear rotate;
+	animation: 2s infinite linear rotate;
+}
+</style>
+<script type="text/javascript" src="js/m.Tween2.js"></script>
+<script type="text/javascript">
+window.onload = function(){
+	var logo2 = document.querySelector('#logo2');
+	var logo3 = document.querySelector('#logo3');
+	css(logo2,"translateZ",-1000);
+	css(logo3,"translateZ",-1000);
+	anmt1();
+	function anmt1(){ 
+		logo2.style.display = "block";
+		MTween({
+			el: logo2,
+			target: {
+				translateZ: 0
+			},
+			time: 340,
+			type: "easeIn",
+			callBack: anmt2
+		});
+	}
+	function anmt2(){
+		setTimeout(function(){
+			MTween({
+				el: logo2,
+				target: {
+					translateZ: -1000
+				},
+				time: 1200,
+				type: "easeOut",
+				callBack: function(){
+					anmt3();
+					logo2.style.display = "none";
+				}
+			});
+		},2000);
+	}
+	function anmt3(){
+		logo3.style.display = "block";
+		MTween({
+			el: logo3,
+			target: {
+				translateZ: 0
+			},
+			time: 240,
+			type: "easeIn",
+			callBack: anmt4
+		});
+	}
+	function anmt4(){
+		setTimeout(function(){
+			MTween({
+				el: logo3,
+				target: {
+					translateZ: -1000
+				},
+				time: 1200,
+				type: "easeOut",
+				callBack: function(){
+					anmt1()
+					logo3.style.display = "none";
+				}
+			});
+		},2000);
+	}
+};
+</script>
+</head>
+<body>
+<div id="load">
+	<div id="logo2">
+		<img src="img/logo2.png" />
+	</div>
+	<div id="logo3">
+		<img src="img/logo3.png" />
+	</div>
+</div>	
+</body>
+</html>

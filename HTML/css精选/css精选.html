@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="../css/base.css" rel="stylesheet" />
+    <style>
+        .del_tip {
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: rgba(0,0,0,.5);
+            /*display: none;*/
+        }
+        .del_tip_word{
+            position: inherit;
+            top: 45%;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -35px;
+            color: #fff;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+           
+        .sure {
+            width: 50px;
+            height: 25px;
+            background: #ff4040;
+            padding: 5px 10px;
+            margin-left: -19px;
+            cursor: pointer;
+        }
+
+        .cancle {
+            width: 50px;
+            height: 25px;
+            background: #bbb;
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="del_tip">
+        <div class="del_word">
+            <p>确定删除？</p>
+            <span class="sure">确定</span>
+            <span class="cancle">取消</span>
+        </div>
+    </div>
+</body>
+</html>

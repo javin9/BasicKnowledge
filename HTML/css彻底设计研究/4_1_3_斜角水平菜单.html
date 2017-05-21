@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #menu a, #menu a:visited {
+            display: block;
+            float: left;
+            text-align: center;
+            text-decoration: none;
+            background-color: #c00;
+            color: #fff;
+            position: relative;
+            padding: 6px;
+            margin: 1px 0 0 1px;
+        }
+
+            #menu a .corner {
+                position: absolute;
+                height: 0;
+                width: 0;
+                overflow: hidden;
+                border-width: 3px;
+                border-style: solid;
+                border-color: #fff #c00 #c00 #fff;
+                /*border-bottom: solid 6px #c00;
+                border-left: solid 6px #fff;*/
+                left: 0;
+                top: 0;
+            }
+
+            #menu a:hover {
+                background-color: #f90;
+                color: #333;
+            }
+
+        div.corner {
+            position: absolute;
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            border-style: solid;
+            border-width: 60px;
+            /*border-color:#c00 #0aa #ffd800 #4800ff;*/
+            border-color: #fff #000 #000 #fff;
+        }
+
+        .item {
+            width: 100px;
+            text-align: center;
+            padding: 0;
+            margin: 0 auto;
+            font-weight: bold;
+            font:14px Arial;
+        }
+
+            .item p{
+                /*display: block;*/
+                text-align: center;
+                margin:0px;
+                text-decoration: none;
+                padding: 0 0 2px 0;
+                background-color: #cc6;
+                border: solid 1px #000;
+                border-top-width: 0;
+            }
+
+            .item div {
+                height: 1px;
+                overflow: hidden;
+                background: #cc6;
+                border-left: solid 1px #000;
+                border-right: solid 1px #000;
+            }
+
+            .item .row1 {
+                margin: 0 5px;
+                background: #000;
+            }
+            .item .row2{
+                margin:0 3px;
+                border:0 2px;
+            }
+            .tiem .row3{
+                margin:0 2px;
+            }
+            .item .row4{
+                margin:0 1px;
+                height:2px;
+            }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <a href="#">
+            <span class="corner"></span>Home
+        </a>
+        <a href="#">
+            <span class="corner"></span>Home
+        </a>
+        <a href="#">
+            <span class="corner"></span>Home
+        </a>
+        <a href="#">
+            <span class="corner"></span>Home
+        </a>
+        <a href="#">
+            <span class="corner"></span>Home
+        </a>
+    </div>
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="corner">
+
+    </div>
+
+    <br />
+    <div class="item">
+        <div class="=row1"></div>
+        <div class="=row2"></div>
+        <div class="=row3"></div>
+        <div class="=row4"></div>
+        <p>Home</p>
+    </div>
+</body>
+</html>

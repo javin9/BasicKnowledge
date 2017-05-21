@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{{:}}和{{>}}区别</title>
+    <link href="../../css/base.css" rel="stylesheet" />
+    <link href="../../css/table_css.css" rel="stylesheet" />
+    <script src="/Script/jquery-2.1.1.js"></script>
+    <script src="../../Script/jsrender.js"></script>
+</head>
+<body>
+    <table class="imagetable " id="bookTableId1">
+        <tr><td colspan="4">{{>....}}</td></tr>
+        <tr> <th>图书名称</th><th>出版社</th><th>作者</th><th>描述</th></tr>
+
+    </table>
+    <br />
+    <br />
+    <br />
+    <table class="imagetable " id="bookTableId2">
+        <tr><td colspan="4">{{:....}}</td></tr>
+        <tr> <th>图书名称</th><th>出版社</th><th>作者</th><th>描述</th></tr>
+
+    </table>
+
+    <!--{{>...}}的模板-->
+    <script type="text/html" id="bookListTemplate1">
+        <tr> <td>{{>bookname}}</td><td>{{:publisher}}</td><td>{{:author}}</td><td>{{>description}}</td></tr>
+    </script>
+    <!--{{:...}}的模板-->
+    <script type="text/html" id="bookListTemplate2">
+        <tr> <td>{{>bookname}}</td><td>{{:publisher}}</td><td>{{:author}}</td><td>{{:description}}</td></tr>
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            var boodata = [
+                  { bookname: "JavaScript编程精解", publisher: "机械工业出版社", author: "汤姆大叔", description: '<em>值得一读</em>' },
+                  { bookname: "JavaScript设计模式", publisher: "人民邮电出版社", author: "汤姆大妈", description: '<em>值得一读</em>' },
+                  { bookname: "JavaScript启示录", publisher: "清华大学出版社", author: "汤姆大婶", description: '<em>值得一读</em>' },
+                   { bookname: "深入了解Bootstrap", publisher: "机械工业出版社", author: "汤姆小弟", description: '<em>值得一读</em>' }
+            ];
+            $("#bookTableId1").append($("#bookListTemplate1").render(boodata));
+            $("#bookTableId2").append($("#bookListTemplate2").render(boodata));
+        })
+
+
+
+    </script>
+</body>
+</html>

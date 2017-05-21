@@ -1,0 +1,150 @@
+@r: 50rem;
+html,body{
+    width:100%;
+    height: 100%;
+    overflow:hidden;
+}
+header {
+    height: 103/@r;
+    background: #EF3239;
+    position:absolute;
+    left:0;
+    right: 0;
+    top:0;
+//  width:750/@r;
+    border-bottom: 1px solid #a82d31;
+    box-sizing: border-box;
+    a {
+        width: 128/@r;
+        height: 88/@r;
+        position: absolute;
+        text-align: center;
+        line-height: 88/@r;
+        top: 0;
+    }
+    .task {
+        left: 0;
+        span {
+            font-size: 37/@r;
+        }
+    }
+    .refresh {
+        right: 0;
+        span {
+            font-size: 36/@r;
+        }
+    }
+    span {
+        color: #fff;
+    }
+    h1 {
+        text-align: center;
+        font-size: 39/@r;
+        color: #fff;
+        line-height: 88/@r;
+        span {
+            font-size: 26/@r;
+            margin-right: 16/@r;
+        }
+    }
+}
+
+.active {
+    color: #f23838 !important;
+}
+
+nav {
+//  width:750/@r;
+    height: 105/@r;
+    background: #fdfdfd;
+    box-sizing: border-box;
+    border-top: 1px solid #b0b0b0;
+    border-bottom: 1px solid #ccc;
+    position:absolute;
+    left:0;
+    right: 0;
+    top:103/@r;
+    a {
+        float: left;
+        width: 25%;
+        height: 103/@r;
+        line-height: 103/@r;
+        text-align: center;
+        font-size: 35/@r;
+        color: #848689;
+    }
+    .span-wraper {
+        width: 37/@r;
+        display: inline-block;
+        vertical-align: middle;
+        span {
+            float: left;
+            font-size: 28/@r;
+        }
+        .glyphicon-chevron-down {
+            left: -3/@r;
+            top: -3/@r;
+        }
+    }
+    .total-a span {
+        font-size: 36/@r;
+        top: 5/@r;
+    }
+    .filter-a span {
+        font-size: 37/@r;
+        top: 10/@r;
+    }
+}
+.list-wrapper{
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    overflow: auto;
+    top:208/@r;
+}
+
+ul {
+   li{
+       height:281/@r;
+       border:1px solid #e0e0e0;
+       box-sizing: border-box;
+       a{
+           padding:23/@r 23/@r 22/@r 23/@r;
+           height: 235/@r;
+           display: inline-block;
+           
+           img{
+               width:235/@r;
+               height: 235/@r;
+               float:left;
+           }
+           .span-wrap{
+               float: right;
+               width:432/@r;
+           }
+           .s-title{
+               margin-top:5/@r;
+               font-size:28/@r;
+               line-height: 44/@r;
+               color:#333;
+               display: block;
+           }
+           .s-comment{
+               font-size:28/@r;
+               line-height: 47/@r;
+               height: 47/@r;
+               display: block;
+               color:#808080;
+           }
+           .s-price{
+               margin-top:31/@r;
+               font-size:38/@r;
+               line-height: 64/@r;
+               display: block;
+               color:#f23838;
+           }
+       }
+   }
+   
+}

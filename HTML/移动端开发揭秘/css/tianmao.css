@@ -1,0 +1,25 @@
+.rows {
+  display: -webkit-box;
+  display: flex;
+}
+.rows div {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  width: 0px;
+}
+.rows div a {
+  font-size: 0.44rem;
+  color: #666;
+  text-align: center;
+  line-height: 1.04rem;
+  display: block;
+}
+.rows div a:before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 1.72rem;
+  height: 1.7rem;
+  background-image: url(../img/01.png);
+  background-size: 1.72rem 1.7rem;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+				* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body {
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			ul,
+			ol,
+			li {
+				list-style: none;
+			}
+			
+			.header {
+				height: 40px;
+				font-size: 20px;
+				color: #fff;
+				text-align: center;
+				background: #000;
+				line-height: 40px;
+			}
+			
+			.footer {
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: 40px;
+				line-height: 40px;
+				color: #fff;
+				text-align: center;
+				background: #000;
+			}
+			.wrapper {
+				/*position: absolute;*/
+				height:120000px;
+				/*top: 40px;
+				left: 0;
+				right: 0;
+				bottom: 40px;*/
+				background:#ababab;
+				/*overflow: hidden;*/
+			}
+		</style>
+	</head>
+	<body>
+		<header class="header">我的小屋子</header>
+		<section class='wrapper'>
+			<ul id="list"></ul>
+		</section>
+		<footer class="footer"></footer>
+		<script type="text/javascript">
+			function createList(){
+	var list = document.querySelector('#list');
+	var inner = "";
+	for(var i = 0; i < 100; i++){
+		inner += "<li>这是第"+i+"个li</li>"
+	}	
+	list.innerHTML = inner;
+}
+		</script>
+	</body>
+</html>

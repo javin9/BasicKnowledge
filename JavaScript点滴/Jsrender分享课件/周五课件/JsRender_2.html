@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JsRender基础知识简介</title>
+    <link href="../../css/base.css" rel="stylesheet" />
+    <link href="../../css/table_css.css" rel="stylesheet" />
+    <script src="/Script/jquery-2.1.1.js"></script>
+    <script src="/Script/jsrender.js"></script>
+</head>
+<body>
+    <table class="imagetable">
+        <tr> <td>图书名称</td><td>出版社</td><td>作者</td></tr>
+        <tr><td>JavaScript编程精解</td><td>机械工业出版社</td><td>汤姆大叔</td></tr>
+        <tr><td>JavaScript设计模式</td><td>人民邮电出版社</td><td>汤姆大妈</td></tr>
+        <tr><td>JavaScript启示录</td><td>清华大学出版社</td><td>汤姆大婶</td></tr>
+        <tr><td>深入了解Bootstrap</td><td>机械工业出版社</td><td>汤姆小弟</td></tr>
+    </table>
+
+    <br />
+    <br />
+    <!--容器-->
+    <table class="imagetable" id="bookTableId">
+        <tr> <th>图书名称</th><th>出版社</th><th>作者</th></tr>
+
+    </table>
+
+    <!--模板-->
+    <script type="text/x-jsrender" id="bookListTemplate">
+        {{if }}
+        <tr> <td>{{>bookname}}</td><td>{{:publisher}}</td><td>{{:author}}</td></tr>
+        {{else}}
+        <tr> <td>{{>bookname}}</td><td>{{:publisher}}</td><td>{{:author}}</td></tr>
+        {{/if }}
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            /*数据*/
+            var boodata = [
+                  { bookname: "JavaScript编程精解", publisher: "机械工业出版社", author: "汤姆大叔" },
+                  { bookname: "JavaScript设计模式", publisher: "人民邮电出版社", author: "汤姆大妈" },
+                  { bookname: "JavaScript启示录", publisher: "清华大学出版社", author: "汤姆大婶" },
+                   { bookname: "深入了解Bootstrap", publisher: "机械工业出版社", author: "汤姆小弟" }
+            ];
+            var htmlStr = $("#bookListTemplate").render(boodata);
+            console.log(htmlStr);
+            $("#bookTableId").append(htmlStr)
+            //$("#bookTableId").append($("#bookListTemplate").render(boodata));
+        })
+
+        //中间既可以是参数也可以使表达式
+        //方法: append, prepend, insert, insertAfter, insertBefore ,html ,innerHTML等 
+
+    </script>
+</body>
+</html>

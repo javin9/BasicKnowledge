@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        body {
+            margin: 20px;
+            font-family:Arial;
+            font-size:12px;
+        }
+        .father{
+            background:#00ff21;
+            border:1px solid red;
+            padding:15px;
+        }
+        .father div {
+            background:#ff6a00;
+            margin:10px;
+            border: 1px solid #808080;
+            padding: 10px;
+        }
+        .son2{
+            /*position:absolute;
+            top:0;*/
+        }
+    </style>
+</head>
+<body>
+    广义的定位：把某一个元素放在某一个位置。
+    狭义的定位：用到position。定位方法很多
+
+    position 四个属性值
+    1.static
+    2.relative 相对定位 相对原来的位置偏移 仍在标准流中
+    3.absolute 绝对定位 盒子的位置以他的包含框为基准进行偏移。 脱离标准流
+    4.fixed  固定定位
+
+
+    对于绝对定位的正确描述
+    1.使用绝对定位的盒子以他的“最近”的一个“已经定位”的“祖先元素” 为基准进行偏移
+    2.脱离文档流
+
+   **************** 注意：设置了绝对定位，没有设置偏移属性，那么他仍然将保护在原来的位置；
+
+    4.3 z-index空间位置
+
+    4.4 盒子的display属性
+        通过修改display的值，可以改变元素的类型
+    <br/>
+    <div class="father">
+        <div class="son1">son1son1son1</div>
+        <div class="son2">son2son2son2</div>
+        <div class="son3">son3son3son3</div>
+    </div>
+    <br />
+</body>
+</html>

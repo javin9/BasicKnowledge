@@ -4,15 +4,27 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<meta name="viewport" content="idth=device-width,user-scalable=no" />
+		<meta name="viewport" content="width=device-width,user-scalable=no" />
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<style type="text/css">
 			div{
 				float:left;
 				box-sizing: border-box;/*border包括在width中*/
-				height: 80px;
-				width:80px;
-				border:1px solid red;
+				height: 1.6rem;
+				width:1.6rem;
+				border:0.02rem solid red;
+			}
+			div:nth-of-type(1){
+				background:#000000;
+			}
+			div:nth-of-type(2){
+				background:#008000;
+			}
+			div:nth-of-type(3){
+				background:#00FF21;
+			}
+			div:nth-of-type(4){
+				background:#030303;
 			}
 		</style>
 		<script>

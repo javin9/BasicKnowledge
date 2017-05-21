@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Document</title>
+<style type="text/css">
+	#box {
+		width: 100px;
+		height: 100px;
+		border: 1px solid #000;
+		padding: 100px;
+	}
+	#div {
+		height: 100px;
+		background: red;
+	}
+</style>
+<script type="text/javascript">
+/*
+	element.transform = {
+		rotate: 40,
+		scale: 200,
+		skew:
+		translate	
+	}
+	console.log(element.transform.rotate);
+
+	如果要获取transform相关的属性，那transform相关的设置 也必须是通过该方法设置的
+*/
+function cssTransform(element, attr, val){
+	if(!element.transform){
+		element.transform = {};
+	}	
+	if(typeof val == "undefined"){ 
+		if(!element.transform[attr]){
+			switch(attr){
+				case "scale":
+				case "scaleX":
+				case "scaleY":
+				case "scaleZ":
+					element.transform[attr] = 100;
+					break;
+				default:
+					element.transform[attr] = 0;	
+			}
+		} 
+		return element.transform[attr];
+	} else {
+		element.transform[attr] = val;
+		var transformVal  = "";
+		for(var s in element.transform){
+			switch(s){
+				case "scale":
+				case "scaleX":
+				case "scaleY":
+				case "scaleZ":
+					transformVal += " " + s + "("+(val/100)+")";
+					break;
+				case "rotate":
+				case "rotateX":
+				case "rotateY":
+				case "rotateZ":
+				case "skewX":
+				case "skewY":
+					transformVal += " " + s + "("+val+"deg)";
+					break;
+				default:
+					transformVal += " " + s + "("+val+"px)";				
+			}
+		}
+		console.log(transformVal);
+		element.style.WebkitTransform = element.style.transform = transformVal;
+	}
+}
+window.onload = function(){
+	var div = document.querySelector('#div');
+	//console.log(getComputedStyle(div)["transform"]);
+	//cssTransform(div, "rotate", 30);
+	cssTransform(div, "translateX", 100);
+	cssTransform(div, "translateY", 100);
+	console.log(cssTransform(div, "translateX"));
+	console.log(cssTransform(div, "translateY"));
+};
+</script>
+</head>
+<body>
+<div id="box">
+	<div id="div"></div>
+</div>
+</body>
+</html>

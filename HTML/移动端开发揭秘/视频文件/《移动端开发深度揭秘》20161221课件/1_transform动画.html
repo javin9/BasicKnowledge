@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Document</title>
+<style type="text/css">
+	#box {
+		width: 100px;
+		height: 100px;
+		border: 1px solid #000;
+		padding: 100px;
+	}
+	#div {
+		height: 100px;
+		background: red;
+		-webkit-transform: rotate(60deg);
+		transform: rotate(60deg);
+	}
+</style>
+<script type="text/javascript">
+window.onload = function(){
+	var div = document.querySelector('#div');
+	console.log(getComputedStyle(div)["transform"]);
+};
+</script>
+</head>
+<body>
+<div id="box">
+	<div id="div"></div>
+</div>
+</body>
+</html>

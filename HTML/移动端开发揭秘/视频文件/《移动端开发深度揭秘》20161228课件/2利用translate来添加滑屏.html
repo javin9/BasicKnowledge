@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Document</title>
+<style type="text/css">
+body {
+	margin: 0;	
+}
+body,
+html {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+header {
+	height: 40px;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	background: #000;
+	line-height: 40px;
+}
+footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 40px;
+	color: #fff;
+	text-align: center;
+	background: #000;
+	line-height: 40px;
+}
+#wrap {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 40px;
+	bottom: 40px;
+}
+#list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#list li {
+	line-height: 30px;
+	text-indent: 20px;
+	font-size: 16px;
+	border-bottom: 1px solid #000;
+}
+</style>
+<script type="text/javascript" src="m.Tween.js"></script>
+<script type="text/javascript">
+function createList(){
+	var list = document.querySelector('#list');
+	var inner = "";
+	for(var i = 0; i < 100; i++){
+		inner += "<li>这是第"+i+"个li</li>"
+	}	
+	list.innerHTML = inner;
+}
+window.onload = function(){
+	createList();
+	var list = document.querySelector('#list');
+	css(list,"translateY",100);
+	console.log(css(list,"translateY"));
+};
+</script>
+</head>
+<body>
+<header id="header">妙味课堂</header>
+<section id="wrap">
+	<ul id="list">
+		
+	</ul>
+</section>
+<footer id="footer">希望大家都能学到靠谱的内容</footer>	
+</body>
+</html>

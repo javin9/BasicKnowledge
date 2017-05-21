@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var a = 1,
+				b = function a(x) {
+					x && a(--x);
+				};
+			console.log(a);
+
+			//具名的函数表达式的名字只能在该函数内部取到
+			function too() {
+
+			}
+			var foo = function bar() {}
+
+			console.log('foo', foo);
+			// foo function bar(){}
+			console.log('too', too);
+			//too function too() {}
+
+			//console.log('bar', bar);
+
+			//Uncaught ReferenceError: bar is not defined
+
+			//函数声明会覆盖变量声明，但不会覆盖变量赋值
+			function foo() {
+				return 1;
+			}
+			var foo;
+			console.log(typeof foo); // "function"
+			//
+			function foo() {
+				return 1;
+			}
+			var foo = 1;
+			console.log(typeof foo); // "number"
+		</script>
+	</body>
+
+</html>

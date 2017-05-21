@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width,user-scalable=no"/>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			html,
+			body {
+				height: 100%;
+			}
+			.overlay {
+				display:none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, .2);
+			}
+			
+			.overlay .overlay-content {
+				height: 100%;
+				overflow: scroll;
+				box-sizing: border-box;
+				padding: 0 20px 20px;
+				color: #fff;
+			}
+			
+			.background-content {
+				height: 100%;
+				overflow: auto;
+			}
+			#list2{
+				margin-left:150px;
+			}
+			.header{
+				height:50px;
+				width:100%;
+				background-color:#006EB3;
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<div class="overlay"  id="overlay"  style="display:block;">
+			<div class="overlay-content">
+				<ul id="list">
+
+			</ul>
+			</div>
+			
+		</div>
+
+		<div class="background-content">
+			<div class="header" id="header">显示</div>
+		<div class="header"  id="footer">隐藏</div>
+			<ul id="list2"></ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function createList() {
+			var list = document.querySelector('#list');
+			var list2 = document.querySelector('#list2');
+			var inner = "",
+				inner2 = "";
+			for(var i = 0; i < 100; i++) {
+				inner += "<li>overlay" + i + "个li</li>";
+				inner2 += "<li>这是第" + i + "个li</li>"
+			}
+			list.innerHTML = inner+inner;
+			list2.innerHTML = inner2+inner2+inner2;
+		}
+		createList();
+		
+		document.querySelector('#header').onclick=function(){
+			//footer
+			document.querySelector('#overlay').style.display="block";
+		};
+		document.querySelector('#footer').onclick=function(){
+			//footer
+			document.querySelector('#overlay').style.display="none";
+		};
+	</script>
+
+</html>

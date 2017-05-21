@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var arr = [1, 3, 5];
+			arr.push(9);
+			console.log(arr);
+			arr.unshift(-4, -3);
+			arr.unshift(-4, -3);
+
+			console.log(arr);
+
+			Array.prototype.isEmpty = function() {
+				return this.length > 0 ? false : true;
+			}
+			console.log(arr.isEmpty());
+		</script>
+	</body>
+
+</html>

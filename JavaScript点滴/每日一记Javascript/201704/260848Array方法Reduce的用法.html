@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var arr = [];
+			for(var i = 0; i < 10; i++) {
+				arr.push(i);
+			}
+			console.log(arr);
+
+			var sum = arr.reduce(function(pre, current) {
+				console.log(pre);
+				return pre + current;
+			});
+			console.log(sum);
+		</script>
+	</body>
+
+</html>

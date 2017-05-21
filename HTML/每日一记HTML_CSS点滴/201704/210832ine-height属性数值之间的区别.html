@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../CSS代码类库/reset.css" />
+		<style type="text/css">
+			div {
+				width: 300px;
+				height: 200px;
+				margin: 0 auto;
+				border: 1px solid #030303;
+				margin-bottom: 10px;
+			}
+			
+			div p {
+				font-size: 16px;
+			}
+			
+			b {
+				font-size: 50px;
+			}
+			
+			.a-div {
+				line-height: 1.5;
+			}
+			
+			.b-div {
+				line-height: 150%;
+			}
+			
+			.c-div {
+				line-height: 1.5em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 1. 直接用数值：所有可继承的元素会其继承元素字体大小重新计算行高。也就是会根据 b 标签字体大小重新计算行高。也就是a盒子。
+2.用百分比跟em：当前的元素根据字体大小计算出行高，然后继承给下面的元素。也就是b跟c盒子。
+所以，全局设置行高的时候，一般推荐直接使用数值。（从别处看来的：一般当body的字体大小为14px的时候，行高为1.4286。算出来的行高的20px。方便以后其他地方计算）。-->
+		<!--单行文字垂直居中：一般写的时候都喜欢的 height:36px; line-height:36px; 其实这儿写height:36px是完全没有必要的-->
+		<!--line-height呢，你可以理解为每行文字所占的高度。
+比如说，有一行20px大小的文字，如果设置为line-height:50px，那就是说，这行文字的高度会占50px。
+显然，每个字的大小只有20px，那怎么边呢？于是呢，浏览器就把多出来的30px（50px-20px）在这行文字的上面加上了15px，下面加上了15px。-->
+		<div class='a-div'>
+			<p>
+				铁背苍龙
+				<b>天王盖地虎，你是二百五; </b>
+			</p>
+
+		</div>
+
+		<div class='b-div'>
+			<p>
+				铁背苍龙
+				<b>天王盖地虎，你是二百五</b>
+			</p>
+		</div>
+
+		<div class='c-div'>
+			<p>
+				铁背苍龙
+				<b>天王盖地虎，你是二百五</b>
+			</p>
+		</div>
+	</body>
+
+</html>
