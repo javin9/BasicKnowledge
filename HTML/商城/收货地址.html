@@ -58,25 +58,28 @@
 		<script type="text/javascript">
 			//删除
 			$('.del_icon').click(function() {
-				var that = $(this),
-					id = that.attr('data-id');
-				if(!that.hasClass('not')) {
-					$.ajax({
-						type: 'post',
-						url: '',
-						data: {
-							id: id
-						},
-						beforeSend: function() {
-							that.addClass('not');
-						},
-						success: function(data) {
-							alert('删除成功');
-							that.parents('li').remove();
-							that.removeClass('not');
-						}
-					});
+				var that = $(this);
+				if(window.confirm("确认删除吗？")) {
+					var id = that.attr('data-id');
+					if(!that.hasClass('not')) {
+						$.ajax({
+							type: 'post',
+							url: '',
+							data: {
+								id: id
+							},
+							beforeSend: function() {
+								that.addClass('not');
+							},
+							success: function(data) {
+								alert('删除成功');
+								that.parents('li').remove();
+								that.removeClass('not');
+							}
+						});
+					}
 				}
+
 			});
 
 			//编辑 edit_icon
@@ -85,9 +88,9 @@
 					id = that.attr('data-id');
 				window.location.href = 'www.taoche.com/edit?id=' + id;
 			});
-             //添加地址
+			//添加地址
 			$('.add_address').click(function() {
-				window.location.href = 'www.taoche.com/edit;
+				//window.location.href = 'www.taoche.com/edit;
 			});
 		</script>
 	</body>
