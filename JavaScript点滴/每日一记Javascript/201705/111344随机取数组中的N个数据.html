@@ -9,7 +9,27 @@
 
 	<body>
 		<script type="text/javascript">
+			//getArrayItems
 			function getArrayItems(arr, num) {
+				var orderData = orderByArea(arr, num),
+					localData = orderData.localData,
+					aroundData = orderData.aroundData,
+					localDataLength = localData.length,
+					aroundDatalength = aroundData.length;
+
+				if(localDataLength >= num) {
+					return getRandomItemsFromArray(localData, num);
+				} else {
+					var result = [];
+					result.push(getRandomItemsFromArray(localData, localDataLength));
+					var len = num - localDataLength >= aroundDatalength ? aroundDatalength : num - localDataLength;
+					result(getRandomItemsFromArray(aroundData, len));
+					return result;
+				}
+
+			}
+
+			function getRandomItemsFromArray(arr, num) {
 				//新建一个数组,将传入的数组复制过来,用于运算,而不要直接操作传入的数组;
 				if(typeof arr === "object" && Object.prototype.toString.call(arr) === '[object Array]') {
 					var temp_array = [];
@@ -43,38 +63,144 @@
 
 			}
 
-			console.log(getArrayItems([1, 5, 3, 6, 7, 8, 9], 2));
+			function orderByArea(data) {
+				var localData = [],
+					aroundData = [];
 
-			console.log(data);
-			console.log(data.Data.V);
+				for(var i = 0; i < data.length; i++) {
+					(function(i) {
+						var item = data[i];
+						if(item["area"] == 0) {
+							localData.push(item);
+						} else {
+							aroundData.push(item);
+						}
+					})(i);
+				}
+				return {
+					localData: localData,
+					aroundData: aroundData
+				}
+			}
+
+			console.log(getArrayItems(data.Data.H, 8));
+			console.log(getArrayItems(data.Data.C, 8));
+			console.log(getArrayItems(data.Data.S, 8));
+			console.log(getArrayItems(data.Data.V, 8));
+
 			var dav = data.Data.V;
-			var davObj = {};
-			var davArr=[];
-		
-			for(var i = 0, len = dav.length; i < len; i++) {
-				var item = dav[i],
-					key = item.userid;
-				if(!davObj[key]) {
-					davObj[key] = [];
-					davArr.push(key);
+
+			function returnDataV(dav) {
+				var davObj = {};
+				var davArr = [];
+
+				for(var i = 0, len = dav.length; i < len; i++) {
+					var item = dav[i],
+						key = item.userid;
+					if(!davObj[key]) {
+						davObj[key] = [];
+						davArr.push(key);
+					}
+					davObj[key].push(item);
 				}
-				davObj[key].push(item);
+				var carArr = [];
+				console.log(davObj);
+				console.log(davArr);
+
+				if(davArr.length >= 8) {
+					var randomdav = getRandomItemsFromArray(davArr, 1);
+					for(var i = 0; i < randomdav.length; i++) {
+						var itemArr = davObj[randomdav[i]];
+						carArr.push(getArrayItems(itemArr, 1));
+					}
+				} else {
+					var integer = parseInt(8 / davArr.length); //整数
+					var remainder = 8 % davArr.length; //余数
+					//					console.log("整数=" + integer);
+					//					console.log("余数=" + remainder);
+					var validArr = [];
+					for(var davitem1 in davObj) {
+						var davitemArr = davObj[davitem1];
+						if(davitemArr.length > (integer + remainder)) {
+							validArr.push(davitem1);
+						}
+					}
+					console.log(validArr);
+					var moreKey = getRandomItemsFromArray(validArr, 1);
+					for(var davitem in davObj) {
+						var davitemArr = davObj[davitem];
+						var num = (moreKey == davitem) ? (integer + remainder) : integer;
+						console.log(num);
+						var davitemArrRandom = getArrayItems(davitemArr, num);
+						for(var k = 0; k < davitemArrRandom.length; k++) {
+							carArr.push(davitemArrRandom[l]);
+						}
+					}
+				}
+				console.log(carArr);
+				return carArr;
 			}
-			var carArr=[];
-			console.log(davObj);
-			console.log(davArr);
-			var randomdav=[];
-			if (davArr.length>=8) {
-				randomdav=getArrayItems(davArr,1)
-				for (var i = 0; i < randomdav.length; i++) {
-					var itemArr= davObj[randomdav[i]];
-					var random=Math.random(0,itemArr.length);
-					
+
+			returnDataV(dav);
+
+			function filterBrand(id, data, num) {
+				if(typeof data === "object" && Object.prototype.toString.call(data) === '[object Array]') {
+					var returnData = [];
+					var orderbydata = orderbycity(data); //处理城市排序
+					for(var i = 0, len = orderbydata.length; i < len; i++) {
+						var item = orderbydata[i];
+
+						if(num == 0) {
+
+							if(item.superiorid == 103638 && item.producerid == 20036) {
+
+								returnData.push(item);
+							}
+
+						} else if(num == 1) {
+
+							if(item.superiorid == 103638 && item.producerid == 20005) {
+
+								returnData.push(item);
+							}
+
+						} else {
+
+							if(item.superiorid == id) {
+
+								returnData.push(item);
+							}
+
+						}
+					}
+					return getArray(returnData, 8);
+				} else {
+					return [];
 				}
 			}
-			
-			
-			
+
+			function filterBrand(id, data,producerid) {
+				if(typeof data === "object" && Object.prototype.toString.call(data) === '[object Array]') {
+					var returnData = [];
+					for(var i = 0, len = data.length; i < len; i++) {
+						var item = data[i];
+						
+						if(id === 103638) {
+                            if(item.superiorid == id&&item.producerid===producerid) {
+								returnData.push(item);
+							}
+						}
+						esle {
+							if(item.superiorid == id) {
+								returnData.push(item);
+							}
+						}
+					}
+					return getArrayItems(returnData, 8);
+				} else {
+					return [];
+				}
+			}
 		</script>
 	</body>
 
