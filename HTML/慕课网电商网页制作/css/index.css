@@ -65,8 +65,8 @@ a:hover{color:red;}
 
 /*banner-warpper*/
 .banner-warpper .banner-bar{width:810px;position:relative;height:325px;float:right;overflow:hidden;}
-.banner-warpper .banner-bar ul{width:810px;position:absolute;left:0px;top:0;}
- .banner-bar ul li{width:810px;height:325px;opacity: 0;position:absolute;left;O;top:0;}
+.banner-warpper .banner-bar ul{width:810px;position:absolute;left:0px;top:0;height:325px;}
+ .banner-bar ul li{width:810px;height:325px;opacity:0;position:absolute;left;O;top:0;}
 .banner-warpper .img-num{position:absolute;left:50%;top:270px;margin-left:-405px;text-align: center;width:810px}
 .banner-warpper .img-num a{display: inline-block;width:20px;height:5px;background-color: #fff;}
 .banner-warpper .img-num a+a{margin-left:5px;}
@@ -74,6 +74,31 @@ a:hover{color:red;}
 .banner-warpper .img-num a.current{background-color:#ff7700;}
 
 /*content*/
-.content .nav {height:75px;}
+.content .nav {height:45px;padding:15px 0;position: relative;}
 .content .nav h3{width:190px;font-size:24px;color:#000000;}
 .content .nav h3 span{display:inline-block;width:44px;height:45px;background:url('../images/logo/appliance.png') no-repeat left center;vertical-align: middle;margin-right: 15px;}
+.content .nav .more{font-size:12px;color:#000;margin-bottom:0;vertical-align: bottom;position:absolute;right: 20px;bottom:15px;}
+
+/*floor-content*/
+.floor-content{height:400px;}
+.floor-content .floor-banner{width:190px;height:400px;position:relative;}
+.floor-content .floor-banner ul li{position:absolute;left:0;top:0;width:190px;}
+
+/*floor-goods*/
+.floor-goods li{width:199px;height:396px;border-bottom: 3px solid #ff7201;border-right: 1px solid #e5e5e5; border-top: 1px solid #e5e5e5;float:left;}
+.floor-goods li.last{width:209px;}
+.floor-goods li .big-area{height:233px;border-bottom:1px solid #e5e5e5;padding-top:46px;}
+.floor-goods li .big-area h3{font-size:16px;color:#000;margin-top:24px;text-align: center;}
+.floor-goods li .big-area p{font-size:14px;color:#ff7300;text-align: center;margin-top:10px;}
+.floor-goods li .small-area{padding-top:17px;}
+.floor-goods li .small-area p{color:#000;float: left;}
+.floor-goods li .small-area .small-area-img{width:100px;height: 98px;}
+.floor-goods li .small-area .small-area-info{width:85px;}
+.floor-goods li .small-area .title{font-size:12px;}
+.floor-goods li .small-area .price{font-size:16px;}
+
+/*footer*/
+.footer{height:171px;background-color: #d4d4d4;margin-top:40px;padding-top:55px;}
+.footer p {font-size:12px;color:#000; text-align: center;}
+.footer .link a{font-size:12px;color:#000;}
+.footer .copyright{margin-top:15px;}
