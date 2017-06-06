@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+			function Parent(name) {
+				this.name = name;
+				this.color = ['red', 'blue'];
+			}
+			Parent.prototype.sayHello = function() {
+				console.log("Hellow," + this.name);
+			}
+
+			var Son = function(name, age) {
+				//继承属性
+				Parent.call(this, name);
+				this.age = age;
+			}
+			var s2 = new Son();
+			console.log('=================');
+			console.log(s2);
+			console.log('=================');
+			//继承方法
+			Son.prototype = new Parent(); //没有参数
+			Son.prototype.constructor = Son; //重新定向
+			Son.prototype.sayAge = function() {
+				console.log(this.age);
+			}
+
+			var p1 = new Parent();
+			console.log(p1);
+
+			var s1 = new Son("Daye", 18);
+			console.log(s1);
+			console.log(s1.color)
+			console.log(s1.name)
+			s1.sayHello();
+
+			//寄生组合模式
+			function createObject(o) {
+				function F() {};
+				F.prototype = o;
+				return new F();
+			}
+
+			function inheritPrototype(son, parent) {
+				var prototype = createObject(parent)
+				prototype.constructor = son;
+				son.prototype = prototype;
+			}
+			
+			function Super(name){
+				this.name=name;
+				this.colors=["bulur","red"];
+			}
+			Super.prototype.sayName=function(){
+				console.log(this.name);
+			}
+			
+			function Sub(name,age){
+				Super.call(this,name);
+				this.age=age;
+			}
+			
+			
+			inheritPrototype(Sub,Super);
+			
+			Sub.prototype.sayAge=function(){
+				console.log(this.age);
+			}
+			
+		</script>
+	</body>
+
+</html>

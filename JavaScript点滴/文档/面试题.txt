@@ -1,0 +1,130 @@
+1. input需要清掉哪些默认样式，和兼容问题如何解决？
+
+2. 如何解决IE8一下的input框文字偏上问题
+   
+3.手机端 图片上传实现原理及方法
+	 原理:
+	分为两步：当上传图片的input被触发并选择本地图片之后获取要上传的图片这个对象的URL（对象URL）；把对象URL赋值给事先写好的img标签的src属性即可把图片显示出来。
+	在这里，我们需要了解Javascript里File对象、Blob对象和window.URL.createObjectURL()方法。
+4.创建正则表达式的两种方式  及方法有哪一些
+     .方式一，使用正则表达式字面量，它由两个斜杠包裹
+      var re = /ab+c/;
+                 正则表达式字面量会在脚本加载后编译。当正则表达式是静态不变的，那么使用这种方式将会获得更好的性能
+                 
+     .方式二  调用 RegExp 对象的构造方法，如下所示
+      var re = new RegExp(/ab+c/);
+                  在使用构造方法时，正则表达式是在运行时编译的，适合正则表达式会动态改变的情况下使用
+                  
+                 正则表达式是通过 RegExp 对象的 test和 exec 方法以及字符串 String 内置的 search，match，replace，split 方法使用的。             
+                
+5.script,defer script,async script 的区别 以及 什么情况下使用 defer 和 async？        
+		script 
+		当解析器遇到 script 标签时，文档的解析将停止，并立即下载并执行脚本，脚本执行完毕后将继续解析文档。
+		defer script 
+		当解析器遇到 script 标签时，文档的解析不会停止，其他线程将下载脚本，待到文档解析完成，脚本才会执行。
+		async script 
+		当解析器遇到 script 标签时，文档的解析不会停止，其他线程将下载脚本，脚本下载完成后开始执行脚本，脚本执行的过程中文档将停止解析，直到脚本执行完毕         
+                 
+		如果脚本不依赖于任何脚本，并不被任何脚本依赖，那么则使用 defer。
+		如果脚本是模块化的，不依赖于任何脚本，那么则使用 async。
+		
+		注意：async 对于内联脚本没有作用。如果同时使用 defer 和 async，则会默认使用 async，忽略 defer。
+		
+		
+6.构造函数Person，原型Person.prototype,实例person1 三者之间的关系，可以用文字或者图表达
+               function Person() {
+               
+			   }
+				 
+			var person = new Person();
+			console.log(person.__proto__ == Person.prototype) // true
+			console.log(Person.prototype.constructor == Person) // true
+			// 顺便学习一个ES5的方法,可以获得对象的原型
+			console.log(Object.getPrototypeOf(person) === Person.prototype) //true		
+			
+			
+7.          //第一行代码
+            var scope = "global scope";
+			function checkscope(){
+			    var scope = "local scope";
+			    function f(){
+			        return scope;
+			    }
+			    return f();
+			}
+			checkscope();
+            //第二行代码
+			var scope = "global scope";
+			function checkscope(){
+			    var scope = "local scope";
+			    function f(){
+			        return scope;
+			    }
+			    return f;
+			}
+			checkscope()();
+
+                                     猜猜两段代码各自的执行结果是多少？		
+                                       
+                                    答案：两段代码都会打印 local scope  考察对函数作用域的理解       
+                                    
+8、有一个长度未知的数组a，如果它的长度为0就把数字1添加到数组里面，否则按照先进先出的队列规则让第一个元素出队。   
+            a.length === 0 ? a.push(1) : a.unshift();
+            
+9.      下面代码会输出什么：
+        var test = (function(a) {    
+		this.a = a;    
+		return function(b) {        
+		return this.a + b;
+		    }
+		} (function(a, b) {    
+		return a;
+		}(1, 2))); 
+		
+		console.log(test(4)); //输出什么？？？？                                                             	
+		分析：这道题考了与函数有关的的两个非常重要的概念：自执行函数和闭包。但是不难，答案应该是5。
+		
+10.我们在跟后端进行异步请求时，很容易陷入嵌套太深的陷阱？	
+        使用promise,可以参考一下什么是promise	
+        
+11.有一个长度为100的数组，请以优雅的方式求出该数组的前10个元素之和  
+      var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];      
+      sum = 0;
+
+		sum = a.slice(0, 10).reduce(function(pre, current) {
+		　　return pre + current;
+		});console.log(sum); //55\
+		
+12.创建对象的几种方式？你最喜欢哪一种？说说原因
+         工厂模式，构造函数模式，原型模式，构造函数和原型组合模式   ，稳妥构造函数模式 
+         最喜欢稳妥构造函数模式，原因，新创建对象实例方法不会引用this，不使用new操作符调用构造函数  ,安全，不会被其它应用程序改动    
+         
+13.继承有几种方式,优缺点?
+          原型继承，借用构造函数继承，组合继承，原型式继承，寄生继承，寄生组合继承
+14.
+    function Person(){
+    }
+    //方式一
+     Person.name="Davai";
+     Person.age=18;
+     
+     //方式二
+     Person.prototype={
+	     name:"Davai",
+	     age:18
+     }
+     
+     问题：方式一和方式二有什么区别
+        答： constructor
+     
+ 15.null和undefined的区别
+     a.null是一个‘无’的对象，转换为0，undefined是一个‘无’的值，转化为NaN
+     b.undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义
+     c.null表示”没有对象”，即该处不应该有值。    
+面试题：
+
+你读过那些关于js的书籍，你最喜欢哪一本或者基本，为什么？     
+怎么看待框架，工具库，插件的区别？
+怎么理解Promise Promise能解决什么问题。
+对前端工程化 模块化  怎么理解     
+    
