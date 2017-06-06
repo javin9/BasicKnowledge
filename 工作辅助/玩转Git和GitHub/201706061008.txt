@@ -47,6 +47,32 @@ Git命令  在.git目录下面
    git  status
    --添加到暂存区
    git  add	  E:\Cupid\GitDemo\DaXiong\工作辅助\玩转Git和GitHub\201706061008.txt
+   
+  // add 命令
+	   
+	   
+//提交到版本库	   
+git commit	   
+
+   按ESC键 跳到命令模式，然后：
+
+:w   保存文件但不退出vi
+:w file 将修改另外保存到file中，不退出vi
+:w!   强制保存，不推出vi
+:wq  保存文件并退出vi
+:wq! 强制保存文件，并退出vi
+q:  不保存文件，退出vi
+:q! 不保存文件，强制退出vi
+:e! 放弃所有修改，从上次保存文件开始再编辑
+
+
+ git pull  
+ git push
+ 
+ git add .  //全部提交 .的方式
+ git commit -m '2017年6月6日17:18:08'
+ git pull
+ git push
 	   
 	   
 	   
