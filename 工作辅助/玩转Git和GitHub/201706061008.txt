@@ -8,3 +8,47 @@ github
 svn和git区别
   --集成式  多人协作  代码在中央服务器
   --分布式 单人  代码在每个人的电脑上
+  
+---------------------------
+建立一个库
+   drag
+   git clone [url]
+   
+设置贡献者
+  name
+  emial
+    >>设置用户名和邮箱
+  cd Daxiong
+  git config --global user.name 'Daxiong'
+  git config --global user.email "liujianwei1213@163.com"
+  
+   >>查看所有配置项
+  git config --list
+   >>查看所有邮箱
+  git config --global user.email 
+    >>查看所有用户名
+   git config --global user.name
+   
+
+--------------------------------
+git的三个区
+	  工作区
+	  
+	  暂存区
+	     -- 作为过滤层
+	     --避免误操作
+	     --保护工作区和版本区域
+	     --分支处理
+	     
+	  版本库(库)
+	  
+	  
+Git命令  在.git目录下面
+   git  status
+   --添加到暂存区
+   git  add	  E:\Cupid\GitDemo\DaXiong\工作辅助\玩转Git和GitHub\201706061008.txt
+	   
+	   
+	   
+	   
+	  

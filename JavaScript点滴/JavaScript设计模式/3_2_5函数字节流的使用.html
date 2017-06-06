@@ -31,14 +31,14 @@
 
         window.onresize = throttle(function () {
             console.log(1);
-        });
+        },1000);
         //分时函数
         var timerChunk = function (arr,fn,count) {
             var obj,
                    t;
             var len = arr.length;
             var start = function () {
-                for (var i=0;i<Math.min(count||1,len);i<Math.min(count||1,len);i++) {
+                for (var i=0;i<Math.min(count||1,len);i++) {
                     var obj=arr.shift();//关键点：取出第一个，并且原来的数组，减掉了第一个
                     fn(obj);
                 }
