@@ -100,7 +100,31 @@ git log
   
   -------------------
   6 删除操作
-     git rm <file.name>
-     git rm -f <file.name>
-     git rm -cached <file.name>
-	  
+     git rm <file.name> 工作区没有  删除暂存区文件
+     git rm -f <file.name>  直接删除暂存区文件  两个区都删掉 
+     git rm -cached <file.name> 只删除暂存区文件 工作区保留
+     
+    
+     
+-----------------------------
+   7-----------     
+   
+	   恢复
+     git checkout <commit_id> <file.name>  指定文件
+     git reset --hard <commit_id> 整个版本的恢复 
+    git reset --hard HEAD^
+    
+---------------------
+8 同步到远程仓库
+
+   git remote 远程的默认名字origin
+   git remote add 改名字
+   git remote -v 查看地址
+   
+git push origin[名字] master[分支]
+---------------------------------------
+···········
+更新本地
+git fetch
+    git merge origin/master
+git pull
