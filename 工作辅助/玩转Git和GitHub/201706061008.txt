@@ -92,9 +92,15 @@ git log
  ------------------------------
  --5
    撤销 
-  git  reset HEAD  <file.name>
+  git  reset HEAD  <file.name> 从暂存区撤销到工作区
   
   git checkout --<file.name> 工作区撤销 从暂存区取，没有从版本区取
   
-  git commit --amend  
+  git commit  -m 'text' --amend  //撤销同一个文件的上一次提交
+  
+  -------------------
+  6 删除操作
+     git rm <file.name>
+     git rm -f <file.name>
+     git rm -cached <file.name>
 	  
