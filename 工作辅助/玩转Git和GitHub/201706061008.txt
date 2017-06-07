@@ -125,6 +125,26 @@ git push origin[名字] master[分支]
 ---------------------------------------
 ···········
 更新本地
-git fetch
-    git merge origin/master
-git pull
+git fetch  拉取过来不合并 需要手动合并
+     git diff master origin/master
+     git merge origin/master
+git pull  拉取过来合并
+
+
+
+-----------------------------------
+开源项目写作
+ 通过网站合并分支
+fork
+pull request
+
+
+dos方式的分支处理
+
+查看分支
+git branch
+创建一个分支
+git branch <branchname>
+
+切换分支
+git checkout <branchname>
