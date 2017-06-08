@@ -8,6 +8,7 @@
 	</head>
 
 	<body>
+	
 		<div id="app">
 			{{message}}
 		</div>
@@ -100,6 +101,17 @@
 				el: '#app-6',
 				data: {
 					message: 'Hello Vue!'
+				}
+			})
+		</script>
+		
+		<!--Mustache 不能在 HTML 属性中使用，应使用 v-bind 指令：-->
+       <div id="app_ext1" v-bind:class="messagee">属性绑定</div>
+       <script type="text/javascript">
+			var app_ext1 = new Vue({
+				el: '#app_ext1',
+				data: {
+					messagee: 'not'
 				}
 			})
 		</script>
