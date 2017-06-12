@@ -1,0 +1,50 @@
+/*车型大全*/
+.sort-box-wrap.sortbox-brand{height:100%;!important}
+/*品牌列表*/
+.brand-list{width:100%;height:100%;overflow:auto;background:#fff}
+.brand-list li{padding:10px 0;overflow:hidden;border-bottom:1px solid #eee}
+.brand-list li:last-child{border:none}
+.brand-list li a{display:block;overflow:hidden}
+.brand-logo{display:block;width:40px;height:40px;background:url(http://img3.bitautoimg.com/car/logo/01.png) no-repeat;background-size:auto 100%;float:left;margin-right:15px}
+.brand-list li .brand-name{font-size:1.6rem;float:left;height:40px;line-height:40px}
+.brand-list li.current .brand-name{color:#ff6d02}
+
+/*推荐*/
+.brand-hot{overflow:hidden;font-size:1.4rem}
+.brand-hot ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}
+.brand-hot li{display:block;-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;text-align:center;margin:20px 0 10px;padding:0;border:0}
+.brand-hot li a{display:block}
+.brand-hot li img{width:40px;height:40px;margin:0 auto}
+
+/*字母*/
+.fixed-nav{width:25px;height:100%;position:fixed;top:0;right:0;z-index:96;opacity:0;padding:60px 0}
+.fixed-nav ul{display:table;width:25px;height:100%}
+.fixed-nav li{display:table-row}
+.fixed-nav li a{display:table-cell;color:#FF6D02; vertical-align: middle;font-size:1.2rem;text-align:center}
+
+/*字母提示*/
+.brandfilter{height:100%;padding-bottom:50px}
+.brandfilter .alert{width:70px;height:70px;border-radius:10px;background-color:#fafafa;position:fixed;left:50%;top:50%;margin-left:-35px;margin-top:-35px;display:block;border:1px solid #d3d3d3;box-sizing:border-box;text-align:center;z-index:1000}
+.brandfilter .alert span{font-size:5rem;color:#888;line-height:70px}
+
+/* 不限品牌   */
+.brand-unlimited{padding:15px;background:#fff;line-height:22px;font-size:1.6rem}
+.brand-unlimited a{display:block}
+
+/*iPhone4 and 4s*/
+@media only screen and (-webkit-min-device-pixel-ratio:2) and (device-aspect-ratio:2/3) and (orientation:portrait){
+    .fixed-nav{display:none}
+}
+
+
+
+/* 车型大全--二手车口碑选车  */
+	/*字母*/
+.letter-list{font-size:1.6rem;padding:15px 15px 0;overflow:hidden}
+.letter-list li{float:left;margin:0 0 6px 0;width:12.5%}
+.letter-list li a{display:block;height:30px;line-height:30px;border:1px solid #E2E2E2;text-align:center;margin:0 3px}
+	/*品牌列表*/	
+.wrap{margin:0 15px}
+.brand-single-tc{background-color:#ffffff;overflow:hidden;padding:9px 0 0 0}
+.brand-single-tc .brand-logo{width:55px;height:55px}
+.brand-single-tc li .brand-name{line-height:55px}

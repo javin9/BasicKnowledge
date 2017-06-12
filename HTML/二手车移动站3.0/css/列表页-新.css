@@ -1,0 +1,289 @@
+/* public css */
+.boxwrap{background:#fff;}
+
+/*搜索*/
+.seach-box{padding:10px 15px 10px;background: #fff;border-bottom:1px solid #f2f2f2;}
+.seach-box .seach,.seach-box span{display: table-cell; vertical-align: middle; }
+.seach-box input{ display: block; width:100%;/*height: 25px; line-height: 25px;*/padding:5px 0;border:0; border-radius: 15px; font-size: 1.2rem; background:#fff url(//image.bitautoimg.com/taoche/2016taoche_m/search2.png) no-repeat 10px center;padding-left:27px; background-size: 14px 14px;border:1px solid #ececec;color:#333;}
+.seach-box span{ width:50px;  font-size: 1.6rem; padding-left: 15px;color:#ff6d02;}
+.seach-box .seach{ position: relative;}
+.seach-box i{ width: 14px; height: 14px; background: url(//image.bitautoimg.com/taoche/2016taoche_m/ser-del.png) no-repeat; background-size:14px 14px; display: block; position: absolute;top:50%;right:10px;margin-top:-7px;}
+
+.seach-box .return{ width:27px; height:21px; display: table-cell; background: url(//image.bitautoimg.com/taoche/taoche_jd_web2016/returen-seach.png) no-repeat 0 6px; background-size:12px 21px;  }
+.email a{color:#FF6D02;text-align:center;display:block;line-height:17px;}
+.email a:before{content:"";display:block;margin:0 auto;background:url(//image.bitautoimg.com/taoche/2016taoche_m/email.png) no-repeat;background-size:18px auto;width:18px;height:19px;}
+.email{float:right;}
+.search-inner{width:100%;display: table;}
+.e-ico{display:table-cell;vertical-align:middle;width:18px;padding-left:15px;}
+
+/* 筛选   */
+.filter-seller{height:50px}
+.filter-seller ul{position:relative ;height:50px;padding:16px 0;width: 100%;background-color: white; overflow:hidden;display:-webkit-box;display:flex;display:-webkit-flex;box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.20);-webkit-box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.20);}
+.filter-seller.filter-fixed ul{position: fixed;top:-1px;z-index:1009; left: 0}
+.filter-seller ul li{-webkit-box-flex:1;flex:1;-webkit-flex:1;-moz-flex:1;/*width:25%;*/text-align:center;line-height:18px;height:18px;border-right:1px solid #b2b2b2;}
+.filter-seller ul li:last-child{border-right:none;}
+.filter-seller ul li a{display:inline-block;padding:0 5px;color:#333;font-size:1.5rem;}
+.filter-seller ul li a:after{content:"";display:inline-block;width:6px;height:6px;border-top:1px solid #b2b2b2;border-right:1px solid #b2b2b2;vertical-align:2px;margin-left:5px;
+	transform:rotate(135deg);
+	-webkit-transform:rotate(135deg);
+	-moz-transform:rotate(135deg);
+}
+.filter-seller ul li a{width:100%}
+.filter-seller ul li a em{display:inline-block;text-overflow:ellipsis;max-width:70%;overflow:hidden;white-space:nowrap;vertical-align:middle;}
+.filter-seller ul li.cur a,.filter-seller ul li.selected a{color:#FF6D02}
+.filter-seller ul li.cur a:after{border-bottom:1px solid #FF6D02;border-left:1px solid #FF6D02;border-top:none;border-right:none;vertical-align:-1px;}
+.filter-seller ul li.selected a:after{border-color:#FF6D02}
+.ico-selbtn{display:block;background:url(//image.bitautoimg.com/taoche/2016taoche_m/ico-list.png) no-repeat;;background-size:18px auto;width:18px;height:18px;}
+.ico-selbtn2{background:url(//image.bitautoimg.com/taoche/2016taoche_m/ico-list2.png) no-repeat;background-size:18px auto;}
+
+
+/* 足迹   */
+.track-wrap{padding:0 15px;background:#f5f5f5;}
+.tract-top{padding:8px 15px;}
+.tra-span{float:left;font-size:1.2rem;color:#666;line-height:20px;}
+.track-div{overflow:hidden;overflow-x:scroll;-webkit-overflow-scrolling:touch;-ms-overflow-style:none;}
+.trackul{white-space:nowrap;}
+.trackul li{display:inline-block;white-space:nowrap;padding-right:8px;}
+.trackul li a{display:inline-block;padding:0 10px;background:#fff;line-height:20px;text-align:center;font-size:1.2rem;color:#666;
+	border-radius:20px;
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+}
+.trackul li a em{color:#ccc;padding:0 3px;}
+.track-div::-webkit-scrollbar{height:0px;}
+
+/* 车源列表  */
+/* 图文竖排  */
+.car-list-wrap{padding:15px 0 0;}
+.carlist-inner{/*margin:0 15px;*/overflow:hidden;}
+.carlist-ul{overflow:hidden;padding:0 8px;}
+.carlist-ul li{width:50%;float:left;margin-bottom:17px;}
+.carlist-ul li a{display:block;margin:0 7px;position:relative;}
+.carlist-ul li .car-img img{display:block;width:100%;}
+.carlist-ul li .name{margin-top:8px;line-height:20px;height:40px;overflow:hidden;font-size:1.4rem;}
+.carlist-ul li .time{line-height:17px;color:#999;font-size:1.2rem;}
+.carlist-ul li .pri{margin-top:5px;line-height:20px;color:#FF6D02;font-size:1.4rem;}
+.ad-h3{padding:0 0 12px;margin-top:-2px;font-size:1.6rem;color:#333;line-height:22px;}
+.carlist-ul li.list-ad .car-img{position:relative;}
+.carlist-ul li.list-ad-h{width: 100%;}
+
+
+/* 图文横排   */
+.carlist-ul-horizontal{margin-top:-15px;}
+.carlist-ul-horizontal li{overflow:hidden;border-bottom:1px solid #ececec;margin:0 15px;}
+.carlist-ul-horizontal li:last-child{margin-bottom:0;border-bottom:none;}
+.carlist-ul-horizontal li a{display:block;padding:15px 0;min-height:120px;}
+.carlist-ul-horizontal li .car-img{position:relative;float:left;width:135px;height:90px;overflow:hidden;}
+.carlist-ul-horizontal li .car-txt{margin-left:145px;}
+.carlist-ul-horizontal li .name{height:36px;line-height:18px;overflow:hidden;font-size:1.4rem;}
+.carlist-ul-horizontal li .time{color:#999;font-size:1.2rem;height:20px;overflow:hidden;line-height:20px;}
+.carlist-ul-horizontal li .pri{color:#FF6D02;font-size:1.4rem;line-height:18px;margin-top:-1px;}
+.txt-r{float:right;color:#999;font-size:1.2rem;}
+
+.carlist-ul-horizontal li.list-ad{display:table;width:100%;border-bottom:none!important;margin:0;}
+.carlist-ul-horizontal li.list-ad a{margin:0 15px;border-bottom:1px solid #ececec;}
+.carlist-ul-horizontal li.list-ad .car-img{display:table-cell;position:relative;}
+.carlist-ul li.list-ad .car-img img{display:block;}
+.carlist-ul-horizontal li.list-ad .car-txt{display:table-cell;padding-left:10px;vertical-align:middle;height:90px;}
+.carlist-ul-horizontal li.list-ad .time{padding-top:5px;height:auto;}
+.carlist-ul-horizontal li.list-ad .pri{display:none;}
+
+.list-ad-h .ad a{position:relative;border-top:1px solid #ececec;border-bottom:1px solid #ececec;padding:12px 0 17px;}
+.list-ad-h .ad img{display:block;width:100%;}
+.carlist-ul-horizontal .list-ad-h .ad a{border-bottom:none;border-top:none;}
+.carlist-ul-horizontal .list-ad-h .ad a .ico-ad{bottom:20px!important;}
+
+/* 右侧浮动  */
+.fixed-right{position:fixed;right:0;bottom:120px;z-index:90;height:96px;}
+.fixed-right a.zj{background:url(//image.bitautoimg.com/taoche/2016taoche_m/float-zj.png) no-repeat;background-size:58px auto;width:58px;height:76px;display:block;}
+.fixed-right a p{position:absolute;top:76px;width:100%;font-size:1.1rem;line-height:20px;text-align:center;background:#ff9900;color:#fff;
+	border-radius: 25px 0 0 25px;
+	-webkit-border-radius: 25px 0 0 25px;
+	-moz-border-radius: 25px 0 0 25px;
+}
+.fixed-right a.wj{background:url(//image.bitautoimg.com/taoche/2016taoche_m/float-wj.png) no-repeat;background-size:58px auto;width:58px;height:76px;display:block;}
+
+/* 专家精选弹窗   */
+.pop-wrap-jx{position:fixed;top:11%;z-index:100004;width:100%;}
+.pop-inner-jx{background:#fff;width:84%;margin:0 auto;padding-bottom:10px;
+	border-radius:8px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+}
+.pop-tle-jx{padding:10px 20px 0 15px;overflow:hidden;background:#f7f7f7;display:table;
+	border-radius:8px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+}
+.pop-tle-jx .rig-txt{width:62%;display:table-cell;vertical-align:middle;padding-left:10px;font-size:1.4rem;}
+.pop-tle-jx .rig-txt em{color:#FF6D02;}
+.pop-cont-jx{padding:11px 20px 0;}
+.pop-cont-jx .h3{font-size:1.6rem;text-align:center;border-bottom:1px solid #ececec;}
+.pop-cont-jx .h3 span{background:#fff;position:relative;top:9px;padding:0 15px;}
+.pop-tle-jx .lef-peo{position:relative;bottom:-4px;width:70px;display:block;display:table-cell;vertical-align:middle;}
+.mark-pop-bx{z-index:100003;}
+
+.serv-bm{overflow:hidden;padding:17px 0 15px;}
+.serv-bm li{width:25%;float:left;}
+.serv-bm li a{display:block;}
+.serv-bm li a em{display:block;background:url(//image.bitautoimg.com/taoche/2016taoche_m/serv-bm.png) no-repeat;background-size:40px auto;width:40px;height:40px;margin:0 auto;}
+.serv-bm li a span{display:block;font-size:1.2rem;color:#979797;line-height:17px;padding-top:12px;text-align:center;}
+.serv-bm li.serv-zb a em{background-position:0 -45px;}
+.serv-bm li.serv-gh a em{background-position:0 -90px;}
+.serv-bm li.serv-bt a em{background-position:0 -135px;}
+.btn-bx a{line-height:36px;height:36px;font-size:1.4rem;margin-bottom:15px;}
+.pop-close{position:absolute;left:50%;margin-left:-20px;margin-top:10px;display:block;background:url(//image.bitautoimg.com/taoche/2016taoche_m/pop-close.png) no-repeat;background-size:40px auto;width:40px;height:40px;}
+
+/* 第三屏下载弹框   */
+.pop-tle-down{padding:20px 20px 4px;}
+.pop-tle-down .lef-ico{width:60px;height:60px;float:left;}
+.pop-tle-down .rig-txt{margin-left:70px;position:relative;height:60px;overflow:hidden;}
+.pop-tle-down .rig-txt h3{font-size:1.4rem;color:#333;line-height:20px;}
+.pop-tle-down .rig-txt .tips-p{position:absolute;bottom:0;font-size:1.2rem;color:#999;line-height:18px;height:36px;overflow:hidden;}
+.pop-cont-down .serv-bm li a em{background:url(//image.bitautoimg.com/taoche/2016taoche_m/serv-bm2.png) no-repeat;background-size:40px auto;}
+.pop-cont-down .serv-bm li.serv-zb a em{background-position:0 -45px;}
+.pop-cont-down .serv-bm li.serv-gh a em{background-position:0 -90px;}
+.pop-cont-down .serv-bm li.serv-bt a em{background-position:0 -135px;}
+
+/* 小屏幕时   */
+@media screen and (max-width: 320px) {
+    .pop-wrap-jx{
+        top:5%;
+    }
+    .pop-tle-down .rig-txt h3{font-size:1.2rem;}
+    .pop-tle-down .rig-txt .tips-p{font-size:1.0rem;}
+}
+
+/* 无结果   */
+.listno-wrap{padding:0 20px;}
+.listno-top{position:relative;background:#f8f8f8;height:100px;width:100%;margin:25px auto 0;display:table;
+	border-radius:8px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+}
+.listno-top .rig-txt{padding-left:124px;padding-right:16px;font-size:1.4rem;color:#666;display:table-cell;vertical-align:middle;}
+.listno-top .rig-txt em{color:#FF6D02;display:block;}
+.listno-top .lef-peo{position:absolute;bottom:-4px;left:20px;display:table-cell;vertical-align:middle;width:84px;}
+.listno-cont{padding:15px 20px 1px;}
+.listno-cont .h3{font-size:1.6rem;text-align:center;border-bottom:1px solid #ececec;}
+.listno-cont .h3 span{background:#fff;position:relative;top:9px;padding:0 15px;}
+
+.tle-t{background:#f5f5f5;line-height:33px;padding-left:15px;color:#666;font-size:1.4rem;}
+.carlist-around{padding:15px 0 0;}
+.morediv{padding:0 0 12px 0;text-align:center;color:#666;font-size:1.4rem;}
+
+/* 无结果-无专家帮选   */
+.listno-box{padding:17px 10px;margin:0 auto;}
+.lef-fail{display:table-cell;vertical-align:middle;width:95px;}
+.listno-box .rig-txt{padding-left:10px;padding-right:10px;}
+.listno-box .rig-txt em.t-gray{font-size:1.2rem;color:#999;}
+.listno-btn{padding:15px 20px 50px;}
+/* 第36个位置下载提示  */
+.pop-wrap-down{top:26%;}
+.icon-down{width:70px;height:70px;float:left;}
+.list-downloadbox{width:100%!important;margin:0!important;margin-top:-1px!important;padding:20px 15px;border-bottom:none!important;background:#FBEDE1;}
+.rtxt-down{margin-left:85px;position:relative;height:70px;}
+.rtxt-down h3{font-size:1.5rem;color:#333;margin-bottom:8px;}
+.rtxt-down dl{overflow:hidden;position:absolute;width:100%;bottom:-4px;}
+.rtxt-down dl dd{float:left;width:50%;line-height:22px;background:url(//image.bitautoimg.com/taoche/2016taoche_m/i_gou.png) no-repeat left center;padding-left:15px;background-size:10px auto;font-size:1.2rem;color:#666;}
+.go-btn{margin-top:15px;}
+.go-btn a{min-height:0!important;padding:0!important;margin:0!important;height:35px;line-height:35px;font-size:1.4rem;}
+/* 宫格下载  */
+.carlist-ul li.list-downloadbox{margin-bottom:17px!important;position:relative;padding:20px 7px;}
+.carlist-ul li.list-downloadbox:before{position:absolute;left:-8px;top:0;content:"";width:8px;background:#FBEDE1;height:100%;}
+.carlist-ul li.list-downloadbox:after{position:absolute;right:-8px;top:0;content:"";width:8px;background:#FBEDE1;height:100%;}
+
+
+/* 双十一    */
+.trackul li.double11-list a{color:#F10035;}
+.trackul li.double11-list a.selected{background:#F10035;color:#fff;}
+.ico-double11{position:absolute;top:0;left:0;background:#F10035;display:inline-block;color:#fff;padding:0 5px;}
+.trackul li.double11-list a.selected em{margin-left:3px;display:inline-block;background:url(//image.bitautoimg.com/taoche/2016taoche_m/double11-close.png) no-repeat;background-size:7px auto;width:7px;height:7px;}
+
+/* 品牌筛选  */
+.car-model .tt-list.absolute{padding-top:42px;}
+
+/* 列表页单独  */
+.m-r-box{right:11px!important;}
+
+/*补充车源*/
+.supplement{width:100%;background:white;border-top:none;}
+.supplement_top{margin-top:12px;}
+.supplement .supplement_title{width:100%;height:44px;line-height:44px;border-bottom:1px solid #ECECEC;padding:0 20px;}
+.supplement .supplement_title ul{overflow:hidden;}
+.supplement .supplement_title ul li{float:left;width:50%;text-align:center;}
+.supplement .supplement_title ul li.sup_default{text-align:left;}
+.supplement .supplement_title ul li a{-webkit-tap-highlight-color:rgba(0,0,0,0);display:inline-block;height:44px;font-family:"微软雅黑";font-size:14px;color:#333333;}
+.supplement .supplement_title ul li a.current{border-bottom:2px solid #FF9900;color:#FF9900;}
+
+
+/*copy*/
+.supplement .supplement_title1{width:100%;height:44px;line-height:44px;border-bottom:1px solid #ECECEC;padding:0 20px;}
+.supplement .supplement_title1 ul{overflow:hidden;}
+.supplement .supplement_title1 ul li{float:left;width:50%;text-align:center;}
+.supplement .supplement_title1 ul li.sup_default{text-align:left;}
+.supplement .supplement_title1 ul li a{-webkit-tap-highlight-color:rgba(0,0,0,0);display:inline-block;height:44px;font-family:"微软雅黑";font-size:14px;color:#333333;}
+.supplement .supplement_title1 ul li a.current{border-bottom:2px solid #FF9900;color:#FF9900;}
+
+/*copy*/
+.supplement .supplement_main1{width:100%;display:none;}
+.supplement .supplement_main1 ul{overflow:hidden;padding:8px 15px;}
+.supplement .supplement_main1 ul li{width:25%;box-sizing:border-box;padding:5px;float:left;}
+.supplement .supplement_main1 ul li a{-webkit-tap-highlight-color:rgba(0,0,0,0);border:1px solid #DEDEDE;border-radius:3px;height:30px;line-height:30px;text-align:center;font-family:"微软雅黑";font-size:14px;color:#666666;display:block;}
+.supplement .supplement_main1 ul li a.current{display:block;height:30px;border:1px solid #FF9900;color:#FF9900;} 
+
+
+
+.supplement .supplement_main{width:100%;display:none;}
+.supplement .supplement_main ul{overflow:hidden;padding:8px 15px;}
+.supplement .supplement_main ul li{width:25%;box-sizing:border-box;padding:5px;float:left;}
+.supplement .supplement_main ul li a{-webkit-tap-highlight-color:rgba(0,0,0,0);border:1px solid #DEDEDE;border-radius:3px;height:30px;line-height:30px;text-align:center;font-family:"微软雅黑";font-size:14px;color:#666666;display:block;}
+.supplement .supplement_main ul li a.current{display:block;height:30px;border:1px solid #FF9900;color:#FF9900;} 
+
+.supplement .tab_two ul li{width:33.33%;box-sizing:border-box;padding:5px;float:left;}
+.supplement .tab_two ul li a{border:1px solid #DEDEDE;border-radius:3px;height:30px;line-height:30px;text-align:center;font-family:"微软雅黑";font-size:14px;color:#666666;display:block;overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;}
+.supplement .tab_two ul li a.current{display:block;height:30px;border:1px solid #FF9900;color:#FF9900;} 
+
+.carlist-ul-horizontal li .car-txt p .address{font-family: "微软雅黑";font-size:12px;color:#999999;float:right;margin-right:5px;}
+
+
+/*iphone5*/
+@media only screen and (max-width:320px) {
+.supplement .supplement_main ul li a{font-size:12px;}
+}
+
+
+
+
+/*20170517增加*/
+.car-bm-wrap{ padding: 26px 0 15px; background: #ffffff; margin-top: 12px;}
+.bm-wrap-img{ margin: 0 15px; background:#F8F8F8;  border-radius: 8px; height: 56px; position: relative;}
+.bm-wrap-img img{ width: 48px; height: 67px; position: absolute; left: 22px; top: -12px; display: block;}
+.bm-wrap-img p{ padding: 11px 10px 0 82px;font-size: 13px;
+	color: #666666;
+	line-height: 19px; }
+.bm-wrap-img p span{ display: block; color: #FF9900; font-size: 12px; }
+
+.bm-wrap-btn{ margin: 15px 15px 0; clear: both; height: 35px; text-align: center;}
+.bm-wrap-btn a{ width:48%; height: 35px; display:block;font-size: 1.4rem;float: left; padding: 8px 0 7px; line-height: 20px;}
+.bm-wrap-btn a.bm-btn-a{background: #FF9900;  border-radius: 3px;  color: #FFFFFF; margin-right: 4%; }
+.bm-wrap-btn a.bm-btn-b{  border: 1px solid #FF6D02;  border-radius: 3px;  color: #FF6D02;padding: 7px 0 8px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

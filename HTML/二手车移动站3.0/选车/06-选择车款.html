@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<title>易车二手车</title>
+	<link rel="stylesheet" type="text/css" href="../css/新头尾.css" />
+	<link rel="stylesheet" type="text/css" href="../css/公共控件.css" />
+	<link href="../css/swiper.min.css" rel="stylesheet"> 
+	<link href="../css/选车页面.css" rel="stylesheet">
+</head>
+
+<body class="bg-greyer">
+	
+	<!-- 头部star -->
+	<div class="new-header">
+	  	<a class="new-btn-return" href="#">返回</a>
+	  	<h2>帕萨特</h2>
+		<div class="new-return-rit">
+		    <a href="#" class="new-menu">菜单</a>
+		</div>
+	</div>
+	<!-- 头部end -->
+
+	<!-- 选择车款 start -->
+	<div class="car-style-wrap boxwrap">
+		<div class="tab-rank-t tab-rank-nowrap" id="seller-tabs-head">
+			<div class="transbg"></div>
+			<ul>
+				<li class="cur"><a href="#">2016款式</a></li>
+				<li><a href="#">2015款式</a></li>
+				<li><a href="#">2014款式</a></li>
+			</ul>
+		</div>
+		<div class="carstyle-list swiper-container-head">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="carstyle-box">
+						<h3 class="carstyle-h3">1.5T</h3>
+						<ul>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="carstyle-box">
+						<h3 class="carstyle-h3">1.5T</h3>
+						<ul>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="carstyle-box">
+						<h3 class="carstyle-h3">1.5T</h3>
+						<ul>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="carstyle-box">
+						<h3 class="carstyle-h3">1.5T</h3>
+						<ul>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="carstyle-box">
+						<h3 class="carstyle-h3">1.5T</h3>
+						<ul>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="carstyle-box">
+						<h3 class="carstyle-h3">1.5T</h3>
+						<ul>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									2016款2.0LGL 手动  舒适版
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 选择车款 end -->
+	
+	<script src="../js/jquery-1.8.0.min.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script>
+    	// 头部切换标签
+		var tabsSwiperBox = new Swiper('.swiper-container-head', {
+		    speed: 500,
+		    autoHeight:true,
+		    onSlideChangeStart: function () {
+		        $("#seller-tabs-head .cur").removeClass('cur');
+		        $("#seller-tabs-head li").eq(tabsSwiperBox.activeIndex).addClass('cur');
+		    }
+		})
+		$("#seller-tabs-head li").on('click', function (e) {
+		    e.preventDefault();
+		    $("#seller-tabs-head .cur").removeClass('cur');
+		    $(this).addClass('cur');
+		    tabsSwiperBox.slideTo($(this).index());
+		})
+    </script>
+</body>
+</html>

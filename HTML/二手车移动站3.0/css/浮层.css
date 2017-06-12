@@ -1,0 +1,451 @@
+﻿/*浮层外框*/
+.popover{position:absolute;background-color:#ffffff;z-index:13000;-webkit-box-shadow:0 0 3px  rgba(66,132,217,0.3);-moz-box-shadow: 0 0 3px  rgba(66,132,217,0.3); box-shadow: 0 0 3px  rgba(66,132,217,0.3);border:1px solid #d9d9d9;font-family: "PingFangSC-Regular", "Hiragino Sans GB","Microsoft Yahei" , "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.popover-tit{padding-left:20px;height:60px;line-height:60px;color:#333333;border-bottom:1px solid #d9d9d9;}
+.popover-tit h3{font-size:20px;display:inline;float:left;margin-right:5px;}
+.popover-tit span{font-size:12px;color:#cccccc;float:left;display:inline;}
+.popover-tit i{font-size:14px;color:#999999;margin-left:15px;}
+.popover-tit a,.popover-tit a:link,.popover-tit a:visited{color:#cccccc;text-decoration:none;margin-left:5px;}
+.popover-tit a:hover{text-decoration:underline;color:#cccccc;}
+.popover-close{width:30px;height:20px;position:absolute;right:8px;top:22px;z-index:10;}
+.popover-close a{width:0;padding-left:30px;height:20px;font-size:0;overflow:hidden;line-height:0;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar//bd_bg1.png) -80px -33px ;display:block;}
+.popover-close a:hover{background-position:-110px -33px}
+
+.screen-layer a.current,.screen-layer a.current:hover{background-color:#ff9a1f;color:#ffffff;border:none;}
+.taoche-screen-other li .screen-layer a.current:hover{background-color:#ff9a1f;color:#ffffff;border:none;}
+.taoche-screen-text li .screen-layer a.current:hover{background-color:#ff9a1f;color:#ffffff;border:none;}
+/*浮层宽*/
+.popover-lg{width:800px;}
+.popover-x-lg{width:850px;}
+.popover-md{width:650px;}
+
+
+/*选择喜欢的新车*/
+.popover-main{padding-top:30px;width:800px;}
+.popover-main .form-col{margin-right:10px;}
+.popover-cartype{padding-left:30px;width:732px;}
+.popover-cartype-time{height:48px;border-bottom:1px solid #e9e9e9;position:relative;width:730px;}
+.popover-cartype-time ul{position:absolute;}
+.popover-cartype-time li{float:left;margin-right:17px;*margin-right:16px;height:30px;line-height:30px;padding-bottom:15px;font-size:18px;font-family:"microsoft yahei";cursor:pointer;}
+.popover-cartype-time li.current{border-bottom:3px solid #ff9a1f;}
+.popover-cartype-box{height:300px;overflow-y:auto;position:relative;width:770px;*width:748px;padding-right:22px;}
+.popover-cartype-box ul.current{background-color:#f0f0f0;}
+.popover-cartype-list{cursor:pointer;}
+.popover-cartype-list li{height:36px;line-height:36px;float:left;font-family:"microsoft yahei";font-size:16px;overflow:hidden;}
+.popover-cartype-tit {border-bottom:1px solid #dddddd;margin-bottom:10px;}
+.popover-cartype-tit li{height:50px;line-height:50px;color:#999999;}
+.popover-cartype-list li.popover-cartype-w1{width:330px;*width:340px;padding-right:10px;}
+.popover-cartype-list li.popover-cartype-w2{width:150px;padding-right:10px;}
+.popover-cartype-list li.popover-cartype-w3{width:120px;}
+.popover-cartype-list li.popover-cartype-w4{width:90px;float:right;text-align:right;margin-right:10px;}
+.percentage {width:100px;height:6px;margin-top:18px;background-color:#e9e9e9;border-radius:15px;}
+.percentage  em{background-color:#ff9a1f;display:block;width:100%;height:6px;border-radius:15px;}
+.popover-main .form-group{z-index:10;position:relative;}
+/*成功失败提示*/
+.popover-prompt{min-height:150px;margin:40px 50px;padding-left:190px;position:relative;}
+.success-ico{width:150px;height:150px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/pormpt_ico.gif) no-repeat left top;position:absolute;left:0;top:0;}
+.defeated-ico{width:150px;height:150px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/pormpt_ico.gif) no-repeat -170px top;position:absolute;left:0px;top:0;}
+.popover-prompt h5{font-size:20px;line-height:40px;margin-bottom:5px;}
+.popover-prompt p{font-size:16px;color:#999999;line-height:30px;margin-bottom:10px;}
+.success-text{padding-top:30px;}
+.defeated-text{padding-top:5px;}
+.defeated-text-pt15{padding-top:18px;}
+.popover-fail{color:#c2c2c8;font-size:18px;padding-top:160px;padding-bottom:50px;text-align:center;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/fail_pic.jpg) no-repeat center top;font-weight:bold;margin-top:50px;}
+
+.popover .form-group{background-color:#ffffff;}
+
+
+/*确认通话浮层*/
+.confirm-call-layer{border:1px solid #dddddd;border-radius:4px;width:480px;*width:435px;left:0;top:60px;position:absolute;background-color:#ffffff;padding:15px 15px 30px 30px;*padding:15px 15px 30px 25px;font-weight:normal;z-index:3;}
+.confirm-call-layer .form-sm{margin-top:16px;}
+.confirm-layer-prompt{font-size:14px;line-height:20px;color:#999999;margin-bottom:2px;}
+.confirm-call-layer .form-group{padding-left:0;}
+.confirm-call-layer  .form-w405{width:420px;*width:397px;}
+.confirm-call-layer span.btn{font-size:16px;}
+.confirm-call-layer-but{line-height:48px;font-size:14px;color:#999999;}
+.taoche-details-btn .confirm-call-layer-but span{margin-right:15px;}
+.taoche-details-btn span.confirm-call-layer-submit{font-size:18px;margin-right:30px;display:inline-block;color:#54ad39;font-weight:bold;}
+.taoche-details-btn span.confirm-call-layer-submit i{float:left;width:26px;height:26px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -40px -27px;display:block;margin:12px 5px 0 14px;}
+
+/*完善资料*/
+
+
+
+/*让商家联系我*/
+.popover-business{background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/business_bg1.gif) repeat-y left top;display:table;width:650px; }
+.popover-business-nav{width:165px;float:left;padding-top:50px;}
+.popover-business-nav ul{border-top:1px solid #d9d9d9;position:relative;float:left;width:100%;}
+.popover-business-nav ul li{height:60px;line-height:60px;text-align:center;border-bottom:1px solid #d9d9d9;font-size:18px;background-color:#f9f9f9;border-right:1px solid #d9d9d9;padding-left:4px;overflow:hidden;}
+.popover-business-nav ul li a{display:block;text-decoration:none;height:60px;line-height:60px;overflow:hidden;}
+.popover-business-nav ul li a:hover{color:#333333;}
+.popover-business-nav ul li.current{background-color:#ffffff;border-right:1px solid #ffffff;border-left:4px solid #ff9a1f;}
+.popover-business-main{width:375px;float:left;margin-top:30px;margin-left:50px;}
+.popover-business-prompt{font-size:16px;margin-bottom:20px;color:#666666;}
+
+
+/*发送到手机*/
+.popover-phone-ewm{padding-top:40px;}
+.popover-phone-ewmbg{width:126px;height:126px;border:1px solid #e9e9e9;margin-left:20px;margin-bottom:10px;text-align:center;display:block;}
+.popover-phone-ewm p{font-size:16px;text-align:center;}
+.popover-business-dress{border:1px solid #e2e2e2;background-color:#f9fff9;font-size:14px;color:#666666;border-radius:3px;line-height:22px;padding:15px 20px;margin-bottom:20px;}
+
+/*举报*/
+.popover-report{padding:40px 50px;}
+.popover-report-reason{display:table;position:relative;width:600px;margin-bottom:10px;}
+.popover-report-reason a{float:left;height:30px;line-height:30px;border:1px solid #999999;border-radius:3px;padding:0 20px;display:inline-block;color:#999999;font-size:14px;margin-bottom:10px;margin-right:15px;text-decoration:none;}
+.popover-report-reason a.current{border:1px solid #ff591f;color:#ff591f;}
+.popover-report-reason a.current:link,.popover-report-reason a.current:visited{color:#ff591f;text-decoration:none;}
+.popover-report-text{display:block;height:80px;border:1px solid #dddddd;border-radius:3px;font-size:16px;color:#999999;line-height:22px;padding:5px 10px;width:100%;margin-bottom:20px;}
+.popover-report .form-input{height:40px;*height:20px;padding-bottom:10px;padding-top:10px;line-height:20px;}
+.popover-report-but{display:table;padding-top:20px;clear:both;width:600px;position:relative;padding-bottom:20px;}
+.popover-report-but .btn{float:left;}
+.popover-report-phone{float:left;margin-left:20px;line-height:20px;font-size:14px;color:#999999;width:360px;}
+
+
+/*账号登录*/
+.popover-account-login{padding-top:50px;padding-left:120px;}
+.popover-account-login .btn{float:left;margin-right:20px;}
+.popover-account-login .form-group-password{position:absolute;left:305px;top:0;font-size:14px;color:#666666;width:80px;line-height:20px;height:20px;}
+.popover-account-login .form-group-password a{color:#666666;}
+
+/*询价成功*/
+.popover-appointment{padding:40px 50px;}
+.popover-appointment-ico{min-height:150px;padding-bottom:20px;padding-left:190px;position:relative;}
+.popover-appointment-ico .success-ico{top:-20px;}
+.popover-appointment-ico h4{font-size:20px;margin-bottom:10px;padding-top:5px;line-height:30px;}
+.popover-appointment-ico p{line-height:22px;color:#999999;font-size:16px;margin-bottom:5px;}
+.popover-appointment-carbox{}
+.popover-appointment-carbox h6{color:#666666;font-size:16px;padding-top:20px;border-top:1px solid #e9e9e9;width:550px;} 
+.popover-appointment-carbox{position:relative;width:600px;}
+.popover-appointment-carlist {padding-right:50px;float:left;margin-top:20px;*width:150px;}
+.popover-appointment-carlist img{max-width:100%;}
+.popover-appointment-carlist h3{height:22px;line-height:22px;overflow:hidden;font-size:14px;color:#666666;}
+.popover-appointment-carlist p{line-height:24px;font-size:14px;color:#999999;}
+.popover-appointment-carlist em{line-height:24px;font-size:14px;color:#d70c0c;}
+
+
+
+/*参数配置*/
+.popover-parameter{width:900px;padding:40px 0 0;position:relative;}
+.popover-parameter h4{text-align:center;font-size:24px;color:#333333;display:block;}
+.popover-parameter-main {height:460px;overflow-y:auto;padding:0px 40px 10px;display:block;margin-top:40px;position:relative;}
+.popover-parameter-main img{width:720px;margin-left:45px;}
+.popover-parameter-main table{border:1px solid #e9e9e9;line-height:22px;font-size:14px;margin-bottom:15px;display:table;}
+.popover-parameter-main table th{height:50px;background-color:#f9f9f9;font-size:16px;color:#333333;padding:0 10px;border:1px solid #e9e9e9;}
+.popover-parameter-main table td{padding:16px 6px 16px 10px;border:1px solid #e9e9e9;vertical-align:top;}
+.popover-parameter-main table span{width:125px;color:#999999;display:inline-block;line-height:22px;vertical-align:top;margin-right:3px;}
+.popover-parameter-main table i{width:113px;display:inline-block;line-height:22px;vertical-align:top;color:#333333;}
+.popover-parameter-close{width:41px;height:40px;position:absolute;right:-60px;top:0px;z-index:10;}
+.popover-parameter-close a{width:0;padding-left:41px;height:40px;font-size:0;overflow:hidden;line-height:0;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) -150px -35px ;display:block;}
+.popover-parameter-close a:hover{background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) -150px -103px ;}
+
+/*车检详情*/
+.popover-parameter-text{text-align:center;font-size:16px;color:#999999;line-height:20px;margin-top:20px;}
+.popover-inspect-box{height:460px;overflow-y:auto;margin-top:30px;}
+.popover-inspect-main{padding:0px 40px 30px;}
+.popover-inspect-main h6{font-size:20px;margin-bottom:20px;}
+.popover-inspect-main table{border:1px solid #e9e9e9;}
+.popover-inspect-main table tr td,.popover-inspect-main table tr th{border:1px solid #e9e9e9;line-height:50px;color:#999999;font-size:14px;padding:0 10px;}
+
+.popover-inspect-main table.popover-inspect-hit th{border-bottom:none;background-color:#f9f9f9;}
+.popover-inspect-main table.popover-inspect-hit tr.popover-inspect-pic td{border-top:none;padding:20px 0 10px;text-align:center;}
+.popover-inspect-main td.table-bg-gray{background-color:#f9f9f9;font-size:16px;color:#333333;}
+.ico-yes {background:url("http://image.bitautoimg.com/taoche/2016_pc_usedcar/consultant-ico.gif") no-repeat  -24px -124px;
+display: block;float: left;height: 14px;margin: 18px 7px 0 0; width: 14px;}
+.ico-problem {background: url("http://image.bitautoimg.com/taoche/2016_pc_usedcar/consultant-ico.gif") no-repeat -54px -108px;
+display: block;float: left;height: 14px;margin: 18px 7px 0 0; width: 14px;}
+.float-rit{float:right;}
+.table-center{text-align:center;}
+.popover-inspect-main table.popover-inspect-hit .ico-yes,.popover-inspect-main table.popover-inspect-hit .ico-problem{float:right;}
+.popover-inspect-main table tr td.table-border-none{padding:0;border:none;}
+.popover-inspect-main table tr td.table-border-none table{border:none;}
+.popover-inspect-main table tr td.table-border-none table th{border:none;background-color:#f9f9f9;font-size:16px;color:#333333;}
+.popover-inspect-main table tr td.table-border-none td.table-left-none{border-left:none;}
+.popover-inspect-main table tr td.table-border-none td.table-rit-none{border-right:none;}
+.popover-inspect-main table tr td.table-border-none tr.table-bottom-none td{border-bottom:none;}
+.popover-inspect-text{line-height:24px;font-size:14px;color:#666666;}
+
+
+/*温馨提示*/
+.popover-reminder{min-height:150px;margin:25px 50px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/fail_150_150.png) no-repeat left center;padding-left:190px;}
+.popover-reminder h6{font-size:20px;line-height:35px;padding-top:40px;margin-bottom:5px;}
+.popover-reminder p{font-size:16px;color:#666666;line-height:25px;}
+.popover-reminder-three h6{padding-top:24px;}
+.popover-reminder-three p{color:#999999;line-height:30px;}
+/*地图切换*/
+.popover-big-picbox{width:910px;height:500px;position:absolute;}
+.popover-big-prev a{width:45px;padding-left:45px;font-size:0;line-height:0;overflow:hidden;height:80px;float:left;margin-top:204px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -12px -120px;display:block;}
+.popover-big-prev a:hover{background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -12px -120px #ff9a1f; border-radius:3px;}
+.popover-big-prev-disabled a,.popover-big-prev-disabled a:hover{width:45px;padding-left:45px;font-size:0;line-height:0;overflow:hidden;height:80px;float:left;margin-top:204px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -12px -200px;display:block;cursor:default;}
+
+
+.popover-big-pic{float:left;width:750px;height:500px;overflow:hidden;margin-left:25px;margin-right:25px;}
+.popover-big-pic ul{position:relative;left:0;}
+.popover-big-pic ul li{float:left;}
+.popover-big-next a{width:45px;padding-left:45px;font-size:0;line-height:0;overflow:hidden;height:80px;float:left;margin-top:204px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -72px -120px;display:block;}
+.popover-big-next a:hover{background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -72px -120px #ff9a1f; border-radius:3px;}
+.popover-big-next-disabled a,.popover-big-next-disabled a:hover{width:45px;padding-left:45px;font-size:0;line-height:0;overflow:hidden;height:80px;float:left;margin-top:204px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -72px -200px;display:block;cursor:default;}
+
+.popover-big-picbox .popover-parameter-close{right:10px}
+.popover-big-text{display:block;line-height:25px;text-align:right;margin-right:90px;font-size:20px;color:#ffffff;}
+
+
+
+/*输入表单文字颜色*/
+.form-input-red{border:1px solid #f58181;-webkit-box-shadow:0 0 5px  #f58181;-moz-box-shadow: 0 0 5px  #f58181; box-shadow: 0 0 5px  #f58181;}
+.form-on{color:#333333;}
+
+
+/*车辆所在地浮层*/
+.screen-layer{border:1px solid #d9d9d9;box-shadow: 0 0 5px #ebe9e9;position:absolute;left:0;top:35px;background-color:#ffffff;width:400px;font-size:14px;}
+
+.taoche-screen-drop .screen-layer{min-width:190px;width:auto;*width:300px;}
+
+.screen-city-all{margin:10px 20px 0px 10px;}
+.screen-city-text{margin:0 0 3px 20px;}
+.screen-city-text-list{padding-top:15px;}
+.screen-city-text-list strong{font-size:14px;color:#333333;margin-left:14px;}
+.screen-city-text dt{width:45px;float:left;color:#999999;line-height:24px;}
+.screen-city-text dd{display:table;}
+.screen-city-text dd a{margin-right:7px;}
+.map-search-top-city .screen-city-text dt{line-height:30px;}
+.screen-city-box{padding-bottom:10px;line-height:30px;color:#333333;}
+.screen-city-box  a{height:24px;line-height:24px;border:none;border-radius:2px;padding:0 6px 0 6px;font-size:14px;display:inline-block;margin-right:3px;}
+.screen-city-box a:hover{background-color:#f0f0f0;color:#333333;text-decoration:none;}
+.screen-city-province{height:37px;line-height:37px;border-bottom:1px solid #e1e1e1;font-size:16px;padding-left:20px;}
+.screen-city-province strong{font-weight:bold;}
+.screen-city-province i{color:#cccccc;}
+.screen-city-province a{font-size:16px;padding:0;color:#333333;}
+.screen-city-province a:hover{background:none;}
+.screen-city-main{height:261px;overflow-y:auto;}
+.screen-city-main ul{margin-left:10px;padding-top:5px;}
+.screen-city-main ul li a,.screen-city-main ul li a:hover{color:#333333;}
+.screen-city-list{padding:10px 0 10px 0;}
+.screen-city-w200{width:200px;display:table;}
+.screen-city-w250{width:260px;padding:0 0 20px 0;display:table}
+.screen-city-w200 .taoche-screen-btn{padding-bottom:5px;}
+.screen-city-300{height:300px;}
+.map-search-from{margin:0px 0 20px 20px;color:#666666;font-size:14px;}
+.map-search-input{width:75px;*width:60px;border:1px solid #e9e9e9;border-radius:3px;height:30px;*height:25px;line-height:30px;*line-height:25px;font-size:14px;padding-left:10px;color:#666666;}
+.map-search-from span{margin-left:5px;}
+.map-search-list-up  .map-search-input{background-color:#f9f9f9;}
+.map-search-from i{margin:0 5px 0 0;}
+
+.taoche-screen-drop  .screen-layer-suv{width:255px;*width:265px;padding:10px 0 0px 12px;left:0px;top:30px;}
+
+.taoche-screen-function .screen-layer{*left:810px;}
+
+/*更多排序 条件*/
+.screen-sort-input-main{width:280px;padding-bottom:10px;left:-213px;top:-17px;}
+.screen-sort-input-main ul{display:block;padding:10px 0 0px 20px;}
+.screen-sort-input-main ul li{width:85px;float:left;margin:5px 0;}
+.screen-sort-input-main ul li label{margin:0;}
+
+/*订阅选车*/
+.popover-subscribe-text{line-height:25px;background-color:#f9fff9;font-size:14px;color:#666666;border-bottom:1px solid #d9d9d9;padding:12px 22px 12px 95px;position:relative;display:block;}
+.popover-subscribe-text strong{position:absolute;left:22px;top:12px;line-height:25px;}
+.popover-subscribe{margin-left:110px;width:480px;}
+.popover-subscribe-p{font-size:14px;color:#999999;padding:0 0 50px 71px;}
+
+
+
+/*申请贷款*/
+.popover-apply-loan{padding:30px 0 10px 110px;}
+.popover-apply-loan .form-group{margin-bottom:30px;}
+.popover-lg-prompt{padding-left:340px; margin:50px 0;min-height:170px;}
+.popover-lg-prompt .success-ico{left:145px;top:10px;}
+.popover-lg-prompt h5{margin-bottom:5px;}
+.popover-prompt p.success-text-p{line-height:20px;margin-bottom:0;}
+
+
+
+
+
+
+/*完善资料*/
+.perfect-data-text{padding-top:30px;font-size:16px;color:#666666;margin-left:48px;margin-bottom:30px;}
+.perfect-data .form-sm .form-group{padding-left:48px;*padding-left:45px;margin-bottom:30px;}
+.perfect-data  .form-sm .form-col{margin-right:50px;}
+
+.perfect-data-layer{width:250px;border:1px solid #d9d9d9;-webkit-box-shadow:0 0 5px  #ebe9e9;-moz-box-shadow: 0 0 5px  #ebe9e9; box-shadow: 0 0 5px  #ebe9e9;background-color:#ffffff;position:absolute;left:-1px;top:45px;}
+.perfect-data-layer ul{padding:5px 0;}
+.perfect-data-layer ul li{height:35px;}
+.perfect-data-layer ul li a{height:35px;line-height:35px;padding:0 20px;font-size:14px;display:block;}
+.perfect-data-layer ul li a:hover{text-decoration:none;color:#ff9a1f;background-color:#f9f9f9;}
+.popover-x-lg .perfect-data .form-sm .form-group{padding-left:150px;}
+.popover-x-lg .perfect-data-text{margin-left:150px;}
+
+
+/*购车计算器*/
+.calculator-layer{display:table;width:100%;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/jrcp_bg7.jpg) repeat-y right top;padding-top:30px;padding-bottom:20px;}
+.calculator-layer-left{width:430px;float:left;}
+.calculator-layer-left  .perfect-data-layer{width:150px;}
+.calculator-layer-left .form-group{padding-left:115px;font-size:16px;color:#999999;}
+.calculator-layer-left  .form-col{font-size:16px;}
+.calculator-layer-left  .form-name{color:#999999;text-align:left;width:70px;left:30px;}
+.shoufu-proportion{float:left;margin-left:-15px;width:170px;margin-top:-10px;margin-right:5px;}
+.shoufu-proportion li{float:left;width:40px;height:40px;margin-left:15px;text-align:center;margin-top:10px;}
+.shoufu-proportion li a{width:40px;height:40px; color:#666666;border:1px solid #dddddd;border-radius:3px;display:block;}
+.shoufu-proportion li a:hover{text-decoration:none;color:#fc5a2e;border:1px solid #fc5a2e;}
+.shoufu-proportion li.current a,.shoufu-proportion li.current a:hover{text-decoration:none;color:#fc5a2e;border:1px solid #fc5a2e;}
+.shoufu-proportion li a.shoufu-proportion-disabled,.shoufu-proportion li a.shoufu-proportion-disabled:hover{text-decoration:none;color:#cccccc;border:1px solid #dddddd;cursor:text;}
+.calculator-layer-left .form-group i{float:left;margin-left:6px;}
+.calculator-layer-left a.blue-link{margin-left:20px;font-size:14px;}
+.calculator-layer-rit{width:217px;float:right;}
+.calculator-layer-rit ul{padding-left:30px;}
+.calculator-layer-rit ul li{margin-bottom:35px;}
+.calculator-layer-rit ul li h6{font-size:16px;margin-bottom:20px;}
+.calculator-layer-rit ul li p{font-size:20px;color:#fd9933;}
+.calculator-layer-rit-but {margin-left:30px;padding-top:15px;*padding-top:10px;display:table;}
+.calculator-layer-rit-but .btn-lesser a{border:1px solid #fd9933;color:#fd9933;}
+
+/*申请贷款*/
+.apply-loan-tit{height:80px;border-bottom:1px solid #d9d9d9;background-color:#f9fff9;}
+.apply-loan-tit strong{float:left;margin-left:50px;line-height:80px;font-size:20px;}
+.apply-loan-tit strong em{color:#fd9933;}
+.apply-loan-tit .form-sm{float:left;margin-left:100px;margin-top:20px;z-index:3;}
+.apply-loan-tit .form-sm .form-checked {margin-right:10px;}
+.apply-loan-mid{}
+.apply-loan-mid ul li{height:48px;line-height:48px;border-bottom:1px solid #e9e9e9;font-size:16px;}
+.apply-loan-mid ul li.apply-loan-mid-tit{height:58px;line-height:58px;color:#999999;}
+.apply-loan-mid-a{width:300px;float:left;height:48px;overflow:hidden;}
+.apply-loan-mid-b{width:120px;float:left;}
+.apply-loan-mid-c{width:128px;float:left;}
+.apply-loan-mid-d{width:102px;float:left;}
+.apply-loan-mid-e{width:48px;float:left;}
+.apply-loan-mid-a label{margin-right:10px;}
+.apply-loan-mid-a label input{float:left;margin-right:5px;vertical-align:middle;margin-top:17px;}
+.apply-loan-mid-a i{font-size:14px;color:#999999;}
+.apply-loan-mid ul li.apply-loan-mid-tit .apply-loan-mid-a{padding-left:50px;width:350px;}
+
+
+.apply-loan-down {padding:30px 50px 20px 50px;}
+.apply-loan-down-form{width:490px;display:table;float:left;}
+.apply-loan-tit .perfect-data-layer{width:150px;}
+.apply-loan-mid .popover-reminder{margin:38px 0 10px 135px;}
+.apply-loan-down-group{padding-left:50px;}
+.apply-loan-mid-list{padding:0 50px;border-bottom:1px solid #e9e9e9;margin-top:0;*margin-top:-4px;}
+.apply-loan-mid-list-auto{height:140px;overflow-y:auto;}
+.apply-loan-mid-list ul{margin-top:-1px;}
+.apply-loan-mid-list ul li{height:48px;line-height:48px;border-top:1px solid #e9e9e9;border-bottom:none;font-size:16px;}
+.screen-city-list-link {padding-left:10px;}
+.screen-city-list-link a{margin-left:2px;}
+
+/*双十一 9月26*/
+.screen-sort-input-main{left:-200px;}
+
+
+/*11月17日 新加详情页app 扫码*/
+.app-scan-code{text-align:center;padding-top:30px;padding-bottom:60px;}
+.app-scan-code-texta{font-size:16px;color:#999999;line-height:25px;margin-bottom:10px;}
+.app-scan-code-textb{font-size:24px;font-weight:bold;color:#ff9a1f;line-height:30px;margin-bottom:30px;}
+.app-scan-code-textc{font-size:14px;color:#999999;line-height:20px;margin-bottom:20px;}
+.app-scan-code-main{width:171px;height:171px;margin:0 auto;}
+
+
+/*11月17号  卖车*/
+.popover-reminder-prompt{background-position:left top;}
+.popover-reminder h5.topfist{padding-top:25px;margin-bottom:13px;}
+.popover-reminder h5{font-size:20px;color:#333333;font-weight:normal;padding-top:0px;margin-bottom:20px;}
+.popover-reminder-prompt p{margin-bottom:10px;}
+.popover-middle-text {padding-top:40px;padding-bottom:55px;}
+.popover-middle-text h5{font-size:20px;text-align:center;color:#333333;margin-bottom:15px;}
+.popover-middle-text p{font-size:16px;color:#999999;text-align:center;line-height:25px;}
+.popover-middle-but{text-align:center;margin-top:45px;}
+.popover-middle-but span{margin-left:5px;margin-right:5px;}
+
+/*商家二维码电话 -- 龙哥给的原始*/
+.store-tel-box{padding: 30px 0; position: relative}
+.store-tel-num,.store-tel-btn{height:50px; line-height: 46px; margin: auto auto 50px auto ;padding: 0 30px;text-align: center; position: relative}
+.store-tel-num strong.text{display: block;font-size:48px;color:#ff9a20; font-weight: bold}
+.store-tel-num .omission{font-family:simsun}
+.store-tel-num span.name{display: block;font-size:24px;color:#ff9a20}
+.store-tel-btn{ cursor: pointer;width:400px;color:#ffffff; background:#ff9a20; border-radius: 4px;position:relative}
+.store-tel-btn strong.text{font-size:20px;display: inline-block;padding-left:30px;font-weight:bold;vertical-align:middle; position: relative}
+.store-tel-btn .icon-tel-2X{ position: absolute; width: 25px; height: 25px; left: 0px; top: 11px}
+.store-tel-box .bubble{top:130px; left: 190px}
+.store-tel-tip{text-align: center; font-size: 18px; line-height:40px;}
+.store-tel-tip .size{color:red}
+.store-tel-note{text-align: center;font-size: 16px;line-height:2;}
+.store-tel-qrcode{border:1px solid #e9e9e9; width: 176px; height: 176px; display: block; margin:auto auto 10px auto; overflow: hidden;}
+.store-tel-box .bubble{border-radius: 13px}
+.store-tel-box .bubble:before,.store-tel-box .bubble:after{left: 20px;}
+
+/*商家二维码电话 -- 新的*/
+.store-tel-box_news{padding:70px 0 60px 0;position:relative}
+.store-tel-box_news .icons{display: inline-block;width:150px; height: 150px;position: absolute; left: 50%; margin-left: -75px; top: -45px;}
+.store-tel-box_news .icons img{width:150px}
+.store-tel-box_news .icons .iconfont{font-size: 100px; position: absolute; left: 25px; top:25px; line-height: normal;color:#ff6d02}
+
+.store-tel-box-title{ width: 100%; text-align: center; position: relative;margin-top:24px;}
+.store-tel-box-title dt{font-size: 24px; font-weight: bold; line-height: normal}
+.store-tel-box-title dd{font-size: 18px;margin-top:10px;margin-bottom:6px;}
+.store-tel-box-title strong, .store-tel-box-tips strong{color:#ff6d02;}
+.store-tel-box-tips{text-align:center;width: 100%; padding: 10px 0}
+.store-tel-box-tips .bubble{ position:relative;display: inline-block}
+.store-tel-box-tips .bubble{border-radius:13px; padding: 2px 12px; line-height:1.5; font-size: 14px}
+.store-tel-box-tips .bubble_t:before{left:48%}
+.store-tel-box-tips .bubble_t:after{left:48%}
+.store-tel-box-tips .bubble_b:before{left:48%}
+.store-tel-box-tips .bubble_b:after{left:48%}
+
+.store-tel-box-form{width:100%; margin:10px auto; padding: 0 100px;}
+.store-tel-box-form .item{margin-bottom:16px;position: relative}
+.store-tel-box-form .item.verification{padding-right: 140px;}
+.store-tel-box-form .text{border:1px solid #dddddd;border-radius: 4px;overflow:hidden;width:100%;margin:3px;padding:0 0 0 30px;background:#fff;display: inline-block;  position: relative}
+.store-tel-box-form .text.warning{border-color:#f58181;box-shadow: 0 0 3px rgba(255,0,0,.2)}
+.store-tel-box-form .text input{padding:12px;font-size:16px;margin:0;border:none;width:100%}
+.store-tel-box-form button{outline:none;}
+.store-tel-box-form .text .tip{font-size:16px;position:absolute;left:36px;top:0;padding:14px 0;color:#cbcbcb}
+.store-tel-box-form .text .iconfont{width:16px;height:16px;font-size:20px;position:absolute;top:15px;left:10px;color:#cbcbcb}
+
+/*王哲写的*/
+.store-tel-box-form .submit{border:none;width:100%;height:50px;line-height:50px;background-color:#ff9a1f;text-align:center;color:white;border-radius:5px;font-size:18px;margin-top:13px;}
+.store-tel-box-form .submit:hover{cursor:pointer;}
+.store-tel-box-form .span_length{position:absolute;right:10px;top:12px;font-size:16px;}
+.store-tel-box-form .error_title{width:100%;display:none;color:#ed1b23;position:relative;top:0px;left:3px;font-size:14px;}
+.store-tel-box_news .prompting{color:#333333;font-size:16px;text-align:center;line-height:40px;margin-bottom:18px;}
+.store-tel-box_news .prompting_margin{margin:10px 0px 0px 0px;}
+.store-tel-box_news .prompting_bottom{margin-bottom:20px;}
+.store-tel-box-form .checkbox_title{margin-bottom:30px !important;font-size:14px;color:#666666;}
+.store-tel-box-form .checkbox_title_cuts{margin-bottom:0px;font-size:14px;}
+
+
+.store-tel-box_news .list{width:516px;margin:0 auto;overflow:hidden;}
+.store-tel-box_news .list li{width:160px;float:left;margin-left:18px;}
+.store-tel-box_news .list li img{width:100%;display:block;}
+.store-tel-box_news .list li .list_title{color:#333333;font-size:12px;height:20px;line-height:23px;overflow:hidden;}
+.store-tel-box_news .list li .list_Record{color:#999999;font-size:12px;}
+.store-tel-box_news .list li .list_price{color:#ff8c38;font-size:14px;font-weight:bold;height:30px;line-height:30px;}
+
+.store-tel-box_news .checkbox{position: relative;margin:0px;color:#dddddd;cursor:pointer;}
+.store-tel-box_news .checkbox.checked:after{content: "\e666"; font-size: 14px; position: absolute; left:1px; top:-1px; color: green;}
+
+/*公共按钮样式*/
+.store-tel-box_news .submit_main_public{outline:none;cursor:pointer;display:block;border:none;width:100%;height:50px;line-height:50px;background-color:#ff9a1f;text-align:center;color:white;border-radius:5px;font-size:18px;margin:0 auto;margin-bottom:10px;}
+.store-tel-box_news .error_title_public{width:100%;display:inline-block;color:#ed1b23;text-align:center;margin:18px 0px 18px 0px;font-size:14px;margin-bottom:0px;}
+.store-tel-box_news .submit_main_publics{margin-top:20px !important;}
+
+/*tips*/
+.store-tel-box-form .tips_news{text-align:left;margin-bottom:20px;}
+.store-tel-box-form .tips_news .bubble_t:before{left:8%}
+.store-tel-box-form .tips_news .bubble_t:after{left:8%}
+
+.store-tel-box_news .reduce .icons .iconfont{font-size:100px;position:absolute;left:25px;top:25px;line-height:normal;color:#ff6d02}
+.store-tel-box_news .iconfont_close{color:#999999 !important;}
+/*验证码*/
+.store-tel-box_news .code_img{width:20%;position:absolute;right:10px;top:10px;}
+.store-tel-box_news .error_img{display:block;margin:20px auto;width:155px;}
+.store-tel-box_news .error_title_mistake{color:#333333;font-size:18px;font-weight:400;text-align:center;line-height:30px;margin-bottom:2px;}
+.store-tel-box_news .error_content{color:#999999;text-align:center;font-size:16px;}
+.store-tel-box_news .submit_buttom{width:120px;height:40px;background-color:#ff9a1f;font-size:16px;border:none;color:white;border-radius:5px;display:block;margin:35px auto;}
+
+/*重复提交*/
+.store-tel-box_news .error_title_submit{color:#333333;font-size:18px;font-weight:400;text-align:center;line-height:30px;margin-top:30px;}
+.store-tel-box_news .error_success{color:#999999;text-align:center;font-size:16px;margin-top:30px;}
+.store-tel-box_news .submit_main_public_copy{width:400px;border-radius:5px;display:block;color:white;height:50px;line-height:50px;text-align:center;background:#ff9a1f;border:none;margin:50px auto 30px auto;font-size:16px;}
+
+.store-tel-box-form .icon-frame-Choice:hover:before{color:red;}
+.store-tel-box_news .low_price{line-height:26px;font-size:18px;margin-bottom:15px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:60%;margin:0 auto;}
+.store-tel-box-form .checkbox_line{margin-top:8px;}
+
+.store-tel-box_news .checkbox:hover{color:#ff5c5c;cursor:pointer;}

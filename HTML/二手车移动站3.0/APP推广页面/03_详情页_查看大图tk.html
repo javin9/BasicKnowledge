@@ -1,0 +1,677 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<title>易车二手车</title>
+	<link rel="stylesheet" type="text/css" href="../css/新头尾.css" />
+	<link rel="stylesheet" type="text/css" href="../css/公共控件.css" />
+	<link rel="stylesheet" type="text/css" href="../css/分享.css" />
+	<link href="../css/swiper.min.css" rel="stylesheet"> <!--banner css-->
+	<link href="../css/detail.css" rel="stylesheet">
+</head>
+
+<body class="bg-greyer">
+	<!-- 头部star -->
+	<div class="header-mask" style="display:none;"></div>
+	<div class="new-header">
+	  	<a class="new-btn-return" href="#">返回</a>
+	  	<h2>车源详情</h2>
+	   	<div class="new-return-rit">
+	      	<a href="#" class="new-menu">菜单</a>
+	      	<a href="#" class="d_share" data-action="popup-share">分享</a>
+	   	</div>
+	   	<!-- 导航浮层  start -->
+	    <div class="new-menu-layer menu-transition" style="display:none;">
+	        <div class="new-menu-layer-arrow"></div> 
+	        <div class="new-menu-layer-load">
+	            <div class="new-menu-layer-bg"><img src="../images/new-menu-bg.jpg" alt=""></div> 
+		        <!-- -未登录  start -->
+		        <div class="new-menu-top">
+	              	<h1 class="new-menu-logo"></h1>
+	              	<div class="new-menu-ico">
+	                 	<span><img src="../images/new-mune-bg1.png" alt=""></span>
+	                 	<em><a href="#">请登录</a></em>
+	              	</div>
+		        </div>
+		        <!-- -未登录  end -->
+		        <!-- -已登录  start -->
+		        <!--<div class="new-menu-top">
+	              	<h1 class="new-menu-logo"></h1>
+	              	<div class="new-menu-ico">
+	                 	<span><img src="../images/new-mune-bg2.png" alt=""></span>
+	                 	<em>赵二喜</em>
+	              	</div>
+	           	</div>-->
+	           	<!-- -已登录  end -->
+	           	<!-- -有头像  start -->
+	           	<!--<div class="new-menu-top">
+	              	<h1 class="new-menu-logo"></h1>
+	              	<div class="new-menu-ico">
+	                 	<span><img src="../images/new-mune-bg3.png" alt=""></span>
+	                 	<em>赵二喜</em>
+	                 	<i>9</i>
+	              	</div>
+	           	</div>-->
+	           	<!-- -有头像  end -->
+	        </div>
+	        <div class="new-menu-list">
+		        <ul>
+		            <li><a href="#">首页</a></li>
+		            <li><a href="#">买车</a></li>
+		            <li><a href="#">卖车</a></li>
+		            <li><a href="#">置换</a></li>
+		            <li><a href="#">贷款</a></li>
+		            <li><a href="#">帮买</a></li>
+		            <li><a href="#">评估</a></li>
+		            <li><a href="#">攻略</a></li>
+		        </ul>
+	        </div>
+	        <div class="new-nav-list">
+		        <ul class="clearfix">
+		           <li><a href="#" class="new-nav-ico1">我的关注</a></li>
+		           <li><a href="#" class="new-nav-ico2">最近浏览</a></li>
+		           <li><a href="#" class="new-nav-ico3">车源管理</a></li>
+		        </ul>
+	        </div>  
+	    </div>
+	  	<!-- 导航浮层  end --> 
+	</div>
+	<!-- 头部end -->
+	<!-- 分享 弹出层  start -->
+	<div class="leftmask mark mark1" style="display: none;"></div>
+    <div class="leftPopup share-bottom popup-share share-bottom6" data-back="mark1" style="display: none;">
+        <div class="swipeLeft">
+            <!--去掉swipeLeft-block 样式就会隐藏-->
+            <div class="share-box">
+                <ul>
+                    <li>
+                        <a href="###" class="icon-sina">新浪微博
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###" class="icon-weixin">微信好友
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###" class="icon-pengyouquan">朋友圈
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###" class="icon-qqfriend">QQ好友</a>
+                    </li>
+                    <li>
+                        <a href="###" class="icon-qq">QQ空间
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###" class="icon-wb">腾讯微博
+                        </a>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <a href="###" class="close">取消</a>
+        </div>
+    </div>
+	<!-- 分享 弹出层  end -->
+	
+	<!-- banner start -->
+	<div class="banner-wrap">
+		<div class="swiper-container ban_swiper">
+		    <ul class="swiper-wrapper">
+		        <li class="swiper-slide"><a href="#" title="" data-action="popup-lookdt"><img src="../temp/detail/pic.jpg" alt="" width="100%"></a></li>
+		        <li class="swiper-slide"><a href="#" title=""><img src="../temp/detail/pic.jpg" alt="" width="100%"></a></li>
+		        <li class="swiper-slide"><a href="#" title=""><img src="../temp/detail/pic.jpg" alt="" width="100%"></a></li>
+		    </ul>
+		    <!-- Add Pagination -->
+		    <div class="ban-page"><div class="ban-pagination"></div></div>
+		</div>
+		<div class="ban-icon">
+			<!-- 保障车  -->
+			<span class="ico-bzc"></span>
+			<!-- 认证车  -->
+			<!--<span class="ico-rzc"></span>-->
+			<!-- 无实拍情况  -->
+			<!--<span class="ico-wrz">未上传车源实拍图,此为新车图片</span>-->
+		</div>
+	</div>
+	<!-- banner end -->
+	
+	<!-- det-wrap start -->
+	<div class="det-wrap boxwrap">
+		<h2 class="d-tle">奥迪A5(进口) 2010款 Coupe  2.0T 风尚版</h2>
+		<div class="d-secondtle">
+			<span class="cardtime">2015-05上牌   6.2万公里</span>
+			<em class="line">|</em>
+			<span class="volume">1.5T CVT</span>
+		</div>
+		<div class="d-price">
+			<div class="left-pri pri">53.80万</div>
+			<div class="right-pri pri">
+				<p>参考估价：171.85 - 211.67万</p>
+				<p>新车总价：180.60万（含税）</p>
+			</div>
+		</div>
+		<div class="look-gz">
+			<a class="gz" href="javascript:;">查看估值报告</a>
+		</div>
+		<div class="double11-det">
+			<a href="#">
+				<span class="double-tle"></span>
+				<span class="double-txt">点击领券，购车优惠2500元</span>
+			</a>
+		</div>
+		<div class="item-wrap">
+			<ul class="itemul">
+				<li>
+					<a href="#">
+						<b class="ico-d">贷</b>
+						<div class="item-txt">
+							首付 <em class="pri">3.60万起</em>
+							<i class="line">|</i>
+							月供<em class="pri">2600元</em>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<em class="ico-em">原厂质保</em>
+						<em class="ico-em">延长质保</em>
+						<em class="ico-em">免费过户</em>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- det-wrap end -->
+	
+	<!-- help-wrap start -->
+	<div class="help-wrap boxwrap mt12">
+		<div class="hp-txt">
+			<p class="pt">该车提供帮买车服务</p>
+			<p class="pb">车顾问全程陪同挑车、看车、代办过户</p>
+		</div>
+		<div class="help-right">
+			<a class="help-in" href="#">
+				<p class="ico-buytxt">开启帮买</p>
+			</a>
+		</div>
+	</div>
+	<!-- help-wrap end -->
+	
+	<!-- record-wrap start -->
+	<div class="record-wrap boxwrap mt12">
+		<div class="m-tle">
+			<h2 class="h2">车辆档案</h2>
+		</div>
+		<div class="m-cont">
+			<table cellpadding="0" cellspacing="0" class="table-rec" width="100%">
+				<tr>
+					<td>
+						<p class="pt">4S定期保养</p>
+						<p class="pb">维护正常</p>
+					</td>
+					<td>
+						<p class="pt">国IV排放<em class="tan"></em></p>
+						<p class="pb">北京可上牌</p>
+					</td>
+					<td>
+						<p class="pt">保险至2016-06</p>
+						<p class="pb p-orange">保险已到期</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="pt">营转非</p>
+						<p class="pb p-orange">损耗高</p>
+					</td>
+					<td>
+						<p class="pt">300马力</p>
+						<p class="pb">1.6L自然吸气</p>
+					</td>
+					<td>
+						<p class="pt">油耗6.6L</p>
+						<p class="pb">经济实用</p>
+					</td>
+				</tr>
+			</table>
+			<ul class="car-desc cf">
+				<li><span>来源：</span>商家</li>
+				<li><span>年检：</span>2016-06到期</li>
+				<li><span>牌照：</span>北京牌</li>
+				<li><span>车身：</span>4门5座三厢</li>
+				<li><span>品牌：</span>奥迪A5</li>
+				<li><span>燃油：</span>95号（原97号）</li>
+			</ul>
+			<ul class="car-light cf">
+				<li>
+					<a href="#">
+						<p class="car-lico">
+							<img src="../images/icon-7.png"/>
+							<em class="ico-zp"></em>
+						</p>
+						<p class="car-ltxt">GPS导航</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<p class="car-lico">
+							<img src="../images/icon-1.png"/>
+						</p>
+						<p class="car-ltxt">天窗</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<p class="car-lico">
+							<img src="../images/icon-4.png"/>
+						</p>
+						<p class="car-ltxt">真皮座椅</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<p class="car-lico">
+							<img src="../images/icon-more.png"/>
+						</p>
+						<p class="car-ltxt">全部亮点</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="alink">
+			<a href="#"><em>查看详细参数配置</em></a>
+		</div>
+	</div>
+	<!-- record-wrap end -->
+	
+	<!-- eva-wrap start -->
+	<div class="eva-wrap boxwrap mt12">
+		<div class="eva-box">
+			<a href="#">
+				<h2 class="h2">新车口碑</h2>
+    			<div class="grade"><span><b style="width: 84%"></b></span>4.2分</div>
+			</a>
+		</div>
+	</div>
+	<!-- eva-wrap end -->
+	
+	<!-- report-wrap start -->
+	<div class="report-wrap boxwrap mt12">
+		<div class="m-tle">
+			<h2 class="h2">车检报告</h2>
+		</div>
+		<div class="m-cont">
+			<div class="mbox-top qua-top">
+				<p class="mbox-ico"><span></span></p>
+				<p class="mbox-txt">该车共检测<em class="total-num">87</em>项，发现<em class="have-num">3</em>项问题</p>
+				<p class="mbox-txt2">检测过程符合国家检测标准</p>
+			</div>
+			<div class="qua-item">
+				<ul class="qua-result">
+					<li class="qua-r1">
+						<p class="qua-img"><em></em></p>
+						<p class="qua-txt">真实、优质车况</p>
+					</li>
+					<li class="qua-r2">
+						<p class="qua-img"><em></em></p>
+						<p class="qua-txt">128项严格检测</p>
+					</li>
+					<li class="qua-r3">
+						<p class="qua-img"><em></em></p>
+						<p class="qua-txt">明码标价</p>
+					</li>
+					<li class="qua-r4">
+						<p class="qua-img"><em></em></p>
+						<p class="qua-txt">排除重大撞击</p>
+					</li>
+					<li class="qua-r5">
+						<p class="qua-img"><em></em></p>
+						<p class="qua-txt">排除水泡、火烧</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- report-wrap end -->
+	
+	<!-- serv-wrap start -->
+	<div class="serv-wrap boxwrap mt12">
+		<div class="m-tle">
+			<h2 class="h2">维修保养记录</h2>
+		</div>
+		<div class="m-cont">
+			<div class="mbox-top serv-top">
+				<p class="mbox-ico"><span></span></p>
+				<p class="mbox-txt">4S店直传维修保养数据</p>
+				<p class="mbox-txt2">由宝马4S店提供</p>
+			</div>
+			<div class="s-step">
+				<ul>
+					<li>
+						<p class="step-time">
+							<em class="step-ico"></em>
+							<span>最近维保时间  2015-5-5</span>
+						</p>
+						<p class="step-cont">
+							一般维修<em class="line">|</em>维保公里数 6.66万公里
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="alink">
+			<a href="#"><em>查看完整维保记录</em></a>
+		</div>
+	</div>
+	<!-- serv-wrap end -->
+	
+	<!-- after-wrap start -->
+	<div class="after-wrap boxwrap mt12">
+		<div class="m-tle">
+			<h2 class="h2">售后保障</h2>
+		</div>
+		<div class="m-cont">
+			<div class="mbox-top after-top">
+				<p class="mbox-ico"><span></span></p>
+				<p class="mbox-txt">该车由原厂4S店提供售后服务</p>
+				<p class="mbox-txt2">保修剩余<em class="num">15</em>个月或<em class="num">2.33</em>万公里</p>
+			</div>
+			<!-- 售后保障第二种情况  -->
+			<!--<div class="mbox-top after-top after-top2">
+				<p class="mbox-ico"><span></span></p>
+				<p class="mbox-txt">该车享受延长质保服务</p>
+				<p class="mbox-txt2">由商家提供受国家认可的延保服务<br/>详情请咨询商家</p>
+			</div>-->
+			<!-- 售后保障第三种情况  -->
+			<!--<div class="mbox-top after-top after-top3">
+				<p class="mbox-ico"><span></span></p>
+				<p class="mbox-txt">该车由宝马中国提供官方售后服务</p>
+				<ul class="mbox-ul">
+					<li><em>2个月或2万公里质量担保</em></li>
+					<li><em>24小时BMW道路救援</em></li>
+				</ul>
+			</div>-->
+		</div>
+	</div>
+	<!-- after-wrap end -->
+	
+	<!-- seller-wrap start -->
+	<div class="seller-wrap boxwrap mt12">
+		<div class="m-tle">
+			<h2 class="h2">卖家描述</h2>
+		</div>
+		<div class="m-cont">
+			<!-- 卖家描述第二种情况  start -->
+			<div class="seller-photos">
+				<a href="#" class="seller-p2">
+					<p class="s-img"><img src="../images/photo2.png" /></p>
+					<div class="s-contact">
+						<p class="s-pt"><i>4S-</i>北京易车二手车<s class="i_bao"></s></p>
+						<p class="s-pb">在售48辆<em class="line">|</em>已售233辆</p>
+					</div>
+				</a>
+			</div>
+			<!-- 卖家描述第二种情况  end -->
+			<div class="seller-dec">
+				<p>我这辆车外观时尚动感，颜色亮丽，开在路上十分吸引行
+人目光。内饰用料做工都是很高大上的，内部布局很合理
+车子主要是家用，平时上下班代步，空间可以满足家庭用
+车需求，后排乘坐三个成年人也不会觉得压抑，偶尔跑跑
+长途，年均行驶里程一般，4S店定期保养，城市道路真皮
+座椅，导航系统，倒车影像，有喜欢的朋友赶紧联系我</p>
+				<div class="d-more d-mask"><a href="#"><em class="">查看更多</em></a><div class="mask-layer"></div></div>
+			</div>
+			<div class="seller-list">
+				<ul>
+					<li class="seller-li1"><a href="#"><span class="txtElps">北京市朝阳区金港汽车公园南区金港汽车公园</span></a></li>
+					<li class="seller-li2"><a href="#"><span class="txtElps">该车源有2个被举报信息</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- seller-wrap end -->
+	
+	<!-- safetips-wrap start -->
+	<div class="safetips-wrap boxwrap mt12">
+		<p class="tip-tle">易车安全提示</p>
+		<p class="tip-cnt">买卖套牌车，走私车，罚没车，盗抢车属于非法行为，未看车前不要支付任何费用。</p>
+		<p class="btn-tips">
+			<a href="javascript:;" class="btn-kf">客服电话</a>
+			<a href="#" class="btn-jb">举报该车源</a>
+		</p>
+	</div>
+	<!-- tips-wrap end -->
+	
+	<!-- app start -->
+	<div class="app-wrap boxwrap mt12">
+		<div class="ad-app ad-app-content appbdnone">
+		    <img src="../images/app-logo.png">
+		    <dl>
+		        <dt><span>易车二手车APP </span><div></div></dt>
+		        <dd>二手车买卖更方便</dd>
+		    </dl>
+		    <a class="ad-btn-download qwann" href="javascript:void(0);" id="app_download_detail">立即前往</a>
+	    </div>
+	</div>
+	<!-- app end -->
+	
+	<!-- carpic-wrap start -->
+	<div class="carpic-wrap boxwrap mt12">
+		<div class="m-tle">
+			<h2 class="h2">车源图片</h2>
+		</div>
+		<div class="m-cont">
+			<div class="carpic-list">
+				<p><img src="../temp/detail/carpic.jpg"/></p>
+				<p><img src="../temp/detail/carpic.jpg"/></p>
+				<p><img src="../temp/detail/carpic.jpg"/></p>
+				<p><img src="../temp/detail/carpic.jpg"/></p>
+			</div>
+			<div class="load-more"><a href="#"><em>加载更多</em></a></div>
+		</div>
+	</div>
+	<!-- carpic-wrap end -->
+	
+	<!-- recom-wrap start -->
+	<div class="recom-wrap boxwrap mt12">
+		<div class="m-tle">
+			<h2 class="h2">推荐车源</h2>
+			<ul class="mtab-ul">
+				<li class="on"><a href="#">同价格</a></li>
+				<li><a href="#">同车系</a></li>
+			</ul>
+		</div>
+		<div class="mcar-box">
+			<ul class="mcar-list">
+				<li>
+					<a href="#">
+						<div class="mcar-img"><img src="../temp/detail/pic180x120.jpg"/></div>
+						<div class="mcar-txt">
+							<p class="mcar-tle txtElps">哈弗H6 2013款 运动版 1.5T 手动两驱</p>
+							<p class="mcar-pri">27.56万</p>
+							<p class="mcar-sptime">2013-06上牌/8.0万公里</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="mcar-img"><img src="../temp/detail/pic180x120.jpg"/></div>
+						<div class="mcar-txt">
+							<p class="mcar-tle txtElps">哈弗H6 2013款 运动版 1.5T 手动两驱</p>
+							<p class="mcar-pri">27.56万</p>
+							<p class="mcar-sptime">2013-06上牌/8.0万公里</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="mcar-img"><img src="../temp/detail/pic180x120.jpg"/></div>
+						<div class="mcar-txt">
+							<p class="mcar-tle txtElps">哈弗H6 2013款 运动版 1.5T 手动两驱</p>
+							<p class="mcar-pri">27.56万</p>
+							<p class="mcar-sptime">2013-06上牌/8.0万公里</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="mcar-img"><img src="../temp/detail/pic180x120.jpg"/></div>
+						<div class="mcar-txt">
+							<p class="mcar-tle txtElps">哈弗H6 2013款 运动版 1.5T 手动两驱</p>
+							<p class="mcar-pri">27.56万</p>
+							<p class="mcar-sptime">2013-06上牌/8.0万公里</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="mcar-img"><img src="../temp/detail/pic180x120.jpg"/></div>
+						<div class="mcar-txt">
+							<p class="mcar-tle txtElps">哈弗H6 2013款 运动版 1.5T 手动两驱</p>
+							<p class="mcar-pri">27.56万</p>
+							<p class="mcar-sptime">2013-06上牌/8.0万公里</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="mcar-img"><img src="../temp/detail/pic180x120.jpg"/></div>
+						<div class="mcar-txt">
+							<p class="mcar-tle txtElps">哈弗H6 2013款 运动版 1.5T 手动两驱</p>
+							<p class="mcar-pri">27.56万</p>
+							<p class="mcar-sptime">2013-06上牌/8.0万公里</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<div class="alink">
+				<a href="#"><em>查看全部</em></a>
+			</div>
+		</div>
+	</div>
+	<!-- recom-wrap end -->
+	
+	<!-- 底部第一种情况  start -->
+	<div class="bot-fixed" style="display:none-;">
+		<ul>
+			<li class="li-collect">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>收藏</span>
+					</p>
+				</a>
+			</li>
+			<li class="li-message">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>发短信</span>
+					</p>
+				</a>
+			</li>
+			<li class="li-phone">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>打电话</span>
+					</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 底部第一种情况  start -->
+
+	
+	<div id="backtop" class="m-r-box" style="display: block;">
+	    <!-- 返回顶部 start -->
+	    <a onClick="window.scrollTo(0,0)" href="javascript:void(0);" class="m-r-top">
+	        <div class="ico-top-arrow">
+	        </div>
+	    </a>
+	    <!-- 返回顶部 end -->
+	</div>
+
+
+	<!-- footer start -->
+	<div class="hslie"></div>
+    <div class="new-footer">
+		<ul>
+		    <li><a href="#" class="ckdl">看电脑版</a></li>
+		    <li><a href="#" class="wzdt">看微信版</a></li>
+		    <li><a href="#" class="tyij">提意见</a></li>
+		</ul> 
+		<div class="new-footer-text">
+		    <p>购车热线：<strong>4000-189-167 </strong> ( 9:00 – 21:00 )</p>
+		    <p>易车二手车 m.taoche.com</p>
+		</div>
+	</div>
+	<!-- footer end -->
+	
+	
+	
+	
+	<!-- 查看大图 弹出层  start -->
+	<div class="leftmask mark mark2" style="display: none;"></div>
+    <div class="leftPopup apptg-bottom popup-lookdt" data-back="mark2" style="display: none;">
+        <div class="swipeLeft">
+            <!--去掉swipeLeft-block 样式就会隐藏-->
+            <div class="app-download-m">
+            	<a href="javascript:;" class="close"></a>
+				<div class="app-down-box">
+					<div class="app-down-i">
+						<div class="app-d-icon">
+							<img src="http://image.bitautoimg.com/taoche/2016taoche_m/app1.png"/>
+						</div>
+						<div class="app-d-txt">
+							<p class="p-phone">使用APP查看</p>
+							<p class="p-tips">高清，无码，大图</p>
+						</div>
+					</div>
+					<div class="btn-app-d">
+						<a href="#" class="btn-orange">下载APP，获取联系方式</a>
+						<a href="#" class="btn-orangebord">已安装APP？点此前往联系</a>
+					</div>
+					<p class="btn-a-tips">如无法跳转，请使用主流浏览器打开</p>
+				</div>
+			</div>
+        </div>
+    </div>
+	<!-- 查看大图 弹出层  end -->
+	
+	<script src="../js/jquery-1.8.0.min.js"></script>
+	<script src="../js/model.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script>
+    	//banner
+    	var banSwiper = new Swiper('.ban_swiper',{
+    		loop:true,
+	        pagination: '.ban-pagination',
+	        paginationType: 'fraction'
+        });
+        $(function () {
+	        //分享和客服电话弹层
+	        (function () {
+	            $('[data-action=popup-share],[data-action=popup-apptg],[data-action=popup-gzbg],[data-action=popup-lookdt]').rightSwipe({
+	                clickEnd: function (b) {
+	                    var $leftPopup = this;
+	                    if (b) {
+	                        var $back = $('.' + $leftPopup.attr('data-back'))
+	                        $back.touches({ touchstart: function (ev) { ev.preventDefault(); }, touchmove: function (ev) { ev.preventDefault(); } });
+	                        $leftPopup.find('.close').on('click', function (ev) {
+	                            ev.preventDefault();
+	                            $back.trigger('close');
+	                        })
+	                    }
+	                }
+	            })
+	        })();
+		})
+    </script>
+</body>
+</html>

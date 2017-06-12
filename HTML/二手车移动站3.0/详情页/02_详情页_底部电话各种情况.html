@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<title>易车二手车</title>
+	<link rel="stylesheet" type="text/css" href="../css/头尾.css" />
+	<link rel="stylesheet" type="text/css" href="../css/公共控件.css" />
+	<link rel="stylesheet" type="text/css" href="../css/分享.css" />
+	<link href="../css/swiper.min.css" rel="stylesheet"> <!--banner css-->
+	<link href="../css/detail.css" rel="stylesheet">
+</head>
+
+<body class="bg-greyer">
+	<!--头部导航 star -->
+	<div class="header">
+		<h1><a class="logo" title="易车二手车" href="http://m.taoche.com/">易车二手车</a></h1> 
+	    <a onClick="showNav();" id="btnNav" class="btn-nav " href="javascript:;">导航<i></i></a>
+		<a id="btnSearch" class="btn-search" href="http://m.taoche.com/buycar/search.aspx">搜索</a>
+	    <a id="divLoginStatus" href="http://m.taoche.com/i/usercenter.aspx">
+	        <div class="zhangh">
+	            账号</div>
+	    </a>
+	   
+	    <a style="display: none" id="userInfoContainer" href="http://m.qichetong.com/authenservice/login.aspx"></a>
+	    <div style="display: none;" id="popNav" class="pop-nav">
+	        <i></i>
+	        
+	        
+	        <ul>
+	            <li><a href="http://m.taoche.com/">首页</a></li>
+	            <li><a href="/all/">买车</a></li>
+	            <li><a href="http://m.taoche.com/sellcar/">卖车</a></li>
+	            <li><a href="http://m.taoche.com/pinggu/">估车</a></li>
+	            <li style="" id="liZhihuan"><a href="http://zhihuan.m.taoche.com/">云置换</a></li>
+	            <li><a href="http://m.taoche.com/guide/indexguide.aspx">攻略</a></li>
+	            <li><a href="http://m.taoche.com/tools/index.aspx">工具</a></li>
+	            <li><a onClick="downloadApp();" href="javascript:">APP</a></li>
+	            <li style="display: none;" id="lilast"><a href="javascript:"></a></li>
+	        </ul>
+	    </div>
+	</div>
+	<!--头部导航 end -->
+	<!-- 头部返回star -->
+	<div class="b-return">
+		<a class="btn-return" href="#">返回</a>
+		<span>车源详情</span>
+	    <div class="b-return-rit">
+	    	<a href="#" class="d_share" data-action="popup-share">分享</a>
+	    </div>
+	</div>
+	<!-- 头部返回end -->
+	<!-- 分享 弹出层  start -->
+	<div class="leftmask mark mark1" style="display: none;"></div>
+    <div class="leftPopup share-bottom popup-share share-bottom6" data-back="mark1" style="display: none;">
+        <div class="swipeLeft">
+            <!--去掉swipeLeft-block 样式就会隐藏-->
+            <div class="share-box">
+                <ul>
+                    <li>
+                        <a href="###" class="icon-sina">新浪微博
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###" class="icon-weixin">微信好友
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###" class="icon-pengyouquan">朋友圈
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###" class="icon-qqfriend">QQ好友</a>
+                    </li>
+                    <li>
+                        <a href="###" class="icon-qq">QQ空间
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###" class="icon-wb">腾讯微博
+                        </a>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <a href="###" class="close">取消</a>
+        </div>
+    </div>
+	<!-- 分享 弹出层  end -->
+	
+	<style>
+		.bot-fixed{position:relative;margin-top:20px;}
+	</style>
+	
+	<!-- bot-fixed start -->
+	<!-- 底部第一种情况  start -->
+	<div class="bot-fixed" style="display:none-;">
+		<ul>
+			<li class="li-collect">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>收藏</span>
+					</p>
+				</a>
+			</li>
+			<li class="li-message">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>发短信</span>
+					</p>
+				</a>
+			</li>
+			<li class="li-phone">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>打电话</span>
+					</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 底部第一种情况  start -->
+	<!-- 底部第二种情况  start -->
+	<div class="bot-fixed" style="display:none-;">
+		<ul>
+			<li class="li-collect collect-ok">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>收藏</span>
+					</p>
+				</a>
+			</li>
+			<li class="li-xdj">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>询底价</span>
+					</p>
+				</a>
+			</li>
+			<li class="li-phone">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>打电话</span>
+					</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 底部第二种情况  start -->
+	<!-- 底部第三种情况  start -->
+	<div class="bot-fixed" style="display:none-;">
+		<ul>
+			<li class="li-collect">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>收藏</span>
+					</p>
+				</a>
+			</li>
+			<li class="li-message">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>发短信</span>
+					</p>
+				</a>
+			</li>
+			<li class="li-xdj">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>询底价</span>
+					</p>
+				</a>
+			</li>
+			<li class="li-phone">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>打电话</span>
+					</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 底部第三种情况  start -->
+	<!-- 底部第四种情况  start -->
+	<div class="bot-fixed" style="display:none-;">
+		<ul>
+			<li class="li-collect">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>收藏</span>
+					</p>
+				</a>
+			</li>
+			<li class="li-bangm">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>帮买车</span>
+					</p>
+				</a>
+			</li>
+			<li class="li-phone">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>打电话</span>
+					</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 底部第四种情况  start -->
+	<!-- 底部第五种情况  start -->
+	<div class="bot-fixed" style="display:none-;">
+		<ul>
+			<li class="li-collect">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>收藏</span>
+					</p>
+				</a>
+			</li>
+			<li class="li-message">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>发短信</span>
+					</p>
+				</a>
+			</li>
+			<li class="li-bangm">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>帮买车</span>
+					</p>
+				</a>
+			</li>
+			<li class="li-phone">
+				<a href="javascript:;">
+					<p>
+						<em class="bot-ico"></em>
+						<span>打电话</span>
+					</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 底部第五种情况  start -->
+	<!-- 底部第六种情况 start -->
+	<div class="bot-fixed" style="display:none-;">
+		<a href="#" class="bot-sc">
+			车源已售出
+		</a>
+	</div>
+	<!-- 底部第六种情况 end -->
+	<!-- bot-fixed end -->
+
+	
+	<div id="backtop" class="m-r-box" style="display: block;">
+	    <!-- 返回顶部 start -->
+	    <a onClick="window.scrollTo(0,0)" href="javascript:void(0);" class="m-r-top">
+	        <div class="ico-top-arrow">
+	        </div>
+	    </a>
+	    <!-- 返回顶部 end -->
+	</div>
+
+
+	<!-- footer start -->
+    <div class="footer">
+        <div class="left-part">
+            <a href="#" class="current">手机版</a> <a href="#">电脑版</a>
+        </div>
+        <div class="right-part">
+            <a href="#">提意见</a>
+        </div>
+    </div>
+	<!-- footer end -->
+	
+	<script src="../js/jquery-1.8.0.min.js"></script>
+	<script src="../js/model.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script>
+    	//banner
+    	var banSwiper = new Swiper('.ban_swiper',{
+    		loop:true,
+	        pagination: '.ban-pagination',
+	        paginationType: 'fraction'
+        });
+        $(function () {
+	        //分享
+	        (function () {
+	            $('[data-action=popup-share]').rightSwipe({
+	                clickEnd: function (b) {
+	                    var $leftPopup = this;
+	                    if (b) {
+	                        var $back = $('.' + $leftPopup.attr('data-back'))
+	                        $back.touches({ touchstart: function (ev) { ev.preventDefault(); }, touchmove: function (ev) { ev.preventDefault(); } });
+	                        $leftPopup.find('.close').on('click', function (ev) {
+	                            ev.preventDefault();
+	                            $back.trigger('close');
+	                        })
+	                    }
+	                }
+	            })
+	        })();
+		})
+    </script>
+</body>
+</html>

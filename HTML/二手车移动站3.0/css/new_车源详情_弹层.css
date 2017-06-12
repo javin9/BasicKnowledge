@@ -1,0 +1,49 @@
+.detail_flexible{ width: 100%;  position:fixed; left: 0; top: 0; z-index: 1000;}
+.detail_cover{ width: 100%; height: 100%; background: #000000;filter:alpha(opacity=60);  -moz-opacity:0.6;  -khtml-opacity: 0.6;  opacity: 0.6;}
+.detail_flexible_c{ padding-top: 20px; width: 100%;background: #ffffff; }
+.flexible_close{color: #A1A1A1; width: 16px; height: 16px; display: block; cursor: pointer; font-size: 16px; position: absolute; right: 22px; top: 19px;}
+.detail_succes_title{padding-top: 12px; padding-bottom: 25px;}
+.detail_succes_title h2{ width: 100%; height: 22px; line-height: 22px; text-align: center; font-size: 1.8rem; display: inline-block; }
+.detail_succes_title h2:before{color: #FF9900; font-size: 22px; margin-right: 4px;   vertical-align: -1px !important; }
+.detail_succes_title h3{ padding-top:18px; font-size: 1.6rem; color:#999999; text-align: center; }
+.detail_succes_title h3 a{ font-size: 1.6rem; color: #FF7006 ;display: inline-block; line-height: 20px;}
+.detail_succes_title h3  a:before{color: #FF7006 ; font-size: 14px; margin-right: 4px}
+
+.detail_tjcar{ height: 30px; background: #F5F5F5; line-height: 30px; font-size: 1.4rem; color: #666666; padding-left: 15px;}
+
+.new_detail_tjcarlist{ width: 100%; }
+.new_detail_tjcarlist li{ padding: 15px; height: 90px; border-bottom: #ECECEC solid 1px; clear: both;}
+.tjcarlist_img{ width: 90px; height: 60px; float: left;}
+.tjcarlist_txt{ font-size: 1.4rem;margin-left: 100px; position: relative; height: 60px;}
+.tjcarlist_tle{   overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.tjcarlist_pice{ color: #FF6D02; padding-top: 5px;}
+.tjcarlist_pice i{ font-size: 1.2rem; color: #999999; margin-left: 8px; width: 35%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: inline-block; vertical-align: middle;}
+.tjcarlist_lst{ color: #999999; font-size: 1.2rem;padding-top: 4px; }
+.tjcarlist_lst em{ padding:  0 0.5em;}
+.yjxj_btn{ color: #FF6D02;display: block; width:35%; height: 35px;border: 1px solid #FF6D02;  border-radius: 3px; text-align: center; line-height: 35px; position: absolute; right: 0; top:26px;}
+.yjxj_btn a{ color: #FF6D02; display: block;}
+.over_yes{background: #ECECEC;  border-radius: 3px; border: 0px; color: #999999;}
+
+.tap_no{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+
+
+
+
+/*iphone4 */
+@media screen and (device-width: 320px) and (device-height: 480px) {
+    .detail_succes_title h2{font-size: 1.5rem;}
+}
+/* iphone5 */
+@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) {
+    .detail_succes_title h2{font-size: 1.5rem;}
+}
+
+
+
+
+
+
+
+
+
+
