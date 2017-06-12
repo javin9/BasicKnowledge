@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<style>
+			.disable-scroll,
+			.disable-scroll body {
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.disable-scroll body {
+				position: relative;
+			}
+			
+			.btn {
+				height: 2rem;
+				background-color: #008000;
+				border: 1px solid #000000;
+				font-size: 0.5rem;
+				text-align: center;
+			}
+			.layer .scroll-main {
+				position: absolute;
+				top: 2rem;
+				left: 0;
+				right: 0;
+				bottom: 2rem;
+				overflow: hidden;
+			}
+			
+			.layer #listFloat {
+				background-color: #003368;
+			}
+			
+			.layer .hidelayer {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 2rem;
+				background-color: #008000;
+				border: 1px solid #000000;
+				font-size: 0.5rem;
+				text-align: center;
+			}
+			
+			.mybottom {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 2rem;
+				background-color: #008000;
+				border: 1px solid #000000;
+				font-size: 0.5rem;
+				text-align: center;
+			}
+		</style>
+		<script src="../../js/lib/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function() {
+				var html = document.documentElement;
+				var hW = html.getBoundingClientRect().width;
+				html.style.fontsize = hW / 15 + 'px';
+			})();
+		</script>
+	</head>
+
+	<body>
+		<div class='btn'>我是按钮</div>
+		<div>
+			<ul id="list">
+			</ul>
+		</div>
+		<div class="layer" id="layer">
+			<div class='hidelayer'>隐藏</div>
+			<div class='scrollable scroll-main' id='wrap'>
+				<ul id="listFloat">
+				</ul>
+			</div>
+			<div class='mybottom'>隐藏</div>
+		</div>
+		<script src="../../js/lib/m.Tween.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			document.addEventListener('touchstart', function(e) {
+				e.preventDefault();
+			});
+
+			function createList() {
+				var list = document.querySelector('#list'); //listFloat
+				var listFloat = document.querySelector('#listFloat'); //listFloat
+				var inner = "";
+				for(var i = 0; i < 100; i++) {
+					inner += "<li style='border:1px solid #abc;'>这是第" + i + "个li</li>"
+				}
+				list.innerHTML = inner;
+				listFloat.innerHTML = inner;
+			}
+			createList();
+			$("html").addClass('disable-scroll');
+			/////
+			var wrap = document.querySelector('#wrap');
+			var list = document.querySelector('#listFloat');
+			var startPoint = 0;
+			var startEl = 0;
+			var lastY = 0;
+			var lastDis = 0;
+			var lastTime = 0;
+			var lastTimeDis = 0;
+			var maxTranslate = wrap.clientHeight - list.offsetHeight;
+			css(list, "translateZ", 0.01);
+			list.addEventListener('touchstart', function(e) {
+				maxTranslate = wrap.clientHeight - list.offsetHeight;
+				clearInterval(list.timer);
+				startPoint = e.changedTouches[0].pageY;
+				startEl = css(list, "translateY");
+				lastY = startEl;
+				lastTime = new Date().getTime();
+				lastTimeDis = lastDis = 0;
+			});
+			list.addEventListener('touchmove', function(e) {
+				var nowTime = new Date().getTime();
+				var nowPoint = e.changedTouches[0].pageY;
+				var dis = nowPoint - startPoint;
+				var translateY = startEl + dis;
+				css(list, "translateY", translateY);
+				lastDis = translateY - lastY;
+				lastY = translateY;
+				lastTimeDis = nowTime - lastTime;
+				lastTime = nowTime;
+			});
+			list.addEventListener('touchend', function(e) {
+				var type = "easeOut";
+				var speed = Math.round(lastDis / lastTimeDis * 10);
+				speed = lastTimeDis <= 0 ? 0 : speed;
+				var target = Math.round(speed * 30 + css(list, "translateY"));
+				if(target > 0) {
+					target = 0;
+					type = "backOut";
+				} else if(target < maxTranslate) {
+					target = maxTranslate;
+					type = "backOut";
+				}
+				console.log(target);
+				MTween({
+					el: list,
+					target: {
+						translateY: target
+					},
+					time: Math.round(Math.abs(target - css(list, "translateY")) * 2),
+					type: type
+				});
+			});
+		</script>
+	</body>
+
+</html>

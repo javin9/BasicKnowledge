@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--原理:
+分为两步：当上传图片的input被触发并选择本地图片之后获取要上传的图片这个对象的URL（对象URL）；把对象URL赋值给事先写好的img标签的src属性即可把图片显示出来。
+在这里，我们需要了解Javascript里File对象、Blob对象和window.URL.createObjectURL()方法。-->
+
+		<!--File对象:
+File对象可以用来获取某个文件的信息,还可以用来读取这个文件的内容.通常情况下,File对象是来自用户在一个input元素上选择文件后返回的FileList对象(获取FileList的第一个元素),也可以是来自由拖放操作生成的 DataTransfer对象.-->
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<input type="file" name="uploadimg" id="uploadimg" value="" />
+		<img src="" id="img" />
+		<script type="text/javascript">
+			$(function(){
+				$("#uploadimg").change(function(e){
+					var f=e.target.files[0];
+					/*
+					 Blob对象：
+一个Blob对象就是一个包含有只读原始数据的类文件对象.Blob对象中的数据并不一定得是JavaScript中的原生形式.File接口基于Blob,继承了Blob的功能,并且扩展支持了用户计算机上的本地文件.
+我们想要得到的对象URL实际上就是从Blob这个对象获取的，因为File的接口继承Blob。下面就来把Blob对象转换成URL：
+					  */
+					 
+					 var getBlobURL=(window.URL && URL.createObjectURL.bind(URL)) || (window.webkitURL && webkitURL.createObjectURL.bind(webkitURL)) || window.createObjectURL;
+					 
+					 var src = getBlobURL(f);
+					 $("#img").attr("src",src);
+				});
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			$('body').on('name', function(m, n) {
+				console.log('name');
+				console.log(n);
+			});
+			$('body').trigger('name', '44444444');
+
+			{ 
+				"Status": "1", 
+				"Message": "数据为空", 
+				"Data": [] 
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/lib/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.divider {
+				border: 1px solid #cccccc;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--app_1-->
+		<ul id="app_1">
+			<li v-for="item in items">
+				{{ item.message }}
+				<br /> {{ item.time }}
+			</li>
+		</ul>
+		<script type="text/javascript">
+			var example1 = new Vue({
+				el: '#app_1',
+				data: {
+					items: [{
+							message: 'Foo',
+							time: '2017年6月8日08:56:16'
+						},
+						{
+							message: 'Bar',
+							time: '2017年6月8日08:56:28'
+						}
+					]
+				}
+			});
+		</script>
+
+		<!--app_2-->
+		<ul id="app_2">
+			<li v-for="(item,index) in items">
+				{{index}}:
+				<br> {{ item.message }}
+				<br /> {{ item.time }}
+			</li>
+		</ul>
+		<script type="text/javascript">
+			var example1 = new Vue({
+				el: '#app_2',
+				data: {
+					items: [{
+							message: 'Foo',
+							time: '2017年6月8日08:56:16'
+						},
+						{
+							message: 'Bar',
+							time: '2017年6月8日08:56:28'
+						}
+					]
+				}
+			});
+		</script>
+
+		<!--app_3-->
+		<ul id="app_3">
+			<template v-for="item in items">
+				<li>{{ item.time }}</li>
+				<li class="divider"></li>
+			</template>
+		</ul>
+		<script type="text/javascript">
+			var example1 = new Vue({
+				el: '#app_3',
+				data: {
+					items: [{
+							message: 'Foo',
+							time: '2017年6月8日08:56:16'
+						},
+						{
+							message: 'Bar',
+							time: '2017年6月8日08:56:28'
+						}
+					]
+				}
+			});
+		</script>
+
+		<!---->
+		<ul id="app_4" class="demo">
+			<li v-for="(value,key,index) in Obj">
+				{{index}}-----{{key}}:{{value}}
+			</li>
+		</ul>
+		<script type="text/javascript">
+			var app_4=new Vue({
+				el:"#app_4",
+				data:{
+					Obj:{
+						name:"Cupid",
+						age:"18",
+						address:"北京市海淀区新世纪写字楼18层"
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

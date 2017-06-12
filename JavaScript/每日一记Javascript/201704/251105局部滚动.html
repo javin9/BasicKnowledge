@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../../css/mreset.css" />
+		<title></title>
+		<style type="text/css">
+			.wrapper {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				overflow: auto;
+				-webkit-overflow-scrolling: touch;
+			}
+			
+			.inner-content {
+				height: 6000px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class='wrapper'>
+			<div class='inner-content'></div>
+		</div>
+		<script src="../../js/lib/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function() {
+				var lastTime = 0;
+				var vendors = ['ms', 'moz', 'webkit', 'o'];
+				for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+					window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+					window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] ||
+						window[vendors[x] + 'CancelRequestAnimationFrame'];
+				}
+
+				if(!window.requestAnimationFrame)
+					window.requestAnimationFrame = function(callback, element) {
+						var currTime = new Date().getTime();
+						var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+						var id = window.setTimeout(function() {
+								callback(currTime + timeToCall);
+							},
+							timeToCall);
+						lastTime = currTime + timeToCall;
+						return id;
+					};
+
+				if(!window.cancelAnimationFrame)
+					window.cancelAnimationFrame = function(id) {
+						clearTimeout(id);
+					};
+			}());
+
+			console.log(requestAnimationFrame);
+			$(function() {
+
+				var scroll = function() {
+					console.log('scroll');
+				}
+
+				var $window = $('.wrapper');
+				var lastScrollTop = $window.scrollTop();
+
+				function loop() {
+					var scrollTop = $window.scrollTop();
+					if(lastScrollTop === scrollTop) {
+						requestAnimationFrame(loop);
+						return;
+					} else {
+						lastScrollTop = scrollTop;
+						scroll();
+						requestAnimationFrame(loop);
+					}
+				}
+
+				if(requestAnimationFrame) {
+					loop();
+				}
+
+				//				$('.wrapper').scroll(function() {
+				//					console.log('wrapper');
+				//					console.log($(this).scrollTop());
+				//				});
+
+				$('.inner-content').scroll(function() {
+					console.log('inner-content');
+				});
+
+				$(document).scroll(function() {
+					console.log('document');
+				});
+				$(window).scroll(function() {
+					console.log('window');
+				});
+			});
+		</script>
+	</body>
+
+</html>

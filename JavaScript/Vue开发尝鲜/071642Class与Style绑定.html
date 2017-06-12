@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/lib/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--上面的语法表示 classactive 的更新将取决于数据属性 isActive 是否为真值 -->
+		<div id="ap">
+			<div v-bind:class="classObject">HHHHHH</div>
+		</div>
+
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#ap",
+				data: {
+					classObject: {
+						active: true,
+						name: false
+					}
+
+				}
+			});
+		</script>
+		<div id="ap-1">
+			<div v-bind:class="className">HHHHHH</div>
+		</div>
+
+		<script type="text/javascript">
+			new Vue({
+				el: "#ap-1",
+				data: {
+					className: 'active2'
+				}
+			});
+		</script>
+
+		<div id="ap-2" v-bind:class="{active2:className}">HHHHHH</div>
+
+		<script type="text/javascript">
+			new Vue({
+				el: "#ap-2",
+				data: {
+					className: true
+				}
+			});
+		</script>
+
+		<div id="ap-3" class="static" v-bind:class="{active2:className,text-danger: hasError}">HHHHHH</div>
+
+		<script type="text/javascript">
+			new Vue({
+				el: "#ap-3",
+				data: {
+					className: true,
+					hasError: true
+				}
+			});
+		</script>
+		
+		<div id="ap-4" class="static" v-bind:class="{active2:className,text-danger: hasError}">ap-4</div>
+
+		<script type="text/javascript">
+			new Vue({
+				el: "#ap-3",
+				data: {
+					className: true,
+					hasError: true
+				}
+			});
+		</script>
+	</body>
+
+</html>

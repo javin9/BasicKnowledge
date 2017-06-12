@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        //非闭包写法
+        var cache = {};
+        var mult = function () {
+            var args = Array.prototype.join.call(arguments, '|');
+            if (!!cache[args]) {
+                return cache[args];
+            }
+            var a = 1;
+            for (var i = 0, len = arguments.length; i < len; i++) {
+                a = a * arguments[i];
+            }
+            return cache[args] = a;
+        }
+        console.log(mult(1, 2, 3));
+        console.log(mult(1, 2, 3));
+        //闭包的写法
+        var mult = (function () {
+            var cache = {};
+            return function () {
+                var args = Array.prototype.join.call(arguments, '|');
+                if (cache[args]) {
+                    return cache[args];
+                }
+                var a = 1;
+                for (var i = 0, len = arguments.length; i < len; i++) {
+                    a = a * arguments[i];
+                }
+                return cache[args] = a;
+            }
+        })();
+        console.log(mult(1, 2, 3));
+        console.log(mult(1, 2, 3));
+        //提炼代码
+        var mult2 = (function () {
+            var cache = {};
+            var calculate = function () {
+                var a = 1;
+                for (var i = 0, len = arguments.length; i < len; i++) {
+                    a = a * arguments[i];
+                }
+                return a;
+            };
+            return function () {
+                var args = Array.prototype.join.call(arguments, ',');
+                if (args in cache) {
+                    return cache[args];
+                }
+            }
+        })();
+
+        //珠峰闭包360面试题
+        var number = 2;
+        var obj = {
+            number: 4,
+            fn1: (function () {
+                console.log(this);
+                this.number = this.number * 2;
+                var number = 3;
+                return function () {
+                    console.log(this);//任何一个直接执行的匿名方法，this一定指向window
+                    this.number = this.number*2
+                    number = number * 3;
+                    console.log('-----number3--');
+                    console.log(number);
+                    console.log('-----number3--');
+                }//匿名方法执行，最终是这个函数
+            })()
+        }
+
+        //预解释，是不会执行的
+        //定义完成之后，加个（）执行
+        var fn1 = obj.fn1;//
+        console.log('---fn1---');
+        console.log(number);
+        console.log('---fn1---');
+        fn1();//实际上是执行的return的部分
+
+        function getargv(url, paramName) {
+            var index = paramName + '=';
+            start = url.indexOf(index);
+            if (start == -1) { return false; }
+            var mystring = url.substring(start + index.length);
+            var anchor=mystring.indexOf('#');
+            if(anchor>-1)
+            {
+                mystring=mystring.substring(0,anchor);
+            }
+            var end = mystring.indexOf('%26');
+            if (end == -1) {
+                end = mystring.indexOf('&');
+            }
+            if (end == -1) { return mystring; }
+            var argv = mystring.substring(0, end);
+            var anchor=argv.indexOf('#');
+            if(anchor>-1)
+            {
+                argv=argv.substring(0,anchor);
+            }
+            return argv;
+
+    </script>
+</body>
+</html>

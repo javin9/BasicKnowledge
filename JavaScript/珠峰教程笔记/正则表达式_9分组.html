@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        var str = '<html ><head><title></title></head><body></body></html>';
+        console.log(str.match(/<.*>/));
+        console.log(str.match(/<.*?>/));
+        console.log(str.match(/(<.*?>)/g));
+        
+        var str1 = "AAAAAAAAAAAabcdef-abcdef-abcdef-abcdef-abcdef-abcdef-abcdef-abcdef-abcdef-abcdefFFFFFFFFF";
+        console.log(str1.match(/(abcdef-?)/g));
+        //第一个分组包含了一个字符范围类，其中可以任意匹配空格或者斜杠，文本范围增加了一个量词*，表示斜杠或者空格出现任意次数，为了避免正则表达式的贪婪性，在重复类量词后面附加了问号？， 让其以惰性模式进行匹配；
+        var r = /<([\/\s])*?html(\s)*?>/g;
+        console.log(str.match(r));
+
+        //分组抽出里面的内容
+        var ss = "ab=2,bc=4,m=n";
+        var rss = /(\w+)=(\d*)/;
+        console.log(ss.match(rss));
+        var rss = /(\w+)=(\d*)/g;
+        console.log(ss.match(rss));
+
+        //引用前面的子表达式
+        //   \1引用的是第一个带括号的子表达式
+        //  \2引用的是第二个带小括号的子表达式
+
+        var r2 = /(\/?\w+).*\1/g;
+        console.log(str.match(r2));
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../../Bootstrap/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../Bootstrap/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <style>
+        .bg_gray{background:#808080;}
+    </style>
+    <script src="../../Script/jquery-2.1.1.js"></script>
+    <script src="../../Script/jsrender.js"></script>
+</head>
+<body>
+    <table class="table table-bordered" id="bookTableId">
+        <tr> <td>图书名称</td><td>出版社</td><td>作者</td></tr>
+    </table>
+    <script type="text/javascript">
+        $(function () {
+            /*数据*/
+            var boodata = [
+                  { bookname: "JavaScript编程精解", publisher: "机械工业出版社", author: "汤姆大叔" },
+                  { bookname: "JavaScript设计模式", publisher: "人民邮电出版社", author: "汤姆大妈" },
+                  { bookname: "JavaScript启示录", publisher: "清华大学出版社", author: "汤姆大婶" },
+                   { bookname: "深入了解Bootstrap", publisher: "机械工业出版社", author: "汤姆小弟" }
+            ];
+
+            /*拼写字符串*/
+            var str = '';
+            for (var i = 0, len = boodata.length; i < len; i++) {
+                var that = boodata[i];
+                str += '<tr  class='+(i%2==0?"bg_gray":"")+'>';
+                str += '<td>' + that.bookname + '</td><td>' + that.publisher + '</td><td>' + that.author + '</td>';
+                str += '</tr>'
+            }
+            /*附加到页面上*/
+            $("#bookTableId").append(str);
+
+        })
+
+
+
+    </script>
+</body>
+</html>

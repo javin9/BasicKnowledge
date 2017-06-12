@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        var Event = (function () {
+            var global = this,
+                Event,
+                _default = 'default';
+
+            Event = function () {
+                var _listen,
+                    _trigger,
+                    _remove,
+                    _slice = Array.prototype.slice,
+                    _shift = Array.prototype.shift,
+                    _unshfit = Array.prototype.unshift,
+                    namespaceCache = {},
+                    _create = {},//1
+                    find,
+                    each = function (ary, fn) {
+                        var ret;
+                        for (var i = 0, len = ary.length; i < len; i++) {
+                            var n = ary[len];
+                            ret = fn.call(n, i, n);
+                        }
+                        return ret;
+                    };
+                _listen = function (key, fn, cache) {
+                    if (!cache[key]) {
+                        cache[key] = [];
+                    }
+                    cache[key].push(fn);
+                };
+                _trigger = function () {
+                    var cache = _shift.call(arguments),
+                        key = _shift.call(arguments),
+                        args = arguments,
+                        _self = this,
+                        ret,
+                        statck = cache[key];
+                    if (!statck||!statck.length) {
+                        return;
+                    }
+                    return each(statck, function () {
+                        return this.apply(_self, args);
+                    });
+                };
+                _remove = function (key, cache, fn) {
+
+                };
+            }
+        })();
+    </script>
+</body>
+</html>

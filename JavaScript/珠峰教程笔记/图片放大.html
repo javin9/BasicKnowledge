@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../css/base.css" rel="stylesheet" />
+    <script src="../Script/jquery-2.1.1.js"></script>
+    <style>
+        #div1 {
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+        }
+
+        #tooltip {
+            position: absolute;
+            display: none;
+            border: 1px solid red;
+            background: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <a href="../Img/loading.jpg" class="tooltip">
+            <img src="../Img/particle.png" />
+        </a>
+    </div>
+    <script>
+        $(function () {
+            $("a.tooltip").mouseover(function (e) {
+
+                var e = e || window.event;
+                var $tooltip = $("<div id='tooltip'>  <img src='" + this.href + "' /><br/></div>")
+                $(document.body).append($tooltip);
+                $("#tooltip").css({ top: e.pageY + 20, left: e.pageX + 10, "display": "block" });
+
+
+            }).mousemove(function (e) {
+                console.log(e);
+                $("#tooltip").css({ top: e.pageY + 20, left: e.pageX + 10 });
+            }).mouseout(function () {
+                $("#tooltip").remove();
+            });
+        });
+
+    </script>
+</body>
+</html>

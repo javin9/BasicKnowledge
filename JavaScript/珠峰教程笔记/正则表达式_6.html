@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var str = "a a a adb daf   sdf";
+            var reg = /\s+/g;//\s 匹配任何不可见字符，包括空格、制表符、换页符等等。等价于[ \f\n\r\t\v]。
+            var result = str.replace(reg, "");
+            console.log(result);
+
+            var reg1 = /^\s+|\s+$/g;
+            String.prototype.btrim = function () {
+                this;
+                var reg1 = /^\s+|\s+$/g;
+                return this.replace(reg, '');
+            }
+            str.trim();//给字符串拓展一个方法
+
+            var str4 = 'dfdddddddddddddddddd';
+            var reg4 = /d+/g;
+            var re = str4.match(reg4);
+            console.log(re);
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>

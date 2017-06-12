@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*链式编程的技巧就是返回他自己*/
+			var link={
+				show:function(){
+					console.log('show');
+					return this;
+				},
+				hide:function(){
+					console.log('hide');
+					return this;
+				}
+			};
+			 link.show().hide();
+		</script>
+	</body>
+</html>

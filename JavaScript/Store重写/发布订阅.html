@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/lib/event.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+			 * 先订阅后发布
+			 */
+			Event.trigger('hello', 1, 2);
+
+			Event.listen('hello', function(a, b) {
+				console.log(a);
+				console.log(b);
+			});
+
+           /*
+            * 先订阅在发布
+            */
+			Event.create('taoche').listen('word', function(a) {
+				console.log(a);
+			});
+			Event.create('taoche').trigger('word', "wordddddd");
+			console.log(Event);
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

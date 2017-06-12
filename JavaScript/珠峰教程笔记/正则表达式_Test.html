@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="../Script/jquery-2.1.1.js"></script>
+
+</head>
+<body>
+    <input type='text'  id="in"  />
+    <script>
+        //http://www.baidoc.com
+        // var reg = /^[A-Za-z]*:\/\/\[A-Za-z0-9-_]+\.[A-Za-z0-9]+\.[A-Za-z0-9-_%&\?\/.=]+$/;
+        // var reg = /^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/
+
+        var reg = /^(http:\/\/|https:\/\/)?[A-Za-z0-9-_]+\.[A-Za-z0-9]+\.[A-Za-z0-9-_%#&\?\/.=]+$/;
+        var reg1 = /^(http:\/\/|https:\/\/)?[A-Za-z0-9-_]+\.[A-Za-z0-9]+\.[A-Za-z0-9-_%&\?\/.=]+$/;
+        var url = 'http://mp.weixin.qq.com/s?biz=MzA5MzA0NjM2Nw==&mid=400163105&idx=1&sn=7f3b0e24607560fc5e91c917e5e658c4&scene=1&srcid=1026VLzYy6XZgfRaVf371Iip&from=singlemessage&isappinstalled=0#rd';
+        console.log(reg.test(url));//true
+        console.log(reg.test('http://www.gurucv.com'));//true
+        console.log(reg.test('www.gurucv.com'));//true
+        console.log(reg.test('://www.gurucv.com'));//false
+        console.log(reg.test('//www.gurucv.com'));//false
+        console.log(reg.test('gurucv.com'));//fasle
+        console.log(reg.test('http://www.gurucv'));//false
+        console.log(reg.test('http://www.jb51.net/article/31550'));//true
+
+        var reg2 = /^[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_%&\?\/.=]+$/;
+        /^[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_%&\?\/.=]+$/
+        console.log(reg2.test('http://www.jb51.net/article/31550'));
+        console.log(reg2.test('http://cli.im'));
+        console.log(reg2.test('http://cli.im/text'));
+        console.log(reg2.test('http://cli.im/text?'));
+        console.log(reg2.test('http://cli.im/text?texta3c2eea26ef818a607cd0a85103865b7'));
+
+        var url = "ht://http://cli.im/text".indexOf("http://");
+        console.log(url);
+
+        String.prototype.trim = function () {
+            return this.replace(/(^\s*)|(\s*$)/g, "");
+        }
+        var input = $("#in").val().trim();
+        console.log(input.length);
+
+        var reg = /(<p([^>]*)>)/ig;
+        var strp = "<p></p><p><p>sdfsdf<p><p><p>";
+        console.log(strp.replace(reg,''));
+    </script>
+
+</body>
+</html>

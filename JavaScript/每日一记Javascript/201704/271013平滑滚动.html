@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+// http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
+
+// requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
+
+// MIT license
+(function () {
+var lastTime = 0;
+var vendors = ['ms', 'moz', 'webkit', 'o'];
+for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+    window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+    window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame']
+        || window[vendors[x] + 'CancelRequestAnimationFrame'];
+}
+
+if (!window.requestAnimationFrame)
+    window.requestAnimationFrame = function (callback, element) {
+        var currTime = new Date().getTime();
+        var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+        var id = window.setTimeout(function () {
+            callback(currTime + timeToCall);
+        },
+            timeToCall);
+        lastTime = currTime + timeToCall;
+        return id;
+    };
+
+if (!window.cancelAnimationFrame)
+    window.cancelAnimationFrame = function (id) {
+        clearTimeout(id);
+    };
+}());
+
+
+('ontouchend' in document) || jQuery(function($){
+
+var scrollTop = 2, tweened = 0, winHeight = 0, ct = [], cb = [], ch = [], ph = [];
+var wrap = $('#wrap').css({position:'fixed', width:'100%', top:0, left:0})[0];
+var fake = $('<div>').css({height: wrap.clientHeight}).appendTo('body')[0];
+
+var update = function(){
+        window.requestAnimationFrame(update);
+        if(Math.abs(scrollTop-tweened) > 1){
+            var top = Math.floor(tweened += .25 * (scrollTop-tweened)),
+                bot = top + winHeight, wt = wrap.style.top = (top*-1) + 'px';
+
+            for(var i = plax.length; i--;)if(cb[i] > top && ct[i] < bot){
+                plax[i].style.top = ((ct[i] - top) / Math.max(ph[i] - ch[i], winHeight - ch[i]) * (ch[i] - ph[i])) + 'px';
+            }
+        }
+    };
+
+var listen = function(el,on,fn){(el.addEventListener||(on='on'+on)&&el.attachEvent)(on,fn,false);};
+var scroll = function(){scrollTop = Math.max(0, document.documentElement.scrollTop || window.pageYOffset || 0);};
+
+listen(window, 'scroll', scroll);
+update();
+});
+		</script>
+	</body>
+</html>

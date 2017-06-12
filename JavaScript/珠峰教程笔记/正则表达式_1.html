@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        table, tr, td {
+        border:1px solid red;
+        border-collapse:collapse;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+			function getName(){
+				console.log('S');
+				var a=0;
+				reutrn function(){
+					a++;
+				}
+			}
+		</pre>
+    <div>欢迎你好</div>
+    <div>qwaerwerwer</div>
+</body>
+</html>
+<script type="text/javascript">
+    var divReg = /<(div)>.+?<\/\1>/;//.:表示任意字符 +:一次或多次(大于等于1次）
+    var divReg = /<(div)>.*?<\/\1>/;//.:表示任意字符 +一次或多次(大于等于1次）
+    var divReg = /<(div)>(.|\n)*?<\/\1>/;//.:表示任意字符 +:一次或多次(大于等于1次）
+    console.log(divReg.exec(document.body.innerHTML));
+    var strContent = divReg.exec(document.body.innerHTML);
+    if (strContent) {
+        //strContent.split('\n');
+    }
+
+    var str = "我的中国";
+    console.log((/\d+/g.exec(str)));
+
+    console.log(parseFloat(1898)/100);
+</script>

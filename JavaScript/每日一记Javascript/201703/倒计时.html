@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var Countdown = function(time,fn) {
+				var _time = time || 60;
+				var interval = null;
+				var start = function() {
+					interval = window.setInterval(function() {
+						if(_time <= 0) {
+							window.clearInterval(interval);
+						}
+						fn.call(this,_time);
+						_time--;
+					}, 1000);
+				};
+				
+				return {
+					start: start
+				};
+			}
+			var count1 = Countdown(5,function(time){
+				console.log("A========"+time);
+			});
+			var count2 = Countdown(5,function(time){
+				console.log("B========"+time);
+			});
+			var count3= Countdown(5,function(time){
+				console.log("C========="+time);
+			});
+			count1.start();
+			
+			setTimeout(function(){
+				count2.start();
+			},1000);
+			
+			
+			setTimeout(function(){
+				count3.start();
+			},2000);
+			
+		</script>
+	</body>
+
+</html>

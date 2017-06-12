@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body,
+			html {
+				height: 100%;
+				width: 100%;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrapper">
+
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br /><br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br /><br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+
+			<img id="div1" class="lazyimg" src="../../HTML/Capture切图练习/img/about_icon.png" realsrc="../../HTML/Capture切图练习/img/banner.jpg" />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<img id="div2" class="lazyimg" src="../../HTML/Capture切图练习/img/about_icon.png" realsrc="../../HTML/Capture切图练习/img/index_logo.jpg" />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<img id="div3" class="lazyimg" src="../../HTML/Capture切图练习/img/about_icon.png" realsrc="../../HTML/Capture切图练习/img/iphone.png" />
+			<br>
+			<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+			<script type="text/javascript">
+				var eleList = document.querySelectorAll('.lazyimg');
+				console.log(eleList);
+				var arr = [];
+				for(var i = 0; i < eleList.length; i++) {
+					var item = eleList.item(i);
+					item["h"] =offset(item).top + item.offsetHeight;
+					//			console.log($(item).offset().top);
+					//			console.log(item["h"]);
+					arr.push(item);
+				}
+				console.log(arr);
+
+				function offset(ele) {
+					var t = ele.offsetTop;
+					var l = ele.offsetLeft;
+					var p = ele.offsetParent;
+					while(p&&p.id!=="wrapper") {
+						if(window.navigator.userAgent.indexOf('MSIE 8') > -1) {
+							l += p.offsetLeft;
+							t += p.offsetTop;
+						} else {
+							l += p.offsetLeft + p.clientLeft;
+							t += p.offsetTop + p.clientTop;;
+						}
+						p = p.offsetParent;
+					}
+					return { left: l, top: t };
+				}
+				//var h = offset(ele).top + ele.offsetHeight; //这是这个元素底边距文档顶部的绝对偏移量
+
+				window.onscroll = function() {
+					var winBottom = (document.documentElement.scrollTop || document.body.scrollTop) + (document.documentElement.clientHeight || document.body.clientHeight);
+					for(var i = 0; i < arr.length; i++) {
+						(function(i) {
+							var ele = arr[i],
+								h = ele.h;
+							//console.log(h);
+							if(h < winBottom) {
+								// ele.src = ele.realsrc; //自定义属性，不能用 ‘.’的方式去取
+								if(!ele.loaded) {
+									var realImg = ele.getAttribute('realsrc');
+									var tempImg = new Image; //等价于 document.createElement('img');
+									tempImg.src = realImg; //自动下载图片，自动去请求图片
+									/*
+									浏览器所有的外链资源，都是缓存
+									*/
+									tempImg.onload = function() { //只是被运行一次
+										ele.src = realImg;
+										ele.loaded = true; //标志属性
+									};
+								}
+								arr[i] = ele;
+							}
+						})(i);
+					}
+				}
+			</script>
+		</div>
+	</body>
+
+</html>

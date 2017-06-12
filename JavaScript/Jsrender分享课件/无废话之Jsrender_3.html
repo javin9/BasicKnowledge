@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="css/demos.css" rel="stylesheet" />
+    <link href="css/carlist.css" rel="stylesheet" />
+
+     <script src="../js/lib/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
+   <script src="../js/lib/jsrender.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <table>
+        <thead><tr><th>名称</th><th>产地</th><th>商标</th><th>联系方式</th></tr></thead>
+        <tbody id="carList"></tbody>
+    </table>
+
+    <script id="carTemplate" type="text/x-jsrender">
+        <tr>
+            <td>{{>name}}</td>
+            <td>
+                {{if orign}}
+                产地: <em>{{>orign}}</em>.
+                {{else}}
+                没有产地
+                {{/if}}
+            </td>
+            <td>
+                {{if url}}
+                商标： <em>{{:url}}</em>.
+                {{else}}
+                没有网址
+                {{/if}}
+            </td>
+            <td>
+                {{if phone}}
+                {{:phone}}
+                {{else email}}
+                {{:email}}
+                {{else}}
+                没有联系方式
+                {{/if}}
+            </td>
+        </tr>
+    </script>
+
+
+    <script type="text/javascript">
+        $(function () {
+            /*
+            重点：
+            1.格式：    {{if ....}}...{{else ...}}...{{else}}...{{/if}}
+            2： if 后面的判断 可以向js一样使用  {{if name==null||name==''}}
+            */
+            var cars = [
+                { name: "奔驰", orign: "美国", url: "http://www.taoche.com", phone: "18600408090", email: "liujianwei@yiche.com" },
+                { name: "本田", orign: "日本", url: "http://www.taoche.com", phone: null, email: "liujianwei@yiche.com" },
+                { name: "比亚迪", orign: "中国", url: null, phone: "18600408090", email: "liujianwei@yiche.com" },
+                { name: "现代", phone: "18600408090", email: "liujianwei@yiche.com" },
+                { name: "奇瑞", phone: null, email: null }
+            ];
+
+
+            $("#carList").html(
+                  $("#carTemplate").render(cars)
+            );
+        })
+    </script>
+</body>
+</html>

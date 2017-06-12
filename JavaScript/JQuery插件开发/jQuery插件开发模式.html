@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        /*
+        原文地址：
+        http://mp.weixin.qq.com/s?__biz=MjM5MzMyNzg0MA==&mid=2650402470&idx=1&sn=0ae1cc22f3f1851777c0bd6133be390c&scene=23&srcid=0802JTUsXlrunc5h67NBXut1#rd
+        */
+        /*
+        软件开发过程中是需要一定的设计模式来指导开发的，有了模式，我们就能更好地组织我们的代码，并且从这些前人总结出来的模式中学到很多好的实践。
+　　根据《jQuery高级编程》的描述，jQuery插件开发方式主要有三种：
+
+通过$.extend()来扩展jQuery
+通过$.fn 向jQuery添加新的方法
+通过$.widget()应用jQuery UI的部件工厂方式创建
+
+通常我们使用第二种方法来进行简单插件开发，说简单是相对于第三种方式。第三种方式是用来开发更高级jQuery部件的，该模式开发出来的部件带有很多jQuery内建的特性，比如插件的状态信息自动保存，各种关于插件的常用方法等，非常贴心，这里不细说。
+
+而第一种方式又太简单，仅仅是在 jQuery命名空间 或者理解成jQuery身上添加了一个静态方法而以。所以我们调用通过$.extend()添加的函数时直接通过$符号调用（$.myfunction()）而不需要选中DOM元素($('#example').myfunction())。请看下面的例子。
+    */
+        $.extend({
+            sayHello: function (name) {
+                console.log('Hello,' + (name ? name : 'Dude') + '!');
+            }
+        })
+        $.sayHello(); //调用
+        $.sayHello('Wayou'); //带参调用
+        /*
+        运行结果：
+           Hello，Dudel！
+           Hello，Wayou！
+
+           　上面代码中，通过$.extend()向jQuery添加了一个sayHello函数，然后通过$直接调用。到此你可以认为我们已经完成了一个简单的jQuery插件了。
+        　　但如你所见，这种方式用来定义一些辅助方法是比较方便的。比如一个自定义的console，输出特定格式的信息，定义一次后可以通过jQuery在程序中任何需要的地方调用它。
+*/
+        $.extend({
+            log: function (message) {
+                var now = new Date(),
+                    y = now.getFullYear(),
+                    m = now.getMonth() + 1, //！JavaScript中月分是从0开始的
+                    d = now.getDate(),
+                    h = now.getHours(),
+                    min = now.getMinutes(),
+                    s = now.getSeconds(),
+                    time = y + '/' + m + '/' + d + ' ' + h + ':' + min + ':' + s;
+                console.log(time + ' : ' + message);
+            }
+        })
+        $.log('initializing...'); //调用
+
+        /*
+        但这种方式无法利用jQuery强大的选择器带来的便利，要处理DOM元素以及将插件更好地运用于所选择的元素身上，还是需要使用第二种开发方式。你所见到或使用的插件也大多是通过此种方式开发。
+
+        　插件开发
+                  下面我们就来看第二种方式的jQuery插件开发。
+           基本方法
+　　先看一下它的基本格式：
+        */
+        $.fn.pluginName = function () {
+            //your code goes here
+        }
+        /*
+        　基本上就是往$.fn上面添加一个方法，名字是我们的插件名称。然后我们的插件代码在这个方法里面展开。
+　　比如我们将页面上所有链接颜色转成红色，则可以这样写这个插件：
+        */
+        $.fn.myPlugin = function () {
+            //在这里面,this指的是用jQuery选中的元素
+            //example :$('a'),则this=$('a')
+            this.css('color', 'red');
+        }
+        /*
+        在插件名字定义的这个函数内部，this指代的是我们在调用该插件时，用jQuery选择器选中的元素，一般是一个jQuery类型的集合。比如$('a')返回的是页面上所有a标签的集合，且这个集合已经是jQuery包装类型了，也就是说，在对其进行操作的时候可以直接调用jQuery的其他方法而不需要再用美元符号来包装一下。
+
+        所以在上面插件代码中，我们在this身上调用jQuery的css()方法，也就相当于在调用 $('a').css()。
+　　理解this在这个地方的含义很重要。这样你才知道为什么可以直接商用jQuery方法同时在其他地方this指代不同时我们又需要用jQuery重新包装才能调用，下面会讲到。初学容易被this的值整晕，但理解了就不难。
+　　现在就可以去页面试试我们的代码了，在页面上放几个链接，调用插件后链接字体变成红色。
+
+<ul>
+	<li>
+		<a href="http://www.webo.com/liuwayong">我的微博</a>
+	</li>
+	<li>
+		<a href="http://http://www.cnblogs.com/Wayou/">我的博客</a>
+	</li>
+	<li>
+		<a href="http://wayouliu.duapp.com/">我的小站</a>
+	</li>
+</ul>
+
+<p>这是p标签不是a标签，我不会受影响</p>
+        */
+    </script>
+    <script src="jquery-1.11.0.min.js"></script>
+    <script src="jquery.myplugin.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('a').myPlugin();
+        })
+    </script>
+    <script>
+        /*
+        下面进一步，在插件代码里处理每个具体的元素，而不是对一个集合进行处理，这样我们就可以针对每个元素进行相应操作。
+　　我们已经知道this指代jQuery选择器返回的集合，那么通过调用jQuery的.each()方法就可以处理合集中的每个元素了，但此刻要注意的是，在each方法内部，this指带的是普通的DOM元素了，如果需要调用jQuery的方法那就需要用$来重新包装一下。
+　　比如现在我们要在每个链接显示链接的真实地址，首先通过each遍历所有a标签，然后获取href属性的值再加到链接文本后面。
+　　更改后我们的插件代码为：
+$.fn.myPlugin = function() {
+    //在这里面,this指的是用jQuery选中的元素
+    this.css('color', 'red');
+    this.each(function() {
+        //对每个元素进行操作
+        $(this).append(' ' + $(this).attr('href'));
+    }))
+}
+到此，你已经可以编写功能简单的jQuery插件了。是不是也没那么难。
+　　下面开始jQuery插件编写中一个重要的部分，参数的接收。
+
+
+支持链式调用
+　　我们都知道jQuery一个时常优雅的特性是支持链式调用，选择好DOM元素后可以不断地调用其他方法。
+　　要让插件不打破这种链式调用，只需return一下即可。
+$.fn.myPlugin = function() {
+    //在这里面,this指的是用jQuery选中的元素
+    this.css('color', 'red');
+    return this.each(function() {
+        //对每个元素进行操作
+        $(this).append(' ' + $(this).attr('href'));
+    }))
+}
+　让插件接收参数
+　　一个强劲的插件是可以让使用者随意定制的，这要求我们提供在编写插件时就要考虑得全面些，尽量提供合适的参数。
+　　比如现在我们不想让链接只变成红色，我们让插件的使用者自己定义显示什么颜色，要做到这一点很方便，只需要使用者在调用的时候传入一个参数即可。同时我们在插件的代码里面接收。另一方面，为了灵活，使用者可以不传递参数，插件里面会给出参数的默认值。
+　　在处理插件参数的接收上，通常使用jQuery的extend方法，上面也提到过，但那是给extend方法传递单个对象的情况下，这个对象会合并到jQuery身上，所以我们就可以在jQuery身上调用新合并对象里包含的方法了，像上面的例子。当给extend方法传递一个以上的参数时，它会将所有参数对象合并到第一个里。同时，如果对象中有同名属性时，合并的时候后面的会覆盖前面的。
+　　利用这一点，我们可以在插件里定义一个保存插件参数默认值的对象，同时将接收来的参数对象合并到默认对象上，最后就实现了用户指定了值的参数使用指定的值，未指定的参数使用插件默认值。
+　　为了演示方便，再指定一个参数fontSize，允许调用插件的时候设置字体大小。
+$.fn.myPlugin = function(options) {
+    var defaults = {
+        'color': 'red',
+        'fontSize': '12px'
+    };
+    var settings = $.extend(defaults, options);
+    return this.css({
+        'color': settings.color,
+        'fontSize': settings.fontSize
+    });
+}
+　　现在，我们调用的时候指定颜色，字体大小未指定，会运用插件里的默认值12px。
+$('a').myPlugin({
+    'color': '#2C9929'
+});
+
+
+一个好的做法是将一个新的空对象做为$.extend的第一个参数，defaults和用户传递的参数对象紧随其后，这样做的好处是所有值被合并到这个空对象上，保护了插件里面的默认值。
+$.fn.myPlugin = function(options) {
+    var defaults = {
+        'color': 'red',
+        'fontSize': '12px'
+    };
+    var settings = $.extend({},defaults, options);//将一个空对象做为第一个参数
+    return this.css({
+        'color': settings.color,
+        'fontSize': settings.fontSize
+    });
+}
+　　到此，插件可以接收和处理参数后，就可以编写出更健壮而灵活的插件了。若要编写一个复杂的插件，代码量会很大，如何组织代码就成了一个需要面临的问题，没有一个好的方式来组织这些代码，整体感觉会杂乱无章，同时也不好维护，所以将插件的所有方法属性包装到一个对象上，用面向对象的思维来进行开发，无疑会使工作轻松很多。
+　面向对象的插件开发
+　　为什么要有面向对象的思维，因为如果不这样，你可能需要一个方法的时候就去定义一个function，当需要另外一个方法的时候，再去随便定义一个function，同样，需要一个变量的时候，毫无规则地定义一些散落在代码各处的变量。
+　　还是老问题，不方便维护，也不够清晰。当然，这些问题在代码规模较小时是体现不出来的。
+　　如果将需要的重要变量定义到对象的属性上，函数变成对象的方法，当我们需要的时候通过对象来获取，一来方便管理，二来不会影响外部命名空间，因为所有这些变量名还有方法名都是在对象内部。
+　　接着上面的例子，我们可以把这个插件抽象成一个美化页面的对象，因为他的功能是设置颜色啊字体啊什么的，当然我们还可以加入其他功能比如设置下划线啊什么的。当然对于这个例子抽象成对象有点小题大做，这里仅作演示用。以后我可能会介绍我编写的一个jQuery插件SlipHover,其中代码就比较多，这样的模式就用得上了。
+　　所以我们新建一个对象命名为Beautifier，然后我们在插件里使用这个对象来编码。
+//定义Beautifier的构造函数
+var Beautifier = function(ele, opt) {
+    this.$element = ele,
+    this.defaults = {
+        'color': 'red',
+        'fontSize': '12px',
+        'textDecoration':'none'
+    },
+    this.options = $.extend({}, this.defaults, opt)
+}
+//定义Beautifier的方法
+Beautifier.prototype = {
+    beautify: function() {
+        return this.$element.css({
+            'color': this.options.color,
+            'fontSize': this.options.fontSize,
+            'textDecoration': this.options.textDecoration
+        });
+    }
+}
+//在插件中使用Beautifier对象
+$.fn.myPlugin = function(options) {
+    //创建Beautifier的实体
+    var beautifier = new Beautifier(this, options);
+    //调用其方法
+    return beautifier.beautify();
+}
+　　通过上面这样一改造，我们的代码变得更面向对象了，也更好维护和理解，以后要加新功能新方法，只需向对象添加新变量及方法即可，然后在插件里实例化后即可调用新添加的东西。
+　　插件的调用还是一样的，我们对代码的改动并不影响插件其他地方，只是将代码的组织结构改动了而以。
+$(function() {
+    $('a').myPlugin({
+        'color': '#2C9929',
+        'fontSize': '20px'
+    });
+})
+        */
+    </script>
+</body>
+</html>

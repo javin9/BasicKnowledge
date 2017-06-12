@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        /*
+                var str = "012345678901234567890123456789";
+                var re = /123/;
+                var globalre = /123/g;
+
+                //非全局匹配
+                var resultArray = re.exec(str);
+                console.log(resultArray[0]);//输出123
+                console.log(resultArray.index);//输出1
+                console.log(globalre.lastIndex);//输出0
+
+                var resultArray = re.exec(str);
+                console.log(resultArray[0]);//输出123
+                console.log(resultArray.index);//输出1
+                console.log(globalre.lastIndex);//输出0
+
+                //全局匹配
+                var resultArray = globalre.exec(str);
+                console.log(resultArray[0]);//输出123
+                console.log(resultArray.index);//输出1
+                console.log(globalre.lastIndex);//输出4
+
+                var resultArray = globalre.exec(str);
+                console.log(resultArray[0]);//输出123
+                console.log(resultArray.index);//输出11
+                console.log(globalre.lastIndex);//输出14
+
+
+        */
+        window.onload = function () {
+            //Example one;
+            var str1 = 'time 2015-10-8 11:21:23；time 1988-7-28 10:10:32；time 2013-1-19 12:25:45；time 2022-12-11 10:10:22；';
+            var reg1 = /(\d{4})-(\d{1,2})-(\d{1,2})\s+(\d{1,2}):(\d{1,2}):(\d{1,2})/g;//\s表示空格 +：一个多个空格
+            var arr = reg1.exec(str1);
+            // console.log(arr);
+            var result = allExec(reg1, str1);
+            console.log(result);
+
+            //Example two;
+            var str2 = 'http://www.gurucv.com?cource=js&teacher=Cupid&typeCode=1';
+            var result = urlToJson(str2);
+            console.log(result);
+
+            console.log(Math.abs(~2015));
+            console.log(Math.ceil(011).toString(2));
+        }
+
+        //
+        function allExec(reg, str) {
+            if (!reg.global) {
+                return reg.exec(str);
+            }
+            var a = [];//用来获取每次捕获的结果
+            var result = null;
+            while ((result = reg.exec(str)) != null) {
+                a.push(result);//死循环
+            }
+            return a;
+        }
+        //
+        function urlToJson(str) {
+            var reg = /([^?=&]+)=([^=?&]+)/g;//排出？=& 等号左右两侧开头不能包括？=&
+            //出现多次拿exec去匹配
+            //var result = reg.exec(str);
+            var result = null;
+            var jsonLeft = "{", jsonRight = "}", jsonContent = "";
+
+            while (result = reg.exec(str)) {
+                for (var i = 1, len = result.length; i < len / 2; i = i + 2) {
+                    jsonContent += '"' + result[i] + '":"' + result[i + 1] + '",';
+                }
+            }
+            return jsonLeft + jsonContent + jsonRight;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

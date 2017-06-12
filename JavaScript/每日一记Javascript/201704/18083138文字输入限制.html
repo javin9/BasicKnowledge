@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			.search {
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript">
+			(function() {
+				var html = document.documentElement;
+				var hW = html.getBoundingClientRect().width;
+				html.style.fontSize = hW / 15 + "px";
+			})();
+		</script>
+	</head>
+
+	<body>
+		<div class='search'><input type="text" name="" id="person" value="" /></div>
+
+		<script src="../../js/lib/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				//监听compositionend（当直接的文字输入时触发）这时，当没选中中文的时候不会进行字数判断。
+
+				var node = document.querySelector('#person');
+				var cpLock = false;
+				node.addEventListener('compositionstart', function() {
+					console.log('compositionstart');
+					cpLock = true;
+				}, false)
+				node.addEventListener('compositionend', function() {
+					console.log('compositionend');
+					cpLock = false;
+				}, false)
+				node.addEventListener('input', function() {
+					console.log('input');
+					if(!cpLock) {
+						alert(this.value);
+					}
+				}, false);
+
+			});
+		</script>
+	</body>
+
+</html>

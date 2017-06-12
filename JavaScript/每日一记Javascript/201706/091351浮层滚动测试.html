@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/mreset.css" />
+		<script type="text/javascript">
+			(function() {
+				var html = document.documentElement;
+				var hW = html.getBoundingClientRect().width;
+				html.style.fontSize = hW / 15 + 'px';
+			})();
+		</script>
+		<style type="text/css">
+			#list {
+				width: 100%;
+			}
+			
+			#list li {
+				border-bottom: 1px solid #000000;
+				font-size: 0.32rem;
+				color: #008000;
+			}
+			
+			.button {
+				height: 2rem;
+				background-color: #0086B3;
+				font-size: 0.4rem;
+				text-align: center;
+				line-height: 2rem;
+			}
+			
+			.rightwindow {
+				position: absolute;
+				width: 80%;
+				border: 1px solid #003368;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				overflow: hidden;
+				overflow-y: scroll;
+			}
+			
+			.rightwindow::-webkit-scrollbar {
+				height: 0px;
+			}
+			
+			#right-ul {
+				background-color: #CCCCCC;
+				width: 100%;
+			}
+			
+			#right-ul li {
+				border-bottom: 1px solid #000000;
+				font-size: 0.32rem;
+				width: 100%;
+			}
+			/* .rightwindow_wrapper{position:relative;}*/
+		</style>
+	</head>
+
+	<body>
+		<div class="button">开始</div>
+		<div>
+			<ul id="list"></ul>
+		</div>
+		<div class="rightwindow_wrapper">
+			<div class="rightwindow">
+				<ul id="right-ul"></ul>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			function createList() {
+				var list = document.querySelector('#list');
+				var rightUl = document.querySelector('#right-ul');
+				var inner = "";
+				for(var i = 0; i < 100; i++) {
+					inner += "<li>这是第" + i + "个li</li>"
+				}
+				list.innerHTML = inner;
+				rightUl.innerHTML = inner;
+			}
+			createList();
+			window.addEventListener('touchmove', function() {});
+			document.querySelector(".rightwindow").addEventListener('touchmove', function(ev) {})
+
+			var urlSet = (function() {
+				var mtaoche = "http://m.taoche.com", //m主站
+					zhihuan = "http://zhihuan.m.taoche.com", //置换
+					bangmai = "http://bangmai.m.taoche.com", //帮买
+					maiche = mtaoche + "/sellcar/", //卖车
+					pinggu = mtaoche + "/pinggu/", //评估，估值，估价
+					gonglue = mtaoche + "/guide/indexguide.aspx";
+
+				return {
+					mtaoche: mtaoche,
+					zhihuan: zhihuan,
+					bangmai: bangmai,
+					maiche: maiche,
+					pinggu: pinggu,
+					gonglue: gonglue
+				};
+
+			})();
+
+			console.log(urlSet);
+
+			var pageInit = (function() {
+				var curUrl = window.location.href;
+				return {
+					curUrl: curUrl
+				}
+			})();
+			
+			console.log(pageInit);
+		</script>
+	</body>
+
+</html>

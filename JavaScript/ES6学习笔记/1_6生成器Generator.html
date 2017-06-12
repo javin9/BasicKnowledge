@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function* generator(count) {
+				console.log('-----111------');
+				console.log(count);
+				console.log('-----222------');
+
+				let result = yield 100;
+
+				console.log('-----333------');
+				console.log("count=" + count);
+				console.log("result=" + result)
+				console.log(result + count);
+				console.log('-----444------');
+			}
+			let g = generator(2);
+			console.log(g.next().value);
+			console.log('------------------');
+			g.next(9);
+			//console.log();
+			console.log('-------------------------------');
+
+			function* hellowWorldGenerator() {
+				yield 'Hello';
+				yield 'World';
+				return "ending";
+				yield "我在后面，能看到我吗？";
+			}
+
+			let hw = hellowWorldGenerator();
+			console.log(hw.next());//{value: "Hello", done: false}
+			console.log(hw.next());//{value: "World", done: false}
+			console.log(hw.next());//{value: "ending", done: true}
+			console.log(hw.next());//{value: undefined, done: true}
+			/*
+			 * yield暂停执行的标记
+			 *next 方法可以恢复执行
+			 * */
+			
+			var arrFlat=[1,[[2,3],4],[5,6]];
+			function* flat(arr){
+				for (var i = 0,len=arr.length; i <len; i++) {
+					var item=arr[i];
+					if (typeof item!=="number") {
+						yield* flat(item);
+					}else{
+						yield item;
+					}
+				}
+			}
+			
+		   for(let f of flat(arrFlat)){
+		   	  console.log(f);
+		   }
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function ajax(url){
+				var promise=new Promise(function(resolve,reject){
+					var xhr=new XMLHttpRequest();
+					//创建一个url
+					 xhr.open('get',url,true);//打开方式，地址，同步异步
+					 xhr.send(null);
+					 xhr.onload=function(){
+					 	if(xhr.status===200){
+					 		console.log(xhr.status);
+					 		resolve(xhr.response);
+					 	}else{
+					 		reject(new Error(this.statusText));
+					 	}
+					 };
+					 xhr.onerror=function(){
+					 	reject('链接失败');//失败了
+					 }
+				});
+				return promise;
+			}
+			ajax('1.txt')
+			.then(function(param){
+				console.log(param);
+			})
+			.catch(function(pram){
+				console.log(pram);
+			})
+		</script>
+	</body>
+</html>

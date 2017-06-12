@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			function A(x) {
+				this.x = x;
+			}
+			A.prototype.getX = function() {
+				return this.x;
+			}
+			A.prototype.getSum = function(y) {
+				return this.x + y;
+			}
+			var a = new A(2);
+			a.x; //继承A的属性X
+			a.getX(); //引用类A的方法getX();
+
+			//创建一个B类，让他继承A类；
+			//构造函数B
+			function B(x, y) { //在构造函数B中，用超类A，实现绑定；
+				this.y = y;
+				A.call(this, x); //通过call ，让B继承A的所有属性和方法
+			}
+			B.prototype = new A(); //设置原型，建立继承关系 【这里没有参数】
+			B.prototype.constructor = B; //恢复B的原型对象的构造函数为B；
+
+			B.prototype.getY = function() {
+				return this.y;
+			}
+
+			var b = new B(2, 3);
+			console.log(b.x);
+			console.log(b.y);
+			console.log(b.getX());
+			console.log(b.getY());
+			console.log(b.getSum(8));
+
+			//技巧：
+			function argToArray() {
+				var a = Array.apply([], arguments);
+				console.log(a);
+			}
+			argToArray(1, 3, 3, 3, 3);
+			argToArray(1);
+			argToArray(1, 6);
+			function  argToArraySlice(){
+				var a=Array.prototype.slice.call(arguments);
+				console.log(a);
+			}
+			argToArraySlice(1,3,434);
+		</script>
+	</body>
+
+</html>

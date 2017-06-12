@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/lib/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<my-component id="app_1"></my-component>
+		<app-component id="app_2"></app-component>
+		<script type="text/javascript">
+			//注册
+			Vue.component('my-component', {
+				template: '<div class="">Hello,World!</div>'
+			});
+			//创建根实例
+			new Vue({
+				el: '#app_1'
+			});
+
+			var templates = {
+				template: '<div class="">Hello,World!</div>'
+			};
+
+			Vue.component("app-component", {
+				template: '<h2>I not Name!</h2>'
+			});
+			var app_2 = new Vue({
+				el: "#app_2",
+				components: {
+					'app-component': templates
+				}
+			});
+		</script>
+
+		<!---->
+
+		<div id="counter_id" class="">
+			<counter-component></counter-component>
+		</div>
+		<script type="text/javascript">
+			Vue.component('counter-component', {
+				template: '<button v-on:click="counter()">{{countnumber}}</button>',
+				data:function(){
+					return {
+						countnumber:0
+					}
+				}
+			});
+
+			new Vue({
+				el: "#counter_id",
+				method:{
+					counter:function(){
+						return this.countnumber++;
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

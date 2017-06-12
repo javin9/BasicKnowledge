@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			
+			$.ajax({
+               type:'get',
+               dataType:'jsonp',
+               url:'http://m.taoche.com/ajax/search/customsearchitem.ashx',
+               data:{id:201},
+               jsonpCallback: "callback",
+               success:function(data){
+               	console.log(data);
+               }
+			});
+		</script>
+	</body>
+
+</html>

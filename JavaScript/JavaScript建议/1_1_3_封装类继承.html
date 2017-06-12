@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function extendFunc(Sub,Sup){
+				var F=function(){};//定义一个空函数
+				F.prototype=Sup.prototype;//设置空函数的原型为超类原型；
+				Sub.prototype=new F();//实例化空函数，并把超类原型引用传递给子函数
+				Sub.prototype.constructor=Sub;//恢复子类原型的构造函数为子类本身
+				//Sub.sup=Sup.prototype;//在子类中储存超类原型，避免子类和超类耦合；
+				
+				//检测超类原型构造函数是否为自身
+				if (Sup.prototype.constructor===Object.prototype.constructor) {
+					Sup.prototype.constructor=Sup;//类继承封装函数
+				}
+			}
+			
+			//下面定义两个类
+		   function A(x){
+		   	this.x=x;
+		   	this.getX=function(){
+		   		return this.x;
+		   	}
+		   }
+		   	A.prototype.add=function(){
+		   		return this.x+this.x;
+		   	}
+		   	
+		   function B(x){
+		   		this.y=x;
+		   		A.call(this,x);//在函数体内调用构造函数，实现内部数据的绑定；
+		   	}
+		   	//调用类继承封装函数，把A和B的原型捆绑在一起；
+		   	extendFunc(B,A);
+		   	B.prototype.add=function(){
+		   		return 
+		   	}
+		   	var f=new B(4);
+		   	console.log(f);
+		   	console.log(f.x);
+		   	console.log(f.y);
+		   	console.log(f.getX());
+		   	//console.log(f.add());
+		   	console.log(f.sub);
+		</script>
+	</body>
+</html>

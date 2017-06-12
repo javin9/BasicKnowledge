@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var start=+new Date(),//+号可以将Date转成
+			stop;
+			console.log("dd");/
+			stop=+new Date();
+			
+			//优化定时器处理数组任务
+			function timeProcessArray(items,process,callback){
+				var todo=items.concat();
+				setTimeout(function(){
+					do{
+						process(todo.shift());
+					}while(!!todo.length&&(+new Date()-start<50));
+					
+					if (!!todo.length) {
+						setTimeout(arguments.callee,25);
+					}else{
+						callback(items);
+					}
+				},25);
+			}
+		</script>
+	</body>
+</html>

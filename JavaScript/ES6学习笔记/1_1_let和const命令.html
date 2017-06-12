@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        ul > li {
+            border: 1px solid gray;
+            margin-top: 10px;
+            width: 200px;
+            background:#808080;
+        }
+        div {
+        height:20px;
+        background:#223ec4;
+        }
+    </style>
+</head>
+<body>
+    <script src="../Script/jquery-2.1.1.js"></script>
+    <button id="btn1">btn1btn1btn1btn1</button><br />
+    <button id="btn2">btn2btn2btn2btn2</button><br />
+    <button id="btn3">btn3btn3btn3btn3</button><br />
+    <ul id="ul1">
+        <li>111111111111111</li>
+        <li>111111111111111</li>
+        <li>111111111111111</li>
+        <li>111111111111111</li>
+        <li>111111111111111</li>
+    </ul>
+    <div>ul2ul2ul2ul2ul2ul2ul2ul2ul2ul2ul2ul2ul2ul2ul2ul2ul2ul2ul2ul2</div>
+    <ul id="ul2">
+        <li>111111111111111</li>
+        <li>111111111111111</li>
+        <li>111111111111111</li>
+        <li>111111111111111</li>
+        <li>111111111111111</li>
+    </ul>
+    <div> let let let let let let let let let let let let let let let let let</div>
+    <ul id="ul3">
+        <li>111111111111111</li>
+        <li>111111111111111</li>
+        <li>111111111111111</li>
+        <li>111111111111111</li>
+        <li>111111111111111</li>
+    </ul>
+    <script>
+        /*----------------------let命令---start-----------------------*/
+        /*
+        let:类似于var，声明变量 
+        Note: 
+                 1.需要提前声明，没有变量提升（var 有变量提升）
+                 2.不可重复声明
+                 3.只在声明的块级作用域内有效
+        */
+        /*----------------------let命令---end-----------------------*/
+        //1.需要提前声明，没有变量提升（var 有变量提升）
+        console.log(b);//undefined
+        var b = 3;
+        console.log(b);//3
+        //
+       // console.log(a);//Uncaught ReferenceError: a is not defined
+        let a = 2;
+        console.log(a);
+
+        //2.不可重复声明 不管变量名通过什么方式声明，都不能重复声明
+        // let a=3;  Error
+        //let b=3; 
+        //const b=2；
+
+
+        //3.只在声明的块级作用域内有效
+        function let_f() {
+            let n = 5;
+            if (true) {
+                let n = 10;
+            }
+            console.log(n);
+        }
+        let_f();// 5
+
+        function var_f() {//变量提升
+            var n = 5;
+            if (true) {
+                var n = 10;
+            }
+            console.log(n);
+        }
+        var_f();// 5
+
+        //块级作用域
+       
+        function var_for() {
+            for (var i = 0; i <5; i++) {
+                //alert(messages[i]);
+                $("#ul1>li").eq(i).click(function () {
+                    console.log(i);
+                });
+            }
+        }
+        var_for();
+
+        function var_for() {
+            for (var i = 0; i < 5; i++) {
+                //alert(messages[i]);
+                (function (i) {
+                    $("#ul2>li").eq(i).click(function () {
+                        console.log(i);
+                    });
+                })(i);
+            }
+        }
+        var_for();
+
+        function let_for() {
+            for (let i = 0; i < 5; i++) {
+                $("#ul3>li").eq(i).click(function () {
+                    console.log(i);
+                });
+            }
+        }
+        let_for();
+
+        /*----------------------const命令---start-----------------------*/
+        /*
+        const:类似于var，声明变量 
+        Note: 
+                 1.一旦声明，其值不能改变,对常亮重新赋值会报错;[有文章说不会报错，只会默默的失败，但是我尝试的时候是报错的]
+                 2.不可重复声明,但是可以修改对象的属性值
+                 3.只在声明的块级作用域内有效
+        */
+        /*----------------------const命令---end-----------------------*/
+        //   1.一旦声明，其值不能改变
+        const PI = 3.1415926;
+        console.log(PI);
+        //PI=3; //Error
+
+        const obj = {
+            a: 1,
+            b:2
+        };
+        obj["a"] = 3;
+        console.log(obj);
+    </script>
+</body>
+</html>

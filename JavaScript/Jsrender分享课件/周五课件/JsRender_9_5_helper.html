@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../../css/table_css.css" rel="stylesheet" />
+    <script src="/Script/jquery-2.1.1.js"></script>
+    <script src="../../Script/jsrender.js"></script>
+</head>
+<body> 
+    <!------------------ Container ------------------>
+    <table class="imagetable">
+        <thead><tr><th>标题</th><th>翻译</th><th>语言</th></tr></thead>
+        <tbody id="movieList"></tbody>
+    </table>
+
+
+    <!------------------ Templates ------------------>
+    <script id="movieTemplate" type="text/html">
+        <tr>
+            <td>{{>~format(name, "upper")}}</td>
+            <td>{{>~contactName(name,cn_Name)}}</td>
+            <td>
+                {{for languages}}
+                {{>~format(name, "lower")}}
+                {{/for}}
+            </td>
+        </tr>
+    </script>
+
+    <!------------------ Script ------------------>
+    <script type="text/javascript">
+        $.views.helpers({
+            format: function (val, format) {
+                var ret;
+                switch (format) {
+                    case "upper":
+                        ret= val.toUpperCase();
+                    case "lower":
+                        ret= val.toLowerCase();
+                }
+                return ret;
+            },
+            contactName: function (name, cn_Name) {
+                return !!cn_Name ? name + '_' + cn_Name : name;
+            }
+        });
+
+        var movie = [{
+            name: "Eyes Wide Shut",
+            cn_Name: "《大开眼戒》",
+            languages: [
+				{ name: "French" },
+				{ name: "German" },
+				{ name: "Spanish" }
+            ]
+        }, {
+            name: "The Mighty",
+            languages: [
+				{ name: "French" },
+				{ name: "German" },
+				{ name: "Spanish" }
+            ]
+        }];
+
+        $("#movieList").html(
+            $("#movieTemplate").render(movie)
+        );
+
+    </script>
+</body>
+</html>

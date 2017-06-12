@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        #div0 {
+            position: relative;
+        }
+
+        #div1 {
+            width: 300px;
+            height: 400px;
+            background-color: #00ff90;
+            position: absolute;
+            overflow-y: auto;
+        }
+
+        #div2 {
+            width: 150px;
+            height: 800px;
+            background: #ff6a00;
+        }
+    </style>
+    <script src="../Script/jquery-2.1.1.js"></script>
+</head>
+<body>
+    <!--<div id="div0">
+        <div id="div1">
+            <div id="div2">
+            </div>
+        </div>
+    </div>-->
+    <div>
+        <button type="button" id="btn">测试按钮</button>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+
+            $("#btn").on("close", function () {
+                console.log("你触发了close");
+            });
+            $("#btn").click(function () {
+                $(this).trigger("close");
+            });
+            var biauto = {
+                name:""
+            };
+            if (!!biauto.ggg) {
+
+            }
+        });
+       
+
+    </script>
+</body>
+</html>
