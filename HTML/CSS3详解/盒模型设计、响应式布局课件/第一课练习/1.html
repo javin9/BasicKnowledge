@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+@font-face {
+    font-family: 'MiaoV';
+    src: url('1-webfont.eot');
+    src: url('1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('1-webfont.woff') format('woff'),
+         url('1-webfont.ttf') format('truetype'),
+         url('1-webfont.svg#untitledregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+#wrap{width:600px;margin:0 auto; position:relative;}
+#wrap label{float:left;margin:0 5px;}
+#wrap label span:nth-of-type(1){float:left;height:30px;background:#f60; font:14px/30px "宋体"; color:#fff;padding:0 10px; transition:.3s;}
+#wrap label span:nth-of-type(1):hover{ background:green;}
+#wrap label i{ font:30px "MiaoV"; padding:0 5px; vertical-align:middle;}
+#wrap label span:nth-of-type(2){ position:absolute;left:0;top:30px;border:1px solid #000;height:300px; opacity:0;z-index:1;padding:10px; font:12px/24px "宋体";color:rgba(0,0,0,1);transition:2s;text-shadow:0 0 30px rgba(0,0,0,1); color:rgba(0,0,0,0);}
+#wrap input{ position:absolute;top:-50px;}
+#wrap input:checked~span:nth-of-type(1){background:green;}
+#wrap input:checked~span:nth-of-type(2){ z-index:2;opacity:1; text-shadow:0 0 0 rgba(0,0,0,0); color:rgba(0,0,0,1);}
+</style>
+</head>
+<body>
+<div id="wrap">
+    <label>
+       <input id="btn1" type="radio" name="btns" checked />  
+       <span><i>0</i>MiaoV简介</span>
+       <span>妙味课堂是北京妙味趣学信息技术有限公司旗下的IT前端培训品牌，
+妙味课堂是一支独具特色的IT培训团队，妙味反对传统IT教育枯燥乏味的教学模式，妙味提供一种全新的快乐学习方法！<br />
+目前主要针对的是javascript培训，同时还提供了css教程、javascript视频、js特效等，最新推出了外地学员们喜欢的javascript网络课程服务，同时还为处于javascript入门阶段的朋友录制了大量javascript视频，其中涉及了大量javascript基础知识，希望妙味课堂推出的javascript网络培训课程能带给大家更多惊喜。</span>   
+    </label>
+    <label>
+       	<input id="btn1" type="radio" name="btns" /> 
+        <span><i>1</i>HTML5课程</span>
+        <span>前端开发的世界从未有过无声的寂静，精彩纷呈的互联网也不曾出现片刻安宁，
+在 HTML5&CSS3 被炒至沸沸扬扬的今天，
+全面系统的掌握此项技能，是加重技术含金量的重要砝码！
+妙味课堂现已为你开启一个崭新的职业规划……</span>   
+    </label>
+    <label>
+       	<input id="btn1" type="radio" name="btns" /> 
+        <span><i>2</i>零基础课程</span>
+        <span>妙味课堂为真正零基础的朋友们，精心准备了这套通俗易懂+海量实例
+打造出完全符合企业招聘要求的 《零基础前端开发课程》
+因为我们对零基础的定义是：能上网、会打字、懂得最基本的办公软件操作即可，如果再懂点PS，就更靠谱了^_^，你符合这个要求吗？</span>    
+    </label>
+    <label>
+       	<input id="btn1" type="radio" name="btns" /> 
+        <span><i>3</i>javascript课程</span>
+        <span>创新近百个JS实例、全新编排组合的案例+知识点，使课程更具深度！
+极具挑战的阶梯式教学体系、细致耐心的练习辅导，随时响应的提问机制
+确保不落下任何一位学员。再配合清晰明确的结课标准+大型实战项目辅导……
+成就性价比最高的《JavaScript 实战开发课程》</span>    
+    </label>
+</div>
+</body>
+</html>
