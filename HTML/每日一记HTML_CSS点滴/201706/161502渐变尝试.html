@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../CSS代码类库/reset.css"/>
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			.wrap1 .box{width:100px;height:100px;border:2px solid #000000;margin: 50px;float:left;}
+			.wrap1 .box:nth-child(1){background:-webkit-linear-gradient(0deg,red,blue);}
+			.wrap1 .box:nth-child(2){background:-webkit-linear-gradient(30deg,red,blue);}
+			.wrap1 .box:nth-child(3){background:-webkit-linear-gradient(60deg,red,blue);}
+			.wrap1 .box:nth-child(4){background:-webkit-linear-gradient(90deg,red,blue);}
+			.wrap1 .box:nth-child(5){background:-webkit-linear-gradient(180deg,red,blue);}
+			.wrap1 .box:nth-child(6){background:-webkit-linear-gradient(270deg,red,blue);}
+			.wrap1 .box:nth-child(7){background:-webkit-linear-gradient(45deg,red 0,blue 60%,green 80%);}
+			.wrap1 .box:nth-child(6){background:-webkit-linear-gradient(270deg,red,blue);}
+			
+			.wrap2 .box{width:300px;height:50px;border:2px solid #000000;margin: 50px;float:left;transition:all ease-in-out 2s;}
+			.wrap2 .box:nth-child(1){background:-webkit-repeating-linear-gradient(10deg,green 0,green 10px,#fff 10px,#fff 20px);}
+			.wrap2 .box:hover{background-position:300px 0;}
+			
+			.wrap3 .box{width:300px;height:300px;border:1px solid #000;background:-webkit-repeating-linear-gradient(-45deg,rgba(255,255,255,0) 0,rgba(255,255,255,0) 100px,rgba(255,255,255,0.8) 100px,rgba(255,255,255,1) 120px), url('images/1.jpg') center center no-repeat;margin:50px auto;transition:all ease 3s; }
+			.wrap3 .box:hover{background-position:300px 0;}
+		</style>
+	</head>
+	<body>
+		<div class="wrap1 clearfix">
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+		</div>
+		
+		<div class="wrap2 clearfix">
+			<div class="box"></div>
+		</div>
+		
+		<div class="wrap3">
+			<div class="box"></div>
+		</div>
+	</body>
+</html>

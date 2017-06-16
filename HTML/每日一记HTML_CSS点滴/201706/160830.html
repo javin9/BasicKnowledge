@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style typ="text/css">
+		*{margin:0;padding:0;}
+		.box{width:400px; height:400px;margin:50px auto;transition:all ease .5s;}
+		.box div{width:180px;height:180px;margin:10px;float:left;background:url('images/1.jpg') no-repeat center center; }
+		.box div:nth-child(1){border-radius:5% 60% 0% 60%;}
+		.box div:nth-child(2){border-radius:60% 5% 60% 0%;}
+		.box div:nth-child(3){border-radius:60% 0% 60% 5%;}
+		.box div:nth-child(4){border-radius:0% 60% 5% 60%;}
+		
+		.box:hover{transition:all ease .5s;transform: rotate(360deg);}
+	</style>
+	</head>
+	<body>
+		<div class="box">
+			<div id=""></div>
+			<div id=""></div>
+			<div id=""></div>
+			<div id=""></div>
+		</div>
+	</body>
+</html>
