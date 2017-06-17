@@ -1,11 +1,7 @@
-	*{margin:0;padding:0;}
+*{margin:0;padding:0;}
+body{font-family: helvetica;}
 
-body{
-	font-family: helvetica;
-}
-
-body *{
-	-webkit-text-size-adjust:none;/*禁止文字缩放*/
+body *{-webkit-text-size-adjust:none;/*禁止文字缩放*/
 	-webkit-user-select: none;/*禁止选中*/
 }
 /*清除点击默认阴影*/
@@ -25,16 +21,20 @@ ol,
 li {
 	list-style: none;
 }
+img{border:0;}
 
-
-/*img默认样式*/
-
-img {
-	border: 0;
+a{text-decoration: none;}
+.fl{float:left;}
+.fr{float:right;}
+.clearfix:after {
+	visibility: hidden;
 	display: block;
-	/*去掉2像素的高度方法*/
-	vertical-align: top;
-	/*去掉3像素的高度方法*/
-	margin: 0 auto;
+	font-size: 0;
+	content: "";
+	clear: both;
+	height: 0;
 }
 
+*.clearfix {
+	zoom: 1;
+}
