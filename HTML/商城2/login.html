@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no"/>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<script type="text/javascript">
+			(function(){
+				var html=document.documentElement;
+				var htmlW=html.getBoundingClientRect().width;
+				html.style.fontSize=htmlW/15+"px";
+			})();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<title></title>
+	</head>
+	<body>
+		<div class="top-image">
+			<img src="images/images/iphone_bc_01.jpg"/>
+		</div>
+		<div class="form-wrapper">
+			<div class="iphone-div">
+				<input type="text" name="" class="iphone" value="" placeholder="请输入手机号" maxlength="11" />
+			</div>
+			<div class="checkcode-div">
+				<input type="text" name=""  class="checkcode" value="" placeholder="请输入手机号" />
+				<a href="#" class="code-btn">获取验证码</a>
+			</div>
+		</div>
+	</body>
+</html>
