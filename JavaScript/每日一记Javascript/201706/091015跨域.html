@@ -4,30 +4,30 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> 
+		<script src="http://st1.taoche.cn/taoche_wap/fonts/iconfont.js"></script> 
+	
 	</head>
 
 	<body>
+	
 		<script type="text/javascript">
-			
-
-			$.ajax({
-				type: 'get',
-				dataType: 'jsonp',
-				jsonpCallback: "callback",
-				url: '//m.taoche.com/ajax/search/customsearchitem.ashx?id=201',
-				success: function(data) {
-					console.log(data);
-				console.log(JSON.parse(data))
-				}
-			});
+//			$.ajax({
+//				type: 'get',
+//				dataType: 'jsonp',
+//				jsonpCallback: "callback",
+//				url: '//m.taoche.com/ajax/search/customsearchitem.ashx?id=201',
+//				success: function(data) {
+//					console.log(data);
+//				console.log(JSON.parse(data))
+//				}
+//			});
 			
 			$.ajax({
 				type: 'get',
 				dataType: 'jsonp',
 				jsonpCallback: "callback",
-				url: 'http://search.taoche.com/search/inputhandlerforyixin?pfrom=wap&kw=aod&spell=beijing&areaid=201&target=http://m.taoche.com/select/search.aspx&_=1497509388073&callback=callback',
+				url: 'http://search.taoche.com/search/inputhandlerforyixin?pfrom=wap&kw=10%E4%B8%87&spell=beijing&areaid=201&target=http://test.fenqi.m.taoche.com/budget/beijing/&_=1498096555749&callback=callback',
 				success: function(data) {
 					console.log(data);
 				console.log(JSON.parse(data))
@@ -35,7 +35,7 @@
 				
 				  
 			});
-		
+			"".indexOf()
 		</script>
 	</body>
 

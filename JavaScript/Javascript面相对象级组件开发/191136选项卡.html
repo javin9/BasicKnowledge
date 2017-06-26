@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.outer {
+				margin: 150px;
+			}
+			
+			.tab-class a {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				text-decoration: none;
+				color: #000000;
+				border: 1px solid #000000;
+			}
+			
+			.content-class div {
+				width: 300px;
+				height: 300px;
+				border: 1px solid #000000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="outer">
+			<div class="tab-class">
+				<a href="#">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+			</div>
+			<div class="content-class">
+				<div>11111</div>
+				<div style="display:none;">222</div>
+				<div style="display:none;">333</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var a = document.querySelector('.tab-class').querySelectorAll('a');
+			var div = document.querySelector('.content-class').querySelectorAll('div');
+			for(var i = 0; i < a.length; i++) {
+					a[i].index=i;
+					a[i].onclick = change;
+			}
+
+              
+			function change(){
+				for(var j = 0; j < div.length; j++) {
+					div[j].style.display = "none";
+				}
+				div[this.index].style.display = "block";
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.one {
+				width: 100px;
+				height: 100px;
+				background: #003368;
+				position: absolute;
+			}
+			
+			.two {
+				width: 100px;
+				height: 100px;
+				background: #008000;
+				position: absolute;
+				left: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="one" id="one" style=""></div>
+		<div class="two" id="two"></div>
+
+		<script type="text/javascript">
+			/*
+			 * 原则 先写出普通的方法，然后改成面相对象的方法
+			 *  》普通方法变形
+			 *   .尽量不要出现函数嵌套
+			 *   .可以有全局变量
+			 *   .把onload中不是赋值的语句放到单独的函数中(init)
+			 *  》改成面相对象
+			 *   .全局变量就是属性
+			 *   .函数就是方法
+			 *   .Onload中创建对象
+			 *   .改this指向问题
+			 * */
+
+			var DragCustom = function(id) {
+				this.disX = 0;
+				this.disY = 0;
+				this.ele = document.getElementById(id);
+
+			};
+			DragCustom.prototype.init = function() {
+				var that=this;
+				that.ele.onmousedown =function(ev){
+					that.mouseDown(ev);
+				} 
+			};
+			DragCustom.prototype.mouseDown = function(e) {
+				console.log(this);
+				var that=this;
+				disX = e.clientX - that.ele.offsetLeft;
+				disY = e.clientY - that.ele.offsetTop;
+
+				document.onmousemove =function(ev){
+					that.bodyMove(ev);
+				} 
+				document.onmouseup =function(ev){
+					 that.bodyup(ev);
+				}
+			};
+			DragCustom.prototype.bodyMove = function(ev) {
+				this.ele.style.left = ev.clientX - disX + "px";
+				this.ele.style.top = ev.clientY - disY + "px";
+			};
+			DragCustom.prototype.bodyup = function(ev) {
+				document.onmousemove = null;
+			};
+			var one = new DragCustom('one');
+			one.init();
+		</script>
+	</body>
+
+</html>

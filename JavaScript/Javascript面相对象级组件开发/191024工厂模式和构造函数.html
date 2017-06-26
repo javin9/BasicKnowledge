@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//工厂模式
+			var createObj = function(name, age) {
+				var obj = new Object();
+				obj.name = name;
+				obj.age = age;
+				obj.showName = function() {
+					console.log(this.name);
+				}
+				return obj;
+			};
+			var m1 = createObj('xiaoming', 18);
+			var q1 = createObj('xiaoqiang', 19);
+
+			//构造函数模式
+			var Person = function(name, age) {
+				this.name = name;
+				this.age = age;
+				this.showNmae = function() {
+					console.log(this.name);
+				};
+			}
+
+			var m2 = new Person('xiaoming', 18);
+			var q2 = new Person('xiaoqiang', 19);
+
+			//原型模式
+			var Person2 = function() {
+
+			};
+			Person2.prototype.name = "";
+			Person2.prototype.age = "";
+
+			//构造函数和原型模式
+
+			var Person3 = function(name,age) {
+				this.name = name;
+				this.age = age;
+			}
+			Person3.prototype.sayName=function(){
+				console.log(this.name);
+			};
+			//动态原型模式[略]
+			 
+			//寄生构造函数模式
+			var Alien=function(name,age){
+				Person3.call(this,name,age);
+				this.showName=function(){
+					console.log(this.name);
+				}
+			};
+			var a1=new Alien('waixingren',10900);
+			console.log(a1);
+			a1.showName();
+			
+			//稳妥构造函数模式
+			var Person4=function(name,age){
+				return {
+					name:name,
+					age:age,
+					sayName:function(){
+						console.log(name);
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

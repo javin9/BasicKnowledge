@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="../css/选车页面.css" />
     <link rel="stylesheet" type="text/css" href="../css/2015选车工具.css" />
     <link rel="stylesheet" type="text/css" href="../css/搜索.css" />
-    <link href="../css/双节样式.css" rel="stylesheet">
+    <!--<link href="../css/双节样式.css" rel="stylesheet">-->
     <link href="../css/新列表页v3.css" rel="stylesheet">
     <link rel="stylesheet" href="../fonts/iconfont.css">
 </head>
@@ -85,7 +85,7 @@
 </div>
 <!-- 头部end -->
 <!--20170607糖豆start-->
-<div class="td-box">
+<div class="td-box hide">
 <div class="td-nav">
     <a href="">
         <img src="../images/lb-list-pic01.png" alt="">
@@ -112,7 +112,7 @@
 <!-- 筛选  start -->
 <!-- 无选项  start -->
 <div class="filter-seller boxwrap" id="filterNav">
-    <ul class="new-seller bor-show0">
+    <ul class="new-seller bor-show0 borta">
         <li class="tabsli"><a href="javascript:;"><em>排序</em></a></li>
         <li class="tabsli tabsli-brand"><a href="javascript:;"><em>品牌</em></a></li>
         <li class="tabsli"><a href="javascript:;"><em>价格</em></a></li>
@@ -127,20 +127,20 @@
 </div>
 <!-- 无选项  end -->
 <!-- 有选项  start -->
-<!--<div class="filter-seller boxwrap">-->
-    <!--<ul class="new-seller">-->
-        <!--<li class="selected"><a href="#"><em>推荐产品</em></a></li>-->
-        <!--<li class="selected"><a href="#"><em>奥迪A6</em></a></li>-->
-        <!--<li class="selected"><a href="#"><em>20-30万</em></a></li>-->
-        <!--<li class="selected bor0"><a href="#"><em>筛选</em></a></li>-->
-        <!--<li class="new-lb-item">-->
+<div class="filter-seller boxwrap  hide">
+    <ul class="new-seller bor-show0 borta">
+        <li class="selected"><a href="#"><em>推荐产品</em></a></li>
+        <li class="selected"><a href="#"><em>奥迪A6</em></a></li>
+        <li class="selected"><a href="#"><em>20-30万</em></a></li>
+        <li class="selected bor0"><a href="#"><em>筛选</em></a></li>
+        <li class="new-lb-item">
 <!--横向-colff3是点击后颜色->
  <span class="iconfont icon-liebiao colff3"></span>
  <!--纵向-->
-<!--<span class="iconfont icon-datu colff3"></span>-->
-        <!--</li>-->
-    <!--</ul>-->
-<!--</div>-->
+<span class="iconfont icon-datu colff3"></span>
+        </li>
+    </ul>
+</div>
 
 <!--20170607列表车标展示start-->
 <!--new-seller去掉阴影样式为-->
@@ -207,29 +207,28 @@
         </a>
     </li>
 </ul>
-
     <!---->
     <div class="lb-carlist-wz">
         <p>
-            <span>车价</span>
             <a href="">3万以下</a>
-            <a href="">33-5万</a>
-            <a href="">35-8万</a>
-            <a href="">38-10万</a>
+            <a href="">3-5万</a>
+            <a href="">5-8万</a>
+            <a href="">8-10万</a>
+            <a href="">8-10万</a>
         </p>
         <p>
-            <span>级别</span>
             <a href="">紧凑车型</a>
             <a href="">SUV</a>
             <a href="">中型车</a>
             <a href="">MPV</a>
+            <a href="">MPV</a>
         </p>
         <p>
-            <span>推荐</span>
+            <a href="">自动挡</a>
             <a href="">准新车</a>
+            <a href="">三年内</a>
             <a href="">练手车</a>
-            <a href="">商务范儿</a>
-            <a href="">保障车</a>
+            <a href="">练手车</a>
         </p>
     </div>
 </div>
@@ -335,7 +334,7 @@
             </div>
         </div>
         <!-- 品牌列表 end -->
-        <div class="fixed-nav">
+        <div class="fixed-nav" style="    padding: 64px 0;">
         </div>
     </div>
 
@@ -1106,11 +1105,12 @@
 <div class="tract-top new-tract post-re">
     <div class="track-div  mar50">
         <ul class="trackul">
-            <li class="double11-list"><a href="#" class="selected">6.6优惠车款<em class="double-close"></em></a></li>
+            <!--<li class="double11-list"><a href="#" class="selected">6.6优惠车款<em class="double-close"></em></a></li>-->
             <li class="double11-list"><a href="#" class="next-selected">6.6优惠车款</a></li>
-            <li><a href="#">奔驰C级<i class="iconfont icon-Close-01 icon-xiaochazi"></i></a></li>
-            <li><a href="#">大众<i class="iconfont icon-Close-01 icon-xiaochazi"></i></a></li>
-            <!--<li><a href="#">宝莱<em>8-20万</em></a></li>-->
+            <li><a href="#"><b>奔驰C级</b><i class="iconfont icon-Close-01 icon-xiaochazi"></i></a></li>
+            <li><a href="#"><b>大众</b><i class="iconfont icon-Close-01 icon-xiaochazi"></i></a></li>
+            <li><a href="#"><b>宝来</b><i class="iconfont icon-Close-01 icon-xiaochazi"></i></a></li>
+            <li><a href="#"><b>北京新能源远远远额</b><i class="iconfont icon-Close-01 icon-xiaochazi"></i></a></li>
         </ul>
 
     </div>
@@ -1122,6 +1122,7 @@
 <!-- 足迹  end -->
 
 <!-- 车源列表 start -->
+<!--mt12-->
 <div class="car-list-wrap boxwrap">
     <div class="carlist-inner">
         <ul class="carlist-ul-horizontal">
