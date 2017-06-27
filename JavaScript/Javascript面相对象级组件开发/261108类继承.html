@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function A(name){
+				this.name=name;
+			}
+			A.prototype.showName=function(){
+				console.log(this.name);
+			};
+			
+			/*
+			 * 对象赋给对象 会有引用类型的值引用问题  改变任何一个都会造成影响，所有原型继承是不合理的继承方式
+			 * 
+			 * 
+			 * 属性和方法的继承应该分开继承
+			 * */
+			
+			var F=function(){};
+			F.prototype=A.prototype;
+			
+			var B=function(){
+				
+			}
+			B.prototype=new F();
+			B.prototype.constructor=B;
+			
+			
+			//
+             var C=function(name){
+             	A.call(this,name);//只是继承了属性
+             };
+             var FC=function(){};
+             FC.prototype=A.Prototype;
+             C.prototype=new FC();
+             C.prototype.constructor=C;
+             var c1=new C("我是小C");
+             console.log(c1);
+		</script>
+	</body>
+</html>

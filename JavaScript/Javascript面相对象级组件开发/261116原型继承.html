@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//原型式继承
+			var cloneObj = function(obj) {
+				var F = function() {};
+				F.prototype = obj;
+				return new F();
+			};
+ 
+			var a = {
+				name: '小明',
+				age: 18,
+				arr:[1,3,4]
+			};
+
+			var b = cloneObj(a);
+			b.arr.push(5);
+			console.log(b);
+			console.log(a);
+			
+			//b.name='小红';
+			console.log(a.name);//小明
+			console.log(b.name);//小红
+			
+			var c=a;
+			c.name="笨蛋";
+			console.log(c.name);//笨蛋
+			console.log(a.name);//笨蛋
+		</script>
+	</body>
+
+</html>
