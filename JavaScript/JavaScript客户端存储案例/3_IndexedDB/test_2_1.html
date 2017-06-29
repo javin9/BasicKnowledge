@@ -1,8 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<script type="text/javascript" src = 
-	"http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 </head>
     
 <body>
@@ -16,16 +15,15 @@ var db;
 
 $(document).ready(function() {
 	
-	//No support? Go in the corner and pout.
 	if(!idbOK()) return;
 
 	var openRequest = indexedDB.open("ora_idb2",1);
 
 	openRequest.onupgradeneeded = function(e) {
 		var thisDB = e.target.result;
-		console.log("running onupgradeneeded");
+		console.log("升级");
 		if(!thisDB.objectStoreNames.contains("firstOS")) {
-			console.log("makng a new object store");
+			console.log("创建对象存储");
 			thisDB.createObjectStore("firstOS");
 		}
 

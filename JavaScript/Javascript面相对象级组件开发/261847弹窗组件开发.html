@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.dialog {
+				width: 200px;
+				height: 150px;
+				border: 1px solid #000000;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -100px;
+				margin-top: -75px;
+				z-index:5;
+			}
+			
+			.titlebar {
+				height: 50px;
+				border-bottom: 1px solid #000000;
+				text-align: center;
+				position: relative;
+			}
+			
+			.title {
+				line-height: 50px;
+				height: 50px;
+			}
+			
+			.close {
+				position: absolute;
+				display: block;
+				width: 20px;
+				height: 20px;
+				right: -1px;
+				top: 0;
+				font-size: 10px;
+			}
+			.mask{position:absolute;left:0;top:0;background-color:#000000;opacity: 0.3;z-index: 3;}
+		</style>
+	</head>
+
+	<body>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<input type="button" name="" id="btn1" value="我是div1" />
+		<input type="button" name="" id="btn2" value="我是div2" />
+		
+		<!--<div id="div1">
+			<div class="dialog">
+				<div class="titlebar">
+					<h3 class="title">我是标题</h3>
+					<span class="close">X</span>
+				</div>
+				<div class="content">
+					我是内容
+				</div>
+			</div>
+		</div>-->
+		<script type="text/javascript">
+			/*
+																							 * 框架模板
+																							var Dialog=function(){
+																							    this.settings={};
+																							    this.ele;
+																							};
+																							
+																							Dialog.prototype.init=function(opt){
+																								extend(this.settings,opt);
+																							};
+																							
+			*/
+			function extend(obj1, obj2) {
+				for(var item in obj2) {
+					obj1[item] = obj2[item];
+				}
+			}
+
+			var Dialog = function() {
+				this.settings = {
+					id: '',
+					title: '',
+					content: ''
+				};
+				this.clientWidth=0;
+				this.clientHeight=0;
+			};
+			//
+			Dialog.prototype.init = function(opt) {
+				extend(this.settings, opt);
+				this.createHtml();
+				this.close();
+				this.createMask();
+			};
+			//创建html结构
+			Dialog.prototype.createHtml = function() {
+				var options = this.settings;
+				var id = options.id,
+					div = document.getElementById(id);
+				console.log(div);
+				if(!!div) {
+					div.style.display = 'block';
+				} else {
+					div = document.createElement('div');
+					div.id = options.id;
+					div.className = 'dialog';
+					div.innerHTML = '<div class="titlebar"><h3 class="title">' + options.title + '</h3><span class="close">X</span></div><div class="content">' + options.content + '</div>';
+					document.body.appendChild(div);
+				}
+
+			};
+			Dialog.prototype.createMask=function(){
+				var div=document.createElement('div');
+				div.className='mask';
+				div.style.width=document.documentElement.clientWidth+"px";
+				div.style.height=document.documentElement.clientHeight+"px";
+				document.body.appendChild(div);
+			};
+			//关闭
+			Dialog.prototype.close = function() {
+				var id = this.settings.id,
+					div = document.getElementById(id),
+					close = div.getElementsByClassName('close')[0];
+				close.onclick = function() {
+					div.style.display = 'none';
+				}
+			};
+
+			document.querySelector('#btn1').onclick = function() {
+				var btn1 = new Dialog();
+				btn1.init({
+					id: 'div1',
+					title: '我是标题1',
+					content: '我是标题1 的内容'
+				});
+			};
+
+			document.querySelector('#btn2').onclick = function() {
+				var btn1 = new Dialog();
+				btn1.init({
+					id: 'div2',
+					title: '我是标题2',
+					content: '我是标题2 的内容'
+				});
+			};
+		</script>
+	</body>
+
+</html>

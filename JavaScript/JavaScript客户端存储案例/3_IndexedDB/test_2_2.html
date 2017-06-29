@@ -44,7 +44,7 @@ $(document).ready(function() {
 
 	openRequest.onsuccess = function(e) {
 		console.log("running onsuccess");
-		db = e.target.result;
+		db = e.target.result;//拿到DB
 		console.dir(db.objectStoreNames);
 	}	
 
