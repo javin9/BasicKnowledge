@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.wrapper {
+				position: relative;
+				width: 180px;
+				height: 180px;
+				left: 100px;
+				top: 100px;
+				overflow: hidden;
+				float: left;
+				margin-right: 10px;
+			}
+			
+			.cover {
+				position: absolute;
+				width: 60px;
+				height: 60px;
+				background: #007AFF;
+				left: 0;
+				top: 0;
+				opacity: 0.3;
+				display: none;
+			}
+			
+			.big-image-wrapper {
+				position: relative;
+				width: 300px;
+				height: 300px;
+				left: 100px;
+				top: 100px;
+				overflow: hidden;
+				border: 1px solid #000000;
+				float: left;
+			}
+			
+			.big-image {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 900px;
+				height: 900px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper" id="wrapper">
+			<div class="small-img">
+				<img src="images/b2.jpg" />
+			</div>
+			<div class="cover"></div>
+		</div>
+		<div class="big-image-wrapper">
+			<div class="big-image">
+				<img src="images/b1.jpg" />
+			</div>
+		</div>
+		<script type="text/javascript">
+			var ScanImg = function() {
+				this.settings = {
+					id: ""
+				};
+				this.x = 0;
+				this.y = 0;
+
+			};
+			ScanImg.prototype.init = function(options) {
+				this.extend(this.settings, options);
+				var opts = this.settings;
+				var divObj = document.getElementById(opts.id),
+					coverObj = divObj.getElementsByClassName('cover')[0];
+				var divObjOffset = this.getOffset(divObj)
+				this.x = divObjOffset.left;
+				this.y = divObjOffset.top;
+
+				console.log("x=" + this.x + ",y=" + this.y);
+				var that = this;
+				divObj.onmouseenter = function(ev) {
+					var left = ev.clientX - that.x - 30,
+						top = ev.clientY - that.y - 30;
+					if(left < 0) {
+						left = 0;
+					}
+					if(top < 0) {
+						top = 0;
+					}
+					if(left > 120) {
+						left = 120;
+					}
+					if(top > 120) {
+						top = 120;
+					}
+
+					coverObj.style.left = left + "px";
+					coverObj.style.top = top + "px";
+					coverObj.style.display = "block";
+
+					divObj.onmousemove = function(ev) {
+						var left = ev.clientX - that.x - 30,
+							top = ev.clientY - that.y - 30;
+
+						if(left < 0) {
+							left = 0;
+						}
+						if(top < 0) {
+							top = 0;
+						}
+						if(left > 120) {
+							left = 120;
+						}
+						if(top > 120) {
+							top = 120;
+						}
+
+						var bLeft = -(left * 5) + "px",
+							bTop = -(top * 5) + "px";
+
+						console.log(bLeft);
+						console.log(bTop);
+
+						coverObj.style.left = left + "px";
+						coverObj.style.top = top + "px";
+
+						var bigImgObj = document.getElementsByClassName('big-image')[0];
+						console.log();
+
+						bigImgObj.style.left = bLeft;
+						bigImgObj.style.top = bTop;
+					}
+
+				};
+				divObj.onmouseleave = function() {
+					divObj.onmousemove == null;
+					coverObj.style.display = "none";
+				}
+			};
+
+			ScanImg.prototype.getOffset = function(ele) {
+				var l = ele.offsetLeft;
+				var t = ele.offsetTop;
+				l += ele.offsetParent.offsetLeft;
+				t += ele.offsetParent.offsetTop;
+				var p = ele.offsetParent;
+				while(p) {
+					if(window.navigator.userAgent.indexOf("MSIE 8" > -1)) {
+						l += p.offsetLeft;
+						t += p.offsetTop;
+					} else {
+						l += p.offsetLeft + p.clientLeft;
+						t += p.offsetTop + p.clientLeft;
+					}
+					p = p.offsetParent;
+				}
+				return {
+					top: t,
+					left: l
+				}
+			};
+            
+            ScanImg.prototype.extend=function(des, opt){
+            	for(var item in opt) {
+					des[item] = opt[item];
+				}
+            }
+
+			var scan1 = new ScanImg();
+			scan1.init({
+				id: 'wrapper'
+			});
+		</script>
+	</body>
+
+</html>
