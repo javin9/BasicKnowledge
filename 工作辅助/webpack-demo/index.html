@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			<%= htmlWebpackPlugin.options.title%>
+		</title>
+		<script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>">
+			
+		</script>
+	</head>
+
+	<body>
+   <% for(var key in htmlWebpackPlugin.files){ %>
+   	<%= key %>:<%=JSON.stringify(htmlWebpackPlugin.files[key])%>
+   <% } %>
+	</body>
+
+</html>
