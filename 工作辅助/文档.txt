@@ -35,3 +35,44 @@ npm run webpack
 
 打包插件
 npm install html-webpack-plugin --save-dev
+
+
+-------------------------------------
+//安装babel
+//webpack3.0 configuration  https://webpack.js.org/configuration/
+//http://babeljs.io/docs/plugins/preset-latest/
+
+npm install --save-dev babel-loader babel-core
+
+
+npm install --save-dev babel-preset-latest
+
+
+//https://webpack.js.org/configuration/
+
+
+----------------------------------------------------------
+//安装CSS loader 和style loader
+
+npm install css-loader style-loader  --save-dev//安装loader
+
+npm install postcss-loader --save-dev  //css3前缀
+
+npm install autoprefixer --save-dev  //前缀
+
+https://github.com/postcss/postcss#plugins
+
+npm install less-loader less --save-dev
+
+npm install html-loader --save-dev
+
+npm install ejs-loader --save-dev
+
+//所有loader的网址
+http://webpack.github.io/docs/list-of-loaders.html#templating
+
+npm install file-loader --save-dev
+
+npm install url-loader --save-dev
+
+npm install image-loader  --save-dev

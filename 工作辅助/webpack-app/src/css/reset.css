@@ -1,0 +1,117 @@
+@charset "utf-8";
+* {
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	font-family: "微软雅黑", "Helvetica", "Arial", "Tahoma";
+}
+
+ul,
+ol,
+li {
+	list-style: none;
+}
+
+
+/*img默认样式*/
+
+img {
+	border: 0;
+	display: block;
+	/*去掉2像素的高度方法*/
+	vertical-align: top;
+	/*去掉3像素的高度方法*/
+	margin: 0 auto;
+}
+
+
+/*a标签默认样式*/
+
+a {
+	color: #000000;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+/*form表单的样式*/
+
+input,
+textarea {
+	outline: none;
+}
+input{background:none;border:0;}
+
+.fl {
+	float: left;
+	*display: inline;
+	/*块元素浮动的  IE6，7的双边锯问题*/
+}
+
+.fr {
+	float: right;
+	*display: inline;
+	/*块元素浮动的  IE6，7的双边锯问题*/
+}
+
+
+/*清除浮动*/
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+*.clearfix {
+	zoom: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal
+}
+
+input {
+	padding: 0;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	_background-attachment: fixed;
+}
+
+
+/*去掉IE的x*/
+
+ ::-ms-clear {
+	display: none;
+}
+
+
+/*去掉IE的查看密码*/
+
+ ::-ms-reveal {
+	display: none;
+}
+
+em,
+i {
+	font-style: normal;
+}
+
+textarea {
+	resize: none;
+}
