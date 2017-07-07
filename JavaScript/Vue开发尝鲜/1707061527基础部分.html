@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			li {
+				border: 1px solid #0086B3;
+			}
+			
+			.banner {
+				width: 100%;
+				height: 50px;
+				background: #0086B3;
+			}
+			
+			.active {
+				background: red;
+			}
+			
+			.editinput {
+				display: none;
+			}
+			
+			.editing .view {
+				display: none;
+			}
+			
+			.editing .editinput {
+				display: block;
+			}
+		</style>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+
+		<div id="input-wrapper">
+			<input type="text" name="" id="" value="" />
+			<p>{{message}}</p>
+		</div>
+		<br>
+       <div class="">
+       	<a href="#all">all</a>
+       	<a href="#finish">finish</a>
+       		<a href="#unfinish">unfinish</a>
+       </div>
+		<div class="list-wrapper">
+			<div class="">
+				任务个数:{{length}}
+			</div>
+			<input type="text" v-model="inputvalue" @keyup.enter="addlist" v-validate:inputvalue="{required: true, maxlength: 18, minlength:1}" placeholder="请输入新密码" />
+			<br />
+			<div class="banner" @click="clickBanner" data-name="banner" v-show="!list.length">您还有有任何数据</div>
+			<br />
+			<ul id="list" class="list-ul" data-date="dsff">
+				<li v-for="(item,index) in filterFuc" v-bind:class="{active:item.ischeck,editing:item===editItem}" v-bind:data-date="item.date">
+					<div class="view">
+						<input type="checkbox" v-model="item.ischeck" />{{index}}</a>
+						<span @click="showIndex(index,$event)">A:&nbsp;{{item.name}}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<span @dblclick="eiditName(item)">B:&nbsp;{{item.name}}</span>
+						<a href="javascript:;" @click="deleteItem(item,index)">删除</a>
+					</div>
+					<input type="text" name="" class="editinput" v-model="item.name" v-customfocus="item===editItem" @blur="edited" @keyup.enter="edited" @keyup.esc="resetEdit(item)" />
+				</li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+			console.log(document.getElementById('list'));
+			console.log(document.getElementById('list').id);
+			console.log(document.getElementById('list').className);
+			console.log(document.getElementById('list').getAttribute('data-date'));
+			console.log('==================================================');
+
+			var arr = [];
+			//			for(var i = 0; i < 10; i++) {
+			//				arr.push({
+			//					name: "This is " + i,
+			//					date: (new Date().getTime())
+			//				});
+			//			}
+			//			console.log(arr);
+			//=======================================================================================
+
+			var store = (function() {
+				var ls = window.localStorage;
+				return {
+					set: function(key, value) {
+						ls.setItem(key, JSON.stringify(value));
+					},
+					get: function(key) {
+						return JSON.parse(ls.getItem(key)) || [];
+					}
+				};
+			})();
+			var arr = store.get('cupid');
+			var vm = new Vue({
+				el: ".list-wrapper",
+				data: {
+					list: arr,
+					inputvalue: '', //辅助一下
+					editItem: "",
+					olddataName: '',
+					type:'all'
+				},
+				watch: {
+//					list: function() {
+//						store.set("cupid", this.list);
+//					}
+                    list:{
+                    	handler:function(){
+                    		store.set('cupid',this.list);
+                    	},
+                    	deep:true
+                    }
+				},
+				methods: {
+					showIndex: function(index, ev) {
+						console.log(ev);
+						console.log("index=" + index);
+						console.log(this);
+						console.log(ev.target.getAttribute("data-date"));
+						console.log($(ev.target).attr('data-date'));
+					},
+					addlist: function(e) {
+						this.list.push({
+							name: this.inputvalue, //e.target.value,
+							date: (new Date().getTime()),
+							ischeck: false
+						});
+						this.inputvalue = "";
+					},
+					clickBanner: function(ev) {
+						console.log(ev.target.getAttribute("data-name"));
+						console.log($(ev.target).attr('data-name'));
+					},
+					deleteItem: function(item, index) {
+						this.list.splice(index, 1);
+						console.log(item);
+						console.log(index);
+					},
+					eiditName: function(item) {
+						this.olddataName = item.name;
+						this.editItem = item;
+					},
+					edited: function() {
+						this.editItem = '';
+					},
+					resetEdit: function(item) {
+						console.log(this.olddata);
+						item.name = this.olddataName;
+						this.editItem = '';
+					}
+				},
+				directives: { //自定义指令
+					"customfocus": {
+						update: function(el, binding) {
+							console.log(el);
+							console.log(binding);
+							if(binding.value) {
+								el.focus(); //获取焦点
+							}
+						}
+					}
+				},
+				computed: {
+					length: function() {
+						return this.list.length;
+					},
+					filterFuc:function(){
+						var filter={
+							all:function(list){
+								return list;
+							},
+							finish:function(list){
+								return list.filter(function(item){
+									return item.ischeck;
+								});
+							},
+							unfinish:function(list){
+								return list.filter(function(item){
+									console.log(item);
+									return !item.ischeck;
+								});
+							}
+						};
+						return !!filter[this.type]?filter[this.type](this.list):this.list;
+					}
+				}
+			});
+
+			//=================================
+			var inputWrapper = new Vue({
+				el: "#input-wrapper",
+				data: {
+					message: ''
+				}
+			});
+			function watchHashChange(){
+				var hash=window.location.hash.slice(1);
+				console.log(hash);
+				vm.type=hash;
+			}
+			window.addEventListener('hashchange',watchHashChange);
+		</script>
+	</body>
+
+</html>

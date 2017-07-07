@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/customselect.css"/>
+	</head>
+	<body>
+		<div class="app">
+			<h3>自定义下拉框</h3>
+			<custom-select></custom-select>
+		</div>
+		<script type="text/javascript">
+			Vue.component("custom-select",{
+				template:`<div class="wrapper">
+     	  <div class="input-wrapper">
+     	  	<input type="text" name=""  class="search-value" value="" />
+     	  	<input type="button" name="" class="search-btn" value="搜索" />
+     	  </div>
+     	  <ul class="search-result">
+     	  	<li><a href="">AAAAAAAA</a></li>
+     	  	<li><a href="">AAAAAAAA</a></li>
+     	  	<li><a href="">AAAAAAAA</a></li>
+     	  	<li><a href="">AAAAAAAA</a></li>
+     	  	<li><a href="">AAAAAAAA</a></li>
+     	  	<li><a href="">AAAAAAAA</a></li>
+     	  </ul>
+     </div>`
+			});
+			
+			var vm=new Vue({
+				el:".app",
+				data:{
+					
+				},
+				methods:function(){
+					
+				}
+			});
+		</script>
+	</body>
+</html>
