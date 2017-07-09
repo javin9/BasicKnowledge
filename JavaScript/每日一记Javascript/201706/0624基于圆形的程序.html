@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		/*
+		 *包装对象：基本类型会找到对应的包装对象类型，然后包装对象把所有的属性和方法给了基本类型，然后包装对象消失； 
+		 *原型链
+		 * hasOwnProperty
+		 * constructor  查看对象的构造函数
+		 * for in的时候有些属性是找不到的[自己添加的可以找到，系统自带的找不到]
+		 * instanceof
+		 * */
+		var A=function(){
+		
+		};
+		var a1=new A();
+		console.log(a1.constructor);
+		
+		var arr=[];
+		console.log(arrr.constructor==Array);
+		</script>
+	</body>
+</html>
