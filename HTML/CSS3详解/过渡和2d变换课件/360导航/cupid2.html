@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {margin: 0;padding: 0;}
+			.box{position:fixed;right:150px;bottom:150px;width:49px;height:49px;}
+			.home{width:49px;height:49px;background:url('home.png') center center no-repeat;z-index:5;position:relative;border-radius:50%;transition:all .5s ease;}
+			.cell-wrapper{position:absolute;width:42px;height:42px;right:0;bottom:0;}
+			.cell{position:absolute;width:42px;height:42px;left:0;top:0;border-radius:50%;transition:all 1s ease;}
+			.cell1{background:url('clos.png') center center no-repeat;}
+			.cell2{background:url('full.png') center center no-repeat;}
+			.cell3{background:url('open.png') center center no-repeat;}
+			.cell4{background:url('prev.png') center center no-repeat;}
+			.cell5{background:url('refresh.png') center center no-repeat;}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="cell-wrapper">
+				<div class="cell cell1"></div>
+				<div class="cell cell2"></div>
+				<div class="cell cell3"></div>
+				<div class="cell cell4"></div>
+				<div class="cell cell5"></div>
+			</div>
+			<div class="home" id="home"></div>
+		</div>
+		<script type="text/javascript">
+			var getPosition=function(angle,r){
+			  var a=Math.round(Math.sin(angle/180*Math.PI)*r);
+			  var b=Math.round(Math.cos(angle/180*Math.PI)*r);
+			  return {
+			  	left:a,
+			  	right:b
+			  };
+				
+			}
+			var home=document.getElementById('home');
+			var cells=document.getElementsByClassName('cell');
+			home.isclick=true;
+			home.onclick=function(){
+					   var deg=90/4;
+						for (var i = 0; i <5; i++) {
+							if(home.isclick){
+							var result=getPosition(deg*i,-150);
+							console.log(result);
+							cells[i].style.left=result.left+"px";
+							cells[i].style.top=result.right+"px";
+							cells[i].style.transform="rotate(360deg)";
+							home.style.transform="rotate(360deg)";
+							 }else{
+							 	cells[i].style.left=0+"px";
+								cells[i].style.top=0+"px";
+								home.style.transform="rotate(0deg)";
+								cells[i].style.transform="rotate(0deg)";
+							 }
+					}
+				
+				    home.isclick=!home.isclick;
+				
+			}
+			
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{margin:0;padding:0;}
+			.box{width:200px;height:200px;position:relative;margin:300px auto;}
+			.cell-wrapper{width:200px;height:200px;position:relative;}
+			.cell{width:42px;height:42px;position:absolute;transform-origin:200px 200px;border-radius:50%;left:179px;top:179px;transition:all 0.5s cubic-bezier(1,.15,.23,.98);}
+			.cell1{background:url('clos.png') center center no-repeat;}
+			.cell2{background:url('full.png') center center no-repeat;}
+			.cell3{background:url('open.png') center center no-repeat;}
+			.cell4{background:url('prev.png') center center no-repeat;}
+			.cell5{background:url('refresh.png') center center no-repeat;}
+			.center{width:49px;height:49px;background:url('home.png') center center no-repeat;border-radius:50%;left:200px;top:200px;position:absolute;margin-left:-25px;margin-top:-25px;transition:all 0.5s cubic-bezier(1,.15,.23,.98);}
+			.center:hover{transform:rotate(360deg);}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="cell-wrapper">
+				<div class="cell cell1"></div>
+				<div class="cell cell2"></div>
+				<div class="cell cell3"></div>
+				<div class="cell cell4"></div>
+				<div class="cell cell5"></div>
+		    </div>
+		    <div class="center"></div>
+		</div>
+		
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			var home=document.getElementsByClassName('center')[0];
+			home.onmouseenter=function(){
+				$('.cell').css({left:"0",top:"0"});
+				$('.cell1').css({transform:"rotate(-45deg)"});
+				$('.cell2').css({transform:"rotate(-22deg)"});
+				$('.cell3').css({transform:"rotate(1deg)"});
+				$('.cell4').css({transform:"rotate(24deg)"});
+				$('.cell5').css({transform:"rotate(45deg)"});
+			};
+			home.onmouseleave=function(){
+				$('.cell').css({left:"179px",top:"179px"});
+				$('.cell1').css({transform:"rotate(0deg)"});
+				$('.cell2').css({transform:"rotate(0deg)"});
+				$('.cell3').css({transform:"rotate(0deg)"});
+				$('.cell4').css({transform:"rotate(0deg)"});
+				$('.cell5').css({transform:"rotate(0deg)"});
+			};
+		</script>
+	</body>
+</html>

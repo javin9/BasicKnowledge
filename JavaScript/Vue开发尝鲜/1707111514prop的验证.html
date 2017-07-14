@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="">
+				<h3>父亲中的数量{{count}}</h3>
+			</div>
+			<custom-select v-bind:datacount="count"  v-on:recive="getchildCount"></custom-select>
+		</div>
+		<script type="text/javascript">
+			Vue.component("custom-select", {
+				//props:["datacount"],
+				props:{
+					datacount:{
+						//type:String 
+						//type:[Number,String],
+						//default:10,
+						//default:function(){
+						//	return 10;
+						//},
+						validator:function(value){
+							console.log(value);
+							return value>10;
+						}
+					}
+				},
+				data:function(){
+					return{
+						increasecount:this.datacount//如果修改的时候 不能直接操作根数据
+					}
+				},
+				methods:{
+					changecount:function(){
+						this.increasecount++;
+						this.$emit("recive",this.increasecount);
+					}
+				},
+				template: `<div class="">
+							<h2>我是自定义标签</h2>
+							<h3>总共多少件{{datacount}}</h3>
+							<h3>{{increasecount}}</h3>
+							<div><input type="button" value="修改值" @click="changecount" /></div>
+						</div>`
+			});
+			new Vue({
+				el: ".app",
+				data:{
+					count:19
+				},
+				methods:{
+					getchildCount:function(childcount){
+						this.count=childcount;
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

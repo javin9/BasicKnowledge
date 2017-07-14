@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			ul,li{list-style:none;}
+			.box{width:200px;height: 200px;border:1px solid #000;position:relative;margin:50px auto;border-radius:50%;}
+			.box ul{width:200px;height:200px;position:relative;}
+			.box li{width:1px;height:10px;background:#000;position:absolute;left:50%;transform-origin:0px 100px;}
+			.hour{position:absolute;width:80px;height:5px;background:#000000;top:100px;left:90px;transform:rotate(270deg);transform-origin:10px 2px;}
+			.miniute{position:absolute;width:120px;height:3px;background:#000099;top:100px;left:80px;transform:rotate(30deg);transform-origin:20px 1px;}
+			.second{position:absolute;height:120px;width:1px;background:#009999;left:100px;top:0px;transform-origin:0px 100px;}
+			.center{position:absolute;width:8px;height:8px;left:50%;top:50%;margin-left:-4px;margin-top:-4px;z-index:4;background:red;border-radius: 50%;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul id="ul"></ul>
+			<div class="hour"></div>
+			<div class="miniute"></div>
+			<div class="second"></div>
+		    <div class="center"></div>	
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+			var ul=document.getElementById('ul');
+			var frag = document.createDocumentFragment(); 
+			for (var i = 1; i <= 60; i++) {
+				var li=document.createElement('li'),
+				   rotate=i*6+"deg";
+				 li.style.transform="rotate("+rotate+")";
+				 console.log(i%5);
+				if(i%5==0){
+					 li.style.height="20px";
+					 li.style.width="2px";
+				}
+				 frag.appendChild(li);
+			}
+			console.log(frag);
+			ul.appendChild(frag);
+			}
+			
+			var second=document.getElementsByClassName('second')[0],
+			     index=0;
+			setInterval(function(){
+				if(index===60){
+					index=0;
+				}
+				var rotate=index*6+"deg";
+				second.style.transform="rotate("+rotate+")";
+				index++;
+			},1000);
+		</script>
+	</body>
+</html>

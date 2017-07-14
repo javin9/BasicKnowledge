@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div id="app">
+			<my-app></my-app>
+			<br  />
+			<my-app>
+				<li slot="s1">我是自顶1</li>
+				<li slot="s2">我是自顶2</li>
+				<li slot="s5">我是自顶5</li>
+				<li slot="s4">我是自顶4</li>
+				<li slot="s3">我是自顶3</li>
+				<template slot="ss">
+					<li>template</li>
+					<li>template</li>
+					<li>template</li>
+					<li>template</li>
+					<li>template</li>
+				</template>
+			</my-app>
+		</div>
+		<script type="text/javascript">
+			Vue.component("my-app",{
+				template:`<ul>
+				        <slot>
+                        <slot name="s1">我是自顶1111</slot>
+						<slot name="s2">我是自顶2222</slot>
+						<slot name="s3">我是自顶3333</slot>
+						<slot name="s4">我是自顶4444</slot>
+						<slot name="s5">我是自顶5555</slot>
+						<slot name="ss">我是自顶5555</slot>
+					</ul>`
+			});
+			new Vue({
+				el:"#app"
+			});
+		</script>
+	</body>
+</html>

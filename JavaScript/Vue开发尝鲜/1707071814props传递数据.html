@@ -14,16 +14,16 @@
 	<body>
 		<div class="app">
 			<h3 class="drop-title">自定义下拉框</h3>
-			<custom-select></custom-select>
-			
+			<custom-select  data-btn="GO"></custom-select>
 		</div>
 		<script type="text/javascript">
 			Vue.component("custom-select",{
+				props:["dataBtn"],
 				template:`
 				         <div class="wrapper">
 	     	                      <div class="input-wrapper">
 						     	  	<input type="text" name=""  class="search-value" value="" />
-						     	  	<input type="button" name="" class="search-btn" value="搜索" />
+						     	  	<input type="button" name="" class="search-btn" :value="dataBtn" />
 						     	  </div>
 						     	  <ul class="search-result">
 						     	  	<li><a href="">AAAAAAAA</a></li>

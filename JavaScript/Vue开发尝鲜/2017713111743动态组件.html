@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="input-wrapper">
+				<button @click="clickbutn(1)" style="[changecolor]">第一个按钮</button>
+				<button @click="clickbutn(2)">第2个按钮</button>
+				<button @click="clickbutn(3)">第3个按钮</button>
+			</div>
+			<keep-alive>
+			<component :is="component"></component>
+			</keep-alive>
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var custom1 = Vue.component("custom1", {
+				data:function(){
+					return {
+						styleColor:{"background-color":"fff"}
+						}
+				},
+				methods:{
+					changecolor:function(ev){
+						 this.styleColor={
+						 	"background-color":"#0A76E3"
+						 };
+					}
+				},
+				template:`
+				     <h1  @click="changecolor" :style="[styleColor]">我是第一个h1</h1>
+				   `
+			});
+			var custom2 = Vue.component("custom1", {
+				template: `
+				  <h1>我是第2个h</h1>
+				`
+			});
+			var custom3 = Vue.component("custom1", {
+				template: `
+				  <h1>我是第3个h1</h1>
+				`
+			});
+
+			new Vue({
+				el: "#app",
+				data: {
+					component: custom1
+				},
+				methods: {
+					clickbutn: function(value) {
+						switch(value) {
+							case 1:
+								this.component = custom1;
+								break;
+							case 2:
+								this.component = custom2;
+								break;
+							case 3:
+								this.component = custom3;
+								break;
+							default:
+								break;
+						}
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>
