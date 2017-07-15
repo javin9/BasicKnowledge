@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			ul,li{list-style:none;}
+			.ruler{width:10rem;height:4rem;margin:2rem auto;padding-top:0.4rem;position:relative;}
+			.progress{position:relative;height:0.6rem;width:10rem;}
+			.progress-bar{height:0.2rem;border-radius: 0.01rem;position:absolute;top:50%;margin-top:-0.01rem;left:0;width:100%;}
+			.progress-bar-bc{background:#c7c7d8;}
+			.progress-bar-active{width:0;background-color:#0094FF;}
+			.progress-btn{width:0.6rem;height:0.6rem;border-radius:50%;background-color:#23272F;position:absolute;left:0;top:50%;margin-top:-0.3rem;cursor:pointer;}
+			.ratio{position:absolute;width:10rem;}
+			.ratio li{position:absolute;font-size:0.28rem;}
+		</style>
+		<script>
+			var scale=0;
+			(function(){
+				var html=document.documentElement;
+				var hW=html.getBoundingClientRect().width;
+				html.style.fontSize=hW/15+"px";
+				scale=hW/15;
+			})();
+			
+		</script>
+	</head>
+	<body>
+		<div class="ruler">
+			<div class="progress">
+				<div class="progress-bar progress-bar-bc"></div>
+				<div class="progress-bar progress-bar-active"></div>
+			    <div class="progress-btn"></div>
+			</div>
+			<ul class="ratio"></ul>
+		</div>
+		<script type="text/javascript">
+			
+			var progressBtn=document.getElementsByClassName('progress-btn')[0];
+			var progressBar=document.getElementsByClassName('progress-bar-bc')[0];
+			var progressBarActive=document.getElementsByClassName('progress-bar-active')[0];
+			var progress=document.getElementsByClassName('progress')[0];//scale
+			var ratio=document.getElementsByClassName('ratio')[0];
+			
+			var frag=document.createDocumentFragment();
+			var len=2;
+			for (var i = 0; i <=len; i++) {
+				var li=document.createElement('li');
+				if (i===0) {
+					li.style.left="0";
+					li.innerText="0";
+				}else if(i===len){
+					li.style.left="95%";
+					li.innerText="100%";
+				}else{
+					li.style.left=1/len*100+"%";
+					li.innerText=1/len*100+"%";
+				}
+				
+				frag.appendChild(li);
+			}
+			ratio.appendChild(frag);
+			var xStart=0,
+			    xDistance=0,
+			    xEnd=0;
+			var progressBarOffet=offset(progressBar);
+			progressBtn.addEventListener("touchstart",function(ev){
+				ev.preventDefault();
+				xStart=this.offsetLeft;
+			});
+			progressBtn.addEventListener("touchmove",function(ev){
+				ev.preventDefault();
+				xDistance= ev.targetTouches[0].pageX - progressBarOffet.left;
+				if(xDistance<0){
+					xDistance=0;
+				}
+				
+				if(xDistance>progress.getBoundingClientRect().width){
+					xDistance=progress.getBoundingClientRect().width;
+				}
+				var ratio=(xDistance/progress.getBoundingClientRect().width)*100+"%";
+				console.log(ratio);
+				this.style.left=ratio;
+				progressBarActive.style.width=ratio;
+			});
+			progressBtn.addEventListener("touchend",function(ev){
+				
+			});
+			
+			function offset(ele) {
+					var t = ele.offsetTop;
+					var l = ele.offsetLeft;
+					var p = ele.offsetParent;
+					while(p&&p.id!=="wrapper") {
+						if(window.navigator.userAgent.indexOf('MSIE 8') > -1) {
+							l += p.offsetLeft;
+							t += p.offsetTop;
+						} else {
+							l += p.offsetLeft + p.clientLeft;
+							t += p.offsetTop + p.clientTop;;
+						}
+						p = p.offsetParent;
+					}
+					return { left: l, top: t };
+				}
+		</script>
+	</body>
+</html>
