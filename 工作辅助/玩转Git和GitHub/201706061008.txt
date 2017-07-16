@@ -51,6 +51,9 @@ Git命令  在.git目录下面
    
   // add 命令
 	   
+//撤销操作 
+git reset HEAD .	   
+git reset HEAD  文件名
 	   
 //提交到版本库	   
 git commit	   
@@ -93,15 +96,16 @@ git log
  ------------------------------
  --5
    撤销 
-  git  reset HEAD  <file.name> 从暂存区撤销到工作区
+  git checkout --<file.name> 修改---》 工作区- 撤销挂起更改（ 工作区撤销 从暂存区取，没有从版本区取）
   
-  git checkout --<file.name> 工作区撤销 从暂存区取，没有从版本区取
+  git  reset HEAD  <file.name> 修改---》  暂存区-撤销挂起更改 （ 从暂存区撤销到工作区）   
   
-  git commit  -m 'text' --amend  //撤销同一个文件的上一次提交
+  git commit  -m 'text' --amend 修改---》  //撤销同一个文件的上一次提交  然后重新提交
   
   -------------------
   6 删除操作
-     git rm <file.name> 工作区没有  删除暂存区文件
+     git rm <file.name> 工作区删除了一个文件  把暂存区对应的文件也删除掉
+     //工作区和暂存区都有文件
      git rm -f <file.name>  直接删除暂存区文件  两个区都删掉 
      git rm -cached <file.name> 只删除暂存区文件 工作区保留
      
@@ -109,12 +113,13 @@ git log
      
 -----------------------------
    7-----------     
-   
+   git log //查看日志
+   找到id
 	   恢复
-     git checkout <commit_id> <file.name>  指定文件
-     git reset --hard <commit_id> 整个版本的恢复 
+     git checkout <commit_id> <file.name>  删除了---》 工作区 撤销挂起更改  具体到哪条记录
+     git reset --hard <commit_id>   删除了---》 整个版本的恢复  工作区 撤销挂起更改  具体到哪条记录
     git reset --hard HEAD^
-    
+    git reflog //回到未来
 ---------------------
 8 同步到远程仓库
 
@@ -124,17 +129,17 @@ git log
    
 git push origin[名字] master[分支]
 ---------------------------------------
-···········
-更新本地
+
+9  同步到远程仓库   更新本地
 git fetch  拉取过来不合并 需要手动合并
-     git diff master origin/master
-     git merge origin/master
+     git diff master origin/master  //查看冲突
+     git merge origin/master  //合并
 git pull  拉取过来合并
 
 
 
 -----------------------------------
-开源项目写作
+10  开源项目写作
  通过网站合并分支
 fork
 pull request
@@ -142,6 +147,8 @@ pull request
 
 dos方式的分支处理
 
+-------------------------------------------
+11  创建一个分支
 查看分支
 git branch
 创建一个分支
@@ -152,12 +159,17 @@ git checkout <branchname>
 
 创建并切换分支
 git  checkout -b <branchname> 
-
 合并分支
-git branch --merged;
-git branch --no-merged;
-删除已经合并后的分支
-git branch -d <branchname> 
+切换到主分支下
+ git  merged <branchname> 
+------------------------------------
+12 分支 在暂存区
+git branch --merged;//查看同master合并过的分支
+git branch --no-merged;//查看同master未合并过的分支
+
+git branch -d <branchname> //删除已经合并后的分支
+git branch -D <branchname> //强制删除未合并的分支
+
 查看冲突
 git status 
 手动修改冲突

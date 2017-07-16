@@ -203,35 +203,61 @@
 				var frag = document.createDocumentFragment();
 				var ratioWrapper = this.settings.ratioWrapper,
 					ratioText = this.settings.ratioText,
-					ratioPercent=[];
-				for(var i = 0, len = ratioText.length - 1; i <= len; i++) {
+					ratioPercent = [],
+					len = ratioText.length - 1;
+				var base = 1 / len,
+					subbase = base / 2,
+					percent = 0;
+				for(var i = 0; i <= len; i++) {
 					var li = document.createElement('li');
 					if(i === 0) {
 						li.style.left = "0";
 						li.innerText = ratioText[0];
-						ratioPercent.push(0);
+						ratioPercent.push({
+							position: 0,
+							mark: true,
+							index: 0
+						});
+						ratioPercent.push({
+							position: subbase,
+							mark: false,
+							index: -1
+						});
 					} else if(i === len) {
 						li.style.left = "100%";
 						li.innerText = ratioText[len];
-						ratioPercent.push(1);
+						ratioPercent.push({
+							position: 1,
+							mark: true,
+							index: len
+						});
 					} else {
-						var percent=i/len*i;
-						li.style.left = percent*100 + "%";
+						percent = i * base;
+						li.style.left = percent * 100 + "%";
 						li.innerText = ratioText[i];
-						ratioPercent.push(percent/2)
-						ratioPercent.push(percent);
+						ratioPercent.push({
+							position: percent,
+							mark: true,
+							index: i
+						});
+						ratioPercent.push({
+							position: percent + subbase,
+							mark: false,
+							index: -1
+						})
+
 					}
 					frag.appendChild(li);
 				}
 				console.log(ratioPercent);
-				this.settings["ratioPercent"]=ratioPercent;
+				this.settings["ratioPercent"] = ratioPercent;
 				ratioWrapper.appendChild(frag);
 			};
 			Ruler.prototype.bindEvent = function() {
 				var xDistance = 0,
 					that = this,
 					settings = that.settings,
-					ratioFlat=0,
+					ratioFlat = 0,
 					progressBtn = settings.progressBtn || null,
 					ratioLen = settings.ratioText.length;
 
@@ -253,16 +279,34 @@
 					if(xDistance > progressBarBcW) {
 						xDistance = progressBarBcW;
 					}
-					ratioFlat=(xDistance / progressBarBcW).toFixed(2);
-					var ratioPosition =ratioFlat* 100 + "%";
+					ratioFlat = xDistance / progressBarBcW;
+					var ratioPosition = ratioFlat.toFixed(2) * 100 + "%";
 					this.style.left = ratioPosition;
 					progressBar.style.width = ratioPosition;
 					settings.onmove && settings.onmove.call(this, settings);
 				});
 				progressBtn.addEventListener("touchend", function() {
 					console.log(ratioFlat);
-					var minUnitLenth=1/ratioLen;
-				    settings.onend && settings.onend.call(this, settings);
+					console.log(settings.ratioPercent);
+					var ratioPercent = settings.ratioPercent;
+					for(var i = ratioPercent.length - 1; i >= 0; i--) {
+						if(ratioFlat > ratioPercent[i].position) {
+							break;
+						}
+					}
+					console.log(ratioPercent[i]);
+					var thisPercent = ratioPercent[i],
+						position = 0;
+
+					if(!thisPercent.mark) {
+						thisPercent = ratioPercent[i + 1];
+					}
+
+					position=thisPercent.position*100+"%";
+					this.style.left = position;
+					settings.ratioindex=thisPercent.index;
+					settings.progressBar.style.width = position;
+					settings.onend && settings.onend.call(this, settings);
 				});
 			};
 
@@ -299,7 +343,9 @@
 				ratioindex: 2,
 				onstart: null,
 				onmove: null,
-				onend: null
+				onend: function(options){
+					console.log(options);
+				}
 			});
 		</script>
 	</body>
