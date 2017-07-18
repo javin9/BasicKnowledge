@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				margin: 50px;
+				height: 50px;
+				position: relative;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<canvas id="myChart" style="width:50px;height:50px;"></canvas>
+		</div>
+		<script src="js/Chart.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var ctx = document.getElementById('myChart').getContext('2d');
+			var chart = new Chart(ctx, {
+				type: 'line',
+				data: {
+					labels: ["January", "February", "March", "April", "May", "June", "July"],
+					datasets: [{
+						label: "My First dataset",
+						backgroundColor: 'rgb(255, 99, 132)',
+						borderColor: 'rgb(255, 99, 132)',
+						data: [0, 10, 5, 2, 20, 30, 45],
+					}]
+				},
+				options: {
+					
+				}
+			});
+		</script>
+	</body>
+
+</html>

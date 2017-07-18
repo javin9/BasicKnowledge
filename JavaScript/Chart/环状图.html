@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>环状图</title>
+	</head>
+	<style type="text/css">
+		.container {
+			width: 300px;
+			margin: 15px auto;
+		}
+	</style>
+
+	<body>
+		<div class="container">
+			<canvas id="myChart"></canvas>
+		</div>
+		<script src="js/Chart.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var ctx = document.getElementById("myChart").getContext('2d');
+			var options = {
+				cutoutPercentage: 50,
+				onAnimationComplete: function() {
+					console.log('onAnimationComplete');
+				},
+				animation: {
+					animateScale: !1,
+					animateRotate: !0
+				},
+				elements: {
+					arc: {
+						backgroundColor: "rgb(255, 0, 0)",
+						borderColor: "rgb(0, 0, 255)",
+						borderWidth: 0,
+						hoverBackgroundColor: "rgb(255, 255, 255)"
+					}
+				},
+				tooltips: {
+					enabled: !1
+				}
+			};
+			var myChart = new Chart(ctx, {
+				type: 'doughnut',
+				data: {
+					labels: ["M", "T", "W", "T", "F", "S", "S"],
+					datasets: [{
+						backgroundColor: [
+							"#2ecc71",
+							"#3498db",
+							"#95a5a6",
+							"#9b59b6",
+							"#f1c40f",
+							"#e74c3c",
+							"#34495e"
+						],
+						data: [12, 19, 3, 17, 28, 24, 7]
+					}]
+				},
+				options: {
+					tooltips: {
+						mode: "dataset"//dataset,point
+					},
+					legend: {
+						labels: {
+							fontColor: 'black',
+							defaultFontSize: 30
+						}
+					}
+
+				}
+			});
+		</script>
+	</body>
+
+</html>

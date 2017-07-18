@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/**
+			 * css像素
+			 * 设备像素
+			 *设备像素比 DPR
+			 * 
+			 * 
+			 * 1、在PC端，布局视口就是浏览器窗口
+			 *2、在移动端，视口被分为两个：布局视口、视觉视口。
+			 *3、移动端还有一个理想视口，它是布局视口的理想尺寸，即理想的布局视口。（注：理想视口的尺寸因设备和浏览器的不同而不同，但这对于我们来说无所谓）
+			 *4、可以将布局视口的宽度设为理想视口
+			 * 
+			 * 
+			 * <meta name="viewport" content="width=device-width"/> 含义 :将布局视口的宽度设为理想视口
+			 * width:布局视口
+			 * device-width:理想视口
+			 *
+			 *
+			 *缩放：缩小放大的是 CSS像素。
+			 * 
+			 * 
+			 * 1、width：设置布局视口的宽
+			 * 2、init-scale：设置页面的初始缩放程度
+			 * 3、minimum-scale：设置了页面最小缩放程度
+			 * 4、maximum-scale：设置了页面最大缩放程度
+			 * 5、user-scalable：是否允许用户对页面进行缩放操作
+			 *
+			 * 
+			 * <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+			 * 
+			 * 设备像素比（DPR） = 设备像素个数 / 理想视口像素个数（device-width）
+			 * 以iphone6为例：
+			 *设备像素比（DPR）：2
+			 *设备像素个数：750
+			 *所以在缩放比例为1的情况下，iphone6理想视口的像素个数为 750 / 2 = 375，也就是说，对于iphone6来讲 device-width的值为375
+			 */
+		</script>
+	</body>
+
+</html>

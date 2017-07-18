@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>环状图</title>
+	</head>
+	<style type="text/css">
+		.container {
+			width: 300px;
+			margin: 15px auto;
+		}
+	</style>
+
+	<body>
+		<div class="container">
+			<canvas id="myChart"></canvas>
+		</div>
+		<script src="js/Chart.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var ctx = document.getElementById("myChart").getContext('2d');
+			var options = {
+				cutoutPercentage: 50,
+				onAnimationComplete: function() {
+					console.log('onAnimationComplete');
+				},
+				animation: {
+					animateScale: !1,
+					animateRotate: !0
+				},
+				elements: {
+					arc: {
+						backgroundColor: "rgb(255, 0, 0)",
+						borderColor: "rgb(0, 0, 255)",
+						borderWidth: 0,
+						hoverBackgroundColor: "rgb(255, 255, 255)"
+					}
+				},
+				tooltips: {
+					enabled: !1
+				}
+			};
+			var myChart = new Chart(ctx, {
+				type: 'doughnut',
+				data: {
+					//labels: ["M", "T", "W"],
+					datasets: [{
+						backgroundColor: [
+							"#2ecc71",
+							"#3498db",
+							"#95a5a6"
+						],
+						data: [12,24, 7]
+					}]
+				},
+				options:{
+					tooltips:{
+						enabled: false//去掉tooltips
+					},
+					//cutoutPercentage:80,//环形的宽度
+					//rotation:-0.6 * Math.PI,//旋转  
+					//circumference:0.5*Math.PI,  //圆周的
+					//animation:{
+						//animateRotate:false,
+						//animateScale:true
+					//},
+				}
+			});
+		</script>
+	</body>
+
+</html>

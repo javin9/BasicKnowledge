@@ -1,0 +1,36 @@
+#content {
+  article {
+    h1 { color: #333 }
+    p { margin-bottom: 1.4em }
+    &:hover{ background-color:green;}
+  }
+  #content aside { background-color: #EEE }
+}
+.button, button {
+  margin: 0;
+}
+nav {
+  border: {
+  style: solid;
+  width: 1px;
+  color: #ccc;
+  }
+}
+
+$link-color: red;
+$link-color: blue !important;
+a {
+color: $link-color;//
+}
+
+.blue-them { @import "blue-theme"}
+
+@mixin kk{
+	-moz-border:#fff solid 1px;
+	-webkit-border:#fff solid 1px;
+	border:#fff solid 1px;
+}
+
+.luo{
+	@include kk;
+} 
