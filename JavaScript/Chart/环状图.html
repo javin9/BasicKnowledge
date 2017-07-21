@@ -19,6 +19,7 @@
 		<script src="js/Chart.bundle.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			var ctx = document.getElementById("myChart").getContext('2d');
+
 			var options = {
 				cutoutPercentage: 50,
 				onAnimationComplete: function() {
@@ -59,7 +60,7 @@
 				},
 				options: {
 					tooltips: {
-						mode: "dataset"//dataset,point
+						mode: "dataset" //dataset,point
 					},
 					legend: {
 						labels: {
@@ -70,6 +71,36 @@
 
 				}
 			});
+
+			setTimeout(function() {
+				console.log('dfs');
+				new Chart(ctx, {
+					type: 'doughnut',
+					data: {
+						labels: ["M", "T", "W"],
+						datasets: [{
+							backgroundColor: [
+								"#2ecc71",
+								"#3498db",
+								"#95a5a6"
+							],
+							data: [12, 19, 3]
+						}]
+					},
+					options: {
+						tooltips: {
+							mode: "dataset" //dataset,point
+						},
+						legend: {
+							labels: {
+								fontColor: 'black',
+								defaultFontSize: 30
+							}
+						}
+
+					}
+				});
+			}, 3000);
 		</script>
 	</body>
 

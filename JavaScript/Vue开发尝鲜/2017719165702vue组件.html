@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+	</head>
+
+	<body>
+		<div id="app">
+			<h2>{{name}}</h2>
+			<my-child></my-child>
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var mchild={
+				template:'<span>{{child}}</span>',
+				data:function(){
+					return{
+						child:"我的mchild"	
+					}
+				}
+			}
+			new Vue({
+				el:"#app",
+				data:{
+					name:"Cupid"
+				},
+				components:{
+					'my-child':mchild
+				}
+			});
+		</script>
+	</body>
+
+</html>
