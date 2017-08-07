@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>事件的绑定和移除</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .box div {
+        width: 200px;
+        height: 200px;
+        background-color:#222;
+        margin: 0 auto;
+    }
+    .box button {
+        display: inline-block;
+        width: 50px;
+        height: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="box"></div>
+    </div>
+    <div class="box">
+        <button type="button" id="add">添加事件</button>
+        <button type="button" id="remove">移除事件</button>
+    </div>
+    <script type="text/javascript" src="../../js/lib/jquery-2.1.1.js"></script>
+    <script type="text/javascript">
+    	$(function () {
+    		/* body... */
+             $("#add").click(function (ev) {
+             	/* body... */
+             	 $("#box").click(function () {
+             	 	alert('我是box1');
+             	 	/* body... */
+             	 });
+             });
+
+             $("#remove").on("click",function () {
+             	$("#box").off("click");
+             	/* body... */
+             });
+    	});
+    </script>
+</body>
+
+</html>

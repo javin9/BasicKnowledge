@@ -10,4 +10,24 @@ cd Taoche
 npm install 
 npm run dev
 
+开始使用vue-router
+使用步骤
+   安装模块(脚手架都安装好了，可以忽略)
+      npm install vue-router --save  
+   引入模块
+      import VueRouter from 'vue-router'  
+   作为Vue的插件
+      Vue.use(VueRouter)
 
+   创建固有实例对象
+      new VueRouter({
+         ...//配置参数
+      });      
+
+   注入Vue选项参数
+   
+      new 	Vue({
+
+      })
+
+   告诉我路由渲染的位置    

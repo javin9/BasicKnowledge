@@ -1,5 +1,5 @@
 ﻿/*新头部*/
-.header-mask{background:#000;opacity:0.4;position:fixed;left:0;top:0;width:100%;height:100%;z-index:97;}
+.header-mask{background:#000;opacity:0.4;position:fixed;left:0;top:0;width:100%;height:100%;z-index:110;}
 .new-header{width:100%; height:45px; color:#FFF; background:#fe9900;  z-index:1010; text-align:center;position:relative;}
 .new-header *{box-sizing:border-box;}
 .new-header .new-btn-return{width:40px; height:45px; background:url(//image.bitautoimg.com/uimg/mbt2014/images/m_header_nav_search.png) no-repeat -75px -74px; background-size:100px auto; float:left;text-indent:-999em;}
@@ -112,11 +112,13 @@
 
 /*20170607*/
 .new3_heard_logo{ width: 59px; height: 19px;  position: absolute;  left: 53px;  top: 13px;}
-.new-header h2.pal60{ padding-left: 76px; background: url("../images/new3_heard_logo.png") 12px 12px no-repeat; background-size: 54px 19px;}
-.index-head .logo{     position: relative;  top: 2px;  margin-right: 13px;  display: block;  background: url(../images/logo_11.png) no-repeat left center;  background-size: auto 29px;  width: 60px;  height: 26px;  display: table-cell;  vertical-align: middle;}
+.new-header h2.pal60{ padding-left: 76px; background: url("//image.bitautoimg.com/taoche/2016taoche_m/new3_heard_logo.png") 12px 12px no-repeat; background-size: 54px 19px;}
+
+.index-head .logo{    margin-right: 13px;  display: block;  background: url(//image.bitautoimg.com/taoche/2016taoche_m/logo_11.png) no-repeat left 0px;  background-size: auto 26px;  width: 60px;  height: 26px;  display: table-cell; }
+
 .xb-head{ padding: 7px 10px;}
 .dq-city{  height: 29px; line-height: 29px;display: table-cell;}
-.dq-city span{ padding-right: 5px; height: 29px; display: block; float: left; text-align: center; font-size: 1.4rem;}
+.dq-city span{ padding-right: 5px;line-height: 33px; height: 29px; display: block; float: left; text-align: center; font-size: 1.4rem;}
 .xl-ico{width: 0;  height: 0;  font-size: 0;  overflow: hidden;  border-width:5px;  border-style: solid dashed dashed dashed;  border-color: #333 transparent transparent transparent;  display: block; float: left; margin-top: 13px;}
 .pa5{ padding: 7px 5px !important; }
 .windt{    background: url(../images/new-foot4.png) no-repeat left center;  background-size: 17px 16px;  padding-left:21px;}
@@ -134,9 +136,39 @@
 .new-menu-ico em{ font-size: 1.2rem;top: 4px; right: 50px;}
 .new-menu-ico em a{ color: #333333; line-height: 18px;}
 /*浮层*/
-.new-index-fix{ position: fixed; height: 50px; background: #ffffff; border-top:#ececec solid 1px; bottom: 0px; left: 0px; width: 100%;-moz-box-shadow:0px -3px 6px rgba(0, 0, 0, .1); -webkit-box-shadow:0px -3px 6px rgba(0, 0, 0, .1); box-shadow:0px -3px 6px rgba(0, 0, 0, .1);z-index: 100;}
+.new-index-fix{ position: fixed; height: 50px; background: #ffffff; border-top:#ececec solid 1px; bottom: 0px; left: 0px; width: 100%;-moz-box-shadow:0px -3px 6px rgba(0, 0, 0, .1); -webkit-box-shadow:0px -3px 6px rgba(0, 0, 0, .1); box-shadow:0px -3px 6px rgba(0, 0, 0, .1);z-index: 101;}
 .new-index-fix ul{ overflow: hidden; display: table; width: 100%;}
 .new-index-fix ul li{ display: table-cell; height: 50px; width: 20%; text-align: center; }
-.new-index-fix ul li a{ display: block; color: #999999; line-height: 20px;}
-.new-index-fix ul li em{ display:block; font-size: 18px;padding-top: 8px;}
+.new-index-fix ul li a{ display: block; color: #666; line-height:20px;}
+.new-index-fix ul li em{ display:block; font-size: 1.8rem;padding-top:9px; line-height: 16px;}
 .new-index-fix ul li a.corl-sel{  color:#ff6d02  ;}
+
+.new-menu-ico img{ width: 40px; height: 40px; border-radius: 40px;}
+.new-return-rit{ height: 45px; margin-right: 0px;}
+.new-return-rit a{ height: 30px !important;}
+.new-return-rit a.new-return-city{background: url(//image.bitautoimg.com/taoche/2016taoche_m/arrow-down.png) no-repeat right 7px;    background-size: 11px 6px;}
+
+.m-s-box input[type="text"], .m-s-box input[type="search"]{ width: 100%; box-sizing: border-box;}
+.header-mask{z-index:210;}
+
+.new-return-rit a.new-menu {  width: 45px;  height: 45px !important;  padding-left: 18px;  font-size: 0;  background: url(//image.bitautoimg.com/taoche/2016taoche_m/new-mune.png) no-repeat;  background-size: 19px 14px;  background-position: 11px 15px;  margin-left: 4px;  margin-top: 0px; padding-right: 15px; }
+
+
+
+
+@media screen and (device-width: 320px) {
+	.new-return-rit a.new-return-city { max-width: 60px; overflow: hidden;white-space: nowrap; text-overflow: ellipsis; display: inline-block;}
+	.new-return-rit a.icon-sousuo{margin-right: 5px;}
+}
+
+/*20170718*/
+.new-navlist{ height: 40px; background: #ffffff; padding-left: 15px; line-height: 40px;color: #999999;}
+.new-navlist a{font-size: 1.2rem;  color: #999999;  letter-spacing: -0.29px;}
+
+
+
+
+
+
+
+

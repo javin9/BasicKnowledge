@@ -12,12 +12,14 @@
             var item = type[i];
             (function (item) {
                 Type["is" + item] = function (obj) {
-                    return Object.prototype.toString.call(obj) === "[object "+item+"]          ";
+                    return Object.prototype.toString.call(obj) === "[object "+item+"]";
                 }
             })(item);
         }
         Type.isArray([]);//true
         Type.isString("str");//true
+        console.log(Type.isNumber(1.23));
+        
         //getSingle 略 15章讲解
         //uncurrying
         //让数组对象去借用Array.prototype  call和apply
