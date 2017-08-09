@@ -1,10 +1,12 @@
 <template>
- <div>我是Home</div>
+  <div>
+  	<h2>关于页面</h2>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'home',
+  name: 'about',
   data:function() {
     return {
       msg: 'Welcome to Your Vue.js App'

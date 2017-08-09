@@ -6,7 +6,6 @@ Vue.use(VueRouter)
 import home from '@/components/home';
 import about from '@/components/about';
 import doc from '@/components/doc';
-import plan from '@/components/plan';
 
 
 export default new VueRouter({
@@ -22,10 +21,6 @@ export default new VueRouter({
     {
       path: '/doc',
       component: doc
-    },
-      {
-      path: '/plan/:title',
-      component: plan
     }
   ]
 })

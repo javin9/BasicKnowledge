@@ -31,3 +31,25 @@ npm run dev
       })
 
    告诉我路由渲染的位置    
+
+--------------
+  1路由的使用步骤
+  main.js
+    import Vue from './vue';
+    import VueRouter from './vue-router'
+
+//作为Vue的插件
+Vue.use(VueRouter);//3
+
+//引入模板组件
+import App from 'App';//4
+
+//启动应用
+new Vue({
+   el:"#app",//挂载点 在index.html页面里面
+   template:'<App></App>',
+    components:{
+      App:App
+}
+
+创建vue模板快捷键 ctrl+Alt
