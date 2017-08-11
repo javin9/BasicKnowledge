@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Box Shadow</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		/*body{background:#ccc;}*/
+		.box{width:70%;height:100px;line-height:100px;text-align:center;margin:50px auto;background-color:#fff;border:1px solid #000;border-bottom:none;}
+		.effect1{box-shadow: 0 10px 6px -6px #777;}
+        
+        .effect2{position:relative;}
+		/*.effect2 h2{position:relative;}*/
+		.effect2:before{content:'';box-shadow: 0 15px 10px #777;width:40%;height:50%;position:absolute;left:3px;bottom:9px;transform: rotate(-3deg);z-index:-1;}
+	</style>
+</head>
+<body>
+<div class="box effect1">
+	<h2>Effect 1</h2>
+</div>
+
+<div class="box effect2">
+	<h2>Effect 1</h2>
+</div>
+<!-- 基本语法为box-shadow:[inset] x-offset y-offset blur-radius spread-radius color}
+其中第一个参数表示阴影的投放方式，inset表示内阴影，默认为外阴影；
+第二个参数4px表示阴影水平偏移量其值可以是正负值，如果值为正值，则阴影在对象的右边，反之其值为负值时，阴影在对象的左边；
+第三个参数表示阴影的垂直偏移量，其值也可以是正负值，如果为正值，阴影在对象的底部，反之其值为负值时，阴影在对象的顶部；
+第四个参数表示阴影模糊的半径，其值只能是为正值，如果其值为0时，表示阴影不具有模糊效果，其值越大阴影的边缘就越模糊；
+第五个参数表示阴影的颜色；
+其中第二和第三位必要参数，
+如果只想设置元素一个边框有效果，可以再加一个属性，box-shadow:inset 4px 4px 10px  -10px  #d9d9d9;，红色代表阴影扩展的长度值，具体效果大家可以在浏览器中调试一下。 -->
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .box {
+        height: 100px;
+        background-color: #232323;
+    }
+    .btn {
+        heigth: 50px;
+        background-color: #AAA;
+    }
+    .content{background-color:#888;height:1900px;}
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box"></div>
+    <div class="btn">注册事件</div>
+    <div class="content"></div>
+    <script type="text/javascript" src="../../js/lib/jquery-2.1.1.js"></script>
+    <script type="text/javascript">
+    var Box = function(opts) {
+        this.opts = {
+            id: ""
+        };
+        this.opts = $.extend({}, this.opts, opts);
+    }
+    Box.prototype = {
+        init: function() {
+            this.bindEvent()
+        },
+        bindEvent: function() {
+            /* body... */
+            var that = this;
+            /*JQuery注册事件的方式  会重复注册事件*/
+            /*
+           $(this.opts.id).off("click").click(function(){
+           	 console.log(+new Date());
+           });
+           $(document).on("click",that.opts.id,function () {
+           
+                 console.log(+new Date());
+           });
+           */
+
+            /*只是注册一次事件*/
+            document.querySelector(that.opts.id).onclick = function(ev) {
+                ev.preventDefault();
+                console.log(event.currentTarget === this); 
+                console.log(event.target === this);
+                console.log(ev);
+                console.log(+new Date());
+            }
+
+
+        }
+    };
+
+    $(".btn").click(function() {
+        /* body... */
+        var box = new Box({
+            id: "#box"
+        });
+        box.init();
+    });
+    document.body.onclick=function(ev){
+    	console.log(ev)
+    }
+    </script>
+</body>
+
+</html>
