@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>mask</title>
+    <style>
+    *{margin:0;padding:0;}
+    body,
+    html {
+        /*position: relative;*/
+    }
+
+    .header {
+        height: 200px;
+        background: #467500;
+        line-height: 200px;
+    }
+
+    .content {
+        height: 1600px;
+        background: #6FB7B7;
+    }
+
+    .footer {
+        height: 200px;
+        background-color: #467500;
+        line-height: 200px;
+    }
+
+    .mask {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: #000;
+        opacity: 0.7;
+        position: absolute;
+        z-index: 2;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h3>Header</h3>
+    </div>
+    <div class="content">
+        <div class="main"></div>
+    </div>
+    <div class="footer">
+        <h3>Footer</h3>
+    </div>
+    <div class="mask"></div>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scroll</title>
+</head>
+<style>
+	*{margin:0;padding:0;}
+  ul,li{list-style: none;}
+    .header {
+        height: 200px;
+        /*background: #467500;*/
+        line-height: 200px;
+    }
+
+    .content {
+        height: 1600px;
+        /*background: #6FB7B7;*/
+    }
+
+    .footer {
+        height: 200px;
+        /*background-color: #467500;*/
+        line-height: 200px;
+    }
+    /*.mask{position:fixed;width:100%;height:100%;left:0;top:0;background:#000;opacity:0.8;}*/
+    /*.mask{position:absolute;width:100%;height:100%;left:0;top:0;background:#000;opacity: 0.8;}*/
+    /*.mask{position:fixed;left:0;top:0;right:0;bottom:0;background:#000;opacity:0.8;}*/
+    .ad{position:fixed;width:100%;height:100%;left:0;top:0;background:#000;opacity: 0.8;}
+    .container{background:#fff;position:absolute;left:50%;top:50%;width:500px;height:500px;z-index:4;margin-top: -250px;margin-left:-250px;overflow-y:hidden;}
+    .container .banner{height:30px;text-align:center;position:absolute;left:0;top:0;}
+    .container .adlist{overflow-y:scroll;width:100%;height:100%;position:absolute;left:0;top:30px;}
+    /*.container ul{margin-top:30px;}*/
+    .container li{height:20px;border:1px solid #000;cursor: pointer;}
+
+</style>
+<body>
+	 <div class="header">
+        <h3>Header</h3>
+    </div>
+    <div class="content">
+        <div class="main"></div>
+    </div>
+    <div class="footer">
+        <h3>Footer</h3>
+    </div>
+    <div class="mask"></div>
+    <div class="ad">
+    	<div class="container">
+    		<div class="banner">我是banner</div>
+    		<div class="adlist">
+    			<ul class="adlistul">
+    				
+    			</ul>
+    		</div>
+    	</div>
+    </div>
+  <script>
+  	var ul=document.querySelector('.adlistul');
+  	var frag=document.createDocumentFragment();
+  	for (var i = 0; i <100; i++) {
+  		var li =document.createElement('li');
+  		li.innerHTML='我是第'+i;
+  		frag.appendChild(li);
+  	}
+  	ul.appendChild(frag);
+  </script>
+</body>
+</html>
