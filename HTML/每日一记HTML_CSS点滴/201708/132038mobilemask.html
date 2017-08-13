@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>mobile</title>
+    <script>
+    (function() {
+        /* body... */
+        var html = document.documentElement;
+        var w = html.getBoundingClientRect.width;
+        console.log(w);
+        html.style.fontSize = w / 15 + "px";
+    })();
+    </script>
+    <style>
+    	*{margin:0;padding:0;}
+    	.box{height:1000rem;background:#87CEFA;}
+    	.container{width:40%;height:100%;position:fixed;right:0;top:0;background:#fff;}
+    	.parent{position:absolute;left:0;top:0;overflow: hidden;height:100%;width:100%;}
+    	.wrapper{overflow-y:scroll;position:absolute;left:0;top:0;width:100%;height:100%;}
+    	.banner-header{position:absolute;left:0;top:0;width:100%;height:10rem;background:#00F5FF;z-index:2;}
+    	.banner-footer{position:absolute;left:0;bottom:0;width:100%;height:10rem;background:#00F5FF;}
+    	.content{background:#6E6E6E;}
+    </style>
+</head>
+<body>
+<div class="box">
+	
+</div>
+<div class="container">
+	<div class="parent">
+	    <div class="banner-header"></div>
+		<div class="wrapper">
+			 <ul class="content"></ul>
+		</div>
+		 <div class="banner-footer"></div>
+	</div>
+</div>
+  <script>
+  	var ul=document.querySelector('.content');
+  	var frag=document.createDocumentFragment();
+  	for (var i = 0; i <100; i++) {
+  		var li =document.createElement('li');
+  		li.innerHTML='我是第'+i;
+  		li.style.fontSize="3rem";
+  		frag.appendChild(li);
+  	}
+  	ul.appendChild(frag);
+  </script>
+</body>
+</html>
