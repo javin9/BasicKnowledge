@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>复习</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    div {
+        /*padding: 20px;*/
+    }
+    .box {
+        background: #CAE1FF;
+        height: 600px;
+        line-height: 600px;
+    }
+    .inner-1 {
+        width: 400px;
+        height: 200px;
+        padding:20px;
+        background: #C0FF3E;
+        margin: 0 auto;
+        line-height: 200px;
+        position:relative;
+    }
+    .inner-2 {
+        width: 200px;
+        height: 100px;
+        background: #9ACD32;
+        margin: 0 auto;
+        line-height: 100px;
+    }
+    .inner-3 {
+    	padding:10px;
+        width: 100px;
+        height: 50px;
+        background: #A52A2A;
+        margin: 0 auto;
+        line-height: 50px;
+    }
+    </style>
+</head>
+
+<body>
+    <ul id="ul">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        kkkk
+    </ul>
+    <div>dd</div>
+    <div class="box">
+        <div class="inner-1">
+            <div class="inner-2">
+            	<div class="inner-3"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var ul = document.getElementById('ul');
+    console.log(ul.childNodes);
+    console.log(ul.children);
+    console.log('====================================');
+    console.log(ul.parentNode);
+    console.log('====================================');
+    console.log(ul.nextSibling.nodeValue);
+    console.log(ul.nextElementSibling);
+    console.log('====================================');
+    console.log(ul.previousSibling.nodeValue);
+    console.log(ul.previousElementSibling);
+    console.log('====================================');
+    console.log(ul.firstChild);
+    console.log(ul.firstElementChild);
+    console.log('====================================');
+    console.log(ul.lastChild);
+    console.log(ul.lastElementChild);
+    console.log('====================================');
+    console.log(ul.attributes);
+    console.log('====================================');
+    var inner3 = document.querySelector('.inner-3');
+    /*offsetParent:最近的有  "定位"  属性的祖先节点*/
+    console.log(inner3.offsetParent);
+    /*offsetLeft:外边框，到有 “定位父级” 的左边距的距离 */
+    console.log(inner3.offsetLeft);
+    console.log(inner3.style.left);
+    /*offsetTop:上边框，到有 “定位父级” 的上边距*/
+      console.log(inner3.offsetTop);
+
+      var dd=0;
+      (!!dd)||console.log(1431238471209374);
+     
+
+      /*可视区的宽度和高度*/
+      console.log(document.documentElement.clientHeight);
+      console.log(document.documentElement.clientWidth);
+    </script>
+</body>
+
+</html>

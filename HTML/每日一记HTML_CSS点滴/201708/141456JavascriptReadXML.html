@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    div {
+        height: 700px;
+        float: left;
+    }
+    div.left {
+        width: 25%;
+        background: red;
+    }
+    div.cent {
+        width: 50%;
+        box-sizing: border-box;
+        /*可以改变元素以使其宽度包含填充*/
+        /* 现在整个元素,包括填充在内,占页面总宽度的50%,所以元素的组合宽度为100%,这全程它们很好地适应于它们的容器.*/
+        background: yellow;
+        padding: 0 20px;
+        /*加了这个会使盒子内容溢出 但是box-sizing很好的自适应了*/
+    }
+    div.right {
+        width: 25%;
+        background: blue;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="left"></div>
+    <div class="cent"></div>
+    <div class="right"></div>
+    <ul>
+    	<li>1</li>
+    	<li>1</li>
+    	<li>1</li>
+    	<li>1</li>
+    	<li>1</li>
+    </ul>
+    <script type="text/javascript">
+      var div=document.getElementById('#left');
+      div.childNodes;
+    </script>
+</body>
+</html>
