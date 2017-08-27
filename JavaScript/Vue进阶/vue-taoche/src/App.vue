@@ -26,7 +26,7 @@
         </li>
         <li>
            <!-- 命名的路由 -->
-        <router-link :to="{ name: 'user', params: {id: 123 }}" tag="a">User</router-link>
+        <router-link :to="{ name: 'user', params: {id:1}}" tag="a">User</router-link>
         </li>
          <li>
            <!-- 带查询参数，下面的结果为 /register?plan=private  设置 replace 属性的话，当点击时，会调用 router.replace() 而不是 router.push()，于是导航后不会留下 history 记录 -->

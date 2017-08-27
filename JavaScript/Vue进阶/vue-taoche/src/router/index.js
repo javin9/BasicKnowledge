@@ -20,62 +20,65 @@ import login from '@/components/login';
 export default new VueRouter({
   mode: 'history', //默认是hash模式 ，这里采用history模式
   // linkActiveClass: 'is-class', /*默认router-link-active*/
+  scrollBehavior: function(to, from, saveposition) {
+    /* body... */
+    console.log(to);
+    console.log(from);
+    console.log(saveposition);
+    if (saveposition) {
+      return saveposition
+    } else {
+      return {'x':0,'y':0 };
+    }
+  },
   routes: [{
       path: '/',
-      name:'myhome',
+      name: 'myhome',
       components: {
-        default:home,
-        slider:slider
+        default: home,
+        slider: slider
       }
     },
     {
       path: '/about',
       component: about,
-      alias:'/at'
+      alias: '/at'
     },
     {
       path: '/doc',
       component: doc,
-      children:[
-      {
-        path:'',
-        component:one
-      },
-      {
-        path:'d2',
-        component:two
-      },
-      {
-        path:'d3',
-        component:three
-      },
+      children: [{
+          path: '',
+          component: one
+        },
+        {
+          path: 'd2',
+          component: two
+        },
+        {
+          path: 'd3',
+          component: three
+        },
       ]
     },
     {
       path: '/plan/:title',
       component: plan
-    },
-    ,
+    }, ,
     {
-      path:'/user/:username/post/:id',
-      name:'user',
-      component:usercenter
-    },
-   {
-      path:'/user/:id',
-      name:'user',
-      component:usercenter
-    }
-    ,
-    {
-      path:'/login',
-      name:'login',
-      component:login
+      path: '/user/:id?',
+      name: 'user',
+      component: usercenter
     },
     {
-      path:'/abc',
-      name:'abc',
-      component:about
+      path: '/login',
+      name: 'login',
+      component: login
+    },
+    {
+      path: '/abc',
+      name: 'abc',
+      component: about
     }
     //,
     // {/*跳转到404页面*/
@@ -95,7 +98,7 @@ export default new VueRouter({
     ,
     { /*重新定向到指定页面*/
       path: '*',
-      redirect:function (to) {
+      redirect: function(to) {
         /* body... */
         console.log(to);
         return '/doc'
