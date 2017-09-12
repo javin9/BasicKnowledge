@@ -22,14 +22,14 @@ export default new VueRouter({
   // linkActiveClass: 'is-class', /*默认router-link-active*/
   scrollBehavior: function(to, from, saveposition) {
     /* body... */
-    console.log(to);
-    console.log(from);
-    console.log(saveposition);
-    if (saveposition) {
-      return saveposition
-    } else {
-      return {'x':0,'y':0 };
-    }
+    // console.log(to);
+    // console.log(from);
+    // console.log(saveposition);
+    // if (saveposition) {
+    //   return saveposition
+    // } else {
+    //   return {'x':0,'y':0 };
+    // }
   },
   routes: [{
       path: '/',
@@ -37,12 +37,18 @@ export default new VueRouter({
       components: {
         default: home,
         slider: slider
+      },
+      meta:{
+        index:0
       }
     },
     {
       path: '/about',
       component: about,
-      alias: '/at'
+      alias: '/at',
+      meta:{
+        index:1
+      }
     },
     {
       path: '/doc',
@@ -64,7 +70,7 @@ export default new VueRouter({
     {
       path: '/plan/:title',
       component: plan
-    }, ,
+    },
     {
       path: '/user/:id?',
       name: 'user',

@@ -37,10 +37,14 @@
         </li>
       </ul>
     </div>
+<!-- 过度模式 mode="out-in"   in-out/out-in -->
 
-    <router-view  class="center"></router-view>
-    <router-view name="slider"></router-view>
-
+  <transition mode="out-in"   name="left">
+      <router-view  class="center"></router-view>
+  </transition>
+    <!-- <router-view name="slider"></router-view> -->
+   <input type="button" name="" @click="backClick"  value="Back">
+   <input type="button" name="" @click="forwardClick"  value="Forward">
   </div>
 </template>
 
@@ -51,8 +55,46 @@
       return {
          index:'/plan/联系我们'
       };
+    },
+    watch:{
+      $route:function (to,from) {
+        console.log(to);
+        console.log(from);
+      }
+    },
+    methods:{
+       backClick:function () {
+        console.log(this.$route);
+        console.log(this);
+         /* body... */
+         this.$route.back();
+       },
+       forwardClick:function () {
+        console.log(this.$route);
+         /* body... */
+           this.$route.forward();
+       }
+
     }
   }
 </script>
+<style type="text/css">
+ /* .v-enter{opacity:0;}  
+  .v-enter-to{opacity:1;}
+  .v-enter-active{transition:1s;}
+  
+  .v-leave{opacity:1;}
+  .v-leave-to{opacity:0;}
+  .v-leave-active{transition:1s;}*/
+  
+  .left-enter{transform:translateX(100%);}  
+  .left-enter-to{transform:translateX(0);}
+  .left-enter-active{transition:1s;}
+  
+  .left-leave{transform:translateX(0);}
+  .left-leave-to{transform:translateX(-100%);}
+  .left-leave-active{transition:1s;}
+
+</style>
 
 
