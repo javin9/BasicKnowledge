@@ -68,6 +68,7 @@ git commit
 q:  不保存文件，退出vi
 :q! 不保存文件，强制退出vi
 :e! 放弃所有修改，从上次保存文件开始再编辑
+pwd 查看当前文件夹路径
 
 -------------------------
  git pull  
@@ -91,7 +92,7 @@ git log
 对比
  git diff 工作区和暂存区 对比
  git diff --cached/--staged 暂存区和版本库
- git diff master  工作区和版本库
+ git diff master  工作区和版本库 
  
  ------------------------------
  --5
@@ -128,6 +129,7 @@ git log
    git remote -v 查看地址
    
 git push origin[名字] master[分支]
+git push  -u origin[名字] master[分支]
 ---------------------------------------
 
 9  同步到远程仓库   更新本地

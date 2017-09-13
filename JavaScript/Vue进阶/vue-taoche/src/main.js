@@ -22,6 +22,9 @@ import App from './App';//4
 //引入css文件
 import appcss from '@/assets/css/app';
 
+import $ from 'jquery';
+console.log($.fn.jquery);
+
 //启动应用
 new Vue({
 	el:"#app",//挂载点 在index.html页面里面
