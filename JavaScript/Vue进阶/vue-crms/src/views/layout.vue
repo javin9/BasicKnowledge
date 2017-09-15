@@ -3,7 +3,7 @@
     <header-nav></header-nav>
     <div class="breadcrumb">
       <router-link to="/">首页</router-link>
-      /
+      
       <span :style="{color:'#97a8be'}">{{flag}}</span>
     </div>
     <transition name="fade" mode="out-in">

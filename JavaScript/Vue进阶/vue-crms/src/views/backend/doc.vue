@@ -39,8 +39,8 @@
 </template>
 
 <script>
-  import DocView from '@/views/backend/doc-view'
-  import TWEEN from 'tween.js'
+  import DocView from '@/views/backend/doc-view';
+  // import TWEEN from 'tween.js';
   export default {
     components: {
       DocView

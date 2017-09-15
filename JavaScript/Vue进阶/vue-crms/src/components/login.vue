@@ -24,11 +24,13 @@
       sendLogin () {
           // 登录
         let userName = this.$refs.userInput.value;
+        console.log(this);
         this.$local.save("miaov", {
             login: true,
             userName: userName
-        })
-
+        });
+      
+       
         let redirect = this.$route.query.redirect
 
         if(!redirect){
@@ -38,6 +40,7 @@
         this.$router.push({
           path: '/'+redirect
         })
+        
       }
     }
   }

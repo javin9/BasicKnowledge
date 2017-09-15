@@ -28,9 +28,8 @@
     },
     created(){
         // 拿到登录信息
-      let info = this.$local.fetch('miaov')
-
-      this.isLogin = info.login;
+      let info = this.$local.fetch('miaov');
+      this.isLogin = !!info.login;
     }
   }
 </script>

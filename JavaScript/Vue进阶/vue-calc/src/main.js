@@ -3,16 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import './assets/css/app.css'
+import store from './store/index.js';
 
-Vue.config.productionTip = false;
-import Utils from './lib/utils.js';
 
-Vue.use(Utils);
+Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store:store,
   router,
   template: '<App/>',
   components: { App }
