@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		h2{text-indent: 3em;}
+		.box{width:500px;height:300px;margin:50 auto;border:1px solid #000;text-align: center;display:table-cell;vertical-align: middle;font-size:0;}
+		.box img{width:128px;height:96px;display:inline-block;border:0;}
+
+		.box2{width:500px;height:300px;margin:0 auto;border:1px solid #000;margin-top:50px;text-align: center;font-size:0;line-height:300px;}
+		.box2 img{width:128px;height:96px;display:inline-block;border:0;vertical-align:middle;}
+		.box2 span{display:inline-block;width:50px;border:1px solid #000;background:#336666;vertical-align:middle;}
+		.box2 .left{height:50px;}
+		.box2 .right{height:35px;}
+
+		.box3{width:500px;margin:0 auto;border:1px solid #000;margin-top:50px;text-align: center;font-size:0;}
+		.box3 img{width:128px;height:96px;display:inline-block;border:0;vertical-align: middle;}
+		.box3 span{display:inline-block;width:50px;border:1px solid #000;background:#336666;vertical-align: middle;}
+		.box3 .left{height:50px;}
+		.box3 .right{height:35px;}
+	</style>
+</head>
+<body>
+<h2>display:table-cell;vertical-align: middle;</h2>
+   <div class="box"> 
+      <img src="../201706/images/1.jpg">
+   </div>
+   <h2>父亲定高 line-height:300px; {vertical-align:middle;}该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐</h2>
+   <div class="box2">
+	   <span class="left"></span>	 
+	   <img src="../201706/images/1.jpg">
+	   <span class="right"></span>	
+   </div>
+   <h2> 不固定宽高 vertical-align: middle; 该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐</h2>
+    <div class="box3">
+	   <span class="left"></span>	 
+	   <img src="../201706/images/1.jpg">
+	   <span class="right"></span>	
+   </div>
+</body>
+</html>

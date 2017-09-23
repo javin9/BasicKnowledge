@@ -1,0 +1,61 @@
+﻿/*
+ Theme Name:   AIM Logic
+ Theme URI:    http://www.aimlogic.com
+ Description:  AIM Logic
+ Author:       Mighty Clever
+ Author URI:   http://www.mightyclever.com
+ Template:     Divi
+ Version:      1.0.0
+ Tags:         AIM Logic
+ Text Domain:  http://www.aimlogic.com
+*/
+
+@import url("style.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+/* GLOBAL */
+
+
+/* NAVIGATION */
+/* sub-menu dropdown text size */
+#top-menu li li a { font-size: 14px !important; line-height: normal !important; }
+
+/* hide drop down arrow when main nav item has sub-nav drop-down menu links */
+/*
+#top-menu .menu-item-has-children > a:first-child::after, #et-secondary-nav .menu-item-has-children > a:first-child::after { content: none !important; }
+#top-menu .menu-item-has-children { padding-right: 0 !important; } /* hides the right padding that becomes unnecessary after the dropdown arrow is removed above */
+*/
+
+/* HOME */
+
+
+/* FOOTER */
+
+
+
+/* FORMAT BLOG GRID */
+.et_pb_blog_grid .et_pb_post { margin-bottom: 60px !important; height: 525px; overflow: hidden; }
+.et_pb_blog_grid .et_pb_image_container { height: 200px; width: 320px; overflow: hidden; }
+
+/* YOAST */
+#breadcrumbs { padding: 10px; background: #efefef; text-align: center !important; font-size: 12px; }
+#breadcrumbs a { color: #333; }
+
+/* WOOCOMMERCE */
+mark.count, /* hide yellow highlighting of category product quantities on category index pages */
+.woocommerce-breadcrumb, /* hide default Woocommerce breadcrumbs above the product details */
+.single-product .description_tab, .single-product .additional_information_tab, .single-product h2 /* hide long description tab headers and "additional" tab on product pages */
+{ display: none; }
+
+.archive ul.products .product { text-align: center; } /* center product images/text/buttons on product category pages */
+
+/* OPTIONAL */
+
+/* remove sidebar divider line */
+/*
+.container:before { background-color:transparent !important; }
+.et_pb_widget_area_right { border-left:0 !important; }
+.et_pb_widget_area_left { border-right:0 !important; }
+*/
