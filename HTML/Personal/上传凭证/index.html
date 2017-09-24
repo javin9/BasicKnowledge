@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>上传凭证</title>
+    <link rel="stylesheet" href="css/upload.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <script>
+    !(function(doc, win) {
+        var docEle = doc.documentElement,
+            evt = "onorientationchange" in window ? "orientationchange" : "resize",
+            fn = function() {
+                var width = docEle.clientWidth;
+                width && (docEle.style.fontSize = 50 * (width / 750) + "px");
+            };
+        win.addEventListener(evt, fn, false);
+        doc.addEventListener("DOMContentLoaded", fn, false);
+    }(document, window));
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <img src="images/header_bg_01.png" alt="">
+            <h3>购车凭证上传</h3>
+        </div>
+        <div class="upload-form w580">
+            <div class="mobile iconfont icon-shouji border-circle-45">
+                <input type="text" maxlength="11" placeholder="请输入手机号" />
+                <div class="send sendcode border-circle-45">获取验证码</div>
+                <div class="rsend sendcode border-circle-45 ing hide"><span class="num-wrapper"><span class="num">60</span>s</span>后重新获取</div>
+            </div>
+            <div class="code iconfont icon-yanzhengma border-circle-45">
+                <input type="text" placeholder="请输入验证码" />
+            </div>
+            <div class="submit border-circle-45">验证</div>
+        </div>
+        <div class="w580 attention">
+            <h3 class="attention-title"><span class="line"></span><span class="content">注意事项</span><span class="line"></span></h3>
+            <ol type="1">
+                <li><i>1、</i>购车人姓名与发票必须一致</li>
+                <li><i>2、</i>发票照片清晰完整，真实有效</li>
+                <li><i>3、</i>必须为加盖公章的发票联原件照片或扫面件（不能为复印件和其他联</li>
+                <li><i>4、</i>发票日期不能早于首次留资下单日期</li>
+            </ol>
+        </div>
+    </div>
+    <div class="popup-wrapper">
+        <div class="popup-main"  style="display:none;">
+            <span class="popup-close iconfont icon-chahao-"></span>
+            <div class="popup-title iconfont icon-duihao">手机号验证成功</div>
+            <div class="popup-title-sub">请录入其他信息</div>
+            <div class="popup-input-wrapper">
+                <div>
+                    <input type="text" placeholder="请输入姓名" />
+                </div>
+                <div>
+                    <input type="text" placeholder="请输入手机号" maxlength="11" />
+                </div>
+                <div class="upload-img-div">
+                    <span class="img-add">
+    					<i class="iconfont icon-jia"></i>
+    					<span class="jia-title">上传发票</span>
+                    <input type="file" class="upload-img-file" accept="image/jpeg,image/gif,image/png,image/bmp" />
+                    </span>
+                    <span class="img-note">建议图片分辨率750*1334，大小大于200k</span>
+                </div>
+                <div class="submit-btn">提交</div>
+            </div>
+        </div>
+        <div class="popup-success iconfont icon-duihao"  style="display:none;">提交成功</div>
+        <div class="popup-error iconfont icon-chahao-" style="display:none;">提交失败</div>
+        <div class="popup-result" style="display:none;">提交失败</div>
+    </div>
+</body>
+</html>

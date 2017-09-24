@@ -1,0 +1,363 @@
+/*reset*/
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: helvetica;
+}
+/*清除点击 默认阴影*/
+a,
+input,
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /*全透明*/
+}
+/*按钮在真机上会显示圆角，清除*/
+input {
+  background: none;
+  outline: none;
+  border: 0px;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+/*块元素浮动的  IE6，7的双边锯问题*/
+.fl {
+  float: left;
+  *display: inline;
+}
+/*块元素浮动的  IE6，7的双边锯问题*/
+.fr {
+  float: right;
+  *display: inline;
+}
+/*清除浮动*/
+.clearfix:after {
+  content: "";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+*.clearfix {
+  zoom: 1;
+}
+h1,
+h2,
+h3 {
+  font-weight: normal;
+}
+/*img默认样式*/
+address,
+cite,
+dfn,
+em,
+var,
+i {
+  font-style: normal;
+}
+/* 将斜体扶正 */
+img {
+  border: 0;
+  display: block;
+}
+body {
+  background: #111213;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999;
+  font-size: 0.4rem;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #999;
+  font-size: 0.4rem;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #999;
+  font-size: 0.4rem;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #999;
+  font-size: 0.4rem;
+}
+/*common*/
+.border-circle-45 {
+  border-top-left-radius: 0.9rem;
+  -webikit-border-top-left-radius: 0.9rem;
+  border-bottom-left-radius: 0.9rem;
+  -webkit-border-bottom-left-radius: 0.9rem;
+  border-top-right-radius: 0.9rem;
+  -webkit-border-top-right-radius: 0.9rem;
+  border-bottom-right-radius: 0.9rem;
+  -webkit-border-bottom-right-radius: 0.9rem;
+}
+.hide {
+  display: none;
+}
+.w580 {
+  width: 11.6rem;
+  margin: 0 auto;
+}
+/*upload.css*/
+.wrapper {
+  background-color: #161622;
+  padding-bottom: 1.4rem;
+}
+.header img {
+  width: 100%;
+  background-size: cover;
+  position: relative;
+}
+.header h3 {
+  font-size: 0.76rem;
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  top: 5.6rem;
+  width: 100%;
+}
+.upload-form {
+  margin-bottom: 2.9rem;
+}
+.upload-form > div {
+  background: #2e2e39;
+  height: 1.8rem;
+  box-sizing: border-box;
+  line-height: 1.8rem;
+  padding-left: 1rem;
+}
+.upload-form > div input {
+  width: 80%;
+  padding-left: 0.1rem;
+  height: 0.8rem;
+  line-height: 0.82rem;
+  color: #fff;
+  vertical-align: middle;
+}
+.upload-form .mobile {
+  margin-bottom: 0.4rem;
+  position: relative;
+}
+.upload-form .mobile .sendcode {
+  font-size: 0.44rem;
+  color: #fff;
+  width: 4.4rem;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #fd2938;
+  text-align: center;
+}
+.upload-form .mobile .ing {
+  background: #999;
+}
+.upload-form .code {
+  margin-bottom: 1.2rem;
+}
+.upload-form .submit {
+  padding: 0;
+  background: #fd2938;
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.56rem;
+}
+/*attention*/
+.attention-title {
+  text-align: center;
+  margin-bottom: 0.9rem;
+}
+.attention-title .span {
+  vertical-align: middle;
+}
+.attention-title .line {
+  display: inline-block;
+  height: 1px;
+  background: #fff;
+  width: 4rem;
+  margin-bottom: 0.12rem;
+}
+.attention-title .content {
+  display: inline-block;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  color: #fff;
+  font-size: 0.48rem;
+  width: 3rem;
+  letter-spacing: 0.04rem;
+}
+ol li {
+  color: #fff;
+  font-size: 0.44rem;
+  padding: 0.3rem 0;
+}
+/*弹窗*/
+.popup-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: ;
+  z-index: 100;
+  width: 100%;
+  background: 0;
+}
+.popup-main {
+  width: 11.4rem;
+  height: 13.8rem;
+  background: #ffffff;
+  position: absolute;
+  left: 50%;
+  margin-left: -5.7rem;
+  top: 5.8rem;
+}
+.popup-title {
+  font-size: 0.68rem;
+  text-align: center;
+  color: #000000;
+  padding: 1.2rem 0;
+}
+.popup-title-sub {
+  text-align: center;
+  color: #000;
+  font-size: 0.56rem;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+}
+.popup-input-wrapper {
+  width: 9.5rem;
+  margin: 0 auto;
+}
+.popup-input-wrapper > div {
+  border: 0.02rem solid #d2d2d2;
+  height: 1.3rem;
+  box-sizing: border-box;
+  border-radius: 0.1rem;
+  margin-bottom: 0.5rem;
+}
+.popup-input-wrapper > div input {
+  width: 100%;
+  height: 1rem;
+  line-height: 1.02rem;
+  vertical-align: middle;
+  padding-left: 0.4rem;
+}
+.popup-input-wrapper .upload-img-div {
+  border: 0;
+  height: 3rem;
+}
+.popup-input-wrapper .upload-img-div span {
+  display: inline-block;
+}
+.popup-input-wrapper .upload-img-div .img-add {
+  width: 3rem;
+  height: 3.2rem;
+  border: 0.02rem solid #d2d2d2;
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 3.2rem;
+  position: relative;
+}
+.popup-input-wrapper .upload-img-div .img-add .upload-img-file {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 110;
+  width: 98%;
+  height: 98%;
+  opacity: 0;
+}
+.popup-input-wrapper .upload-img-div .img-add .icon-jia {
+  font-size: 0.8rem;
+  display: block;
+}
+.popup-input-wrapper .upload-img-div .img-add .jia-title {
+  color: #d2d2d2;
+  font-size: 0.48rem;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 25%;
+  display: inline-block;
+}
+.popup-input-wrapper .upload-img-div .img-note {
+  color: #d2d2d2;
+  font-size: 0.44rem;
+  width: 6rem;
+  vertical-align: bottom;
+}
+.popup-input-wrapper .submit-btn {
+  width: 5.1rem;
+  height: 1.3rem;
+  line-height: 1.3rem;
+  background: #fd2938;
+  color: #fff;
+  font-size: 0.48rem;
+  text-align: center;
+  margin: 0.8rem auto;
+}
+.popup-close {
+  font-size: 0.9rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 109;
+  color: #fd2938;
+  text-align: center;
+  vertical-align: middle;
+}
+/*popup-success*/
+.popup-success {
+  position: absolute;
+  width: 10.4rem;
+  height: 3.7rem;
+  line-height: 3.7rem;
+  color: #545454;
+  font-size: 0.64rem;
+  text-align: center;
+  left: 50%;
+  top: 8rem;
+  background: #fff;
+  border-radius: 0.2rem;
+  margin-left: -5.2rem;
+}
+.popup-error {
+  position: absolute;
+  width: 10.4rem;
+  height: 3.7rem;
+  line-height: 3.7rem;
+  color: #545454;
+  font-size: 0.64rem;
+  text-align: center;
+  left: 50%;
+  top: 8rem;
+  background: #fff;
+  border-radius: 0.2rem;
+  margin-left: -5.2rem;
+}
+.popup-result {
+  position: absolute;
+  width: 10.4rem;
+  height: 2rem;
+  line-height: 2rem;
+  color: #fff;
+  font-size: 0.64rem;
+  text-align: center;
+  left: 50%;
+  top: 8rem;
+  background: #434343;
+  border-radius: 0.2rem;
+  margin-left: -5.2rem;
+}
