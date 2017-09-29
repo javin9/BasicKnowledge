@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>新03_详情页20170724</title>
+    <link rel="stylesheet" type="text/css" href="../css/新头尾.css" />
+    <link rel="stylesheet" type="text/css" href="../css/公共控件.css" />
+    <link rel="stylesheet" type="text/css" href="../css/分享.css" />
+    <link href="../css/swiper.min.css" rel="stylesheet">
+    <link href="../css/detail.css" rel="stylesheet">
+    <link rel="stylesheet" href="../fonts/iconfont.css">
+    <link href="../css/new_detail_add.css" rel="stylesheet">
+    <link href="../css/new_车源详情_弹层.css" rel="stylesheet">
+    <link href="../css/new-图片展示.css" rel="stylesheet">
+    <link href="../css/详情页面_m_线索提升.css" rel="stylesheet">
+    <!---->
+    <link rel="stylesheet" href="../css/new_认证车详情.css">
+</head>
+
+<body class="bg-greyer">
+    <div class="detail_box">
+        <!-- 头部star -->
+        <div class="header-mask" style="display:none;"></div>
+        <div class="new-header">
+            <a class="new-btn-return" href="#">返回</a>
+            <h2 class="pal60" id="banner_key">车源详情</h2>
+            <div class="new-return-rit">
+                <a href="#" class="new-menu">菜单</a>
+                <a href="#" class="d_share" data-action="popup-share">分享</a>
+            </div>
+            <!-- 导航浮层  start -->
+            <div class="new-menu-layer menu-transition" style="display:none;">
+                <div class="new-menu-layer-arrow"></div>
+                <div class="new-menu-layer-load">
+                    <div class="new-menu-layer-bg"><img src="../images/new-menu-bg.jpg" alt=""></div>
+                    <!-- -未登录  start -->
+                    <div class="new-menu-top">
+                        <h1 class="new-menu-logo"></h1>
+                        <div class="new-menu-ico">
+                            <span><img src="../images/new-mune-bg1.png" alt=""></span>
+                            <em><a href="#">请登录</a></em>
+                        </div>
+                    </div>
+                    <!-- -未登录  end -->
+                    <!-- -已登录  start -->
+                    <!--<div class="new-menu-top">
+                      <h1 class="new-menu-logo"></h1>
+                      <div class="new-menu-ico">
+                         <span><img src="../images/new-mune-bg2.png" alt=""></span>
+                         <em>赵二喜</em>
+                      </div>
+                   </div>-->
+                    <!-- -已登录  end -->
+                    <!-- -有头像  start -->
+                    <!--<div class="new-menu-top">
+                   <h1 class="new-menu-logo"></h1>
+                   <div class="new-menu-ico">
+                      <span><img src="../images/new-mune-bg3.png" alt=""></span>
+                      <em>赵二喜</em>
+                      <i>9</i>
+                   </div>
+                </div>-->
+                    <!-- -有头像  end -->
+                </div>
+                <div class="new-menu-list">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">买车</a></li>
+                        <li><a href="#">卖车</a></li>
+                        <li><a href="#">置换</a></li>
+                        <li><a href="#">贷款</a></li>
+                        <li><a href="#">帮买</a></li>
+                        <li><a href="#">评估</a></li>
+                        <li><a href="#">攻略</a></li>
+                    </ul>
+                </div>
+                <div class="new-nav-list">
+                    <ul class="clearfix">
+                        <li><a href="#" class="new-nav-ico1">我的关注</a></li>
+                        <li><a href="#" class="new-nav-ico2">最近浏览</a></li>
+                        <li><a href="#" class="new-nav-ico3">车源管理</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 导航浮层  end -->
+        </div>
+        <!-- 头部end -->
+        <!-- 分享 弹出层  start -->
+        <div class="leftmask mark mark1" style="display: none;"></div>
+        <div class="leftPopup share-bottom popup-share share-bottom6" data-back="mark1" style="display: none;">
+            <div class="swipeLeft">
+                <!--去掉swipeLeft-block 样式就会隐藏-->
+                <div class="share-box">
+                    <ul>
+                        <li>
+                            <a href="###" class="icon-sina">新浪微博
+                        </a>
+                        </li>
+                        <li>
+                            <a href="###" class="icon-weixin">微信好友
+                        </a>
+                        </li>
+                        <li>
+                            <a href="###" class="icon-pengyouquan">朋友圈
+                        </a>
+                        </li>
+                        <li>
+                            <a href="###" class="icon-qqfriend">QQ好友</a>
+                        </li>
+                        <li>
+                            <a href="###" class="icon-qq">QQ空间
+                        </a>
+                        </li>
+                        <li>
+                            <a href="###" class="icon-wb">腾讯微博
+                        </a>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <a href="###" class="close">取消</a>
+            </div>
+        </div>
+        <!-- 分享 弹出层  end -->
+        <!-- banner start -->
+        <div class="banner-wrap">
+            <div class="swiper-container ban_swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><a href="#" title=""><img src="../temp/detail/pic.jpg" alt="" width="100%"></a></li>
+                    <li class="swiper-slide"><a href="#" title=""><img src="../temp/detail/pic.jpg" alt="" width="100%"></a></li>
+                    <li class="swiper-slide"><a href="#" title=""><img src="../temp/detail/pic.jpg" alt="" width="100%"></a></li>
+                </ul>
+                <!-- Add Pagination -->
+                <div class="ban-page">
+                    <div class="ban-pagination"></div>
+                </div>
+            </div>
+            <div class="ban-icon">
+                <!-- 保障车  -->
+                <!--<span class="ico-bzc"></span>-->
+                <!-- 认证车  -->
+                <!--<span class="ico-rzc"></span>-->
+                <!-- 无实拍情况  -->
+                <!--<span class="ico-wrz">未上传车源实拍图,此为新车图片</span>-->
+                <!--淘宝认证车-->
+                <span class="ico-taob_rzc"></span>
+            </div>
+        </div>
+        <!-- banner end -->
+        <!-- det-wrap start -->
+        <div class="det-wrap boxwrap pab15">
+            <h2 class="d-tle">奥迪A5(进口) 2010款 Coupe  2.0T 风尚版</h2>
+            <div class="d-secondtle">
+                <span class="cardtime">2015-05上牌   6.2万公里</span>
+                <em class="line">|</em>
+                <span class="volume">1.5T CVT</span>
+            </div>
+            <div class="d-price">
+                <div class="left-pri pri">53.80万</div>
+                <div class="right-pri pri">
+                    <p> 参考价格：33.2-47.1万</p>
+                    <p>新车总价：0.00万（含税）</p>
+                </div>
+            </div>
+            <!--首付20170724 start-->
+            <div class="xq-onepic">
+                <s><img src="../images/rez-xq-01.png" alt=""></s>
+                <span>
+                首付 3.6万元起 <em>|</em> 月供 2600元
+            </span>
+                <a href="">马上开走<i class=" iconfont icon-jiantou1"></i></a>
+            </div>
+            <!--首付20170724 end-->
+        </div>
+        <!-- det-wrap end -->
+        <!--20170724 放心选 start-->
+        <div class="hard_chang  boxwrap mt12">
+            <div class="m-tle">
+                <h2 class="h2">淘车认证-放心之选
+                <a href="" class="mtle-link">查看详情</a></h2>
+            </div>
+            <!---->
+            <ul class="hard-chang-list">
+                <li>
+                    <img src="../images/rez-xq-03.png" alt="">
+                    <p>双重检测</p>
+                </li>
+                <li>
+                    <img src="../images/rez-xq-04.png" alt="">
+                    <p>30天包退</p>
+                </li>
+                <li>
+                    <img src="../images/rez-xq-05.png" alt="">
+                    <p>免费保修</p>
+                </li>
+                <li>
+                    <img src="../images/rez-xq-06.png" alt="">
+                    <p>顾问陪同</p>
+                </li>
+            </ul>
+        </div>
+        <!--20170724 放心选 end-->
+        <!-- record-wrap start -->
+        <div class="record-wrap boxwrap mt12">
+            <div class="m-tle">
+                <h2 class="h2">车辆档案</h2>
+            </div>
+            <div class="m-cont">
+                <table cellpadding="0" cellspacing="0" class="table-rec" width="100%">
+                    <tr>
+                        <td>
+                            <p class="pt">4S定期保养</p>
+                            <p class="pb">维护正常</p>
+                        </td>
+                        <td>
+                            <p class="pt">国IV排放<em class="tan"></em></p>
+                            <p class="pb">北京可上牌</p>
+                        </td>
+                        <td>
+                            <p class="pt">保险至2016-06</p>
+                            <p class="pb p-orange">保险已到期</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="pt">营转非</p>
+                            <p class="pb p-orange">损耗高</p>
+                        </td>
+                        <td>
+                            <p class="pt">300马力</p>
+                            <p class="pb">1.6L自然吸气</p>
+                        </td>
+                        <td>
+                            <p class="pt">油耗6.6L</p>
+                            <p class="pb">经济实用</p>
+                        </td>
+                    </tr>
+                </table>
+                <ul class="car-desc cf">
+                    <li><span>来源：</span>商家</li>
+                    <li><span>年检：</span>2016-06到期</li>
+                    <li><span>牌照：</span>北京牌</li>
+                    <li><span>车身：</span>4门5座三厢</li>
+                    <li><span>品牌：</span>奥迪A5</li>
+                    <li><span>燃油：</span>95号（原97号）</li>
+                </ul>
+                <ul class="car-light cf">
+                    <li>
+                        <a href="#">
+                            <p class="car-lico">
+                                <img src="../images/icon-7.png" />
+                                <em class="ico-zp"></em>
+                            </p>
+                            <p class="car-ltxt">GPS导航</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="car-lico">
+                                <img src="../images/icon-1.png" />
+                            </p>
+                            <p class="car-ltxt">天窗</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="car-lico">
+                                <img src="../images/icon-4.png" />
+                            </p>
+                            <p class="car-ltxt">真皮座椅</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="car-lico">
+                                <img src="../images/icon-more.png" />
+                            </p>
+                            <p class="car-ltxt">全部亮点</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="alink">
+                <a href="#"><em>查看详细参数配置</em></a>
+            </div>
+        </div>
+        <!-- record-wrap end -->
+        <!--2017淘车认证车 start-->
+        <div class="hard_chang  boxwrap mt12">
+            <div class="m-tle">
+                <h2 class="h2">淘车认证车</h2>
+            </div>
+            <div class="tc-rzcar-table">
+                <div class="tc-rzcar-nav">
+                    <ul>
+                        <li>
+                            <a href="" class="rzcar-nav-sel">
+                            <i class="iconfont icon-jiance"></i>
+                            <p>双重检测</p>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="">
+                            <i class="iconfont icon-daikuan1"></i>
+                            <p>贷款方案</p>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="">
+                            <i class="iconfont icon-baotuixiankuang"></i>
+                            <p>30天包退</p>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="">
+                            <i class="iconfont icon-baoxiuxiankuang"></i>
+                            <p></p>保修政策
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--双重检测-->
+                <div class="tc-rzcar-box">
+                    <div class="double-jc">
+                        <h3><span>车辆检测报告</span>
+                        118项详细检测，由第三方权威机构出具
+                    </h3>
+                        <h5 class="yinzhang"></h5>
+                        <!---->
+                        <ul class="jcbg_item_a">
+                            <li>
+                                <em class="iconfont icon-waiguan-"></em>
+                                <dl>
+                                    <dt>外观</dt>
+                                    <dd>外观存在细微瑕疵</dd>
+                                </dl>
+                                <a href="" class="jc-txt-f">10项异常 <i class="iconfont icon-cuowu"></i></a>
+                            </li>
+                            <li>
+                                <em class="iconfont icon-neishi"></em>
+                                <dl>
+                                    <dt>内饰</dt>
+                                    <dd>内饰整洁，无破损、座椅完善</dd>
+                                </dl>
+                                <a href="" class="jc-txt-t">64项 <i class="iconfont icon-icon_chenggong1"></i></a>
+                            </li>
+                            <li>
+                                <em class="iconfont icon-dianping"></em>
+                                <dl>
+                                    <dt>电气</dt>
+                                    <dd>电气部件完好无损，无功能障</dd>
+                                </dl>
+                                <a href="" class="jc-txt-t">64项 <i class="iconfont icon-icon_chenggong1"></i></a>
+                            </li>
+                            <li>
+                                <em class="iconfont icon-jicang"></em>
+                                <dl>
+                                    <dt>机舱</dt>
+                                    <dd>发动机怠速工况良好，无漏油无破损、老化部件</dd>
+                                </dl>
+                                <a href="" class="jc-txt-t">64项 <i class="iconfont icon-icon_chenggong1"></i></a>
+                            </li>
+                            <li>
+                                <em class="iconfont icon-dipan"></em>
+                                <dl>
+                                    <dt>底盘</dt>
+                                    <dd>底盘完好无损</dd>
+                                </dl>
+                                <a href="" class="jc-txt-t">64项 <i class="iconfont icon-icon_chenggong1"></i></a>
+                            </li>
+                        </ul>
+                        <!---->
+                        <ul class="jcbg_item_b">
+                            <li>
+                                <img src="../images/rez-xq-07.png" alt="">
+                                <p> 排除重大碰撞</p>
+                            </li>
+                            <li>
+                                <img src="../images/rez-xq-08.png" alt="">
+                                <p>排除水泡</p>
+                            </li>
+                            <li>
+                                <img src="../images/rez-xq-09.png" alt="">
+                                <p>排除火烧</p>
+                            </li>
+                        </ul>
+                        <!---->
+                        <p class="jcbg-time">本报告检测时间：2017-07-20 </p>
+                        <!---->
+                        <p class="jcbg-look">
+                            <a href="">查看详细报告<i class="iconfont icon-jiantou1"></i></a> 成交前通过复检的车辆，才可享受30天包退保障服务
+                        </p>
+                    </div>
+                </div>
+                <!--贷款方案-->
+                <div class="tc-rzcar-box hide">
+                    <div class="fz-box">
+                        <div class="fz-box-a">
+                            <img src="../images/rez-xq-10.png" alt="" class="dk-fa">
+                            <h3>首付只需三成</h3>
+                            <p class="fz-wen">
+                                <span>
+                                极速审批
+                            </span>
+                                <span>
+                                申请只需身份证
+                            </span>
+                            </p>
+                        </div>
+                        <div class="fz-box-b">
+                            <h3>车价：36万</h3>
+                            <p>
+                                <span>
+                                首付款（30%）
+                                <em>12.00万</em>
+                            </span>
+                                <span>
+                                月供（36期）
+                                <em>3400元</em>
+                            </span>
+                            </p>
+                        </div>
+                        <p class="dk-txt">由易鑫金融为“淘车认证”车辆量身定制的二手车贷款,小白用户可放心申请，省钱又省事</p>
+                        <a href="" class="rz-btn">马上去贷款</a>
+                    </div>
+                </div>
+                <!--30天包退-->
+                <div class="tc-rzcar-box hide">
+                    <div class="fz-box">
+                        <div class="fz-box-a">
+                            <img src="../images/rez-xq-11.png" alt="" class="dk-fb">
+                            <h3>30天包退</h3>
+                        </div>
+                        <div class="fz-box-c">
+                            <p>若您发现且确认所购买车里在购买之前已经是“重大事故损伤车辆”，经检测机构对车辆进行复核和确认，淘车平台将退还车款回收车辆并补偿差价，保障每一位购车客户的利益。
+                            </p>
+                            <a href="">查看具体包退协议</a>
+                        </div>
+                        <a href="" class="rz-btn">首付2万，把车开走吧</a>
+                    </div>
+                </div>
+                <!--保修政策-->
+                <div class="tc-rzcar-box hide">
+                    <div class="fz-box">
+                        <div class="fz-box-a">
+                            <img src="../images/rez-xq-12.png" alt="" class="dk-fb">
+                            <h3>一年或两万公里保修</h3>
+                        </div>
+                        <div class="fz-box-c">
+                            <p>交易完成后1年或者2万公里内提供售后保障，免费保修
+                            </p>
+                            <a href="">查看具体包退协议</a>
+                        </div>
+                        <a href="" class="rz-btn">首付2万，把车开走吧</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--2017淘车认证车 end-->
+        <!--2017维修保养记录 start-->
+        <div class="hard_chang  boxwrap mt12">
+            <div class="m-tle">
+                <h2 class="h2">维修保养记录
+            <span class="wxbb-suc"><i class="iconfont icon-zht_ok"></i>获取成功</span>
+            </h2>
+            </div>
+            <!--未获取-->
+            <div class="byjj-item">
+                <p>验证手机号，获取本车维修保养记录</p>
+                <div class="appoint_inputtel new-bujj-btn">
+                    <input type="text" placeholder="请输入手机号" class="bord-red">
+                    <a href="" class="">立即查询</a>
+                </div>
+                <!--错误提示-->
+                <div class="new_flase_txt">
+                    <i class="iconfont icon-icon_no flase_ico"></i> 客官，给个靠谱的手机号呗
+                </div>
+            </div>
+            <!--以获取-->
+            <div class="byjj-item">
+                <p>最近保养：2017-07-19</p>
+                <p>保养内容：7500公里定期保养，免费节气气门清洗气门清洗气门清洗门清</p>
+                <a href="" class="byjj-xx-btn">详细维修保养记录</a>
+            </div>
+        </div>
+        <!--2017维修保养记录 end-->
+        <!-- carpic-wrap start -->
+        <div class="carpic-wrap boxwrap mt12">
+            <div class="m-tle">
+                <h2 class="h2">车源图片</h2>
+            </div>
+            <div class="m-cont">
+                <div class="carpic-list">
+                    <p><img src="../temp/detail/carpic.jpg" /></p>
+                    <p><img src="../temp/detail/carpic.jpg" /></p>
+                    <p><img src="../temp/detail/carpic.jpg" /></p>
+                    <p><img src="../temp/detail/carpic.jpg" /></p>
+                </div>
+                <div class="load-more"><a href="#"><em>加载更多</em></a></div>
+            </div>
+        </div>
+        <!-- carpic-wrap end -->
+        <!--购车流程-->
+        <div class="hard_chang  boxwrap mt12">
+            <div class="m-tle">
+                <h2 class="h2">购车流程
+            </h2>
+            </div>
+            <div class="gclc-box">
+                <div class="gclc-hr"></div>
+                <ul class="gclc-table">
+                    <li>
+                        <i></i>
+                        <span>
+                        提交<br>
+                        购车意向
+                    </span>
+                    </li>
+                    <li>
+                        <i></i>
+                        <span>
+                        购车顾问<br>
+                        陪同看车
+                    </span>
+                    </li>
+                    <li>
+                        <i></i>
+                        <span>
+                        成交前<br>
+                        深度复查
+                    </span>
+                    </li>
+                    <li>
+                        <i></i>
+                        <span>
+                        可选多款<br>
+                        贷款方案
+                    </span>
+                    </li>
+                    <li>
+                        <i></i>
+                        <span>
+                       享受售后<br>
+                        保障服务
+                    </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 返回顶部 start -->
+        <div id="backtop" class="m-r-box" style="display: block;">
+            <a onClick="window.scrollTo(0,0)" href="javascript:void(0);" class="m-r-top">
+                <div class="ico-top-arrow">
+                </div>
+            </a>
+            <!-- 返回顶部 end -->
+        </div>
+        <!--20170718增加 start-->
+        <div class="hslie"></div>
+        <div class="new-navlist">
+            <a href="">淘车</a> &gt; <a href="">北京二手车</a> &gt; <a href="">大众</a> &gt; <a href="">POLO</a>
+        </div>
+        <!--20170718增加 end-->
+        <!-- footer start -->
+        <div class="hslie"></div>
+        <div class="new-footer pab50">
+            <ul class="borb">
+                <li><a href="#" class="ckdl">看电脑版</a></li>
+                <li><a href="http://ershouche.h5.yiche.com/" class="wzdt" logwt="wap_btm_weixin" _islog="1">看微信版</a></li>
+                <li><a href="#" class="tyij">提意见</a></li>
+            </ul>
+            <div class="new-footer-text">
+                <p class="footer01">
+                    <span><i  class="txt-wac">分期热线</i>：<strong>4000-189-167</strong></span>
+                    <span>二手车热线：<strong>4000-169-169</strong></span>
+                    <span class="f09">
+                 每天9:00 - 17:30（法定假日除外）
+            </span>
+                </p>
+                <p class="f12">淘车 m.taoche.com</p>
+            </div>
+        </div>
+        <!-- footer end -->
+    </div>
+    <!-- 底部  导航start -->
+    <div class="bot-fixed">
+        <ul>
+            <li class="li-collect">
+                <a href="javascript:;">
+                    <p>
+                        <em class="iconfont  icon-shoucang1 new_ico_shoucang"></em>
+                        <span>收藏</span>
+                    </p>
+                </a>
+            </li>
+            <li class="li-message">
+                <a href="javascript:;">
+                    <p>
+                        <em class="iconfont  icon-dianhua new_ico_xixun"></em>
+                        <span>电话咨询</span>
+                    </p>
+                </a>
+            </li>
+            <li class="li-xdj">
+                <a href="javascript:;">
+                    <p>
+                        <em class="iconfont icon-icon_money new_ico_botwokj "></em> 我要砍价
+                    </p>
+                </a>
+            </li>
+            <li class="li-phone bgff2">
+                <a href="javascript:;">
+                    <p>
+                        <em class="iconfont icon-daikuandaohang new_ico_mianfei"></em>
+                        <!--<img src="../images/tel.gif" alt="" class="new_ico_botmfzx">-->
+                        我想贷款
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 底部导航  start -->
+    <!--20170725底部提示 start-->
+    <div class="new_mfzx_fix new-dis">
+        <div class="bg_opacity70"></div>
+        <div class="mfzx_fix_c">
+            <h2>20%超低首付<br>
+            极速申请~</h2>
+        </div>
+    </div>
+    <!--20170725底部提示 end-->
+    <!--20170725弹层 start-->
+    <div class="shadow_detail" id="shadow_detail" style="display: none;"></div>
+    <!--黑色遮罩-->
+    <div class="detail_flexible" id="detail_flexible_wrapper">
+        <!--询价成功-->
+        <div class="detail_flexible_c" style="display: none;"  id="successWrapper">
+            <!--关闭-->
+            <div class="iconfont icon-Close-01 flexible_close success-close"></div>
+            <!--content-->
+            <div class="submit_success low_submit">
+                <div class="sub_su_main">
+                    <div class="submit_title success-title">询价成功</div>
+                    <div class="iconfont icon-icon_chenggongda icon_success"></div>
+                    <div class="tel_phone tel_phone_pop new-xj-txt success-content">商家会尽快联系您
+                        <br> 请注意接通电话
+                    </div>
+                    <!--按钮-->
+                    <button type="button" class="button_public button_public_buttom button_public_top success-btn">我知道了</button>
+                </div>
+            </div>
+        </div>
+        <!--短信验证码-->
+        <div class="detail_flexible_c" id="smsWrapper" style="display:none;">
+            <!--关闭-->
+            <div class="iconfont icon-Close-01 flexible_close sms-close" ></div>
+            <!--content-->
+            <div class="pop pab25">
+                <div class="pop_title" >已发送短信验证码</div>
+                <div class="input_main" id="countdown-wrapper">
+                    <span class="new_losttime colf9 countdown">发送验证码</span>
+                    <!-- <span class="new_losttime colf9">重新发送</span> -->
+                    <span class="new_losttime col9 recountdown" style="display: none;"><em class="countdown-num-wrapper"><em class="countdown-num"></em>s后</em>重新发送</span>
+                    <input class="input_txt input_m_txt pal30 sms-phone" type="tel" maxlength="11" placeholder="请输入手机号" value="" />
+                    <!--不能输入的样式为colc2 颜色为#C2C2C2-->
+                    <span class="iconfont icon-icon_mphone tips_icon l5"></span>
+                </div>
+                <!--输入框-验证码-->
+                <div class="input_main">
+                    <input class="input_txt input_m_txt pal30 sms-code" type="number" maxlength="6" step="1" placeholder="请输入验证码" />
+                    <span class="iconfont icon-Key-box- tips_icon l5"></span>
+                </div>
+                <!--错误提示-->
+                <span class="error_title tip_error pal5 sms-alert-wrapper"  style="display:none;">
+                        <i class="iconfont icon-icon_no pop_error"></i>
+                        <em class="alert-txt">请您输入短信验证码</em>
+                    </span>
+                <button class="submit sms-submit" type="button">完成</button>
+            </div>
+        </div>
+        <!--咨询低价-->
+        <div class="detail_flexible_c hide" id="barginWrapper">
+            <!--关闭-->
+            <div class="iconfont icon-Close-01 flexible_close bargin-close"></div>
+            <div class="pop price_low pab25">
+                <div class="pop_main">
+                    <!--降价-title-->
+                    <div class="pop_title">商家报价: <span class="pop_title_color pal7 show-price"></span></div>
+                    <div class="input_main">
+                        <input class="input_txt pal30 bargain-price"  type="number" placeholder="请输入你的心理价位" step="0.01" />
+                        <span class="iconfont icon-money-box- tips_icon l5"></span>
+                        <span class="input_close">万</span>
+                    </div>
+                    <div class="input_main">
+                        <input class="input_txt pal30 bargain-phone"  type="tel" placeholder="请输入手机号">
+                        <span class="iconfont icon-icon_mphone tips_icon  l5"></span>
+                    </div>
+                    <!--错误提示-->
+                    <span class="error_title tip_error bargain-alert-wrapper"  style="display:none;">
+                            <i class="iconfont  icon-icon_no"></i>
+                            <em class="alert-txt">客观 , 给个靠谱的手机号呗</em>
+                    </span>
+                    <span class="error_title tip_low" style="display:none;" id="bargin-pricelow">
+                        <i class="iconfont icon-icon_cry tip_low_i"></i>
+                        出价太低了，车主可能接受不了哦~
+                    </span>
+                    <!--按钮-->
+                    <button class="button_public mat30 bargain-submit" type="button">砍价</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--20170725弹层 end-->
+    <!--2017725长时间停留弹层start-->
+    <div class="longtime_fix z-max hide">
+        <div class="logtime_cover"></div>
+        <div class="logtime_box">
+            <i class="iconfont icon-Close-01 logtim_clost"></i>
+            <h2>需要详细贷款方案？</h2>
+            <div class="new-lgotime-img">
+                <img src="../images/rez-xq-14.png" alt="">
+            </div>
+            <a href="" class="lgotime_btn new-rz-tbe">
+            立即咨询申请
+        </a>
+        </div>
+    </div>
+    <!--2017725长时间停留弹层end-->
+    <script src="../js/jquery-1.8.0.min.js"></script>
+    <script src="../js/model.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script>
+    //banner
+    var banSwiper = new Swiper('.ban_swiper', {
+        loop: true,
+        pagination: '.ban-pagination',
+        paginationType: 'fraction'
+    });
+    $(function() {
+        //分享
+        (function() {
+            $('[data-action=popup-share]').rightSwipe({
+                clickEnd: function(b) {
+                    var $leftPopup = this;
+                    if (b) {
+                        var $back = $('.' + $leftPopup.attr('data-back'))
+                        $back.touches({ touchstart: function(ev) { ev.preventDefault(); }, touchmove: function(ev) { ev.preventDefault(); } });
+                        $leftPopup.find('.close').on('click', function(ev) {
+                            ev.preventDefault();
+                            $back.trigger('close');
+                        })
+                    }
+                }
+            })
+        })();
+    });
+
+    //20170303
+    (function() {
+        if (/(Safari)/i.test(navigator.userAgent)) {
+            var style = document.createElement('style')
+            //style.innerText = "body,html{height:100%;width:100%;overflow:hidden}.detail_box{height:100%;width:100%;overflow:auto;-webkit-overflow-scrolling:touch;overflow-scrolling:touch}"
+            document.head.appendChild(style)
+        }
+    })();
+    </script>
+    <!--右侧-->
+    <script>
+    var storeTips;
+    window.onscroll = function() {
+        storeTips = setTimeout(function() {
+            $(window).scrollTop() > 150 ? $('.store-tips').addClass("in") : $('.store-tips').removeClass("in")
+        }, 100)
+    }
+    </script>
+    <script type="text/javascript" src="../js/tc.validator.js"></script>
+    <script type="text/javascript" src="../js/success.js"></script>
+    <script type="text/javascript" src="../js/sms.js"></script>
+    <script type="text/javascript" src="../js/bargain.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+body,html{width:100%;height:100%;background-color:#f5f5f5;}
+.content{width:1200px;margin:0 auto;background-color:white;padding-bottom:30px;}
+.content_module{width:1100px;margin:0 auto;}
+.icon {width:1em; height:1em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;}
+/*面包屑*/
+.crumbs{height:50px;line-height:50px;color: #999;width: 1200px;font-size: 14px;font-family: "Microsoft YaHei";margin:0 auto;}
+.person_details{width:100%;margin:0 auto;background-color:#fff;position:relative;overflow:hidden}
+.person_details .title{height:auto;overflow:hidden;width:95%;margin:0 auto}
+.person_details .title img{width:270px;margin:30px 30px 30px 0;float:left}
+.person_details .title_right{float:left;margin:30px 0 0 0}
+.person_details .title_right h2{font-size:20px;color:#333;margin-bottom:40px;margin-top:5px}
+.person_details .title_right ul li{float:left;text-align:center;padding:0 40px;border-left:1px solid #ebebeb;line-height:24px;color:#333;font-size:14px;color:#fff}
+.person_details .title_right ul li p{color:#666}
+.person_details .title_right ul li p.color{color:#000}
+.person_details .title_right ul li p.color_price{color:#ff7e00}
+.person_details .title_right ul li span{display:block;width:170px;height:40px;line-height:40px;text-align:center;background-color:#f90;border-radius:3px;cursor:pointer;position:relative;top:5px}
+.person_details .title_right ul li:last-child{height:50px}
+#taoche{position:absolute;left:25px;top:12px;width:7%}
+.person_details .details_border{border-bottom:1px solid #e9e9e9}
+
+.report{width:1100px;margin:0 auto;}
+.report h1{font-size:24px;color:#333333;height:50px;line-height:50px;margin-top:30px;padding-left:490px;margin-bottom:30px;}
+.report h1 span{font-size:14px;color:#999999;padding-left:30px;}
+.report p{text-align:center;width:97%;margin:0 auto;line-height:25px;font-size:16px;}
+.report ul{width:1050px;margin:20px auto;overflow:hidden;margin-bottom:70px;}
+.report ul li{width:25%;float:left;overflow:hidden;margin-top:35px;}
+.report ul li i{display:block;font-size:55px;float:left;margin:20px;}
+.report ul li .font{width:120px;float:left;}
+.report ul li .font p{text-align:left;width:100%;padding-left:10px;}
+
+
+/*accident*/
+.accident{width:100%;margin:0 auto;margin-bottom:20px;}
+.accident .accident_title{height:50px;line-height:50px;background-color:#f9f9f9;font-size:16px;}
+.accident .accident_title i{font-size:24px;display:inline-block;margin:0 15px;vertical-align:middle}
+.accident .accident_title span{font-size:14px;color:#333333;margin-left:5px;}
+.accident .accident_title span.first_span{margin-left:30px;}
+.accident .accident_title button{border:none;background-color:#ffe5cc;color:#ff7e00;height:30px;line-height:30px;text-align:center;border-radius:3px;margin-left:10px;}
+.accident .accident_title .stop_btn{float:right;margin-right:20px;}
+.accident .accident_title .stop_btn i{margin-left:10px;}
+
+
+.accident .list_item{border-left:1px solid #e9e9e9;margin-top:6px;}
+.accident .list_item img{display:block;margin:0 auto;}
+.accident .list_item ul{margin-top:-4px;border-top: 1px solid #e9e9e9;}
+.accident .list_item ul li{float:left;width:25%;border-bottom:1px solid #e9e9e9;border-right: 1px solid #e9e9e9;position:relative;}
+.accident .list_item ul li.active{left:0px !important;}
+.accident .list_item ul li.clear{clear:both;}
+.accident .list_item ul li span{display:inline-block;width:62px;height:52px;background:#f9f9f9;text-align:center;line-height:52px;border-right:1px solid #E9E9E9;}
+.accident .list_item ul li p{display:inline-block;font-size:14px;}
+.accident .list_item ul li p .icon{display:inline-block;margin:0px 15px;font-size:16px;vertical-align:middle}
+
+
+
+/*错误展示层*/
+.false-show-fix{width:292px;position:absolute;z-index:1000;left:-50px;top:10px;}
+.false-sbox{width: 292px; background: #ffffff; border:1px solid #D9D9D9; margin-top:40px;-moz-box-shadow:-1px 4px 13px #D9D9D9; -webkit-box-shadow:-1px 4px 13px #D9D9D9; box-shadow:-1px 4px 13px #D9D9D9; padding-bottom: 25px;}
+.false-sbox:before{ content: ""; position: absolute; top:33px; right: 146px; width: 16px; height: 8px; background:url("../images/new-rez14.png") no-repeat; }
+.sbox-beaus{ width: 242px; margin: 25px auto 0px; font-size: 14px; line-height: 20px;}
+.sbox-beaus label{ float: left;min-height: 20px; width: 70px;}
+.sbox-beaus p{ width: 172px; float: left;}
+.sbox-pic{ width:242px;margin: 10px auto 0px; clear: both;font-size: 14px;}
+.sbox-pic h3{ padding-bottom: 12px; }
+.sbox-pic-table{ width: 242px; margin: 0 auto; height: 160px;background: #333;}
+    /**/
+.new-picbox{ width: 242px; height: 160px; position: relative;}
+.new-picbox-pic{width: 242px; height: 160px; overflow: hidden;}
+.new-picbox-pic ul{position:relative;width:726px;}
+.new-picbox-pic li img{ width: 242px; height: 160px;}
+.new-picbox-pic li{width:242px !important;float:left !important;}
+.rrp-list .new-picbox-pic li{width: 242px; height: 160px;}
+
+.new-picbox-prev{ width:25px; height: 36px;  position: absolute;  left: 0px; top: 62px; cursor: pointer;  z-index: 1000;background: #000; opacity: .6;filter: alpha(opacity=60);  -moz-opacity: .6;}
+.new-picbox-prev a{background: url("../images/prov-next-cio.png") 8px 10px no-repeat; display: block; width:25px; height: 36px; }
+.new-picbox-prev a:hover{background: url("../images/prov-next-cio.png") 8px -64px no-repeat;}
+
+.new-picbox-next{ width:25px; height: 36px; position: absolute;right: 0px; top: 62px; cursor: pointer; z-index: 1000; background: #000; opacity: .6;filter: alpha(opacity=60);  -moz-opacity: .6;}
+.new-picbox-next a{ background: url("../images/prov-next-cio.png") 8px -25px no-repeat; display: block; width:25px; height: 36px; }
+.new-picbox-next a:hover{background: url("../images/prov-next-cio.png") 8px -97px no-repeat;}
+
+.new-picbox-pic li span{background: #000; opacity: .6; position: absolute; left: 0px;bottom: 0px; width: 100%; height: 30px; z-index: 1;filter: alpha(opacity=60);  -moz-opacity: .6; display: block;}
+.new-picbox-pic li em{height: 30px; width: 242px;  text-align: center; color: #ffffff; line-height: 30px;position: absolute;bottom: 0px; display: block; z-index: 6;}
+
+.clear{clear:both;}
+
+.somediv { overflow: visible !important;}
+.Sold{width:60px;height:60px;border-radius:50%;position:absolute;left:11%;top:37%;background:rgba(0,0,0,.5);text-align:center;line-height:60px;color:#fff}

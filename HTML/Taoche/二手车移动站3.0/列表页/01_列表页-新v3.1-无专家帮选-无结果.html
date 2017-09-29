@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<title>易车二手车</title>
+	<link rel="stylesheet" type="text/css" href="../css/新头尾.css" />
+	<link rel="stylesheet" type="text/css" href="../css/公共控件.css" />
+	<link rel="stylesheet" type="text/css" href="../css/列表页-新.css" />
+</head>
+
+<body class="bg-greyer">
+	<!-- 头部star -->
+	<div class="header-mask" style="display:none;"></div>
+	<div class="new-header">
+	  	<a class="new-btn-return" href="#">返回</a>
+	  	<h2>卖车</h2>
+	   	<div class="new-return-rit">
+	      	<a href="#" class="new-menu">菜单</a>
+     <a href="#" class="new-return-city">北京</a> 
+	   	</div>
+	   	<!-- 导航浮层  start -->
+	    <div class="new-menu-layer">
+	        <div class="new-menu-layer-arrow"></div> 
+	        <div class="new-menu-layer-load">
+	            <div class="new-menu-layer-bg"><img src="../images/new-menu-bg.jpg" alt=""></div> 
+		        <!-- -未登录  start -->
+		        <div class="new-menu-top">
+	              	<h1 class="new-menu-logo"></h1>
+	              	<div class="new-menu-ico">
+	                 	<span><img src="../images/new-mune-bg1.png" alt=""></span>
+	                 	<em><a href="#">请登录</a></em>
+	              	</div>
+		        </div>
+		        <!-- -未登录  end -->
+		        <!-- -已登录  start -->
+		        <!--<div class="new-menu-top">
+	              	<h1 class="new-menu-logo"></h1>
+	              	<div class="new-menu-ico">
+	                 	<span><img src="../images/new-mune-bg2.png" alt=""></span>
+	                 	<em>赵二喜</em>
+	              	</div>
+	           	</div>-->
+	           	<!-- -已登录  end -->
+	           	<!-- -有头像  start -->
+	           	<!--<div class="new-menu-top">
+	              	<h1 class="new-menu-logo"></h1>
+	              	<div class="new-menu-ico">
+	                 	<span><img src="../images/new-mune-bg3.png" alt=""></span>
+	                 	<em>赵二喜</em>
+	                 	<i>9</i>
+	              	</div>
+	           	</div>-->
+	           	<!-- -有头像  end -->
+	        </div>
+	        <div class="new-menu-list">
+		        <ul>
+		            <li><a href="#">首页</a></li>
+		            <li><a href="#">买车</a></li>
+		            <li><a href="#">卖车</a></li>
+		            <li><a href="#">置换</a></li>
+		            <li><a href="#">贷款</a></li>
+		            <li><a href="#">帮买</a></li>
+		            <li><a href="#">评估</a></li>
+		            <li><a href="#">攻略</a></li>
+		        </ul>
+	        </div>
+	        <div class="new-nav-list">
+		        <ul class="clearfix">
+		           <li><a href="#" class="new-nav-ico1">我的关注</a></li>
+		           <li><a href="#" class="new-nav-ico2">最近浏览</a></li>
+		           <li><a href="#" class="new-nav-ico3">车源管理</a></li>
+		           <li><a href="#" class="new-nav-ico4">帮买订单</a></li>
+		        </ul>
+	        </div>  
+	    </div>
+	  	<!-- 导航浮层  end --> 
+	</div>
+	<!-- 头部end -->
+	
+	<!-- 搜索 start -->
+	<div class="seach-box">
+		<div class="search-inner">
+			<div class="seach">
+			   	<input type="text" placeholder="请输入品牌名称或关键词">
+			    <i class="ser-close"></i>
+			</div>
+			<div class="e-ico">
+				<a href="#" class="ico-selbtn ico-selbtn2"></a>
+			</div>
+		</div>
+	</div>
+	<!-- 搜索 end -->
+	
+	<!-- 筛选  start -->
+	<div class="filter-seller boxwrap" id="filterNav">
+		<ul>
+			<li class="tabsli"><a href="javascript:;"><em>排序</em></a></li>
+			<li class="tabsli tabsli-brand"><a href="javascript:;"><em>品牌</em></a></li>
+			<li class="tabsli"><a href="javascript:;"><em>价格</em></a></li>
+			<li class="tabsli"><a href="javascript:;"><em>筛选</em></a></li>
+		</ul>
+	</div>
+	<!-- 筛选  end -->
+	
+	<!-- 足迹  start -->
+	<div class="tract-top">
+		<span class="tra-span">足迹：</span>
+		<div class="track-div">
+			<ul class="trackul">
+				<li><a href="#">科鲁兹<em>1-2年</em></a></li>
+				<li><a href="#">大众<em>5-10年</em></a></li>
+				<li><a href="#">宝莱<em>8-20万</em></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 足迹  end -->
+	
+	<!-- 车源列表无结果 start -->
+	<div class="car-list-wrap boxwrap">
+		<div class="listno-wrap">
+			<div class="listno-top listno-box">
+				<em class="lef-fail"><img src="http://image.bitautoimg.com/taoche/2016taoche_m/fail_190_110.png"/></em>
+				<p class="rig-txt">当前没有符合您筛选要求的车源<em class="t-gray">有符合条件的车源上架时，我们第一时间通知您</em></p>
+			</div>
+		</div>
+		<div class="listno-btn">
+			<div class="btn-bx">
+				<a href="#" class="btn-orange">好的，有车通知我</a>
+				<a href="#" class="btn-orangebord">看看其他车</a>
+			</div>
+		</div>
+	</div>
+	<!-- 车源列表无结果 end -->
+	
+	
+	<!-- footer start -->
+	<div class="hslie"></div>
+    <div class="new-footer">
+		<ul>
+		    <li><a href="#" class="ckdl">看电脑版</a></li>
+		    <li><a href="#" class="wzdt">看微信版</a></li>
+		    <li><a href="#" class="tyij">提意见</a></li>
+		</ul> 
+		<div class="new-footer-text">
+		    <p>购车热线：<strong>4000-189-167 </strong> ( 9:00 – 21:00 )</p>
+		    <p>易车二手车 m.taoche.com</p>
+		</div>
+	</div>
+	<!-- footer end -->
+	
+	<script src="../js/jquery-1.8.0.min.js"></script>
+	
+</body>
+</html>

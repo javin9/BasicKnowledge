@@ -1,0 +1,13 @@
+/*翻页*/
+
+.the-pages{clear:both; position:relative; height:28px; overflow:hidden;  font-size:20px;}
+.pages_top{margin-top:20px}
+.the-pages div{float:left; position:relative; left:50%;}
+.the-pages div a,.the-pages div a:link, .the-pages div a:visited, .the-pages div span{display:block;  line-height:28px; padding:0 10px;  color:#333333; float:left;  border-top:none; position:relative; left:-50%; white-space:nowrap; margin:0 10px;border-radius:4px;cursor:pointer;}
+.the-pages div a:hover{background:#f0f0f0; text-decoration:none;border-radius:4px;}
+.the-pages div a.linknow,.the-pages div a.linknow:link,.the-pages div a.linknow:visited,.the-pages div a.linknow:hover{ background:#ff9a1f;  color:#ffffff;cursor:text;}
+.the-pages div span.nolink{/*border-bottom:none; background:#FFFFFF; */line-height:30px;}
+.the-pages div span.preview_off, .the-pages div span.next_off{color:#ccc;}
+
+a.pages-up,a.pages-next{font-size:24px;font-family:"宋体";}
+.the-pages div a.pages-disabled,.the-pages div a.pages-disabled:link,.the-pages div a.pages-disabled:visited,.the-pages div a.pages-disabled:hover{color:#cccccc;background:none;cursor:text;}

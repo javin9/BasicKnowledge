@@ -1,0 +1,61 @@
+body,html{padding:0px;margin:0px;width:100%;height:100%;font-family:"微软雅黑";}
+ul,li{padding:0px;margin:0px;list-style-type:none;}
+img{border:none;display:block;}
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
+
+
+.content{width:100%;}
+.introduction{width:90%;margin:0 auto;padding-bottom:40px;border-bottom:1px solid #efefef;}
+.introduction h1{font-size:14px;color:#394043;font-weight:bold;margin:30px 0px 8px 0px;}
+.introduction p{font-size:14px;color:#394043;line-height:25px;text-indent:2em;}
+.introduction .videos{width:100%;height:183px;margin-top:30px;position:relative;}
+.introduction .videos img{position:absolute;left:0px;top:0px;z-index:10;}
+#my-video-1{width:100%;height:183px;}
+
+.course{width:90%;margin:0 auto;padding-bottom:15px;}
+.course h1{height:40px;line-height:40px;font-size:14px;color:#394043;font-weight:bold;}
+.course ul{border-bottom:1px solid #EFEFEF;}
+.course ul li{border-left:1px solid #e5e5e5;position:relative;}
+.course ul li.first{height:35px;color:#B0B3B4;padding-left:20px;border-left:1px dashed #e5e5e5;}
+
+.course ul li:first-child i{position:absolute;top:1px;}
+.course ul li:first-child span{position:relative;top:-3px;}
+.course ul li:first-child p{position:relative;top:-3px;}
+
+
+.course ul li .orange{background-color:#FF6402 !important;}
+.course ul li .circle{display:block;width:12px;height:12px;border-radius:50%;background-color:#e5e5e5;position:absolute;left:-7px;top:5px;}
+.course ul li.border-none{border:none;}
+.course ul li span{display:block;float:left;padding-left:20px;color:#B0B3B4;width:100px;line-height:22px;}
+.course ul li span.cur{font-size:14px;color:#394043;line-height:22px;}
+.course ul li p{float:left;padding-bottom:20px;padding-left:12px;width:65%;line-height:23px;}
+.course ul li p.none{height:42px;}
+
+.shareholder{width:95%;margin:0 auto;}
+.shareholder h1{font-size:14px;color:#394043;font-weight:bold;}
+.shareholder ul{margin:12px 0px;overflow:hidden;}
+.shareholder ul li{float:left;width:25%;height:50px;}
+.shareholder ul li img{width:93%;}
+.shareholder ul li.li1 img{height:31px;width:93%;}
+
+
+
+@media only screen and (max-width:320px) {
+.shareholder ul li.li1 img{height:27px !important;width:93%;}
+}
+
+@media only screen and (max-width:414px) {
+.shareholder ul li.li1 img{height:35px;width:93%;}
+}
+
+@media only screen and (max-width:375px) {
+.shareholder ul li.li1 img{height:31px;width:93%;}
+}

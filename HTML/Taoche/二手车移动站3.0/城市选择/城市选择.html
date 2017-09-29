@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>地区-经销商-三级级菜单</title>
+    <link rel="stylesheet" type="text/css" href="../css/新头尾.css" />
+	<link rel="stylesheet" type="text/css" href="../css/公共控件.css" />
+    <link rel="stylesheet" type="text/css" href="../css/车型大全.css" />
+    <link rel="stylesheet" type="text/css" href="../css/2015选车工具.css" />
+    <link rel="stylesheet" type="text/css" href="../css/城市选择.css" />
+    <link rel="stylesheet" type="text/css" href="../css/底部控件.css" />
+    <link rel="stylesheet" type="text/css" href="../css/选车页面.css" />
+</head>
+<body>
+	<!-- 头部star -->
+	<div class="new-header">
+	  	<a class="new-btn-return" href="#">返回</a>
+	  	<h2>选择城市</h2>
+		<div class="new-return-rit">
+		    <a href="#" class="new-menu">菜单</a>
+		</div>
+	</div>
+	<!-- 头部end -->
+	
+	<!-- 城市选择  start -->
+    <div class="brandfilter">
+    	<!-- 当前定位城市  start -->
+    	<div class="current-city">
+    		<span class="current-tle">当前定位城市</span>
+    		<div class="city-now">
+    			<a href="#" class="c-refresh">
+    				<em></em>
+    			</a>
+    			<a href="javascript:;" class="cur-city">北京</a>
+    		</div>
+    	</div>
+    	<!-- 当前定位城市  end -->
+        <div class="alert" style="display: none;">
+            <span>A</span>
+        </div>
+        <div class="choice_city">
+        </div>
+    </div>
+    
+    <div class="leftmask leftmask3" style="display: none;"></div>
+    <!--市层 start-->
+    <div class="leftPopup month model2 city" data-back="leftmask3" style="display: none;">
+        <div class="swipeLeft swipeLeft-sub">
+            <div class="loading">
+                <img src="http://image.bitautoimg.com/uimg/mbt2015/images/loading.gif" />
+                <p>正在加载...</p>
+            </div>
+        </div>
+    </div>
+    <!--市层 end-->
+    
+    <!--三级 start-->
+    <div class="leftPopup model3 dealer" data-back="leftmask3" style="display: none;">
+        <div class="swipeLeft swipeLeft-sub">
+             <div class="loading">
+                <img src="http://image.bitautoimg.com/uimg/mbt2015/images/loading.gif" />
+                <p>正在加载...</p>
+            </div>
+        </div>
+    </div>
+    <!--三级 end-->
+    
+    <div class="fixed-nav">
+    </div>
+    <!-- 城市选择  end -->
+
+    <!--省模板 start -->
+    <script type="text/template" id="areaTemplate">
+        <dl class="tt-list">
+        	<dt class="phone-title"><span>区域</span></dt>
+            <dd class="phone-title title-sigle">
+                <a href="#">全国</a>
+                <a href="#" data-action="city" data-id="1">珠三角</a>
+                <a href="#" data-action="city" data-id="1">长三角</a>
+                <a href="#" data-action="city" data-id="1">云贵川</a>
+                <a href="#" data-action="city" data-id="1">云贵川</a>
+            </dd>
+            <dt class="phone-title"><span>直辖市</span></dt>
+            <dd class="phone-title title-sigle">
+                <a href="#" class="cur">北京</a>
+                <a href="#">天津</a>
+                <a href="#">重庆</a>
+                <a href="#">上海</a>
+            </dd>
+            { for(var n in provinces){}
+            <dt class="phone-title" data-key="{=n}"><span>{=n}</span></dt>
+            <dd>
+            	{ for(var i=0;i< provinces[n].length ;i++ ){}
+                <a href="#" {=provinces[n][i].children ? 'data-action="city"':''}  data-id="{=provinces[n][i].id}" class="{=provinces[n][i].children ? '':'nbg'} {= provinces[n][i].id.toString() == current_province.toString()  ? 'current':''}">
+                    {=provinces[n][i].name}
+                </a>
+                {}}
+            </dd>
+            {}}
+        </dl>
+    </script>
+    <!--省模板 end -->
+
+    <!--市模板start-->
+    <script type="text/template" id="cityTemplate">
+        <div class="ap">
+            <ul class="first-list rp">
+                <li class="provice-all"><a>不限</a></li>
+                {for(var i=0;i<citys.length;i++){
+                    var ischildren = filterDealer(citys[i].id.toString()) }
+                    <li>
+                    	<a {=ischildren ? 'data-action="dealer"':''}  data-id="{=citys[i].id}" class="{= citys[i].id.toString() == current_city.toString()  ? 'current':''} {= ischildren ? 'star':''}">
+                    		{=citys[i].name}
+                    	</a>
+                    </li>
+                {}}
+            </ul>
+        </div>
+    </script>
+    <!--市模板end-->
+
+    <!--三级模板start-->
+    <script type="text/template" id="countryTemplate">
+      <dl class="tt-list absolute">
+			<dt class="provice-all"><a>不限</a></dt>
+           {for(var i=0;i<dealers.length;i++){}
+			<dd class="{= dealers[i].id.toString() == current_dealer.toString()  ? 'current':''}">
+				<a href="#" data-id="{=dealers[i].id}">
+					{=dealers[i].name}
+				</a>
+			</dd>
+           {}}
+      </dl>
+    </script>
+    <!--三级模板end-->
+    
+    <!--字母列表模板 start-->
+    <script type="text/template" id="navTemplate">
+        <ul class="rows-box">
+            <li><a href="#">#</a></li>
+            { for(var n in provinces){ }
+                <li><a href="#">{=n}</a></li>
+            {}}
+        </ul>
+    </script>
+    <!--字母列表模板 end-->
+
+    <!--loading模板 start -->
+    <div class="template-loading" style="display: none;">
+        <div class="loading">
+            <img src="http://image.bitautoimg.com/uimg/mbt2015/images/loading.gif" />
+            <p>正在加载...</p>
+        </div>
+    </div>
+    <!--loading模板 end -->
+    
+    <script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="../js/iscroll.js"></script>
+	<script type="text/javascript" src="../js/underscore.js"></script>
+	<script type="text/javascript" src="../js/model.js"></script>
+	<script type="text/javascript" src="../js/note.js"></script>
+	<script type="text/javascript" src="../js/area.js"></script>
+	<script type="text/javascript" src="../js/rightswipe3.js"></script>
+	<script type="text/javascript">
+	    var current_province = 2, //默认选中年
+	        provinceid = 0,
+	        current_city = 201,
+	        current_dealer = 1000;
+	
+	    //省份模拟json //第一层数据源
+	    var provinces = {
+	        'A': [{ id: '1', name: '安徽省', children: true }],
+	        'D': [{ id: '2', name: '大连',children: false },
+	        	  { id: '3', name: '大庆',children: true }],
+	        'F': [{ id: '4', name: '福建省', children: true }],
+	        'G': [{ id: '5', name: '甘肃省', children: true },
+	              { id: '6', name: '广东省', children: true },
+	              { id: '7', name: '广西壮族自治区', children: true },
+	              { id: '8', name: '贵州省', children: true }],
+	        'H': [{ id: '9', name: '海南省', children: true },
+	              { id: '10', name: '河北省', children: true },
+	              { id: '11', name: '黑龙江省', children: true },
+	              { id: '12', name: '湖南省', children: true },
+	              { id: '13', name: '湖北省', children: true }],
+            'K': [{ id: '14', name: '杭州',children: true },
+                  { id: '15', name: '合肥',children: true }],
+            'M': [{ id: '16', name: '杭州',children: true },
+                  { id: '17', name: '合肥',children: true }],
+            'S': [{ id: '18', name: '杭州',children: true },
+                  { id: '19', name: '合肥',children: true }],
+            'N': [{ id: '20', name: '杭州',children: true},
+                  { id: '21', name: '合肥',children: true }],
+            'O': [{ id: '22', name: '杭州',children: true },
+                  { id: '23', name: '合肥',children: true }],
+            'P': [{ id: '24', name: '杭州',children: true },
+                  { id: '25', name: '合肥',children: true }]
+	    },
+	        
+	    //城市模拟json //第二层数据源
+	    citys = {
+	        '1': [
+	            { id: 101, name: '合肥' },
+	            { id: 102, name: '安庆' },
+	            { id: 103, name: '蚌埠' },
+	            { id: 104, name: '巢湖' },
+	            { id: 105, name: '池州' },
+	            { id: 106, name: '阜阳' },
+	            { id: 107, name: '淮北' },
+	            { id: 108, name: '淮南' },
+	            { id: 109, name: '六安' },
+	            { id: 110, name: '马鞍山' },
+	            { id: 111, name: '铜陵' },
+	            { id: 112, name: '芜湖' },
+	            { id: 113, name: '宣城' },
+	            { id: 114, name: '滁州' },
+	            { id: 115, name: '黄山' },
+	            { id: 116, name: '宿州' }],
+	        '4': [{ id: 401, name: '泉州' },
+	              { id: 402, name: '南平' },
+	              { id: 409, name: '宁德' },
+	              { id: 410, name: '三明' },
+	              { id: 403, name: '福州' },
+	              { id: 404, name: '厦门' },
+	              { id: 405, name: '龙岩' },
+	              { id: 406, name: '漳州' },
+	              { id: 407, name: '莆田' }]
+	    },
+	
+	    dealers = {
+	        '103': [{
+	            id: 103001,
+	            name: '三级1'
+	        }, {
+	            id: 103002,
+	            name: '三级1'
+	        }, {
+	            id: 103003,
+	            name: '三级1'
+	        }, {
+	            id: 103004,
+	            name: '三级1'
+	        }, {
+	            id: 103005,
+	            name: '三级1'
+	        }, {
+	            id: 103006,
+	            name: '三级1'
+	        }, {
+	            id: 103007,
+	            name: '三级1'
+	        }, {
+	            id: 103008,
+	            name: '三级1'
+	        }, {
+	            id: 103009,
+	            name: '三级1'
+	        }, {
+	            id: 1030010,
+	            name: '三级1'
+	        }, {
+	            id: 1030011,
+	            name: '三级1'
+	        }, {
+	            id: 1030012,
+	            name: '三级1'
+	        }, {
+	            id: 1030013,
+	            name: '三级1'
+	        }, {
+	            id: 1030014,
+	            name: '三级1'
+	        }, {
+	            id: 1030015,
+	            name: '三级1'
+	        }]
+	    }
+	
+	    function filterDealer(id) {
+	        for (var n in dealers) {
+	            if (n == id) {
+	                return true;
+	            }
+	        }
+	        return false;
+	    }
+	
+	    $(function () {
+	    	
+	        var $body = $('body');
+			
+			//省份
+	        $body.trigger('areainit', { /*data 支持api 接口*/
+	            ds: provinces, 
+	            notetop: 0,
+	            $continer: $body.find('.choice_city'), 
+	            fnEnd: function () {
+	                var $choice_city = this;
+	                //加载成功
+	                //console.log('加载成功')
+	           		 //调用 publicselect2 是二级连选控件
+			        $body.trigger('publicselect2',
+			            {
+			                controlName1: 'publicswipe1', //调用公共一级控件
+			                actionName1: '[data-action=city]',//绑定第一次属性
+			                actionName2: '[data-action=dealer]',//绑定第二次属性
+			                ds1: citys,//第一层数据源
+			                ds2: dealers,//第二层数据源
+			                templateid1: '#cityTemplate',
+			                templateid2: '#countryTemplate',
+			                fliterTemplate: function (templateid, f) {
+				                  //返回默认模板
+				                  return templateid;
+				            },
+				            fliterData1: function (ds, f) {
+				                  var data = [];
+				                  for (var n in ds) { //筛选 第一层数据
+				                      if (n.toString() == f.$current.attr('data-id').toString()) {
+				                          data = ds[n];
+				                      }
+				                  }
+				                  return { citys: data };
+				            },
+				            fliterData2: function (ds, f) {
+				                  var data = [];
+				                  for (var n in ds) { //筛选 第二层数据
+				                      if (n.toString() == f.$current.attr('data-id').toString()) {
+				                          data = ds[n];
+				                      }
+				                  }
+				                  return { dealers: data };
+				            },
+			                fnEnd1: function (paras) {
+			                    //console.log('打开第一层后回调')
+			                    var $swipeLeft = this,
+			                          $leftPopupModels = $swipeLeft.parent(),
+			                          $back = $('.' + $leftPopupModels.attr('data-back')),
+			                          $a = $swipeLeft.find('.provice-all a');
+			
+			                    //$a.html(paras.$current.html());
+			                    //返回按钮事件
+			                    $swipeLeft.find('.provice-all a').click(function (ev) {
+			                        ev.preventDefault();
+			                        $back.trigger('close');
+			                        //$("html,body").removeAttr("style");
+			                    });
+			                    provinceid = parseInt(paras.$current.attr('data-id'));
+			                    //$("html,body").css({"overflow":"hidden","height":"100%"});
+			                },
+			                fnEnd2: function (paras) {
+			                    var $swipeLeft = this,
+			                         $leftPopupModels = $swipeLeft.parent(),
+			                         $back = $('.' + $leftPopupModels.attr('data-back')),
+			                         $a = $swipeLeft.find('.provice-all a');
+			                   	 	$a.html(paras.$current.children(0).html());
+			
+			                    //返回按钮事件
+			                    $swipeLeft.find('.provice-all a').click(function (ev) {
+			                        ev.preventDefault();
+			                        $back.trigger('close', { leftPopup: $leftPopupModels });
+			                        //$("html,body").removeAttr("style");
+			                    });
+		
+			                    //选中按钮事件
+			                    $swipeLeft.find('a').click(function () {
+			                        var $this = $(this);
+			                        current_province = provinceid;
+			                        current_city = parseInt(paras.$current.attr('data-id'));
+			                        current_dealer = parseInt($this.attr('data-id'));
+			                        alert('选中' + current_province + '-' + current_city + '-' + current_dealer);
+			                        $back.trigger('close');
+			                        //$("html,body").removeAttr("style");
+			                    })
+			                }
+			            });
+		            }
+	        }) 
+            //当前定位城市图标
+	        $(".c-refresh").click(function(){
+	        	$(this).find("em").addClass("ref");
+	        }); 
+	        
+	    });
+	</script>
+
+</body>
+</html>

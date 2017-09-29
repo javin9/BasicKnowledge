@@ -1,0 +1,608 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>列表页</title>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/html5shiv.min.js"></script>
+    <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/Respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" href="../css/col.min.css">
+<link rel="stylesheet" type="text/css" href="../css/1200_com.css">
+<link rel="stylesheet" type="text/css" href="../css/1200_头.css">
+<link rel="stylesheet" type="text/css" href="../css/图片列表.css">
+<link rel="stylesheet" type="text/css" href="../css/按钮.css">
+<link rel="stylesheet" type="text/css" href="../css/⁮标题.css">
+<link rel="stylesheet" type="text/css" href="../css/筛选.css">
+<link rel="stylesheet" type="text/css" href="列表页.css">
+<link rel="stylesheet" type="text/css" href="列表页_news.css"/>
+<link rel="stylesheet" type="text/css" href="../css/翻页.css">
+<link rel="stylesheet" type="text/css" href="../css/推荐商家.css">
+<link rel="stylesheet" type="text/css" href="../css/浮层.css">
+<link rel="stylesheet" type="text/css" href="../font/iconfont.css"/>
+<link rel="stylesheet" type="text/css" href="./筛选条件.css">
+<link rel="stylesheet" type="text/css" href="iconbrand_20.css"/>
+<script src="../js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="../css/ie-hack.css">
+<![endif]-->
+</head>
+
+<body>
+<!--个人登录后 star -->
+<div class="nav ">
+  <div class="container">
+    <ul class="nav-col-l">
+      <li ><a href="http://www.bitauto.com/" target="_blank">易车</a></li>
+      <li class="current"><a target="_blank" href="#" rel="nofollow">易车二手车</a></li>
+      <li><a rel="nofollow" href="#" target="_blank">易车•惠买车</a></li>
+      <li><a rel="nofollow" href="#" target="_blank">易车商城</a></li>
+      <li><a href="#" target="_blank">易车惠</a></li>
+      <li onMouseOver="document.getElementById('app-link').style.display='';this.className='app-link bit-hover';" onMouseOut="document.getElementById('app-link').style.display='none';this.className='app-link';" class="app-link"><a rel="nofollow" target="_blank" href="http://app.yiche.com/">APP<em></em></a>
+		   <div class="app-list" id="app-link" style="display: none;">
+				<a rel="nofollow" href="http://app.yiche.com/wap/" target="_blank">手机易车网</a>
+				<a rel="nofollow" href="http://app.yiche.com/yiche/" target="_blank">易车APP</a>
+				<a rel="nofollow" href="http://app.yiche.com/qichebaojiadaquan/" target="_blank">汽车报价大全</a>
+				<a rel="nofollow" href="http://app.yiche.com/huimaiche/" target="_blank">惠买车</a>
+				<a rel="nofollow" href="http://app.yiche.com/taoche/" target="_blank">易车二手车</a>
+				<a rel="nofollow" href="http://app.yiche.com/cheyouzhijia/" target="_blank">车友之家</a>
+	<a rel="nofollow" href="http://app.yiche.com/chexingshouce/" target="_blank">车型手册</a>
+	
+		</div>
+	 </li>
+      <li><a href="#" target="_blank">北京车展</a></li>
+    </ul>
+
+    <!--网站导航 start-->
+    <div class="nav-col-r">
+      <ul  class="nav-login">
+      <li class="noborderl"><input type="button" onClick="location.href='http://i.yiche.com/authenservice/login.html?returnurl='+encodeURIComponent(location.href)" id="btnUserLoginHeader" class="bit-logintop" value="个人登录"><a href="http://i.yiche.com/authenservice/registersimple/register.html" target="_blank">注册</a></li>
+      <li><a href="#" target="_blank">免费发车</a></li>
+      <li><a href="#" target="_blank">商家登录</a></li>
+      <li ><a href="#" target="_blank">商家发车</a></li>
+      </ul>
+    </div>
+    <!--网站导航 end-->
+  </div>
+</div>
+<!--个人登录后 end -->
+<!--头部搜索和菜单导航 star-->
+<div class="header">
+   <!--头部广告 star -->
+<div class="ad-1200-80">1200*80</div>
+<!--头部广告 end -->
+    <div class="container">
+    <!--头部地方站和搜索star -->
+    <div class="header-search">
+      <div class="header-logo">
+            <h1><a href="#">易车网</a></h1>
+            <div id="city-name-boxhover" class="city-name "><a href="#" class="city-name-link">北京<em></em></a>
+            </div>
+      </div>
+           <!--搜索star -->
+                <div class="used-car-search">
+                   <input name=" " class="" type="text" value="区县／街道／地标等具体地点">
+                   <!--<input name=" " class="used-car-search-on" type="text" value="区县／街道／地标等具体地点"> 输入后的颜色-->
+                   <div class="used-car-search-but"><a href="#">搜索</a></div>
+                </div>
+           <!--搜索end -->
+      </div>
+ </div>
+     <!--头部菜单 -->
+     <div class="header-menu">
+       <ul class="menu clearfix">
+         <li class="first "><a target="_blank" href="#">首页</a></li>
+         <li class="current"><a target="_blank" href="#">买车</a></li>
+          <li><a target="_blank" href="#">卖车</a></li>
+          <li><a target="_blank" href="#">评估</a></li>
+          <li><a target="_blank" href="#">帮买</a></li>
+          <li><a target="_blank" href="#">经销商</a></li>
+          <li><a target="_blank" href="#">人车生活</a></li>
+       </ul>
+     </div>
+</div>
+<!--头部搜索和菜单导航 end-->
+<div class="container margin-md">
+   <div class="left-column-lg margin-top-md">
+
+      <!--车型分类tab  star-->
+         <div class="tabbar">
+         	
+			  <ul class="tab_ul">
+			  	<li class="tab_li">北京二手车</li>
+			  	<li class="active">保障车</li>
+			  	<li>品牌认证车</li>
+			  	<li>商家</li>
+			  	<li>个人</li>
+			  </ul>       	
+			  <!--切换九宫格图标按钮-->
+			  <div class="flex">
+			  	<a href="#" class="column iconfont icon-icon_shitu active"></a>
+			  	<a href="#" class="row iconfont icon-shitu-"></a>
+			  </div>
+         	
+         </div>
+      <!--车型分类tab end -->
+      
+      <!--排序  star-->
+      	<div class="sort">
+      		<ul>
+      			<li>
+      				<span class="sort_color">默认排序</span>
+      				<div class="sort_price">
+      					<a href="javascript:;" title="价格从高到低">价格&nbsp;</a><i class="iconfont icon-jiantou_xia color_Arrow"></i>
+      					<a href="javascript:;" title="价格从低到高">价格&nbsp;</a><i class="iconfont icon-jiantou_shang color_Arrow"></i>
+      					<a href="javascript:;" title="最新发布">最新&nbsp;</a><i class="iconfont icon-jiantou_xia color_Arrow"></i>
+      					<a href="javascript:;" title="里程从少到多">里程&nbsp;</a><i class="iconfont icon-jiantou_xia color_Arrow"></i>
+      					<a href="javascript:;" title="车龄从短到长">车龄&nbsp;</a><i class="iconfont icon-jiantou_shang color_Arrow"></i>
+      				</div>
+      			</li>
+      			
+      			<li class="select_pop_main">
+      				<div class="select_sort">
+      					
+      					<div class="select_pop">
+      						
+      						<input type="checkbox"/> <i>准新车</i> 
+							<input type="checkbox"/> <i>可迁全国</i>
+							<input type="checkbox"/> <i>车检报告</i>
+							<input type="checkbox"/> <i>在售车源</i>
+							<input type="checkbox"/> <i>延长质保</i> 
+							<input type="checkbox"/> <i>原厂质保</i>
+							<input type="checkbox"/> <i>车检报告</i>
+							<input type="checkbox"/> <i>免费过户</i>
+      						
+      					</div>
+      				
+						<span class="more">
+      						<span class="more_pos">更多<i class="iconfont icon-dropdown"></i></span>
+      					</span>
+      					
+      				</div>
+      			</li>
+      			
+      			<li class="last_li">
+      				共<i>83923</i>台车源
+      			</li>
+      		</ul>
+      		
+      	</div>
+      <!--排序  end-->
+      
+      <!--车源图片列表  star-->
+         
+         <div class="car_list">
+			
+			
+			<div class="no_car">
+				
+				<div class="no_car_main">
+					
+					<div class="car_source">
+						<h1>暂时没有找到符合条件的二手车</h1>
+						<p class="p_title">您可以放宽您的搜索条件，尝试以下组合</p>
+						<div class="car_items">
+							<a href="#"><i>奔驰C级</i> , <i>13-15万</i></a>
+							<a href="#"><i>奔驰C级</i> , <i>13-15万</i></a>
+							<a href="#"><i>奔驰C级</i> , <i>13-15万</i></a>
+							<a href="#"><i>奔驰C级</i> , <i>13-15万</i></a>
+							<a href="#"><i>奔驰C级</i> , <i>13-15万</i></a>
+							<a href="#"><i>奔驰C级</i> , <i>13-15万</i></a>
+							<a href="#"><i>奔驰C级</i> , <i>13-15万</i></a>
+							<a href="#"><i>奔驰C级</i> , <i>13-15万</i></a>
+						</div>
+						<p class="buy">您还可以发布求购信息，让满足条件的卖家主动联系您，<a href="#">现在去求购>></a></p>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+			<!--search_Interest-->
+			<div class="search_interest_com">搜索以上条件的用户还对这些二手车感兴趣</div>
+				
+			<div class="list_item">
+         		
+         		<div class="img_stop">
+         			<a href="#">
+         				<img src="../images/300_200_pic.jpg">
+         			</a>
+         			<!--找相似-->
+	         		<div class="img_pop">
+	         			<a href="#">找相似</a>
+	         		</div>
+	         		
+	         		<!--已售状态-->
+	         		<div class="sold">
+	         			<i>已售</i>
+	         		</div>
+	         		
+	         		<!--角标1-->
+	         		<div class="corner">
+	         			<img src="img/jiao.png">
+	         		</div>
+	         		
+	         		
+         		</div>
+         		
+         		<div class="item_details">
+         			<h1>
+         				<i class="iconbrand iconbrand_2"></i>
+         				<a href="#">宝马3系 2007款 325i豪华运动型</a>
+         				<i class="title_pop_one">精</i>
+         				<i class="title_pop_one title_pop_two">顶</i>
+         			</h1>
+         			<ul class="ul_news">
+         				<li class="first_li">
+         					<i>上牌时间</i><br>2015年6月
+         				</li>
+         				<li>
+         					<i>行驶里程</i><br>2.23万公里
+         				</li>
+         				<li>
+         					<i>所在地</i><br>北京
+         				</li>
+         				<li style="border:none;">
+         					<i>排放标准</i><br>国三
+         				</li>
+         			</ul>
+         			
+         			
+         			<ul class="ul_tab">
+         				<li class="first_li"><a href="#" class="iconfont"></a>保障车</li>
+         				<li class="second_li"><a href="#" class="iconfont"></a>帮买</li>
+<!--         				<li class="third_li"><a href="#" class="iconfont"></a>原厂保质</li>-->
+         				<li class="fourth_li"><a href="#" class="iconfont"></a>车检报告</li>
+         				<!--<li class="fifth_li"><a href="#" class="iconfont"></a>认证车</li>-->
+         				<li class="sixth_li"><a href="#" class="iconfont"></a>免费过户</li>
+         				<li class="seventh_li"><a href="#" class="iconfont"></a>延长质保</li>
+         				
+         				<li class="seventh_li_font font_margin">准新车</li>
+         				<li class="seventh_li_font">可迁全国</li>
+         			</ul>
+         			
+         		</div>
+         		<div class="item_price">
+         			<h2>40.12万</h2>
+         			<p>新车价 : <del>23.88万</del>  &nbsp;&nbsp;&nbsp;省11.2万</p>
+         			<!--<p>234人已收藏</p>-->
+         			<p>
+         				<i class="iconfont icon-xin icon_heart"></i> <i>收藏</i> 
+         				<i class="iconfont icon-fuwuicon-3 icon_heart"></i> <i>对比</i>
+         				<i id="likes_none" class="likes_none">+1</i>
+         			</p>
+         		</div>
+         		
+         	</div>
+				
+			</div>
+         
+         
+     <!--车源图片列表  end-->
+      
+      <!--更多弹层-->
+      <div class="pop" style="display:none;">
+      	
+      	<div class="pop_main">
+      		
+      		<input type="checkbox"/> 准新车 &nbsp;&nbsp;
+			<input type="checkbox"/> 可迁全国&nbsp;&nbsp;
+			<input type="checkbox"/> 车检报告&nbsp;&nbsp;
+			<input type="checkbox"/> 在售车源&nbsp;&nbsp;
+      		<input type="checkbox"/> 延长质保 &nbsp;&nbsp;
+			<input type="checkbox"/> 原厂质保&nbsp;&nbsp;
+			<input type="checkbox"/> 车检报告&nbsp;&nbsp;
+			<input type="checkbox"/> 免费过户&nbsp;&nbsp;
+			
+      	</div>
+      	
+      </div>
+      
+      
+      <!-- 翻页star -->
+         <div class="the-pages"><div><a href="#" class="pages-up pages-disabled"><</a><a href="#">1</a><a href="#" class="linknow">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">...</a><a href="#">15</a><a href="#"  class="pages-next">></a></div></div>
+      
+      	
+      <!-- 翻页end -->
+      
+   </div>
+
+   <div class="right-column-lg margin-top-md">
+       <!--常用工具 star -->
+         <div class="margin-xd">
+           <div class="title-xm-size"><h3>常用工具</h3></div>
+           <div class="common-tools">
+              <ul>
+                <li class="common-tools-evaluation ">
+                   <a href=""><em></em><p>二手车估价</p></a>
+                </li>
+                <li class="common-tools-buy">
+                   <a href=""><em></em><p>我要求购</p></a>
+                </li>
+                <li class="common-tools-sell">
+                  <a href=""> <em></em><p>高价卖车</p></a>
+                </li>
+                <li class="common-tools-standard">
+                   <a href=""><em></em><p>查准入标准</p></a>
+                </li>
+              </ul>
+           </div>
+        </div>
+       <!--常用工具 end -->
+       <div class="clear"></div>
+        <!--广告300*200 star -->
+          <div class="ad-300-200">300*200</div>
+        <!--广告300*200 end -->
+       
+       
+       <!--地图找车 star -->
+          <div class="margin-xd">
+            <div class="title-xm-size"><h3>地图找车</h3> <span><a href="#">大图查看</a></span></div>
+            <div class="map-find-car"><img src="../images/map_300_200.gif" alt="地图找车"></div>
+          </div>
+       <!--地图找车 end -->
+       <div class="clear"></div>
+        <!--广告300*200 star -->
+          <div class="ad-300-200">300*200</div>
+        <!--广告300*200 end -->
+        <div class="clear"></div>
+        <!--广告300*200 star -->
+          <div class="ad-300-200">300*200</div>
+        <!--广告300*200 end -->
+       
+        <!--推荐商家 star -->
+          <div class="margin-xd">
+            <div class="title-xm-size"><h3>推荐商家</h3>  <div class="ad-gray-all">广告</div></div>
+                 <div class="recommend-business">
+                    <div class="recommend-business-list clearfix">
+                      <h5><em>专业公司</em> <i>-</i> <a href="#">融易车</a></h5>
+                      <p class="recommend-business-text">电话：<span>18611352453</span>  <a href="#" class="blue-link" target="_blank">地图&gt;</a></p>
+                        <ul>
+                            <li class=""> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+                             <h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+                              <P><em>34.15 万</em></P>
+                            </li>
+                             <li> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+                               <h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+                               <P><em>34.15 万</em></P>
+                            </li>
+                      </ul>
+                   </div>
+                   
+                   <div class="recommend-business-list clearfix">
+                      <h5><em>专业公司</em> <i>-</i> <a href="#">融易车</a></h5>
+                      <p class="recommend-business-text">电话：<span>18611352453</span>  <a href="#" class="blue-link" target="_blank">地图&gt;</a></p>
+                        <ul>
+                            <li class=""> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+                             <h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+                              <P><em>34.15 万</em></P>
+                            </li>
+                             <li> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+                               <h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+                               <P><em>34.15 万</em></P>
+                            </li>
+                      </ul>
+                   </div>
+                   
+                </div>
+          </div>
+       <!--推荐商家 end -->
+       
+      <!-- 热门车系 车型 star--> 
+     <div class="margin-xd hot-car-type">
+           <div class="section-header header2">
+                  <div class="box">
+                     <ul class="section-header-nav">
+                      <li class="current"><a href="#">热门车系</a></li>
+                      <li class=""><a href="#">热门车型</a></li>
+                    </ul>
+                  </div>
+          </div>
+          <div class="hot-car-text-list">
+             <ul>
+                <li><strong class="current">1.</strong><a href="#">宝马X3</a></li>
+                <li><strong class="current">2.</strong><a href="#">JEEP 牧马人</a></li>
+                <li><strong class="current">3.</strong><a href="#">本田CR-V</a></li>
+                <li><strong>4.</strong><a href="#">奥迪Q5</a></li>
+                <li><strong>5.</strong><a href="#">大众途观</a></li>
+                <li><strong>6.</strong><a href="#">别克昂科威</a></li>
+                <li><strong>7.</strong><a href="#">保时捷卡宴保时捷卡宴保时捷卡宴保时捷卡宴</a></li>
+                <li><strong>8.</strong><a href="#">别克GL8</a></li>
+             </ul>
+          </div>
+     </div> 
+      <!-- 热门车系 车型 end-->  
+       
+       
+       
+       
+<!--猜您喜欢的二手车 star -->
+          <div class="margin-xd">
+             <div class="title-xm-size"><h3>猜您喜欢的二手车</h3> </div>
+             <div class="carlist-vertical">
+                <ul>
+                   <li> <a href="#"><img src="../images/120_80_pic.jpg" alt="喜欢的二手车" /></a>
+                     <h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+                      <P>2015年  12.43万公里</P>
+                      <em>15.43万</em>
+                   </li>
+                   <li> <a href="#"><img src="../images/120_80_pic.jpg" alt="喜欢的二手车" /></a>
+                     <h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+                      <P>2015年  12.43万公里</P>
+                      <em>15.43万</em>
+                   </li>
+                   <li> <a href="#"><img src="../images/120_80_pic.jpg" alt="喜欢的二手车" /></a>
+                     <h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+                      <P>2015年  12.43万公里</P>
+                      <em>15.43万</em>
+                   </li>
+                   <li> <a href="#"><img src="../images/120_80_pic.jpg" alt="喜欢的二手车" /></a>
+                     <h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+                      <P>2015年  12.43万公里</P>
+                      <em>15.43万</em>
+                   </li>
+                </ul>
+             </div>
+          </div>
+       <!--猜您喜欢的二手车 end -->
+
+   </div>
+</div>
+
+<!--二手车城市直达 star-->
+    <div class="container margin-md">
+      <div class="title-xm-size title-border">
+        <h3>二手车城市直达</h3>
+      </div>
+      <div class="section-tag-content">
+  <ul>
+    <li><a href="#">汽车</a></li>
+    <li><a href="#">二手车法</a></li>
+    <li><a href="#">兰克福车展</a></li>
+    <li><a href="#">上海车展</a></li>
+    <li><a href="#">好友二手车 </a></li>
+    <li><a href="#">上海二手车</a></li>
+    <li><a href="#">淮安车网</a></li>
+    <li><a href="#">广州房价</a></li>
+    <li><a href="#">欧卡二手车</a></li>
+    <li><a href="#">上海二手车</a></li>
+    <li><a href="#">上海新闻</a></li>
+    <li><a href="#">上海天气汽车城</a></li>
+    <li><a href="#">上海车展</a></li>
+    <li><a href="#">上海二手车</a></li>
+    <li><a href="#">上海车展</a></li>
+    <li><a href="#">上海汽车网</a></li>
+    <li><a href="#">上海长途</a></li>
+    <li><a href="#">上海车展</a></li>
+    <li><a href="#">搜车吧</a></li>
+    <li><a href="#">爱车族</a></li>
+    <li><a href="#">上海车展</a></li>
+    <li><a href="#">南阳汽车网</a></li>
+    <li><a href="#">上海车展</a></li>
+    <li><a href="#">上海车展2015</a></li>
+    <li><a href="#">上海车展</a></li>
+    <li><a href="#">上海租车公司</a></li>
+    <li><a href="#">旅游地产</a></li>
+    <li><a href="#">团购麻豆网</a></li>
+    <li><a href="#">上海车展</a></li>
+    <li><a href="#"> 三亚会议</a></li>
+    <li><a href="#">上海车展</a></li>
+    <li><a href="#">汽车票</a></li>
+    <li><a href="#">网上订票</a></li>
+    <li><a href="#">上海二手车</a></li>
+    <li><a href="#">上海汽车站时刻表</a></li>
+    <li><a href="#">led广告车</a></li>
+    <li><a href="#">汽车标志大全 </a></li>
+    <li><a href="#">惠州汽车网</a></li>
+    <li><a href="#">金鹰汽车网</a></li>
+    <li><a href="#">搜车网</a></li>
+    <li><a href="#">上海汽车团购网</a></li>
+    <li><a href="#">汽车维修与保养</a></li>
+    <li><a href="#"> 上海车展</a></li>
+    <li><a href="#">养车网</a></li>
+    <li><a href="#">豪车之家</a></li>
+    <li><a href="#">学车</a></li>
+    <li><a href="#">洛阳汽车网</a></li>
+    <li><a href="#">上海易修网</a></li>
+    <li><a href="#">湖南汽车网</a></li>
+    <li><a href="#">丝路汽车网</a></li>
+    <li><a href="#">苏州二手房</a></li>
+    <li><a href="#">湖南汽车网</a></li>
+    <li><a href="#">上海汽车零部件展</a></li>
+    <li><a href="#">江阴汽车网</a></li>
+    <li><a href="#">汽车论坛</a></li>
+    <li><a href="#">蓝网二手车评估</a></li>
+    </ul>
+      </div>
+</div>
+ <!--二手车城市直达 end -->
+ 
+	<!--footer start-->
+	<footer class="footer">
+	  		<div class="footer-text">
+	           <div class="container">
+	                <p>CopyRight &copy; 2000-2014 BitAuto,All Rights Reserved.&nbsp;&nbsp;版权所有&nbsp;&nbsp;北京易车信息科技有限公司</p>
+	                <p class="r">购车咨询：4000-168-168 (每天9:00&mdash;17:30，法定节日休息)</p>
+	          </div>
+	        </div>
+	  		<div class="footer-link">
+	           <div class="container footer-menu">
+	            	<ul class="about">
+	                    <li class="first"><a target="_blank" href="http://corp.bitauto.com/" rel="nofollow">关于易车</a></li>
+	                    <li><a target="_blank" href="http://corp.bitauto.com/business/" rel="nofollow">业务体系</a></li>
+	                    <li><a target="_blank" href="http://corp.bitauto.com/news/" rel="nofollow">易车动态</a></li>
+	                    <li><a target="_blank" href="http://corp.bitauto.com/job/" rel="nofollow">加入易车</a></li>
+	                    <li><a target="_blank" href="http://corp.bitauto.com/contact/" rel="nofollow">联系我们</a></li>
+	                    <li><a target="_blank" href="http://corp.bitauto.com/about/legal-notices.shtml" rel="nofollow">法律声明</a></li>
+	                    <li><a target="_blank" href="http://i.bitauto.com/authenservice/register/Licence.aspx" rel="nofollow">服务协议</a></li>
+	                    <li><a target="_blank" href="http://ir.bitauto.com/" rel="nofollow">Investor Relations</a></li>
+	                                      <li><a target="_blank" href="http://uec.yiche.com/" rel="nofollow">用户体验中心</a></li>
+	 <li><a target="_blank" href="http://dealer.easypass.cn/" rel="nofollow">易湃会员</a></li>
+	  <li class="last"><a target="_blank" href="http://www.bitauto.com/feedback/" rel="nofollow">我要提意见</a></li>
+	                    
+	                </ul>
+	                
+	                 <div class="ad-gray-all">广告</div>
+	        </div>
+	      </div>
+	</footer>
+	<!--footer end-->
+
+	<script type="text/javascript">
+		$('.tab_ul li').click(function(){
+			$('.tab_ul li').eq($(this).index()).addClass('active').siblings().removeClass('active');
+		})
+	</script>
+
+
+
+<script type="text/javascript">
+		$('.select').mouseenter(function(){$(this).addClass("active")}).mouseleave(function(){$(this).removeClass("active")})
+		$('.price-list .more').mouseenter(function(){$(this).addClass("current");$(".price-handle").show()}).mouseleave(function(){$(this).removeClass("current");$(".price-handle").hide()})
+		$('.sort ul li .more').mouseenter(function(){
+			$('.select_sort').addClass("active")
+			$('.sort ul li .more .more_pos i').addClass('rotate_just').removeClass("rotate_back");
+		})
+		$('.select_sort').mouseleave(function(){
+			$(this).removeClass("active")
+			$('.sort ul li .more .more_pos i').removeClass("rotate_just").addClass("rotate_back");
+		})
+		
+		$('.icon-xin').click(function(){
+			
+			if($(this).hasClass('icon-xin1'))
+			{
+				$(this).removeClass('icon-xin1');
+				$('#likes_none').removeClass('likes').addClass('likes_none');
+			}
+			else
+			{
+				$(this).addClass('icon-xin1');
+			
+				$('.likes_none').addClass('likes');
+				$('.likes_none').removeClass('likes_none');
+			}
+
+		})
+		
+		$('.icon-fuwuicon-3').click(function(){
+			
+			if($(this).hasClass('icon-fuwuicon'))
+			{
+				$(this).removeClass('icon-fuwuicon');
+				$(this).addClass('icon-fuwuicon-3');
+			}
+			else
+			{
+				$(this).addClass('icon-fuwuicon');
+				$(this).removeClass('icon-fuwuicon-3');
+			}
+			
+		})
+		
+</script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td { margin: 0; padding: 0; }
+body { font-size: 12px;  font-family: "Microsoft Yahei", "PingFangSC-Regular", "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial, sans-serif; background: #fff; line-height: 150%; color: #333; }
+*{font-family: "Microsoft Yahei", "PingFangSC-Regular", "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial, sans-serif;}
+table { border-collapse: collapse; border-spacing: 0; }
+fieldset, img { border: 0; }
+ins { text-decoration: none; display:block;}
+legend { display: none; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal; }
+ol, ul ,li{ list-style: none; }
+caption, th { text-align: left; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+q:before, q:after { content: ''; }
+abbr, acronym { border: 0; }
+a:link, a:visited { color: #333333; text-decoration: none;cursor:pointer; }
+a:hover { color: #fd9933; text-decoration:underline; }
+object, embed { display: block }
+input, select { border-radius: 0 ;outline: none;}
+i{font-style:normal;}
+.clear { clear: both; height: 0; overflow: hidden; }
+.clearfix { *zoom:1}
+input,textarea{font-family: "Microsoft Yahei", "PingFangSC-Regular", "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial, sans-serif;outline: none;text-decoration:none; }
+.clearfix:after { display: block; overflow: hidden; clear: both; height: 0; visibility: hidden; content: "."; }
+a:focus,input:focus {  outline:none;   }  
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+::-moz-placeholder{color:#cbcbcb;}              
+::-webkit-input-placeholder{color:#cbcbcb;}     
+:-ms-input-placeholder{color:#cbcbcb;}         
+
+
+
+/*连接颜色*/
+a.blue-link:link,a.blue-link:visited{text-decoration:none;color:#3e7cc0;cursor:pointer;}
+a.blue-link:hover{text-decoration:underline;}
+
+/*外框*/
+.container {clear: both;display: block;margin: 0 auto;width:1200px;}
+.hide-box{width:1200px;overflow:hidden;}
+.left-column-lg{width:860px;float:left;}
+.right-column-lg{width:300px;float:right;}
+
+
+
+
+
+/*广告*/
+.taoche-ad{height:100px;margin-bottom:40px;display:block;}
+.ad-1200-100{width:1200px;height:100px;margin:0px auto 0;}
+.ad-1200-80{width:1200px;height:80px;margin:0px auto 0;background-color:#f3f3f3;}
+.ad-1200-400{width:1200px;height:400px;margin:0px auto 0;}
+.ad-300-200{width:300px;height:200px;margin:10px auto 30px;display:table;background-color:#f3f3f3;}
+.ad-860-100{width:860px;height:100px;background-color:#f3f3f3;}
+.ad-630-60{width:630px;height:60px;margin:0px auto 0;background-color:#f3f3f3;}
+
+/*关闭*/
+a.but-close{overflow:hidden;padding-left:20px;width:20px;*width:0;height:20px;line-height:20px;font-size:0;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -83px -34px ;display:block;z-index:6;}
+a.but-close:hover{background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -113px -34px ;}
+
+/*间距*/
+.margin-lg{margin-bottom:60px;}
+.margin-md{margin-bottom:40px;}
+.margin-xd{margin-bottom:30px;}
+.margin-top-md{margin-top:30px;}
+.padding-md{padding-left:15px;padding-right:15px;}
+.margin-rit10{margin-right:10px;}
+
+/*车源认证质保等小ico*/
+.ico-list{height:24px;line-height:24px;font-size:14px;color:#666666;margin-top:8px;}
+.ico-list a{color:#666666;text-decoration:none;}
+.ico-list a:hover{color:#fd9933;text-decoration:none;}
+.ico-list span{float:left;margin-right:5px;padding-left:18px;line-height:20px;display:block;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/cb_list_ico.png) no-repeat;}
+.ico-list span i{margin-left:7px;}
+.ico-list span.rz-ico{background-position:left top;}
+.ico-list span.wb-ico{background-position:left -32px;}
+.ico-list span.bm-ico{background-position:left -65px;}
+.ico-list span.bz-ico{background-position:left -97px;}
+.ico-list span.yc-ico{background-position: left -131px;}
+.ico-list span.zxc-ico{background-position: left -165px;}
+.ico-list span.extend-ico{background-position: left -228px;}
+.ico-list span.vehicle-ico{background-position: left -256px;}
+.ico-list span.transfer-ico{background-position: left -284px;}
+
+/*底部连接城市*/
+.section-tag-content{ clear:both; zoom:1;font-size:14px;padding-top:10px;max-height:95px;*height:85px;overflow:hidden;}
+.section-tag-content > ul li{ float: left;padding:0 10px 0 0; margin-right:10px; position: relative; line-height: 30px ;}
+.section-tag-content > ul li a{cursor:pointer;white-space:nowrap;}
+.section-tag-content ul li::after{ content: ""; height: 13px; width: 10px; border-left:1px solid #e9e9e9; display: inline-block;vertical-align: middle; position:absolute;top:10px;right:-10px }
+.section-tag-content ul li:last-child::after{ border:0}
+
+/*广告标示*/
+.ad-white-all{width:33px;height:17px;line-height:15px;border:1px solid #ffffff;border-radius:2px;color:#ffffff;position:absolute;filter:alpha(opacity=25); -moz-opacity:0.25; opacity:0.25; right:5px;bottom:5px;font-size:12px;font-weight:normal;}
+.ad-gray-all{width:33px;height:17px;line-height:15px;border:1px solid #999999;border-radius:2px;color:#999999;position:absolute;filter:alpha(opacity=25); -moz-opacity:0.25; opacity:0.25; right:5px;bottom:5px;font-size:12px;font-weight:normal;}
+
+
+
+/*调查问卷*/
+.left-fixed{position:fixed; left:10px;bottom:270px;width:90px;height:160px;z-index:100;}
+.left-fixed-main{width:90px;height:160px;position:relaitve;}
+.left-fixed-close{width:14px;height:14px;position:absolute;right:0px;top:0px;z-index:10;}
+.left-fixed-close a{width:14px;height:14px;display:block;}
+.left-fixed-top{width:90px;height:160px;position:absolute;right:0px;bottom:0px;z-index:8;}
+.left-fixed-top a{ display:block;
+		width:90px;height:160px;
+		line-height:1000px; overflow:hidden;
+		background: url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/left-fixed.png) no-repeat;
+		background-position: 0 0;
+		padding: 0;
+		
+		}
+
+.left-fixed-top  a{
+animation:mymove 4s steps(28)  infinite;
+-webkit-animation:mymove 4s steps(28)  infinite; 
+-moz-animation: mymove 4s steps(28)  infinite;
+-ms-animation: mymove 4s steps(28)  infinite;
+
+}
+@keyframes mymove
+{
+	from{background-position: 0 0;}
+	to {background-position: -2520px 0;}
+
+}
+.left-fixed-down{width:90px;height:30px;position:absolute;left:0;bottom:0;z-index:12;}
+.left-fixed-down a{width:90px;height:30px;display:block;}
+
+
+/*浮动*/
+.float-left{float:left;}
+.float-rit{float:right;}
+
+
+/*双十一 9月26*/
+.singles-day{display:inline;float:left;height:30px;line-height:30px;text-align:center;padding:0 7px;background-color:#e43d40;font-weight:bold;font-size:14px;color:#ffffff;position:absolute;left:0;top:0;}
+.singles-day i{color:#ffdf33;}
+.jiagbox-singles-day{height:25px;line-height:25px;padding:0 7px;background-color:#e43d40;border-radius:3px;color:#ffffff;font-size:12px;font-weight:bold;float:left;display:inline;margin-left:3px;*margin-top:10px;}
+.jiagbox-singles-day i{color:#ffdf33;font-size:12px;}
+.jiagbox-singles-day a{color:#ffffff;text-decoration:none;}
+ .header-singles-day{position:absolute;width:100%;left:0;top:-30px;*top:-28px;text-align:center;height:40px;display:table;overflow:hidden;line-height:18px;}
+.header-singles-day-top{width:100%;height:29px;display:block;}
+.header-singles-day span{height:30px;line-height:30px;display:inline-block;padding:0 7px;background-color:#e43d40;border-radius:3px;color:#ffffff;font-size:14px;font-weight:bold;}
+.header-singles-day em{color:#ffdf33;}
+.header-singles-day i{width:0; height:0; font-size:0; border-width:10px;line-height:10px; border-style:solid dashed  dashed   dashed ; border-color:#e43d40 transparent  transparent  transparent;display:inline-block; }
+.exclusive-list ul li{position:relative;}
+.exclusive-list ul li .singles-day{left:15px;top:15px;}
+.exclusive-list ul li .singles-day i{color:#ffdf33}
+.menu li .header-singles-day-top a{height:30px;line-height:30px;display:block;text-decoration:none;}
+.menu li .header-singles-day-top a:hover{color:#ffffff;background-color:#e43d40;}
+
+
+/*hide - show*/
+
+.hide{display:none;}
+.show{display:block;}

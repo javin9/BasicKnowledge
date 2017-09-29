@@ -1,0 +1,156 @@
+/*筛选*/
+.taoche-screen{margin-bottom:30px;}
+.taoche-screen-list{padding-top:12px;border-bottom:1px solid #e9e9e9;padding-left:50px;position:relative;display:table;width:860px;*width:810px;}
+.taoche-screen-tit{position:absolute;left:0;top:11px;line-height:30px;font-size:14px;color:#999999;}
+.taoche-screen-main{float:left;width:750px;}
+.taoche-screen-xs-main{width:700px;}
+.taoche-screen-selected li{margin-right:8px;padding-bottom:10px;float:left;}
+.taoche-screen-selected li a{height:30px;*height:28px;*line-height:28px;line-height:28px;border:1px solid #ff9a1f;border-radius:2px;padding:0 0px 0 10px;font-size:14px;display:block;white-space:nowrap;}
+.taoche-screen-selected li a em{width:28px;height:28px;float:left;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -2px -1px;display:block;}
+.taoche-screen-selected li a strong{float:left;color:#333333;margin-right:10px;}
+.taoche-screen-selected li a:hover{text-decoration:none;color:#ff9a1f;}
+.taoche-screen-selected li a:hover em{background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -33px -1px #ff9a1f;}
+.taoche-screen-function{float:right;font-size:14px;line-height:30px;position:absolute;margin-top:1px;right:0;}
+.taoche-screen-subscribe{position:absolute;right:0;top:10px;line-height:30px;font-size:14px;}
+a.taoche-screen-hover{display:block;position:relative;float:right;margin-left:15px;}
+.taoche-screen-function a.taoche-screen-hover{width:38px;}
+a.taoche-screen-hover:hover{color:#ff9a1f;text-decoration:none;}
+a.taoche-screen-more{height:24px;line-height:22px;padding:0 20px 0 6px;border:1px solid #e9e9e9;border-radius:3px;background-color:#ffffff;position:relative;display:inline-block;float:right;margin-top:3px;}
+a.taoche-screen-more:hover{border:1px solid #ff9a1f;color:#ff9a1f;text-decoration:none;}
+a.taoche-screen-more-click,a.taoche-screen-more-click:hover{border:1px solid #ff9a1f;color:#ff9a1f;text-decoration:none;}
+.taoche-screen-selected li a.taoche-screen-selected-clear{border:none;padding:0 5px;margin-right:20px;}
+.taoche-screen-selected li a.taoche-screen-selected-clear:hover{background-color:none;color:#ff9a1f;}
+.taoche-screen-text{padding-top:3px;padding-bottom:5px;display:table;}
+.taoche-screen-text li{float:left;margin-right:6px;padding-bottom:9px;line-height:24px;font-size:14px;position:relative;}
+.taoche-screen-text li a{padding:0 6px;line-height:24px;display:inline-block;border-radius:2px;white-space:nowrap;}
+.taoche-screen-text li a:hover{color:#333333;text-decoration:none;background-color:#f0f0f0;}
+.taoche-screen-text li a.current,.taoche-screen-text li a.current:hover{color:#ffffff;background-color:#ff9a1f;}
+
+.taoche-screen-other li{float:left;margin-right:8px;padding-bottom:10px;display:table;position:relative;}
+.taoche-screen-other li a{height:30px;line-height:28px;border:1px solid #d9d9d9;border-radius:2px;padding:0 18px 0 8px;font-size:14px;display:inline-block;overflow:hidden;}
+.taoche-screen-other li a:hover{border:1px solid #ff9a1f;text-decoration:none;color:#333333;}
+.taoche-screen-other li a em{right:10px;}
+.taoche-screen-other li a.on-click{border:1px solid #ff9a1f;color:#ff9a1f;}
+.taoche-screen-other li a strong{float:left;margin-right:10px;}
+.taoche-screen-other li a.current,.taoche-screen-other li a.current:hover{text-decoration:none;border:1px solid #ff9a1f;}
+
+
+.arrow-yellow-down{width:10px;height:10px;line-height:10px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -100px -8px;display:block;position:absolute;right:-2px;top:8px;}
+.arrow-yellow-up{width:10px;height:10px;line-height:10px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -64px -12px;display:block;position:absolute;right:-4px;top:11px;}
+.arrow-white-down{width:10px;height:10px;line-height:10px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -82px -66px;display:block;position:absolute;right:-2px;top:8px;}
+.arrow-white-up{width:10px;height:10px;line-height:10px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -100px -66px;display:block;position:absolute;right:-2px;top:8px;}
+
+
+
+a.taoche-screen-current,a.taoche-screen-current:hover{color:#ff9a1f;}
+
+
+
+
+.taoche-screen-more-ico{width:10px;height:10px;line-height:10px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -122px -9px;display:block;position:absolute;right:6px;top:5px;}
+.taoche-screen-text li a.taoche-screen-disabled,.taoche-screen-text li a.taoche-screen-disabled:hover{color:#999999;text-decoration:none;cursor:text;background:none;}
+
+/*品牌多选*/
+.taoche-screen-brand{background-color:#f9f9f9;position:relative;}
+.taoche-screen-brand em{width:17px;height:9px;position:absolute;top:-9px;right:20px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -148px -10px;display:block;}
+.taoche-screen-brand-tit{height:50px;border-bottom:1px solid #e9e9e9;padding:0 50px;}
+.taoche-screen-brand-tit a{height:20px;width:20px;text-align:center;line-height:20px;margin:15px 5px 0 5px;float:left;font-size:14px;}
+.taoche-screen-brand-tit a.current,.taoche-screen-brand-tit a.current:hover{background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -42px 0;color:#ffffff;text-decoration:none;}
+.taoche-screen-brand-tit a:hover{background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -42px 0;color:#ffffff;text-decoration:none;}
+.taoche-screen-brand-list{border-bottom:1px solid #e9e9e9;padding:10px 50px 10px 50px;}
+.taoche-screen-brand-list a{line-height:30px;padding:0px 10px  0px 10px;font-size:14px;display:block;float:left;white-space:nowrap;}
+.taoche-screen-brand-list a:hover{text-decoration:none;color:#ff9a1f;}
+
+/*车系选择*/
+.taoche-screen-carline{background-color:#f9f9f9;position:relative;border-bottom:1px solid #e9e9e9;padding:15px 85px 20px 85px;font-size:14px;display:table;}
+
+.taoche-screen-carline strong{position:absolute;left:20px;top:10px;line-height:30px;font-size:14px;color:#999999;}
+.taoche-screen-carline ul{display:table;}
+.taoche-screen-carline ul li{float:left;width:105px;height:20px;line-height:20px;overflow:hidden;margin-left:15px;margin-bottom:10px;text-overflow: ellipsis;white-space: nowrap;}
+
+.taoche-screen-carline ul li input{float:left;margin-top:4px;*margin-top:1px;margin-right:3px;vertical-align:middle;}
+.taoche-screen-btn{text-align:center;clear:both;}
+.taoche-screen-carline ul.taoche-screen-level li{width:100px;}
+
+
+/*车系选择 修改*/
+.taoche-screen-carline-list{border-bottom:1px solid #e9e9e9;padding:0 0 5px 0px;margin-bottom:15px;position:relative;}
+.taoche-screen-carline-list-last{border-bottom:none;margin-bottom:0;}
+.taoche-screen-carline-list h6 {width:90px;float:left;padding-bottom:15px;}
+.taoche-screen-carline-list h6 span{width:60px;font-size:14px;font-weight:bold;display:block;}
+.taoche-screen-carline-white{background-color:#ffffff;padding-bottom:0;}
+.taoche-screen-carline-white  ul li{height:24px;line-height:24px;margin-top:-2px;width:96px;margin-left:24px;}
+.taoche-screen-carline-white  ul li a{padding:0 6px;height:24px;line-height:24px;max-width:96px;display:inline-block;border-radius:2px;overflow:hidden;white-space:nowrap;text-overflow: ellipsis;white-space: nowrap;}
+.taoche-screen-carline-white  ul li a:hover{color:#333333;text-decoration:none;background-color:#f0f0f0;}
+.taoche-screen-carline-white  ul li a.current,.taoche-screen-carline-white  ul li a.current:hover{color:#ffffff;background-color:#ff9920;text-decoration:none;}
+.taoche-screen-carline-white .taoche-screen-function{top:8px;} 
+.taoche-screen-carline-white .taoche-screen-function-up{top:inherit;bottom:10px;right:2px;}
+
+
+/*车型*/
+.taoche-screen-year li{position:relative;}
+.screen-layer-year-list{padding:0 0 0 20px;}
+.screen-layer-year-list ul{}
+.screen-layer-year-list ul li{line-height:20px;padding-left:18px;padding-right:18px;position:realtive;padding-bottom:0;margin-top:12px;display:block;float:none;}
+.screen-layer-year-list ul li input{position:absolute;left:0;top:4px;*top:-2px;}
+.taoche-screen-year .taoche-screen-btn{padding-bottom:20px;padding-top:15px;}
+.screen-layer-year-list ul li label{display: block; white-space: nowrap;}
+
+
+
+/*车辆所在地浮层*/
+.taoche-screen-other li .screen-city-box a{border:none;height:24px;line-height:24px;padding:0 6px;}
+.taoche-screen-other li .screen-city-box a:hover{background-color:#f0f0f0;color:#333333;}
+.taoche-screen-other li .screen-city-list a{border:none;height:24px;line-height:24px;padding:0 6px;}
+.taoche-screen-other li .screen-city-list a:hover{background-color:#f0f0f0;color:#333333;}
+.taoche-screen-other li .screen-layer-text li{margin-right:0;padding-bottom:0;width:67px;float:left;}
+.taoche-screen-other li .screen-layer-text li a{margin-left:0;}
+.taoche-screen-other li .screen-city-list .btn-disabled a:hover{background:#ebebeb;cursor:inherit;color:#999999;}
+.taoche-screen-other li .screen-layer .taoche-screen-btn{margin-left:12px;margin-top:10px;}
+
+
+/*自选浮层*/
+.taoche-screen-function .screen-layer{top:28px;}
+.taoche-screen-list .taoche-screen-function  .screen-layer .taoche-screen-btn{*margin-left:-5px;}
+.taoche-screen-function  .map-search-from{margin:10px 0 10px 12px;}
+.taoche-screen-function .map-search-input{width:60px;*width:50px;margin-right:5px;}
+.taoche-screen-other li .btn-primary a:hover{background:#f18500;color:#ffffff;}
+.taoche-screen-other li .btn-lesser a{display:block; text-align:center; color:#666666;background:#fdfdfd; }
+.taoche-screen-other li .btn-lesser a:link, .taoche-screen-other li .btn-lesser a:visited{ color:#666666; background:#fdfdfd;border:1px solid #dddddd;}
+.taoche-screen-other li .btn-lesser a:hover{text-decoration:none;background:#ffffff;border:1px solid #ff9a1f;color:#ff9a1f;}
+
+
+
+
+/*排量*/
+.screen-layer-displacement-auto{height:240px;overflow:hidden;overflow-y:auto;position:relative;}
+.screen-layer-displacement ul{overflow-y:auto;padding-left:20px;padding-top:10px;display:table;}
+.screen-layer-displacement ul li{width:108px;float:left;height:18px;line-height:18px;padding-top:5px;padding-bottom:5px;margin-right:0;}
+.screen-layer-displacement ul li input{float:left;margin-top:3px;*margin-top:-1px;margin-right:3px;vertical-align:middle;}
+.screen-layer-color ul li{width:68px;}
+
+/*suv*/
+.taoche-screen-text li.taoche-screen-drop  a{padding-right:20px;}
+.taoche-screen-text li.taoche-screen-drop  a.norit{padding-right:10px;}
+.taoche-screen-drop  em{right:6px;top:5px;}
+.taoche-screen-drop em.arrow-yellow-up{top:9px;}
+
+.taoche-screen-text li .screen-city-list a{border:none;margin-left:7px;}
+.taoche-screen-text li .screen-city-list a:hover{background-color:#f0f0f0;color:#333333;}
+.taoche-screen-text li.taoche-screen-drop .screen-layer-suv a{padding:0 6px;margin-right:3px;margin-left:0px;margin-bottom:10px;}
+.taoche-screen-text li.taoche-screen-drop  .btn-lesser a{padding:0;}
+.taoche-screen-text li.taoche-screen-drop  .btn-disabled a{padding:0;}
+.taoche-screen-text li.taoche-screen-drop  .btn-primary a{padding:0;}
+.taoche-screen-text li .btn-lesser a:hover {text-decoration:none;background:#ffffff;border:1px solid #ff9a1f;color:#ff9a1f;}
+.taoche-screen-year li.taoche-screen-drop .btn-disabled a{background:#ebebeb;cursor:inherit;border:1px solid #ededed;display:inline-block;color:#999999;cursor:text;text-decoration:none;white-space:nowrap;text-align:center;border-radius:3px;}
+.taoche-screen-year li.taoche-screen-drop .btn-disabled a:hover{background:#ebebeb;cursor:inherit;border:1px solid #ededed;display:inline-block;color:#999999;cursor:text;text-decoration:none;white-space:nowrap;text-align:center;border-radius:3px;}
+
+.taoche-screen-prompt{position:absolute;left:55px;bottom:23px;font-size:14px;color:#999999;}
+.taoche-screen-prompt em{float:left;width:20px;height:20px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -138px  -66px;margin-right:10px;}
+.taoche-screen-other li ul.screen-layer-two{margin-left:7px;}
+.taoche-screen-other li ul.screen-layer-two li{width:88px;float:left;margin:0;padding:0;}
+.taoche-screen-other li ul.screen-layer-two li a{margin-left:0;}
+.taoche-screen-other li ul.screen-layer-three {margin-left:7px;}
+.taoche-screen-other li ul.screen-layer-three li{width:62px;float:left;margin:0;padding:0;}
+.taoche-screen-other li ul.screen-layer-three li a{margin-left:0;}
+.taoche-screen-other li ul.screen-layer-three li.screen-layer-three-four{width:80px;}

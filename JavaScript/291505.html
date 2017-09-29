@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+        <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .box{width:2rem;height:2rem;float: left;background:#222;}
+    </style>
+</head>
+
+<body>
+<h2>Helloween</h2>
+    <script type="text/javascript">
+    var Cookie = {
+        getExpDate: function(days, hours, minutes) {
+            var expDate = new Date();
+            if (typeof days == "number" && typeof hours == "number" &&
+                typeof hours == "number") {
+                expDate.setDate(expDate.getDate() + parseInt(days));
+                expDate.setHours(expDate.getHours() + parseInt(hours));
+                expDate.setMinutes(expDate.getMinutes() + parseInt(minutes));
+                return expDate.toGMTString();
+            }
+        },
+        getCookieVal: function(offset) {
+            var endstr = document.cookie.indexOf(";", offset);
+            if (endstr == -1) {
+                endstr = document.cookie.length;
+            }
+            // return unescape(decodeURI(document.cookie.substring(offset, endstr)));
+            return unescape(document.cookie.substring(offset, endstr));
+        },
+        getCookieValDecode: function(offset) {
+            var endstr = document.cookie.indexOf(";", offset);
+            if (endstr == -1) {
+                endstr = document.cookie.length;
+            }
+            return unescape(decodeURI(document.cookie.substring(offset, endstr)));
+        },
+        getCookie: function(name) {
+            var arg = name + "=";
+            var alen = arg.length;
+            var clen = document.cookie.length;
+            var i = 0;
+            while (i < clen) {
+                var j = i + alen;
+                if (document.cookie.substring(i, j) == arg) {
+                    return this.getCookieVal(j);
+                }
+                i = document.cookie.indexOf(" ", i) + 1;
+                if (i == 0) break;
+            }
+            return "";
+        },
+        getCookieDecode: function(name) {
+            var arg = name + "=";
+            var alen = arg.length;
+            var clen = document.cookie.length;
+            var i = 0;
+            while (i < clen) {
+                var j = i + alen;
+                if (document.cookie.substring(i, j) == arg) {
+                    return this.getCookieValDecode(j);
+                }
+                i = document.cookie.indexOf(" ", i) + 1;
+                if (i == 0) break;
+            }
+            return "";
+        },
+        getCookies: function() {
+            var _Cookie = new Array();
+            var _sp, _name, _value, _tp, _tars, _tarslength, _coo;
+
+            if (document.cookie.indexOf(";") != -1) {
+                var _item = document.cookie.split("; ");
+                var _itemlength = _item.length;
+                for (i = 0; i < _itemlength; i++) {
+                    _sp = _item[i].split("=");
+                    _name = _sp[0];
+                    _value = _sp[1];
+                    _coo = new Array();
+                    _coo['name'] = _name;
+                    _coo['value'] = _value;
+                    _Cookie.push(_coo);
+                }
+            } else if (document.cookie.indexOf("=") != -1) {
+                _sp = document.cookie.split("=");
+                _name = _sp[0];
+                _value = _sp[1];
+                _coo = new Array();
+                _coo['name'] = _name;
+                _coo['value'] = _value;
+                _Cookie.push(_coo);
+            }
+            return _Cookie;
+        },
+        setCookie: function(name, value, expires, path, domain, secure) {
+            document.cookie = name + "=" + escape(value) +
+                ((expires) ? "; expires=" + expires : "") +
+                ((path) ? "; path=" + path : "") +
+                ((domain) ? "; domain=" + domain : "") +
+                ((secure) ? "; secure" : "");
+
+        },
+        deleteCookie: function(name, path, domain) {
+            if (this.getCookie(name)) {
+                document.cookie = name + "=" +
+                    ((path) ? "; path=" + path : "") +
+                    ((domain) ? "; domain=" + domain : "") +
+                    "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+            }
+        },
+        clearCookie: function() {
+            cookies = this.getCookies();
+            for (i = 0; i < cookies.length; i++) {
+                this.deleteCookie(cookies[i]['name']);
+            }
+        },
+        getCookieString: function() {
+            return document.cookie;
+        }
+    };
+    
+    var value = Cookie.getCookie("abc");
+    alert('Hello,body value='+value);
+    </script>
+</body>
+
+</html>

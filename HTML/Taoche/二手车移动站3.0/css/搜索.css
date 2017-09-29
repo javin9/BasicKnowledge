@@ -1,0 +1,42 @@
+
+
+/*搜索*/
+.search-wrap{background:#fff;position:absolute;width:100%;top:0;left:0;z-index:100000;}
+.seach-box-pop{ width:100%;  height: 35px; line-height: 35px; display: table;padding:10px 15px 10px 0; background: #fff;position:relative;}
+.seach-box-pop .seach,.seach-box-pop .search-txt{ display: table-cell; vertical-align: middle; }
+.seach-box-pop input{ display: block; width:100%;/*height: 35px; line-height: 24px;*/padding:8px 0;border:0; border-radius: 20px; font-size: 1.4rem; background:#fff url(http://image.bitautoimg.com/taoche/2016taoche_m/search2.png) no-repeat 10px center;padding-left:27px; background-size: 14px 14px;border:1px solid #d2d2d2;color:#333;}
+.seach-box-pop .search-txt{width:50px;  font-size: 1.6rem; padding-left: 15px;color:#ff6d02;}
+.seach-box-pop .seach{ position: relative;}
+.seach-box-pop i{ width: 14px; height: 14px; background: url(http://image.bitautoimg.com/taoche/2016taoche_m/ser-del.png) no-repeat; background-size:14px 14px; display: block; position: absolute;top:50%;margin-top:-7px;right:10px;  }
+.seach-box-pop .return{ width:27px; height:21px; display: table-cell; background: url(http://image.bitautoimg.com/taoche/taoche_jd_web2016/returen-seach.png) no-repeat 0 6px; background-size:12px 21px;  }
+.search-back{display:table-cell;background:url(http://image.bitautoimg.com/taoche/2016taoche_m/back.png) no-repeat;background-size:41px auto;width:41px;height:35px;}
+
+/*纯文字块-水平*/
+.list-txt-block{overflow: hidden;zoom:1; }
+.list-txt-block h2{padding-left:15px;padding-right:15px;font-size: 1.4rem;background:#f5f5f5;line-height:33px;color:#666666;}
+.list-txt-list{padding:10px 15px 0;overflow:hidden;margin-right:-15px;}
+.list-txt-list li{ float:left;margin-bottom:10px; width:33.333%; height: 34px; line-height: 34px; overflow: hidden;background: #fff; text-align: center; font-size: 1.4rem}
+.list-txt-list li a{padding:0 5px; margin:0 15px 0 0;height: 34px; line-height:34px; display:block;text-overflow:ellipsis;white-space:nowrap; overflow:hidden;font-size:1.4rem;border: 1px solid #d2d2d2;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color:#666666;
+}
+.list-txt-list li.current a{border: 1px solid #FF6D02;color:#FF6D02;}
+
+
+/*v3.1 搜索 liuhui*/
+.list-txt-block h2 span{float:right;font-size:1.4rem;color:#999999;margin-right:2px;}
+.list-txt-block h2 span a{color:#999999;}
+.search-car-type-list{border-top:1px solid #ececec;width:100%;position:absolute;left:0;top:55px;background-color:#fff}
+.search-car-type-list ul{margin:0 15px;}
+.search-car-type-list ul li{border-bottom:1px solid #ececec;}
+.search-car-type-list ul li a{line-height:20px;padding:15px 0;display:block;font-size:1.4rem;}
+.list-txt-block h2 span a.current{color:#FF6D02;font-size:1.4rem;}
+.rutn-list{text-align:center;color:#ff6d02;font-size:1.5rem;margin-bottom:40px;}
+.rutn-list a{color:#ff6d02;}
+
+@media screen and (max-width: 320px) {
+    .font12 li,.font12 li a{font-size:1.2rem;}
+}
+

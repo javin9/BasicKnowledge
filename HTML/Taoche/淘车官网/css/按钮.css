@@ -1,0 +1,57 @@
+/*按钮*/
+.btn{font-family:"Microsoft Yahei";display:inline-block}
+
+.btn-primary a{display:block; text-align:center; color:#fff;border:1px solid #fd9933; }
+.btn-primary a:link, .btn-primary a:visited{ color:#fff; background:#fd9933;}
+.btn-primary a:hover{text-decoration:none;background:#ff8d03;border:1px solid #ff8d03;}
+
+.btn-lesser a{display:block; text-align:center; color:#666;background:#fdfdfd; }
+.btn-lesser a:link, .btn-lesser a:visited{ color:#666; background:#fdfdfd;border:1px solid #ddd;}
+.btn-lesser a:hover{text-decoration:none;background:#fff;border:1px solid #fd9933;color:#fd9933;}
+
+.btn-light a{display:block; text-align:center; color:#666;background:#fdfdfd; }
+.btn-light a:link, .btn-lesser a:visited{ color:#666; background:#fdfdfd;border:1px solid #666;}
+.btn-light a:hover{text-decoration:none;background:#fff;border:1px solid #000;color:#000;}
+
+.btn-disabled a,
+.btn-disabled a:link,
+.btn-disabled a:visited,
+.btn-disabled a:hover{background:#ebebeb;cursor:inherit;border:1px solid #ededed;display:inline-block;color:#999;text-decoration:none;white-space:nowrap;text-align:center;border-radius:3px;}
+
+.btn-lesser-disabled a,
+.btn-lesser-disabled a:link,
+.btn-lesser-disabled a:visited,
+.btn-lesser-disabled a:hover{background:#fff;cursor:inherit;border:1px solid #ccc;display:inline-block;color:#ccc;text-decoration:none;white-space:nowrap;text-align:center;border-radius:3px;}
+
+
+/*按钮尺寸*/
+.btn-lg{font-size:18px;}
+.btn-lg a{height:50px;*height:47px;line-height:48px;width:578px;border-radius:3px;display:block;}
+.btn-xlg{font-size:18px;}
+.btn-xlg a{height:50px;*height:47px;line-height:48px;width:180px;border-radius:3px;display:block;}
+.btn-sm{font-size:18px;}
+.btn-sm a{height:50px;*height:47px;line-height:48px;width:140px;border-radius:3px;display:block;}
+
+.btn-xxsm a{height:40px;*height:37px;line-height:38px;width:115px;border-radius:3px;display:block;}
+.btn-xxsm{font-size:15px;}
+
+.btn-xs{ font-size:16px;}
+.btn-xs a{height:40px;line-height:38px;width:140px;border-radius:3px;display:block;color:#666;}
+
+.btn-xsm{ font-size:16px;}
+.btn-xsm a{height:40px;*height:37px;line-height:38px;width:90px;border-radius:3px;display:block;color:#666;}
+.btn-xxs{ font-size:14px;font-weight:normal;}
+.btn-xxs a{height:25px;line-height:23px;width:70px;border-radius:3px;display:block;color:#666;}
+.btn-xxxs{ font-size:14px;font-weight:normal;}
+.btn-xxxs a{height:30px;line-height:28px;width:70px;border-radius:3px;display:block;color:#666;}
+
+/*左右滚动的按钮*/
+.taoche-details-goleft{position:absolute;left:0;bottom:0px;width:20px;height:60px;}
+.taoche-details-goright{position:absolute;right:0px;bottom:0px;width:20px;height:60px;}
+.taoche-details-goleft a{width:0px;padding-left:20px;line-height:0px;font-size:0;overflow:hidden;height:60px;display:block;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/scroll_ico.png) no-repeat -110px -1px;}
+.taoche-details-goleft a:hover{background-position:left -1px;}
+.taoche-details-goright a{width:0px;padding-left:20px;line-height:0px;font-size:0;overflow:hidden;height:60px;display:block;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/scroll_ico.png) no-repeat -135px -1px;}
+.taoche-details-goright a:hover{background-position:-27px -1px;}
+.nohover a,.nohover a:hover{background-color: #e5e5e5;}
+.taoche-details-goleft a.nohover,.taoche-details-goleft a.nohover:hover{background-position:-51px -1px;cursor:default;}
+.taoche-details-goright a.nohover,.taoche-details-goright a.nohover:hover{background-position:-86px -1px;cursor:default;}

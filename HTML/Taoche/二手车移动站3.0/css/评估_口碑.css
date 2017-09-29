@@ -1,0 +1,199 @@
+
+/* public css */
+.mt12{margin-top:12px;}
+
+/* public tle */
+.m-tle{position:relative;border-bottom:1px solid #ececec;padding:0 15px;overflow:hidden;}
+.h2{font-size:18px;color:#333;line-height:50px;}
+
+/* public sprite */
+.pg-contul li.alink-li,
+.pradet-ul li h3,
+.p-btn-alink a em{
+	background:url(http://image.bitautoimg.com/taoche/2016taoche_m/arrow-right.png) no-repeat right center;background-size:7px 11px;
+}
+
+/* 评估_首页   */
+.pg-top-wrap{padding:10px 0 18px;background:url(http://image.bitautoimg.com/taoche/2016taoche_m/pg_kb/mainbg1.jpg) no-repeat;background-size:cover;width:100%;text-align:center;}
+.pg-box{font-size:2.1rem;color:#fff;line-height:43px;}
+.pg-box .num{font-size:3.4rem;vertical-align:middle;padding:0 5px;}
+.pg-btn{margin-top:10px;}
+.btn-span{position:relative;display:inline-block;border:1px solid #ffe8d3;color:#fff;font-size:1.6rem;line-height:20px;padding:0 20px;
+	border-radius:25px;
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+}
+/*.btn-span:before{content:"";position:absolute;top:-8px;left:50%;margin-left:-6px;background:url(http://image.bitautoimg.com/taoche/2016taoche_m/pg_kb/arrow-top.png) no-repeat;background-size:12px 8px;width:12px;height:8px;}*/
+
+.btn-span:before{
+  content:''; 
+  display:block; 
+  width:0; 
+  height:0; 
+  position:relative; 
+  top:-9px; 
+  left:50%; 
+  margin-left:-8px;
+  border-left:7px solid transparent; 
+  border-right:7px solid transparent; 
+  border-bottom:8px solid #ffe8d3;
+}
+.btn-span:after{
+  content:''; 
+  display:block; 
+  width:0; 
+  height:0; 
+  position:relative; 
+  top:-35px; 
+  left:50%; 
+  margin-left:-8px; 
+  border-left:7px solid transparent; 
+  border-right:7px solid transparent; 
+  border-bottom:8px solid #ff8c1e;
+}
+
+.pg-main-wrap{background:#fff;padding:0 15px 25px;}
+.pg-tabul{padding:20px 15px 12px;overflow:hidden;}
+.pg-tabul li{width:50%;float:left;position:relative;}
+.pg-tabul li a{display:block;text-align:center;}
+.pg-tabul li a p{line-height:32px;font-size:1.6rem;color:#b7b7b7;}
+.pg-tabul li a:before{content:"";display:inline-block;background:url(http://image.bitautoimg.com/taoche/2016taoche_m/pg_kb/icon-sale.png) no-repeat;background-size:133px 127px;width:56px;height:56px;}
+.pg-tabul li a.cur p{color:#ff6d02;}
+.pg-tabul li a:after{position:absolute;top:3px;right:0;display:block;content:"";border-right:1px solid #ececec;width:1px;height:56px;}
+.pg-tabul li:last-child a:after{border:none;}
+.pg-tabul li.tabul-mj a:before{background-position:0 -71px;}
+.pg-tabul li.tabul-cz a.cur:before{background-position:-77px 0;}
+.pg-tabul li.tabul-mj a.cur:before{background-position:-77px -71px;}
+.pg-contul{padding-bottom:25px;}
+.pg-contul li{line-height:50px;border-bottom:1px solid #ececec;}
+.pg-t{float:left;width:98px;font-size:16px;color:#333;padding-right:30px;}
+.pg-m em{font-size:16px;color:#b7b7b7;}
+.inpt{border:none;background:none;font-size:1.6rem;}
+.pg-m .inpt{width:80px;color:#333;}
+.unit{color:#333;font-size:1.6rem;}
+.pg-m{margin-right:20px;}
+.pg-m i{color:#333;font-size:1.6rem;}
+
+/* 01我要买车   */
+.buy-top-wrap{background:rgba(0, 0, 0, 0) linear-gradient(#ff9a00, #ffb400) repeat;padding:40px 0 20px;}
+.data-p{text-align:center;padding-bottom:20px;}
+.data-p .ico-data{display:inline-block;background:url(http://image.bitautoimg.com/taoche/2016taoche_m/pg_kb/icon-pg.png) no-repeat;background-size:66px 53px;width:66px;height:53px;}
+.data-p p{font-size:1.6rem;color:#fff;line-height:41px;}
+.car-data-cx p{color:#fff;text-align:center;}
+.car-data-cx .pt{line-height:23px;font-size:1.4rem;}
+.car-data-cx .pb{line-height:21px;font-size:1.2rem;}
+.buy-bottom{padding-bottom:20px;min-height:190px;}
+.btn-bot-buy{padding:25px 15px 15px;}
+.bot-tips{font-size:1.4rem;color:#999;text-align:center;}
+
+/* 02我要买车   */
+.buy-top-wrap2{background:url(http://image.bitautoimg.com/taoche/2016taoche_m/pg_kb/mainbg2.jpg) no-repeat;background-size:cover;padding:30px 0 20px;}
+.data-box ul{overflow:hidden;text-align:center;padding-bottom:10px;}
+.data-box ul li{background:rgba(255,255,255,0.2);padding:4px;font-size:1.4rem;color:#fff;text-align:center;display:inline-block;vertical-align:top;
+	border-radius:100%;
+	-webkit-border-radius:100%;
+	-moz-border-radius:100%;
+}
+.data-box ul li p{line-height:20px;}
+.data-side{width:81px;height:81px;margin-top:24px;}
+.data-mid{width:128px;height:128px;margin:0 -10px;position:relative;z-index:10;}
+.data-in{background:#ff860d;width:100%;height:100%;
+	border-radius:100%;
+	-webkit-border-radius:100%;
+	-moz-border-radius:100%;
+}
+.data-side .pt{padding-top:18px;}
+.data-box ul li.data-mid{padding:5px;background:rgba(255,255,255,0.4);
+	-webkit-box-shadow:0 0 5px #ff880f;
+}
+.data-mid .data-in{background:#fff;color:#ff6d02;}
+.data-mid .pt{font-size:1.6rem;padding-top:17px;}
+.data-mid .pm{border-bottom:1px solid #ff6d02;display:inline-block;padding:7px 0;margin-bottom:7px;}
+.data-mid .pm em{font-size:3.6rem;}
+
+/* 新车口碑  */
+.divwrap{background:#fff;}
+.praise-wrap{padding:15px 15px 0;}
+.praise-in{padding-bottom:18px;}
+.praise-in a{display:block;background:url(http://image.bitautoimg.com/taoche/2016taoche_m/arrow-right.png) no-repeat right center;background-size:7px 11px;}
+.score{font-size:1.4rem;color:#333;}
+.star-tips{color:#999;font-size:1.3rem;padding-top:15px;}
+.praiseul li{overflow:hidden;padding-bottom:15px;}
+.pra-l{float:left;margin-top:8px;text-align:center;}
+.pra-l p{color:#ff6d02;}
+.face{display:inline-block;background:url(http://image.bitautoimg.com/taoche/2016taoche_m/face.png) no-repeat;background-size:24px 52px;width:24px;height:24px;}
+.pra-r{margin-left:50px;}
+.prabox{position:relative;padding:12px 15px;min-height:60px;}
+.prabox p{line-height:20px;color:#333;font-size:1.4rem;}
+.p-arrow *{position:absolute; border-style:dashed solid solid dashed; font-size:0; line-height:0; }
+.p-arrow em{border-width:11px 7px;left:-14px;top:20px;} 
+.praise-g .prabox{background:#fff0e5;}
+.praise-g .p-arrow em{border-color:#fff0e5 #fff0e5 transparent transparent;}
+.praise-b .prabox{background:#f5f5f5;}
+.praise-b .p-arrow em{border-color:#f5f5f5 #f5f5f5 transparent transparent;}
+.praise-b .pra-l p{color:#999;}
+.praise-b .pra-l .face{background-position:0 -28px;}
+
+.praise-det{padding-bottom:5px;}
+.pradet-ul{padding:0 15px;}
+.ico-blue{background:#5589d0;line-height:15px;padding:0 3px;color:#fff;font-size:1.2rem;margin-right:6px;vertical-align:1px;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+}
+.ico-red{background:#ee5848;line-height:15px;padding:0 3px;color:#fff;font-size:1.2rem;margin-right:6px;vertical-align:1px;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;}
+.pradet-ul li{padding:20px 0;border-bottom:1px solid #ececec;}
+.pradet-ul li:last-child{border-bottom:none;}
+.pradet-ul li a{display:block;}
+.pra-h3{font-size:1.6rem;line-height:20px;}
+.pra-rig{float:right;font-size:1.2rem;color:#999;}
+.pra-rig .time{padding-left:8px;}
+.pra-bot{padding-top:15px;}
+.pra-bot .score{color:#ff6d02;}
+.m-pages{margin-top:0;}
+
+.pra-itemul{padding:2px 15px 0;}
+.pra-itemul li{padding:4px 0 11px;border-bottom:1px solid #ececec;}
+.pra-itemul li:last-child{border-bottom:none;}
+.pra-itemul li h3{font-size:1.6rem;color:#333;line-height:35px;}
+.pra-item p{font-size:1.4rem;color:#666;line-height:22px;}
+
+.pradet-div{padding:20px 15px;}
+.pradet-div .name{float:right;font-size:1.4rem;color:#999;}
+.pradet-bot{padding:15px 0 10px;}
+.pra-carstyle .time{float:right;}
+.pra-carstyle span{color:#999;font-size:1.4rem;}
+
+.buy-cont-wrap{padding-bottom:15px;}
+.pg-h2{line-height:44px;padding-left:15px;font-size:1.6rem;padding-bottom:6px;}
+.pg-maincont{padding:0 15px;}
+.graph-box{padding-bottom:18px;text-align:center;}
+.p-tips-fx{font-size:1.2rem;line-height:21px;text-align:center;}
+.p-fx em{background:url(http://image.bitautoimg.com/taoche/2016taoche_m/pg_kb/i-tips1.png) no-repeat left 2px;background-size:12px 12px;padding-left:18px;margin-top:9px;color:#dd2727;}
+.p-pg em{background:url(http://image.bitautoimg.com/taoche/2016taoche_m/pg_kb/i-tips2.png) no-repeat left 2px;background-size:12px 12px;padding-left:18px;margin-bottom:10px;color:#ff6d02;}
+.p-no em{background:url(http://image.bitautoimg.com/taoche/2016taoche_m/pg_kb/i-tips3.png) no-repeat left 2px;background-size:12px 12px;padding-left:18px;margin-bottom:10px;color:#999;}
+.bm-cont-wrap{padding:15px;}
+.bm-cont-wrap p{text-align:center;}
+.bm-tips{font-size:1.4rem;color:#999;padding-top:15px;}
+.btn-bm{padding:15px 0;}
+.btn-bm a{width:55%;margin:0 auto;}
+.look-buy{padding-bottom:10px;}
+.look-buy a{font-size:15px;color:#ff6d02;}
+.sell-bot-pri{background:#ff8a00;line-height:40px;padding:0 15px;border-top:1px solid #ffb969;}
+.sell-bot-pri p{font-size:1.6rem;color:#fff;}
+.p-tips-sj{font-size:1.4rem;color:#999;text-align:center;}
+.p-btn-alink{line-height:25px;text-align:center;}
+.p-btn-alink a{font-size:1.4rem;color:#666;}
+.p-btn-alink a em{padding-right:14px;}
+
+.graph-zbno{width:79px;height:63px;margin:0 auto 15px;}
+.p-btn-no{line-height:21px;font-size:1.4rem;color:#999;text-align:center;padding-bottom:11px;}
+.circum-box{background:#fff;padding:0 15px;min-height:410px;}
+.circum-box ul li{line-height:50px;border-bottom:1px solid #ececec;}
+.circum-box ul li:last-child{border-bottom:none;}
+.circum-box ul li .r-pri{float:right;font-size:1.2rem;color:#999;}
+.circum-box ul li .r-pri em{padding-left:8px;color:#ff6d02;font-size:1.6rem;vertical-align:middle;}
+.circum-box ul li .l-addr{font-size:1.6rem;color:#666;}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>易鑫集团 全新发布 - 一站式互联网汽车交易平台</title>
+<meta name="keywords" content="淘车网" />
+<meta name="description" content="易鑫集团一站式互联网汽车交易平台" />
+<meta name="author" content="liu-yanlong@qq.com">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="MobileOptimized" content="320">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.taoche.com/favicon.ico" />
+<style>
+*{padding:0;margin:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}
+a{-webkit-tap-highlight-color:transparent;-ms-tap-highlight-color:transparent;tap-highlight-color:transparent}
+a:active{outline:0}
+a:link,a:visited,a:hover{text-decoration:none}
+a img{border:none;vertical-align:middle}
+
+html{font-family:'Microsoft YaHei','Hiragino Sans GB','Century Gothic',\\5b8b\4f53,Tahoma,Arial,sans-serif;-webkit-font-smoothing:antialiased;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%}
+/*music*/
+@keyframes rotate{0%{transform:rotate(360deg)}100%{transform:rotate(0deg)}}
+@-webkit-keyframes rotate{0%{-webkit-transform:rotate(360deg)}100%{-webkit-transform:rotate(0deg)}}
+@-moz-keyframes rotate{0%{-moz-transform:rotate(360deg)}100%{-moz-transform:rotate(0deg)}}
+@-o-keyframes rotate{0%{-o-transform:rotate(360deg)}100%{-o-transform:rotate(0deg)}}
+.play{animation:rotate 3s linear 0s normal none infinite;-webkit-animation:rotate 3s linear 0s normal none infinite;font-family:normal}
+.background_music{text-decoration:none;width:35px;height:35px;line-height:30px;border-radius:50%;display:inline-block;z-index:11;border:2px solid rgba(42,185,241,.3);position:absolute;top:10px;right:9px;text-align:center;background-color:rgba(0,0,0,0.2);color:rgba(42,185,241,.3);font-size:30px}
+
+/*loading*/
+#loader{will-change:transform;width:60px;height:60px;position:absolute;top:50%;left:50%;margin:-30px auto auto -30px;background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSIjRUVFIiBkPSJNNjYuNyw0MC4yYy0xMi41LTkuNy0yMS44LTEwLjYtMzAuNC0zLjZDMjcuNCw0My45LDI1LjcsNTYsMzIsNjcuN2M3LjUsMTMuOCwzMCwxNi43LDQyLjcsNS40YzE4LjktMTYuNywxOS45LTQ1LjIsMi4yLTYzLjNjLTIuMS0yLjItNC4yLTQuNS01LjctNy4yQzgzLjMsNyw5MC43LDE2LDk1LjgsMjcuNWMxMi40LDI4LTMuNyw2MS43LTMyLjksNjguNGMtMTUsMy40LTMzLjItNC4yLTQwLjgtMTcuMWMtOS4yLTE1LjctNy45LTMyLjIsMy41LTQ1LjJDMzYsMjEuNyw2MS4yLDIwLjcsNjYuNyw0MC4yeiIvPjxwYXRoIGZpbGw9IiNFRUUiIGQ9Ik0zMy4zLDU5LjVjMTIsOS4zLDIwLjMsMTAuNCwyOSw0LjVjNy43LTUuMiwxMS4zLTE1LjksOC42LTI1QzY3LDI2LjIsNTkuNCwyMC44LDQ3LDE5LjdDMTkuNiwxNy41LDIuMyw1MiwxNC42LDc3LjFjMy41LDcuMiw5LjMsMTMuNCwxNC43LDIwLjljLTEyLjYtNS40LTIwLTE0LjMtMjUuMS0yNS44Yy0xMi40LTI4LDMuNy02MS43LDMyLjktNjguNGMxNS0zLjQsMzMuMyw0LjIsNDAuOCwxNy4xYzkuMiwxNS43LDcuOCwzMi4yLTMuNiw0NS4yQzYzLjksNzguMSwzOC43LDc4LjksMzMuMyw1OS41eiIvPjwvc3ZnPg==) center no-repeat;border-radius:50%;animation:rotate 3s linear 0s normal none infinite;-webkit-animation:rotate 3s linear 0s normal none infinite;overflow:hidden;z-index:9}
+#loader-overflow{display:block;width:100%;height:100%;position:fixed;top:0;left:0;background:white;z-index:99999}
+#loader-complete{position:absolute;bottom:10px;left:0;width:100%;text-align:center;font-size:10px}
+#loader-complete:after{content:"%"}
+
+.main{background:url(static/images/15.png) bottom repeat-x #b6c6e2;display:block;clear:both;visibility:visible;overflow:hidden;margin:auto}
+.area{display:block;clear:both;visibility:visible;overflow:hidden;width:1200px;margin:auto}
+.banner{display:block;background:url(static/images/04.jpg) center #b6c6e2;height: 650px}
+.video{margin: 30px auto;}
+.video h1{text-align: center;background:url(static/images/16.png) center bottom no-repeat; padding-bottom: 70px}
+.video h1 span{font-size:16px;padding:1em; color: #23498a; border:2px solid #23498a;display: inline-block}
+.videos{background-color:black;margin:auto;height: 600px;width: 1100px}
+
+.intro{padding:100px 50px 50px 50px;font-size:12px;background:url(static/images/09.png) center 30px no-repeat; background-size:100% auto}
+.intro .P1{padding:50px 50px 50px 450px;background:url(static/images/13.jpg) left center no-repeat white}
+.intro .P2{padding:50px 450px 50px 50px;background:url(static/images/14.jpg) right center no-repeat white}
+.intro p{height:470px;box-shadow:0 0 5px rgba(0,0,0,.2);font-size: 26px; overflow: hidden;line-height: 2; margin-bottom:50px;word-wrap:break-word;table-layout:fixed;word-break:normal;text-align:justify;text-justify:inter-ideograph}
+
+</style>
+</head>
+<body>
+<div class="main">
+	<div class="banner"></div>
+	<div class="area video">
+		<h1><span>2分钟读懂淘车，点击下方按钮观看</span></h1>
+		<div class="videos"><iframe width="1100" height="600" src='http://st1.taoche.cn/taoche/web/taoche001.mp4' frameborder=0 'allowfullscreen'></iframe></div>
+	</div>
+
+	<div class="area intro">
+		<p class="P1">淘车是易鑫集团打造的一站式互联网汽车交易平台，拥有腾讯、京东、百度、易车等众多强势资本的支持。淘车整合了易鑫集团线上所有资源，致力于为用户提供更省心、更便捷的一站式汽车交易服务。今后无论是购买新车、二手车交易、还是与车相关的增值服务，都能在淘车平台上一站解决。</p>
+		<p class="P2">淘车从用户体验出发，打通各个消费环节的难点，整合行业资源，从而为用户带来更省心的服务体验。同时，通过线下体验店提供的全方位落地服务，全面打造便捷安全的线上线下交易闭环。在淘车，2016年总交易量超过26万台，总交易规模超过270亿元，线上用户单月购车需求逾600亿元，业务范围遍及全国300多个城市。</p>
+	</div>
+</div>
+<!--loader-->
+<div id="loader-overflow">
+	<div id="loader"></div>
+	<div id="loader-complete">0</div>
+	<div id="source" style="display:none">
+		<img data-src="static/images/04.jpg"/>
+	</div>
+</div>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="static/js/jquery.js"></script>
+<script type="text/javascript" src="static/js/ui.js"></script>
+<script type="text/javascript">var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="//hm.baidu.com/hm.js?b43ce35f868b496d8c3af5108a539019";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s)})();</script>
+<script type="text/javascript" charset="gb2312" src="http://st1.taoche.cn/ucar/ucar/js/ucar/ucar2009/sdc/dcs_ucar.js"></script>
+<script type="text/javascript" src="http://g.yccdn.com"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Taoche_头尾</title>
+<link rel="stylesheet" type="text/css" href="../css/1200_头新.css">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/html5shiv.min.js"></script>
+  <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/Respond.min.js"></script>
+<![endif]-->
+<style>
+	/*Demo*/
+	html,body{padding: 0;margin: 0}
+</style>
+</head>
+<body>
+<!--个人登录 star -->
+<div class="Taoche_headerBar">
+	<div class="area">
+		<ul class="nav">
+			<li><a href="http://www.bitauto.com/" target="_blank">易车</a></li>
+			<li class="current"><a rel="nofollow" target="_blank" href="http://www.taoche.com/">淘车</a></li>
+			<li><a rel="nofollow" target="_blank" href="http://www.daikuan.com/">易鑫车贷</a></li>
+			<li><a rel="nofollow" target="_blank" href="http://www.huimaiche.com/">易车•惠买车</a></li>
+			<li><a rel="nofollow" target="_blank" href="http://mai.bitauto.com/">易车惠</a></li>
+			<li onmouseover="this.className='hover'" onmouseout="this.className=''">
+				<a class="sub_nav" rel="nofollow" target="_blank" href="http://app.yiche.com">APP</a>
+				<div class="menu">
+					<a rel="nofollow" target="_blank" href="#">淘车二手车</a>
+					<a rel="nofollow" target="_blank" href="#">易鑫车贷</a>
+					<a rel="nofollow" target="_blank" href="#">易车APP</a>
+					<a rel="nofollow" target="_blank" href="#">手机易车网</a>
+					<a rel="nofollow" target="_blank" href="#">汽车报价大全</a>
+					<a rel="nofollow" target="_blank" href="#">惠买车</a>
+					<a rel="nofollow" target="_blank" href="#">车友之家</a>
+				</div>
+			</li>
+		</ul>
+		<ul  class="option">
+			<li><a href="#" target="_blank">个人登录</a></li>
+			<li><a href="#" target="_blank">免费发车</a></li>
+			<li><a href="#" target="_blank">商家登录</a></li>
+			<li><a href="#" target="_blank">商家发车</a></li>
+		</ul>
+	</div>
+</div>
+<!--个人登录 end -->
+<!--顶部 star -->
+<div class="Taoche_header">
+	<div class="main">
+		<div class="area">
+			<a class="logo" href="#">淘车网</a>
+			<div class="search">
+				<div class="search-tab">
+					<a href="javascript:;" class="current">二手车</a>
+					<a href="javascript:;">新车</a>
+				</div>
+                <input type="text" id="txtSearch" name="txtSearch" autocomplete="off" value="请输入心仪的品牌或车型">
+                <a class="search-but" id="btnSearch" href="javascript:;">搜索</a>
+                <div id="divList" class="search-layer">
+					<ul>
+						<li><a href="#"><span>约 302880 条车源</span><i>大众</i></a></li>
+						<li><a href="#"><span>约 380 条车源</span><i>大通</i></a></li>
+						<li class="current"><a href="#"><span>约 20 条车源</span><i>大宇</i></a></li>
+						<li><a href="#"><span>约 9 条车源</span><i>大迪</i></a></li>
+						<li><a href="#"><span>约 3 条车源</span><i>大宇 大宇旅行家（进口）</i></a></li>
+						<li><a href="#"><span>约 1 条车源</span><i>大宇 大宇典雅（进口）</i></a></li>
+						<li><a href="#"><span>约 1 条车源</span><i>大宇 马蒂兹</i></a></li>
+						<li><a href="#"><span>约 3 条车源</span><i>大迪 大迪霸道suv</i></a></li>
+						<li><a href="#"><span>约 4 条车源</span><i>大迪 大迪皮卡</i></a></li>
+					</ul>
+                </div>
+                <div id="selList" class="sel-car-brands"></div>
+            </div>
+			<div class="city-name" onmouseover="this.className='city-name hover';window._CITYNAME=0;window.clearTimeout(_CITYNAME_INT);window._CITYNAME_INT=setTimeout(function(){window._CITYNAME=1},10)" onmouseout="if(window.__CITYNAME==1){this.className='city-name'}">
+				<a class="city-name-link" href="javascript:;">北京<em></em></a> 
+				<!--头部城市浮层 star -->
+				<div id="divCityList" class="header-city-layer">
+					<div class="header-city-hot">
+						<div class="header-city-hot-tit"><span><a target="_blank" logwt="citystation_all" href="//www.taoche.com/city/" _islog="1">全部城市&gt;</a></span>热门</div>
+						<div class="header-city-hot-text"> <a title="北京二手车" href="//beijing.taoche.com/" logwt="citystation_hot_beijing" _islog="1">北京</a> <a title="上海二手车" href="//shanghai.taoche.com/" logwt="citystation_hot_shanghai" _islog="1">上海</a> <a title="广州二手车" href="//guangzhou.taoche.com/" logwt="citystation_hot_guangzhou" _islog="1">广州</a> <a title="深圳二手车" href="//shenzhen.taoche.com/" logwt="citystation_hot_shenzhen" _islog="1">深圳</a> <a title="成都二手车" href="//chengdu.taoche.com/" logwt="citystation_hot_chengdu" _islog="1">成都</a> <a title="沈阳二手车" href="//shenyang.taoche.com/" logwt="citystation_hot_shenyang" _islog="1">沈阳</a> <a title="宁波二手车" href="//ningbo.taoche.com/" logwt="citystation_hot_nengbo" _islog="1">宁波</a> <a title="天津二手车" href="//tianjin.taoche.com/" logwt="citystation_hot_tianjin" _islog="1">天津</a> <a title="唐山二手车" href="//tangshan.taoche.com/" logwt="citystation_hot_tangshan" _islog="1">唐山</a> <a title="济南二手车" href="//jinan.taoche.com/" logwt="citystation_hot_jinan" _islog="1">济南</a> <a title="青岛二手车" href="//qingdao.taoche.com/" logwt="citystation_hot_qingdao" _islog="1">青岛</a> <a title="西安二手车" href="//xian.taoche.com/" logwt="citystation_hot_xian" _islog="1">西安</a> <a title="临沂二手车" href="//linyi.taoche.com/" logwt="citystation_hot_linyi" _islog="1">临沂</a> <a title="太原二手车" href="//taiyuan.taoche.com/" logwt="citystation_hot_taiyuan" _islog="1">太原</a> <a title="大连二手车" href="//dalian.taoche.com/" logwt="citystation_hot_dalian" _islog="1">大连</a> <a title="杭州二手车" href="//hangzhou.taoche.com/" logwt="citystation_hot_hangzhou" _islog="1">杭州</a> <a title="苏州二手车" href="//suzhou.taoche.com/" logwt="citystation_hot_suzhou" _islog="1">苏州</a> <a title="南京二手车" href="//nanjing.taoche.com/" logwt="citystation_hot_nanjing" _islog="1">南京</a> <a title="无锡二手车" href="//wuxi.taoche.com/" logwt="citystation_hot_wuxi" _islog="1">无锡</a> <a title="合肥二手车" href="//hefei.taoche.com/" logwt="citystation_hot_hefei" _islog="1">合肥</a> <a title="东莞二手车" href="//dongguan.taoche.com/" logwt="citystation_hot_dongguan" _islog="1">东莞</a> <a title="佛山二手车" href="//foshan.taoche.com/" logwt="citystation_hot_foshan" _islog="1">佛山</a> <a title="武汉二手车" href="//wuhan.taoche.com/" logwt="citystation_hot_wuhan" _islog="1">武汉</a> <a title="昆明二手车" href="//kunming.taoche.com/" logwt="citystation_hot_kunming" _islog="1">昆明</a> <a title="长沙二手车" href="//changsha.taoche.com/" logwt="citystation_hot_changsha" _islog="1">长沙</a> <a title="郑州二手车" href="//zhengzhou.taoche.com/" logwt="citystation_hot_zhengzhou" _islog="1">郑州</a> <a title="福州二手车" href="//fuzhou.taoche.com/" logwt="citystation_hot_fuzhou" _islog="1">福州</a> <a title="重庆二手车" href="//chongqing.taoche.com/" logwt="citystation_hot_chongqing" _islog="1">重庆</a> <a title="石家庄二手车" href="//shijiazhuang.taoche.com/" logwt="citystation_hot_shijiazhuang" _islog="1">石家庄</a> </div>
+					</div>
+					<div class="header-city-province">
+						<h5>省份首字母</h5>
+						<div class="header-city-province-tit"> <a data-code="A" href="javascript:;" class="current" logwt="citystation_alphabet_A" _islog="1">A</a> <a data-code="B" href="javascript:;" logwt="citystation_alphabet_B" _islog="1">B</a> <a data-code="C" href="javascript:;" logwt="citystation_alphabet_C" _islog="1">C</a> <a data-code="F" href="javascript:;" logwt="citystation_alphabet_F" _islog="1">F</a> <a data-code="G" href="javascript:;" logwt="citystation_alphabet_G" _islog="1">G</a> <a data-code="H" href="javascript:;" logwt="citystation_alphabet_H" _islog="1">H</a> <a data-code="J" href="javascript:;" logwt="citystation_alphabet_J" _islog="1">J</a> <a data-code="L" href="javascript:;" logwt="citystation_alphabet_L" _islog="1">L</a> <a data-code="N" href="javascript:;" logwt="citystation_alphabet_N" _islog="1">N</a> <a data-code="Q" href="javascript:;" logwt="citystation_alphabet_Q" _islog="1">Q</a> <a data-code="S" href="javascript:;" logwt="citystation_alphabet_S" _islog="1">S</a> <a data-code="T" href="javascript:;" logwt="citystation_alphabet_T" _islog="1">T</a> <a data-code="X" href="javascript:;" logwt="citystation_alphabet_X" _islog="1">X</a> <a data-code="Y" href="javascript:;" logwt="citystation_alphabet_Y" _islog="1">Y</a> <a data-code="Z" href="javascript:;" logwt="citystation_alphabet_Z" _islog="1">Z</a> </div>
+						<div class="clear"></div>
+						<div class="header-city-province-mian">
+							<ul class="clearfix">
+								<li> <i id="iCity_A">A</i> <strong><a href="//anhui.taoche.com/">安徽</a></strong>
+									<div class="header-city-province-text"> <a href="//hefei.taoche.com/">合肥</a> <a href="//anqing.taoche.com/">安庆</a> <a href="//bengbu.taoche.com/">蚌埠</a> <a href="//chaohu.taoche.com/">巢湖</a> <a href="//chizhou.taoche.com/">池州</a> <a href="//fuyang.taoche.com/">阜阳</a> <a href="//huainan.taoche.com/">淮南</a> <a href="//luan.taoche.com/">六安</a> <a href="//maanshan.taoche.com/">马鞍山</a> <a href="//tongling.taoche.com/">铜陵</a> <a href="//wuhu.taoche.com/">芜湖</a> <a href="//xuancheng.taoche.com/">宣城</a> <a href="//chuzhou.taoche.com/">滁州</a> <a href="//sz.taoche.com/">宿州</a> <a href="//bozhou.taoche.com/">亳州</a> <a href="//huaibei.taoche.com/">淮北</a> <a href="//huangshan.taoche.com/">黄山</a> </div>
+								</li>
+								<li> <i id="iCity_B">B</i> <strong><a href="//beijing.taoche.com/" title="北京二手车">北京</a></strong>
+									<div class="header-city-province-text"> <a href="//beijing.taoche.com/" title="北京二手车">北京</a> </div>
+								</li>
+								<li> <i id="iCity_C">C</i> <strong><a href="//chongqing.taoche.com/" title="重庆二手车">重庆</a></strong>
+									<div class="header-city-province-text"> <a href="//chongqing.taoche.com/" title="重庆二手车">重庆</a> </div>
+								</li>
+								<li> <i id="iCity_F">F</i> <strong><a href="//fujian.taoche.com/">福建</a></strong>
+									<div class="header-city-province-text"> <a href="//fuzhou.taoche.com/">福州</a> <a href="//xiamen.taoche.com/">厦门</a> <a href="//longyan.taoche.com/">龙岩</a> <a href="//zhangzhou.taoche.com/">漳州</a> <a href="//putian.taoche.com/">莆田</a> <a href="//quanzhou.taoche.com/">泉州</a> <a href="//nanping.taoche.com/">南平</a> <a href="//ningde.taoche.com/">宁德</a> <a href="//sanming.taoche.com/">三明</a> </div>
+								</li>
+								<li> <i id="iCity_G">G</i> <strong><a href="//guangdong.taoche.com/" title="广东二手车">广东</a></strong>
+									<div class="header-city-province-text"> <a href="//guangzhou.taoche.com/">广州</a> <a href="//shenzhen.taoche.com/">深圳</a> <a href="//zhuhai.taoche.com/">珠海</a> <a href="//dongguan.taoche.com/">东莞</a> <a href="//zhongshan.taoche.com/">中山</a> <a href="//shantou.taoche.com/">汕头</a> <a href="//shaoguan.taoche.com/">韶关</a> <a href="//zhaoqing.taoche.com/">肇庆</a> <a href="//maoming.taoche.com/">茂名</a> <a href="//foshan.taoche.com/">佛山</a> <a href="//huizhou.taoche.com/">惠州</a> <a href="//jiangmen.taoche.com/">江门</a> <a href="//qingyuan.taoche.com/">清远</a> <a href="//chaozhou.taoche.com/">潮州</a> <a href="//zhanjiang.taoche.com/">湛江</a> <a href="//meizhou.taoche.com/">梅州</a> <a href="//jieyang.taoche.com/">揭阳</a> <a href="//yunfu.taoche.com/">云浮</a> <a href="//yangjiang.taoche.com/">阳江</a> <a href="//heyuan.taoche.com/">河源</a> <a href="//shanwei.taoche.com/">汕尾</a> </div>
+								</li>
+								<li> <strong><a href="//guangxi.taoche.com/" title="广西二手车">广西</a></strong>
+									<div class="header-city-province-text"> <a href="//nanning.taoche.com/">南宁</a> <a href="//liuzhou.taoche.com/">柳州</a> <a href="//guilin.taoche.com/">桂林</a> <a href="//beihai.taoche.com/">北海</a> <a href="//baise.taoche.com/">百色</a> <a href="//hezhou.taoche.com/">贺州</a> <a href="//hechi.taoche.com/">河池</a> <a href="//guigang.taoche.com/">贵港</a> <a href="//yulin.taoche.com/">玉林</a> <a href="//qinzhou.taoche.com/">钦州</a> <a href="//wuzhou.taoche.com/">梧州</a> <a href="//fangchenggang.taoche.com/">防城港</a> <a href="//laibin.taoche.com/">来宾</a> <a href="//chongzuo.taoche.com/">崇左</a> </div>
+								</li>
+								<li> <strong><a href="//guizhou.taoche.com/" title="贵州二手车">贵州</a></strong>
+									<div class="header-city-province-text"> <a href="//guiyang.taoche.com/">贵阳</a> <a href="//zunyi.taoche.com/">遵义</a> <a href="//anshun.taoche.com/">安顺</a> <a href="//liupanshui.taoche.com/">六盘水</a> <a href="//tongrendiqu.taoche.com/">铜仁</a> <a href="//qiandongnan.taoche.com/">黔东南</a> <a href="//qiannan.taoche.com/">黔南</a> <a href="//bijiediqu.taoche.com/">毕节</a> <a href="//qianxinan.taoche.com/">黔西南</a> </div>
+								</li>
+								<li> <strong><a href="//gansu.taoche.com/">甘肃</a></strong>
+									<div class="header-city-province-text"> <a href="//lanzhou.taoche.com/">兰州</a> <a href="//dingxi.taoche.com/">定西</a> <a href="//pingliang.taoche.com/">平凉</a> <a href="//jiuquan.taoche.com/">酒泉</a> <a href="//qingyang.taoche.com/">庆阳</a> <a href="//baiyin.taoche.com/">白银</a> <a href="//zhangye.taoche.com/">张掖</a> <a href="//wuwei.taoche.com/">武威</a> <a href="//tianshui.taoche.com/">天水</a> <a href="//jiayuguan.taoche.com/">嘉峪关</a> <a href="//jinchang.taoche.com/">金昌</a> <a href="//linxia.taoche.com/">临夏</a> <a href="//longnan.taoche.com/">陇南</a> <a href="//gannan.taoche.com/">甘南</a> </div>
+								</li>
+								<li> <i id="iCity_H">H</i> <strong><a href="//hainan.taoche.com/" title="海南二手车">海南</a></strong>
+									<div class="header-city-province-text"> <a href="//haikou.taoche.com/">海口</a> <a href="//sanya.taoche.com/">三亚</a> <a href="//qiongbeidiqu.taoche.com/">琼北</a> <a href="//qiongnandiqu.taoche.com/">琼南</a> </div>
+								</li>
+								<li> <strong><a href="//hubei.taoche.com/" title="湖北二手车">湖北</a></strong>
+									<div class="header-city-province-text"> <a href="//wuhan.taoche.com/">武汉</a> <a href="//shiyan.taoche.com/">十堰</a> <a href="//xiangfan.taoche.com/">襄阳</a> <a href="//suizhou.taoche.com/">随州</a> <a href="//yichang.taoche.com/">宜昌</a> <a href="//huangshi.taoche.com/">黄石</a> <a href="//jingmen.taoche.com/">荆门</a> <a href="//jingzhou.taoche.com/">荆州</a> <a href="//ezhou.taoche.com/">鄂州</a> <a href="//xianning.taoche.com/">咸宁</a> <a href="//xiaogan.taoche.com/">孝感</a> <a href="//huanggang.taoche.com/">黄冈</a> <a href="//enshi.taoche.com/">恩施</a> <a href="//hubeizhixiaxian.taoche.com/">湖北直辖</a> </div>
+								</li>
+								<li> <strong><a href="//hunan.taoche.com/" title="湖南二手车">湖南</a></strong>
+									<div class="header-city-province-text"> <a href="//changsha.taoche.com/">长沙</a> <a href="//chenzhou.taoche.com/">郴州</a> <a href="//changde.taoche.com/">常德</a> <a href="//hengyang.taoche.com/">衡阳</a> <a href="//huaihua.taoche.com/">怀化</a> <a href="//loudi.taoche.com/">娄底</a> <a href="//zhuzhou.taoche.com/">株洲</a> <a href="//yueyang.taoche.com/">岳阳</a> <a href="//xiangtan.taoche.com/">湘潭</a> <a href="//shaoyang.taoche.com/">邵阳</a> <a href="//yongzhou.taoche.com/">永州</a> <a href="//yiyang.taoche.com/">益阳</a> <a href="//zhangjiajie.taoche.com/">张家界</a> <a href="//xiangxi.taoche.com/">湘西</a> </div>
+								</li>
+								<li> <strong><a href="//henan.taoche.com/" title="河南二手车">河南</a></strong>
+									<div class="header-city-province-text"> <a href="//zhengzhou.taoche.com/">郑州</a> <a href="//luoyang.taoche.com/">洛阳</a> <a href="//zhoukou.taoche.com/">周口</a> <a href="//xinyang.taoche.com/">信阳</a> <a href="//xinxiang.taoche.com/">新乡</a> <a href="//shangqiu.taoche.com/">商丘</a> <a href="//sanmenxia.taoche.com/">三门峡</a> <a href="//puyang.taoche.com/">濮阳</a> <a href="//nanyang.taoche.com/">南阳</a> <a href="//luohe.taoche.com/">漯河</a> <a href="//jiaozuo.taoche.com/">焦作</a> <a href="//kaifeng.taoche.com/">开封</a> <a href="//anyang.taoche.com/">安阳</a> <a href="//hebi.taoche.com/">鹤壁</a> <a href="//pingdingshan.taoche.com/">平顶山</a> <a href="//zhumadian.taoche.com/">驻马店</a> <a href="//xuchang.taoche.com/">许昌</a> <a href="//henanzhixiaxian.taoche.com/">河南直辖</a> </div>
+								</li>
+								<li> <strong><a href="//hebei.taoche.com/">河北</a></strong>
+									<div class="header-city-province-text"> <a href="//shijiazhuang.taoche.com/">石家庄</a> <a href="//tangshan.taoche.com/">唐山</a> <a href="//xingtai.taoche.com/">邢台</a> <a href="//qinhuangdao.taoche.com/">秦皇岛</a> <a href="//langfang.taoche.com/">廊坊</a> <a href="//handan.taoche.com/">邯郸</a> <a href="//hengshui.taoche.com/">衡水</a> <a href="//cangzhou.taoche.com/">沧州</a> <a href="//baoding.taoche.com/">保定</a> <a href="//zhangjiakou.taoche.com/">张家口</a> <a href="//chengde.taoche.com/">承德</a> </div>
+								</li>
+								<li> <strong><a href="//heilongjiang.taoche.com/">黑龙江</a></strong>
+									<div class="header-city-province-text"> <a href="//haerbin.taoche.com/">哈尔滨</a> <a href="//daqing.taoche.com/">大庆</a> <a href="//qiqihaer.taoche.com/">齐齐哈尔</a> <a href="//jiamusi.taoche.com/">佳木斯</a> <a href="//mudanjiang.taoche.com/">牡丹江</a> <a href="//jixi.taoche.com/">鸡西</a> <a href="//qitaihe.taoche.com/">七台河</a> <a href="//yc.taoche.com/">伊春</a> <a href="//heihe.taoche.com/">黑河</a> <a href="//shuangyashan.taoche.com/">双鸭山</a> <a href="//suihua.taoche.com/">绥化</a> <a href="//daxinganlingdiqu.taoche.com/">大兴安岭</a> </div>
+								</li>
+								<li> <i id="iCity_J">J</i> <strong><a href="//jiangsu.taoche.com/">江苏</a></strong>
+									<div class="header-city-province-text"> <a href="//nanjing.taoche.com/">南京</a> <a href="//suzhou.taoche.com/">苏州</a> <a href="//wuxi.taoche.com/">无锡</a> <a href="//changzhou.taoche.com/">常州</a> <a href="//huaian.taoche.com/">淮安</a> <a href="//lianyungang.taoche.com/">连云港</a> <a href="//nantong.taoche.com/">南通</a> <a href="//yancheng.taoche.com/">盐城</a> <a href="//yangzhou.taoche.com/">扬州</a> <a href="//zhenjiang.taoche.com/">镇江</a> <a href="//taizhou.taoche.com/">泰州</a> <a href="//xuzhou.taoche.com/">徐州</a> <a href="//suqian.taoche.com/">宿迁</a> </div>
+								</li>
+								<li> <strong><a href="//jiangxi.taoche.com/" title="江西二手车">江西</a></strong>
+									<div class="header-city-province-text"> <a href="//nanchang.taoche.com/">南昌</a> <a href="//shangrao.taoche.com/">上饶</a> <a href="//pingxiang.taoche.com/">萍乡</a> <a href="//xinyu.taoche.com/">新余</a> <a href="//yichun.taoche.com/">宜春</a> <a href="//jiujiang.taoche.com/">九江</a> <a href="//ganzhou.taoche.com/">赣州</a> <a href="//jian.taoche.com/">吉安</a> <a href="//jingdezhen.taoche.com/">景德镇</a> <a href="//jxfz.taoche.com/">抚州</a> <a href="//yingtan.taoche.com/">鹰潭</a> </div>
+								</li>
+								<li> <strong><a href="//jl.taoche.com/">吉林</a></strong>
+									<div class="header-city-province-text"> <a href="//changchun.taoche.com/">长春</a> <a href="//jl.taoche.com/">吉林</a> <a href="//tonghua.taoche.com/">通化</a> <a href="//liaoyuan.taoche.com/">辽源</a> <a href="//songyuan.taoche.com/">松原</a> <a href="//yanbian.taoche.com/">延边</a> <a href="//siping.taoche.com/">四平</a> <a href="//baishan.taoche.com/">白山</a> <a href="//baicheng.taoche.com/">白城</a> </div>
+								</li>
+								<li> <i id="iCity_L">L</i> <strong><a href="//liaoning.taoche.com/">辽宁</a></strong>
+									<div class="header-city-province-text"> <a href="//shenyang.taoche.com/">沈阳</a> <a href="//dalian.taoche.com/">大连</a> <a href="//dandong.taoche.com/">丹东</a> <a href="//fushun.taoche.com/">抚顺</a> <a href="//fuxin.taoche.com/">阜新</a> <a href="//huludao.taoche.com/">葫芦岛</a> <a href="//chaoyang.taoche.com/">朝阳</a> <a href="//benxi.taoche.com/">本溪</a> <a href="//anshan.taoche.com/">鞍山</a> <a href="//jinzhou.taoche.com/">锦州</a> <a href="//liaoyang.taoche.com/">辽阳</a> <a href="//yingkou.taoche.com/">营口</a> <a href="//panjin.taoche.com/">盘锦</a> <a href="//tieling.taoche.com/">铁岭</a> </div>
+								</li>
+								<li> <i id="iCity_N">N</i> <strong><a href="//neimenggu.taoche.com/">内蒙古</a></strong>
+									<div class="header-city-province-text"> <a href="//huhehaote.taoche.com/">呼和浩特</a> <a href="//baotou.taoche.com/">包头</a> <a href="//chifeng.taoche.com/">赤峰</a> <a href="//tongliao.taoche.com/">通辽</a> <a href="//wuhai.taoche.com/">乌海</a> <a href="//eerduosi.taoche.com/">鄂尔多斯</a> <a href="//bayannaoer.taoche.com/">巴彦淖尔</a> <a href="//wulanchabu.taoche.com/">乌兰察布</a> <a href="//xilinguolemeng.taoche.com/">锡林郭勒</a> <a href="//hulunbeier.taoche.com/">呼伦贝尔</a> <a href="//xinganmeng.taoche.com/">兴安盟</a> <a href="//alashanmeng.taoche.com/">阿拉善盟</a> </div>
+								</li>
+								<li> <strong><a href="//ningxia.taoche.com/">宁夏</a></strong>
+									<div class="header-city-province-text"> <a href="//yinchuan.taoche.com/">银川</a> <a href="//zhongwei.taoche.com/">中卫</a> <a href="//wuzhong.taoche.com/">吴忠</a> <a href="//guyuan.taoche.com/">固原</a> <a href="//shizuishan.taoche.com/">石嘴山</a> </div>
+								</li>
+								<li> <i id="iCity_Q">Q</i> <strong><a href="//qinghai.taoche.com/">青海</a></strong>
+									<div class="header-city-province-text"> <a href="//xining.taoche.com/">西宁</a> <a href="//haibei.taoche.com/">海北</a> <a href="//huangnan.taoche.com/">黄南</a> <a href="//guoluo.taoche.com/">果洛</a> <a href="//yushu.taoche.com/">玉树</a> <a href="//haixi.taoche.com/">海西</a> <a href="//haidongdiqu.taoche.com/">海东</a> <a href="//hainan.taoche.com/" title="海南二手车">海南</a> </div>
+								</li>
+								<li> <i id="iCity_S">S</i> <strong><a href="//shaanxi.taoche.com/">陕西</a></strong>
+									<div class="header-city-province-text"> <a href="//xian.taoche.com/">西安</a> <a href="//xianyang.taoche.com/">咸阳</a> <a href="//weinan.taoche.com/">渭南</a> <a href="//yl.taoche.com/">榆林</a> <a href="//baoji.taoche.com/">宝鸡</a> <a href="//hanzhong.taoche.com/">汉中</a> <a href="//yanan.taoche.com/">延安</a> <a href="//tongchuan.taoche.com/">铜川</a> <a href="//shangluo.taoche.com/">商洛</a> <a href="//ankang.taoche.com/">安康</a> </div>
+								</li>
+								<li> <strong><a href="//shanghai.taoche.com/">上海</a></strong>
+									<div class="header-city-province-text"> <a href="//shanghai.taoche.com/">上海</a> </div>
+								</li>
+								<li> <strong><a href="//shanxi.taoche.com/">山西</a></strong>
+									<div class="header-city-province-text"> <a href="//taiyuan.taoche.com/">太原</a> <a href="//datong.taoche.com/">大同</a> <a href="//jincheng.taoche.com/">晋城</a> <a href="//linfen.taoche.com/">临汾</a> <a href="//changzhi.taoche.com/">长治</a> <a href="//yuncheng.taoche.com/">运城</a> <a href="//xinzhou.taoche.com/">忻州</a> <a href="//shuozhou.taoche.com/">朔州</a> <a href="//lvliang.taoche.com/">吕梁</a> <a href="//jinzhong.taoche.com/">晋中</a> <a href="//yangquan.taoche.com/">阳泉</a> </div>
+								</li>
+								<li> <strong><a href="//sichuan.taoche.com/" title="四川二手车">四川</a></strong>
+									<div class="header-city-province-text"> <a href="//chengdu.taoche.com/">成都</a> <a href="//mianyang.taoche.com/">绵阳</a> <a href="//suining.taoche.com/">遂宁</a> <a href="//panzhihua.taoche.com/">攀枝花</a> <a href="//yibin.taoche.com/">宜宾</a> <a href="//zigong.taoche.com/">自贡</a> <a href="//ziyang.taoche.com/">资阳</a> <a href="//deyang.taoche.com/">德阳</a> <a href="//leshan.taoche.com/">乐山</a> <a href="//nanchong.taoche.com/">南充</a> <a href="//meishan.taoche.com/">眉山</a> <a href="//bazhong.taoche.com/">巴中</a> <a href="//luzhou.taoche.com/">泸州</a> <a href="//neijiang.taoche.com/">内江</a> <a href="//dazhou.taoche.com/">达州</a> <a href="//yaan.taoche.com/">雅安</a> <a href="//guangyuan.taoche.com/">广元</a> <a href="//guangan.taoche.com/">广安</a> <a href="//aba.taoche.com/">阿坝</a> <a href="//ganzi.taoche.com/">甘孜</a> <a href="//liangshan.taoche.com/">凉山</a> </div>
+								</li>
+								<li> <strong><a href="//shandong.taoche.com" title="山东二手车">山东</a></strong>
+									<div class="header-city-province-text"> <a href="//jinan.taoche.com/">济南</a> <a href="//dezhou.taoche.com/">德州</a> <a href="//qingdao.taoche.com/">青岛</a> <a href="//yantai.taoche.com/">烟台</a> <a href="//weihai.taoche.com/">威海</a> <a href="//weifang.taoche.com/">潍坊</a> <a href="//taian.taoche.com/">泰安</a> <a href="//zaozhuang.taoche.com/">枣庄</a> <a href="//zibo.taoche.com/">淄博</a> <a href="//dongying.taoche.com/">东营</a> <a href="//heze.taoche.com/">菏泽</a> <a href="//binzhou.taoche.com/">滨州</a> <a href="//liaocheng.taoche.com/">聊城</a> <a href="//linyi.taoche.com/">临沂</a> <a href="//jining.taoche.com/">济宁</a> <a href="//rizhao.taoche.com/">日照</a> <a href="//laiwu.taoche.com/">莱芜</a> <a href="//dezhou.taoche.com/">德州</a> </div>
+								</li>
+								<li> <i id="iCity_T">T</i> <strong><a href="//tianjin.taoche.com/" title="天津二手车">天津</a></strong>
+									<div class="header-city-province-text"> <a href="//tianjin.taoche.com/" title="天津二手车">天津</a> </div>
+								</li>
+								<li> <i id="iCity_X">X</i> <strong><a href="//xinjiang.taoche.com/">新疆</a></strong>
+									<div class="header-city-province-text"> <a href="//wulumuqi.taoche.com/">乌鲁木齐</a> <a href="//kelamayi.taoche.com/">克拉玛依</a> <a href="//bazhou.taoche.com/">巴音郭楞</a> <a href="//yili.taoche.com/">伊犁</a> <a href="//kashidiqu.taoche.com/">喀什</a> <a href="//akesudiqu.taoche.com/">阿克苏</a> <a href="//hetiandiqu.taoche.com/">和田</a> <a href="//tachengdiqu.taoche.com/">塔城</a> <a href="//tulufandiqu.taoche.com/">吐鲁番</a> <a href="//hamidiqu.taoche.com/">哈密</a> <a href="//aletaidiqu.taoche.com/">阿勒泰</a> <a href="//xinjiangkezhou.taoche.com/">新疆克州</a> <a href="//changji.taoche.com/">昌吉</a> <a href="//xinjiangzhixiaxian.taoche.com/">新疆直辖</a> </div>
+								</li>
+								<li> <strong><a href="//xizang.taoche.com/" title="西藏二手车">西藏</a></strong>
+									<div class="header-city-province-text"> <a href="//lasa.taoche.com/">拉萨</a> <a href="//rikazediqu.taoche.com/">日喀则</a> <a href="//shannan.taoche.com/">山南</a> </div>
+								</li>
+								<li> <i id="iCity_Y">Y</i> <strong><a href="//yunnan.taoche.com" title="云南二手车">云南</a></strong>
+									<div class="header-city-province-text"> <a href="//kunming.taoche.com/">昆明</a> <a href="//qujing.taoche.com/">曲靖</a> <a href="//baoshan.taoche.com/">保山</a> <a href="//xishuangbanna.taoche.com/">西双版纳</a> <a href="//honghe.taoche.com/">红河</a> <a href="//dali.taoche.com/">大理</a> <a href="//yuxi.taoche.com/">玉溪</a> <a href="//lincang.taoche.com/">临沧</a> <a href="//wenshan.taoche.com/">文山</a> <a href="//zhaotong.taoche.com/">昭通</a> <a href="//lijiang.taoche.com/">丽江</a> <a href="//dehong.taoche.com/">德宏</a> <a href="//nujiang.taoche.com/">怒江</a> <a href="//diqing.taoche.com/">迪庆</a> <a href="//puer.taoche.com/">普洱</a> <a href="//chuxiong.taoche.com/">楚雄</a> </div>
+								</li>
+								<li> <i id="iCity_Z">Z</i> <strong><a href="//zhejiang.taoche.com/" title="浙江二手车">浙江</a></strong>
+									<div class="header-city-province-text"> <a href="//hangzhou.taoche.com/">杭州</a> <a href="//ningbo.taoche.com/">宁波</a> <a href="//wenzhou.taoche.com/">温州</a> <a href="//jiaxing.taoche.com/">嘉兴</a> <a href="//jinhua.taoche.com/">金华</a> <a href="//lishui.taoche.com/">丽水</a> <a href="//huzhou.taoche.com/">湖州</a> <a href="//quzhou.taoche.com/">衢州</a> <a href="//tz.taoche.com/">台州</a> <a href="//shaoxing.taoche.com/">绍兴</a> <a href="//zhoushan.taoche.com/">舟山</a> </div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--头部城市浮层 end --> 
+			</div>
+		</div>
+	</div>
+	<div class="nav">
+		<ul class="area">
+			<li class="current"><a class="link" href="#"><span>首页</span></a></li>
+			<li><a class="link" href="#"><span>新车</span></a></li>
+			<li onmouseover="this.className='hover'" onmouseout="this.className=''">
+				<a class="link sub" href="#"><span>二手车</span></a>
+				<ul class="sub-nav">
+					<li class="current"><a href="#">买车</a></li>
+					<li><a href="#">估价</a></li>
+					<li><a href="#">卖车</a></li>
+					<li><a href="#">帮买</a></li>
+					<li><a href="#">置换</a></li>
+					<li><a href="#">经销商</a></li>
+					<li><a href="#">人车生活</a></li>
+				</ul>
+			</li>
+			<li><a class="link" href="#"><span>分期</span></a></li>
+			<li><a class="link" href="#"><span>体验店</span></a></li>
+		</ul>
+	</div>
+</div>
+<!--顶部 end -->
+
+<br><br><br><br><br><br>
+<!--个人登录后 star -->
+<div class="Taoche_headerBar">
+	<div class="area">
+		<ul class="nav">
+			<li><a class="link" href="http://www.bitauto.com/" target="_blank">易车</a></li>
+			<li class="current"><a class="link" rel="nofollow" target="_blank" href="http://www.taoche.com/">淘车</a></li>
+			<li><a class="link" rel="nofollow" target="_blank" href="http://www.daikuan.com/">易鑫车贷</a></li>
+			<li><a class="link" rel="nofollow" target="_blank" href="http://www.huimaiche.com/">易车•惠买车</a></li>
+			<li><a class="link" rel="nofollow" target="_blank" href="http://mai.bitauto.com/">易车惠</a></li>
+			<li onmouseover="this.className='hover'" onmouseout="this.className=''">
+				<a class="sub_nav link" rel="nofollow" target="_blank" href="http://app.yiche.com">APP</a>
+				<div class="menu">
+					<a rel="nofollow" target="_blank" href="#">淘车二手车</a>
+					<a rel="nofollow" target="_blank" href="#">易鑫车贷</a>
+					<a rel="nofollow" target="_blank" href="#">易车APP</a>
+					<a rel="nofollow" target="_blank" href="#">手机易车网</a>
+					<a rel="nofollow" target="_blank" href="#">汽车报价大全</a>
+					<a rel="nofollow" target="_blank" href="#">惠买车</a>
+					<a rel="nofollow" target="_blank" href="#">车友之家</a>
+				</div>
+			</li>
+		</ul>
+		<ul class="option">
+			<li onmouseover="this.className='hover'" onmouseout="this.className=''">
+				<a class="sub_nav" href="#" target="_blank">最多六个汉字位置</a>
+				<div class="menu">
+					<a rel="nofollow" href="#">我的订单</a>
+					<a rel="nofollow" href="#">已发布二手车</a>
+					<a rel="nofollow" href="#">二手车收藏</a>
+					<a rel="nofollow" href="#">退出</a>
+				</div>
+			</li>
+			<li><a href="#" target="_blank">免费发车</a></li>
+			<li><a href="#" target="_blank">商家登录</a></li>
+			<li><a href="#" target="_blank">商家发车</a></li>
+		</ul>
+	</div>
+</div>
+<!--个人登录后 end --> 
+<br><br><br><br><br><br><br><br>
+<!--footer start-->
+<div class="Taoche_footer">
+	<div class="area main">
+		<div class="sub_logo"></div>
+		<div class="app_list">
+			<dl class="item_1">
+				<dt><a href="#">淘车</a></dt>
+				<dd> 汽车交易服务平台</dd>
+			</dl>
+			<dl class="item_2">
+				<dt><a href="#">淘车二手车</a></dt>
+				<dd>二手车交易平台</dd>
+			</dl>
+			<dl class="item_3">
+				<dt><a href="#">易鑫车贷</a></dt>
+				<dd> 分期贷款买车</dd>
+			</dl>
+			<dl class="item_4">
+				<dt><a href="#">汽车报价大全</a></dt>
+				<dd> 千家万户的选择</dd>
+			</dl>
+			<dl class="item_5">
+				<dt><a href="#">易车APP</a></dt>
+				<dd> 买车无难事</dd>
+			</dl>
+		</div>
+		<div class="contact">
+			<p>免费咨询、建议、投诉</p>
+			<p>分 期 热 线：<strong>4000-169-169</strong><br>二手车热线：<strong>4000-189-167</strong></p>
+			<em>每天9:00 - 21:00（法定节日除外）<br>传真：010-68492726</em>
+		</div>
+	</div>
+	<div class="area intro">
+		<a href="http://www.bitauto.com/license/ICP.shtml" target="_blank">经营许可证编号： 京ICP证060175号</a>；<a href="http://www.bitauto.com/license/video.shtml" target="_blank">网络视听许可证0110543号</a>；<a href="http://www.bitauto.com/license/audio.shtml" target="_blank">广播电视节目制作许可证1238号</a>；<a class="police-badge" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020002" target="_blank">公安备案号码：京公网安备 11010802020002号</a>；<br>
+		电信业务审批[2006]字第92号；新出网证(京)字182号 乙测资字11005048；客服电话：4000-189-167（二手车） 或 4000-169-169（分期）<br>
+		CopyRight © 2000-2016 BitAuto,All Rights Reserved. 版权所有 北京易车信息科技有限公司
+	</div>
+	<div class="area other">
+		<a class="perating" href="#">经营性网站<br>备案信息</a>
+		<a class="police" href="#">北京海淀<br>警方提醒</a>
+	</div>
+</div>
+<!--footer end-->
+<br><br><br><br><br><br><br><br>
+
+<div class="Taoche_footerBar">
+	<div class="area">
+		CopyRight © 2015-2017 daikuan.com版权所有&nbsp;&nbsp;北京易鑫信息科技有限公司&nbsp;&nbsp;京ICP备15006372号-5&nbsp;&nbsp;<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020005" target="_blank" rel="nofollow">京公网安备11010802020005号</a>
+	</div>
+</div>
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+</body>
+</html>

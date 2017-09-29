@@ -1,0 +1,203 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/头尾.css" />
+    <link rel="stylesheet" type="text/css" href="../css/公共控件.css" />
+    <link rel="stylesheet" type="text/css" href="../css/选车工具.css" />
+    <style type="text/css">
+    body {
+        margin: 0;
+    }
+    body,
+    html {
+        height: 100%;
+        /*position: relative;*/
+        /*overflow: hidden;
+                position: relative;*/
+    }
+
+    .disable-scroll,
+    .disable-scroll body {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .disable-scroll body {
+        position: relative;
+    }
+
+    header {
+        height: 40px;
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        background: #000;
+        line-height: 40px;
+    }
+
+    #btn {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        background: #000;
+        line-height: 40px;
+    }
+
+    footer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 40px;
+        color: #fff;
+        text-align: center;
+        background: #000;
+        line-height: 40px;
+    }
+
+    #layer {
+        display: none;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        /*left: 0;*/
+        right: 0;
+        z-index:100;
+        width: 250px;
+    }
+
+/*    #wrap {
+        position: absolute;
+        left: 50px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow: hidden;
+        background: white;
+    }*/
+/*
+    #list,
+    #list2 {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    #list li,
+    #list2 li {
+        line-height: 30px;
+        text-indent: 20px;
+        font-size: 16px;
+        border-bottom: 1px solid #000;
+    }
+*/
+    #list2 {
+        background: #0026FF;
+    }
+    </style>
+    <script type="text/javascript" src="../../../../JavaScript/js/lib/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="../../../../JavaScript/js/lib/taoche.scroll.js"></script>
+</head>
+
+<body>
+    <a href="javascript:;" id="btn" style="font-size:3.0rem; line-height:2.0" data-action="price">点我</a>
+    <!-- black popup start -->
+    <div class="leftmask leftmask2"  style="display: none;"></div>
+    <div id="layer">
+        <!-- <section id="wrap">
+            <ul id="list">
+            </ul>
+        </section> -->
+    <div class="leftPopup price" data-back="leftmask2" id="wrap">
+        <div class="swipeLeft">
+            <ul class="first-list" id="list">
+                <li class=""><a href="javascript:;">上牌时间</a></li>
+                <li class="sub"><a href="javascript:;">2016年</a></li>
+                <li class="sub"><a href="javascript:;">2015年</a></li>
+                <li class="sub"><a href="javascript:;">2014年</a></li>
+                <li class="sub"><a href="javascript:;">2012年</a></li>
+                <li class="sub"><a href="javascript:;">2011年</a></li>
+                <li class="sub"><a href="javascript:;">2010年</a></li>
+                <li class="sub"><a href="javascript:;">2012年</a></li>
+                <li class="sub"><a href="javascript:;">2011年</a></li>
+                <li class="sub"><a href="javascript:;">2010年</a></li>
+                <li class="sub"><a href="javascript:;">2012年</a></li>
+                <li class="sub"><a href="javascript:;">2011年</a></li>
+                <li class="sub"><a href="javascript:;">2010年</a></li>
+                <li class="sub"><a href="javascript:;">2012年</a></li>
+                <li class="sub"><a href="javascript:;">2011年</a></li>
+                <li class="sub"><a href="javascript:;">2010年</a></li>
+                <li class="sub"><a href="javascript:;">2012年</a></li>
+                <li class="sub"><a href="javascript:;">2011年</a></li>
+                <li class="sub"><a href="javascript:;">2010年</a></li>
+                <li class="sub"><a href="javascript:;">2012年</a></li>
+                <li class="sub"><a href="javascript:;">2011年</a></li>
+                <li class="sub"><a href="javascript:;">2010年</a></li>
+
+                <li class="sub"><a href="javascript:;">2012年</a></li>
+                <li class="sub"><a href="javascript:;">2011年</a></li>
+                <li class="sub"><a href="javascript:;">2010年</a></li>
+
+                <li class="sub"><a href="javascript:;">2012年</a></li>
+                <li class="sub"><a href="javascript:;">2011年</a></li>
+                <li class="sub"><a href="javascript:;">2010年</a></li>
+                <li class="sub"><a href="javascript:;">2012年</a></li>
+                <li class="sub"><a href="javascript:;">2011年</a></li>
+                <li class="sub"><a href="javascript:;">2010年</a></li>
+                <li class="sub"><a href="javascript:;">2012年</a></li>
+                <li class="sub"><a href="javascript:;">2011年</a></li>
+                <li class="sub"><a href="javascript:;">2010年</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <!-- black popup end -->
+    <script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="../js/iscroll.js"></script>
+    <script type="text/javascript" src="../js/model.js"></script>
+    <script type="text/javascript">
+    function createList() {
+        var list = document.querySelector('#list');
+        var inner = "";
+        for (var i = 0; i < 100; i++) {
+            inner += "<li>这是第" + i + "个li</li>"
+        }
+        list.innerHTML = inner;
+    }
+
+    $(function() {
+        //createList();
+        taocheScroll.scroll("#wrap", "#list");
+        $("#btn").on("touchend", function() {
+            $("#layer").show();
+            setTimeout(function () {
+                 $(".swipeLeft").addClass('swipeLeft-block');
+            },100)
+           
+            $(".leftmask").show();
+            $('html').addClass('disable-scroll');
+            taocheScroll.disableHtmlScroll();
+        });
+        $("#header").on("touchend", function() {
+            $("#layer").hide();
+            $('html').removeClass('disable-scroll');
+            taocheScroll.ableHmtlScroll();
+        });
+    })
+    </script>
+</body>
+
+</html>

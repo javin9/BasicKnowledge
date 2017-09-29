@@ -1,0 +1,3448 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>3.2列表页</title>
+    <link rel="stylesheet" type="text/css" href="../css/新头尾.css" />
+    <link rel="stylesheet" type="text/css" href="../css/公共控件.css" />
+    <link rel="stylesheet" type="text/css" href="../css/列表页-新.css" />
+    <link rel="stylesheet" type="text/css" href="../css/列表页筛选.css" />
+    <link rel="stylesheet" type="text/css" href="../css/车型大全.css" />
+    <link rel="stylesheet" type="text/css" href="../css/车型全部品牌logo_片断.css" />
+    <link rel="stylesheet" type="text/css" href="../css/底部控件.css" />
+    <link rel="stylesheet" type="text/css" href="../css/选车页面.css" />
+    <link rel="stylesheet" type="text/css" href="../css/2015选车工具.css" />
+    <link rel="stylesheet" type="text/css" href="../css/搜索.css" />
+    <link href="../css/双节样式.css" rel="stylesheet">
+
+    <link href="../css/新列表页v3.css" rel="stylesheet">
+    <link rel="stylesheet" href="../fonts/iconfont.css">
+</head>
+
+<body class="bg-greyer">
+<!-- 头部star -->
+<div class="header-mask" style="display:none;"></div>
+<div class="new-header" >
+    <a class="new-btn-return" href="#">返回</a>
+    <h2 class="pal60">买车</h2>
+    <div class="new-return-rit">
+        <a href="#" class="new-menu">菜单</a>
+        <a href="#" class="new-return-city">北京</a>
+        <a href="#" class="iconfont icon-sousuo"></a>
+    </div>
+    <!-- 导航浮层  start -->
+    <!-- 导航浮层  start -->
+    <div class="new-menu-layer menu-transition"  style="display:none;" >
+        <div class="new-menu-layer-arrow"></div>
+        <div class="new-menu-layer-load">
+            <div class="new-menu-layer-bg"><img src="../images/new-menu-bg1.png" alt=""></div>
+            <!-- -未登录  start -->
+            <div class="new-menu-top">
+                <div class="new-menu-ico">
+                    <span><img src="../images/new-mune-bg2.png" alt=""></span>
+                    <em><a href="#">
+                        个人中心<br>
+                        请登录</a></em>
+                </div>
+            </div>
+            <!-- -未登录  end -->
+            <!-- -已登录  start -->
+            <!--<div class="new-menu-top">-->
+            <!--<div class="new-menu-ico">-->
+            <!--<span><img src="../images/new-mune-bg2.png" alt=""></span>-->
+            <!--<em>赵二喜</em>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!-- -已登录  end -->
+            <!-- -有头像  start -->
+            <!--<div class="new-menu-top">-->
+            <!--<div class="new-menu-ico">-->
+            <!--<span><img src="../images/new-mune-bg3.png" alt=""></span>-->
+            <!--<em>赵二喜</em>-->
+            <!--<i>9</i>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!-- -有头像  end -->
+        </div>
+        <div class="new-menu-list">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">新车</a></li>
+                <li><a href="#">二手车</a></li>
+                <li><a href="#">分期</a></li>
+                <li><a href="#">卖车</a></li>
+                <li><a href="#">估价</a></li>
+                <li><a href="#">帮买</a></li>
+                <li><a href="#">置换</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 导航浮层  end -->
+    <!-- 导航浮层  end -->
+</div>
+<!-- 头部end -->
+<!--20170607糖豆start-->
+<div class="td-box hide">
+<div class="td-nav">
+    <a href="">
+        <img src="../images/lb-list-pic01.png" alt="">
+        <p>车辆估价</p>
+    </a>
+    <a href="">
+        <img src="../images/lb-list-pic02.png" alt="">
+        <p>高价卖车</p>
+    </a>
+    <a href="">
+        <img src="../images/lb-list-pic03.png" alt="">
+        <p>置换买车</p>
+    </a>
+    <a href="">
+        <img src="../images/lb-list-pic04.png" alt="">
+        <p>我要帮买</p>
+    </a>
+</div>
+<div class="hslie"></div>
+</div>
+<!--20170607糖豆end-->
+
+
+<!-- 筛选  start -->
+<!-- 无选项  start -->
+<div class="filter-seller boxwrap    " id="filterNav">
+    <div class="new-scoll">
+        <!--20170721增加bor-show0-->
+        <div class="taoc-rz">
+            <a href="" >淘车认证</a><!--选中状态class="taoc-rz-sel"-->
+        </div>
+        <!---->
+        <ul class="new-seller bor-show0 borta">
+            <li class="tabsli"><a href="javascript:;"><em>排序</em></a></li>
+            <li class="tabsli tabsli-brand"><a href="javascript:;"><em>品牌</em></a></li>
+            <li class="tabsli"><a href="javascript:;"><em>价格</em></a></li>
+            <li class="tabsli bor0"><a href="javascript:;"><em>筛选</em></a></li>
+            <!--<li class="new-lb-item">-->
+            <!--&lt;!&ndash;横向-colff3是点击后颜色->-->
+            <!--<span class="iconfont icon-liebiao colff3"></span>-->
+            <!--&lt;!&ndash;纵向&ndash;&gt;-->
+            <!--<a href=""><span class="iconfont icon-datu"></span></a>-->
+            <!--</li>-->
+        </ul>
+    </div>
+
+</div>
+<!-- 无选项  end -->
+<!-- 有选项  start -->
+<div class="filter-seller boxwrap hide">
+    <!--20170721增加-->
+    <div class="taoc-rz">
+        <a href="" class="taoc-rz-sel">淘车认证</a>
+    </div>
+    <!---->
+    <ul class="new-seller bor-show0 borta">
+        <li><a href="#"><em>价格最低</em></a></li>
+        <li class="selected"><a href="#"><em>奥迪奥迪奥迪奥迪A6</em></a></li>
+        <li class="selected"><a href="#"><em>20-30万</em></a></li>
+        <li class="selected bor0"><a href="#"><em>白的车里程</em></a></li>
+        <!--<li class="new-lb-item">-->
+<!--&lt;!&ndash;横向-colff3是点击后颜色->-->
+ <!--<span class="iconfont icon-liebiao colff3"></span>-->
+ <!--&lt;!&ndash;纵向&ndash;&gt;-->
+<!--<span class="iconfont icon-datu colff3"></span>-->
+        <!--</li>-->
+    </ul>
+</div>
+
+<!--20170607列表车标展示start-->
+<!--new-seller去掉阴影样式为-->
+<div class="lb-carlist-show">
+<ul class="lb-carlist">
+    <li>
+    <a href="">
+        <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_8_100.png" alt="">
+        <p>大众</p>
+    </a>
+</li>
+    <li>
+        <a href="">
+            <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_7_100.png" alt="">
+            <p>大众</p>
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_26_100.png" alt="">
+            <p>吉利汽车</p>
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_8_100.png" alt="">
+            <p>大众</p>
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_8_100.png" alt="">
+            <p>大众</p>
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_9_100.png" alt="">
+            <p>大众</p>
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_7_100.png" alt="">
+            <p>大众</p>
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_26_100.png" alt="">
+            <p>吉利汽车</p>
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_8_100.png" alt="">
+            <p>大众</p>
+        </a>
+    </li>
+    <li>
+        <a href="" class="lb-carlist-more">
+           <i class="iconfont icon-gengduo"></i>
+            <p>更多</p>
+        </a>
+    </li>
+</ul>
+    <!---->
+    <div class="lb-carlist-wz">
+        <p>
+            <a href="">3万以下</a>
+            <a href="">3-5万</a>
+            <a href="">5-8万</a>
+            <a href="">8-10万</a>
+            <a href="">8-10万</a>
+        </p>
+        <p>
+            <a href="">紧凑车型</a>
+            <a href="">SUV</a>
+            <a href="">中型车</a>
+            <a href="">MPV</a>
+            <a href="">MPV</a>
+        </p>
+        <p>
+            <a href="">自动挡</a>
+            <a href="">准新车</a>
+            <a href="">三年内</a>
+            <a href="">练手车</a>
+            <a href="">练手车</a>
+        </p>
+    </div>
+</div>
+<!--20170607列表车标展示end-->
+
+
+<!-- 有选项  end -->
+<div class="mark" style="display:none;"></div>
+<!-- 排序下拉  start -->
+<div class="sort-box-wrap swipeTop sortbox-rank">
+    <ul>
+        <li class="cur">
+            <a href="#">推荐排序</a>
+        </li>
+        <li>
+            <a href="#">价格最低</a>
+        </li>
+        <li>
+            <a href="#">价格最高</a>
+        </li>
+        <li>
+            <a href="#">时间最新</a>
+        </li>
+        <li>
+            <a href="#">车龄最短</a>
+        </li>
+        <li>
+            <a href="#">里程最少</a>
+        </li>
+    </ul>
+    <!-- 底部关闭按钮 start -->
+    <div class="bot-btn-close btn-close-js">
+        <a href="javascript:;">关闭</a>
+    </div>
+    <!-- 底部关闭按钮 end -->
+</div>
+<!-- 排序下拉  end -->
+<!-- 品牌下拉 start -->
+<div class="sort-box-wrap swipeTop sortbox-brand">
+    <div class="brandfilter">
+        <!-- 字母导航 end -->
+        <div class="alert" style="display: none;">
+            <span>A</span>
+        </div>
+
+        <!-- 品牌列表 start -->
+        <div class="brand-list bybrand_list hide">
+            <div class="brand-unlimited">
+                <a href="#">不限品牌</a>
+            </div>
+            <div class="tt-small phone-title" data-key="#">
+                <span>热门品牌</span>
+            </div>
+            <!--<div class="tt-small flex-header" style="display:block; visibility:hidden">
+                <span>热门品牌</span>
+            </div>-->
+            <div class="brand-hot">
+                <ul>
+                    <li>
+                        <a href="#" data-action="car" data-id="8">
+                            <img src="../images/pic_80x80.jpg" />
+                            <p data-key="name">奥迪</p>
+                            <input type="hidden" class="brand-logo m_9_b" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-action="car" data-id="8">
+                            <img src="../images/pic_80x80.jpg" />
+                            <p data-key="name">大众</p>
+                            <input type="hidden" class="brand-logo m_8_b" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-action="car" data-id="8">
+                            <img src="../images/pic_80x80.jpg" />
+                            <p data-key="name">福特</p>
+                            <input type="hidden" class="brand-logo m_5_b" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-action="car" data-id="8">
+                            <img src="../images/pic_80x80.jpg" />
+                            <p data-key="name">起亚</p>
+                            <input type="hidden" class="brand-logo m_6_b" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-action="car" data-id="7">
+                            <img src="../images/pic_80x80.jpg" />
+                            <p data-key="name">现代</p>
+                            <input type="hidden" class="brand-logo m_7_b" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="content" data-key="brand">
+                <div class="cont-loading">
+                    <div class="loading">
+                        <img src="http://image.bitautoimg.com/uimg/mbt2015/images/loading.gif" />
+                        <p>正在加载...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="sort-box-wrap swipeTop sortbox-brand swipeTop-block scroll">
+            <div class="brandfilter">
+                <!-- 字母导航 end -->
+                <div class="alert" style="display: none;">
+                    <span>A</span>
+                </div>
+
+                <!-- 品牌列表 start -->
+                <div class="brand-list bybrand_list">
+
+                    <div class="brand-unlimited" id="moreBrand" data-key="#">
+                        <a href="/all/">不限品牌</a>
+                    </div>
+                    <div class="tt-small phone-title">
+                        <span>热门品牌</span>
+                    </div>
+                    <div class="brand-hot">
+                        <ul>
+
+                            <li>
+                                <a href="javascript:void(0);" data-action="car" data-id="8">
+                                    <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_8_100.png">
+                                    <p data-key="name">大众</p>
+                                    <input type="hidden" class="brand-logo m_9_b">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0);" data-action="car" data-id="7">
+                                    <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_7_100.png">
+                                    <p data-key="name">丰田</p>
+                                    <input type="hidden" class="brand-logo m_9_b">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0);" data-action="car" data-id="26">
+                                    <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_26_100.png">
+                                    <p data-key="name">本田</p>
+                                    <input type="hidden" class="brand-logo m_9_b">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0);" data-action="car" data-id="3">
+                                    <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_3_100.png">
+                                    <p data-key="name">宝马</p>
+                                    <input type="hidden" class="brand-logo m_9_b">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0);" data-action="car" data-id="9">
+                                    <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_9_100.png">
+                                    <p data-key="name">奥迪</p>
+                                    <input type="hidden" class="brand-logo m_9_b">
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="content" data-key="brand">
+
+                        <div class="tt-small phone-title" data-key="A">
+                            <span>A</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="9" data-spell="audi" logwt="wap_buycar_select_brand_audi" _islog="1">
+                                        <span class="brand-ad" data-materid="9"></span>
+                                        <span class="brand-logo m_9_b"></span>
+                                        <span class="brand-name">奥迪</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="92" data-spell="alfaromeo" logwt="wap_buycar_select_brand_alfaromeo" _islog="1">
+                                        <span class="brand-ad" data-materid="92"></span>
+                                        <span class="brand-logo m_92_b"></span>
+                                        <span class="brand-name">阿尔法·罗密欧</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="97" data-spell="astonmartin" logwt="wap_buycar_select_brand_astonmartin" _islog="1">
+                                        <span class="brand-ad" data-materid="97"></span>
+                                        <span class="brand-logo m_97_b"></span>
+                                        <span class="brand-name">阿斯顿·马丁</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="268" data-spell="alpina" logwt="wap_buycar_select_brand_alpina" _islog="1">
+                                        <span class="brand-ad" data-materid="268"></span>
+                                        <span class="brand-logo m_268_b"></span>
+                                        <span class="brand-name">ALPINA</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="B">
+                            <span>B</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="2" data-spell="mercedesbenz" logwt="wap_buycar_select_brand_mercedesbenz" _islog="1">
+                                        <span class="brand-ad" data-materid="2"></span>
+                                        <span class="brand-logo m_2_b"></span>
+                                        <span class="brand-name">奔驰</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="3" data-spell="bmw" logwt="wap_buycar_select_brand_bmw" _islog="1">
+                                        <span class="brand-ad" data-materid="3"></span>
+                                        <span class="brand-logo m_3_b"></span>
+                                        <span class="brand-name">宝马</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="5" data-spell="peugeot" logwt="wap_buycar_select_brand_peugeot" _islog="1">
+                                        <span class="brand-ad" data-materid="5"></span>
+                                        <span class="brand-logo m_5_b"></span>
+                                        <span class="brand-name">标致</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="14" data-spell="beijingjeep" logwt="wap_buycar_select_brand_beijingjeep" _islog="1">
+                                        <span class="brand-ad" data-materid="14"></span>
+                                        <span class="brand-logo m_14_b"></span>
+                                        <span class="brand-name">北汽制造</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="15" data-spell="bydauto" logwt="wap_buycar_select_brand_bydauto" _islog="1">
+                                        <span class="brand-ad" data-materid="15"></span>
+                                        <span class="brand-logo m_15_b"></span>
+                                        <span class="brand-name">比亚迪</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="26" data-spell="honda" logwt="wap_buycar_select_brand_honda" _islog="1">
+                                        <span class="brand-ad" data-materid="26"></span>
+                                        <span class="brand-logo m_26_b"></span>
+                                        <span class="brand-name">本田</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="59" data-spell="besturn" logwt="wap_buycar_select_brand_besturn" _islog="1">
+                                        <span class="brand-ad" data-materid="59"></span>
+                                        <span class="brand-logo m_59_b"></span>
+                                        <span class="brand-name">奔腾</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="82" data-spell="porsche" logwt="wap_buycar_select_brand_porsche" _islog="1">
+                                        <span class="brand-ad" data-materid="82"></span>
+                                        <span class="brand-logo m_82_b"></span>
+                                        <span class="brand-name">保时捷</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="85" data-spell="bentley" logwt="wap_buycar_select_brand_bentley" _islog="1">
+                                        <span class="brand-ad" data-materid="85"></span>
+                                        <span class="brand-logo m_85_b"></span>
+                                        <span class="brand-name">宾利</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="127" data-spell="buick" logwt="wap_buycar_select_brand_buick" _islog="1">
+                                        <span class="brand-ad" data-materid="127"></span>
+                                        <span class="brand-logo m_127_b"></span>
+                                        <span class="brand-name">别克</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="135" data-spell="bugatti" logwt="wap_buycar_select_brand_bugatti" _islog="1">
+                                        <span class="brand-ad" data-materid="135"></span>
+                                        <span class="brand-logo m_135_b"></span>
+                                        <span class="brand-name">布加迪</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="157" data-spell="bj" logwt="wap_buycar_select_brand_bj" _islog="1">
+                                        <span class="brand-ad" data-materid="157"></span>
+                                        <span class="brand-logo m_157_b"></span>
+                                        <span class="brand-name">宝骏</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="163" data-spell="bjqc" logwt="wap_buycar_select_brand_bjqc" _islog="1">
+                                        <span class="brand-ad" data-materid="163"></span>
+                                        <span class="brand-logo m_163_b"></span>
+                                        <span class="brand-name">北京</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="168" data-spell="ww" logwt="wap_buycar_select_brand_ww" _islog="1">
+                                        <span class="brand-ad" data-materid="168"></span>
+                                        <span class="brand-logo m_168_b"></span>
+                                        <span class="brand-name">北汽威旺</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="172" data-spell="barbus" logwt="wap_buycar_select_brand_barbus" _islog="1">
+                                        <span class="brand-ad" data-materid="172"></span>
+                                        <span class="brand-logo m_172_b"></span>
+                                        <span class="brand-name">巴博斯</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="195" data-spell="shenbao" logwt="wap_buycar_select_brand_shenbao" _islog="1">
+                                        <span class="brand-ad" data-materid="195"></span>
+                                        <span class="brand-logo m_195_b"></span>
+                                        <span class="brand-name">北汽绅宝</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="211" data-spell="beiqihuansu" logwt="wap_buycar_select_brand_beiqihuansu" _islog="1">
+                                        <span class="brand-ad" data-materid="211"></span>
+                                        <span class="brand-logo m_211_b"></span>
+                                        <span class="brand-name">北汽幻速</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="216" data-spell="beiqixinnengyuan" logwt="wap_buycar_select_brand_beiqixinnengyuan" _islog="1">
+                                        <span class="brand-ad" data-materid="216"></span>
+                                        <span class="brand-logo m_216_b"></span>
+                                        <span class="brand-name">北汽新能源</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="236" data-spell="borgward" logwt="wap_buycar_select_brand_borgward" _islog="1">
+                                        <span class="brand-ad" data-materid="236"></span>
+                                        <span class="brand-logo m_236_b"></span>
+                                        <span class="brand-name">宝沃</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="263" data-spell="bisuqiche-263" logwt="wap_buycar_select_brand_bisuqiche-263" _islog="1">
+                                        <span class="brand-ad" data-materid="263"></span>
+                                        <span class="brand-logo m_263_b"></span>
+                                        <span class="brand-name">比速</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="C">
+                            <span>C</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="21" data-spell="greatwall" logwt="wap_buycar_select_brand_greatwall" _islog="1">
+                                        <span class="brand-ad" data-materid="21"></span>
+                                        <span class="brand-logo m_21_b"></span>
+                                        <span class="brand-name">长城</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="129" data-spell="changheauto" logwt="wap_buycar_select_brand_changheauto" _islog="1">
+                                        <span class="brand-ad" data-materid="129"></span>
+                                        <span class="brand-logo m_129_b"></span>
+                                        <span class="brand-name">昌河</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="136" data-spell="cajc" logwt="wap_buycar_select_brand_cajc" _islog="1">
+                                        <span class="brand-ad" data-materid="136"></span>
+                                        <span class="brand-logo m_136_b"></span>
+                                        <span class="brand-name">长安</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="159" data-spell="casyc" logwt="wap_buycar_select_brand_casyc" _islog="1">
+                                        <span class="brand-ad" data-materid="159"></span>
+                                        <span class="brand-logo m_159_b"></span>
+                                        <span class="brand-name">长安欧尚</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="188" data-spell="kaersen" logwt="wap_buycar_select_brand_kaersen" _islog="1">
+                                        <span class="brand-ad" data-materid="188"></span>
+                                        <span class="brand-logo m_188_b"></span>
+                                        <span class="brand-name">Carlsson</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="221" data-spell="chenggong" logwt="wap_buycar_select_brand_chenggong" _islog="1">
+                                        <span class="brand-ad" data-materid="221"></span>
+                                        <span class="brand-logo m_221_b"></span>
+                                        <span class="brand-name">成功</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="D">
+                            <span>D</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="8" data-spell="volkswagen" logwt="wap_buycar_select_brand_volkswagen" _islog="1">
+                                        <span class="brand-ad" data-materid="8"></span>
+                                        <span class="brand-logo m_8_b"></span>
+                                        <span class="brand-name">大众</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="27" data-spell="dongfeng-27" logwt="wap_buycar_select_brand_dongfeng-27" _islog="1">
+                                        <span class="brand-ad" data-materid="27"></span>
+                                        <span class="brand-logo m_27_b"></span>
+                                        <span class="brand-name">东风</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="29" data-spell="southeastautomobile" logwt="wap_buycar_select_brand_southeastautomobile" _islog="1">
+                                        <span class="brand-ad" data-materid="29"></span>
+                                        <span class="brand-logo m_29_b"></span>
+                                        <span class="brand-name">东南</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="113" data-spell="dodge" logwt="wap_buycar_select_brand_dodge" _islog="1">
+                                        <span class="brand-ad" data-materid="113"></span>
+                                        <span class="brand-logo m_113_b"></span>
+                                        <span class="brand-name">道奇</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="115" data-spell="fengxingauto" logwt="wap_buycar_select_brand_fengxingauto" _islog="1">
+                                        <span class="brand-ad" data-materid="115"></span>
+                                        <span class="brand-logo m_115_b"></span>
+                                        <span class="brand-name">东风风行</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="141" data-spell="fs" logwt="wap_buycar_select_brand_fs" _islog="1">
+                                        <span class="brand-ad" data-materid="141"></span>
+                                        <span class="brand-logo m_141_b"></span>
+                                        <span class="brand-name">东风风神</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="179" data-spell="ds" logwt="wap_buycar_select_brand_ds" _islog="1">
+                                        <span class="brand-ad" data-materid="179"></span>
+                                        <span class="brand-logo m_179_b"></span>
+                                        <span class="brand-name">DS</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="197" data-spell="dongfengfengdu" logwt="wap_buycar_select_brand_dongfengfengdu" _islog="1">
+                                        <span class="brand-ad" data-materid="197"></span>
+                                        <span class="brand-logo m_197_b"></span>
+                                        <span class="brand-name">东风风度</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="205" data-spell="dongfengxiaokang-205" logwt="wap_buycar_select_brand_dongfengxiaokang-205" _islog="1">
+                                        <span class="brand-ad" data-materid="205"></span>
+                                        <span class="brand-logo m_205_b"></span>
+                                        <span class="brand-name">东风小康</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="253" data-spell="dongfengfengguang" logwt="wap_buycar_select_brand_dongfengfengguang" _islog="1">
+                                        <span class="brand-ad" data-materid="253"></span>
+                                        <span class="brand-logo m_253_b"></span>
+                                        <span class="brand-name">东风风光</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="F">
+                            <span>F</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="7" data-spell="toyota" logwt="wap_buycar_select_brand_toyota" _islog="1">
+                                        <span class="brand-ad" data-materid="7"></span>
+                                        <span class="brand-logo m_7_b"></span>
+                                        <span class="brand-name">丰田</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="17" data-spell="ford" logwt="wap_buycar_select_brand_ford" _islog="1">
+                                        <span class="brand-ad" data-materid="17"></span>
+                                        <span class="brand-logo m_17_b"></span>
+                                        <span class="brand-name">福特</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="40" data-spell="fiat" logwt="wap_buycar_select_brand_fiat" _islog="1">
+                                        <span class="brand-ad" data-materid="40"></span>
+                                        <span class="brand-logo m_40_b"></span>
+                                        <span class="brand-name">菲亚特</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="67" data-spell="foday" logwt="wap_buycar_select_brand_foday" _islog="1">
+                                        <span class="brand-ad" data-materid="67"></span>
+                                        <span class="brand-logo m_67_b"></span>
+                                        <span class="brand-name">福迪</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="91" data-spell="ferrari" logwt="wap_buycar_select_brand_ferrari" _islog="1">
+                                        <span class="brand-ad" data-materid="91"></span>
+                                        <span class="brand-logo m_91_b"></span>
+                                        <span class="brand-name">法拉利</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="128" data-spell="foton" logwt="wap_buycar_select_brand_foton" _islog="1">
+                                        <span class="brand-ad" data-materid="128"></span>
+                                        <span class="brand-logo m_128_b"></span>
+                                        <span class="brand-name">福田</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="199" data-spell="feichishangwuche" logwt="wap_buycar_select_brand_feichishangwuche" _islog="1">
+                                        <span class="brand-ad" data-materid="199"></span>
+                                        <span class="brand-logo m_199_b"></span>
+                                        <span class="brand-name">飞驰商务车</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="208" data-spell="fujianxinlongmaqichegufenyouxiangongsi" logwt="wap_buycar_select_brand_fujianxinlongmaqichegufenyouxiangongsi" _islog="1">
+                                        <span class="brand-ad" data-materid="208"></span>
+                                        <span class="brand-logo m_208_b"></span>
+                                        <span class="brand-name">福汽启腾</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="G">
+                            <span>G</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="63" data-spell="gonow" logwt="wap_buycar_select_brand_gonow" _islog="1">
+                                        <span class="brand-ad" data-materid="63"></span>
+                                        <span class="brand-logo m_63_b"></span>
+                                        <span class="brand-name">广汽吉奥</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="109" data-spell="gmc-109" logwt="wap_buycar_select_brand_gmc-109" _islog="1">
+                                        <span class="brand-ad" data-materid="109"></span>
+                                        <span class="brand-logo m_109_b"></span>
+                                        <span class="brand-name">GMC</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="110" data-spell="galue" logwt="wap_buycar_select_brand_galue" _islog="1">
+                                        <span class="brand-ad" data-materid="110"></span>
+                                        <span class="brand-logo m_110_b"></span>
+                                        <span class="brand-name">光冈</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="133" data-spell="guangqihinomotors" logwt="wap_buycar_select_brand_guangqihinomotors" _islog="1">
+                                        <span class="brand-ad" data-materid="133"></span>
+                                        <span class="brand-logo m_133_b"></span>
+                                        <span class="brand-name">广汽日野</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="147" data-spell="gq" logwt="wap_buycar_select_brand_gq" _islog="1">
+                                        <span class="brand-ad" data-materid="147"></span>
+                                        <span class="brand-logo m_147_b"></span>
+                                        <span class="brand-name">广汽传祺</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="182" data-spell="qorosauto" logwt="wap_buycar_select_brand_qorosauto" _islog="1">
+                                        <span class="brand-ad" data-materid="182"></span>
+                                        <span class="brand-logo m_182_b"></span>
+                                        <span class="brand-name">观致</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="H">
+                            <span>H</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="31" data-spell="hafeiautomobile" logwt="wap_buycar_select_brand_hafeiautomobile" _islog="1">
+                                        <span class="brand-ad" data-materid="31"></span>
+                                        <span class="brand-logo m_31_b"></span>
+                                        <span class="brand-name">哈飞</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="32" data-spell="hama" logwt="wap_buycar_select_brand_hama" _islog="1">
+                                        <span class="brand-ad" data-materid="32"></span>
+                                        <span class="brand-logo m_32_b"></span>
+                                        <span class="brand-name">海马</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="44" data-spell="sma" logwt="wap_buycar_select_brand_sma" _islog="1">
+                                        <span class="brand-ad" data-materid="44"></span>
+                                        <span class="brand-logo m_44_b"></span>
+                                        <span class="brand-name">华普</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="45" data-spell="shanghaihuizhong-45" logwt="wap_buycar_select_brand_shanghaihuizhong-45" _islog="1">
+                                        <span class="brand-ad" data-materid="45"></span>
+                                        <span class="brand-logo m_45_b"></span>
+                                        <span class="brand-name">汇众</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="52" data-spell="sgautomotive" logwt="wap_buycar_select_brand_sgautomotive" _islog="1">
+                                        <span class="brand-ad" data-materid="52"></span>
+                                        <span class="brand-logo m_52_b"></span>
+                                        <span class="brand-name">黄海</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="58" data-spell="faw-hongqi" logwt="wap_buycar_select_brand_faw-hongqi" _islog="1">
+                                        <span class="brand-ad" data-materid="58"></span>
+                                        <span class="brand-logo m_58_b"></span>
+                                        <span class="brand-name">红旗</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="108" data-spell="hummer" logwt="wap_buycar_select_brand_hummer" _islog="1">
+                                        <span class="brand-ad" data-materid="108"></span>
+                                        <span class="brand-logo m_108_b"></span>
+                                        <span class="brand-name">悍马</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="112" data-spell="huataiautomobile" logwt="wap_buycar_select_brand_huataiautomobile" _islog="1">
+                                        <span class="brand-ad" data-materid="112"></span>
+                                        <span class="brand-logo m_112_b"></span>
+                                        <span class="brand-name">华泰</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="149" data-spell="fstar" logwt="wap_buycar_select_brand_fstar" _islog="1">
+                                        <span class="brand-ad" data-materid="149"></span>
+                                        <span class="brand-logo m_149_b"></span>
+                                        <span class="brand-name">海马商用车</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="170" data-spell="higer" logwt="wap_buycar_select_brand_higer" _islog="1">
+                                        <span class="brand-ad" data-materid="170"></span>
+                                        <span class="brand-logo m_170_b"></span>
+                                        <span class="brand-name">海格</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="181" data-spell="chtc" logwt="wap_buycar_select_brand_chtc" _islog="1">
+                                        <span class="brand-ad" data-materid="181"></span>
+                                        <span class="brand-logo m_181_b"></span>
+                                        <span class="brand-name">恒天</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="196" data-spell="hafu-196" logwt="wap_buycar_select_brand_hafu-196" _islog="1">
+                                        <span class="brand-ad" data-materid="196"></span>
+                                        <span class="brand-logo m_196_b"></span>
+                                        <span class="brand-name">哈弗</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="225" data-spell="huasong" logwt="wap_buycar_select_brand_huasong" _islog="1">
+                                        <span class="brand-ad" data-materid="225"></span>
+                                        <span class="brand-logo m_225_b"></span>
+                                        <span class="brand-name">华颂</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="259" data-spell="hanteng" logwt="wap_buycar_select_brand_hanteng" _islog="1">
+                                        <span class="brand-ad" data-materid="259"></span>
+                                        <span class="brand-logo m_259_b"></span>
+                                        <span class="brand-name">汉腾</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="262" data-spell="huakai" logwt="wap_buycar_select_brand_huakai" _islog="1">
+                                        <span class="brand-ad" data-materid="262"></span>
+                                        <span class="brand-logo m_262_b"></span>
+                                        <span class="brand-name">华凯</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="J">
+                            <span>J</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="4" data-spell="jeep" logwt="wap_buycar_select_brand_jeep" _islog="1">
+                                        <span class="brand-ad" data-materid="4"></span>
+                                        <span class="brand-logo m_4_b"></span>
+                                        <span class="brand-name">Jeep</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="34" data-spell="geely" logwt="wap_buycar_select_brand_geely" _islog="1">
+                                        <span class="brand-ad" data-materid="34"></span>
+                                        <span class="brand-logo m_34_b"></span>
+                                        <span class="brand-name">吉利</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="35" data-spell="jac" logwt="wap_buycar_select_brand_jac" _islog="1">
+                                        <span class="brand-ad" data-materid="35"></span>
+                                        <span class="brand-logo m_35_b"></span>
+                                        <span class="brand-name">江淮</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="37" data-spell="jmc" logwt="wap_buycar_select_brand_jmc" _islog="1">
+                                        <span class="brand-ad" data-materid="37"></span>
+                                        <span class="brand-logo m_37_b"></span>
+                                        <span class="brand-name">江铃</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="39" data-spell="jinbei" logwt="wap_buycar_select_brand_jinbei" _islog="1">
+                                        <span class="brand-ad" data-materid="39"></span>
+                                        <span class="brand-logo m_39_b"></span>
+                                        <span class="brand-name">金杯</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="57" data-spell="kinglongmotor" logwt="wap_buycar_select_brand_kinglongmotor" _islog="1">
+                                        <span class="brand-ad" data-materid="57"></span>
+                                        <span class="brand-logo m_57_b"></span>
+                                        <span class="brand-name">金龙</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="98" data-spell="jauger" logwt="wap_buycar_select_brand_jauger" _islog="1">
+                                        <span class="brand-ad" data-materid="98"></span>
+                                        <span class="brand-logo m_98_b"></span>
+                                        <span class="brand-name">捷豹</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="152" data-spell="joylongautomobile" logwt="wap_buycar_select_brand_joylongautomobile" _islog="1">
+                                        <span class="brand-ad" data-materid="152"></span>
+                                        <span class="brand-logo m_152_b"></span>
+                                        <span class="brand-name">九龙</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="161" data-spell="jlkc" logwt="wap_buycar_select_brand_jlkc" _islog="1">
+                                        <span class="brand-ad" data-materid="161"></span>
+                                        <span class="brand-logo m_161_b"></span>
+                                        <span class="brand-name">金旅客车</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="277" data-spell="J" logwt="wap_buycar_select_brand_J" _islog="1">
+                                        <span class="brand-ad" data-materid="277"></span>
+                                        <span class="brand-logo m_277_b"></span>
+                                        <span class="brand-name">吉威新能源</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="K">
+                            <span>K</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="51" data-spell="chrysler" logwt="wap_buycar_select_brand_chrysler" _islog="1">
+                                        <span class="brand-ad" data-materid="51"></span>
+                                        <span class="brand-logo m_51_b"></span>
+                                        <span class="brand-name">克莱斯勒</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="107" data-spell="cadillac" logwt="wap_buycar_select_brand_cadillac" _islog="1">
+                                        <span class="brand-ad" data-materid="107"></span>
+                                        <span class="brand-logo m_107_b"></span>
+                                        <span class="brand-name">凯迪拉克</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="145" data-spell="koenigsegg" logwt="wap_buycar_select_brand_koenigsegg" _islog="1">
+                                        <span class="brand-ad" data-materid="145"></span>
+                                        <span class="brand-logo m_145_b"></span>
+                                        <span class="brand-name">科尼赛克</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="150" data-spell="karry" logwt="wap_buycar_select_brand_karry" _islog="1">
+                                        <span class="brand-ad" data-materid="150"></span>
+                                        <span class="brand-logo m_150_b"></span>
+                                        <span class="brand-name">开瑞</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="212" data-spell="ktm" logwt="wap_buycar_select_brand_ktm" _islog="1">
+                                        <span class="brand-ad" data-materid="212"></span>
+                                        <span class="brand-logo m_212_b"></span>
+                                        <span class="brand-name">KTM</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="213" data-spell="kawei" logwt="wap_buycar_select_brand_kawei" _islog="1">
+                                        <span class="brand-ad" data-materid="213"></span>
+                                        <span class="brand-logo m_213_b"></span>
+                                        <span class="brand-name">卡威</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="214" data-spell="zhejiangkaersen" logwt="wap_buycar_select_brand_zhejiangkaersen" _islog="1">
+                                        <span class="brand-ad" data-materid="214"></span>
+                                        <span class="brand-logo m_214_b"></span>
+                                        <span class="brand-name">卡尔森</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="218" data-spell="keruisi" logwt="wap_buycar_select_brand_keruisi" _islog="1">
+                                        <span class="brand-ad" data-materid="218"></span>
+                                        <span class="brand-logo m_218_b"></span>
+                                        <span class="brand-name">科瑞斯的</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="220" data-spell="kaiyi" logwt="wap_buycar_select_brand_kaiyi" _islog="1">
+                                        <span class="brand-ad" data-materid="220"></span>
+                                        <span class="brand-logo m_220_b"></span>
+                                        <span class="brand-name">凯翼</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="241" data-spell="kangdi" logwt="wap_buycar_select_brand_kangdi" _islog="1">
+                                        <span class="brand-ad" data-materid="241"></span>
+                                        <span class="brand-logo m_241_b"></span>
+                                        <span class="brand-name">康迪全球鹰</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="L">
+                            <span>L</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="16" data-spell="suzuki" logwt="wap_buycar_select_brand_suzuki" _islog="1">
+                                        <span class="brand-ad" data-materid="16"></span>
+                                        <span class="brand-logo m_16_b"></span>
+                                        <span class="brand-name">铃木</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="36" data-spell="landwind" logwt="wap_buycar_select_brand_landwind" _islog="1">
+                                        <span class="brand-ad" data-materid="36"></span>
+                                        <span class="brand-logo m_36_b"></span>
+                                        <span class="brand-name">陆风</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="76" data-spell="lifanmotors" logwt="wap_buycar_select_brand_lifanmotors" _islog="1">
+                                        <span class="brand-ad" data-materid="76"></span>
+                                        <span class="brand-logo m_76_b"></span>
+                                        <span class="brand-name">力帆</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="80" data-spell="rolls-royce" logwt="wap_buycar_select_brand_rolls-royce" _islog="1">
+                                        <span class="brand-ad" data-materid="80"></span>
+                                        <span class="brand-logo m_80_b"></span>
+                                        <span class="brand-name">劳斯莱斯</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="83" data-spell="lotus" logwt="wap_buycar_select_brand_lotus" _islog="1">
+                                        <span class="brand-ad" data-materid="83"></span>
+                                        <span class="brand-logo m_83_b"></span>
+                                        <span class="brand-name">路特斯</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="86" data-spell="lamborghini" logwt="wap_buycar_select_brand_lamborghini" _islog="1">
+                                        <span class="brand-ad" data-materid="86"></span>
+                                        <span class="brand-logo m_86_b"></span>
+                                        <span class="brand-name">兰博基尼</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="94" data-spell="lexus" logwt="wap_buycar_select_brand_lexus" _islog="1">
+                                        <span class="brand-ad" data-materid="94"></span>
+                                        <span class="brand-logo m_94_b"></span>
+                                        <span class="brand-name">雷克萨斯</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="95" data-spell="lincoln" logwt="wap_buycar_select_brand_lincoln" _islog="1">
+                                        <span class="brand-ad" data-materid="95"></span>
+                                        <span class="brand-logo m_95_b"></span>
+                                        <span class="brand-name">林肯</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="96" data-spell="landrover" logwt="wap_buycar_select_brand_landrover" _islog="1">
+                                        <span class="brand-ad" data-materid="96"></span>
+                                        <span class="brand-logo m_96_b"></span>
+                                        <span class="brand-name">路虎</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="99" data-spell="renult" logwt="wap_buycar_select_brand_renult" _islog="1">
+                                        <span class="brand-ad" data-materid="99"></span>
+                                        <span class="brand-logo m_99_b"></span>
+                                        <span class="brand-name">雷诺</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="146" data-spell="lotus-146" logwt="wap_buycar_select_brand_lotus-146" _islog="1">
+                                        <span class="brand-ad" data-materid="146"></span>
+                                        <span class="brand-logo m_146_b"></span>
+                                        <span class="brand-name">莲花</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="153" data-spell="cf" logwt="wap_buycar_select_brand_cf" _islog="1">
+                                        <span class="brand-ad" data-materid="153"></span>
+                                        <span class="brand-logo m_153_b"></span>
+                                        <span class="brand-name">猎豹</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="166" data-spell="everus" logwt="wap_buycar_select_brand_everus" _islog="1">
+                                        <span class="brand-ad" data-materid="166"></span>
+                                        <span class="brand-logo m_166_b"></span>
+                                        <span class="brand-name">理念</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="200" data-spell="hailanfangche" logwt="wap_buycar_select_brand_hailanfangche" _islog="1">
+                                        <span class="brand-ad" data-materid="200"></span>
+                                        <span class="brand-logo m_200_b"></span>
+                                        <span class="brand-name">蓝海房车</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="229" data-spell="levdeo" logwt="wap_buycar_select_brand_levdeo" _islog="1">
+                                        <span class="brand-ad" data-materid="229"></span>
+                                        <span class="brand-logo m_229_b"></span>
+                                        <span class="brand-name">雷丁电动</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="249" data-spell="ludifangzhou" logwt="wap_buycar_select_brand_ludifangzhou" _islog="1">
+                                        <span class="brand-ad" data-materid="249"></span>
+                                        <span class="brand-logo m_249_b"></span>
+                                        <span class="brand-name">陆地方舟</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="M">
+                            <span>M</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="18" data-spell="mazda" logwt="wap_buycar_select_brand_mazda" _islog="1">
+                                        <span class="brand-ad" data-materid="18"></span>
+                                        <span class="brand-logo m_18_b"></span>
+                                        <span class="brand-name">马自达</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="55" data-spell="tianqimeiyaauto" logwt="wap_buycar_select_brand_tianqimeiyaauto" _islog="1">
+                                        <span class="brand-ad" data-materid="55"></span>
+                                        <span class="brand-logo m_55_b"></span>
+                                        <span class="brand-name">美亚</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="79" data-spell="mg-79" logwt="wap_buycar_select_brand_mg-79" _islog="1">
+                                        <span class="brand-ad" data-materid="79"></span>
+                                        <span class="brand-logo m_79_b"></span>
+                                        <span class="brand-name">名爵</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="81" data-spell="mini" logwt="wap_buycar_select_brand_mini" _islog="1">
+                                        <span class="brand-ad" data-materid="81"></span>
+                                        <span class="brand-logo m_81_b"></span>
+                                        <span class="brand-name">MINI</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="88" data-spell="maybach" logwt="wap_buycar_select_brand_maybach" _islog="1">
+                                        <span class="brand-ad" data-materid="88"></span>
+                                        <span class="brand-logo m_88_b"></span>
+                                        <span class="brand-name">迈巴赫</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="93" data-spell="maserati" logwt="wap_buycar_select_brand_maserati" _islog="1">
+                                        <span class="brand-ad" data-materid="93"></span>
+                                        <span class="brand-logo m_93_b"></span>
+                                        <span class="brand-name">玛莎拉蒂</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="183" data-spell="mclaren" logwt="wap_buycar_select_brand_mclaren" _islog="1">
+                                        <span class="brand-ad" data-materid="183"></span>
+                                        <span class="brand-logo m_183_b"></span>
+                                        <span class="brand-name">迈凯伦</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="201" data-spell="morgancars" logwt="wap_buycar_select_brand_morgancars" _islog="1">
+                                        <span class="brand-ad" data-materid="201"></span>
+                                        <span class="brand-logo m_201_b"></span>
+                                        <span class="brand-name">摩根</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="N">
+                            <span>N</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="155" data-spell="luxgen" logwt="wap_buycar_select_brand_luxgen" _islog="1">
+                                        <span class="brand-ad" data-materid="155"></span>
+                                        <span class="brand-logo m_155_b"></span>
+                                        <span class="brand-name">纳智捷</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="O">
+                            <span>O</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="84" data-spell="acura" logwt="wap_buycar_select_brand_acura" _islog="1">
+                                        <span class="brand-ad" data-materid="84"></span>
+                                        <span class="brand-logo m_84_b"></span>
+                                        <span class="brand-name">讴歌</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="104" data-spell="opel" logwt="wap_buycar_select_brand_opel" _islog="1">
+                                        <span class="brand-ad" data-materid="104"></span>
+                                        <span class="brand-logo m_104_b"></span>
+                                        <span class="brand-name">欧宝</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="171" data-spell="ol" logwt="wap_buycar_select_brand_ol" _islog="1">
+                                        <span class="brand-ad" data-materid="171"></span>
+                                        <span class="brand-logo m_171_b"></span>
+                                        <span class="brand-name">欧朗</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="P">
+                            <span>P</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="185" data-spell="pagani" logwt="wap_buycar_select_brand_pagani" _islog="1">
+                                        <span class="brand-ad" data-materid="185"></span>
+                                        <span class="brand-logo m_185_b"></span>
+                                        <span class="brand-name">帕加尼</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="Q">
+                            <span>Q</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="28" data-spell="kia" logwt="wap_buycar_select_brand_kia" _islog="1">
+                                        <span class="brand-ad" data-materid="28"></span>
+                                        <span class="brand-logo m_28_b"></span>
+                                        <span class="brand-name">起亚</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="42" data-spell="chery" logwt="wap_buycar_select_brand_chery" _islog="1">
+                                        <span class="brand-ad" data-materid="42"></span>
+                                        <span class="brand-logo m_42_b"></span>
+                                        <span class="brand-name">奇瑞</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="43" data-spell="isuzu" logwt="wap_buycar_select_brand_isuzu" _islog="1">
+                                        <span class="brand-ad" data-materid="43"></span>
+                                        <span class="brand-logo m_43_b"></span>
+                                        <span class="brand-name">庆铃</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="156" data-spell="venucia" logwt="wap_buycar_select_brand_venucia" _islog="1">
+                                        <span class="brand-ad" data-materid="156"></span>
+                                        <span class="brand-logo m_156_b"></span>
+                                        <span class="brand-name">启辰</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="R">
+                            <span>R</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="30" data-spell="nissan" logwt="wap_buycar_select_brand_nissan" _islog="1">
+                                        <span class="brand-ad" data-materid="30"></span>
+                                        <span class="brand-logo m_30_b"></span>
+                                        <span class="brand-name">日产</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="78" data-spell="roewe" logwt="wap_buycar_select_brand_roewe" _islog="1">
+                                        <span class="brand-ad" data-materid="78"></span>
+                                        <span class="brand-logo m_78_b"></span>
+                                        <span class="brand-name">荣威</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="142" data-spell="riich" logwt="wap_buycar_select_brand_riich" _islog="1">
+                                        <span class="brand-ad" data-materid="142"></span>
+                                        <span class="brand-logo m_142_b"></span>
+                                        <span class="brand-name">瑞麒</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="S">
+                            <span>S</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="10" data-spell="skoda" logwt="wap_buycar_select_brand_skoda" _islog="1">
+                                        <span class="brand-ad" data-materid="10"></span>
+                                        <span class="brand-logo m_10_b"></span>
+                                        <span class="brand-name">斯柯达</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="25" data-spell="mitsubishi" logwt="wap_buycar_select_brand_mitsubishi" _islog="1">
+                                        <span class="brand-ad" data-materid="25"></span>
+                                        <span class="brand-logo m_25_b"></span>
+                                        <span class="brand-name">三菱</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="50" data-spell="sceo" logwt="wap_buycar_select_brand_sceo" _islog="1">
+                                        <span class="brand-ad" data-materid="50"></span>
+                                        <span class="brand-logo m_50_b"></span>
+                                        <span class="brand-name">双环</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="89" data-spell="smart" logwt="wap_buycar_select_brand_smart" _islog="1">
+                                        <span class="brand-ad" data-materid="89"></span>
+                                        <span class="brand-logo m_89_b"></span>
+                                        <span class="brand-name">smart</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="102" data-spell="ssangyong" logwt="wap_buycar_select_brand_ssangyong" _islog="1">
+                                        <span class="brand-ad" data-materid="102"></span>
+                                        <span class="brand-logo m_102_b"></span>
+                                        <span class="brand-name">双龙</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="103" data-spell="saab" logwt="wap_buycar_select_brand_saab" _islog="1">
+                                        <span class="brand-ad" data-materid="103"></span>
+                                        <span class="brand-logo m_103_b"></span>
+                                        <span class="brand-name">萨博</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="111" data-spell="subaru" logwt="wap_buycar_select_brand_subaru" _islog="1">
+                                        <span class="brand-ad" data-materid="111"></span>
+                                        <span class="brand-logo m_111_b"></span>
+                                        <span class="brand-name">斯巴鲁</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="137" data-spell="sj" logwt="wap_buycar_select_brand_sj" _islog="1">
+                                        <span class="brand-ad" data-materid="137"></span>
+                                        <span class="brand-logo m_137_b"></span>
+                                        <span class="brand-name">世爵</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="165" data-spell="maxus" logwt="wap_buycar_select_brand_maxus" _islog="1">
+                                        <span class="brand-ad" data-materid="165"></span>
+                                        <span class="brand-logo m_165_b"></span>
+                                        <span class="brand-name">上汽大通</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="169" data-spell="tongjia" logwt="wap_buycar_select_brand_tongjia" _islog="1">
+                                        <span class="brand-ad" data-materid="169"></span>
+                                        <span class="brand-logo m_169_b"></span>
+                                        <span class="brand-name">陕汽通家</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="209" data-spell="sam" logwt="wap_buycar_select_brand_sam" _islog="1">
+                                        <span class="brand-ad" data-materid="209"></span>
+                                        <span class="brand-logo m_209_b"></span>
+                                        <span class="brand-name">山姆</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="239" data-spell="saleen" logwt="wap_buycar_select_brand_saleen" _islog="1">
+                                        <span class="brand-ad" data-materid="239"></span>
+                                        <span class="brand-logo m_239_b"></span>
+                                        <span class="brand-name">赛麟SALEEN</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="242" data-spell="startech" logwt="wap_buycar_select_brand_startech" _islog="1">
+                                        <span class="brand-ad" data-materid="242"></span>
+                                        <span class="brand-logo m_242_b"></span>
+                                        <span class="brand-name">STARTECH</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="244" data-spell="shangqiche" logwt="wap_buycar_select_brand_shangqiche" _islog="1">
+                                        <span class="brand-ad" data-materid="244"></span>
+                                        <span class="brand-logo m_244_b"></span>
+                                        <span class="brand-name">上喆汽车</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="260" data-spell="siwei" logwt="wap_buycar_select_brand_siwei" _islog="1">
+                                        <span class="brand-ad" data-materid="260"></span>
+                                        <span class="brand-logo m_260_b"></span>
+                                        <span class="brand-name">SWM斯威</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="T">
+                            <span>T</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="54" data-spell="tianmacar" logwt="wap_buycar_select_brand_tianmacar" _islog="1">
+                                        <span class="brand-ad" data-materid="54"></span>
+                                        <span class="brand-logo m_54_b"></span>
+                                        <span class="brand-name">天马</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="175" data-spell="denza" logwt="wap_buycar_select_brand_denza" _islog="1">
+                                        <span class="brand-ad" data-materid="175"></span>
+                                        <span class="brand-logo m_175_b"></span>
+                                        <span class="brand-name">腾势</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="189" data-spell="tesla" logwt="wap_buycar_select_brand_tesla" _islog="1">
+                                        <span class="brand-ad" data-materid="189"></span>
+                                        <span class="brand-logo m_189_b"></span>
+                                        <span class="brand-name">特斯拉</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="202" data-spell="techart" logwt="wap_buycar_select_brand_techart" _islog="1">
+                                        <span class="brand-ad" data-materid="202"></span>
+                                        <span class="brand-logo m_202_b"></span>
+                                        <span class="brand-name">泰卡特</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="W">
+                            <span>W</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="19" data-spell="volvo" logwt="wap_buycar_select_brand_volvo" _islog="1">
+                                        <span class="brand-ad" data-materid="19"></span>
+                                        <span class="brand-logo m_19_b"></span>
+                                        <span class="brand-name">沃尔沃</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="46" data-spell="shanghaiwanfengauto" logwt="wap_buycar_select_brand_shanghaiwanfengauto" _islog="1">
+                                        <span class="brand-ad" data-materid="46"></span>
+                                        <span class="brand-logo m_46_b"></span>
+                                        <span class="brand-name">万丰</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="48" data-spell="sgmw" logwt="wap_buycar_select_brand_sgmw" _islog="1">
+                                        <span class="brand-ad" data-materid="48"></span>
+                                        <span class="brand-logo m_48_b"></span>
+                                        <span class="brand-name">五菱</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="132" data-spell="isuzu-132" logwt="wap_buycar_select_brand_isuzu-132" _islog="1">
+                                        <span class="brand-ad" data-materid="132"></span>
+                                        <span class="brand-logo m_132_b"></span>
+                                        <span class="brand-name">五十铃</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="140" data-spell="rely" logwt="wap_buycar_select_brand_rely" _islog="1">
+                                        <span class="brand-ad" data-materid="140"></span>
+                                        <span class="brand-logo m_140_b"></span>
+                                        <span class="brand-name">威麟</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="186" data-spell="wiesmann" logwt="wap_buycar_select_brand_wiesmann" _islog="1">
+                                        <span class="brand-ad" data-materid="186"></span>
+                                        <span class="brand-logo m_186_b"></span>
+                                        <span class="brand-name">威兹曼</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="207" data-spell="enranger" logwt="wap_buycar_select_brand_enranger" _islog="1">
+                                        <span class="brand-ad" data-materid="207"></span>
+                                        <span class="brand-logo m_207_b"></span>
+                                        <span class="brand-name">潍柴英致</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="247" data-spell="eurise" logwt="wap_buycar_select_brand_eurise" _islog="1">
+                                        <span class="brand-ad" data-materid="247"></span>
+                                        <span class="brand-logo m_247_b"></span>
+                                        <span class="brand-name">潍柴欧睿</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="270" data-spell="wey" logwt="wap_buycar_select_brand_wey" _islog="1">
+                                        <span class="brand-ad" data-materid="270"></span>
+                                        <span class="brand-logo m_270_b"></span>
+                                        <span class="brand-name">WEY</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="X">
+                            <span>X</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="6" data-spell="citroen" logwt="wap_buycar_select_brand_citroen" _islog="1">
+                                        <span class="brand-ad" data-materid="6"></span>
+                                        <span class="brand-logo m_6_b"></span>
+                                        <span class="brand-name">雪铁龙</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="13" data-spell="hyundai" logwt="wap_buycar_select_brand_hyundai" _islog="1">
+                                        <span class="brand-ad" data-materid="13"></span>
+                                        <span class="brand-logo m_13_b"></span>
+                                        <span class="brand-name">现代</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="49" data-spell="chevrolet" logwt="wap_buycar_select_brand_chevrolet" _islog="1">
+                                        <span class="brand-ad" data-materid="49"></span>
+                                        <span class="brand-logo m_49_b"></span>
+                                        <span class="brand-name">雪佛兰</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="62" data-spell="soyat" logwt="wap_buycar_select_brand_soyat" _islog="1">
+                                        <span class="brand-ad" data-materid="62"></span>
+                                        <span class="brand-logo m_62_b"></span>
+                                        <span class="brand-name">新雅途</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="65" data-spell="xdd" logwt="wap_buycar_select_brand_xdd" _islog="1">
+                                        <span class="brand-ad" data-materid="65"></span>
+                                        <span class="brand-logo m_65_b"></span>
+                                        <span class="brand-name">新大地</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="71" data-spell="xinkaiauto" logwt="wap_buycar_select_brand_xinkaiauto" _islog="1">
+                                        <span class="brand-ad" data-materid="71"></span>
+                                        <span class="brand-logo m_71_b"></span>
+                                        <span class="brand-name">新凯</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="87" data-spell="seat" logwt="wap_buycar_select_brand_seat" _islog="1">
+                                        <span class="brand-ad" data-materid="87"></span>
+                                        <span class="brand-logo m_87_b"></span>
+                                        <span class="brand-name">西雅特</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="174" data-spell="xkt" logwt="wap_buycar_select_brand_xkt" _islog="1">
+                                        <span class="brand-ad" data-materid="174"></span>
+                                        <span class="brand-logo m_174_b"></span>
+                                        <span class="brand-name">星客特</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="Y">
+                            <span>Y</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="41" data-spell="iveco" logwt="wap_buycar_select_brand_iveco" _islog="1">
+                                        <span class="brand-ad" data-materid="41"></span>
+                                        <span class="brand-logo m_41_b"></span>
+                                        <span class="brand-name">依维柯</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="47" data-spell="wel" logwt="wap_buycar_select_brand_wel" _islog="1">
+                                        <span class="brand-ad" data-materid="47"></span>
+                                        <span class="brand-logo m_47_b"></span>
+                                        <span class="brand-name">仪征</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="53" data-spell="faw" logwt="wap_buycar_select_brand_faw" _islog="1">
+                                        <span class="brand-ad" data-materid="53"></span>
+                                        <span class="brand-logo m_53_b"></span>
+                                        <span class="brand-name">一汽</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="75" data-spell="jonwayautomobile" logwt="wap_buycar_select_brand_jonwayautomobile" _islog="1">
+                                        <span class="brand-ad" data-materid="75"></span>
+                                        <span class="brand-logo m_75_b"></span>
+                                        <span class="brand-name">永源</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="100" data-spell="infiniti" logwt="wap_buycar_select_brand_infiniti" _islog="1">
+                                        <span class="brand-ad" data-materid="100"></span>
+                                        <span class="brand-logo m_100_b"></span>
+                                        <span class="brand-name">英菲尼迪</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="118" data-spell="yb" logwt="wap_buycar_select_brand_yb" _islog="1">
+                                        <span class="brand-ad" data-materid="118"></span>
+                                        <span class="brand-logo m_118_b"></span>
+                                        <span class="brand-name">云豹</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="126" data-spell="yunquemotor" logwt="wap_buycar_select_brand_yunquemotor" _islog="1">
+                                        <span class="brand-ad" data-materid="126"></span>
+                                        <span class="brand-logo m_126_b"></span>
+                                        <span class="brand-name">云雀</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="138" data-spell="ym" logwt="wap_buycar_select_brand_ym" _islog="1">
+                                        <span class="brand-ad" data-materid="138"></span>
+                                        <span class="brand-logo m_138_b"></span>
+                                        <span class="brand-name">野马</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="176" data-spell="youyiautomobile" logwt="wap_buycar_select_brand_youyiautomobile" _islog="1">
+                                        <span class="brand-ad" data-materid="176"></span>
+                                        <span class="brand-logo m_176_b"></span>
+                                        <span class="brand-name">友谊客车</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="178" data-spell="yutong" logwt="wap_buycar_select_brand_yutong" _islog="1">
+                                        <span class="brand-ad" data-materid="178"></span>
+                                        <span class="brand-logo m_178_b"></span>
+                                        <span class="brand-name">宇通</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="194" data-spell="yangzhouyaxingkeche" logwt="wap_buycar_select_brand_yangzhouyaxingkeche" _islog="1">
+                                        <span class="brand-ad" data-materid="194"></span>
+                                        <span class="brand-logo m_194_b"></span>
+                                        <span class="brand-name">扬州亚星客车</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="258" data-spell="yusheng-258" logwt="wap_buycar_select_brand_yusheng-258" _islog="1">
+                                        <span class="brand-ad" data-materid="258"></span>
+                                        <span class="brand-logo m_258_b"></span>
+                                        <span class="brand-name">驭胜</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="tt-small phone-title" data-key="Z">
+                            <span>Z</span>
+                        </div>
+                        <div class="box">
+                            <ul>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="33" data-spell="zxauto" logwt="wap_buycar_select_brand_zxauto" _islog="1">
+                                        <span class="brand-ad" data-materid="33"></span>
+                                        <span class="brand-logo m_33_b"></span>
+                                        <span class="brand-name">中兴</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="60" data-spell="brillianceauto" logwt="wap_buycar_select_brand_brillianceauto" _islog="1">
+                                        <span class="brand-ad" data-materid="60"></span>
+                                        <span class="brand-logo m_60_b"></span>
+                                        <span class="brand-name">中华</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="77" data-spell="zotyeauto" logwt="wap_buycar_select_brand_zotyeauto" _islog="1">
+                                        <span class="brand-ad" data-materid="77"></span>
+                                        <span class="brand-logo m_77_b"></span>
+                                        <span class="brand-name">众泰</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="167" data-spell="zoemo" logwt="wap_buycar_select_brand_zoemo" _islog="1">
+                                        <span class="brand-ad" data-materid="167"></span>
+                                        <span class="brand-logo m_167_b"></span>
+                                        <span class="brand-name">中欧房车</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="203" data-spell="zhinuo" logwt="wap_buycar_select_brand_zhinuo" _islog="1">
+                                        <span class="brand-ad" data-materid="203"></span>
+                                        <span class="brand-logo m_203_b"></span>
+                                        <span class="brand-name">之诺</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="233" data-spell="zhidou" logwt="wap_buycar_select_brand_zhidou" _islog="1">
+                                        <span class="brand-ad" data-materid="233"></span>
+                                        <span class="brand-logo m_233_b"></span>
+                                        <span class="brand-name">知豆</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" data-action="car" data-id="246" data-spell="zhongqiwangpai" logwt="wap_buycar_select_brand_zhongqiwangpai" _islog="1">
+                                        <span class="brand-ad" data-materid="246"></span>
+                                        <span class="brand-logo m_246_b"></span>
+                                        <span class="brand-name">重汽王牌</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 品牌列表 end -->
+                <div class="fixed-nav" style="overflow: initial; opacity: 1;">
+                    <ul class="rows-box">
+                        <li><a href="javascript:;">#</a></li>
+
+
+                        <li><a href="javascript:;">A</a></li>
+
+
+
+                        <li><a href="javascript:;">B</a></li>
+
+
+
+                        <li><a href="javascript:;">C</a></li>
+
+
+
+                        <li><a href="javascript:;">D</a></li>
+
+
+
+                        <li><a href="javascript:;">F</a></li>
+
+
+
+                        <li><a href="javascript:;">G</a></li>
+
+
+
+                        <li><a href="javascript:;">H</a></li>
+
+
+
+                        <li><a href="javascript:;">J</a></li>
+
+
+
+                        <li><a href="javascript:;">K</a></li>
+
+
+
+                        <li><a href="javascript:;">L</a></li>
+
+
+
+                        <li><a href="javascript:;">M</a></li>
+
+
+
+                        <li><a href="javascript:;">N</a></li>
+
+
+
+                        <li><a href="javascript:;">O</a></li>
+
+
+
+                        <li><a href="javascript:;">P</a></li>
+
+
+
+                        <li><a href="javascript:;">Q</a></li>
+
+
+
+                        <li><a href="javascript:;">R</a></li>
+
+
+
+                        <li><a href="javascript:;">S</a></li>
+
+
+
+                        <li><a href="javascript:;">T</a></li>
+
+
+
+                        <li><a href="javascript:;">W</a></li>
+
+
+
+                        <li><a href="javascript:;">X</a></li>
+
+
+
+                        <li><a href="javascript:;">Y</a></li>
+
+
+
+                        <li><a href="javascript:;">Z</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+            <!-- 底部关闭按钮 start -->
+            <div class="bot-btn-close btn-close-fixed btn-close-js">
+                <a href="javascript:;">关闭</a>
+            </div>
+            <!-- 底部关闭按钮 end -->
+
+
+            <!--车型层 start-->
+            <div class="leftmask mark leftmask3" style="display: none;"></div>
+            <div class="leftPopup car-model car" data-back="leftmask3" style="display: none;" data-key="car">
+                <div class="swipeLeft swipeLeft-sub">
+                    <div class="loading">
+                        <img src="http://image.bitautoimg.com/uimg/mbt2015/images/loading.gif">
+                        <p>正在加载...</p>
+                    </div>
+                </div>
+            </div>
+            <!--车型层 end-->
+            <!--loading模板 start -->
+            <div class="template-loading" style="display: none;">
+                <div class="loading">
+                    <img src="http://image.bitautoimg.com/uimg/mbt2015/images/loading.gif">
+                    <p>正在加载...</p>
+                </div>
+            </div>
+            <!--loading模板 end -->
+            <!--车型模板 start-->
+            <script type="text/template" id="carTemplate">
+                <div class="choose-car-unlimit">
+                    <a href="{=list[0].PUrl}">不限车型</a>
+                </div>
+                <div class="clear"></div>
+                {for(var i = 0 ; i < list.length ; i++){ }
+                <!-- 车款列表 start -->
+                {if(list[i].Child.length > 0){ }
+                <div class="tt-small">
+                    <span>{= list[i].BrandName }</span>
+                </div>
+                {}}
+                <!-- 图文混排横向 start -->
+                <div class="pic-txt-h pic-txt-9060">
+                    <ul>
+                        { for(var j = 0,thisList=list[i],thisChild=thisList.Child,len=thisChild.length,url=thisList.Url; j <len; j++){ }
+                        <li {= thisChild[j].CsId.toString() == (api.car.currentid.toString()) ? 'class="current"':''}>
+                        <a class="imgbox-2"  data-id="{= thisChild[j].CsId}" href="{=url.format([thisChild[j].AllSpell])}"  logwt="wap_buycar_select_brand_{=thisList.PSpell}_{=[thisChild[j].AllSpell]}">
+                            <div class="c-box">
+                                <h4>{= thisChild[j].CsShowName }</h4>
+                            </div>
+                        </a>
+                        </li>
+                        {}}
+                    </ul>
+                </div>
+                <!-- 图文混排横向 end -->
+                {}}
+            </script>
+            <!--车型模板 end-->
+
+            <!-- 品牌列表模板 start -->
+            <script type="text/template" id="brandTemplate">
+                { for(var n in MsterList){ }
+                <div class="tt-small phone-title" data-key="{=n}">
+                    <span>{=n}</span>
+                </div>
+                <div class="box">
+                    <ul>
+                        {for(var i=0,thisMsterList=MsterList[n],thisLen=thisMsterList.length;i<thisLen;i++){}
+                        <li {=thisMsterList[i].Bs_Id.toString() == api.brand.currentid.toString() ? "class='current'":""}>
+                        <a href="javascript:void(0);" data-action="car" data-id="{=thisMsterList[i].Bs_Id}" data-spell="{=thisMsterList[i].Bs_UrlSpell}"  logwt="wap_buycar_select_brand_{=thisMsterList[i].Bs_UrlSpell}">
+                            <span class="brand-ad" data-materid="{=thisMsterList[i].Bs_Id}"></span>
+                            <span class="brand-logo m_{=thisMsterList[i].Bs_Id}_b"></span>
+                            <span class="brand-name">{=thisMsterList[i].Bs_Name}</span>
+                        </a>
+                        </li>
+                        {}}
+                    </ul>
+                </div>
+                {}}
+            </script>
+            <!-- 品牌列表模板 end -->
+
+            <!-- 字母列表模板 start -->
+            <script type="text/template" id="navTemplate">
+                <ul class="rows-box">
+                    <li><a href="javascript:;">#</a></li>
+                    { for(var n in CharList){ }
+                    { if(CharList[n] != 0){ }
+                    <li><a href="javascript:;">{=n}</a></li>
+                    {}}
+                    {}}
+                </ul>
+            </script>
+            <!-- 字母列表模板 end -->
+        </div>
+
+        <!-- 品牌列表 end -->
+        <div class="fixed-nav" style="    padding: 64px 0;">
+        </div>
+    </div>
+
+
+
+    <!-- 底部关闭按钮 start -->
+    <div class="bot-btn-close btn-close-fixed btn-close-js">
+        <a href="javascript:;">关闭</a>
+    </div>
+    <!-- 底部关闭按钮 end -->
+
+
+    <!--车型层 start-->
+    <div class="leftmask mark leftmask3" style="display: none;"></div>
+    <div class="leftPopup car-model car" data-back="leftmask3" style="display: none;" data-key="car">
+        <div class="swipeLeft swipeLeft-sub">
+            <div class="loading">
+                <img src="http://image.bitautoimg.com/uimg/mbt2015/images/loading.gif" />
+                <p>正在加载...</p>
+            </div>
+        </div>
+    </div>
+    <!--车型层 end-->
+
+
+    <!--loading模板 start -->
+    <div class="template-loading" style="display: none;">
+        <div class="loading">
+            <img src="http://image.bitautoimg.com/uimg/mbt2015/images/loading.gif" />
+            <p>正在加载...</p>
+        </div>
+    </div>
+    <!--loading模板 end -->
+
+    <!--车型模板 start-->
+    <script type="text/template" id="carTemplate">
+        <div class="choose-car-unlimit">
+            <a href="#">不限车型</a>
+        </div>
+        <div class="clear"></div>
+        { for(var i = 0 ; i < list.length ; i++){ }
+        <!-- 车款列表 start -->
+        {if(list[i].Child.length > 0){ }
+        <div class="tt-small">
+            <span>{= list[i].BrandName }</span>
+        </div>
+        {}}
+        <!-- 图文混排横向 start -->
+        <div class="pic-txt-h pic-txt-9060">
+            <ul>
+                { for(var j = 0 ; j < list[i].Child.length ; j++){ }
+                <li {= list[i].Child[j].SerialId.toString() == (api.car.currentid.toString()) ? 'class="current"':''}>
+                <a class="imgbox-2" data-action="models" data-id="{= list[i].Child[j].SerialId}" href="#">
+                    <div class="c-box">
+                        <h4>{= list[i].Child[j].SerialName }</h4>
+                    </div>
+                </a>
+                </li>
+                {}}
+            </ul>
+        </div>
+        <!-- 图文混排横向 end -->
+        {}}
+    </script>
+    <!--车型模板 end-->
+
+    <!-- 品牌列表模板 start -->
+    <script type="text/template" id="brandTemplate">
+        { for(var n in MsterList){ }
+        <div class="tt-small phone-title" data-key="{=n}">
+            <span>{=n}</span>
+        </div>
+        <div class="box">
+            <ul>
+                {for(var i=0;i< MsterList[n].length;i++){}
+                <li {=MsterList[n][i].MasterId.toString() == api.brand.currentid.toString() ? "class='current'":""}>
+                <a href="#" data-action="car" data-id="{=MsterList[n][i].MasterId}">
+                    <span class="brand-ad" data-materid="{=MsterList[n][i].MasterId}"></span> <!--广告系统占位-->
+                    <span class="brand-logo m_{=MsterList[n][i].MasterId}_b"></span>
+                    <span class="brand-name">{=MsterList[n][i].MasterName}</span>
+                </a>
+                </li>
+                {}}
+            </ul>
+        </div>
+        {}}
+    </script>
+    <!-- 品牌列表模板 end -->
+
+    <!-- 字母列表模板 start -->
+    <script type="text/template" id="navTemplate">
+        <ul class="rows-box">
+            <li><a href="#">#</a></li>
+            { for(var n in CharList){ }
+            { if(CharList[n] != 0){ }
+            <li><a href="#">{=n}</a></li>
+            {}}
+            {}}
+        </ul>
+    </script>
+    <!-- 字母列表模板 end -->
+</div>
+<!-- 品牌下拉 end -->
+<!-- 价格下拉  start -->
+<div class="sort-box-wrap swipeTop sortbox-price">
+    <div class="sort-pri-wrap">
+        <div class="sort-pri">
+            <button class="p-confirm">确定</button>
+            <input type="" name="" class="pri-start"/>
+            <span class="dao">-</span>
+            <input type="" name="" class="pri-end"/>
+            <span class="pri-unit">万</span>
+        </div>
+        <ul>
+            <li class="cur">
+                <a href="#">不限</a>
+            </li>
+            <li>
+                <a href="#">3万以下</a>
+            </li>
+            <li>
+                <a href="#">3-5万</a>
+            </li>
+            <li>
+                <a href="#">5-8万</a>
+            </li>
+            <li>
+                <a href="#">8-10万</a>
+            </li>
+            <li>
+                <a href="#">10-15万</a>
+            </li>
+            <li>
+                <a href="#">15-20万</a>
+            </li>
+            <li>
+                <a href="#">20-30万</a>
+            </li>
+        </ul>
+    </div>
+    <!-- 底部关闭按钮 start -->
+    <div class="bot-btn-close btn-close-js">
+        <a href="javascript:;">关闭</a>
+    </div>
+    <!-- 底部关闭按钮 end -->
+</div>
+<!-- 价格下拉  end -->
+<!-- 条件下拉 start -->
+<div class="sort-box-wrap swipeTop sortbox-condition">
+    <!-- 筛选列表  start -->
+    <div class="brand-sortlist">
+        <!-- 车龄 start -->
+        <div class="term-box">
+            <div class="tt-small">
+                <span>车龄</span>
+            </div>
+            <div class="tc-item">
+                <ul class="tc-sort">
+                    <li>
+                        <a href="javascript:;">一年以内</a>
+                    </li>
+                    <li class="cur">
+                        <a href="javascript:;">1-3年</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">3-5年</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">5-8年</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">8-10年</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">10年以上</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 车龄 end -->
+        <!-- 里程 start -->
+        <div class="term-box">
+            <div class="tt-small">
+                <span>里程</span>
+            </div>
+            <div class="tc-item">
+                <ul class="tc-sort tc-sort-lic">
+                    <li>
+                        <a href="javascript:;">1万公里以下</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">3万公里以下</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">5万公里以下</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">10万公里以下</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">10万公里以上</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 里程 end -->
+        <!-- 级别 start -->
+        <div class="term-box">
+            <div class="tt-small">
+                <span>级别</span>
+            </div>
+            <div class="tc-item">
+                <ul class="tc-sort tc-sort-grade">
+                    <li class="cur">
+                        <a href="javascript:;">
+                            <em class="car-weixing"></em>
+                            <p class="col-txt">微型车</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="car-xiaoxing"></em>
+                            <p class="col-txt">小型车</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="car-jincou"></em>
+                            <p class="col-txt">紧凑型</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="car-zhongxing"></em>
+                            <p class="col-txt">中型车</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="car-zhongdxing"></em>
+                            <p class="col-txt">中大型车</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="car-haohua"></em>
+                            <p class="col-txt">豪华车</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="car-mpv"></em>
+                            <p class="col-txt">MPV</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="car-suv"></em>
+                            <p class="col-txt">SUV</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="car-paoche"></em>
+                            <p class="col-txt">跑车</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="car-mianbao"></em>
+                            <p class="col-txt">面包车</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="car-pika"></em>
+                            <p class="col-txt">皮卡</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 级别 end -->
+        <!-- 车源特色 start -->
+        <div class="term-box">
+            <div class="tt-small">
+                <span>车源特色<i class="t-second">（可多选）</i></span>
+            </div>
+            <div class="tc-item">
+                <ul class="tc-sort">
+                    <li>
+                        <a href="javascript:;">个人车源</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">商家车源</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">保障车</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">品牌认证</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">准新车</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">有图</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">帮卖车源</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 车源特色 end -->
+        <!-- 排量 start -->
+        <div class="term-box">
+            <div class="tt-small">
+                <span>排量</span>
+            </div>
+            <div class="tc-item">
+                <ul class="tc-sort">
+                    <li>
+                        <a href="javascript:;">1.0L以下</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">1.0-1.6L</a>
+                    </li>
+                    <li class="cur">
+                        <a href="javascript:;">1.6-2.0L</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">2.0-3.0L</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">3.0L以上</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 排量 end -->
+        <!-- 变速箱 start -->
+        <div class="term-box">
+            <div class="tt-small">
+                <span>变速箱</span>
+            </div>
+            <div class="tc-item">
+                <ul class="tc-sort">
+                    <li>
+                        <a href="javascript:;">手动</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">自动</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">手自一体</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">无级变速</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">双离合</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 变速箱 end -->
+        <!-- 排放标准 start -->
+        <div class="term-box">
+            <div class="tt-small">
+                <span>排放标准</span>
+            </div>
+            <div class="tc-item">
+                <ul class="tc-sort">
+                    <li>
+                        <a href="javascript:;">OBD</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">京5</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">欧5</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">欧4</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">欧3</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">国5</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">国4</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">国3</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">国2</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 排放标准 end -->
+        <!-- 驱动 start -->
+        <div class="term-box term-hidecont">
+            <div class="stle-close">
+                <a href="javascript:;">
+                    <span>驱动</span>
+                    <s class="selected-item">前驱</s>
+                </a>
+            </div>
+            <div class="tt-small">
+                <a href="javascript:;" class="tt-open">收起</a>
+                <span>驱动</span>
+            </div>
+            <div class="tc-item">
+                <ul class="tc-sort">
+                    <li>
+                        <a href="javascript:;">前驱</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">后驱</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">四驱</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 驱动 end -->
+        <!-- 车身 start -->
+        <div class="term-box term-hidecont">
+            <div class="stle-close">
+                <a href="javascript:;">
+                    <span>车身</span>
+                    <s class="selected-item"></s>
+                </a>
+            </div>
+            <div class="tt-small">
+                <a href="javascript:;" class="tt-open">收起</a>
+                <span>车身</span>
+            </div>
+            <div class="tc-item">
+                <ul class="tc-sort">
+                    <li>
+                        <a href="javascript:;">两厢</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">三厢</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">旅行版</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 车身 end -->
+        <!-- 燃料 start -->
+        <div class="term-box term-hidecont">
+            <div class="stle-close">
+                <a href="javascript:;">
+                    <span>燃料</span>
+                    <s class="selected-item"></s>
+                </a>
+            </div>
+            <div class="tt-small">
+                <a href="javascript:;" class="tt-open">收起</a>
+                <span>燃料</span>
+            </div>
+            <div class="tc-item">
+                <ul class="tc-sort">
+                    <li>
+                        <a href="javascript:;">汽油</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">柴油</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">纯电动</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">油电混合</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">油气混合</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 燃料 end -->
+        <!-- 国别 start -->
+        <div class="term-box term-hidecont">
+            <div class="stle-close">
+                <a href="javascript:;">
+                    <span>国别</span>
+                    <s class="selected-item"></s>
+                </a>
+            </div>
+            <div class="tt-small">
+                <a href="javascript:;" class="tt-open">收起</a>
+                <span>国别</span>
+            </div>
+            <div class="tc-item">
+                <ul class="tc-sort">
+                    <li>
+                        <a href="javascript:;">德国</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">日本</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">美国</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">韩国</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">法国</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">英国</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">意大利</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">瑞典</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">中国</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 国别 end -->
+        <!-- 颜色 start -->
+        <div class="term-box term-hidecont">
+            <div class="stle-close">
+                <a href="javascript:;">
+                    <span>颜色</span>
+                    <s class="selected-item"></s>
+                </a>
+            </div>
+            <div class="tt-small">
+                <a href="javascript:;" class="tt-open">收起</a>
+                <span>颜色</span>
+            </div>
+            <div class="tc-item">
+                <ul class="tc-sort tc-sort-color">
+                    <li>
+                        <a href="javascript:;">
+                            <em class="black"></em>
+                            <p class="col-txt">黑色</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="y-gray"></em>
+                            <p class="col-txt">银灰色</p>
+                        </a>
+                    </li>
+                    <li class="cur">
+                        <a href="javascript:;">
+                            <em class="white"></em>
+                            <p class="col-txt">白色</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="red"></em>
+                            <p class="col-txt">红色</p>
+                        </a>
+                    </li>
+                    <li class="cur">
+                        <a href="javascript:;">
+                            <em class="blue"></em>
+                            <p class="col-txt">蓝色</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="s-gray"></em>
+                            <p class="col-txt">深灰色</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="champagne"></em>
+                            <p class="col-txt">香槟色</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="green"></em>
+                            <p class="col-txt">绿色</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="yellow"></em>
+                            <p class="col-txt">黄色</p>
+                        </a>
+                    </li>
+                    <li class="cur">
+                        <a href="javascript:;">
+                            <em class="orange"></em>
+                            <p class="col-txt">橙色</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="coffee"></em>
+                            <p class="col-txt">咖啡色</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="purple"></em>
+                            <p class="col-txt">紫色</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <em class="colour"></em>
+                            <p class="col-txt">多彩色</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 颜色 end -->
+        <!-- 配置 start -->
+        <div class="term-box term-hidecont">
+            <div class="stle-close">
+                <a href="javascript:;">
+                    <span>配置</span>
+                    <s class="selected-item txtElps">天窗，GPS导航，倒车影像</s>
+                </a>
+            </div>
+            <div class="tt-small">
+                <a href="javascript:;" class="tt-open">收起</a>
+                <span>配置<i class="t-second">（可多选）</i></span>
+            </div>
+            <div class="tc-item">
+                <ul class="tc-sort">
+                    <li class="cur">
+                        <a href="javascript:;">天窗</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">GPS导航</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">倒车影像</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">儿童锁</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">涡轮增压</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">无钥匙启动</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">四轮碟刹</a>
+                    </li>
+                    <li class="cur">
+                        <a href="javascript:;">真皮座椅</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">EPS</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">疝气大灯</a>
+                    </li>
+                    <li class="cur">
+                        <a href="javascript:;">定速巡航</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">自动空调</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">胎压监测</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">自动泊车</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">空气净化</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">换挡拨片</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">电动座椅</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">儿童座椅</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 配置  end -->
+    </div>
+    <!-- 筛选列表  end -->
+
+    <!-- 底部固定  start -->
+    <!-- 第一种情况 start -->
+    <div class="bot-fixed bot-sortbox" style="display:none-;">
+        <ul>
+            <li class="li-close btn-close-js">
+                <a href="javascript:;">
+                    <span>关闭</span>
+                </a>
+            </li>
+            <li class="li-reset">
+                <a href="javascript:;">
+                    <span>重置</span>
+                </a>
+            </li>
+            <li class="li-sure">
+                <a href="javascript:;">
+                    <span>确定</span>
+                    <em>共123辆符合条件</em>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 第一种情况 end -->
+    <!-- 第二种情况 start -->
+    <div class="bot-fixed bot-sortbox" style="display:none;">
+        <ul>
+            <li class="li-close btn-close-js">
+                <a href="javascript:;">
+                    <span>关闭</span>
+                </a>
+            </li>
+            <li class="li-reset li-reset-no">
+                <a href="javascript:;">
+                    <span>重置</span>
+                </a>
+            </li>
+            <li class="li-sure li-sure-no">
+                <a href="javascript:;">
+                    <span>暂无合适车源</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 第二种情况 end -->
+    <!-- 底部固定  end -->
+
+    <!-- 浮动车源量条  start -->
+    <div class="pop-fixedfloat" style="display:none;">
+        <div class="pop-fixed-inner">
+            <span class="pop-f-txt sort-reset">所有条件已重置</span>
+        </div>
+    </div>
+    <!-- 浮动车源量条  end -->
+</div>
+<!-- 条件下拉 end -->
+<!-- 筛选  end -->
+
+
+<!-- 足迹  start 20170515 -->
+<div class="tract-top new-tract post-re">
+    <div class="track-div  mar50">
+        <ul class="trackul">
+            <!--<li class="double11-list"><a href="#" class="selected">6.6优惠车款<em class="double-close"></em></a></li>-->
+            <!--<li class="double11-list"><a href="#" class="next-selected">6.6优惠车款</a></li>-->
+            <li><a href="#"><b>奔驰C级</b><i class="iconfont icon-Close-01 icon-xiaochazi"></i></a></li>
+            <li><a href="#"><b>大众</b><i class="iconfont icon-Close-01 icon-xiaochazi"></i></a></li>
+            <li><a href="#"><b>宝来</b><i class="iconfont icon-Close-01 icon-xiaochazi"></i></a></li>
+            <li><a href="#"><b>北京新能源远远远额</b><i class="iconfont icon-Close-01 icon-xiaochazi"></i></a></li>
+        </ul>
+
+    </div>
+    <!--清空-->
+    <div class="track-del">
+        <em class="iconfont icon-qingkong"></em>清空
+    </div>
+</div>
+
+
+<div class="tract-top new-tract hide" id="footPrint">
+    <span class="tra-span">足迹：</span>
+    <div class="track-div">
+        <ul class="trackul" id="footprintUl">
+
+            <li class="double11-list"><a href="http://beijing.m.taoche.com/buycar/p7gesbxcdzaoqtr/?active=1" class="next-selected" logwt="wap_buycar_list_66" _islog="1">6.6优惠车款</a></li>
+
+            <li><a logwt="wap_list_history" href="/buycar/p7gesbxcdzaoqtr/" _islog="1">20-30万</a></li><li><a logwt="wap_list_history" href="/buycar/p10gesbxcdzaoqtr/?mode=2" _islog="1">100万以上</a></li><li><a logwt="wap_list_history" href="/aodi100/pgesbxcdzaoqtr/" _islog="1">奥迪100</a></li></ul>
+    </div>
+</div>
+<!-- 足迹  end -->
+
+<!-- 车源列表 start -->
+<!--mt12-->
+<div class="car-list-wrap boxwrap">
+    <div class="carlist-inner">
+        <ul class="carlist-ul-horizontal">
+            <li>
+                <a href="#">
+                    <div class="car-img">
+                        <img src="http://img7.taoche.cn/1d/02170od58y.jpg"/>
+                        <!--<em class="ico-double11">优惠2500元</em>-->
+                        <!--<em class="double-6-a"></em>-->
+                        <em class="renz-a"></em>
+                        <i class="ygong-txt">日供10元开回家</i>
+                    </div>
+                    <div class="car-txt">
+                        <p class="name"><em class="ico-ding">顶</em>奥迪Q5(进口)10款 </p>
+                        <p class="time">2013年 | 8.0万公里</p>
+                        <p class="pri"><span class="txt-r pri-city">北北京京</span>27.56万<i class="car-pri-s">首付9.82万</i></p>
+                        <p>
+                            <!--<em class="s-rzc">认证车</em>-->
+                            <em class="s-bzc">保障车</em>
+                            <em class="s-bt">30天包退</em>
+                            <em class="s-bx">1年保修</em>
+                            <em class="s-fqgc">分期购车</em>
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="car-img">
+                        <img src="../images/pic_270_180.jpg"/>
+                        <!--<em class="ico-double11">优惠2500元</em>-->
+                        <!--<em class="double-6-a"></em>-->
+                        <em class="renz-a"></em>
+                    </div>
+                    <div class="car-txt">
+                        <p class="name"><em class="ico-ding">顶</em>奥迪Q5(进口)10款 </p>
+                        <p class="time">2013年 | 8.0万公里</p>
+                        <p class="pri"><span class="txt-r pri-city">北北京京</span>27.56万<i class="car-pri-s">首付9.82万</i></p>
+                        <p>
+                            <em class="s-rzc">认证车</em>
+                            <em class="s-bzc">保障车</em>
+                            <em class="s-bt">30天包退</em>
+                            <em class="s-bx">1年保修</em>
+                            <em class="s-fqgc">分期购车</em>
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="car-img">
+                        <img src="../images/pic_270_180.jpg"/>
+                        <em class="double-6-c"></em>
+                    </div>
+                    <div class="car-txt">
+                        <p class="name"><em class="ico-jing">精</em>奥迪Q5(进口)10款  2.0T首发限量版运动款</p>
+                        <p class="time"><span class="txt-r">3分钟前</span>2013年 | 8.0万公里</p>
+                        <p class="pri"><span class="txt-r">个人</span>27.56万</p>
+                        <p>
+                            <em class="s-rzc">认证车</em>
+                            <em class="s-bzc">保障车</em>
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="car-img">
+                        <img src="../images/pic_270_180.jpg"/>
+                    </div>
+                    <div class="car-txt">
+                        <p class="name">奥迪Q5(进口)10款  2.0T首发限量版运动款</p>
+                        <p class="time"><span class="txt-r">3分钟前</span>2013年 | 8.0万公里</p>
+                        <p class="pri"><span class="txt-r">个人</span>27.56万</p>
+                        <p>
+                            <em class="s-rzc">认证车</em>
+                            <em class="s-bzc">保障车</em>
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li class="list-ad">
+                <a href="#">
+                    <div class="car-img">
+                        <img src="../images/pic_270_180.jpg"/>
+                        <div class="ico-ad" style="position:absolute;right:5px;bottom:5px;width:24px;height:12px;line-height:12px;border:1px solid #fff;border-radius:1px;-webkit-border-radius:1px;color:#fff;text-align:center;font-size:0.9rem;">广告</div>
+                    </div>
+                    <div class="car-txt">
+                        <p class="name">汽车报价大全APP 买车省心价最优</p>
+                        <p class="time">低价买车，买贵就赔</p>
+                        <p class="pri">&nbsp;</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="car-img">
+                        <img src="../images/pic_270_180.jpg"/>
+                    </div>
+                    <div class="car-txt">
+                        <p class="name">奥迪Q5(进口)10款  2.0T首发限量版运动款</p>
+                        <p class="time"><span class="txt-r">3分钟前</span>2013年 | 8.0万公里</p>
+                        <p class="pri"><span class="txt-r">个人</span>27.56万</p>
+                        <p>
+                            <em class="s-rzc">认证车</em>
+                            <em class="s-bzc">保障车</em>
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li class="list-ad-h">
+                <div class="ad">
+                    <a href="#">
+                        <h3 class="ad-h3">汽车报价大全APP 买车省心价最优</h3>
+                        <img src="../temp/ad/ad3.jpg">
+                        <div class="ico-ad" style="position:absolute;right:5px;bottom:5px;width:24px;height:12px;line-height:12px;border:1px solid #fff;border-radius:1px;-webkit-border-radius:1px;color:#fff;text-align:center;font-size:0.9rem;">广告</div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="car-img">
+                        <img src="../images/pic_270_180.jpg"/>
+                    </div>
+                    <div class="car-txt">
+                        <p class="name">奥迪Q5(进口)10款  2.0T首发限量版运动款</p>
+                        <p class="time"><span class="txt-r">3分钟前</span>2013年 | 8.0万公里</p>
+                        <p class="pri"><span class="txt-r">个人</span>27.56万</p>
+                        <p>
+                            <em class="s-rzc">认证车</em>
+                            <em class="s-bzc">保障车</em>
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="bot-sxdiv">
+        <em class="ui-loading"></em>加载中...
+    </div>
+</div>
+<!-- 车源列表 end -->
+
+<!-- 浮动车源量条  start -->
+<div class="pop-fixedfloat" style="display:none-;">
+    <div class="pop-fixed-inner">
+        <span class="pop-f-txt">共12,343量车源</span>
+    </div>
+</div>
+<!-- 浮动车源量条  end -->
+
+<!-- 右侧浮动-专家精选  start -->
+<div class="fixed-right" style="display:none;">
+    <a href="#" class="zj">
+        <p>专家帮选</p>
+    </a>
+</div>
+<div class="fixed-right"  style="display:none;">
+    <a href="#" class="wj">
+        <p>调查问卷</p>
+    </a>
+</div>
+<!-- 右侧浮动-专家精选  end -->
+<!-- 双六入口  start 20170515-->
+<!--<div class="rig-fixed">-->
+    <!--<a href="#" class="double6 m-r-box"></a>-->
+<!--</div>-->
+<!-- 双六入口  end -->
+
+<div id="backtop" class="m-r-box" style="display:block;">
+    <!-- 返回顶部 start -->
+    <a onClick="window.scrollTo(0,0)" href="javascript:void(0);" class="m-r-top">
+        <div class="ico-top-arrow">
+        </div>
+    </a>
+    <!-- 返回顶部 end -->
+</div>
+
+<!--20170718增加 start-->
+<div class="hslie"></div>
+<div class="new-navlist">
+    <a href="">淘车</a> &gt; <a href="">北京二手车</a> &gt; <a href="">大众</a> &gt; <a href="">POLO</a>
+</div>
+<!--20170718增加 end-->
+
+<!-- footer start -->
+<div class="hslie"></div>
+<div class="new-footer">
+    <ul>
+        <li><a href="#" class="ckdl">看电脑版</a></li>
+        <li><a href="#" class="wzdt">看微信版</a></li>
+        <li><a href="#" class="tyij">提意见</a></li>
+    </ul>
+    <div class="new-footer-text">
+        <p>购车热线：<strong>4000-189-167 </strong> ( 9:00 – 21:00 )</p>
+        <p>易车二手车 m.taoche.com</p>
+    </div>
+</div>
+<!-- footer end -->
+
+<!-- 搜索 -->
+<div class="search-wrap" style="display:none;">
+    <div class="seach-box-pop bg-white">
+        <a href="javascript:;" class="search-back"></a>
+        <div class="seach">
+            <input type="text" placeholder="请输入品牌或车型名车关键字">
+            <i class="ser-close"></i>
+        </div>
+        <a href="javascript:;" class="search-txt">搜索</a>
+    </div>
+    <!-- /搜索 -->
+    <!-- 热门搜索 -->
+    <div class="list-txt-block">
+        <h2><span><a href="#">清除</a></span>搜索历史</h2>
+        <ul class="list-txt-list">
+            <li><a href="#">科鲁兹1-2年</a></li>
+            <li><a href="#">大众5010万</a></li>
+            <li><a href="#">宝莱5-10万</a></li>
+            <li><a href="#">大众</a></li>
+        </ul>
+    </div>
+
+    <div class="list-txt-block">
+        <h2>热门推荐</h2>
+        <ul class="list-txt-list">
+            <li><a href="#">保障车</a></li>
+            <li><a href="#">认证车</a></li>
+            <li><a href="#">准新车</a></li>
+            <li><a href="#">车型名称</a></li>
+            <li><a href="#">车型名称</a></li>
+            <li><a href="#">车型名称</a></li>
+            <li><a href="#">车型名称</a></li>
+            <li><a href="#">车型名称</a></li>
+            <li><a href="#">车型名称</a></li>
+        </ul>
+    </div>
+    <!-- /热门搜索 -->
+
+    <!-- 搜索车型列表 star-->
+    <div class="search-car-type-list sear-history" style="display:none;">
+        <ul>
+            <li><a href="#">2016款2.0LGL 手动 舒适版</a></li>
+            <li><a href="#">2016款2.0LGL 手动 舒适版</a></li>
+            <li><a href="#">2016款2.0LGL 手动 舒适版</a></li>
+        </ul>
+    </div>
+    <!-- 搜索车型列表 end-->
+</div>
+
+<script src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/iscroll.js"></script>
+<script type="text/javascript" src="../js/underscore.js"></script>
+<script type="text/javascript" src="../js/model.js"></script>
+<script type="text/javascript" src="../js/note.js"></script>
+<script type="text/javascript" src="../js/rightswipe3.js"></script>
+<script type="text/javascript" src="../js/brand.js"></script>
+<script>
+    /*点击筛选项效果*/
+    //获取筛选条距离顶部的高度
+    var filterBoxT = parseInt($(".filter-seller").offset().top);
+    function tabs(tabtit, tabcnt) {
+        tabtit.each(function(index) {
+            $(this).on('click', function() {
+                $(window).scrollTop(filterBoxT);
+                var tindex = index,
+                        that = $(this);
+                //定义下拉菜单显示方法swiperShow();
+                function swiperShow(){
+                    that.addClass('cur').siblings().removeClass('cur');
+                    tabcnt.eq(tindex).addClass("swipeTop-block").siblings().removeClass("swipeTop-block");
+                    $(".mark").show();
+                    $(".new-header").css({"z-index":0});
+                    that.parents(".filter-seller").addClass("filter-fixed");
+                    $(".leftmask3").hide();
+                }
+                //定义下拉菜单隐藏方法swiperHide();
+                function swiperHide(){
+                    tabcnt.eq(tindex).removeClass('swipeTop-block');
+                    that.removeClass('cur');
+                    $(".mark").hide();
+                    $(".new-header").css({"z-index":10001});
+                    that.parents(".filter-seller").removeClass("filter-fixed");
+                }
+                if (that.hasClass('cur')) {
+                    swiperHide();
+                } else if(that.hasClass('tabsli-brand')) {
+                    swiperShow();
+                    brandShow();
+                }else{
+                    swiperShow();
+                }
+
+            })
+
+
+        });
+    }
+    tabs($(".tabsli"),$(".sort-box-wrap"));
+
+
+    //点击关闭按钮
+    $(".btn-close-js,.mark").click(function(){
+        $(window).scrollTop(filterBoxT);
+        $(".sort-box-wrap").removeClass("swipeTop-block");
+        $(".mark").hide();
+        $("#filterNav ul li").removeClass("cur");
+        $(".new-header").css({"z-index":10001});
+        $(".filter-seller").removeClass("filter-fixed");
+    });
+
+    //搜索弹层显示高度设置2016.11.1
+    function searPop(){
+        //获取body的高度
+        var bdHeight = $("body").height();
+        //获取可视屏幕的高度
+        var windowH = $(window).height();
+        //获取搜索外层div
+        var searWrap = $(".search-wrap");
+        //获取搜索历史列表
+        var searHistory = $(".sear-history");
+        //定义外层div=searWrap的高度为body高度
+        searWrap.height(bdHeight)
+        //定义搜索历史列表的最小高度为屏幕高度
+        searHistory.css({"min-height":windowH});
+    }
+
+    //条件筛选展开收起
+    $(function(){
+        //展开收起效果
+        $(".term-hidecont").find(".tt-small,.tc-item").hide();
+        $(".stle-close").click(function(){
+            $(this).hide();
+            $(this).parent().find(".tt-small").show();
+            $(this).parent().find(".tc-item").slideDown();
+        });
+        $(".tt-open").click(function(){
+            $(this).parent().hide();
+            $(this).parents(".term-box").find(".stle-close").show();
+            $(this).parents(".term-box").find(".tc-item").slideUp();
+        });
+        //搜索弹层新增js2016.11.1
+        searPop();
+        $(".seach input").click(function(){
+            $(".search-wrap").show();
+        });
+        //点击返回按钮关闭搜索弹层
+        $(".search-back").click(function(){
+            $(".search-wrap").hide();
+        });
+    });
+
+    //品牌筛选
+    function brandShow() {
+        var $body = $('body');
+        //初始化品牌
+        $body.trigger('brandinit', {
+            selected: false,
+            notetop: -42,
+            noteTouchStart: function () {
+                //console.log('按下')
+            }, noteTouchEnd: function () {
+                //console.log('抬起')
+            },
+            fnEnd1: function () {
+                var $swipeLeft = this; //第一层对象
+                console.log($swipeLeft)
+                console.log('第一层已经打开')
+            },
+            fnEnd2: function () {
+                var $swipeLeft = this; //第二层对象
+                console.log($swipeLeft)
+                console.log('第二层已经打开')
+            }
+        });
+        api.brand.currentid = '9'; //默认选中品牌ID
+        api.car.currentid = '2593'; //默认选中车型ID
+        api.model.currentid = '116517'; //默认选中车款ID
+        //车款点击回调事件
+        api.model.clickEnd = function (paras) {
+            console.log(paras)
+            //paras.masterobj 品牌对象,paras.carobj 车型对象 ,paras.$current 车款对象
+            //品牌ID
+            console.log('品牌ID：' + paras.masterid) //已选品牌ID
+            //车型ID
+            console.log('车型ID ' + paras.carid)  //已选车型ID
+            //车款ID
+            console.log('车款ID：' + paras.modelid) //已选车款ID
+            api.brand.currentid = paras.masterid;
+            api.car.currentid = paras.carid;
+            api.model.currentid = paras.modelid;
+            var $back = $('.' + $leftPopupModels.attr('data-back'));
+            //关闭浮层
+            $back.trigger('close');
+        }
+    }
+
+
+</script>
+</body>
+</html>

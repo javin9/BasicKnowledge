@@ -1,0 +1,195 @@
+﻿
+
+/*输入框*/
+.form-box{margin:30px 0 0 210px;font-family: "Microsoft Yahei", "PingFangSC-Regular", "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial, sans-serif;}
+.form-group{min-height:50px;line-height:50px;position:relative;padding-left:95px;margin-bottom:30px;font-family: "Microsoft Yahei", "PingFangSC-Regular", "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial, sans-serif; z-index:1;}
+.form-name{width:80px;text-align:right;height:50px;line-height:50px;position:absolute;left:0px;top:0;font-size:18px;color:#333333;display:block;z-index:10;}
+.form-col{float:left;display:inline;width:580px;font-size:14px;color:#999999;}
+.form-checked{position:relative;float:left;border:1px solid #dddddd;height:48px;cursor:pointer;background-color:#ffffff; z-index:6;border-radius:3px;}
+.form-checked span{height:48px;line-height:48px;overflow:hidden;display:block;margin-top:0;color:#cbcbcb;font-size:16px;}
+.form-arrow{height:48px;width:48px;position:absolute;right:0;top:0;}
+.form-arrow em{width:22px;height:16px;right:4px;top:20px;background:url(../images/bd_bg1.png) no-repeat;background-position:left -27px;display:block;margin-top:14px;margin-left:20px;}
+
+.form-history{height:36px;line-height:36px;padding-left:12px;width:578px;*width:566px;border:1px solid #dddddd;border-radius:3px;color:#999999;font-size:14px;background-color:#fbfbfb;margin-top:10px;}
+.form-history a{margin-left:10px;}
+.form-history a:link,.form-history a:visited,.form-history a:hover{color:#3e7cc0;}
+
+.form-input{border:1px solid #dddddd;height:48px;*height:28px;line-height:normal;padding-top:10px;padding-bottom:10px;background-color:#ffffff; border-radius:3px;color:#cbcbcb;font-size:16px;float:left;margin-right:10px;font-family: "Microsoft Yahei", "PingFangSC-Regular", "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.checkbox{height:18px;line-height:18px;font-size:14px;color:#666666;margin:0 0 0 305px; }
+.checkbox em{float:left;width:16px;height:16px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat;background-position:left top;margin-right:5px;margin-top:2px;}
+.checkbox em.gx_on{background-position:-19px top;}
+
+/*表单离左边的间距*/
+.form-left-s { padding-left: 30px;}
+
+
+
+
+/*输入框宽度*/
+.form-w580{width:578px;*width:556px;padding-left:12px;padding-right:10px;}
+.form-w405{width:428px;*width:404px;padding-left:12px;padding-right:10px;}
+.form-w350{width:350px;padding-left:12px;padding-right:10px;}
+.form-w300{width:300px;*width:278px;padding-left:12px;padding-right:10px;}
+.form-w145{width:145px;*width:144px;padding-left:12px;padding-right:10px;}
+.form-w150{width:150px;*width:128px;padding-left:12px;padding-right:10px;}
+.form-w200{width:200px;*width:178px;padding-left:12px;padding-right:10px;}
+.form-w270{width:270px;*width:248px;padding-left:12px;padding-right:10px;}
+.form-w250{width:250px;*width:228px;padding-left:12px;padding-right:10px;}
+.form-w125{width:125px;*width:103px;padding-left:12px;padding-right:10px;}
+.form-w235{width:235px;*width:228px;padding-left:12px;padding-right:10px;}
+/*错误提示*/
+.error{font-size:14px;color:#d70c0c;float:left;margin-left:20px;}
+
+.carpic-s-list{padding-top:20px;}
+.carpic-s-box{width:120px;height:80px;overflow:hidden;margin-bottom:5px;}
+.carpic-s-list li{width:120px;text-align:center;float:left;margin-right:33px;padding-bottom:5px;}
+.carpic-s-list li img{width:120px;height:80px;webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;}
+	.carpic-s-list li:hover img{margin-left:-10px;}
+.carpic-s-list li p{font-size:14px;line-height:20px;color:#999999;}
+
+
+
+
+
+/*品牌浮层*/
+.bdlist li.onfor{z-index:20}
+.xfcbox{position:relative;float:left;margin-right:5px;border:1px solid #cccccc;padding:0 23px 0 7px;_padding:0 18px 0 7px;width:130px;height:28px;cursor:pointer;}
+.xfcbox span{height:28px;line-height:28px;overflow:hidden;width:135px;display:block;}
+.xfcbox em{width:0; height:0; font-size:0; overflow:hidden;border-width:5px; border-style:solid dashed   dashed   dashed ; border-color:#000000 transparent   transparent  transparent;position:absolute;right:10px;top:12px;}
+.nodianj{border:1px solid #dedede;color:#999999;}
+.nodianj em{border-color:#7f7f7f transparent   transparent  transparent;}
+.form-popover{position:absolute;right:-1px;top:60px;width:578px;border:1px solid #dddddd;z-index:20;background-color:#ffffff;border-radius:4px}
+.chexxuanz .form-popover{left:-1px;}
+.form-popover-l{width:48px;*width:20px;float:left;border-right:1px solid #dddddd;padding-top:5px;padding-left:14px;padding-right:14px;height:450px;background-color:#f9f9f9;overflow:hidden;}
+.form-popover-l div a{width:20px;height:20px;line-height:20px;text-align:center;color:#999999; display:block;padding:0 !important}
+.form-popover-l div a:link,.form-popover-l div a:visited{text-decoration:none;color:#666666;}
+.form-popover-l div a:hover{text-decoration:none;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -171px -175px;color:#666666!important;}
+.form-popover-l div.on a{width:20px;height:20px;line-height:20px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -42px 0;color:#ffffff;}
+.form-popover-l div.on a:link,.form-popover-l div.on a:visited,.form-popover-l div.on a:hover{text-decoration:none;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -42px 0;color:#ffffff!important;}
+.form-popover-r{width:528px;float:left;height:450px;overflow-y:auto;}
+.pinp_main{height:460px;overflow-y:auto;}
+.form-popover-p{border-top:1px solid #e1e1e1;margin-top:-1px;}
+.form-popover-p a{height:32px;line-height:32px;overflow:hidden;display:block;}
+.form-popover-p a,.form-popover-p a:link,.form-popover-p a:visited{text-decoration:none;color:#333333;padding-left:12px;}
+.form-popover-p a:hover{text-decoration:none;color:#ff9a1f;background-color:#f0f0f0;}
+.form-popover-p a.on,.form-popover-p a.on:link,.form-popover-p a.on:visited,
+.form-popover-p a.on:hover{text-decoration:none;color:#ff9a1f;background-color:#f0f0f0;}
+
+.form-popover-tit{height:37px;line-height:37px;position:relative;border-bottom:1px solid #dddddd;}
+.form-popover-tit ul{height:31px;position:absolute;left:0;top:-2px;padding-left:12px;}
+.form-popover-tit ul li{margin:0;padding:0;float:left;display:inline-block;position:relative;font-size:16px;font-family:"Microsoft YaHei";}
+.form-popover-tit ul li a{text-decoration:none;}
+.form-popover-tit ul li a:hover{text-decoration:none;color:#333333;}
+.form-popover-tit ul li.arrow-r{font-family: \5b8b\4f53, Arial, Helvetica, sans-serif;color:#333333;font-weight:normal;margin:2px 5px 0 5px;border-bottom:0;font-size:16px;}
+.form-popover-tit ul li.current{font-weight:bold;}
+
+.form-popover-p p{margin-top:1px;margin-bottom:1px;}
+.form-popover-p h3{padding-left:12px;height:32px;line-height:32px;font-size:14px;font-family:"Microsoft YaHei";color:#333333;background-color:#f0f0f0;}
+.form-popover-p h3 a,.form-popover-p h3 a:link,.form-popover-p h3 a:visited{padding-left:0;}
+.form-popover-p h4{margin-left:12px;height:32px;line-height:32px;font-size:14px;font-weight:bold;font-family:"Microsoft YaHei";color:#333333;margin-right:12px;}
+.form-popover-p h4.first{border-top:none;}
+/*车型浮层*/
+.cxtit{height:29px;line-height:29px;overflow:hidden;border-bottom:1px solid #e7e7e7;background-color:#fdfdfd;color:#999999;font-size:12px;font-weight:bold;text-align:center;}
+.h330{height:365px;overflow-y:hidden;padding-left:5px;}
+.form-popover-down{height:460px;overflow-y:auto;}
+.form-popover-p i{font-weight:bold;color:#333333;float:none;}
+.hauto{height:auto;overflow:visible;}
+.hauto .form-popover-down,.hauto .h330{height:auto;}
+.chexzfuc{left:175px;}
+.hauto{height:auto;}
+.hauto .form-popover-down,.hauto .h330{height:auto;}
+.hauto  .form-popover-p:last-child{margin-bottom:-1px;}
+/*地区 时间浮层*/
+.time-popover{height:448px;}
+.form-popover-year{height:448px;width:288px;border-right:1px solid #dddddd;overflow-y:hidden;float:left;}
+.form-popover-year-text{height:293px;overflow-y:auto;font-size:12px;}
+.nobder{border-bottom:none;padding:0 5px;}
+.form-height{height:448px;overflow-y:auto;}
+.form-height p{height:36px;line-height:36px;display:block;margin-top:1px;}
+
+.form-height a{height:36px;line-height:36px;overflow:hidden;display:block;font-family:"Microsoft YaHei";font-size:14px;color:#333333;padding-left:20px;}
+.form-height a,.form-height a:link,.form-height a:visited{text-decoration:none;color:#333333;}
+.form-height a:hover{text-decoration:none;color:#ff9a1f;background-color:#f0f0f0;}
+.form-height a.on,.form-height a.on:link,.form-height a.on:visited,
+.form-height a.on:hover{text-decoration:none;color:#ff9a1f;background-color:#f0f0f0;}
+.dqrit{width:71px;float:left;}
+.form-height_right{height:293px;overflow-y:hidden;}
+.form-col img{float:left;*margin-top:1px;}
+.form-col .form-refresh {padding-left:26px;width:0px;height:48px;display:block;overflow:hidden;*line-height:0;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat left -65px;float:left;margin-left:2px;}
+
+
+
+
+
+/*小尺寸输入框效果*/
+.form-sm{position:relative;}
+.form-sm  .form-input{height:40px;*height:20px;padding-top:7px;padding-bottom:8px;}
+.form-sm .form-col{width:auto;}
+.form-sm  .form-name{height:40px;line-height:40px;width:80px;font-size:16px;left:-30px;}
+.form-sm  .form-group{margin-bottom:20px;min-height:40px;line-height:40px;padding-left:70px;display:table;}
+.popover  .form-sm  .form-group{top:0;}
+.form-error-dowm{line-height:16px;font-size:14px;color:#d70c0c;display:table;padding-top:5px;width:100%;}
+.form-sm .checkbox{margin:0;}
+.form-sm .form-checked{height:40px;}
+.form-sm .form-arrow{height:40px;}
+.form-sm  .form-arrow em{background-position:left -30px;}
+.form-sm .form-checked span{height:40px;line-height:39px;}
+.form-sm .form-popover{left:-1px;top:42px;width:300px;}
+.form-sm  .form-popover-r{width:250px;}
+
+
+
+
+
+
+/*时间浮层*/
+.popover-time{position:absolute;left:-1px;top:50px;border:1px solid #dddddd;border-radius:3px;background-color:#ffffff;width:300px;padding-bottom:20px;}
+.popover-time-tit{height:50px;line-height:50px;text-align:center;border-bottom:1px solid #dddddd;font-size:16px;position:relative;}
+.popover-time-tit h4{font-size:16px;color:#333333;}
+.popover-year-prev a{width:0px;padding-left:17px;height:12px;font-size:0;overflow:hidden;position:absolute;left:20px;top:20px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -42px -65px;display:block;}
+.popover-year-prev a.on{background-position:-71px -65px;}
+.popover-month-prev a{width:0px;padding-left:10px;height:12px;font-size:0;overflow:hidden;position:absolute;left:55px;top:20px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -76px -101px;display:block;}
+.popover-month-prev a.on{background-position:-93px -101px;}
+.popover-month-next a{width:0px;padding-left:10px;height:12px;font-size:0;overflow:hidden;position:absolute;left:236px;top:20px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -56px -101px;display:block;}
+.popover-month-next a.on{background-position:-42px -101px;}
+.popover-year-next a{width:0px;padding-left:17px;height:12px;font-size:0;overflow:hidden;position:absolute;left:262px;top:20px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -71px -84px;display:block;}
+.popover-year-next a.on{background-position:-42px -84px;}
+.popover-time ol{padding-left:22px;padding-top:5px;margin-bottom:3px;}
+.popover-time ol li{float:left;width:20px;line-height:20px;float:left;margin-right:19px;text-align:center;font-size:14px;color:#999999;}
+.popover-time  ul{padding-left:22px;margin-top:35px;}
+.popover-time  ul li{width:20px;height:20px;line-height:20px;float:left;margin-right:19px;text-align:center;font-size:14px;color:#333333;margin-bottom:5px;display:inline-block;}
+.popover-time  ul li.current{color:#ffffff;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/bd_bg1.png) no-repeat -42px 0px ;}
+.popover-time  ul li.old-current{color:#cccccc;}
+
+/*输入表单文字颜色*/
+.form-on{color:#333333;}
+.form-checked span.form-on{color:#333333;}
+
+
+/*输入框行高*/
+.form-sm .form-group-h20{min-height:20px;line-height:20px;}
+.form-sm  .margin-t20{margin-top:-22px;}
+
+/*输入表单文字颜色*/
+.form-input-red{border:1px solid #f58181;-webkit-box-shadow:0 0 5px  #f58181;-moz-box-shadow: 0 0 5px  #f58181; box-shadow: 0 0 5px  #f58181;}
+.form-on{color:#333333;}
+.form-popover-p a i{color:#999999;font-style:normal;margin-left:3px;}
+
+/*10月17日  评估添加溢出蕴藏*/
+.form-sm .form-checked span{overflow:hidden;padding-right:20px;*padding-right:0;}
+
+/*11月18日  行驶里程*/
+.form-text-all{width:250px;height:40px;line-height:40px;border:1px solid #dddddd;border-radius:3px;float:left;}
+.form-text-all .form-input{border:none;width:170px;*width:160px;padding-top:0;padding-bottom:0;height:38px;*height:37px;line-height:38px;padding-left:12px;font-size:16px;}
+.form-text-all span{float:right;margin-right:12px;font-size:15px;color:#333333;line-height:38px;}
+
+
+/*12月26 不可点击状态*/
+.form-height a.noclick, .form-height a.noclick:link, .form-height a.noclick:visited, .form-height a.noclick:hover{color:#cccccc;background:none;text-decoration:none;cursor:text;}
+.time-popover h3{padding-left:20px;height:36px;line-height:36px;font-size:14px;font-family:"Microsoft YaHei";color:#333333;background-color:#f0f0f0;}
+.time-popover h3 a{margin-left:-20px;}
