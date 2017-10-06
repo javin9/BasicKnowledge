@@ -13,7 +13,7 @@
 var myScroll;
 
 function loaded () {
-	myScroll = new IScroll('#wrapper', { useTransition: false });
+	myScroll = new IScroll('#wrapper', { useTransition: false,bounce:false });
 }
 
 document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {

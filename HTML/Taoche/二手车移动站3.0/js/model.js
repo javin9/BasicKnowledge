@@ -1,4 +1,4 @@
-﻿/*
+/*
 开发者：王亮
 功能:移动端组件封装
 时间:2014.5.5
@@ -172,7 +172,7 @@ Date.prototype.compareValue || (Date.prototype.compareValue = function (date2) {
         return -1;
     }
 
-    return 0;
+    return 0; 
 
 });
 
