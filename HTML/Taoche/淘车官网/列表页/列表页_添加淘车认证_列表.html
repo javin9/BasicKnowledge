@@ -1,0 +1,1095 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>列表页</title>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/html5shiv.min.js"></script>
+    <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/Respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" href="../css/col.min.css">
+<link rel="stylesheet" type="text/css" href="../css/1200_com.css">
+<link rel="stylesheet" type="text/css" href="../css/1200_头.css">
+<link rel="stylesheet" type="text/css" href="../css/图片列表.css">
+<link rel="stylesheet" type="text/css" href="../css/按钮.css">
+<link rel="stylesheet" type="text/css" href="../css/⁮标题.css">
+<link rel="stylesheet" type="text/css" href="../css/筛选.css">
+<link rel="stylesheet" type="text/css" href="列表页.css">
+<link rel="stylesheet" type="text/css" href="列表页_news.css"/>
+<link rel="stylesheet" type="text/css" href="../css/翻页.css">
+<link rel="stylesheet" type="text/css" href="../css/推荐商家.css">
+<link rel="stylesheet" type="text/css" href="../css/浮层.css">
+<link rel="stylesheet" type="text/css" href="../font/iconfont.css"/>
+<link rel="stylesheet" type="text/css" href="25.css"/>
+<link rel="stylesheet" type="text/css" href="./筛选条件.css">
+<link rel="stylesheet" type="text/css" href="../css/购车节.css">
+<link rel="stylesheet" type="text/css" href="../css/二手车服务.css">
+<link rel="stylesheet" href="./新增淘车认证列表样式.css">
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="../css/ie-hack.css">
+<![endif]-->
+<script src="../js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+<!--面包屑 -->
+<div class="container margin-md body_font">
+<div class="left-column-lg margin-top-md clear_margin"> 
+	<div class="crumbs">
+		您的位置：<a href="#" target="_blank">淘车</a> <i>&gt;</i> <a href="#" target="_blank">买车</a> <i>&gt;</i><a href="#" target="_blank">二手奥迪</a><i>&gt;</i> <a href="#" target="_blank">二手奥迪A8L（进口）</a> <i>&gt;</i> <a href="#" target="_blank">北京二手奥迪	A8L（进口）</a> <i>&gt;</i> <a href="#" target="_blank"><strong>45 TFSI quattro 专享型</strong></a>
+	</div>
+	<div class="list_banner"><img src="./images/list_auth_banner.png" alt=""></div>
+	<!--车型分类tab  star-->
+	<div class="tabbar">
+		<ul class="tab_ul">
+			<li class="tab_li"><a href="#">北京二手车</a></li>
+			<li class="tab_hot"><a class="active" href="#">淘车认证车</a><em class="hot_ico"></em></li>
+			<li><a href="#">保障车</a></li>
+			<li><a href="#">品牌认证车</a></li>
+			<li><a href="#">商家</a></li>
+			<li><a href="#">个人</a></li>
+		</ul>
+		<!--切换九宫格图标按钮-->
+		<div class="flex"> 
+			<a href="#" class="row iconfont icon-grid-list active"></a> 
+			<a href="#" class="column iconfont icon-grid-block"></a> 
+		</div>
+	</div>
+	<!--车型分类tab end --> 
+	
+	<!--排序  star-->
+	<div class="sort">
+		<ul>
+			<li>
+				<div class="sort_price"> <a class="sort_color defaultsort">默认排序</a> <a href="javascript:;" title="价格从高到低">价格&nbsp;</a><i class="iconfont icon-order-desc"></i> <a href="javascript:;" title="价格从低到高">价格&nbsp;</a><i class="iconfont icon-order-asc color_Arrow"></i> <a href="javascript:;" title="最新发布">最新&nbsp;</a><i class="iconfont icon-order-desc color_Arrow"></i> <a href="javascript:;" title="里程从少到多">里程&nbsp;</a><i class="iconfont icon-order-desc color_Arrow"></i> <a href="javascript:;" title="车龄从短到长">车龄&nbsp;</a><i class="iconfont icon-order-asc color_Arrow"></i> </div>
+			</li>
+			<li class="select_pop_main">
+				<div class="select_sort">
+					<div class="select_pop">
+						<label class="GOUCHE_CHECKBOX"><i class="iconfont icon-checkbox icon-checked"></i>6.6购车节</label>
+						<label><i class="iconfont icon-checkbox"></i>准新车</label>
+						<label><i class="iconfont icon-checkbox"></i>可迁全国</label>
+						<label><i class="iconfont icon-checkbox"></i>车检报告</label>
+						<br>
+						<label><i class="iconfont icon-checkbox"></i>在售车源</label>
+						<label><i class="iconfont icon-checkbox"></i>延长质保</label>
+						<label><i class="iconfont icon-checkbox"></i>原厂质保</label>
+						<label><i class="iconfont icon-checkbox"></i>车检报告</label>
+						<label><i class="iconfont icon-checkbox"></i>免费过户</label>
+					</div>
+					<span class="more"> <span class="more_pos">更多<i class="iconfont icon-drop-down"></i></span> </span> </div>
+			</li>
+			<li class="last_li"> 共<i>83923</i>台车源 </li>
+		</ul>
+	</div>
+	<!--排序  end--> 
+	
+	<!--车源图片列表  star-->
+	
+	<div class="car_list">
+		<div class="list_item">
+			<div class="img_stop"> <a href="#"> <img src="../images/300_200_pic.jpg"> </a> 
+				
+				<!--找相似-->
+				<div class="img_pop"> <a href="#">找相似</a> </div>
+				
+				<!--已售状态-->
+				<div class="sold"> <i>已售</i> </div>
+				
+				<!--角标1-->
+				<!-- <div class="corner"> 
+					<img src="http://image.bitautoimg.com/taoche/2017/pc/20170411/news_icon_jiao.png"> 
+				</div> -->
+				<!-- <i class="GOUCHE_ICON GOUCHE_6"></i>  -->
+				<i class="RENZHENG2"></i>
+			</div>
+			<div class="item_details">
+				<h1> <i class="iconbrand iconbrand_6"></i> <a href="#">宝马3系 2007款 325i豪华运动型</a> <i class="title_pop_one">精</i> <i class="title_pop_one title_pop_two">顶</i> </h1>
+				<ul class="ul_news">
+					<li class="first_li"> <i>上牌时间</i><br>
+						2015年6月 </li>
+					<li> <i>行驶里程</i><br>
+						2.23万公里 </li>
+					<li> <i>所在地</i><br>
+						北京 </li>
+					<li style="border:none;"> <i>排放标准</i><br>
+						国三 </li>
+				</ul>
+				<div class="auth-ico-list auth-ico-setmt">
+					<em class="em_type_30day">30天可退</em>
+					<em class="em_type_year">一年保修</em>
+					<em class="em_type_fenqi">分期付款</em>
+				</div>
+			</div>
+			<div class="item_price">
+				<div class="clearfix">
+					<h2 class="heji">40.12万</h2>
+					<p class="car_info">首付<span>200.15万</span></p>
+				</div>
+				<p  class="">新车价 : <del>23.88万</del> &nbsp;&nbsp;&nbsp;省11.2万</p>
+				<p> 
+					<i class="iconfont icon-tag-collect icon_heart"></i> 
+					<i class="sc">收藏</i> 
+					<i class="iconfont icon-tag-compared icon_heart"></i> 
+					<i class="db db_already">对比</i> 
+					<i id="likes_none" class="likes_none">+1</i> 
+				</p>
+			</div>
+		</div>
+		<div class="list_item">
+			<div class="img_stop"> <a href="#"> <img src="../images/300_200_pic.jpg"> </a> 
+				
+				<!--找相似-->
+				<div class="img_pop"> <a href="#">找相似</a> </div>
+				
+				<!--已售状态-->
+				<div class="sold"> <i>已售</i> </div>
+				
+				<!--角标1-->
+				<!-- <div class="corner"> 
+					<img src="http://image.bitautoimg.com/taoche/2017/pc/20170411/news_icon_jiao.png"> 
+				</div> -->
+				<!-- <i class="GOUCHE_ICON GOUCHE_6"></i>  -->
+				<i class="RENZHENG2"></i>
+			</div>
+			<div class="item_details">
+				<h1> <i class="iconbrand iconbrand_6"></i> <a href="#">宝马3系 2007款 325i豪华运动型</a> <i class="title_pop_one">精</i> <i class="title_pop_one title_pop_two">顶</i> </h1>
+				<ul class="ul_news">
+					<li class="first_li"> <i>上牌时间</i><br>
+						2015年6月 </li>
+					<li> <i>行驶里程</i><br>
+						2.23万公里 </li>
+					<li> <i>所在地</i><br>
+						北京 </li>
+					<li style="border:none;"> <i>排放标准</i><br>
+						国三 </li>
+				</ul>
+				<div class="auth-ico-list">
+					<em class="em_type_30day">30天可退</em>
+					<em class="em_type_year">一年保修</em>
+					<em class="em_type_fenqi">分期付款</em>
+				</div>
+				<!-- <ul class="ul_tab">
+					<li class="first_li"><a href="http://www.hao123.com" class="iconfont">保障车</a></li>
+					<li class="second_li"><a href="#" class="iconfont">帮买</a></li>
+					<li class="third_li"><a href="#" class="iconfont">原厂保质</a></li>
+					<li class="fourth_li"><a href="#" class="iconfont">车检报告</a></li>
+					<li class="fifth_li"><a href="#" class="iconfont">认证车</a></li>
+					<li class="sixth_li"><a href="#" class="iconfont">免费过户</a></li>
+					<li class="seventh_li"><a href="#" class="iconfont">延长质保</a></li>
+					<li class="seventh_li_font font_margin">准新车</li>
+					<li class="seventh_li_font">可迁全国</li>
+				</ul> -->
+			</div>
+			<div class="item_price">
+				<div class="clearfix">
+					<h2 class="heji">40.12万</h2>
+					<p class="car_info">首付<span>200.15万</span></p>
+				</div>
+				<p  class="">新车价 : <del>23.88万</del> &nbsp;&nbsp;&nbsp;省11.2万</p>
+				<p> 
+					<i class="iconfont icon-tag-collect icon_heart"></i> 
+					<i class="sc">收藏</i> 
+					<i class="iconfont icon-tag-compared icon_heart"></i> 
+					<i class="db db_already">对比</i> 
+					<i id="likes_none" class="likes_none">+1</i> 
+				</p>
+			</div>
+		</div>
+		<div class="list_item">
+			<div class="img_stop"> <a href="#"> <img src="../images/300_200_pic.jpg"> </a> 
+				
+				<!--找相似-->
+				<div class="img_pop"> <a href="#">找相似</a> </div>
+				
+				<!--已售状态-->
+				<div class="sold"> <i>已售</i> </div>
+				
+				<!--角标1-->
+				<!-- <div class="corner"> 
+					<img src="http://image.bitautoimg.com/taoche/2017/pc/20170411/news_icon_jiao.png"> 
+				</div> -->
+				<!-- <i class="GOUCHE_ICON GOUCHE_6"></i>  -->
+				<i class="RENZHENG2"></i>
+			</div>
+			<div class="item_details">
+				<h1> <i class="iconbrand iconbrand_6"></i> <a href="#">宝马3系 2007款 325i豪华运动型</a> <i class="title_pop_one">精</i> <i class="title_pop_one title_pop_two">顶</i> </h1>
+				<ul class="ul_news">
+					<li class="first_li"> <i>上牌时间</i><br>
+						2015年6月 </li>
+					<li> <i>行驶里程</i><br>
+						2.23万公里 </li>
+					<li> <i>所在地</i><br>
+						北京 </li>
+					<li style="border:none;"> <i>排放标准</i><br>
+						国三 </li>
+				</ul>
+				<div class="auth-ico-list">
+					<em class="em_type_30day">30天可退</em>
+					<em class="em_type_year">一年保修</em>
+					<em class="em_type_fenqi">分期付款</em>
+				</div>
+				<!-- <ul class="ul_tab">
+					<li class="first_li"><a href="http://www.hao123.com" class="iconfont">保障车</a></li>
+					<li class="second_li"><a href="#" class="iconfont">帮买</a></li>
+					<li class="third_li"><a href="#" class="iconfont">原厂保质</a></li>
+					<li class="fourth_li"><a href="#" class="iconfont">车检报告</a></li>
+					<li class="fifth_li"><a href="#" class="iconfont">认证车</a></li>
+					<li class="sixth_li"><a href="#" class="iconfont">免费过户</a></li>
+					<li class="seventh_li"><a href="#" class="iconfont">延长质保</a></li>
+					<li class="seventh_li_font font_margin">准新车</li>
+					<li class="seventh_li_font">可迁全国</li>
+				</ul> -->
+			</div>
+			<div class="item_price">
+				<div class="clearfix">
+					<h2 class="heji">40.12万</h2>
+					<p class="car_info">首付<span>200.15万</span></p>
+				</div>
+				<p  class="">新车价 : <del>23.88万</del> &nbsp;&nbsp;&nbsp;省11.2万</p>
+				<p> 
+					<i class="iconfont icon-tag-collect icon_heart"></i> 
+					<i class="sc">收藏</i> 
+					<i class="iconfont icon-tag-compared icon_heart"></i> 
+					<i class="db db_already">对比</i> 
+					<i id="likes_none" class="likes_none">+1</i> 
+				</p>
+			</div>
+		</div>
+		
+		<!--搜索条件-->
+		<div class="search"> <span>您可能感兴趣的车 : </span>
+			<ul>
+				<li><a href="#">新蒙迪欧 , 10-15万</a></li>
+				<li><a href="#">新蒙迪欧 , 10-15万</a></li>
+				<li><a href="#">新蒙迪欧 , 10-15万</a></li>
+				<li><a href="#">新蒙迪欧 , 10-15万</a></li>
+				<li><a href="#">新蒙迪欧 , 10-15万</a></li>
+			</ul>
+		</div>
+		<div class="list_item">
+			<div class="img_stop"> <a href="#"> <img src="../images/300_200_pic.jpg"> </a> 
+				
+				<!--找相似-->
+				<div class="img_pop"> <a href="#">找相似</a> </div>
+				
+				<!--已售状态-->
+				<div class="sold"> <i>已售</i> </div>
+				
+				<!--角标1-->
+				<div class="corner"> <img src="http://image.bitautoimg.com/taoche/2017/pc/20170411/news_icon_jiao.png"> </div>
+			</div>
+			<div class="item_details">
+				<h1> <i class="iconbrand iconbrand_6"></i> <a href="#">宝马3系 2007款 325i豪华运动型</a> <i class="title_pop_one">精</i> <i class="title_pop_one title_pop_two">顶</i> </h1>
+				<ul class="ul_news">
+					<li class="first_li"> <i>上牌时间</i><br>
+						2015年6月 </li>
+					<li> <i>行驶里程</i><br>
+						2.23万公里 </li>
+					<li> <i>所在地</i><br>
+						北京 </li>
+					<li style="border:none;"> <i>排放标准</i><br>
+						国三 </li>
+				</ul>
+				<ul class="ul_tab">
+					<li class="first_li"><a href="http://www.hao123.com" class="iconfont">保障车</a></li>
+					<li class="second_li"><a href="#" class="iconfont">帮买</a></li>
+					<!--         				<li class="third_li"><a href="#" class="iconfont">原厂保质</a></li>-->
+					<li class="fourth_li"><a href="#" class="iconfont">车检报告</a></li>
+					<!--<li class="fifth_li"><a href="#" class="iconfont">认证车</a></li>-->
+					<li class="sixth_li"><a href="#" class="iconfont">免费过户</a></li>
+					<li class="seventh_li"><a href="#" class="iconfont">延长质保</a></li>
+					<li class="seventh_li_font font_margin">准新车</li>
+					<li class="seventh_li_font">可迁全国</li>
+				</ul>
+			</div>
+			<div class="item_price">
+				<h2>40.12万</h2>
+				<p>新车价 : <del>23.88万</del> &nbsp;&nbsp;&nbsp;省11.2万</p>
+			</div>
+		</div>
+		<div class="list_item">
+			<div class="img_stop"> <a href="#"> <img src="../images/300_200_pic.jpg"> </a> 
+				
+				<!--找相似-->
+				<div class="img_pop"> <a href="#">找相似</a> </div>
+				
+				<!--已售状态-->
+				<div class="sold"> <i>已售</i> </div>
+				
+				<!--角标1-->
+				<div class="corner"> <img src="http://image.bitautoimg.com/taoche/2017/pc/20170411/news_icon_jiao.png"> </div>
+			</div>
+			<div class="item_details">
+				<h1> <i class="iconbrand iconbrand_7"></i> <a href="#">宝马3系 2007款 325i豪华运动型</a> <i class="title_pop_one">精</i> <i class="title_pop_one title_pop_two">顶</i> </h1>
+				<ul class="ul_news">
+					<li class="first_li"> <i>上牌时间</i><br>
+						2015年6月 </li>
+					<li> <i>行驶里程</i><br>
+						2.23万公里 </li>
+					<li> <i>所在地</i><br>
+						北京 </li>
+					<li style="border:none;"> <i>排放标准</i><br>
+						国三 </li>
+				</ul>
+				<ul class="ul_tab">
+					<li class="first_li"><a href="http://www.hao123.com" class="iconfont">保障车</a></li>
+					<li class="second_li"><a href="#" class="iconfont">帮买</a></li>
+					<!--         				<li class="third_li"><a href="#" class="iconfont">原厂保质</a></li>-->
+					<li class="fourth_li"><a href="#" class="iconfont">车检报告</a></li>
+					<!--<li class="fifth_li"><a href="#" class="iconfont">认证车</a></li>-->
+					<li class="sixth_li"><a href="#" class="iconfont">免费过户</a></li>
+					<li class="seventh_li"><a href="#" class="iconfont">延长质保</a></li>
+					<li class="seventh_li_font font_margin">准新车</li>
+					<li class="seventh_li_font">可迁全国</li>
+				</ul>
+			</div>
+			<div class="item_price">
+				<h2>40.12万</h2>
+				<p>新车价 : <del>23.88万</del> &nbsp;&nbsp;&nbsp;省11.2万</p>
+			</div>
+		</div>
+		<div class="list_item">
+			<div class="img_stop"> <a href="#"> <img src="../images/300_200_pic.jpg"> </a> 
+				
+				<!--找相似-->
+				<div class="img_pop"> <a href="#">找相似</a> </div>
+				
+				<!--已售状态-->
+				<div class="sold"> <i>已售</i> </div>
+				
+				<!--角标1-->
+				<div class="corner"> <img src="http://image.bitautoimg.com/taoche/2017/pc/20170411/news_icon_jiao.png"> </div>
+			</div>
+			<div class="item_details">
+				<h1> <i class="iconbrand iconbrand_8"></i> <a href="#">宝马3系 2007款 325i豪华运动型</a> <i class="title_pop_one">精</i> <i class="title_pop_one title_pop_two">顶</i> </h1>
+				<ul class="ul_news">
+					<li class="first_li"> <i>上牌时间</i><br>
+						2015年6月 </li>
+					<li> <i>行驶里程</i><br>
+						2.23万公里 </li>
+					<li> <i>所在地</i><br>
+						北京 </li>
+					<li style="border:none;"> <i>排放标准</i><br>
+						国三 </li>
+				</ul>
+				<ul class="ul_tab">
+					<li class="first_li"><a href="http://www.hao123.com" class="iconfont">保障车</a></li>
+					<li class="second_li"><a href="#" class="iconfont">帮买</a></li>
+					<!--         				<li class="third_li"><a href="#" class="iconfont">原厂保质</a></li>-->
+					<li class="fourth_li"><a href="#" class="iconfont">车检报告</a></li>
+					<!--<li class="fifth_li"><a href="#" class="iconfont">认证车</a></li>-->
+					<li class="sixth_li"><a href="#" class="iconfont">免费过户</a></li>
+					<li class="seventh_li"><a href="#" class="iconfont">延长质保</a></li>
+					<li class="seventh_li_font font_margin">准新车</li>
+					<li class="seventh_li_font">可迁全国</li>
+				</ul>
+			</div>
+			<div class="item_price">
+				<h2>40.12万</h2>
+				<p>新车价 : <del>23.88万</del> &nbsp;&nbsp;&nbsp;省11.2万</p>
+			</div>
+		</div>
+		<div class="list_item">
+			<div class="img_stop"> <a href="#"> <img src="../images/300_200_pic.jpg"> </a> 
+				
+				<!--找相似-->
+				<div class="img_pop"> <a href="#">找相似</a> </div>
+				
+				<!--已售状态-->
+				<div class="sold"> <i>已售</i> </div>
+				
+				<!--角标1-->
+				<div class="corner"> <img src="http://image.bitautoimg.com/taoche/2017/pc/20170411/news_icon_jiao.png"> </div>
+			</div>
+			<div class="item_details">
+				<h1> <i class="iconbrand iconbrand_9"></i> <a href="#">宝马3系 2007款 325i豪华运动型</a> <i class="title_pop_one">精</i> <i class="title_pop_one title_pop_two">顶</i> </h1>
+				<ul class="ul_news">
+					<li class="first_li"> <i>上牌时间</i><br>
+						2015年6月 </li>
+					<li> <i>行驶里程</i><br>
+						2.23万公里 </li>
+					<li> <i>所在地</i><br>
+						北京 </li>
+					<li style="border:none;"> <i>排放标准</i><br>
+						国三 </li>
+				</ul>
+				<ul class="ul_tab">
+					<li class="first_li"><a href="http://www.hao123.com" class="iconfont">保障车</a></li>
+					<li class="second_li"><a href="#" class="iconfont">帮买</a></li>
+					<!--         				<li class="third_li"><a href="#" class="iconfont">原厂保质</a></li>-->
+					<li class="fourth_li"><a href="#" class="iconfont">车检报告</a></li>
+					<!--<li class="fifth_li"><a href="#" class="iconfont">认证车</a></li>-->
+					<li class="sixth_li"><a href="#" class="iconfont">免费过户</a></li>
+					<li class="seventh_li"><a href="#" class="iconfont">延长质保</a></li>
+					<li class="seventh_li_font font_margin">准新车</li>
+					<li class="seventh_li_font">可迁全国</li>
+				</ul>
+			</div>
+			<div class="item_price">
+				<h2>40.12万</h2>
+				<p>新车价 : <del>23.88万</del> &nbsp;&nbsp;&nbsp;省11.2万</p>
+			</div>
+		</div>
+		<div class="list_item">
+			<div class="img_stop"> <a href="#"> <img src="../images/300_200_pic.jpg"> </a> 
+				
+				<!--找相似-->
+				<div class="img_pop"> <a href="#">找相似</a> </div>
+				
+				<!--已售状态-->
+				<div class="sold"> <i>已售</i> </div>
+				
+				<!--角标1-->
+				<div class="corner"> <img src="http://image.bitautoimg.com/taoche/2017/pc/20170411/news_icon_jiao.png"> </div>
+			</div>
+			<div class="item_details">
+				<h1> <i class="iconbrand iconbrand_11"></i> <a href="#">宝马3系 2007款 325i豪华运动型</a> <i class="title_pop_one">精</i> <i class="title_pop_one title_pop_two">顶</i> </h1>
+				<ul class="ul_news">
+					<li class="first_li"> <i>上牌时间</i><br>
+						2015年6月 </li>
+					<li> <i>行驶里程</i><br>
+						2.23万公里 </li>
+					<li> <i>所在地</i><br>
+						北京 </li>
+					<li style="border:none;"> <i>排放标准</i><br>
+						国三 </li>
+				</ul>
+				<ul class="ul_tab">
+					<li class="first_li"><a href="http://www.hao123.com" class="iconfont">保障车</a></li>
+					<li class="second_li"><a href="#" class="iconfont">帮买</a></li>
+					<!--         				<li class="third_li"><a href="#" class="iconfont">原厂保质</a></li>-->
+					<li class="fourth_li"><a href="#" class="iconfont">车检报告</a></li>
+					<!--<li class="fifth_li"><a href="#" class="iconfont">认证车</a></li>-->
+					<li class="sixth_li"><a href="#" class="iconfont">免费过户</a></li>
+					<li class="seventh_li"><a href="#" class="iconfont">延长质保</a></li>
+					<li class="seventh_li_font font_margin">准新车</li>
+					<li class="seventh_li_font">可迁全国</li>
+				</ul>
+			</div>
+			<div class="item_price">
+				<h2>40.12万</h2>
+				<p>新车价 : <del>23.88万</del> &nbsp;&nbsp;&nbsp;省11.2万</p>
+			</div>
+		</div>
+		
+		<!--search_Interest-->
+		<div class="search_interest_com">周边优质二手车推荐</div>
+		<div class="list_item">
+			<div class="img_stop"> <a href="#"> <img src="../images/300_200_pic.jpg"> </a> 
+				
+				<!--找相似-->
+				<div class="img_pop"> <a href="#">找相似</a> </div>
+				
+				<!--已售状态-->
+				<div class="sold"> <i>已售</i> </div>
+				
+				<!--角标1-->
+				<div class="corner"> <img src="http://image.bitautoimg.com/taoche/2017/pc/20170411/news_icon_jiao.png"> </div>
+			</div>
+			<div class="item_details">
+				<h1> <i class="iconbrand iconbrand_12"></i> <a href="#">宝马3系 2007款 325i豪华运动型</a> <i class="title_pop_one">精</i> <i class="title_pop_one title_pop_two">顶</i> </h1>
+				<ul class="ul_news">
+					<li class="first_li"> <i>上牌时间</i><br>
+						2015年6月 </li>
+					<li> <i>行驶里程</i><br>
+						2.23万公里 </li>
+					<li> <i>所在地</i><br>
+						北京 </li>
+					<li style="border:none;"> <i>排放标准</i><br>
+						国三 </li>
+				</ul>
+				<ul class="ul_tab">
+					<li class="first_li"><a href="http://www.hao123.com" class="iconfont">保障车</a></li>
+					<li class="second_li"><a href="#" class="iconfont">帮买</a></li>
+					<!--         				<li class="third_li"><a href="#" class="iconfont">原厂保质</a></li>-->
+					<li class="fourth_li"><a href="#" class="iconfont">车检报告</a></li>
+					<!--<li class="fifth_li"><a href="#" class="iconfont">认证车</a></li>-->
+					<li class="sixth_li"><a href="#" class="iconfont">免费过户</a></li>
+					<li class="seventh_li"><a href="#" class="iconfont">延长质保</a></li>
+					<li class="seventh_li_font font_margin">准新车</li>
+					<li class="seventh_li_font">可迁全国</li>
+				</ul>
+			</div>
+			<div class="item_price">
+				<h2>40.12万</h2>
+				<p>新车价 : <del>23.88万</del> &nbsp;&nbsp;&nbsp;省11.2万</p>
+			</div>
+		</div>
+		<div class="list_item">
+			<div class="img_stop"> <a href="#"> <img src="../images/300_200_pic.jpg"> </a> 
+				
+				<!--找相似-->
+				<div class="img_pop"> <a href="#">找相似</a> </div>
+				
+				<!--已售状态-->
+				<div class="sold"> <i>已售</i> </div>
+				
+				<!--角标1-->
+				<div class="corner"> <img src="http://image.bitautoimg.com/taoche/2017/pc/20170411/news_icon_jiao.png"> </div>
+			</div>
+			<div class="item_details">
+				<h1> <i class="iconbrand iconbrand_13"></i> <a href="#">宝马3系 2007款 325i豪华运动型</a> <i class="title_pop_one">精</i> <i class="title_pop_one title_pop_two">顶</i> </h1>
+				<ul class="ul_news">
+					<li class="first_li"> <i>上牌时间</i><br>
+						2015年6月 </li>
+					<li> <i>行驶里程</i><br>
+						2.23万公里 </li>
+					<li> <i>所在地</i><br>
+						北京 </li>
+					<li style="border:none;"> <i>排放标准</i><br>
+						国三 </li>
+				</ul>
+				<ul class="ul_tab">
+					<li class="first_li"><a href="http://www.hao123.com" class="iconfont">保障车</a></li>
+					<li class="second_li"><a href="#" class="iconfont">帮买</a></li>
+					<!--         				<li class="third_li"><a href="#" class="iconfont">原厂保质</a></li>-->
+					<li class="fourth_li"><a href="#" class="iconfont">车检报告</a></li>
+					<!--<li class="fifth_li"><a href="#" class="iconfont">认证车</a></li>-->
+					<li class="sixth_li"><a href="#" class="iconfont">免费过户</a></li>
+					<li class="seventh_li"><a href="#" class="iconfont">延长质保</a></li>
+					<li class="seventh_li_font font_margin">准新车</li>
+					<li class="seventh_li_font">可迁全国</li>
+				</ul>
+			</div>
+			<div class="item_price">
+				<h2>40.12万</h2>
+				<p>新车价 : <del>23.88万</del> &nbsp;&nbsp;&nbsp;省11.2万</p>
+			</div>
+		</div>
+		<div class="list_item">
+			<div class="img_stop"> <a href="#"> <img src="../images/300_200_pic.jpg"> </a> 
+				
+				<!--找相似-->
+				<div class="img_pop"> <a href="#">找相似</a> </div>
+				
+				<!--已售状态-->
+				<div class="sold"> <i>已售</i> </div>
+				
+				<!--角标1-->
+				<div class="corner"> <img src="http://image.bitautoimg.com/taoche/2017/pc/20170411/news_icon_jiao.png"> </div>
+			</div>
+			<div class="item_details">
+				<h1> <i class="iconbrand iconbrand_14"></i> <a href="#">宝马3系 2007款 325i豪华运动型</a> <i class="title_pop_one">精</i> <i class="title_pop_one title_pop_two">顶</i> </h1>
+				<ul class="ul_news">
+					<li class="first_li"> <i>上牌时间</i><br>
+						2015年6月 </li>
+					<li> <i>行驶里程</i><br>
+						2.23万公里 </li>
+					<li> <i>所在地</i><br>
+						北京 </li>
+					<li style="border:none;"> <i>排放标准</i><br>
+						国三 </li>
+				</ul>
+				<ul class="ul_tab">
+					<li class="first_li"><a href="http://www.hao123.com" class="iconfont">保障车</a></li>
+					<li class="second_li"><a href="#" class="iconfont">帮买</a></li>
+					<!--         				<li class="third_li"><a href="#" class="iconfont">原厂保质</a></li>-->
+					<li class="fourth_li"><a href="#" class="iconfont">车检报告</a></li>
+					<!--<li class="fifth_li"><a href="#" class="iconfont">认证车</a></li>-->
+					<li class="sixth_li"><a href="#" class="iconfont">免费过户</a></li>
+					<li class="seventh_li"><a href="#" class="iconfont">延长质保</a></li>
+					<li class="seventh_li_font font_margin">准新车</li>
+					<li class="seventh_li_font">可迁全国</li>
+				</ul>
+			</div>
+			<div class="item_price">
+				<h2>40.12万</h2>
+				<p>新车价 : <del>23.88万</del> &nbsp;&nbsp;&nbsp;省11.2万</p>
+			</div>
+		</div>
+		<div class="list_item border_none">
+			<div class="img_stop"> <a href="#"> <img src="../images/300_200_pic.jpg"> </a> 
+				
+				<!--找相似-->
+				<div class="img_pop"> <a href="#">找相似</a> </div>
+				
+				<!--已售状态-->
+				<div class="sold"> <i>已售</i> </div>
+				
+				<!--角标1-->
+				<div class="corner"> <img src="http://image.bitautoimg.com/taoche/2017/pc/20170411/news_icon_jiao.png"> </div>
+			</div>
+			<div class="item_details">
+				<h1> <i class="iconbrand iconbrand_15"></i> <a href="#">宝马3系 2007款 325i豪华运动型</a> <i class="title_pop_one">精</i> <i class="title_pop_one title_pop_two">顶</i> </h1>
+				<ul class="ul_news">
+					<li class="first_li"> <i>上牌时间</i><br>
+						2015年6月 </li>
+					<li> <i>行驶里程</i><br>
+						2.23万公里 </li>
+					<li> <i>所在地</i><br>
+						北京 </li>
+					<li style="border:none;"> <i>排放标准</i><br>
+						国三 </li>
+				</ul>
+				<ul class="ul_tab">
+					<li class="first_li"><a href="http://www.hao123.com" class="iconfont">保障车</a></li>
+					<li class="second_li"><a href="#" class="iconfont">帮买</a></li>
+					<!--         				<li class="third_li"><a href="#" class="iconfont">原厂保质</a></li>-->
+					<li class="fourth_li"><a href="#" class="iconfont">车检报告</a></li>
+					<!--<li class="fifth_li"><a href="#" class="iconfont">认证车</a></li>-->
+					<li class="sixth_li"><a href="#" class="iconfont">免费过户</a></li>
+					<li class="seventh_li"><a href="#" class="iconfont">延长质保</a></li>
+					<li class="seventh_li_font font_margin">准新车</li>
+					<li class="seventh_li_font">可迁全国</li>
+				</ul>
+			</div>
+			<div class="item_price">
+				<h2>40.12万</h2>
+				<p>新车价 : <del>23.88万</del> &nbsp;&nbsp;&nbsp;省11.2万</p>
+			</div>
+		</div>
+		
+		<!--车源图片列表  end--> 
+		<!--同车型推荐开始-->
+		<div class="recommend_car_list">
+			<ul class="recommend_car_list_tab">
+				<li class="current">外地相同车型</li>
+				<li>本地相似车型</li>
+			</ul>
+			<ul class="recommend_car_list_con X7">
+				<li class="current"><a href="javascript:;">全部</a></li>
+				<li><a href="javascript:;">宝马7系</a></li>
+				<li><a href="javascript:;">奔驰S级</a></li>
+				<li><a href="javascript:;">奥迪奥迪奥迪迪奥迪奥迪奥迪迪</a></li>
+				<li><a href="javascript:;">奥迪A5</a></li>
+				<li><a href="javascript:;">宝马X6</a></li>
+				<li><a href="javascript:;">雷克萨斯</a></li>
+			</ul>
+			<ul class="recommend_car_list_con X8" style="display:none">
+				<li class="current"><a href="javascript:;">全国</a></li>
+				<li><a href="javascript:;">天津</a></li>
+				<li><a href="javascript:;">北京</a></li>
+				<li><a href="javascript:;">石家庄</a></li>
+				<li><a href="javascript:;">廊坊</a></li>
+				<li><a href="javascript:;">保定</a></li>
+				<li><a href="javascript:;">青岛</a></li>
+				<li><a href="javascript:;">乌鲁木齐</a></li>
+			</ul>
+		</div>
+		<!--同车型推荐结束-->
+		<div class="list_item border_none">
+			<div class="img_stop"> <a href="#"> <img src="../images/300_200_pic.jpg"> </a> 
+				
+				<!--找相似-->
+				<div class="img_pop"> <a href="#">找相似</a> </div>
+				
+				<!--已售状态-->
+				<div class="sold"> <i>已售</i> </div>
+				
+				<!--角标1-->
+				<div class="corner"> <img src="http://image.bitautoimg.com/taoche/2017/pc/20170411/news_icon_jiao.png"> </div>
+			</div>
+			<div class="item_details">
+				<h1> <i class="iconbrand iconbrand_15"></i> <a href="#">宝马3系 2007款 325i豪华运动型</a> <i class="title_pop_one">精</i> <i class="title_pop_one title_pop_two">顶</i> </h1>
+				<ul class="ul_news">
+					<li class="first_li"> <i>上牌时间</i><br>
+						2015年6月 </li>
+					<li> <i>行驶里程</i><br>
+						2.23万公里 </li>
+					<li> <i>所在地</i><br>
+						北京 </li>
+					<li style="border:none;"> <i>排放标准</i><br>
+						国三 </li>
+				</ul>
+				<ul class="ul_tab">
+					<li class="first_li"><a href="http://www.hao123.com" class="iconfont">保障车</a></li>
+					<li class="second_li"><a href="#" class="iconfont">帮买</a></li>
+					<!--         				<li class="third_li"><a href="#" class="iconfont">原厂保质</a></li>-->
+					<li class="fourth_li"><a href="#" class="iconfont">车检报告</a></li>
+					<!--<li class="fifth_li"><a href="#" class="iconfont">认证车</a></li>-->
+					<li class="sixth_li"><a href="#" class="iconfont">免费过户</a></li>
+					<li class="seventh_li"><a href="#" class="iconfont">延长质保</a></li>
+					<li class="seventh_li_font font_margin">准新车</li>
+					<li class="seventh_li_font">可迁全国</li>
+				</ul>
+			</div>
+			<div class="item_price">
+				<h2>40.12万</h2>
+				<p>新车价 : <del>23.88万</del> &nbsp;&nbsp;&nbsp;省11.2万</p>
+			</div>
+		</div>
+		<div class="list_item border_none">
+			<div class="img_stop"> <a href="#"> <img src="../images/300_200_pic.jpg"> </a> 
+				
+				<!--找相似-->
+				<div class="img_pop"> <a href="#">找相似</a> </div>
+				
+				<!--已售状态-->
+				<div class="sold"> <i>已售</i> </div>
+				
+				<!--角标1-->
+				<div class="corner"> <img src="http://image.bitautoimg.com/taoche/2017/pc/20170411/news_icon_jiao.png"> </div>
+			</div>
+			<div class="item_details">
+				<h1> <i class="iconbrand iconbrand_15"></i> <a href="#">宝马3系 2007款 325i豪华运动型</a> <i class="title_pop_one">精</i> <i class="title_pop_one title_pop_two">顶</i> </h1>
+				<ul class="ul_news">
+					<li class="first_li"> <i>上牌时间</i><br>
+						2015年6月 </li>
+					<li> <i>行驶里程</i><br>
+						2.23万公里 </li>
+					<li> <i>所在地</i><br>
+						北京 </li>
+					<li style="border:none;"> <i>排放标准</i><br>
+						国三 </li>
+				</ul>
+				<ul class="ul_tab">
+					<li class="first_li"><a href="http://www.hao123.com" class="iconfont">保障车</a></li>
+					<li class="second_li"><a href="#" class="iconfont">帮买</a></li>
+					<!--         				<li class="third_li"><a href="#" class="iconfont">原厂保质</a></li>-->
+					<li class="fourth_li"><a href="#" class="iconfont">车检报告</a></li>
+					<!--<li class="fifth_li"><a href="#" class="iconfont">认证车</a></li>-->
+					<li class="sixth_li"><a href="#" class="iconfont">免费过户</a></li>
+					<li class="seventh_li"><a href="#" class="iconfont">延长质保</a></li>
+					<li class="seventh_li_font font_margin">准新车</li>
+					<li class="seventh_li_font">可迁全国</li>
+				</ul>
+			</div>
+			<div class="item_price">
+				<h2>40.12万</h2>
+				<p>新车价 : <del>23.88万</del> &nbsp;&nbsp;&nbsp;省11.2万</p>
+			</div>
+		</div>
+		<!-- 翻页star -->
+		<div class="the-pages">
+			<div><a href="#" class="pages-up pages-disabled"><</a><a href="#">1</a><a href="#" class="linknow">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">...</a><a href="#">15</a><a href="#"  class="pages-next">></a></div>
+		</div>
+		<!-- 翻页end --> 
+		
+	</div>
+</div>
+<div class="right-column-lg margin-top-md">
+	
+	
+	<!--常用工具 star -->
+	<div>
+		<div class="title-xm-size">
+			<h3>二手车服务</h3>
+		</div>
+		<ul class="service-guide">
+			<li class="service-guide-0"><a href="#" target="_blank">车辆估价</a></li>
+			<li class="service-guide-1"><a href="#" target="_blank">高价卖车</a></li>
+			<li class="service-guide-2"><a href="#" target="_blank">帮买二手车</a></li>
+			<li class="service-guide-3"><a href="#" target="_blank">置换买车</a></li>
+			<li class="service-guide-4"><a href="#" target="_blank">求购二手车</a></li>
+			<li class="service-guide-5"><a href="#" target="_blank">优质经销商</a></li>
+			<li class="service-guide-6"><a href="#" target="_blank">人车生活</a></li>
+			<li class="service-guide-7"><a href="#" target="_blank">地图找车</a></li>
+		</ul>
+	</div>
+
+	<div class="clear"></div>
+	<!--广告300*200 star -->
+	<div class="ad-300-135">300*135</div>
+	<!--广告300*200 end --> 
+	
+	<!--推荐商家 star -->
+	<div class="margin-xd">
+		<div class="title-xm-size">
+			<h3>推荐商家</h3>
+			<div class="ad-gray-all">广告</div>
+		</div>
+		<div class="recommend-business">
+			<div class="recommend-business-list clearfix">
+				<h5><em>专业公司</em> <i>-</i> <a href="#">融易车</a></h5>
+				<p class="recommend-business-text">电话：<span>18611352453</span> <a href="#" class="blue-link" target="_blank">地图&gt;</a></p>
+				<ul>
+					<li class=""> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+						<h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+						<P><em>34.15 万</em></P>
+					</li>
+					<li> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+						<h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+						<P><em>34.15 万</em></P>
+					</li>
+				</ul>
+			</div>
+			<div class="recommend-business-list clearfix">
+				<h5><em>专业公司</em> <i>-</i> <a href="#">融易车</a></h5>
+				<p class="recommend-business-text">电话：<span>18611352453</span> <a href="#" class="blue-link" target="_blank">地图&gt;</a></p>
+				<ul>
+					<li class=""> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+						<h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+						<P><em>34.15 万</em></P>
+					</li>
+					<li> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+						<h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+						<P><em>34.15 万</em></P>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--推荐商家 end --> 
+	
+	<!-- 热门车系 车型 star-->
+	<div class="margin-xd hot-car-type">
+		<div class="section-header header2">
+			<div class="box">
+				<ul class="section-header-nav">
+					<li class="current"><a href="#">热门车系</a></li>
+					<li class=""><a href="#">热门车型</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="hot-car-text-list">
+			<ul>
+				<li><strong class="current">1.</strong><a href="#">宝马X3</a></li>
+				<li><strong class="current">2.</strong><a href="#">JEEP 牧马人</a></li>
+				<li><strong class="current">3.</strong><a href="#">本田CR-V</a></li>
+				<li><strong>4.</strong><a href="#">奥迪Q5</a></li>
+				<li><strong>5.</strong><a href="#">大众途观</a></li>
+				<li><strong>6.</strong><a href="#">别克昂科威</a></li>
+				<li><strong>7.</strong><a href="#">保时捷卡宴保时捷卡宴保时捷卡宴保时捷卡宴</a></li>
+				<li><strong>8.</strong><a href="#">别克GL8</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 热门车系 车型 end--> 
+	
+	<!--猜您喜欢的二手车 star -->
+	<div class="margin-xd">
+		<div class="title-xm-size">
+			<h3>猜您喜欢的二手车</h3>
+		</div>
+		<div class="carlist-vertical">
+			<ul>
+				<li> 
+					<a href="#">
+						<img src="../images/car1.png" alt="喜欢的二手车" />
+					</a>
+					<h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+					<P>2015年  12.43万公里</P>
+					<em>15.43万</em> 
+					<div class="auth-ico-vertical">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+					</div>
+					<div class="desc_bg"></div>
+					<span class="desc_text">日供10元开回家</span>
+					<span class="RENZHENG3"></span>
+				</li>
+				<li> 
+					<a href="#">
+						<img src="../images/car1.png" alt="喜欢的二手车" />
+					</a>
+					<h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+					<P>2015年  12.43万公里</P>
+					<em>15.43万</em> 
+					<div class="auth-ico-vertical">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+					</div>
+					<div class="desc_bg"></div>
+					<span class="desc_text">日供10元开回家</span>
+					<span class="RENZHENG3"></span>
+				</li>
+				<li> 
+					<a href="#">
+						<img src="../images/car1.png" alt="喜欢的二手车" />
+					</a>
+					<h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+					<P>2015年  12.43万公里</P>
+					<em>15.43万</em> 
+					<div class="auth-ico-vertical">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+					</div>
+					<div class="desc_bg"></div>
+					<span class="desc_text">日供10元开回家</span>
+					<span class="RENZHENG3"></span>
+				</li>
+				<li> 
+					<a href="#">
+						<img src="../images/car1.png" alt="喜欢的二手车" />
+					</a>
+					<h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+					<P>2015年  12.43万公里</P>
+					<em>15.43万</em> 
+					<div class="auth-ico-vertical">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+					</div>
+					<div class="desc_bg"></div>
+					<span class="desc_text">日供10元开回家</span>
+					<span class="RENZHENG3"></span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--猜您喜欢的二手车 end --> 
+	
+</div>
+
+<!--二手车城市直达 star-->
+<div class="container margin-md">
+	<div class="title-xm-size title-border">
+		<h3 class="tab_h3 cur" style="margin-left:0px;">热门省份</h3>
+		<h3 class="tab_h3">热门城市</h3>
+		<h3 class="tab_h3">贷款</h3>
+	</div>
+	<div class="section-tag-content">
+		<ul class="ul_list" style="display:block;">
+			<li><a href="#" target="_blank">汽车</a></li>
+			<li><a href="#" target="_blank">二手车法</a></li>
+			<li><a href="#" target="_blank">兰克福车展</a></li>
+			<li><a href="#" target="_blank">上海车展</a></li>
+			<li><a href="#" target="_blank">好友二手车 </a></li>
+			<li><a href="#" target="_blank">上海二手车</a></li>
+			<li><a href="#" target="_blank">淮安车网</a></li>
+			<li><a href="#" target="_blank">广州房价</a></li>
+			<li><a href="#" target="_blank">欧卡二手车</a></li>
+			<li><a href="#" target="_blank">上海二手车</a></li>
+			<li><a href="#" target="_blank">上海新闻</a></li>
+			<li><a href="#" target="_blank">上海天气汽车城</a></li>
+			<li><a href="#" target="_blank">上海车展</a></li>
+			<li><a href="#" target="_blank">上海二手车</a></li>
+			<li><a href="#" target="_blank">上海车展</a></li>
+			<li><a href="#" target="_blank">上海汽车网</a></li>
+			<li><a href="#" target="_blank">上海长途</a></li>
+			<li><a href="#" target="_blank">上海车展</a></li>
+			<li><a href="#" target="_blank">搜车吧</a></li>
+			<li><a href="#" target="_blank">爱车族</a></li>
+			<li><a href="#" target="_blank">上海车展</a></li>
+			<li><a href="#" target="_blank">南阳汽车网</a></li>
+			<li><a href="#" target="_blank">上海车展</a></li>
+			<li><a href="#" target="_blank">上海车展2015</a></li>
+			<li><a href="#" target="_blank">上海车展</a></li>
+		</ul>
+		
+		<ul class="ul_list">
+			<li><a href="#" target="_blank">上海租车公司</a></li>
+			<li><a href="#" target="_blank">旅游地产</a></li>
+			<li><a href="#" target="_blank">团购麻豆网</a></li>
+			<li><a href="#" target="_blank">上海车展</a></li>
+			<li><a href="#" target="_blank"> 三亚会议</a></li>
+			<li><a href="#" target="_blank">上海车展</a></li>
+			<li><a href="#" target="_blank">汽车票</a></li>
+			<li><a href="#" target="_blank">网上订票</a></li>
+			<li><a href="#" target="_blank">上海二手车</a></li>
+			<li><a href="#" target="_blank">上海汽车站时刻表</a></li>
+			<li><a href="#" target="_blank">led广告车</a></li>
+			<li><a href="#" target="_blank">汽车标志大全 </a></li>
+			<li><a href="#" target="_blank">惠州汽车网</a></li>
+			<li><a href="#" target="_blank">金鹰汽车网</a></li>
+			<li><a href="#" target="_blank">搜车网</a></li>
+			<li><a href="#" target="_blank">上海汽车团购网</a></li>
+			<li><a href="#" target="_blank">汽车维修与保养</a></li>
+			<li><a href="#" target="_blank"> 上海车展</a></li>
+			<li><a href="#" target="_blank">养车网</a></li>
+			<li><a href="#" target="_blank">豪车之家</a></li>
+			<li><a href="#" target="_blank">学车</a></li>
+			<li><a href="#" target="_blank">洛阳汽车网</a></li>
+			<li><a href="#" target="_blank">上海易修网</a></li>
+			<li><a href="#" target="_blank">湖南汽车网</a></li>
+			<li><a href="#" target="_blank">丝路汽车网</a></li>
+			<li><a href="#" target="_blank">苏州二手房</a></li>
+			<li><a href="#" target="_blank">湖南汽车网</a></li>
+			<li><a href="#" target="_blank">上海汽车零部件展</a></li>
+			<li><a href="#" target="_blank">江阴汽车网</a></li>
+			<li><a href="#" target="_blank">汽车论坛</a></li>
+			<li><a href="#" target="_blank">蓝网二手车评估</a></li>
+		</ul>
+		
+		
+		<ul class="ul_list">
+			<li><a href="#" target="_blank">上海112租车公司</a></li>
+			<li><a href="#" target="_blank">旅游地产</a></li>
+			<li><a href="#" target="_blank">团购麻豆网</a></li>
+			<li><a href="#" target="_blank">上海车展</a></li>
+			<li><a href="#" target="_blank"> 三亚会议</a></li>
+			<li><a href="#" target="_blank">上海车展</a></li>
+			<li><a href="#" target="_blank">汽车票</a></li>
+			<li><a href="#" target="_blank">网上订票</a></li>
+			<li><a href="#" target="_blank">上海二手车</a></li>
+			<li><a href="#" target="_blank">上海汽车站时刻表</a></li>
+			<li><a href="#" target="_blank">led广告车</a></li>
+			<li><a href="#" target="_blank">汽车标志大全 </a></li>
+			<li><a href="#" target="_blank">惠州汽车网</a></li>
+			<li><a href="#" target="_blank">金鹰汽车网</a></li>
+			<li><a href="#" target="_blank">搜车网</a></li>
+			<li><a href="#" target="_blank">上海汽车团购网</a></li>
+			<li><a href="#" target="_blank">汽车维修与保养</a></li>
+			<li><a href="#" target="_blank"> 上海车展</a></li>
+			<li><a href="#" target="_blank">养车网</a></li>
+			<li><a href="#" target="_blank">豪车之家</a></li>
+			<li><a href="#" target="_blank">学车</a></li>
+			<li><a href="#" target="_blank">洛阳汽车网</a></li>
+			<li><a href="#" target="_blank">上海易修网</a></li>
+			<li><a href="#" target="_blank">湖南汽车网</a></li>
+			<li><a href="#" target="_blank">丝路汽车网</a></li>
+			<li><a href="#" target="_blank">苏州二手房</a></li>
+			<li><a href="#" target="_blank">湖南汽车网</a></li>
+			<li><a href="#" target="_blank">上海汽车零部件展</a></li>
+			<li><a href="#" target="_blank">江阴汽车网</a></li>
+			<li><a href="#" target="_blank">汽车论坛</a></li>
+			<li><a href="#" target="_blank">蓝网二手车评估</a></li>
+		</ul>
+		
+	</div>
+</div>
+<!--二手车城市直达 end --> 
+
+<script type="text/javascript">
+		
+		$('icon-tag-collect').click(function(){
+			
+			if($(this).hasClass('icon-tag-collected'))
+			{
+				$(this).removeClass('icon-tag-collected');
+				$('#likes_none').removeClass('likes').addClass('likes_none');
+			}
+			else
+			{
+				$(this).addClass('icon-tag-collected');
+			
+				$('.likes_none').addClass('likes');
+				$('.likes_none').removeClass('likes_none');
+			}
+
+		})
+		
+		$('.icon-tag-compared').click(function(){
+			
+			if($(this).hasClass('icon-tag-comparison'))
+			{
+				$(this).removeClass('icon-tag-comparison');
+				$(this).addClass('icon-tag-compared');
+			}
+			else
+			{
+				$(this).addClass('icon-tag-comparison');
+				$(this).removeClass('icon-tag-compared');
+			}
+			
+		})
+		
+		
+		$('.tab_ul li').click(function(){
+			
+			$('.tab_ul li').eq($(this).index()).addClass('active').siblings().removeClass('active');
+			
+		})
+		
+		
+		$('.sort ul li .more').mouseenter(function(){
+			$('.select_sort').addClass("active")
+			$('.sort ul li .more .more_pos i').addClass('rotate_just').removeClass("rotate_back");
+		})
+		$('.select_sort').mouseleave(function(){
+			$(this).removeClass("active")
+			$('.sort ul li .more .more_pos i').removeClass("rotate_just").addClass("rotate_back");
+		})
+		
+		
+		//20170718
+		$('.title-xm-size .tab_h3').mouseenter(function(){
+			$('.title-xm-size .tab_h3').eq($(this).index()).addClass('cur').siblings().removeClass('cur');
+			$('.ul_list').hide().eq($(this).index()).show();
+		})
+		
+	</script>
+</body>
+</html>

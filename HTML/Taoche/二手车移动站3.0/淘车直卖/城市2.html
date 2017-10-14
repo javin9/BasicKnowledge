@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>城市2</title>
+    <link rel="stylesheet" type="text/css" href="../css/头尾.css" />
+    <link rel="stylesheet" type="text/css" href="../css/公共控件.css" />
+    <link rel="stylesheet" type="text/css" href="../css/选车工具.css" />
+</head>
+
+<body>
+    <a href="javascript:;" id="btn" style="font-size:3.0rem; line-height:2.0" data-action="price">点我</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>111
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>222
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>333
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>444
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>555
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>6666
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- black popup start -->
+    <div class="leftmask leftmask2"></div>
+    <div class="leftPopup price" data-back="leftmask2">
+        <div class="swipeLeft">
+            <ul class="first-list">
+                <li class="root"><a href="javascript:" onclick="ChangeLayer('pvc5','popArea');return false;">广东</a></li>
+                <li data="501"><a href="javascript:" onclick="SetCityValue(501,'广州')">广州</a></li>
+                <li data="502"><a href="javascript:" onclick="SetCityValue(502,'深圳')">深圳</a></li>
+                <li data="503"><a href="javascript:" onclick="SetCityValue(503,'珠海')">珠海</a></li>
+                <li data="504"><a href="javascript:" onclick="SetCityValue(504,'东莞')">东莞</a></li>
+                <li data="505"><a href="javascript:" onclick="SetCityValue(505,'中山')">中山</a></li>
+                <li data="507"><a href="javascript:" onclick="SetCityValue(507,'汕头')">汕头</a></li>
+                <li data="510"><a href="javascript:" onclick="SetCityValue(510,'潮州')">潮州</a></li>
+                <li data="511"><a href="javascript:" onclick="SetCityValue(511,'韶关')">韶关</a></li>
+                <li data="513"><a href="javascript:" onclick="SetCityValue(513,'湛江')">湛江</a></li>
+                <li data="514"><a href="javascript:" onclick="SetCityValue(514,'肇庆')">肇庆</a></li>
+                <li data="515"><a href="javascript:" onclick="SetCityValue(515,'茂名')">茂名</a></li>
+                <li data="516"><a href="javascript:" onclick="SetCityValue(516,'梅州')">梅州</a></li>
+                <li data="518"><a href="javascript:" onclick="SetCityValue(518,'佛山')">佛山</a></li>
+                <li data="520"><a href="javascript:" onclick="SetCityValue(520,'惠州')">惠州</a></li>
+                <li data="521"><a href="javascript:" onclick="SetCityValue(521,'江门')">江门</a></li>
+                <li data="522"><a href="javascript:" onclick="SetCityValue(522,'揭阳')">揭阳</a></li>
+                <li data="524"><a href="javascript:" onclick="SetCityValue(524,'清远')">清远</a></li>
+                <li data="528"><a href="javascript:" onclick="SetCityValue(528,'云浮')">云浮</a></li>
+                <li data="532"><a href="javascript:" onclick="SetCityValue(532,'阳江')">阳江</a></li>
+                <li data="535"><a href="javascript:" onclick="SetCityValue(535,'河源')">河源</a></li>
+                <li data="552"><a href="javascript:" onclick="SetCityValue(552,'汕尾')">汕尾</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- black popup end -->
+    <script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="../js/iscroll.js"></script>
+    <script type="text/javascript" src="../js/model.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('[data-action=price]').rightSwipe({
+            clickEnd: function(b) {
+                var $leftPopup = this;
+                if (b) {
+                    var $back = $('.' + $leftPopup.attr('data-back'))
+                    $back.touches({ touchstart: function(ev) { ev.preventDefault(); }, touchmove: function(ev) { ev.preventDefault(); } });
+                    var $swipeLeft = $leftPopup.find('.swipeLeft');
+                    $swipeLeft.touches({ touchstart: function(ev) { ev.preventDefault(); } });
+                    var myScroll = new iScroll($swipeLeft[0], {
+                        snap: 'li',
+                        momentum: true,
+                        click: true,
+                        bounce: false
+                    });
+                }
+            }
+        })
+    })
+    </script>
+</body>
+
+</html>

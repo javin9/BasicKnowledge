@@ -1,0 +1,482 @@
+﻿body,html{font-family:"Microsoft YaHei", Arial, Helvetica, sans-serif;}
+.body_font{-webkit-font-smoothing:antialiased;}
+.tabbar{width:100%;overflow:hidden;border-bottom:3px solid #e9e9e9;height:58px;}
+.tabbar .tab_ul{float:left;overflow:hidden;position:absolute;}
+.tabbar .tab_ul li{font-size:20px;line-height:55px;height:58px;float:left;margin:0 20px;color:#333333;}
+.tabbar .tab_ul li.tab_li{margin-left:0px;}
+.tabbar .tab_ul li:hover{cursor:pointer;}
+/*active*/
+.tabbar .tab_ul li a{display:inline-block;text-decoration:none;}
+.tabbar .tab_ul li a.active{border-bottom:3px solid #ff9b1e;color:#ff9b1e;text-decoration:none;}
+
+.tabbar .flex{float:right;display: block;overflow: hidden; height: 40px;}
+.tabbar .flex a{font-size:22px;color:#b8b8b8;margin:20px auto 10px 10px; float: left;}
+.tabbar .flex a:hover{text-decoration:none;color:#b8b8b8}
+.tabbar .flex a.active{color:#ff9a1f;}
+
+/*默认排序模块*/
+.sort{height:52px;line-height:52px;font-size:12px; color:#333333;border-bottom:1px solid #e9e9e9;}
+
+.sort ul{height:52px;}
+.sort ul:after{width: 100%; clear:both;height:0;display: block; content: "";}
+.sort ul li span{margin-right:15px;}
+.sort ul li{float:left;position:relative;height:52px;}
+.sort ul li .sort_price{display:inline-block;}
+.sort ul li .sort_price a{display:inline-block;margin:0 3px;text-decoration:none;color:black;}
+.sort ul li .sort_price a:hover{cursor:pointer;}
+.sort ul li .sort_price a.current{color:#ff9a1f;display:inline-block;text-decoration:none;cursor:pointer;}
+.sort ul li .sort_price a.defaultsort{padding-right:15px;}
+.sort ul li .sort_price .icon-order-desc{font-size:12px;color:#999999;position:relative;left:-3px;top:1px;}
+.sort ul li .sort_price .icon-order-asc{font-size:12px;color:#999999;position:relative;left:-3px;}
+
+.sort ul li .sort_price a:hover + .icon-order-desc{color:#ff9b1e;}
+.sort ul li .sort_price a:hover + .icon-order-asc{color:#ff9b1e;}
+
+
+.sort ul li .select_sort{float:left;position:relative;color:#333333;width:422px;border:1px solid white;border-top:none;margin-left:25px;height:50px;position:absolute;left:-12px;top:0px;z-index:1;overflow:hidden}
+.sort ul li .select_sort.active{width:422px;height:auto;background-color:white;box-shadow:0px 0px 5px rgba(0, 0, 0, .2);position:absolute;left:-12px;top:0px;}
+.sort ul li .select_sort .more .more_pos .rotate_just{transform:rotate(180deg);transition:all 0.3s ease-in;display:inline-block;}
+.sort ul li .select_sort .more .more_pos .rotate_back{transform:rotate(0deg);transition:all 0.3s ease-in;display:inline-block;}
+
+.sort ul li .select_sort .select_pop{width:70%;margin-left:25px;line-height:36px;padding-top:8px;padding-bottom:15px;}
+.sort ul li .select_sort .select_pop label{margin:0 3px;}
+.sort ul li .select_sort .select_pop label:hover{cursor:pointer;}
+.sort ul li .select_sort .select_pop label i{color:#BBB;font-size:13px;margin-right:3px;cursor:pointer;}
+.sort ul li .select_sort .select_pop label .icon-checked{color:#3a99fc;}
+
+.sort ul .select_pop_main:after{content:'';height:20px;border-left:1px solid #e9e9e9;position:absolute;top:16px;left:429px;}
+.sort ul .select_pop_main:before{content:'';height:20px;border-left:1px solid #e9e9e9;position:absolute;right:-20px;top: 17px;}
+.sort ul li .select_sort input{vertical-align:middle;display:inline-block;margin-left:1px;}
+
+.sort ul li .more{position:absolute;right:-2px;top:-1px;z-index:100;}
+.sort ul li .more .more_pos{top:0px;width:154px;z-index: 1000;}
+.sort ul li .more:hover .pop{display:block;}
+.sort ul li .more .icon-drop-down{color:#ffa12e;position:relative;top:1px;left:3px;font-size:14px;}
+.sort ul li .more .icon-dropup-copy{color:#ffa12e;position:relative;top:2px;}
+.sort ul li.last_li{float:right;}
+.sort ul li.last_li i{color:#ffa12e;}
+
+
+/*列表数据*/
+.car_list{width:100%;clear:both;overflow:hidden;}
+.car_list .list_item{width:100%;height:160px;border-bottom:1px solid #e9e9e9;overflow:hidden;}
+.car_list .list_item.border_none{border-bottom:none;}
+
+.car_list .list_item .img_stop{position:relative;width:180px;float:left;top:-1px;}
+.car_list .list_item .img_stop .img_pop{display:none;width:180px;height:30px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/shadow.png') no-repeat;position:absolute;bottom:20px;z-index:100;text-align: center;line-height:30px;color: white;}
+.car_list .list_item .img_stop .img_pop a{color:white;}
+.car_list .list_item .img_stop .img_pop a:hover{color:#ff9b1e;text-decoration:none;}
+.car_list .list_item .img_stop:hover .img_pop{display:block;}
+.car_list .list_item .img_stop .img_pop:hover{color:#ff9920;cursor:pointer;}
+
+
+.car_list .list_item .img_stop .img_pop_nearby{width:180px;height:30px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/shadow.png') no-repeat;position:absolute;bottom:20px;z-index:1;text-align: center;line-height:30px;color: white;}
+.car_list .list_item .img_stop .img_pop_nearby a{color:white;text-decoration:none;}
+
+
+.car_list .list_item:hover{background:#f7f7f7;}
+
+.car_list .list_item img{margin:20px 0px;width:180px;height:120px;float:left;}
+.car_list .list_item img:hover{cursor:pointer;}
+
+.car_list .list_item .item_details{float:left;margin: 20px 0px 20px 15px;height:120px;}
+.car_list .list_item .item_details h1,.car_list .list_item .item_details h3{margin-bottom:10px;position:relative;margin:-7px 0px 10px 0px;}
+.car_list .list_item .item_details .ul_news{overflow:hidden;position:relative;top:5px;left:-18px;}
+.car_list .list_item .item_details .ul_news li{padding:0 18px;float:left;border-right: 1px solid #e9e9e9;color:#414141;line-height:19px;margin-bottom:10px;font-weight:bold;height:36px;margin-top:5px;}
+.car_list .list_item .item_details .ul_news li i{font-weight:normal;}
+.car_list .list_item .item_details .ul_news li i{color:#999999;font-size:12px;position:relative;top:-3px;}
+
+.car_list .list_item .item_details .ul_tab{display:inline-block;overflow:hidden;padding-top:19px;margin-left:-3px;}
+.car_list .list_item .item_details .ul_tab li{float:left;margin:0px;border:none;color:#999999;margin-left:3px;height:22px;}
+.car_list .list_item .item_details .ul_tab li a.icon-fuwuicon-12{color:#58c793;font-size:16px;display:inline-block;vertical-align:middle;height:20px;line-height:26px;width:16px;position:relative;left:-4px;top:-4px;}
+.car_list .list_item .item_details .ul_tab li a.icon-icon-bang{color:#ff7611;font-size:18px;display:inline-block;vertical-align:middle;height:20px;line-height:26px;width:25px;position:relative;left:3px;top:-5px;}
+.car_list .list_item .item_details .ul_tab li a.icon-fuwuicon-16{color:#8eb712;font-size:17px;display:inline-block;vertical-align:middle;height:20px;line-height:26px;width:26px;position:relative;left:5px;top:-5px;}
+.car_list .list_item .item_details .ul_tab li a.icon-fuwuicon-14{color:#58c793;font-size:17px;display:inline-block;vertical-align:middle;height:20px;line-height:26px;width:25px;position:relative;left:4px;top:-4px;}
+.car_list .list_item .item_details .ul_tab li a.icon-fuwuicon-10{color:#ff7611;font-size:17px;display:inline-block;vertical-align:middle;height:20px;line-height:26px;width:25px;position:relative;left:4px;top:-4px}
+.car_list .list_item .item_details .ul_tab li a.icon-fuwuicon-7{color:#ff7611;font-size:30px;display:inline-block;vertical-align:middle;height:30px;line-height:26px;width:25px;position:relative;left:-3px;top:0px;}
+.car_list .list_item .item_details .ul_tab li a.icon-fuwuicon-4{color:#5eaed1;font-size:30px;display:inline-block;vertical-align:middle;height:30px;line-height:26px;width:25px;position:relative;left:-3px;top:0px;}
+
+.car_list .list_item .item_details .ul_tab li a:hover{text-decoration:none;cursor:pointer;}
+.car_list .list_item .item_details .ul_tab li:hover{text-decoration:none;cursor:pointer;}
+
+
+.car_list .list_item .item_details .ul_tab .first_li{padding:0px;padding-left:3px;}
+.car_list .list_item .item_details .ul_tab .fourth_li a:hover{cursor:default !important;}
+
+.car_list .list_item .item_details .ul_tab li a{font-size:12px;color:#999999;position:relative;top:1px;font-family:"Microsoft YaHei", Arial, Helvetica, sans-serif !important;}
+/*如果更换字体把这个取消---切换图片*/
+.car_list .list_item .item_details .ul_tab .first_li:before{content:'';display:inline-block;width:14px;height:22px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/cb_list_ico_1.png') no-repeat;background-position: -13px -51px;vertical-align:middle;position:relative;left:-3px;}
+.car_list .list_item .item_details .ul_tab .second_li:before{content:'';display:inline-block;width:20px;height:22px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/cb_list_ico_1.png') no-repeat;background-position:-8px -27px;vertical-align:middle;position:relative;left:-4px;}
+.car_list .list_item .item_details .ul_tab .third_li:before{content:'';display:inline-block;width:20px;height:22px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/cb_list_ico_1.png') no-repeat;background-position: -10px -125px;vertical-align:middle;position:relative;left:-2px;}
+.car_list .list_item .item_details .ul_tab .fourth_li:before{content:'';display:inline-block;width:20px;height:22px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/cb_list_ico_1.png') no-repeat;background-position:-9px -75px;vertical-align:middle;position:relative;left:-2px;}
+.car_list .list_item .item_details .ul_tab .fifth_li:before{content:'';display:inline-block;width:20px;height:22px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/cb_list_ico_1.png') no-repeat;background-position:-10px -100px;vertical-align:middle;position:relative;left:-1px;}
+.car_list .list_item .item_details .ul_tab .sixth_li:before{content:'';display:inline-block;width:20px;height:22px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/cb_list_ico_1.png') no-repeat;background-position:-8px -150px;vertical-align:middle;position:relative;left:-3px;}
+.car_list .list_item .item_details .ul_tab .seventh_li:before{content:'';display:inline-block;width:20px;height:22px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/cb_list_ico_1.png') no-repeat;background-position:-9px -2px;vertical-align:middle;position:relative;left:-2px;}
+
+
+.car_list .car_item li .icon_list a.icon_security:before{content:'';display:inline-block;width:15px;height:20px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/cb_list_ico_1.png') no-repeat;background-position: -13px -54px;vertical-align:middle;position:relative;}
+.car_list .car_item li .icon_list a.icon_help:before{content:'';display:inline-block;width:22px;height:22px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/cb_list_ico_1.png') no-repeat;background-position:-8px -29px;vertical-align:middle;position:relative;left:-4px;}
+.car_list .car_item li .icon_list a.icon_transfer:before{content:'';display:inline-block;width:22px;height:22px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/cb_list_ico_1.png') no-repeat;background-position: -9px -126.8px;vertical-align:middle;position:relative;left:-3px;}
+.car_list .car_item li .icon_list a.icon_report:before{content:'';display:inline-block;width:19px;height:22px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/cb_list_ico_1.png') no-repeat;background-position:-12px -77px;vertical-align:middle;position:relative;}
+.car_list .car_item li .icon_list a.icon_certified:before{content:'';display:inline-block;width:20px;height:22px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/cb_list_ico_1.png') no-repeat;background-position:-10px -102px;vertical-align:middle;position:relative;left:-3px;}
+.car_list .car_item li .icon_list a.icon_free:before{content:'';display:inline-block;width:21px;height:22px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/cb_list_ico_1.png') no-repeat;background-position:-8px -152px;vertical-align:middle;position:relative;left:-3px;}
+.car_list .car_item li .icon_list a.icon_inspect:before{content:'';display:inline-block;width:21px;height:22px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/cb_list_ico_1.png') no-repeat;background-position:-8px -4px;vertical-align:middle;position:relative;left:-3px;}
+
+
+.car_list .list_item .item_details .ul_tab .seventh_li_font{display:inline-block;padding:0px 5px;color:#ff9a1f;border:1px solid #ffdcb2;border-radius:3px;margin-left:4px;margin-top:1px;height: 20px;}
+.car_list .list_item .item_details .ul_tab .seventh_li_font:hover{color:#ff9a1f;cursor:auto;}
+
+.car_list .list_item .item_details .ul_tab .seventh_li_shop a{display:inline-block;padding:0px 5px;color:#3b9dca;border:1px solid #9acfe8;border-radius:3px;margin-left:1px;margin-top:0px;height:20px;}
+.car_list .list_item .item_details .ul_tab .seventh_li_shop > a:hover{cursor:auto !important;}
+
+
+.car_list .list_item .item_details h1 .title_pop_one{position:relative;-webkit-font-smoothing: none;vertical-align:middle;display:inline-block;width:20px;height:20px;line-height:20px;font-size:12px;text-align:center;border-radius:50%;background:#ff5a00;color:white;font-family:'宋体';left:5px;}
+.car_list .list_item .item_details h1 .title_pop_two{padding-left:4px;text-align:left;background:#ff9a1f;-webkit-font-smoothing:none;margin-left:5px;}
+.car_list .list_item .item_details h1 .icom_j{color:#ff5a00;-webkit-font-smoothing:subpixel-antialiased;}
+.car_list .list_item .item_details h1 a{height:25px;line-height:25px;display:inline-block;vertical-align:middle;font-size: 16px;}
+.car_list .list_item .item_details h1 a:hover{color:#ffa73c;text-decoration:underline;}
+.car_list .list_item .item_details h3 .title_pop_one{position:relative;-webkit-font-smoothing: none;vertical-align:middle;display:inline-block;width:20px;height:20px;line-height:20px;font-size:12px;text-align:center;border-radius:50%;background:#ff5a00;color:white;font-family:'宋体';left:5px;}
+.car_list .list_item .item_details h3 .title_pop_two{padding-left:4px;text-align:left;background:#ff9a1f;-webkit-font-smoothing:none;margin-left:5px;}
+.car_list .list_item .item_details h3 .icom_j{color:#ff5a00;-webkit-font-smoothing:subpixel-antialiased;}
+.car_list .list_item .item_details h3 a{height:25px;line-height:25px;display:inline-block;vertical-align:middle;font-size: 16px;}
+.car_list .list_item .item_details h3 a:hover{color:#ffa73c;text-decoration:underline;}
+
+.car_list .list_item .item_price{width:215px;float:right;padding-top:57px;}
+.car_list .list_item .item_price h2{font-size:24px;font-weight:bold;color:#ff6d02;text-align:center;margin-bottom:8px;}
+
+.car_list .list_item .item_price p{text-align:center;line-height:28px;color:#999999;font-size:12px;position:relative;top:0px;}
+.car_list .list_item .item_price p .icon_heart{position:relative;top:1px;color:#ff6e03;margin-left:10px;}
+
+.car_list .list_item .item_price p .icon-tag-comparison{color:#999999;}
+
+.car_list .list_item .item_price p .icon-xin1{position:relative;top:1px;color:#ff6e03;animation:opacity1 0.5s ease forwards;}
+.car_list .list_item .item_price p .icon-fuwuicon{position:relative;top:0px;color:#ff6e03;animation:opacity1 0.5s ease forwards;}
+.car_list .list_item .item_price p .likes{font-size:12px;color:red;position:absolute;left:30px;top:0px;opacity:0;animation:opacity2 1s ease;}
+.car_list .list_item .item_price p .likes_none{display:none;}
+
+
+.car_list .list_item .item_price p .db_already:hover{cursor:default;}
+.car_list .list_item .item_price p .sc{margin-left:1px;}
+.car_list .list_item .item_price p .icon-xin1{margin-left:3px;}
+.car_list .list_item .item_price p .db{margin-right:1px;}
+
+
+.car_list .list_item .item_price p i:hover{cursor:pointer;}
+
+/*page*/
+.the-pages{top:45px;font-size:18px !important;margin-bottom:60px;}
+/*清除border*/
+.clear_border{border-bottom:none !important;}
+.color_Arrow{color:#ff9a1f !important;}
+
+/*右侧列表页*/
+.common-tools{height:200px;}
+.common-tools ul li{padding-bottom:12px !important;}
+/*更多浮层*/
+.pop{width:400px;height:100px;border:1px solid #D3D3D3;background:white;position:absolute;right:-26px;top:7px;opacity:0.96;display:none;}
+.pop .pop_main{width:76%;margin:25px auto;line-height:27px;}
+.pop_display{display:none;}
+
+.left-column-lg{position:relative !important;}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.car_list .car_item{overflow:hidden;width:904px;margin-left:-22px;}
+.car_list .car_item li{float:left;width:226px;height:300px;padding:22px;border-left:1px solid #e9e9e9;border-bottom:1px solid #e9e9e9;position:relative;}
+.car_list .car_item li:hover .contrast{display:block;}
+.car_list .car_item li .contrast{width:180px;height:30px;line-height:30px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/shadow.png') no-repeat;position:absolute;top:112px;display:none;}
+.car_list .car_item li .contrast a{display:inline-block;width:49%;text-align:center;color:white;}
+.car_list .car_item li .contrast a:hover{color:#ff9a1f;text-decoration:none;}
+.car_list .car_item li .contrast a:after{content: '';display:inline-block;position:absolute;height:30px;left:90px;top:0px;width:0px;border-left:1px solid #4e4d4d;}
+.car_list .car_item li .contrast a.db_already:hover{cursor:default !important;}
+
+
+.car_list .car_item li:hover{background:#fcfcfc;}
+.car_list .car_item li .img_stop{position:relative;}
+.car_list .car_item li .img_stop .img_pop{display:none;width:100%;height:30px;line-height:30px;color:white;text-align:center;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/shadow.png') no-repeat;position:absolute;bottom:0px;}
+.car_list .car_item li .img_stop .sold{margin-top:-35px;}
+.car_list .car_item li .img_stop:hover .img_pop{display:block;cursor:pointer;}
+.car_list .car_item li .img_stop .img_pop:hover{color:#ff9920;}
+.car_list .car_item li img{width:180px;height:120px;display:block;}
+.car_list .car_item li img:hover{cursor:pointer;}
+
+.car_list .car_item .first_li{padding-left:0px;width:204px;}
+.car_list .car_item .last_li{padding-right:0px;border-right:none;width:204px;}
+
+.car_list .car_item li h1{font-size:14px;line-height:20px;height:55px;color:#333333;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:2;overflow:hidden;padding-top:8px;}
+.car_list .car_item li h1 .icon_refined{width:25px;height:20px;font-size:24px;display:inline-block;position:relative;top:3px;left:4px;color:#ff5a00;}
+.car_list .car_item li h1 .icon_top{width:20px;height:20px;font-size:12px;display:inline-block;border-radius:50%;text-align:center;background:#ff5a00;color:white;font-family:'宋体';margin-left:5px;}
+.car_list .car_item li h1 .icon_top_d{width:20px;height:20px;font-size:12px;display:inline-block;border-radius:50%;text-align:center;background:#ff9a1f;color:white;font-family:'宋体';margin-left:5px;}
+.car_list .car_item li h3{font-size:14px;line-height:20px;height:55px;color:#333333;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:2;overflow:hidden;padding-top:8px;}
+.car_list .car_item li h3 .icon_refined{width:25px;height:20px;font-size:24px;display:inline-block;position:relative;top:3px;left:4px;color:#ff5a00;}
+.car_list .car_item li h3 .icon_top{width:20px;height:20px;font-size:12px;display:inline-block;border-radius:50%;text-align:center;background:#ff5a00;color:white;font-family:'宋体';margin-left:5px;}
+.car_list .car_item li h3 .icon_top_d{width:20px;height:20px;font-size:12px;display:inline-block;border-radius:50%;text-align:center;background:#ff9a1f;color:white;font-family:'宋体';margin-left:5px;}
+.car_list .car_item li h2{color:#ff6d02;font-size:24px;line-height:40px;}
+.car_list .car_item li p{color:#999999;}
+.car_list .car_item li span{color:#999999;font-size:12px;padding:0px 1px;}
+.car_list .car_item li span.span_one{padding-left:0px;}
+
+
+.car_list .car_item li .icon_p{line-height:22px;}
+.car_list .car_item li .icon_list{margin-top:7px;margin-left:-3px;}
+.car_list .car_item li .icon_list a{display:inline-block;position:relative;top:4px;left:4px;font-size:16px;width:20px;height:20px;}
+.car_list .car_item li .icon_list a:hover{text-decoration:none;}
+
+.car_list .car_item li .icon_list .icon_security{color:#49c289;}
+.car_list .car_item li .icon_list .icon_help{color:#ff7f22;}
+.car_list .car_item li .icon_list .icon_transfer{color:#ff7f22;}
+.car_list .car_item li .icon_list .icon_report{color:#8eb712;}
+.car_list .car_item li .icon_list .icon_certified{color:#ff7f22;}
+.car_list .car_item li .icon_list .icon_free{color:#49c289;}
+.car_list .car_item li .icon_list .icon_inspect{color:#5baed5;}
+
+.car_list .car_item li .icon_list .icon_car{width:auto !important;font-size:12px;color:#ff9a1f;display:inline-block;padding:0px 5px;border:1px solid #ffdcb2;border-radius:3px;margin-top:1px;margin-right:5px;}
+.car_list .car_item li .icon_list .icon_nation{width:auto !important;font-size:12px;color:#ff9a1f;display:inline-block;padding:0px 5px;border:1px solid #ffdcb2;border-radius:3px;margin-top:1px;margin-right:5px;}
+.car_list .car_item li .icon_list .icon_shop{width:auto !important;font-size:12px;color:#3b9dca;display:inline-block;padding:0px 5px;border:1px solid #9acfe8;border-radius:3px;margin-top:1px;margin-right:5px;}
+
+
+
+
+.interest{background-color:#f6f6f6;}
+.interest:hover{background-color:#f6f6f6 !important;}
+
+
+.car_list .car_item li .icon_array{margin:0 auto;overflow:hidden;height:277px;position:relative;top:-10px;}
+.car_list .car_item li .icon_array h4{text-align:center;height:29px;;line-height:27px;font-size:14px;}
+
+
+
+.car_list .car_item li .icon_array a{display: inline-block;padding: 5px 10px;text-align: center;border:1px solid #e9e9e9;margin:0px;margin-top:6px;background-color: #ffffff; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;}
+
+.car_list .car_item li .icon_array a:hover{border-color:#ff9920;color:black;text-decoration:none;}
+
+/*----------------------------------------------------------------------------------无车源-----------------------------------------------------------------------------------------------------*/
+.no_car{width:100%;}
+.no_car .no_car_main{width:95%;height:305px;margin:0 auto;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/car_none.png') no-repeat;background-position:90px 52px;}
+.no_car .no_car_main .car_source{width:550px;height:300px;float:right;}
+.no_car .no_car_main .car_source h1,.no_car .no_car_main .car_source h3{padding-top:80px;padding-bottom:25px;color:#666666;font-size:24px;padding-left:6px;}
+.no_car .no_car_main .car_source .p_title{font-size:14px;color:#999999;padding-left:8px;}
+.no_car .no_car_main .car_source .car_items a{display:inline-block;padding:5px 9px;border:1px solid #e9e9e9;font-weight:400;margin-left:10px;margin-top:12px;}
+.no_car .no_car_main .car_source .car_items a:hover{border:1px solid #ff9920;text-decoration:none;color:#666666;}
+.no_car .no_car_main .car_source .buy{padding-left:10px;padding-top:23px;font-size:14px;color:#999999;}
+.no_car .no_car_main .car_source .buy a{color:#3e7cc0;}
+
+
+.search_interest{width:100%;height:50px;line-height:50px;font-size:18px;font-weight:400;color:#666666;border-bottom:1px solid #e9e9e9;}
+.search_interest_com{width:100%;height:65px;line-height:65px;font-size:18px;font-weight:400;color:#666666;border-bottom:1px solid #e9e9e9;margin-top:40px;}
+.search_interest_com_g{height:65px;}
+
+/*已售状态*/
+.sold{width:50px;height:50px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/opacity.png') no-repeat;position:absolute;top:50%;left:50%;margin-left:-23px;margin-top:-36px;}
+.sold i{position:absolute;left:13px;top:15px;color:white;}
+
+
+
+
+@keyframes opacity1{
+from{opacity:0;}
+to{opacity:1}
+}
+
+@keyframes opacity2{
+from{opacity:0;top:0px;}
+to{opacity:1;top:-20px;}
+}
+
+
+/*-----------------------------------------------------------------------------------右侧覆盖样式----------------------------------------------------------------------*/
+.title-xm-size h3{font-size:20px;line-height:57px;height:55px;}
+.section-header .section-header-nav > li.current a{font-size:20px;}
+.hot-car-type .section-header .section-header-nav > li{font-size:20px;}
+.recommend-business{border-radius:0px !important;}
+.carlist-vertical{border-radius:0px !important;}
+
+
+.car_list .list_item .img_stop .corner{width:45px;height:38px;position:absolute;left:0px;top:20px;}
+.car_list .list_item .img_stop .corner img{width:100% !important;height:auto !important;margin:0 !important;}
+
+.car_list .car_item li .corner{width:45px;height:38px;position:absolute;left:22px;top:22px;}
+.car_list .car_item li .corner img{width:100% !important;height:auto !important;margin:0 !important;}
+
+.car_list .list_item .img_stop .corner_drop{width:52px;height:38px;line-height:1.26;padding-top:2px;position:absolute;left:10px;top:16px;text-align:center;font-size:12px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/price_jiao.png') no-repeat; color:white;}
+.car_list .list_item .img_stop .corner_drop .drop_font{display:inline-block;transform: scale(0.85);color:white;}
+.car_list .car_item li .corner_drop .drop_font{display:inline-block;transform: scale(0.85);color:white;}
+.car_list .car_item li .corner_drop{width:52px;height:38px;line-height:1.25;padding-top:3px;position:absolute;left:37px;top:17px;text-align:center;font-size:12px;background:url('http://image.bitautoimg.com/taoche/2017/pc/20170411/price_jiao.png') no-repeat; color:white;}
+
+
+/*右侧列表的*/
+.margin-xd{margin-top:-9px;}
+.title-xm-size span{margin-top:4px;}
+.title-xm-size .ad-gray-all{bottom:17px;}
+
+
+.hide{display:none;}
+.show{display:block;}
+
+
+/*右侧列表*/
+/*车型分类tab */
+.category-tit{height:55px;border-bottom:3px solid #e9e9e9;position:relative;}
+.category-tit ul{height:55px;position:absolute;left:0;top:0;}
+.category-tit ul li{font-size:24px;line-height:45px;height:55px;float:left;margin-right:30px;position:relative;}
+.category-tit ul li.current{border-bottom:3px solid #ff9a1f;}
+.category-tit ul li a{text-decoration:none;}
+.category-tit ul li a:hover{text-decoration:none;color:#ff9a1f;}
+.category-tit ul li.current a,.category-tit ul li.current a:hover{color:#ff9a1f;}
+.category-tit ul li em{background-color:#ff6d02;height:18px;line-height:18px;color:#ffffff;font-size:14px;padding:0 3px;border-radius:3px;position:absolute;left:100px;top:14px;}
+.category-show-type{float:right;padding-top:15px;}
+.category-show-type a{ display:inline-block; width:20px; height:20px;background:url("http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png") no-repeat; margin-left:15px;}
+.category-show-type  a.list-one{ background-position:-245px -7px}
+.category-show-type  a.list-one:hover{ background-position:-274px -7px;text-decoration:none;}
+.category-show-type  .current a.list-one,.category-show-type .current a.list-one:hover{ background-position:-274px -7px;}
+.category-show-type a.list-two{background-position:-245px -38px}
+.category-show-type a.list-two:hover{ background-position:-274px -38px;text-decoration:none;}
+.category-show-type .current a.list-two,.category-show-type .current a.list-two:hover{ background-position:-274px -38px;}
+
+
+
+/*列表车源竖排*/
+.taoche-car-list{margin-bottom:40px;}
+.taoche-car-list li {border-bottom: 1px solid #e9e9e9;position: relative;padding:20px 0;height:180px;*height:140px;}
+.taoche-car-list li.taoche-car-list-ad{height:140px;*height:100px;}
+.taoche-car-list .carpic {height: 140px;position: relative;width: 210px;float:left;}
+.cary-infor { width: 510px; float: left;margin-left: 30px;}
+.cary-infor h3 {line-height:30px;margin-bottom: 10px;font-size:16px;margin-top:-7px;width: 420px;}
+.date-card { color: #999999;line-height: 20px; margin-bottom: 15px;font-size:14px;}
+.date-card i {color: #e9e9e9;font-size:14px;}
+.taoche-car-price {color: #ff6d02;font-size: 24px;position: absolute;line-height:30px;right: 0;top:13px;font-weight:bold;}
+
+
+.essence {background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/cb_list_ico.png) no-repeat left -197px;display: inline-block;font-size: 0; height: 22px;line-height: 0; padding-left: 22px; vertical-align: middle;width: 0;margin-top:-1px;}
+.ico-top{background-position:-42px -198px;}
+.carpic-layer {height: 35px;width: 210px;position:absolute;bottom:0;left:0;}
+.carpic-layer-bg { background-color: #000000; bottom: 0; height: 35px; left: 0;filter:alpha(opacity=50); -moz-opacity:0.50; opacity:0.50;position: absolute; width: 210px;
+ z-index: 2;}
+
+.carpic-layer i {background-color: #5c5c5c; bottom: 0;height: 35px; left: 105px; position: absolute; width: 1px; z-index: 3;}
+.carpic-layer a,.carpic-layer a:link,.carpic-layer a:visited{color:#ffffff;}
+.carpic-layer a:hover { color: #ff9a1f;text-decoration: none;}
+.carpic-layer a {color: #ffffff;display: block;float: left; height: 35px;line-height: 35px; position: absolute;text-align: center; width: 105px;z-index: 5;font-size:14px;}
+.carpic-layer a.carpic-layer-follow  { bottom: 0; left: 0;}
+.carpic-layer a.carpic-layer-contrast  { bottom: 0; right: 0;}
+a.carpic-layer-disabled,a.carpic-layer-disabled:link,a,carpic-layer-disabled:visited,a.carpic-layer-disabled:hover{color:#999999;text-decoration:none;cursor:text;}
+.carpic-sold{width:56px;height:56px;position:absolute;left:80px;top:35px;}
+.carpic-sold i{width:56px;height:56px;display:block;position:relative;z-index:1;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/yisico.png) no-repeat left top; _background:none;    _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://image.bitautoimg.com/taoche/2016_pc_usedcar/yisico.png',sizingMethod='crop');}
+.carpic-sold em{position:relative;z-index:2;color:#ffffff;font-size:14px;width:56px;text-align:center;top:-37px;left:14px;}
+.carpic-similar a{width:210px;}
+
+
+
+/*列表车源横排*/
+.horizontal-car-list{position:relative;overflow:hidden;margin-bottom:40px;}
+.horizontal-car-list ul {width:1205px;position:relative;overflow:hidden;margin-left:-35px;}
+.horizontal-car-list ul li{width:310px;padding:20px 35px 0;float:left;border-left:1px solid #e9e9e9;border-bottom:1px solid #e9e9e9;position:relative;height:355px;}
+.horizontal-car-pic{width:240px;height:160px;position:relative;margin-bottom:5px;}
+.horizontal-car-pic img{width:240px;height:160px;border:none;}
+.horizontal-car-pic .carpic-layer{width:240px;}
+.horizontal-car-pic .carpic-layer a{width:120px;}
+.horizontal-car-pic .carpic-layer-bg{width:240px;}
+.horizontal-car-pic .carpic-layer i{left:120px;}
+.horizontal-car-tit{ font-size: 16px;line-height:28px;margin-bottom: 10px;}
+.horizontal-car-price{display:table;margin-bottom:6px;}
+.horizontal-car-price em{color:#ff6d02;font-size:24px;}
+.horizontal-car-text{line-height:18px;font-size:14px;color:#999999;}
+.horizontal-car-pic .carpic-similar  a{width:240px;}
+.horizontal-car-pic .carpic-sold{left:90px;top:45px;}
+
+/*常用工具*/
+.common-tools{border:1px solid #e9e9e9;display:table;height:208px;}
+.common-tools ul li{width:148px;border-right:1px solid #e9e9e9;border-bottom:1px solid #e9e9e9;text-align:center;float:left;padding-bottom:15px;}
+.common-tools ul li em{width:50px;height:49px;display:block;margin:15px auto 5px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/common-tools.gif) no-repeat;}
+.common-tools ul li p{text-align:center;font-size:14px;}
+.common-tools ul li.common-tools-evaluation{}
+.common-tools ul li.common-tools-evaluation em{background-position:left top;}
+.common-tools ul li.common-tools-buy{border-right:none;}
+.common-tools ul li.common-tools-buy em{background-position:-56px top;}
+.common-tools ul li.common-tools-sell{border-bottom:none;}
+.common-tools ul li.common-tools-sell em{background-position:-112px top;}
+.common-tools ul li.common-tools-standard{border-bottom:none;border-right:none;}
+.common-tools ul li.common-tools-standard em{background-position:-170px top;}
+.common-tools ul li a{cursor:pointer;color:#666666;display:block;}
+.common-tools ul li a:hover{text-decoration:none;color:#ff9a1f;}
+
+
+/*品牌*/
+.category-logo-list{ padding-bottom:20px; width:860px; position:relative; clear:both;border-bottom:1px solid #e9e9e9;z-index:3;}
+.category-logo-list ul{width:880px; padding-top:10px; margin-left:-20px;}
+.category-logo-list li{ float:left;margin:10px 0px 0 20px; position:relative; z-index:1;}
+.category-logo-list li a{ border:1px solid #e9e9e9; width:156px;*width:154px; height:60px;*height:58px;  display:block;text-align:center;}
+.category-logo-list li a:hover{ border:1px solid #ff9a1f}
+.category-logo-list li.current a,.category-logo-list li.current a:hover{border:1px solid #ff9a1f;}
+.category-logo-list li.current a.blue-link:hover{border:none;}
+.category-logo-list li img{width:100px; height:50px; display:block; margin:4px auto;}
+
+.category-logo-list  .screen-layer{position:aboslute;padding:15px 20px;width:390px;*width:360px;line-height:22px;color:#999999;left:0;top:70px;}
+.category-logo-list li .screen-layer a{height:auto;height:auo;display:inline;border:none;}
+
+.taoche-screen-other li .btn-xxxs a{height:30px;line-height:28px;padding:0;}
+.taoche-screen-text li .btn-xxxs a{line-height:28px;}
+.taoche-screen-text li.taoche-screen-drop .btn-primary a:hover{text-decoration:none;background:#f18500;border:1px solid #f18500;color:#ffffff;}
+
+.lieb-ad-860-80{height:80px;margin-bottom:20px;}
+
+/*9月9日 右侧添加 推荐车系/推荐品牌*/
+.hot-car-type .section-header .section-header-nav > li{font-size:24px;}
+.hot-car-text-list{padding-top:7px;}
+.hot-car-text-list li{font-size:14px;height:18px;line-height:18px;margin-top:20px;padding-left:25px;position:relative;overflow:hidden;}
+.hot-car-text-list li strong{font-size:18px;margin-right:10px;position:absolute;left:0;top:-1px;}
+.hot-car-text-list li strong.current{color:#ff9a1f;}
+.right-column-lg{position:relative;}
+.list-fixed{position:fixed;left:50%;margin-left:300px;top:0;z-index:10001;width:300px;}
+.list-fixed .margin-xd .title-xm-size{width:300px;background-color:#ffffff;float:right;display:block;}
+.list-fixed .margin-xd  .carlist-vertical{width:300px;background-color:#ffffff;float:right;display:block;}
+
+/*双十一 9月26*/
+.screen-sort-map{margin-left:5px;}
+.screen-sort-checkbox{float:left;margin-left:-20px;}
+.screen-sort-input .screen-sort-checkbox label{margin-right:0;margin-left:20px;}
+.screen-sort-text{padding-right:0;}
+.screen-sort-checkbox label.red-text{color:#e43d40;}
+
+/*同车型推荐*/
+.recommend_car_list{overflow: hidden;margin-top:10px;}
+.recommend_car_list_tab{height:50px; margin: auto}
+.recommend_car_list_tab:after{content:""; width:100%;display: block;overflow: hidden; clear: both;height: 0;border-bottom: 1px solid #e9e9e9;}
+.recommend_car_list_tab li{color:#333333;font-size: 18px; line-height: 50px;height: 50px;cursor: pointer;float: left;width:auto;margin-right: 40px;margin-bottom:-1px/*;-webkit-transition:0.5s ease;-moz-transition:0.5s ease;-ms-transition:0.5s ease;-o-transition:0.5s ease;transition:0.5s ease*/}
+.recommend_car_list_tab li.current{color:#ff9a1f;border-bottom:3px solid #ff9a1f;}
+.recommend_car_list_con{display:block;width:890px;overflow: hidden;padding: 7px 4px;}
+.recommend_car_list_con li{display:block;float:left;padding:7px 4px}
+.recommend_car_list_con li a{text-decoration: none;cursor: pointer; height:30px; display: block;border:1px solid #e9e9e9;padding:0 9px;line-height:28px;font-size:12px;color: #666666;text-align: center;overflow:hidden;text-overflow:ellipsis;word-break:keep-all;white-space:nowrap}
+.recommend_car_list_con li.current a,.recommend_car_list_con li a:hover{color:#ff9a1f;border-color:#ff9a1f;}
+.recommend_car_list_con.X8{margin-left:-6px}
+.recommend_car_list_con.X8 li{width:108px}
+.recommend_car_list_con.X7{margin-left:-8px}
+.recommend_car_list_con.X7 li{width:124px}
+
+/*20170718*/
+.title-xm-size{height: 55px;line-height: 45px;font-size: 24px;font-family: "Microsoft YaHei";display: block;position:relative;margin-top:-37px;}
+.title-xm-size .tab_h3{margin-right:50px;display:inline-block;margin:0 20px;}
+.title-xm-size .tab_h3:hover{cursor:pointer;}
+.title-xm-size .tab_h3.cur{color:#ff9a1f;border-bottom:3px solid #ff9a1f;}
+.section-tag-content .ul_list{width:100%;/*height:85px;*/display:none;}
+/*面包屑*/
+.crumbs{height:50px;line-height:50px;color: #999;width: 1200px;font-size: 14px;font-family: "Microsoft YaHei";margin:0 auto;}
+.crumbs a{color:#333333 !important;}
+.clear_margin{margin:0px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

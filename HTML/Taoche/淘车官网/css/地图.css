@@ -1,0 +1,89 @@
+﻿/*地图头部*/
+.map-search-top{height:90px;border-bottom:1px solid #e9e9e9;position:relative;z-index:5;background-color:#ffffff;width:100%;}
+.map-search-top h2{float:left;margin-top:20px;margin-left:60px;height:40px;line-height:40px;font-size:30px;display:inline;}
+.map-search-top-city{float:left;margin:33px 0 0 20px;font-size:14px;color:#666666;position:relative;}
+.map-search-top-city a{color:#666666;}
+.map-search-top-city a:hover{text-decoration:none;color:#ff9a1f;}
+.map-search-top-city a i{float:left;}
+.map-search-top-city a em{float:left;width:10px;height:10px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -178px -12px;display:block;margin-top:7px;margin-left:4px;}
+
+/*左侧选项层*/
+.map-search-left{width:355px;position:relative;z-index:2;background-color:#ffffff;float:left;overflow-y:auto;zoom:1;}
+.map-search-list{border-bottom:1px solid #e9e9e9;display:table;width:100%;}
+.map-search-list-tit{height:50px;line-height:50px;font-size:14px;display:block;position:relative;z-index:1;}
+.map-search-list-tit a,.map-search-list-tit a:hover{height:50px;display:block;color:#333333;text-decoration:none;}
+.map-search-list-tit a:hover{}
+.map-search-list-tit strong{padding-left:20px;font-weight:bold;}
+.map-search-list-tit em{float:right;margin-right:20px;width:10px;height:10px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -178px -12px;margin-top:23px;*margin-top:-26px;}
+.map-search-list-text{font-size:14px;margin-top:-8px;display:tabel;position:relative;z-index:2;padding-bottom:10px;display:table;width:100%;margin-right:5px;}
+.map-search-list-text a{height:30px;line-height:30px;padding:0 10px;margin-left:7px;float:left;color:#666666;border-radius:2px;}
+.map-search-list-text a:hover{color:#666666;text-decoration:none;background-color:#f0f0f0;border-radius:2px;}
+.map-search-list-brand{/*width:305px;*/float:left;margin-left:3px;}
+.map-search-list-brand-morebox{float:right;position:relative;}
+.map-search-list .taoche-screen-selected{padding-left:20px;padding-top:20px;padding-bottom:10px;display:table;z-index:11;}
+.map-search-list-text a.map-search-list-more{margin-right:20px;padding:0;}
+.map-search-list-text a.map-search-list-more em{float:right;width:10px;height:10px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -178px -12px;margin-top:13px;margin-left:3px;}
+.map-search-list-text a.map-search-list-more:hover{background:none;color: #ff9a1f;}
+.map-search-list-text a.map-search-list-more:hover em{background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -64px -12px;}
+.map-search-list-up{background-color:#f9f9f9;}
+.map-search-list-tit em.map-search-list-upico{background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -195px -12px;}
+
+
+.map-search-distance{margin-top:10px;padding-bottom:20px;display:table;width:100%;}
+.map-search-distance-strip{margin:0 19px 0 20px;height:5px;display:block;background-color:#efefef;position:relative;}
+.map-search-distance-strip em{width:100%;display:block;height:5px;background-color:#ff9a1f;}
+.map-search-distance-strip i{width:24px;height:22px;position:absolute;top:-7px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -206px -34px;}
+.map-search-distance ul{margin-left:20px;}
+.map-search-distance ul li{display:inline;margin-right:12px;float:left;font-size:12px;color:#666666;margin-top:10px;}
+ 
+.map-search-list-text  a.current, .map-search-list-text  a.current:hover {background-color: #ff9a1f;color: #ffffff;}
+.map-search-top-city .screen-city-province a,.map-search-top-city  .screen-city-text a{color:#333333;background:none;}
+
+
+/*地图*/
+.map-search-box{width:100%;clear:both;}
+.map-search{height:100%;position:relative;z-index:1;overflow:hidden;margin-left:355px;}
+.map-search-box{}
+.map-search-carlayer{position:absolute;left:628px;top:100px;width:435px;background-color:#ffffff;border-radius:3px;height:195px;display:table;font-size:14px;}
+.map-search-carlayer-tit{height:40px;line-height:40px;border-bottom:1px solid #e9e9e9;padding-left:15px;position:relative;}
+.map-search-carlayer-tit .popover-close{right:10px;top:10px;}
+.map-search-carlayer-tit em{float:left;width:20px;height:20px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -4px -68px;display:block;margin-top:10px;margin-right:10px;}
+
+.map-search-carmain{height:100px;border-bottom:1px solid #e9e9e9;position:relative;display:table;width:100%;}
+.map-search-carmain .taoche-details-goleft{left:15px;bottom:20px;}
+.map-search-carmain .taoche-details-goright{right:15px;bottom:20px;}
+.map-search-car-list{height:80px;*height:90px;margin:10px 0px 0px 50px;width:345px;overflow:hidden;position:relative;}
+.map-search-car-list ul{height:80px;display:table;overflow:hidden;position:absolute;left:0;top:0;*top:10px;}
+.map-search-car-list ul li{float:left;}
+.map-search-car{width:120px;height:80px;overflow:hidden;float:left;margin:0px 15px 0px 0px;}
+.map-search-car-text{float:left;width:200px;}
+.map-search-car-text h3{font-size:14px;height:50px;*margin-top:3px;display:table;}
+.map-search-car-text h3 span{display:table-cell;vertical-align:middle;}
+.map-search-car-text p{line-height:25px;color:#999999;}
+.map-search-car-text p em{color:#ff9a1f;margin-right:10px;float:left;}
+.map-search-car-text p i{margin-right:10px;float:left;}
+.map-search-carlayer-dress{color:#999999;height:25px;line-height:25px;overflow:hidden;margin:13px 15px 0 15px;}
+.map-search-carlayer-dress em{float:left;width:15px;height:17px;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/screen_ico.png) no-repeat -50px -68px;display:block;margin-right:8px;margin-top:5px;}
+.map-search-load{background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/load_150_150.png) no-repeat center top #ffffff;}
+.map-search-load p{font-size:16px;color:#666666;text-align:center;margin-top:160px;}
+
+
+/*地图头部搜索*/
+.map-header-search{float:left;margin-left:30px;margin-top:20px;height:44px;*height:43px;border:1px solid #cccccc;border-radius:3px;width:400px;position:relative;}
+.map-header-search input{border:1px solid #ffffff;height:42px;line-height:42px;*height:40px;*line-height:40px;font-size:16px;width:280px;color:#cccccc;margin:0 10px 0 10px;*margin:0 10px 0 -20px;}
+.map-header-search-but{top:-1px;right:-1px;}
+.map-header-search-but a{width:120px;height:44px;line-height:44px;background-color:#ff9a1f;border-radius:3px;display:block;color:#ffffff;text-align:center;position:absolute;right:-1px;top:-1px;font-size:16px;}
+.map-header-search-but a:hover{text-decoration:none;}
+
+.map-dress-nub{position:absolute;}
+.map-dress-nub a{width:20px;height:28px;text-align:center;color:#ffffff;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/map_dress.png) no-repeat left top;display:block;line-height:19px;}
+.map-dress-nub a:hover{text-decoration:none;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/map_dress_hover.png) no-repeat left top;}
+.map-dress-nub a.map-dress-click{width:32px;height:40px;text-align:center;color:#ffffff;background:url(http://image.bitautoimg.com/taoche/2016_pc_usedcar/map_dress_click.png) no-repeat left top;display:block;line-height:28px;font-size:14px;}
+
+/*地图展开*/
+.map-search-list .form-sm .form-group{padding-left:20px;}
+.map-search-text{padding-left:14px;margin-top:-5px;padding-bottom:10px;}
+.map-search-text li{width:105px;float:left;font-size:14px;margin-bottom:5px;}
+.map-search-text li a{color:#666666;height:24px;line-height:24px;padding:0 6px;border-radius:2px;display:inline-block;}
+.map-search-text li a:hover{text-decoration:none;background-color:#f0f0f0;}
+.map-search-text li a.current,.map-search-text li a.current:hover{background-color:#ff9a1f;color:#ffffff;}

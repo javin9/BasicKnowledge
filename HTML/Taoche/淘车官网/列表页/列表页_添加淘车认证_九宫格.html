@@ -1,0 +1,818 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>列表页</title>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/html5shiv.min.js"></script>
+    <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/Respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" href="../css/col.min.css">
+<link rel="stylesheet" type="text/css" href="../css/1200_com.css">
+<link rel="stylesheet" type="text/css" href="../css/1200_头.css">
+<link rel="stylesheet" type="text/css" href="../css/图片列表.css">
+<link rel="stylesheet" type="text/css" href="../css/按钮.css">
+<link rel="stylesheet" type="text/css" href="../css/⁮标题.css">
+<link rel="stylesheet" type="text/css" href="../css/筛选.css">
+<link rel="stylesheet" type="text/css" href="列表页.css">
+<link rel="stylesheet" type="text/css" href="列表页_news.css"/>
+<link rel="stylesheet" type="text/css" href="../css/翻页.css">
+<link rel="stylesheet" type="text/css" href="../css/推荐商家.css">
+<link rel="stylesheet" type="text/css" href="../css/浮层.css">
+<link rel="stylesheet" type="text/css" href="../font/iconfont.css"/>
+<link rel="stylesheet" type="text/css" href="./筛选条件.css">
+<link rel="stylesheet" type="text/css" href="../css/购车节.css">
+<link rel="stylesheet" href="./新增淘车认证列表样式.css">
+<script src="../js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="../css/ie-hack.css">
+<![endif]-->
+</head>
+
+<body class="body_font">
+<div class="container margin-md">
+   <div class="left-column-lg margin-top-md">
+	
+		
+      <!--车型分类tab  star-->
+         <div class="tabbar">
+         	
+			  <ul class="tab_ul">
+			  	<li class="tab_li"><a href="#">北京二手车</a></li>
+			  	<li class="tab_hot"><a class="active" href="#">淘车认证车</a><em class="hot_ico"></em></li>
+			  	<li><a class="" href="#">保障车</li>
+			  	<li><a href="#">品牌认证车</a></li>
+			  	<li><a href="#">商家</a></li>
+			  	<li><a href="#">个人</a></li>
+			  </ul>   	
+			  <!--切换九宫格图标按钮-->
+			  <div class="flex">
+			  	<a href="#" class="row iconfont icon-shitu-"></a>
+			  	<a href="#" class="column iconfont icon-icon_shitu active"></a>
+			  </div>
+         	
+         </div>
+      <!--车型分类tab end -->
+      
+      <!--排序  star-->
+      	<div class="sort">
+      		<ul>
+      			<li>
+      				<span class="sort_color">默认排序</span>
+      				<div class="sort_price">
+      					<a href="javascript:;" title="价格从高到低">价格&nbsp;</a><i class="iconfont icon-jiantou_xia color_Arrow"></i>
+      					<a href="javascript:;" title="价格从低到高">价格&nbsp;</a><i class="iconfont icon-jiantou_shang color_Arrow"></i>
+      					<a href="javascript:;" title="最新发布">最新&nbsp;</a><i class="iconfont icon-jiantou_xia color_Arrow"></i>
+      					<a href="javascript:;" title="里程从少到多">里程&nbsp;</a><i class="iconfont icon-jiantou_xia color_Arrow"></i>
+      					<a href="javascript:;" title="车龄从短到长">车龄&nbsp;</a><i class="iconfont icon-jiantou_shang color_Arrow"></i>
+      				</div>
+      			</li>
+      			
+      			<li class="select_pop_main">
+      				<div class="select_sort">
+      					
+      					<div class="select_pop">
+      						<label><i class="iconfont icon-checkbox icon-checked"></i>准新车 </label> 
+							<label><i class="iconfont icon-checkbox"></i>可迁全国</label> 
+							<label><i class="iconfont icon-checkbox"></i>车检报告</label> 
+							<label><i class="iconfont icon-checkbox"></i>在售车源</label> <br>
+							<label><i class="iconfont icon-checkbox"></i>延长质保</label> 
+							<label><i class="iconfont icon-checkbox"></i>原厂质保</label> 
+							<label><i class="iconfont icon-checkbox"></i>车检报告</label> 
+							<label><i class="iconfont icon-checkbox"></i>免费过户</label> 
+      					</div>
+      				
+						<span class="more">
+      						<span class="more_pos">更多<i class="iconfont icon-dropdown"></i></span>
+      					</span>
+      					
+      				</div>
+      			</li>
+      			
+      			<li class="last_li">
+      				共<i>83923</i>台车源
+      			</li>
+      		</ul>
+      		
+      	</div>
+      <!--排序  end-->
+      
+      <!--车源图片列表  star-->
+         
+         <div class="car_list">
+			
+			<ul class="car_item">
+				
+				<li >
+					<div class="contrast">
+						<a href="#">加入收藏</a>
+						<a href="#" class="db_already">加入对比</a>
+					</div>
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+					<div class="auth_mask"></div>
+					<div class="auth_text">123</div>
+				</li>
+				
+				<li>
+					<div class="img_stop">
+	         			<img src="../images/300_200_pic.jpg">
+	         			<!--找相似-->
+		         		<div class="img_pop">
+		         			找相似
+		         		</div>
+		         		<!--已售状态-->
+		         		<div class="sold">
+		         			<i>已售</i>
+		         		</div>
+         			</div>
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+					<div class="auth_mask"></div>
+					<div class="auth_text">123</div>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+					<div class="auth_mask"></div>
+					<div class="auth_text">123</div>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li class="interest">
+					<div class="icon_array">
+						<h4>您可能还对这些车感兴趣</h4>
+						<a href="#"><i>宝马</i> , <i>12-15万</i> , <i>MPV</i></a>
+						<a href="#"><i>MPV</i>,<i>100万以上</i></a>
+						<a href="#"><i>宝马</i></a>
+						<a href="#"><i>MPV</i>,<i>12-60万</i></a>
+						<a href="#"><i>中大型车</i></a>
+						<a href="#"><i>20-26万</i></a>
+						<a href="#"><i>MPV</i>,<i>100万以上</i></a>
+						<a href="#"><i>宝马</i> , <i>12-15万</i> , <i>MPV</i></a>
+						<a href="#"><i>宝马</i> , <i>12-15万</i> , <i>MPV</i></a>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<p class="icon_list">
+						<a title="保障车"  href="#" class="icon_security"></a>
+						<a title="帮买" 	 href="#" class="icon_help"></a>
+						<a title="原厂质保" href="#" class="icon_transfer"></a>
+						<a title="车检报告" href="#" class="icon_report"></a>
+						<a title="认证车"  href="#" class="icon_certified"></a>
+						<a title="免费过户" href="#" class="icon_free"></a>
+						<a title="延长质保" href="#" class="icon_inspect"></a>
+					</p>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<div class="auth-ico-list">
+						<em class="em_type_30day">30天可退</em>
+						<em class="em_type_year">一年保修</em>
+						<em class="em_type_fenqi">分期付款</em>
+					</div>
+					<i class="RENZHENG4"></i>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<p class="icon_list">
+						<a title="保障车"  href="#" class="icon_security"></a>
+						<a title="帮买" 	 href="#" class="icon_help"></a>
+						<a title="原厂质保" href="#" class="icon_transfer"></a>
+						<a title="车检报告" href="#" class="icon_report"></a>
+						<a title="认证车"  href="#" class="icon_certified"></a>
+						<a title="免费过户" href="#" class="icon_free"></a>
+						<a title="延长质保" href="#" class="icon_inspect"></a>
+					</p>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<p class="icon_list">
+						<a title="保障车"  href="#" class="icon_security"></a>
+						<a title="帮买" 	 href="#" class="icon_help"></a>
+						<a title="原厂质保" href="#" class="icon_transfer"></a>
+						<a title="车检报告" href="#" class="icon_report"></a>
+						<a title="认证车"  href="#" class="icon_certified"></a>
+						<a title="免费过户" href="#" class="icon_free"></a>
+						<a title="延长质保" href="#" class="icon_inspect"></a>
+					</p>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<p class="icon_list">
+						<a title="保障车"  href="#" class="icon_security"></a>
+						<a title="帮买" 	 href="#" class="icon_help"></a>
+						<a title="原厂质保" href="#" class="icon_transfer"></a>
+						<a title="车检报告" href="#" class="icon_report"></a>
+						<a title="认证车"  href="#" class="icon_certified"></a>
+						<a title="免费过户" href="#" class="icon_free"></a>
+						<a title="延长质保" href="#" class="icon_inspect"></a>
+					</p>
+				</li>
+				
+				<li>
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<p class="icon_list">
+						<a title="保障车"  href="#" class="icon_security"></a>
+						<a title="帮买" 	 href="#" class="icon_help"></a>
+						<a title="原厂质保" href="#" class="icon_transfer"></a>
+						<a title="车检报告" href="#" class="icon_report"></a>
+						<a title="认证车"  href="#" class="icon_certified"></a>
+						<a title="免费过户" href="#" class="icon_free"></a>
+						<a title="延长质保" href="#" class="icon_inspect"></a>
+					</p>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<p class="icon_list">
+						<a title="保障车"  href="#" class="icon_security"></a>
+						<a title="帮买" 	 href="#" class="icon_help"></a>
+						<a title="原厂质保" href="#" class="icon_transfer"></a>
+						<a title="车检报告" href="#" class="icon_report"></a>
+						<a title="认证车"  href="#" class="icon_certified"></a>
+						<a title="免费过户" href="#" class="icon_free"></a>
+						<a title="延长质保" href="#" class="icon_inspect"></a>
+					</p>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<p class="icon_list">
+						<a title="保障车"  href="#" class="icon_security"></a>
+						<a title="帮买" 	 href="#" class="icon_help"></a>
+						<a title="原厂质保" href="#" class="icon_transfer"></a>
+						<a title="车检报告" href="#" class="icon_report"></a>
+						<a title="认证车"  href="#" class="icon_certified"></a>
+						<a title="免费过户" href="#" class="icon_free"></a>
+						<a title="延长质保" href="#" class="icon_inspect"></a>
+					</p>
+				</li>
+				
+				<li>
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<p class="icon_list">
+						<a title="保障车"  href="#" class="icon_security"></a>
+						<a title="帮买" 	 href="#" class="icon_help"></a>
+						<a title="原厂质保" href="#" class="icon_transfer"></a>
+						<a title="车检报告" href="#" class="icon_report"></a>
+						<a title="认证车"  href="#" class="icon_certified"></a>
+						<a title="免费过户" href="#" class="icon_free"></a>
+						<a title="延长质保" href="#" class="icon_inspect"></a>
+					</p>
+				</li>
+				
+				<li>
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<p class="icon_list">
+						<a title="保障车"  href="#" class="icon_security"></a>
+						<a title="帮买" 	 href="#" class="icon_help"></a>
+						<a title="原厂质保" href="#" class="icon_transfer"></a>
+						<a title="车检报告" href="#" class="icon_report"></a>
+						<a title="认证车"  href="#" class="icon_certified"></a>
+						<a title="免费过户" href="#" class="icon_free"></a>
+						<a title="延长质保" href="#" class="icon_inspect"></a>
+					</p>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<p class="icon_list">
+						<a title="保障车"  href="#" class="icon_security"></a>
+						<a title="帮买" 	 href="#" class="icon_help"></a>
+						<a title="原厂质保" href="#" class="icon_transfer"></a>
+						<a title="车检报告" href="#" class="icon_report"></a>
+						<a title="认证车"  href="#" class="icon_certified"></a>
+						<a title="免费过户" href="#" class="icon_free"></a>
+						<a title="延长质保" href="#" class="icon_inspect"></a>
+					</p>
+				</li>
+				
+				<li >
+					<img src="../images/300_200_pic.jpg">
+					<h1><a title="途观 2015款 2.0TSI 旗舰版 手自一体 四驱" href="#">途观 2015款 2.0TSI 旗舰版 手自一体 四驱</a><i class="icon_top">精</i></h1>
+					<h2>25.62万</h2>
+					<p><span class="span_one">2015年</span> | <span>0.70万公里</span> | <span>北京</span></p>
+					<p class="icon_list">
+						<a title="保障车"  href="#" class="icon_security"></a>
+						<a title="帮买" 	 href="#" class="icon_help"></a>
+						<a title="原厂质保" href="#" class="icon_transfer"></a>
+						<a title="车检报告" href="#" class="icon_report"></a>
+						<a title="认证车"  href="#" class="icon_certified"></a>
+						<a title="免费过户" href="#" class="icon_free"></a>
+						<a title="延长质保" href="#" class="icon_inspect"></a>
+					</p>
+				</li>
+			</ul>
+         </div>
+         
+     <!--车源图片列表  end-->
+      
+      <!-- 翻页star -->
+         <div class="the-pages"><div><a href="#" class="pages-up pages-disabled"><</a><a href="#">1</a><a href="#" class="linknow">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">...</a><a href="#">15</a><a href="#"  class="pages-next">></a></div></div>
+      <!-- 翻页end -->
+      
+   </div>
+
+   <div class="right-column-lg margin-top-md">
+       <!--常用工具 star -->
+         <div class="margin-xd">
+           <div class="title-xm-size"><h3>常用工具</h3></div>
+           <div class="common-tools">
+              <ul>
+                <li class="common-tools-evaluation ">
+                   <a href=""><em></em><p>二手车估价</p></a>
+                </li>
+                <li class="common-tools-buy">
+                   <a href=""><em></em><p>我要求购</p></a>
+                </li>
+                <li class="common-tools-sell">
+                  <a href=""> <em></em><p>高价卖车</p></a>
+                </li>
+                <li class="common-tools-standard">
+                   <a href=""><em></em><p>查准入标准</p></a>
+                </li>
+              </ul>
+           </div>
+        </div>
+       <!--常用工具 end -->
+       <div class="clear"></div>
+        <!--广告300*200 star -->
+          <div class="ad-300-200">300*200</div>
+        <!--广告300*200 end -->
+       
+       
+       <!--地图找车 star -->
+          <div class="margin-xd">
+            <div class="title-xm-size"><h3>地图找车</h3> <span><a href="#">大图查看</a></span></div>
+            <div class="map-find-car"><img src="../images/map_300_200.gif" alt="地图找车"></div>
+          </div>
+       <!--地图找车 end -->
+       <div class="clear"></div>
+        <!--广告300*200 star -->
+          <div class="ad-300-200">300*200</div>
+        <!--广告300*200 end -->
+        <div class="clear"></div>
+        <!--广告300*200 star -->
+          <div class="ad-300-200">300*200</div>
+        <!--广告300*200 end -->
+       
+        <!--推荐商家 star -->
+          <div class="margin-xd">
+            <div class="title-xm-size"><h3>推荐商家</h3>  <div class="ad-gray-all">广告</div></div>
+                 <div class="recommend-business">
+                    <div class="recommend-business-list clearfix">
+                      <h5><em>专业公司</em> <i>-</i> <a href="#">融易车</a></h5>
+                      <p class="recommend-business-text">电话：<span>18611352453</span>  <a href="#" class="blue-link" target="_blank">地图&gt;</a></p>
+                        <ul>
+                            <li class=""> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+                             <h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+                              <P><em>34.15 万</em></P>
+                            </li>
+                             <li> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+                               <h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+                               <P><em>34.15 万</em></P>
+                            </li>
+                      </ul>
+                   </div>
+                   
+                   <div class="recommend-business-list clearfix">
+                      <h5><em>专业公司</em> <i>-</i> <a href="#">融易车</a></h5>
+                      <p class="recommend-business-text">电话：<span>18611352453</span>  <a href="#" class="blue-link" target="_blank">地图&gt;</a></p>
+                        <ul>
+                            <li class=""> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+                             <h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+                              <P><em>34.15 万</em></P>
+                            </li>
+                             <li> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+                               <h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+                               <P><em>34.15 万</em></P>
+                            </li>
+                      </ul>
+                   </div>
+                   
+                </div>
+          </div>
+       <!--推荐商家 end -->
+       
+      <!-- 热门车系 车型 star--> 
+      <div class="margin-xd hot-car-type">
+           <div class="section-header header2">
+                  <div class="box">
+                     <ul class="section-header-nav">
+                      <li class="current"><a href="#">热门车系</a></li>
+                      <li class=""><a href="#">热门车型</a></li>
+                    </ul>
+                  </div>
+          </div>
+          <div class="hot-car-text-list">
+             <ul>
+                <li><strong class="current">1.</strong><a href="#">宝马X3</a></li>
+                <li><strong class="current">2.</strong><a href="#">JEEP 牧马人</a></li>
+                <li><strong class="current">3.</strong><a href="#">本田CR-V</a></li>
+                <li><strong>4.</strong><a href="#">奥迪Q5</a></li>
+                <li><strong>5.</strong><a href="#">大众途观</a></li>
+                <li><strong>6.</strong><a href="#">别克昂科威</a></li>
+                <li><strong>7.</strong><a href="#">保时捷卡宴保时捷卡宴保时捷卡宴保时捷卡宴</a></li>
+                <li><strong>8.</strong><a href="#">别克GL8</a></li>
+             </ul>
+          </div>
+     </div> 
+      <!-- 热门车系 车型 end-->  
+       
+	  <!--猜您喜欢的二手车 star -->
+       <div class="margin-xd">
+             <div class="title-xm-size"><h3>猜您喜欢的二手车</h3> </div>
+             <div class="carlist-vertical">
+                <ul>
+                   <li> <a href="#"><img src="../images/120_80_pic.jpg" alt="喜欢的二手车" /></a>
+                     <h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+                      <P>2015年  12.43万公里</P>
+                      <em>15.43万</em>
+                   </li>
+                   <li> <a href="#"><img src="../images/120_80_pic.jpg" alt="喜欢的二手车" /></a>
+                     <h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+                      <P>2015年  12.43万公里</P>
+                      <em>15.43万</em>
+                   </li>
+                   <li> <a href="#"><img src="../images/120_80_pic.jpg" alt="喜欢的二手车" /></a>
+                     <h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+                      <P>2015年  12.43万公里</P>
+                      <em>15.43万</em>
+                   </li>
+                   <li> <a href="#"><img src="../images/120_80_pic.jpg" alt="喜欢的二手车" /></a>
+                     <h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+                      <P>2015年  12.43万公里</P>
+                      <em>15.43万</em>
+                   </li>
+                </ul>
+             </div>
+          </div>
+       <!--猜您喜欢的二手车 end -->
+   </div>
+</div>
+
+	<!--二手车城市直达 star-->
+	    <div class="container margin-md">
+	      <div class="title-xm-size title-border">
+	        <h3>二手车城市直达</h3>
+	      </div>
+	      <div class="section-tag-content">
+	  <ul>
+	    <li><a href="#">汽车</a></li>
+	    <li><a href="#">二手车法</a></li>
+	    <li><a href="#">兰克福车展</a></li>
+	    <li><a href="#">上海车展</a></li>
+	    <li><a href="#">好友二手车 </a></li>
+	    <li><a href="#">上海二手车</a></li>
+	    <li><a href="#">淮安车网</a></li>
+	    <li><a href="#">广州房价</a></li>
+	    <li><a href="#">欧卡二手车</a></li>
+	    <li><a href="#">上海二手车</a></li>
+	    <li><a href="#">上海新闻</a></li>
+	    <li><a href="#">上海天气汽车城</a></li>
+	    <li><a href="#">上海车展</a></li>
+	    <li><a href="#">上海二手车</a></li>
+	    <li><a href="#">上海车展</a></li>
+	    <li><a href="#">上海汽车网</a></li>
+	    <li><a href="#">上海长途</a></li>
+	    <li><a href="#">上海车展</a></li>
+	    <li><a href="#">搜车吧</a></li>
+	    <li><a href="#">爱车族</a></li>
+	    <li><a href="#">上海车展</a></li>
+	    <li><a href="#">南阳汽车网</a></li>
+	    <li><a href="#">上海车展</a></li>
+	    <li><a href="#">上海车展2015</a></li>
+	    <li><a href="#">上海车展</a></li>
+	    <li><a href="#">上海租车公司</a></li>
+	    <li><a href="#">旅游地产</a></li>
+	    <li><a href="#">团购麻豆网</a></li>
+	    <li><a href="#">上海车展</a></li>
+	    <li><a href="#"> 三亚会议</a></li>
+	    <li><a href="#">上海车展</a></li>
+	    <li><a href="#">汽车票</a></li>
+	    <li><a href="#">网上订票</a></li>
+	    <li><a href="#">上海二手车</a></li>
+	    <li><a href="#">上海汽车站时刻表</a></li>
+	    <li><a href="#">led广告车</a></li>
+	    <li><a href="#">汽车标志大全 </a></li>
+	    <li><a href="#">惠州汽车网</a></li>
+	    <li><a href="#">金鹰汽车网</a></li>
+	    <li><a href="#">搜车网</a></li>
+	    <li><a href="#">上海汽车团购网</a></li>
+	    <li><a href="#">汽车维修与保养</a></li>
+	    <li><a href="#"> 上海车展</a></li>
+	    <li><a href="#">养车网</a></li>
+	    <li><a href="#">豪车之家</a></li>
+	    <li><a href="#">学车</a></li>
+	    <li><a href="#">洛阳汽车网</a></li>
+	    <li><a href="#">上海易修网</a></li>
+	    <li><a href="#">湖南汽车网</a></li>
+	    <li><a href="#">丝路汽车网</a></li>
+	    <li><a href="#">苏州二手房</a></li>
+	    <li><a href="#">湖南汽车网</a></li>
+	    <li><a href="#">上海汽车零部件展</a></li>
+	    <li><a href="#">江阴汽车网</a></li>
+	    <li><a href="#">汽车论坛</a></li>
+	    <li><a href="#">蓝网二手车评估</a></li>
+	    </ul>
+	      </div>
+	</div>
+	<!--二手车城市直达 end -->
+
+	<script type="text/javascript">
+		$('.tab_ul li').click(function(){
+			$('.tab_ul li').eq($(this).index()).addClass('active').siblings().removeClass('active');
+		})
+	</script>
+
+<script type="text/javascript">
+$('.select').mouseenter(function(){$(this).addClass("active")}).mouseleave(function(){$(this).removeClass("active")})
+$('.price-list .more').mouseenter(function(){$(this).addClass("current");$(".price-handle").show()}).mouseleave(function(){$(this).removeClass("current");$(".price-handle").hide()})
+$('.sort ul li .more').mouseenter(function(){
+			$('.select_sort').addClass("active")
+			$('.sort ul li .more .more_pos i').addClass('rotate_just').removeClass("rotate_back");
+		})
+		$('.select_sort').mouseleave(function(){
+			$(this).removeClass("active")
+			$('.sort ul li .more .more_pos i').removeClass("rotate_just").addClass("rotate_back");
+		})
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,575 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>车源详情</title>
+<link rel="stylesheet" type="text/css" href="../css/col.min.css">
+<link rel="stylesheet" type="text/css" href="../css/1200_com.css">
+<link rel="stylesheet" type="text/css" href="../css/1200_头.css">
+<link rel="stylesheet" type="text/css" href="../css/图片列表.css">
+<link rel="stylesheet" type="text/css" href="../css/按钮.css">
+<link rel="stylesheet" type="text/css" href="../css/⁮标题.css">
+<link rel="stylesheet" type="text/css" href="../css/输入表单.css">
+<link rel="stylesheet" type="text/css" href="../css/浮层.css">
+<link rel="stylesheet" type="text/css" href="../css/气泡.css">
+<link rel="stylesheet" type="text/css" href="../css/toast.css">
+<link rel="stylesheet" type="text/css" href="../font/iconfont.css">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+	      <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/html5shiv.min.js"></script>
+	      <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/Respond.min.js"></script>
+	    <![endif]-->
+<script src="../js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+
+<!--------------------------------------------------------------------咨询底价弹窗-------------------------------------------------------->
+	<!--咨询底价弹窗-验证码 - star -->
+	<div class="popover popover-md" style="top: 100px">
+		<div class="popover-close">
+			<a href="javascript:;">关闭</a>
+		</div>
+		<div class="store-tel-box_news">
+			<div class="icons">
+				<img class="" src="http://image.bitautoimg.com/taoche/2017/pc/default/window_bg.png">
+				<span class="iconfont icon-money"></span>
+			</div>
+			<dl class="store-tel-box-title">
+				<dt>咨询底价</dt>
+				<dd>商家报价<strong> 16.7万</strong></dd>
+			</dl>
+			<h2 class="prompting prompting_bottom low_price">宝马3系 2012款 320i 时尚型</h2>
+			<div class="store-tel-box-form">
+				<div class="item">
+					<label class="text warning">
+						<input type="text">
+						<span class="tip">请输入您的期望价格</span>
+						<span class="iconfont icon-money"></span>
+						<span class="span_length">万</span>
+					</label>
+					<!--错误提示-->
+					<span class="error_title" style="display:none;">111</span>
+				</div>
+				<div class="item">
+					<label class="text">
+						<input type="tel">
+						<span class="tip">请输入手机号</span>
+						<span class="iconfont icon-phone-Inputbox"></span>
+						<img class="img_loading" src="../images/Refresh.gif">
+					</label>
+						<!--错误提示-->
+					<span class="error_title" style="display:none;">111</span>
+				</div>
+				
+				<div class="img_code_main">
+					<!--手机验证码-->
+					<div class="item img_code_input">
+						<label class="text">
+							<input type="text">
+							<span class="tip">请输入右侧验证码</span>
+							<span class="iconfont icon-Key-box"></span>
+						</label>
+						<!--错误提示-->
+						<span class="error_title">请输入短信验证码</span>	
+						<span class="error_title_right">收不到验证码? <i class="color_tips iconfont icon-yuyin-copy"></i><a href="#" class="color_tips">语音发送 , 免费接听</a></span>	
+						<span class="error_title_right1 title_none">验证码即刻会以短信的形式呼叫给您 , 请注意接听</span>	
+					</div>
+					<!--验证码-->
+					<div class="img_code1">获取验证码</div>
+					<div class="tips_top">成功提交 , 只差一步</div>
+				</div>
+				
+					<!--是否同意-->
+				  <div class="checkbox_title_cuts checkbox_line" style="margin-top:0px;">
+						<i class="iconfont icon-frame-Choice checkbox checked"></i>	&nbsp;允许其他销售此款车型的经销商联系我
+					</div>
+				
+				<button class="submit">提 交</button>
+			
+			</div>
+		</div>
+	</div>
+	<!--咨询底价弹窗 end -->
+
+
+	<!--新弹层-->
+	<div class="popover popover-md" style="top:800px">
+		<div class="popover-close">
+			<a href="javascript:;">关闭</a>
+		</div>
+		<div class="store-tel-box_news">
+			<div class="icons">
+				<img class="" src="http://image.bitautoimg.com/taoche/2017/pc/default/window_bg.png">
+				<span class="iconfont icon-notice-"></span>
+			</div>
+			<dl class="store-tel-box-title">
+				<dt>验证手机号</dt>
+			</dl>
+			<!--动画-->
+			<div class="animate">
+					<span class="line"></span>
+					<img class="car_img" src="../images/car.gif">
+					<p class="num">86%</p>
+			</div>
+			
+			<div class="store-tel-box-form">
+				<div class="item">
+					<label class="text warning">
+						<input type="text">
+						<span class="tip">请输入您的期望价格</span>
+						<span class="iconfont icon-money"></span>
+						<span class="span_length">万</span>
+					</label>
+					<!--错误提示-->
+					<span class="error_title" style="display:none;">111</span>
+				</div>
+				<div class="item">
+					<label class="text">
+						<input type="tel">
+						<span class="tip">请输入手机号</span>
+						<span class="iconfont icon-phone-Inputbox"></span>
+						<img class="img_loading" src="../images/Refresh.gif">
+					</label>
+						<!--错误提示-->
+					<span class="error_title" style="display:none;">111</span>
+				</div>
+				
+				<div class="img_code_main">
+					
+					<!--手机验证码-->
+					<div class="item img_code_input">
+						<label class="text">
+							<input type="text">
+							<span class="tip">请输入右侧验证码</span>
+							<span class="iconfont icon-Key-box"></span>
+						</label>
+						<!--错误提示-->
+						<div class="item_list">
+							<span class="error_title error_title_code">请输入短信验证码</span>	
+							<span class="error_title_right ">收不到验证码? <i class="color_tips iconfont icon-yuyin-copy"></i><a href="#" class="color_tips">语音发送 , 免费接听</a></span>	
+							<span class="error_title_right1 title_none">验证码即刻会以短信的形式呼叫给您 , 请注意接听</span>
+						</div>
+					</div>
+					<!--验证码-->
+					<div class="img_code1">获取验证码</div>
+					<div class="tips_top">成功提交 , 只差一步</div>
+				</div>
+				
+				<button class="submit">提 交</button>
+			
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<!--咨询底价弹窗-无验证码-->
+	<!--<div class="popover popover-md" style="top:750px">
+		<div class="popover-close">
+			<a href="javascript:;">关闭</a>
+		</div>
+		<div class="store-tel-box_news">
+			<div class="icons">
+				<img class="" src="http://image.bitautoimg.com/taoche/2017/pc/default/window_bg.png">
+				<span class="iconfont icon-money"></span>
+			</div>
+			<dl class="store-tel-box-title">
+				<dt>咨询底价</dt>
+				<dd>商家报价<strong> 16.7万</strong></dd>
+			</dl>
+			<h2 class="prompting prompting_bottom low_price">宝马3系 2012款 320i 时尚型</h2>
+			<div class="store-tel-box-form">
+				<div class="item">
+					<label class="text warning">
+						<input type="text">
+						<span class="tip">您希望多少拿下？</span>
+						<span class="iconfont icon-money"></span>
+						<span class="span_length">万</span>
+					</label>
+					<span class="<p>新车价 : <del>23.88万</del>  &nbsp;&nbsp;&nbsp;省11.2万</p>">请填写您的心理价位</span>
+				</div>
+				<div class="item">
+					<label class="text">
+						<input type="tel">
+						<span class="tip">请输入手机号</span>
+						<span class="iconfont icon-phone-Inputbox"></span>
+					</label>
+					<span class="error_title">没有手机号，没法联系您哦</span>
+					<div class="checkbox_title_cuts checkbox_line">
+						<i class="iconfont icon-frame-Choice checkbox checked"></i>	&nbsp;允许其他销售此款车型的经销商联系我
+					</div>
+				</div>
+				<button class="submit">提 交</button>
+			</div>
+		</div>
+	</div>-->
+	<!--咨询底价弹窗-无验证码 - end-->
+
+
+	<!--咨询底价弹窗-提交成功-->
+	<!--<div class="popover popover-md" style="top:1350px">
+		<div class="popover-close">
+			<a href="javascript:;">关闭</a>
+		</div>
+		<div class="store-tel-box_news">
+				<div class="icons">
+					<img class="" src="http://image.bitautoimg.com/taoche/2017/pc/default/window_bg.png">
+					<span class="iconfont icon-Success"></span>
+				</div>
+				<dl class="store-tel-box-title">
+					<dt>提交成功</dt>
+				</dl>
+				<h2 class="prompting">您可能对以下车源感兴趣排，试试一键询价吧！</h2>
+				
+				<ul class="list">
+					<li style="margin-left:0px;">
+						<img src="../images/img_03.png">
+						<h2 class="list_title">奔驰 GLC级 2016款 2.0T自动</h2>
+						<p class="list_Record">2011年 | 8.85万公里</p>
+						<span class="list_price"><i class="iconfont icon-frame-Choice checkbox checked"></i> &nbsp;¥15.00万</span>
+					</li>
+					<li>
+						<img src="../images/img_03.png">
+						<h2 class="list_title">奔驰 GLC级 2016款 2.0T自动</h2>
+						<p class="list_Record">2011年 | 8.85万公里</p>
+						<span class="list_price"><i class="iconfont icon-frame-Choice checkbox checked"></i> &nbsp;¥15.00万</span>
+					</li>
+					<li>
+						<img src="../images/img_03.png">
+						<h2 class="list_title">奔驰 GLC级 2016款 2.0T自动</h2>
+						<p class="list_Record">2011年 | 8.85万公里</p>
+						<span class="list_price"><i class="iconfont icon-frame-Choice checkbox checked"></i> &nbsp;¥15.00万</span>
+					</li>
+				</ul>
+				<span class="error_title_public">您还没有选择要询价的车源哦</span>
+				<button class="submit_main_public" style="width:400px;">一键询价</button>
+			
+			</div>
+	</div>-->
+	<!--咨询底价弹窗-提交成功 - end-->
+
+
+<!----------------------------------------------------------------------降价通知弹窗------------------------------------------------------>
+
+	<!--降价通知弹窗-选中状态，如果不选中的话,tips弹窗文字会切换  - star -->
+	<div class="popover popover-md" style="top:1570px">
+		<div class="popover-close">
+			<a href="javascript:;">关闭</a>
+		</div>
+		<div class="store-tel-box_news reduce">
+				<div class="icons">
+					<img class="" src="http://image.bitautoimg.com/taoche/2017/pc/default/window_bg.png">
+					<span class="iconfont icon-notice"></span>
+				</div>
+				<dl class="store-tel-box-title">
+					<dt>降价通知</dt>
+				</dl>
+				<!--提交成功-提示语-->
+				<h2 class="prompting prompting_bottom">商家降价后立即短信通知您</h2>
+				<div class="store-tel-box-form">
+					<div class="item">
+						<label class="text">
+							<input type="tel">
+							<span class="tip">请输入手机号</span>
+							<span class="iconfont icon-phone-Inputbox"></span>
+							<img class="img_loading" src="../images/Refresh.gif">
+						</label>
+							<!--错误提示-->
+						<span class="error_title" style="display:none;">111</span>
+					</div>
+				<!--手机验证码-->
+				<div class="img_code_main">
+					<div class="item img_code_input">
+						<label class="text">
+							<input type="text">
+							<span class="tip">请输入右侧验证码</span>
+							<span class="iconfont icon-Key-box"></span>
+						</label>
+						<!--错误提示-->
+						<span class="error_title">请输入短信验证码</span>	
+						<span class="error_title_right">收不到验证码? <i class="color_tips iconfont icon-yuyin-copy"></i><i class="color_tips">语音发送 , 免费接听</i></span>	
+					</div>
+					<!--验证码-->
+					<div class="img_code1">获取验证码</div>
+					<div class="tips_top">成功提交 , 只差一步</div>
+				</div>
+					<!--单选按钮-->
+					<div class="checkbox_title_cuts">
+						<i class="iconfont icon-frame-Choice checkbox checked"></i>	&nbsp;允许其他销售此款车型的经销商联系我
+					</div>
+					<!--tip-->
+					<div class="store-tel-box-tips tips_news">
+						<div class="bubble bubble_t gray">
+							<div class="bubble_con">95%的用户选择允许更多商家提供车源</div>
+						</div>
+					</div>
+					<button class="submit_main_public">提交</button>
+				</div>
+			</div>
+	</div>
+	<!--降价通知弹窗 end -->
+	
+	<!--降价通知弹窗-选中状态，如果不选中的话,tips弹窗文字会切换  - star -->
+	<!--<div class="popover popover-md" style="top:5500px">
+		<div class="popover-close">
+			<a href="javascript:;">关闭</a>
+		</div>
+		<div class="store-tel-box_news reduce">
+				<div class="icons">
+					<img class="" src="http://image.bitautoimg.com/taoche/2017/pc/default/window_bg.png">
+					<span class="iconfont icon-notice"></span>
+				</div>
+				<dl class="store-tel-box-title">
+					<dt>降价通知</dt>
+				</dl>
+				<h2 class="prompting prompting_bottom">商家降价后立即短信通知您</h2>
+				<div class="store-tel-box-form">
+					<div class="item">
+						<label class="text">
+							<input type="tel">
+							<span class="tip">请输入手机号</span>
+							<span class="iconfont icon-phone-Inputbox"></span>
+						</label>
+						<span class="error_title">没有手机号没法通知</span>
+					</div>
+					
+					
+					<button class="submit_main_public">提交</button>
+				</div>
+			</div>
+	</div>-->
+	<!--降价通知弹窗 end -->
+
+<!----------------------------------------------------------------------免费约看车弹窗------------------------------------------------------>
+
+	<!--免费约看车弹窗- star -->
+	<div class="popover popover-md" style="top:2300px">
+		<div class="popover-close">
+			<a href="javascript:;">关闭</a>
+		</div>
+		<div class="store-tel-box_news reduce">
+				<div class="icons">
+					<img class="" src="http://image.bitautoimg.com/taoche/2017/pc/default/window_bg.png">
+					<span class="iconfont icon-time"></span>
+				</div>
+				<dl class="store-tel-box-title">
+					<dt>免费约看车</dt>
+				</dl>
+				<!--提交成功-提示语-->
+				<h2 class="prompting prompting_margin">宝马3系 2012款 320i 时尚型</h2>
+				<div class="store-tel-box-form">
+					<div class="item">
+						<label class="text">
+							<input type="tel">
+							<span class="tip">请输入手机号</span>
+							<span class="iconfont icon-phone-Inputbox"></span>
+							<img class="img_loading" src="../images/Refresh.gif">
+						</label>
+							<!--错误提示-->
+						<span class="error_title" style="display:none;">111</span>
+					</div>
+					
+					<div class="img_code_main">
+						<div class="item img_code_input">
+							<label class="text">
+								<input type="text">
+								<span class="tip">请输入右侧验证码</span>
+								<span class="iconfont icon-Key-box"></span>
+							</label>
+							<!--错误提示-->
+							<span class="error_title">请输入短信验证码</span>	
+							<span class="error_title_right">收不到验证码? <i class="color_tips iconfont icon-yuyin-copy"></i><i class="color_tips">语音发送 , 免费接听</i></span>	
+						</div>
+						<!--验证码-->
+						<div class="img_code1">获取验证码</div>
+						<div class="img_code1_active">获取验证码</div>
+						<div class="tips_top">成功提交 , 只差一步</div>
+					</div>
+					
+					<!--单选按钮-->
+					<div class="checkbox_title">
+						<i class="iconfont icon-frame-Choice checkbox checked"></i>	&nbsp;若商家没有回复，允许其他售卖同款车的商家联系我
+					</div>
+					<button class="submit_main_public">提交</button>
+				</div>
+				
+			</div>
+	</div>
+	<!--免费约看车弹窗 end -->
+
+
+	<!--免费约看车弹窗-姓名-->
+	<!--<div class="popover popover-md" style="top:3300px">
+		<div class="popover-close">
+			<a href="javascript:;">关闭</a>
+		</div>
+		<div class="store-tel-box_news">
+			<div class="icons">
+				<img class="" src="http://image.bitautoimg.com/taoche/2017/pc/default/window_bg.png">
+				<span class="iconfont icon-Success"></span>
+			</div>
+			<dl class="store-tel-box-title">
+				<dt>预约成功</dt>
+			</dl>
+			<h2 class="prompting" style="margin:0px;">客官请留步，下面这些车和您的心理价位差不多哦</h2>
+			
+			<div class="store-tel-box-tips Reserve">
+				<div class="bubble bubble_b gray">
+					<div class="bubble_con">商家如何称呼您呢？</div>
+				</div>
+			</div>
+			
+			<div class="store-tel-box-form">
+				<div class="item">
+					<label class="text warning">
+						<input type="text">
+						<span class="tip">您希望多少拿下？</span>
+						<span class="iconfont icon-money"></span>
+						<span class="span_length">万</span>
+					</label>
+					<span class="error_title">请留下你的姓名</span>
+				</div>
+				<button class="submit">提 交</button>
+			
+			</div>
+		
+		</div>
+	</div>-->
+	<!--免费约看车弹窗-姓名 - end-->
+
+
+
+<!----------------------------------------------------------------------免费咨询	看车弹窗------------------------------------------------------>
+<!--免费咨询看车弹窗- star  默认时，验证码模块注释了，需要时解开-->
+	<div class="popover popover-md" style="top:3100px">
+		<div class="popover-close">
+			<a href="javascript:;">关闭</a>
+		</div>
+		<div class="store-tel-box_news reduce">
+			<div class="icons">
+				<img class="" src="http://image.bitautoimg.com/taoche/2017/pc/default/window_bg.png">
+				<span class="iconfont icon-consult"></span>
+			</div>
+			<dl class="store-tel-box-title">
+				<dt>免费咨询车况</dt>
+			</dl>
+			<!--提交成功-提示语-->
+			<h2 class="prompting prompting_margin">宝马3系 2012款 320i 时尚型</h2>
+			<div class="store-tel-box-form">
+				<div class="item">
+						<label class="text">
+							<input type="tel">
+							<span class="tip">请输入手机号</span>
+							<span class="iconfont icon-phone-Inputbox"></span>
+							<img class="img_loading" src="../images/Refresh.gif">
+						</label>
+							<!--错误提示-->
+						<span class="error_title" style="display:none;">111</span>
+					</div>
+					
+					<div class="img_code_main">
+						<div class="item img_code_input">
+							<label class="text">
+								<input type="text">
+								<span class="tip">请输入右侧验证码</span>
+								<span class="iconfont icon-Key-box"></span>
+							</label>
+							<!--错误提示-->
+							<span class="error_title">请输入短信验证码</span>	
+							<span class="error_title_right">收不到验证码? <i class="color_tips iconfont icon-yuyin-copy"></i><i class="color_tips">语音发送 , 免费接听</i></span>	
+						</div>
+						<!--验证码-->
+						<div class="img_code1">获取验证码</div>
+						<div class="img_code1_active">获取验证码</div>
+						<div class="tips_top">成功提交 , 只差一步</div>
+					</div>
+				
+				<!--单选按钮-->
+				<div class="checkbox_title checkbox_title_m">
+					<i class="iconfont icon-frame-Choice checkbox checked"></i>	&nbsp;若商家没有回复，允许其他售卖同款车的商家联系我
+				</div>
+				<button class="submit_main_public">提交</button>
+			</div>
+			
+		</div>
+	</div>
+<!--免费咨询看车弹窗 end -->
+
+<!----------------------------------------------------------------------提交失败	看车弹窗------------------------------------------------------>
+
+	<!--免费咨询看车弹窗- star  默认时，验证码模块注释了，需要时解开-->
+	<!--<div class="popover popover-md" style="top:4400px">
+		<div class="popover-close">
+			<a href="javascript:;">关闭</a>
+		</div>
+		<div class="store-tel-box_news reduce">
+				<div class="icons">
+					<img class="" src="http://image.bitautoimg.com/taoche/2017/pc/default/window_bg.png">
+					<span class="iconfont icon-fail iconfont_close"></span>
+				</div>
+					<dl class="store-tel-box-title">
+						<dt>抱歉 , 提交失败</dt>
+					</dl>
+					<img class="error_img" src="../images/img21_03.png">
+					<h2 class="error_title_mistake">服务器开小差了</h2>
+					<p class="error_content">您的信息未提交成功，您可以尝试重新提交。</p>
+					<button class="submit_buttom">知道了</button>
+		</div>
+	</div>-->
+<!--提交失败看车弹窗 end -->
+
+
+
+<!--重复提交看车弹窗- star  默认时，验证码模块注释了，需要时解开-->
+	<!--<div class="popover popover-md" style="top:5000px">
+		<div class="popover-close">
+			<a href="javascript:;">关闭</a>
+		</div>
+		<div class="store-tel-box_news reduce">
+				<div class="icons">
+					<img class="" src="http://image.bitautoimg.com/taoche/2017/pc/default/window_bg.png">
+					<span class="iconfont icon-repeat iconfont_close"></span>
+				</div>
+					<dl class="store-tel-box-title">
+						<dt>重复提交</dt>
+					</dl>
+					<h2 class="error_title_submit">亲，您今天已经提交过咨询了哦，请耐心等待商家回应吧～</h2>
+					<p class="error_success">您的信息未提交成功，您可以尝试重新提交。</p>
+					<button class="submit_main_public_copy">知道了</button>
+		</div>
+	</div>-->
+<!--重复提交看车弹窗 end -->
+
+
+<script type="text/javascript">
+		var box = $('.wz_checkbox');
+		
+		box.click(function(){
+			
+			if($(this).hasClass('wz_checked'))
+			{
+				$(this).removeClass('wz_checked');
+			}
+			else
+			{
+				$(this).addClass('wz_checked');
+			}
+			
+		})
+		
+		window.onload = function(){
+			$('.store-tel-box_news .animate').toggleClass('active');
+			setTimeout(function(){
+				$('.store-tel-box_news .animate .num').show(300);
+			},1700)
+		}
+		
+		
+		
+</script>
+
+</body>
+</html>

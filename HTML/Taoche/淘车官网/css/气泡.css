@@ -1,0 +1,21 @@
+﻿.bubble{position:absolute;border:1px solid #ff6d02;border-radius:5px;background-color:#fff;color:#ff6d02;font-size:12px;padding:3px 9px}
+.bubble_close{position:absolute;width:12px;height:12px;right:3px;top:3px;text-align:center;cursor:pointer;font:bold 10px/12px Tahoma;-webkit-text-size-adjust:none;color:#ff6d02!important;text-decoration:none!important}
+.bubble_con{position:relative;overflow:hidden}
+.bubble:before,.bubble:after{content:"";position:absolute;width:0;height:0;line-height:0;font-size:0;overflow:hidden;display:inline-block;zoom:1;border-width:4px;border-style:solid}
+.bubble:before{border-color:#ff6d02}
+.bubble:after{border-color:#fff}
+.bubble_l:before,.bubble_l:after{top:8px;border-top-color:transparent!important;border-bottom-color:transparent!important;border-left-width:0!important}
+.bubble_r:before,.bubble_r:after{top:8px;border-top-color:transparent!important;border-bottom-color:transparent!important;;border-right-width:0!important}
+.bubble_t:before,.bubble_t:after{left:8px;border-left-color:transparent!important;border-right-color:transparent!important;border-top-width:0!important}
+.bubble_b:before,.bubble_b:after{left:8px;border-left-color:transparent!important;border-right-color:transparent!important;border-bottom-width:0!important}
+.bubble_l:before{left:-5px}
+.bubble_r:before{right:-5px}
+.bubble_t:before{top:-5px}
+.bubble_b:before{bottom:-5px}
+.bubble_l:after{left:-4px}
+.bubble_r:after{right:-4px}
+.bubble_t:after{top:-4px}
+.bubble_b:after{bottom:-4px}
+/*灰色*/
+.bubble.gray{color:#999}
+.bubble.gray,.bubble.gray:before{border-color:#999}

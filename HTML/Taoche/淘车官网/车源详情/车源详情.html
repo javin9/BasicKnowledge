@@ -1,0 +1,1260 @@
+﻿<!DOCTYPE HTML>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>车源详情</title>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/html5shiv.min.js"></script>
+    <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/Respond.min.js"></script>
+<![endif]-->
+
+  <link rel="stylesheet" type="text/css" href="../css/col.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/1200_com.css">
+  <link rel="stylesheet" type="text/css" href="../css/1200_头.css">
+  <link rel="stylesheet" type="text/css" href="../css/图片列表.css">
+  <link rel="stylesheet" type="text/css" href="../css/按钮.css">
+  <link rel="stylesheet" type="text/css" href="../css/⁮标题.css">
+  <link rel="stylesheet" type="text/css" href="../css/输入表单.css">
+  <link rel="stylesheet" type="text/css" href="../css/浮层.css">
+  <link rel="stylesheet" type="text/css" href="车源详情.css">
+  <link rel="stylesheet" type="text/css" href="../css/动画.css">
+  <link rel="stylesheet" type="text/css" href="../css/侧边栏.css">
+<link rel="stylesheet" type="text/css" href="../css/气泡.css">
+  <link rel="stylesheet" type="text/css" href="../font/iconfont.css">
+  <!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="../css/ie-hack.css">
+<![endif]-->
+
+  <style type="text/css">
+.taoche-details-aterfmain ul {
+	width: 1230px;
+}
+.taoche-details-aterfmain ul li {
+	float: left;
+	margin-right: 30px;
+	margin-bottom: 10px;
+}
+</style>
+  </head>
+
+  <body>
+
+<!--个人登录后 star -->
+
+<div class="nav ">
+	<div class="container">
+		<ul class="nav-col-l">
+			<li ><a href="http://www.bitauto.com/" target="_blank">易车</a></li>
+			<li class="current"><a target="_blank" href="#" rel="nofollow">易车二手车</a></li>
+			<li><a rel="nofollow" href="#" target="_blank">易车•惠买车</a></li>
+			<li><a rel="nofollow" href="#" target="_blank">易车商城</a></li>
+			<li><a href="#" target="_blank">易车惠</a></li>
+			<li onMouseOver="document.getElementById('app-link').style.display='';this.className='app-link bit-hover';" onMouseOut="document.getElementById('app-link').style.display='none';this.className='app-link';" class="app-link"><a rel="nofollow" target="_blank" href="http://app.yiche.com/">APP<em></em></a>
+				<div class="app-list" id="app-link" style="display: none;">
+					<a rel="nofollow" href="http://app.yiche.com/wap/" target="_blank">手机易车网</a> <a rel="nofollow" href="http://app.yiche.com/yiche/" target="_blank">易车APP</a> <a rel="nofollow" href="http://app.yiche.com/qichebaojiadaquan/" target="_blank">汽车报价大全</a> <a rel="nofollow" href="http://app.yiche.com/huimaiche/" target="_blank">惠买车</a> <a rel="nofollow" href="http://app.yiche.com/taoche/" target="_blank">易车二手车</a> <a rel="nofollow" href="http://app.yiche.com/cheyouzhijia/" target="_blank">车友之家</a> <a rel="nofollow" href="http://app.yiche.com/chexingshouce/" target="_blank">车型手册</a>
+				</div>
+			</li>
+			<li><a href="#" target="_blank">北京车展</a></li>
+		</ul>
+		
+		<!--网站导航 start-->
+		<div class="nav-col-r">
+			<ul  class="nav-login">
+				<li class="noborderl">
+					<input type="button" onClick="location.href='http://i.yiche.com/authenservice/login.html?returnurl='+encodeURIComponent(location.href)" id="btnUserLoginHeader" class="bit-logintop" value="个人登录">
+					<a href="http://i.yiche.com/authenservice/registersimple/register.html" target="_blank">注册</a></li>
+				<li><a href="#" target="_blank">免费发车</a></li>
+				<li><a href="#" target="_blank">商家登录</a></li>
+				<li ><a href="#" target="_blank">商家发车</a></li>
+			</ul>
+		</div>
+		<!--网站导航 end-->
+	</div>
+</div>
+<!--个人登录后 end --> 
+
+<!--头部搜索和菜单导航 star-->
+
+<div class="header">
+	<!--头部广告 star -->
+	<div class="ad-1200-100">
+		1200*100
+	</div>
+	<!--头部广告 end -->
+	
+	<div class="container">
+		<!--头部地方站和搜索star -->
+		<div class="header-search">
+			<div class="header-logo">
+				<h1><a href="#">易车网</a></h1>
+				<div id="city-name-boxhover" class="city-name ">
+					<a href="#" class="city-name-link">北京<em></em></a> 
+					
+					<!--头部城市浮层 star --> 
+					<!--头部城市浮层 end -->
+				</div>
+			</div>
+			
+			<!--搜索star -->
+			<div class="used-car-search">
+				<input name=" " class="" type="text" value="区县／街道／地标等具体地点">
+				<!--<input name=" " class="used-car-search-on" type="text" value="区县／街道／地标等具体地点"> 输入后的颜色-->
+				<div class="used-car-search-but">
+					<a href="#">搜索</a>
+				</div>
+			</div>
+			<!--搜索end -->
+			
+		</div>
+	</div>
+	<!--头部菜单 -->
+	<div class="header-menu">
+		<ul class="menu clearfix">
+			<li class="first current"><a target="_blank" href="#">首页</a></li>
+			<li class=""><a target="_blank" href="#">买车</a></li>
+			<li><a target="_blank" href="#">卖车</a></li>
+			<li><a target="_blank" href="#">评估</a></li>
+			<li><a target="_blank" href="#">帮买</a></li>
+			<li><a target="_blank" href="#">经销商</a></li>
+			<li><a target="_blank" href="#">人车生活</a></li>
+		</ul>
+	</div>
+</div>
+<!--头部搜索和菜单导航 end-->
+
+<div class="container">
+	<!--面包屑 -->
+	<div class="crumbs">
+		您的位置：<a href="#" target="_blank">淘车</a> <i>&gt;</i> <a href="#" target="_blank">买车</a> <i>&gt;</i><a href="#" target="_blank">二手奥迪</a><i>&gt;</i> <a href="#" target="_blank">二手奥迪A8L（进口）</a> <i>&gt;</i> <a href="#" target="_blank">北京二手奥迪	A8L（进口）</a> <i>&gt;</i> <a href="#" target="_blank"><strong>45 TFSI quattro 专享型</strong></a>
+	</div>
+	
+	<!--首屏车源详情图片 star -->
+	<div class="taoche-details  margin-md">
+		<div class="taoche-details-pic">
+			
+			<!-- 幻灯片star-->
+			<div class="taoche-details-picbox">
+				<ul id="taoche-details-piclist" >
+					<li><a href=""><img src="../images/default-510-340.jpg" alt="" /></a></li>
+					<li><a href=""><img src="../images/510_340_pic.jpg" alt="" /></a></li>
+					<li><a href=""><img src="../images/510_340_pic.jpg" alt="" /></a></li>
+					<li><a href=""><img src="../images/510_340_pic.jpg" alt="" /></a></li>
+					<li><a href=""><img src="../images/510_340_pic.jpg" alt="" /></a></li>
+				</ul>
+				<div class="taoche-pic-zoom" style="display:none;">
+					<em></em>27张
+				</div>
+				<div class="singles-day ">
+					<i>优惠</i>2500元
+				</div>
+			</div>
+			<div class="taoche-details-picbox-mid">
+				<div class="taoche-details-xs-picbox">
+					<ul id="taoche-details-xs-pic">
+						<li><img src="../images/default-90-60.jpg" alt="" /><em></em></li>
+						<li><img src="../images/510_340_pic.jpg" alt="" /><em></em></li>
+						<li class="current" ><img src="../images/510_340_pic.jpg" alt="" /><em></em></li>
+						<li><img src="../images/510_340_pic.jpg" alt="" /><em></em></li>
+						<li><img src="../images/510_340_pic.jpg" alt="" /><em></em></li>
+						<li><img src="../images/510_340_pic.jpg" alt="" /><em></em></li>
+					</ul>
+				</div>
+				<div  class="taoche-details-goleft  ">
+					<a href="#" class="nohover">向左</a>
+				</div>
+				<div class="taoche-details-goright">
+					<a href="#" class="">向右</a>
+				</div>
+			</div>
+			
+			<!-- 幻灯片end--> 
+			
+			<!-- 分享star-->
+			<div class="tool-ico">
+				<div class="tool-collection">
+					<a href="#" ><i></i>加入关注</a>
+				</div>
+				<div class="tool-contrast">
+					<a href="#"><i></i>加入对比</a>
+				</div>
+				<div class="tool-phone">
+					<a href="#"><i></i>发至手机</a>
+				</div>
+				<div class="tool-share">
+					<a href="#"><i></i>分享</a>
+				</div>
+				<div class="tool-report">
+					<a href="#"><i></i>举报</a>
+				</div>
+			</div>
+			<!-- 分享end--> 
+			<!-- 分享star-->
+			<div class="tool-ico">
+				<div class="tool-collection">
+					<a href="#" class="nohvoer"><i></i>已加关注</a>
+				</div>
+				<div class="tool-contrast">
+					<a href="#" class="onclick"><i></i>已加对比</a>
+				</div>
+				<div class="tool-phone">
+					<a href="#"><i></i>发至手机</a>
+				</div>
+				<div class="tool-share">
+					<a href="#"><i></i>分享</a>
+				</div>
+				<div class="tool-report">
+					<a href="#"><i></i>举报</a>
+				</div>
+			</div>
+			<!-- 分享end-->
+			
+		</div>
+		<div class="summary">
+			<div class="summary-title">
+				<h1 class="title">北京 -奥迪A6L 2003款 奥迪A6 2.4L 基本型 手自一体</h1>
+				<div class="tags">
+					<span class="item">维保记录</span> <span class="item">帮买服务</span> <span class="item">车检报告</span>
+				</div>
+			</div>
+			<div class="summary-price normal">
+				<div class="summary-price-wrap">
+					<strong class="price-this">40.12</strong> <span class="price-note">（不含过户费）</span> <a class="warning" href="javascript:;"> <span class="iconfont icon-remind-bell-"></span> <span class="text">降价通知我</span> </a>
+				</div>
+				<div class="summary-price-wrap">
+					<span class="item">新车价：43.20万（不含税）</span> <span class="item">参考价：21.00万-34.43万</span> <a class="item" href="javascript:;">贷款购车 &gt;</a>
+				</div>
+			</div>
+			<div class="summary-attrs">
+				<dl>
+					<dt>上牌时间</dt>
+					<dd>2012年07月</dd>
+				</dl>
+				<dl>
+					<dt>行驶里程</dt>
+					<dd>18.66万公里</dd>
+				</dl>
+				<dl>
+					<dt>排量／变速箱</dt>
+					<dd>2.0T/自动</dd>
+				</dl>
+				<dl>
+					<dt>销售城市</dt>
+					<dd>北京</dd>
+				</dl>
+			</div>
+			<div class="summary-btns">
+				<a class="btn advisory" href="javascript:;"> <span class="iconfont icon-money-button-"></span> <span class="text">咨询底价</span> </a> <a class="btn reservation" href="javascript:;"> <span class="iconfont icon-time-button-"></span> <span class="text">免费预约</span> </a> <a class="btn tel" href="javascript:;"> <img class="icon-tel" src="http://image.bitautoimg.com/taoche/2017/pc/default/tel-2X.gif"> <span class="text">点击查看商家电话</span> </a>
+			</div>
+		</div>
+	</div>
+	<!--首屏车源详情图片 end -->
+	
+	<div class="margin-md">
+		<!--tab 标签star -->
+		<div class="tab-menu margin-md">
+			<i>发布时间：2016-09-02</i>
+			<ul>
+				<li class=" current" ><a href="#">车辆信息</a></li>
+				<li class="" ><a href="#">帮买服务</a></li>
+				<li class="" ><a href="#">车源图片</a></li>
+				<li class="" ><a href="#">车检报告</a></li>
+				<li class="" ><a href="#">车型评论</a></li>
+			</ul>
+		</div>
+		<!--tab 标签end --> 
+		
+		<!--基本信息 star -->
+		<div class="title-s-size title-noborder">
+			<h4 class="title-bg">基本信息</h4>
+		</div>
+		<div class="row margin-md details-information-list">
+			<div class="col-xs-3 details-information-main">
+				<div class="details-information">
+					<div class="details-information-ico bg1">
+						<em class="information-selected vis-hide animated"></em>
+					</div>
+					<strong>车况极佳</strong>
+					<div class="row ">
+						<div class="col-xs-6 information-text">
+							<p>行驶时间</p>
+							10个月
+						</div>
+						<div class="col-xs-6 information-text">
+							<p>行驶里程</p>
+							12.54万公里
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-3 details-information-main" style="z-index:3;">
+				<div class="details-information">
+					<div class="details-information-ico bg2">
+						<em class="information-sigh vis-hide animated"></em>
+					</div>
+					<strong>车辆维护正常</strong>
+					<div class="row ">
+						<div class="col-xs-6 information-text">
+							<p>保养方式</p>
+							4S店保养
+						</div>
+						<div class="col-xs-6 information-text">
+							<p>使用类型</p>
+							<div class="information-text-layer">
+								<a href="#">营转非
+								<div class="information-text-hover">
+									营转非车指淘汰出租车转为地方牌照的车源，该类车源一
+									般有5-8年的强制报废年限
+								</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-3 details-information-main">
+				<div class="details-information">
+					<div class="details-information-ico bg3">
+						<em class="information-doubt vis-hide animated"></em>
+					</div>
+					<strong>未符合本地环保标准</strong>
+					<div class="row ">
+						<div class="col-xs-6 information-text">
+							<p>所在地</p>
+							呼和浩特
+						</div>
+						<div class="col-xs-6 information-text">
+							<p>环保标准</p>
+							--
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-3 details-information-main">
+				<div class="details-information">
+					<div class="details-information-ico bg4">
+						<em class="information-selected vis-hide animated"></em>
+					</div>
+					<strong>无需年检  保险到期</strong>
+					<div class="row ">
+						<div class="col-xs-6 information-text">
+							<p>年检到期日</p>
+							2018年04月
+						</div>
+						<div class="col-xs-6 information-text">
+							<p>保险到期日</p>
+							2015年12月
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--基本信息 end --> 
+		
+		<!--参数配置 star -->
+		<div class="hide-box">
+			<div class="title-s-size">
+				<span><a href="#">查看更多></a></span>
+				<h4 class="title-bg">参数配置</h4>
+			</div>
+			<div class="row parameter-configure margin-md">
+				<div class="col-xs-6 parameter-configure-list">
+					<ul>
+						<li><span><a href="#">别克</a> <a href="#">君越</a></span>品牌型号</li>
+						<li><span>商家</span>车辆来源</li>
+						<li><span><a href="#">北京</a></span>牌照所在地</li>
+						<li><span>2.4L147马力</span>发动机</li>
+						<li><span>--</span>驱动方式</li>
+						<li><span><a href="#">SUV</a></span>车辆级别</li>
+					</ul>
+				</div>
+				<div class="col-xs-6 parameter-configure-list">
+					<ul>
+						<li><span><a href="#">2.5L</a></span>排量</li>
+						<li><span>9.4L</span>油耗</li>
+						<li><span>4415mm*1168mm*1345mm</span>长宽高</li>
+						<li><span>4门5座三厢</span>车身类型</li>
+						<li><span>2346mm</span>轴距</li>
+						<li><span>60L</span>后备箱容积</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--参数配置 end --> 
+		
+		<!--维保记录 star -->
+		<div class="hide-box">
+			<div class="title-s-size">
+				<span><a href="#">查看详细></a></span>
+				<h4 class="title-bg">维保记录</h4>
+			</div>
+			<div class="row parameter-configure margin-md">
+				<div class="col-xs-6 parameter-configure-list">
+					<ul>
+						<li><span>2014-06-20</span>最近一次维保时间</li>
+						<li><span>23.64万公里</span>公里数</li>
+						<li><span>免费保养</span>类型</li>
+					</ul>
+				</div>
+				<div class="col-xs-6 parameter-configure-list">
+					<div class="parameter-configure-text">
+						<h6>维修保养内容</h6>
+						<P>更换机油滤清器：壳牌／Shell 喜力矿物机油HX5 10W－40 SN级 黄壳更换
+							机油滤清器壳牌／Shell 喜力矿物机油H5 10W－40 SN级 黄壳</P>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--维保记录 end --> 
+		
+		<!--亮点配置 star -->
+		<div class="title-s-size">
+			<h4 class="title-bg">亮点配置</h4>
+		</div>
+		<div class="highlights-configure  margin-md">
+			<div  class="taoche-details-goleft  ">
+				<a href="#" class="nohover">向左</a>
+			</div>
+			<div class="highlights-configure-list">
+				<ul>
+					<li> <em><img src="../images/highlights/skylight.jpg" alt=""></em>
+						<p>天窗</p>
+					</li>
+					<li> <em><img src="../images/highlights/start-up.jpg" alt=""></em>
+						<p>无钥匙启动</p>
+					</li>
+					<li> <em><img src="../images/highlights/lock.jpg" alt=""></em>
+						<p>儿童锁</p>
+					</li>
+					<li> <em><img src="../images/highlights/chair.jpg" alt=""></em>
+						<p>真皮座椅</p>
+					</li>
+					<li> <em><img src="../images/highlights/set-speed.jpg" alt=""></em>
+						<p>定速巡航</p>
+					</li>
+					<li> <em><img src="../images/highlights/air-conditioning.jpg" alt=""></em>
+						<p>自动空调</p>
+					</li>
+					<li> <em><img src="../images/highlights/GPS.jpg" alt=""></em>
+						<p>GPS导航</p>
+					</li>
+				</ul>
+			</div>
+			<div class="taoche-details-goright">
+				<a href="#" class="">向右</a>
+			</div>
+		</div>
+		<!--亮点配置 end --> 
+		
+		<!--车主自述 star -->
+		<div class="title-s-size title-noborder">
+			<h4 class="title-bg">车主自述</h4>
+		</div>
+		<div class="margin-md  readme ">
+			车是自己家用车，平时都是按时按点的进行保养，基本每隔1万公里就去保养一次，用的也都是厂家专用的机油，有完整保养记录，车况还是很让人满意的动力十分强劲，起步给油就走，不会有拖拉的感觉，这点非常的有信心，尤其在路上超车并线的时候最能突出出来优势。城市道路行驶，加装导航DVD可视倒车，配置也比较丰富。现在因为个人原因出手爱车，喜欢的朋...<a href="#" class="blue-link">展开全部</a>
+			<br><a href="#" class="more"><span class="iconfont icon-consult-button"></span><span class="text">咨询更多车况</span></a>
+		</div>
+		<!--车主自述 end --> 
+		
+		<!--请买车顾问帮买此车 star -->
+		<div class="title-s-size title-noborder">
+			<h4 class="title-bg">请买车顾问帮买此车</h4>
+		</div>
+		<div class="margin-md taoche-car-consultant">
+			<div class="taoche-consultant-advantage ">
+				<div class="taoche-consultant-advantage-top">
+					<h6>买车顾问帮买服务</h6>
+					<p>按需推荐，个性定制，随时预约，高效方便，
+						从此不再东奔西跑乱打听，过户更轻松！</p>
+					<p><a href="#" class="blue-link">了解帮买服务></a></p>
+				</div>
+				<div class="taoche-consultant-advantage-dow">
+					<em></em> <i></i> <span><strong></strong>省时省心</span> <span><strong></strong>放心购买</span> <span><strong></strong>全程代办</span>
+				</div>
+			</div>
+			<div class="form-sm taoche-consultant-information">
+				<div class="form-group celarfix">
+					<label class="form-name ">联系人</label>
+					<div class="form-col">
+						<input  type="text" class="form-input form-w350" value="请输入姓名">
+					</div>
+					<div class="form-error-dowm">
+						请输入联系人
+					</div>
+				</div>
+				<div class="form-group celarfix">
+					<label class="form-name ">手机号</label>
+					<div class="form-col">
+						<input  type="text" class="form-input form-w350" value="请输入手机号">
+					</div>
+				</div>
+				<div class="form-group celarfix">
+					<label class="form-name ">效验码</label>
+					<div class="form-col">
+						<input  type="text" class="form-input form-w145" value="请输入验证码">
+						<img src="../images/xym_pic.gif" alt="">
+					</div>
+				</div>
+				<div class="form-group celarfix">
+					<label class="form-name ">验证码</label>
+					<div class="form-col">
+						<input  type="text" class="form-input form-w145" value="请输入验证码">
+						<span class="btn btn-lesser btn-xs"><a href="#" >获取验证码</a></span>
+					</div>
+				</div>
+				<div class="form-group celarfix">
+					<div class="form-col">
+						<span class="btn btn-primary btn-sm"><a href="#" >提交</a></span> <span class="btn btn-disabled btn-sm"><a href="#" >提交</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--请买车顾问帮买此车end -->
+		
+		<div class="taoche-ad">
+			1200*100
+		</div>
+		
+		<!--车源图片 star -->
+		<div class="title-s-size title-noborder">
+			<h4 class="title-bg">车源图片</h4>
+		</div>
+		<div class="margin-md taoche-details-aterfmain"  >
+			<!--让外框 taoche-details-aterfmain 的高对于 内部ul的高 -->
+			
+			<div  class="taoche-details-default-big" style="display:none;">
+				<img src="../images/default-logo.png" alt="二手车">
+			</div>
+			<!--宽1200 高390的默认图-->
+			<div  class="taoche-details-default-mid" style="display:none;">
+				<img src="../images/default-logo.png" alt="二手车">
+			</div>
+			<!--宽1200 高390的默认图-->
+			
+			<ul>
+				<li style="left:0px;top:0;"><img src="../images/default-585-390.jpg" alt=""></li>
+				<li style="left:625px; top:0;"><img src="../images/585_390_pic.jpg" alt=""></li>
+				<li style="left:0px;top:420px;"><img src="../images/585_390_pic.jpg" alt=""></li>
+				<!--              <li style="left:625px;top:420px;"><img src="../images/585_810_pic.jpg" alt=""></li>-->
+				<li style="left:0px;top:840px;"><img src="../images/default-585-810.jpg" alt=""></li>
+			</ul>
+			<div class="clear">
+			</div>
+		</div>
+		<!--车源图片 end -->
+		
+		<div class="clear">
+		</div>
+		<!--车检报告 star -->
+		<div class="title-s-size title-noborder">
+			<h4 class="title-bg">车检报告</h4>
+		</div>
+		<div class="margin-md qc-report ">
+			<div class="qc-report-main">
+				<div class="qc-qualified vis-hide animated">
+					<img src="../images/qc_qualified.png" alt="">
+				</div>
+				<div class="qc-report-tit">
+					<p class="qc-report-tit-text">检测过程符合国家检测标准</p>
+					<h4>易车二手车检测报告</h4>
+					<p>该车共检测97项，发现1项问题</p>
+				</div>
+				<ul>
+					<li>
+						<h5>事故排查</h5>
+						<div class="qc-report-list">
+							<i class="ico-problem"></i>无重大撞击（32项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>无火烧（12项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>无水泡（16项）
+						</div>
+					</li>
+					<li>
+						<h5>安全检测</h5>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>指示灯（32项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>刹车系统（12项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>被动安全（16项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>起火隐患（16项）
+						</div>
+					</li>
+					<li>
+						<h5>驾驶检测</h5>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>发动机（32项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>变速箱（12项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>悬挂系统（16项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>转向系统（16项）
+						</div>
+					</li>
+				</ul>
+				<div class="qc-report-text">
+					<h5>外观描述</h5>
+					<p>福特翼博外观设计时尚大气，内部设计比较人性化，总体来看精致大气，采用流线型的线条设计，充满动感。内饰的造型也非常漂亮，方向盘造型比较时尚，仪表盘功能非常清晰，中控台的功能很实用，手感都还不错。车辆的内部空间还好，前后辆的内部空间还好，前后排的乘坐非常舒适在美系 <a href="#" class="blue-link">查看详细报告></a></p>
+				</div>
+			</div>
+		</div>
+		<!--车检报告 end --> 
+		
+		<!--车检报告 star -->
+		<div class="title-s-size title-noborder">
+			<h4 class="title-bg">车检报告</h4>
+		</div>
+		<div class="margin-md qc-report ">
+			<div class="qc-report-main">
+				<div class="qc-qualified vis-hide animated">
+					<img src="../images/qc_qualified.png" alt="">
+				</div>
+				<div class="qc-report-tit">
+					<P class="qc-report-tit-text">检测过程符合国家检测标准</P>
+					<h4>易车二手车检测报告</h4>
+					<P>该车共检测97项，发现1项问题</P>
+				</div>
+				<ul>
+					<li>
+						<h5>事故排查</h5>
+						<div class="qc-report-list">
+							<i class="ico-problem"></i>无重大撞击（32项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>无火烧（12项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>无水泡（16项）
+						</div>
+					</li>
+					<li>
+						<h5>安全检测</h5>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>指示灯（32项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>刹车系统（12项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>被动安全（16项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>起火隐患（16项）
+						</div>
+					</li>
+					<li>
+						<h5>驾驶检测</h5>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>发动机（32项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>变速箱（12项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>悬挂系统（16项）
+						</div>
+						<div class="qc-report-list">
+							<i class="ico-yes"></i>转向系统（16项）
+						</div>
+					</li>
+				</ul>
+				<div class="qc-report-text">
+					<P class="qc-report-text-rit"><a href="#" class="blue-link">查看详细报告></a></P>
+				</div>
+			</div>
+		</div>
+		<!--车检报告 end --> 
+		
+		<!--好车多抢手 star -->
+		<div class="qc-detail-advisory">
+			<dl>
+				<dt><strong>好车多抢手，</strong>想要就赶快联系商家吧！</dt>
+				<dd>宝马3系 2012款 320i时尚型	<span class="price">报价：<em>¥40.12万</em></span></dd>
+			</dl>
+			<div class="phone_signin">
+				<label class="phone_signin_text warning">
+					<input type="tel">
+					<span class="tip">请输入您的手机号</span>
+					<span class="iconfont icon-phone-Inputbox"></span>
+				</label>
+				<button class="phone_signin_button">免费预约</button>
+			</div>
+			<div class="bubble bubble_b warn_fail">
+				<div class="bubble_con"><span class="iconfont icon-Warning"></span>没有手机号，没法联系您哦</div>
+			</div>
+			<!--
+			<div class="bubble bubble_b warn_fail">
+				<div class="bubble_con"><span class="iconfont icon-Warning-"></span>客官，给个靠谱的手机号呗</div>
+			</div>
+			-->
+		</div>
+		
+		<!--好车多抢手 end --> 
+		
+		<!--价格参考 star -->
+		<div class="title-s-size title-noborder">
+			<h4 class="title-bg">价格参考</h4>
+		</div>
+		<div class="margin-md taoche-price-reference">
+			<div class="taoche-price-reference-list bg1">
+				<h6>价格对比</h6>
+				<div class="reference-list-main">
+					<em>15.55万</em> <i></i> <span></span>
+					<P>最低估价</P>
+				</div>
+				<div class="reference-list-main  reference-list-main-red" style="left:355px;">
+					<em>211.43万</em> <i></i> <span></span>
+					<P>本车价格</P>
+				</div>
+				<div class="reference-list-main"  style="left:782px;">
+					<em>15.55万</em> <i></i> <span></span>
+					<P>最高估价</P>
+				</div>
+				<div class="reference-list-main" style="left:977px;">
+					<em>15.55万</em> <i></i> <span></span>
+					<P>同款新车</P>
+				</div>
+			</div>
+			<div class="taoche-price-reference-list">
+				<img src="../images/reference_pic2.gif" alt="">
+			</div>
+			<div class="taoche-price-reference-text">
+				<span><a href="#" class="blue-link">诈骗申明 ></a></span>安全提示：买卖套牌车、走私车、罚没车、盗抢车属于违法行为！未看车前不要支付任何费用！客服电话：4000-168-168
+			</div>
+		</div>
+		<!--价格参考 end --> 
+		
+		<!--车型评论 star -->
+		<div class="title-s-size">
+			<h4 class="title-bg">车型评论</h4>
+		</div>
+		<div class="margin-md">
+			<div class="taoche-car-divide">
+				<div class="taoche-car-divide-stars ">
+					<em style="width:80%;"></em>
+				</div>
+				<strong> 4.06分</strong> <a href="#" class="blue-link">基于219581份口碑></a>
+			</div>
+			<div class="taoche-car-divide-main">
+				<div class="taoche-car-divide-text ">
+					<span class="current">皮实耐用(2013)</span> <span class="current">油耗低(302)</span> <span class="current">节能(214)</span> <span class="current">工薪阶层(695)</span> <span class="current">皮实耐用(2013)</span> <span class="current">油耗低(302)</span>
+				</div>
+				<div class="taoche-car-divide-text ">
+					<span>车太肉(214)</span> <span>无转向助力(543)</span> <span>无旅行架(21)</span>
+				</div>
+			</div>
+		</div>
+		<!--车型评论 end --> 
+		
+		<!--商家店铺 star -->
+		<div class="hide-box">
+			<div class="title-s-size">
+				<h4 class="title-bg">商家店铺</h4>
+			</div>
+			<div class="row parameter-configure taoche-merchant-shop  margin-md">
+				<div class="col-xs-6 parameter-configure-list  ">
+					<ul>
+						<li><strong>有车成品二手车（亦庄店）</strong></li>
+						<li><i>在售：<em>236</em>台</i> 已售：2345台 </li>
+						<li>电话：185102919281</li>
+					</ul>
+				</div>
+				<div class="col-xs-6 parameter-configure-list">
+					<div class="parameter-configure-text">
+						<p>北京市朝阳区金盏乡金港汽车公园C区10号1001北京市朝阳区金盏乡金港汽
+							车公园C区10号1001 <a href="#" class="blue-link">查看地图</a></p>
+						<span class="btn btn-primary btn-sm"><a href="#">进入店铺</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--商家店铺 end --> 
+		
+		<!--同价位推荐 star 
+         <div class="section-header header2">
+                <span><a href="#">换一换</a></span>
+                  <div class="box">
+                     <ul class="section-header-nav">
+                      <li class="current"><a href="#">同价位车源推荐</a></li>
+                      <li class=""><a href="#">同车系车源推荐</a></li>
+                    </ul>
+                  </div>
+              </div>
+         <div class="row carpic-box margin-md ">
+      <div class="col-xs-3  carpic-list">
+        <a href="#" target="_blank"><img src="../images/default-270-180.jpg" alt=""></a>
+         <h3><a href="#" target="_blank">吉普-指南者-2011款 指南者2.4-CVT/MT豪华导航版四驱</a></h3>
+         <div class="pic-price">
+            <span>19.83万</span>
+        </div>
+         <p>2014年上牌｜7724公里｜北京</p>
+      </div>
+     <div class="col-xs-3 carpic-list">
+        <a href="#" target="_blank"><img src="../images/270_180_pic.gif" alt=""></a>
+        <h3><a href="#" target="_blank">吉普-指南者-2011款 </a></h3>
+        <div class="pic-price">
+          <span>19.83万</span>
+         </div>
+         <p>2014年上牌｜7724公里｜北京</p>
+    </div>
+    <div class="col-xs-3  carpic-list">
+        <a href="#" target="_blank"><img src="../images/270_180_pic.gif" alt=""></a>
+         <h3><a href="#" target="_blank">吉普-指南者-2011款 指南者2.4-CVT/MT豪华导航版四驱</a></h3>
+         <div class="pic-price">
+           <span>19.83万</span>
+         </div>
+         <p>2014年上牌｜7724公里｜北京</p>
+    </div>
+     <div class="col-xs-3 carpic-list">
+        <a href="#" target="_blank"><img src="../images/270_180_pic.gif" alt=""></a>
+         <h3><a href="#" target="_blank">吉普-指南者-2011款 指南者2.4-CVT/MT豪华导航版四驱</a></h3>
+      <div class="pic-price">
+       <span>19.83万</span>
+         </div>
+         <p>2014年上牌｜7724公里｜北京</p>
+    </div>
+ </div>
+   同价位推荐 end --> 
+		
+		<!--同车系车源推荐 star -->
+		<div class="section-header header2">
+			<span><a href="#">换一换</a></span>
+			<div class="box">
+				<ul class="section-header-nav">
+					<li class="">同车系车源推荐</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row carpic-box margin-md ">
+			<div class="col-xs-3  carpic-list">
+				<a href="#" target="_blank"><img src="../images/default-270-180.jpg" alt=""></a>
+				<h3><a href="#" target="_blank">吉普-指南者-2011款 指南者2.4-CVT/MT豪华导航版四驱</a></h3>
+				<div class="pic-price">
+					<span>19.83万</span>
+				</div>
+				<p>2014年上牌｜7724公里｜北京</p>
+			</div>
+			<div class="col-xs-3 carpic-list">
+				<a href="#" target="_blank"><img src="../images/270_180_pic.gif" alt=""></a>
+				<h3><a href="#" target="_blank">吉普-指南者-2011款 </a></h3>
+				<div class="pic-price">
+					<span>19.83万</span>
+				</div>
+				<p>2014年上牌｜7724公里｜北京</p>
+			</div>
+			<div class="col-xs-3  carpic-list">
+				<a href="#" target="_blank"><img src="../images/270_180_pic.gif" alt=""></a>
+				<h3><a href="#" target="_blank">吉普-指南者-2011款 指南者2.4-CVT/MT豪华导航版四驱</a></h3>
+				<div class="pic-price">
+					<span>19.83万</span>
+				</div>
+				<p>2014年上牌｜7724公里｜北京</p>
+			</div>
+			<div class="col-xs-3 carpic-list">
+				<a href="#" target="_blank"><img src="../images/270_180_pic.gif" alt=""></a>
+				<h3><a href="#" target="_blank">吉普-指南者-2011款 指南者2.4-CVT/MT豪华导航版四驱</a></h3>
+				<div class="pic-price">
+					<span>19.83万</span>
+				</div>
+				<p>2014年上牌｜7724公里｜北京</p>
+			</div>
+		</div>
+		<!--同车系车源推荐 end --> 
+		
+		<!--同价位车源推荐 star -->
+		<div class="section-header header2">
+			<span><a href="#">换一换</a></span>
+			<div class="box">
+				<ul class="section-header-nav">
+					<li class="">同价位车源推荐</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row carpic-box margin-md ">
+			<div class="col-xs-3  carpic-list">
+				<a href="#" target="_blank"><img src="../images/default-270-180.jpg" alt=""></a>
+				<h3><a href="#" target="_blank">吉普-指南者-2011款 指南者2.4-CVT/MT豪华导航版四驱</a></h3>
+				<div class="pic-price">
+					<span>19.83万</span>
+				</div>
+				<p>2014年上牌｜7724公里｜北京</p>
+			</div>
+			<div class="col-xs-3 carpic-list">
+				<a href="#" target="_blank"><img src="../images/270_180_pic.gif" alt=""></a>
+				<h3><a href="#" target="_blank">吉普-指南者-2011款 </a></h3>
+				<div class="pic-price">
+					<span>19.83万</span>
+				</div>
+				<p>2014年上牌｜7724公里｜北京</p>
+			</div>
+			<div class="col-xs-3  carpic-list">
+				<a href="#" target="_blank"><img src="../images/270_180_pic.gif" alt=""></a>
+				<h3><a href="#" target="_blank">吉普-指南者-2011款 指南者2.4-CVT/MT豪华导航版四驱</a></h3>
+				<div class="pic-price">
+					<span>19.83万</span>
+				</div>
+				<p>2014年上牌｜7724公里｜北京</p>
+			</div>
+			<div class="col-xs-3 carpic-list">
+				<a href="#" target="_blank"><img src="../images/270_180_pic.gif" alt=""></a>
+				<h3><a href="#" target="_blank">吉普-指南者-2011款 指南者2.4-CVT/MT豪华导航版四驱</a></h3>
+				<div class="pic-price">
+					<span>19.83万</span>
+				</div>
+				<p>2014年上牌｜7724公里｜北京</p>
+			</div>
+		</div>
+		<!--同价位车源推荐 end --> 
+		
+		<!--猜你喜欢 star -->
+		<div class="title-s-size">
+			<span><a href="#">换一换</a></span>
+			<h4 class="title-bg">猜你喜欢</h4>
+		</div>
+		<div class="row carpic-box margin-md ">
+			<div class="col-xs-3  carpic-list">
+				<a href="#" target="_blank"><img src="../images/default-270-180.jpg" alt=""></a>
+				<h3><a href="#" target="_blank">吉普-指南者-2011款 指南者2.4-CVT/MT豪华导航版四驱</a></h3>
+				<div class="pic-price">
+					<span>19.83万</span>
+				</div>
+				<p>2014年上牌｜7724公里｜北京</p>
+			</div>
+			<div class="col-xs-3 carpic-list">
+				<a href="#" target="_blank"><img src="../images/270_180_pic.gif" alt=""></a>
+				<h3><a href="#" target="_blank">吉普-指南者-2011款 </a></h3>
+				<div class="pic-price">
+					<span>19.83万</span>
+				</div>
+				<p>2014年上牌｜7724公里｜北京</p>
+			</div>
+			<div class="col-xs-3  carpic-list">
+				<a href="#" target="_blank"><img src="../images/270_180_pic.gif" alt=""></a>
+				<h3><a href="#" target="_blank">吉普-指南者-2011款 指南者2.4-CVT/MT豪华导航版四驱</a></h3>
+				<div class="pic-price">
+					<span>19.83万</span>
+				</div>
+				<p>2014年上牌｜7724公里｜北京</p>
+			</div>
+			<div class="col-xs-3 carpic-list">
+				<a href="#" target="_blank"><img src="../images/270_180_pic.gif" alt=""></a>
+				<h3><a href="#" target="_blank">吉普-指南者-2011款 指南者2.4-CVT/MT豪华导航版四驱</a></h3>
+				<div class="pic-price">
+					<span>19.83万</span>
+				</div>
+				<p>2014年上牌｜7724公里｜北京</p>
+			</div>
+		</div>
+		<!--猜你喜欢 end -->
+		
+	</div>
+	
+	<div class="container margin-md">
+	<div class="title-xm-size title-border">
+		<h3 class="tab_h3 cur" style="margin-left:0px;">热门省份</h3>
+		<h3 class="tab_h3">热门城市</h3>
+		<h3 class="tab_h3">贷款</h3>
+	</div>
+	<div class="section-tag-content">
+		<ul class="ul_list" style="display:block;">
+			<li><a href="#">汽车</a></li>
+			<li><a href="#">二手车法</a></li>
+			<li><a href="#">兰克福车展</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">好友二手车 </a></li>
+			<li><a href="#">上海二手车</a></li>
+			<li><a href="#">淮安车网</a></li>
+			<li><a href="#">广州房价</a></li>
+			<li><a href="#">欧卡二手车</a></li>
+			<li><a href="#">上海二手车</a></li>
+			<li><a href="#">上海新闻</a></li>
+			<li><a href="#">上海天气汽车城</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">上海二手车</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">上海汽车网</a></li>
+			<li><a href="#">上海长途</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">搜车吧</a></li>
+			<li><a href="#">爱车族</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">南阳汽车网</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">上海车展2015</a></li>
+			<li><a href="#">上海车展</a></li>
+		</ul>
+		
+		<ul class="ul_list">
+			<li><a href="#">上海租车公司</a></li>
+			<li><a href="#">旅游地产</a></li>
+			<li><a href="#">团购麻豆网</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#"> 三亚会议</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">汽车票</a></li>
+			<li><a href="#">网上订票</a></li>
+			<li><a href="#">上海二手车</a></li>
+			<li><a href="#">上海汽车站时刻表</a></li>
+			<li><a href="#">led广告车</a></li>
+			<li><a href="#">汽车标志大全 </a></li>
+			<li><a href="#">惠州汽车网</a></li>
+			<li><a href="#">金鹰汽车网</a></li>
+			<li><a href="#">搜车网</a></li>
+			<li><a href="#">上海汽车团购网</a></li>
+			<li><a href="#">汽车维修与保养</a></li>
+			<li><a href="#"> 上海车展</a></li>
+			<li><a href="#">养车网</a></li>
+			<li><a href="#">豪车之家</a></li>
+			<li><a href="#">学车</a></li>
+			<li><a href="#">洛阳汽车网</a></li>
+			<li><a href="#">上海易修网</a></li>
+			<li><a href="#">湖南汽车网</a></li>
+			<li><a href="#">丝路汽车网</a></li>
+			<li><a href="#">苏州二手房</a></li>
+			<li><a href="#">湖南汽车网</a></li>
+			<li><a href="#">上海汽车零部件展</a></li>
+			<li><a href="#">江阴汽车网</a></li>
+			<li><a href="#">汽车论坛</a></li>
+			<li><a href="#">蓝网二手车评估</a></li>
+		</ul>
+		
+		
+		<ul class="ul_list">
+			<li><a href="#">上海112租车公司</a></li>
+			<li><a href="#">旅游地产</a></li>
+			<li><a href="#">团购麻豆网</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#"> 三亚会议</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">汽车票</a></li>
+			<li><a href="#">网上订票</a></li>
+			<li><a href="#">上海二手车</a></li>
+			<li><a href="#">上海汽车站时刻表</a></li>
+			<li><a href="#">led广告车</a></li>
+			<li><a href="#">汽车标志大全 </a></li>
+			<li><a href="#">惠州汽车网</a></li>
+			<li><a href="#">金鹰汽车网</a></li>
+			<li><a href="#">搜车网</a></li>
+			<li><a href="#">上海汽车团购网</a></li>
+			<li><a href="#">汽车维修与保养</a></li>
+			<li><a href="#"> 上海车展</a></li>
+			<li><a href="#">养车网</a></li>
+			<li><a href="#">豪车之家</a></li>
+			<li><a href="#">学车</a></li>
+			<li><a href="#">洛阳汽车网</a></li>
+			<li><a href="#">上海易修网</a></li>
+			<li><a href="#">湖南汽车网</a></li>
+			<li><a href="#">丝路汽车网</a></li>
+			<li><a href="#">苏州二手房</a></li>
+			<li><a href="#">湖南汽车网</a></li>
+			<li><a href="#">上海汽车零部件展</a></li>
+			<li><a href="#">江阴汽车网</a></li>
+			<li><a href="#">汽车论坛</a></li>
+			<li><a href="#">蓝网二手车评估</a></li>
+		</ul>
+		
+	</div>
+</div>
+	
+</div>
+
+<!--footer start-->
+<footer class="footer">
+	<div class="footer-text">
+		<div class="container">
+			<p>CopyRight &copy; 2000-2014 BitAuto,All Rights Reserved.&nbsp;&nbsp;版权所有&nbsp;&nbsp;北京易车信息科技有限公司</p>
+			<p class="r">购车咨询：4000-168-168 (每天9:00&mdash;17:30，法定节日休息)</p>
+		</div>
+	</div>
+	<div class="footer-link">
+		<div class="container">
+			<ul class="about">
+				<li class="first"><a target="_blank" href="http://corp.bitauto.com/" rel="nofollow">关于易车</a></li>
+				<li><a target="_blank" href="http://corp.bitauto.com/business/" rel="nofollow">业务体系</a></li>
+				<li><a target="_blank" href="http://corp.bitauto.com/news/" rel="nofollow">易车动态</a></li>
+				<li><a target="_blank" href="http://corp.bitauto.com/job/" rel="nofollow">加入易车</a></li>
+				<li><a target="_blank" href="http://corp.bitauto.com/contact/" rel="nofollow">联系我们</a></li>
+				<li><a target="_blank" href="http://corp.bitauto.com/about/legal-notices.shtml" rel="nofollow">法律声明</a></li>
+				<li><a target="_blank" href="http://i.bitauto.com/authenservice/register/Licence.aspx" rel="nofollow">服务协议</a></li>
+				<li><a target="_blank" href="http://ir.bitauto.com/" rel="nofollow">Investor Relations</a></li>
+				<li><a target="_blank" href="http://uec.yiche.com/" rel="nofollow">用户体验中心</a></li>
+				<li><a target="_blank" href="http://dealer.easypass.cn/" rel="nofollow">易湃会员</a></li>
+				<li class="last"><a target="_blank" href="http://www.bitauto.com/feedback/" rel="nofollow">我要提意见</a></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<!--footer end--> 
+
+<!--侧边栏 star -->
+<div class="right-nav-fixed" style="right:0;">
+	<div class="right-nav-top">
+		<ul >
+			<li class="right-nav-close"><a href="##" >&nbsp;&nbsp;</a> </li>
+		</ul>
+	</div>
+	<div class="right-nav">
+		<ul  class="right-nav-dow">
+			<li class="right-nav-personal gohover"><a href="##" > </a> <span>个人中心</span> </li>
+			<li class="right-nav-contrast gohover"><a class=""   href="##"> <em>3</em></a> <span>车型对比 <em>3</em></span> </li>
+			<li class="right-nav-collection gohover"><a  class=""   href="##"><em>4</em></a> <span>车型关注<em>4</em> </span> </li>
+			<li class="right-nav-browse gohover"><a  class="right-nav-click"  href="##"></a> <span>浏览记录</span> </li>
+			<li class="right-nav-business gohover"><a href="##"></a> <span> 商家店铺</span> </li>
+			<li class="right-nav-app "><a class=""  href="javascript:addfavorite();">&nbsp;</a>
+				<div class="right-nav-app-main">
+					<div class="right-nav-app-ewm">
+						<P>扫描二维码</P>
+						<P>下载易车二手车APP</P>
+						<img src="../images/app_140_140.png" alt="app二维码">
+					</div>
+					<i></i>
+				</div>
+			</li>
+			<li class="right-nav-service gohover"><a href="javascript:addfavorite();"></a> <span> 联系客服 </span> </li>
+			<li class="right-nav-up gohover"><a href="javascript:addfavorite();"></a> <span> 返回顶部 </span> </li>
+		</ul>
+	</div>
+	<div class="right-nav-line">
+	</div>
+	<div class="right-nav-carlist">
+		<h5>车辆对比</h5>
+		<div class="right-nav-carmain">
+			<ul>
+				<li> <a href="#"><img src="../images/default-180-120.jpg" alt="科鲁兹三厢"> <span></span></a>
+					<h6>科鲁兹鲁兹三厢2015款</h6>
+					<P>12.43万公里</P>
+					<em>15.43万</em> <i></i> </li>
+				<li> <a href="#"><img src="../images/180_120_pic.jpg" alt="科鲁兹三厢"> <span></span></a>
+					<h6>科鲁兹鲁兹三厢2015款</h6>
+					<P>12.43万公里</P>
+					<em>15.43万</em> <i></i> </li>
+				<li> <a href="#"><img src="../images/180_120_pic.jpg" alt="科鲁兹三厢"> <span></span></a>
+					<h6>科鲁兹鲁兹三厢2015款</h6>
+					<P>12.43万公里</P>
+					<em>15.43万</em> <i></i> </li>
+				<li> <a href="#"><img src="../images/180_120_pic.jpg" alt="科鲁兹三厢"> <span></span></a>
+					<h6>科鲁兹鲁兹三厢2015款</h6>
+					<P>12.43万公里</P>
+					<em>15.43万</em> <i></i> </li>
+				<li> <a href="#"><img src="../images/180_120_pic.jpg" alt="科鲁兹三厢"> <span></span></a>
+					<h6>科鲁兹鲁兹三厢2015款</h6>
+					<P>12.43万公里</P>
+					<em>15.43万</em> <i></i> </li>
+				<li> <a href="#"><img src="../images/180_120_pic.jpg" alt="科鲁兹三厢"> <span></span></a>
+					<h6>科鲁兹鲁兹三厢2015款</h6>
+					<P>12.43万公里</P>
+					<em>15.43万</em> <i></i> </li>
+				<li> <a href="#"><img src="../images/180_120_pic.jpg" alt="科鲁兹三厢"> <span></span></a>
+					<h6>科鲁兹鲁兹三厢2015款</h6>
+					<P>12.43万公里</P>
+					<em>15.43万</em> <i></i> </li>
+			</ul>
+		</div>
+		<div class="right-nav-btn">
+			<span class="btn btn-lesser btn-sm"><a href="#">开始对比</a></span> 
+			<!-- <span class="btn btn-disabled btn-sm"><a href="#">开始对比</a></span>-->
+		</div>
+	</div>
+</div>
+
+<!--侧边栏 end --> 
+
+<!--scripts--> 
+<script src="../js/jquery-1.11.1.min.js" type="text/javascript"></script> 
+<script>
+    jQuery(function ($) {
+        var timer, timer2; //节流阀
+        setTimeout(function () {
+            $(".taoche-details-help-bg2").removeClass("vis-hide").addClass("shake");
+        }, 400);
+
+        $(window).on("scroll", animateForDii);
+        $(window).on("scroll", animateForStamp);
+        $(window).triggerHandler("scroll");
+
+        function doScroll($target, offset, callback, offEv) {
+            var docScroll = $(document).scrollTop(),
+                winHeight = $(window).height();
+            if (docScroll + winHeight - $target.offset().top - $target.height() > offset) {
+                $(window).off("scroll", offEv);
+                callback && callback();
+            }
+        }
+
+        function animateForDii(){
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                doScroll($(".details-information-main:first"), 0, function () {
+                    var $dii = $(".details-information-ico em"),
+                        l = $dii.length;
+                    for (var i=0; i< l; i++) {
+                        (function (i) {
+                            setTimeout(function () {
+                                $dii.eq(i).removeClass("vis-hide").addClass("zoomIn");
+                            }, i * 200);
+                        })(i);
+                    }
+                }, animateForDii);
+            }, 100);
+        }
+
+        function animateForStamp(){
+            clearTimeout(timer2);
+            timer2 = setTimeout(function () {
+            doScroll($(".qc-qualified").closest(".qc-report"), -500, function () {
+                  $(".qc-qualified").removeClass("vis-hide").addClass("zoomOut");
+            }, animateForStamp);
+         }, 100);
+       }
+    })
+	
+	//二维码动效
+        $('.right-nav-app-hover').mouseleave(function (ev) {
+					 var $this = $(this);								   
+           $this.parent().removeClass('hover');
+					 setTimeout(function(){$this.next().next().hide();},100);
+        })
+
+        $('.right-nav-app-hover').mouseenter(function (ev) {
+						var $this = $(this);
+						$this.next().next().show();
+						setTimeout(function(){$this.parent().addClass('hover');},100);
+        })
+		 
+		var $fixed = $('.right-nav-fixed');
+	    var $carlist = $fixed.find('.right-nav-carlist');
+		var $carmain = $('.right-nav-carmain ul');
+	    function toResize(){
+			var clientHeight = document.documentElement.clientHeight;
+			var h = clientHeight - 170;
+			$carlist.height(clientHeight);
+			if(h<=640){
+				$carmain.height(h);
+			}else{
+				$carmain.height(640);
+	         }
+			
+	    }
+	   $(window).resize(toResize).trigger('resize');
+			
+		//20170718
+		$('.title-xm-size .tab_h3').mouseenter(function(){
+			$('.title-xm-size .tab_h3').eq($(this).index()).addClass('cur').siblings().removeClass('cur');
+			$('.ul_list').hide().eq($(this).index()).show();
+		})
+			
+			
+</script>
+</body>
+</html>

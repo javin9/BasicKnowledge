@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>淘车APP - 立即下载</title>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+    html {
+        font-size: 10px;
+    }
+    body {
+        font-family: 'Microsoft YaHei', 'Hiragino Sans GB', \\5b8b\4f53, tahoma, arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        margin: 0;
+        padding: 0;
+    }
+    a img {
+        border: none;
+    }
+    .mainbox {
+        margin: 0 auto;
+        width: 100%;
+        min-width: 320px;
+        max-width: 640px;
+        height: 100%;
+    }
+    .bg-img {
+        width: 100%;
+        position: absolute;
+        display: block;
+        bottom: 0px;
+        margin: auto;
+        clear: both;
+    }
+
+    .tc-btn {
+        width: 100%;
+        position: absolute;
+        bottom: 22px;
+        left: 0px;
+        text-align: center;
+        height: 46px;
+    }
+
+    .btn-01 i {
+        width: 17px;
+        height: 46px;
+        display: inline-block;
+        background: url("images/btn-01.jpg") 0 11px no-repeat;
+        background-size: 17px 20px;
+        vertical-align: middle;
+        margin-right: 3px;
+    }
+    .btn-022 i {
+        width: 16px;
+        height: 46px;
+        display: inline-block;
+        background: url("images/btn-022.jpg") 0 11px no-repeat;
+        background-size: 16px 20px;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+
+    .tc-btn a {
+        width: 154px;
+        height: 46px;
+        display: inline-block;
+        border-radius: 3rem;
+        font-size: 16px;
+        line-height: 46px;
+        -moz-box-shadow: 4px 4px 20px #FCB634;
+        -webkit-box-shadow: 4px 4px 20px #FCB634;
+        box-shadow: 4px 4px 20px #FCB634;
+    }
+    .tc-btn a.btn-01 {
+        color: #DC3E0E;
+        background: #ffffff;
+        text-decoration: none;
+    }
+    .tc-btn a.btn-022 {
+        color: #DC3E0E;
+        background: #ffffff;
+        text-decoration: none;
+        margin-right: 20px;
+    }
+    /**/
+
+    .mask {
+        background-color: rgba(0, 0, 0, .8);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+    }
+    .mask p {
+        color: #fff;
+        text-align: center;
+        font-size: 2rem;
+        padding: 10rem 0;
+        margin: auto 3rem;
+        background: url(images/03.png) right 20px no-repeat;
+        background-size: 50px auto;
+    }
+
+
+    @media only screen and (max-width:320px) {
+        .tc-btn a {
+            width: 134px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 15px;
+        }
+        .tc-btn {
+            bottom: 13px;
+        }
+        .tc-btn a.btn-022 {
+            margin-right: 15px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="mainbox">
+        <img src="images/appbg.jpg" alt="" class="bg-img">
+        <div class="tc-btn">
+            <a href="javascript:;" class="btn-022"><i></i>iPhone下载</a>
+            <a href="javascript:;" class="btn-01"><i></i>Android下载</a>
+        </div>
+    </div>
+    <div class="mask" style="display: none">
+        <p>点击右上角，选择“在浏览器中打开”一键跳转</p>
+    </div>
+</body>
+
+</html>

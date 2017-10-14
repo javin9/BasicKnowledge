@@ -1,0 +1,1045 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>筛选条件</title>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/html5shiv.min.js"></script>
+    <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/Respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" href="../css/col.min.css">
+<link rel="stylesheet" type="text/css" href="../css/1200_com.css">
+<link rel="stylesheet" type="text/css" href="../css/1200_头.css">
+<link rel="stylesheet" type="text/css" href="../css/图片列表.css">
+<link rel="stylesheet" type="text/css" href="../css/按钮.css">
+<link rel="stylesheet" type="text/css" href="../css/⁮标题.css">
+<link rel="stylesheet" type="text/css" href="../font/iconfont.css">
+<link rel="stylesheet" type="text/css" href="./筛选条件.css">
+<link rel="stylesheet" type="text/css" href="列表页.css">
+<link rel="stylesheet" type="text/css" href="../css/翻页.css">
+<link rel="stylesheet" type="text/css" href="../css/推荐商家.css">
+<link rel="stylesheet" type="text/css" href="../css/404.css">
+<link rel="stylesheet" type="text/css" href="../css/浮层.css">
+<link rel="stylesheet" type="text/css" href="../custom-scrollbar/jquery.mCustomScrollbar.css">
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="../css/ie-hack.css">
+<![endif]-->
+
+</head>
+
+<body>
+	
+<!--个人登录后 star -->
+<div class="container margin-md" style="margin-top:100px;">
+	<div class="left-column-lg margin-top-md"> 
+		<!--筛选 star --> 
+		<div class="filterWarp clear_">
+			<!--增加  filter_main-->
+			<div class="filter-result clear_ filter_main">
+				<div class="title">已 选</div>
+				<a href="javascript:;" class="subscribe">订阅<i class="iconfont icon-tip"></i></a>
+				<!--增加   filter-con-ul-->
+				<ul class="filter-con clear_ filter-con-ul ">
+					<li class="filter-city hide">
+						<div class="filter-selected"><i class="iconfont icon-location"></i>北京<i class="iconfont icon-drop-down"></i></div>
+						<div class="filter-options">
+							<div class="filter-options-title">周边城市</div>
+							<div class="filter-options-nearby"><a href="#">北京</a><a href="#">上海</a><a href="#">呼和浩特</a><a href="#">石家庄</a><a href="#">承德</a><a href="#">张家口</a></div>
+							<div class="filter-options-title" >省份首字母</div>
+							<div class="filter-options-en" >
+								<a data-code='A' href="javascript:void(0)" class="current">A</a>
+								<a data-code='B' href="javascript:void(0)">B</a>
+								<a data-code='C' href="javascript:void(0)">C</a>
+								<a data-code='F' href="javascript:void(0)">F</a>
+								<a data-code='G' href="javascript:void(0)">G</a>
+								<a data-code='H' href="javascript:void(0)">H</a>
+								<a data-code='J' href="javascript:void(0)">J</a>
+								<a data-code='L' href="javascript:void(0)">L</a>
+								<a data-code='N' href="javascript:void(0)">N</a>
+								<a data-code='Q' href="javascript:void(0)">Q</a>
+								<a data-code='S' href="javascript:void(0)">S</a>
+								<a data-code='T' href="javascript:void(0)">T</a>
+								<a data-code='X' href="javascript:void(0)">X</a>
+								<a data-code='Y' href="javascript:void(0)">Y</a>
+								<a data-code='Z' href="javascript:void(0)">Z</a>
+							</div>
+							<div class="filter-options-scroll mCustomScrollbar">
+								<h3><a href="#">全国</a></h3>
+								<dl id="sy_city_A">
+									<dt><strong>A</strong><a href="#">安徽</a></dt>
+									<dd><a href="#">合肥</a><a href="#" class="current">安庆</a><a href="#">蚌埠</a><a href="#">巢湖</a><a href="#">池州</a><a href="#">阜阳</a><a href="#">淮南</a><a href="#">六安</a><a href="#">马鞍山</a><a href="#">铜陵</a><a href="#">芜湖</a><a href="#">宣城</a><a href="#">滁州</a><a href="#">宿州</a><a href="#">亳州</a><a href="#">淮北</a><a href="#">黄山</a></dd>
+								</dl>
+								<dl id="sy_city_B">
+									<dt><strong>B</strong><a href="#">北京</a></dt>
+									<dd><a href="#">北京</a></dd>
+								</dl>
+								<dl id="sy_city_C">
+									<dt><strong>C</strong><a href="#">重庆</a></dt>
+									<dd><a href="#">重庆</a></dd>
+								</dl>
+								<dl id="sy_city_F">
+									<dt><strong>F</strong><a href="#">福建</a></dt>
+									<dd><a href="#">福州</a><a href="#">厦门</a><a href="#">龙岩</a><a href="#">漳州</a><a href="#">莆田</a><a href="#">泉州</a><a href="#">南平</a><a href="#">宁德</a><a href="#">三明</a></dd>
+								</dl>
+								<dl id="sy_city_G">
+									<dt><strong>G</strong><a href="#">广东</a></dt>
+									<dd><a href="#">广州</a><a href="#">深圳</a><a href="#">珠海</a><a href="#">东莞</a><a href="#">中山</a><a href="#">汕头</a><a href="#">韶关</a><a href="#">肇庆</a><a href="#">茂名</a><a href="#">佛山</a><a href="#">惠州</a><a href="#">江门</a><a href="#">清远</a><a href="#">潮州</a><a href="#">湛江</a><a href="#">梅州</a><a href="#">揭阳</a><a href="#">云浮</a><a href="#">阳江</a><a href="#">河源</a><a href="#">汕尾</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">广西</a></dt>
+									<dd><a href="#">南宁</a><a href="#">柳州</a><a href="#">桂林</a><a href="#">北海</a><a href="#">百色</a><a href="#">贺州</a><a href="#">河池</a><a href="#">贵港</a><a href="#">玉林</a><a href="#">钦州</a><a href="#">梧州</a><a href="#">防城港</a><a href="#">来宾</a><a href="#">崇左</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">贵州</a></dt>
+									<dd><a href="#">贵阳</a><a href="#">遵义</a><a href="#">安顺</a><a href="#">六盘水</a><a href="#">铜仁</a><a href="#">黔东南</a><a href="#">黔南</a><a href="#">毕节</a><a href="#">黔西南</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">甘肃</a></dt>
+									<dd><a href="#">兰州</a><a href="#">定西</a><a href="#">平凉</a><a href="#">酒泉</a><a href="#">庆阳</a><a href="#">白银</a><a href="#">张掖</a><a href="#">武威</a><a href="#">天水</a><a href="#">嘉峪关</a><a href="#">金昌</a><a href="#">临夏</a><a href="#">陇南</a><a href="#">甘南</a></dd>
+								</dl>
+								<dl id="sy_city_H">
+									<dt><strong>H</strong><a href="#">海南</a></dt>
+									<dd><a href="#">海口</a><a href="#">三亚</a><a href="#">琼北</a><a href="#">琼南</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">湖北</a></dt>
+									<dd><a href="#">武汉</a><a href="#">十堰</a><a href="#">襄阳</a><a href="#">随州</a><a href="#">宜昌</a><a href="#">黄石</a><a href="#">荆门</a><a href="#">荆州</a><a href="#">鄂州</a><a href="#">咸宁</a><a href="#">孝感</a><a href="#">黄冈</a><a href="#">恩施</a><a href="#">湖北直辖</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">湖南</a></dt>
+									<dd><a href="#">长沙</a><a href="#">郴州</a><a href="#">常德</a><a href="#">衡阳</a><a href="#">怀化</a><a href="#">娄底</a><a href="#">株洲</a><a href="#">岳阳</a><a href="#">湘潭</a><a href="#">邵阳</a><a href="#">永州</a><a href="#">益阳</a><a href="#">张家界</a><a href="#">湘西</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">河南</a></dt>
+									<dd><a href="#">郑州</a><a href="#">洛阳</a><a href="#">周口</a><a href="#">信阳</a><a href="#">新乡</a><a href="#">商丘</a><a href="#">三门峡</a><a href="#">濮阳</a><a href="#">南阳</a><a href="#">漯河</a><a href="#">焦作</a><a href="#">开封</a><a href="#">安阳</a><a href="#">鹤壁</a><a href="#">平顶山</a><a href="#">驻马店</a><a href="#">许昌</a><a href="#">河南直辖</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">河北</a></dt>
+									<dd><a href="#">石家庄</a><a href="#">唐山</a><a href="#">邢台</a><a href="#">秦皇岛</a><a href="#">廊坊</a><a href="#">邯郸</a><a href="#">衡水</a><a href="#">沧州</a><a href="#">保定</a><a href="#">张家口</a><a href="#">承德</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">黑龙江</a></dt>
+									<dd><a href="#">哈尔滨</a><a href="#">大庆</a><a href="#">齐齐哈尔</a><a href="#">佳木斯</a><a href="#">牡丹江</a><a href="#">鸡西</a><a href="#">七台河</a><a href="#">伊春</a><a href="#">黑河</a><a href="#">双鸭山</a><a href="#">绥化</a><a href="#">大兴安岭</a></dd>
+								</dl>
+								<dl id="sy_city_J">
+									<dt><strong>J</strong><a href="#">江苏</a></dt>
+									<dd><a href="#">南京</a><a href="#">苏州</a><a href="#">无锡</a><a href="#">常州</a><a href="#">淮安</a><a href="#">连云港</a><a href="#">南通</a><a href="#">盐城</a><a href="#">扬州</a><a href="#">镇江</a><a href="#">泰州</a><a href="#">徐州</a><a href="#">宿迁</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">江西</a></dt>
+									<dd><a href="#">南昌</a><a href="#">上饶</a><a href="#">萍乡</a><a href="#">新余</a><a href="#">宜春</a><a href="#">九江</a><a href="#">赣州</a><a href="#">吉安</a><a href="#">景德镇</a><a href="#">抚州</a><a href="#">鹰潭</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">吉林</a></dt>
+									<dd><a href="#">长春</a><a href="#">吉林</a><a href="#">通化</a><a href="#">辽源</a><a href="#">松原</a><a href="#">延边</a><a href="#">四平</a><a href="#">白山</a><a href="#">白城</a></dd>
+								</dl>
+								<dl id="sy_city_L">
+									<dt><strong>L</strong><a href="#">辽宁</a></dt>
+									<dd><a href="#">沈阳</a><a href="#">大连</a><a href="#">丹东</a><a href="#">抚顺</a><a href="#">阜新</a><a href="#">葫芦岛</a><a href="#">朝阳</a><a href="#">本溪</a><a href="#">鞍山</a><a href="#">锦州</a><a href="#">辽阳</a><a href="#">营口</a><a href="#">盘锦</a><a href="#">铁岭</a></dd>
+								</dl>
+								<dl id="sy_city_N">
+									<dt><strong>N</strong><a href="#">内蒙古</a></dt>
+									<dd><a href="#">呼和浩特</a><a href="#">包头</a><a href="#">赤峰</a><a href="#">通辽</a><a href="#">乌海</a><a href="#">鄂尔多斯</a><a href="#">巴彦淖尔</a><a href="#">乌兰察布</a><a href="#">锡林郭勒</a><a href="#">呼伦贝尔</a><a href="#">兴安盟</a><a href="#">阿拉善盟</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">宁夏</a></dt>
+									<dd><a href="#">银川</a><a href="#">中卫</a><a href="#">吴忠</a><a href="#">固原</a><a href="#">石嘴山</a></dd>
+								</dl>
+								<dl id="sy_city_Q">
+									<dt><strong>Q</strong><a href="#">青海</a></dt>
+									<dd><a href="#">西宁</a><a href="#">海北</a><a href="#">黄南</a><a href="#">果洛</a><a href="#">玉树</a><a href="#">海西</a><a href="#">海东</a><a href="#">海南</a></dd>
+								</dl>
+								<dl id="sy_city_S">
+									<dt><strong>S</strong><a href="#">陕西</a></dt>
+									<dd><a href="#">西安</a><a href="#">咸阳</a><a href="#">渭南</a><a href="#">榆林</a><a href="#">宝鸡</a><a href="#">汉中</a><a href="#">延安</a><a href="#">铜川</a><a href="#">商洛</a><a href="#">安康</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">上海</a></dt>
+									<dd><a href="#">上海</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">山西</a></dt>
+									<dd><a href="#">太原</a><a href="#">大同</a><a href="#">晋城</a><a href="#">临汾</a><a href="#">长治</a><a href="#">运城</a><a href="#">忻州</a><a href="#">朔州</a><a href="#">吕梁</a><a href="#">晋中</a><a href="#">阳泉</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">四川</a></dt>
+									<dd><a href="#">成都</a><a href="#">绵阳</a><a href="#">遂宁</a><a href="#">攀枝花</a><a href="#">宜宾</a><a href="#">自贡</a><a href="#">资阳</a><a href="#">德阳</a><a href="#">乐山</a><a href="#">南充</a><a href="#">眉山</a><a href="#">巴中</a><a href="#">泸州</a><a href="#">内江</a><a href="#">达州</a><a href="#">雅安</a><a href="#">广元</a><a href="#">广安</a><a href="#">阿坝</a><a href="#">甘孜</a><a href="#">凉山</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">山东</a></dt>
+									<dd><a href="#">济南</a><a href="#">德州</a><a href="#">青岛</a><a href="#">烟台</a><a href="#">威海</a><a href="#">潍坊</a><a href="#">泰安</a><a href="#">枣庄</a><a href="#">淄博</a><a href="#">东营</a><a href="#">菏泽</a><a href="#">滨州</a><a href="#">聊城</a><a href="#">临沂</a><a href="#">济宁</a><a href="#">日照</a><a href="#">莱芜</a><a href="#">德州</a></dd>
+								</dl>
+								<dl id="sy_city_T">
+									<dt><strong>T</strong><a href="#">天津</a></dt>
+									<dd><a href="#">天津</a></dd>
+								</dl>
+								<dl id="sy_city_X">
+									<dt><strong>X</strong><a href="#">新疆</a></dt>
+									<dd><a href="#">乌鲁木齐</a><a href="#">克拉玛依</a><a href="#">巴音郭楞</a><a href="#">伊犁</a><a href="#">喀什</a><a href="#">阿克苏</a><a href="#">和田</a><a href="#">塔城</a><a href="#">吐鲁番</a><a href="#">哈密</a><a href="#">阿勒泰</a><a href="#">新疆克州</a><a href="#">昌吉</a><a href="#">新疆直辖</a></dd>
+								</dl>
+								<dl>
+									<dt><a href="#">西藏</a></dt>
+									<dd><a href="#">拉萨</a><a href="#">日喀则</a><a href="#">山南</a></dd>
+								</dl>
+								<dl id="sy_city_Y">
+									<dt><strong>Y</strong><a href="#">云南</a></dt>
+									<dd><a href="#">昆明</a><a href="#">曲靖</a><a href="#">保山</a><a href="#">西双版纳</a><a href="#">红河</a><a href="#">大理</a><a href="#">玉溪</a><a href="#">临沧</a><a href="#">文山</a><a href="#">昭通</a><a href="#">丽江</a><a href="#">德宏</a><a href="#">怒江</a><a href="#">迪庆</a><a href="#">普洱</a><a href="#">楚雄</a></dd>
+								</dl>
+								<dl id="sy_city_Z">
+									<dt><strong>Z</strong><a href="#">浙江</a></dt>
+									<dd><a href="#">杭州</a><a href="#">宁波</a><a href="#">温州</a><a href="#">嘉兴</a><a href="#">金华</a><a href="#">丽水</a><a href="#">湖州</a><a href="#">衢州</a><a href="#">台州</a><a href="#">绍兴</a><a href="#">舟山</a></dd>
+								</dl>
+							</div>
+						</div>
+					</li>
+
+					<!--20170802 start-->
+					<li  class="filter-city-two" title="北京">北京</li>
+					<!--20170802 end-->
+
+					<li class="filter-item" title="本田"><span>本田</span><a class="iconfont icon-close" href="javascript:void(0);"></a></li>
+					<li class="filter-item" title="锋范经典"><span>锋范经典</span><a class="iconfont icon-close" href="javascript:void(0);"></a></li>
+					<li class="filter-item" title="小型车"><span>小型SUV+紧凑型SUV+中型SUV+中大型SUV+大型SUV</span><a class="iconfont icon-close" href="javascript:void(0);"></a></li>
+					<li class="filter-item" title="3万以下"><span>3万以下</span><a class="iconfont icon-close" href="javascript:void(0);"></a></li>
+					<li class="filter-item" title="2年以内"><span>2年以内</span><a class="iconfont icon-close" href="javascript:void(0);"></a></li>
+					<li class="filter-item" title="国三"><span>国三</span><a class="iconfont icon-close" href="javascript:void(0);"></a></li>
+					<li class="filter-item" title="德系"><span>德系</span><a class="iconfont icon-close" href="javascript:void(0);"></a></li>
+					<li class="filter-item" title="手动"><span>手动</span><a class="iconfont icon-close" href="javascript:void(0);"></a></li>
+					<li class="filter-item" title="红色"><span>红色</span><a class="iconfont icon-close" href="javascript:void(0);"></a></li>
+					<li class="filter-item" title="倒车影像"><span>倒车影像</span><a class="iconfont icon-close" href="javascript:void(0);"></a></li>
+					<li class="filter-item" title="1.0升以下"><span>1.0升以下</span><a class="iconfont icon-close" href="javascript:void(0);"></a></li>
+					<li class="filter-item" title="1.0升以下"><span>1.0升以下</span><a class="iconfont icon-close" href="javascript:void(0);"></a></li>
+					<li class="filter-item" title="1.0升以下"><span>1.0升以下</span><a class="iconfont icon-close" href="javascript:void(0);"></a></li>
+					<li class="filter-item" title="1.0升以下"><span>1.0升以下</span><a class="iconfont icon-close" href="javascript:void(0);"></a></li>
+					<a class="filter-clear" href="javascript:void(0);">清除全部</a>
+				</ul>
+			</div>
+			<div class="condition">
+				<div class="condition-list clear_">
+					<div class="brand title">品牌</div>
+					<div class="content-area clear_">
+						<ul class="condition-con clear_">
+							<li><a class="con-mini" href="javascript:void(0);" title="大众">大众</a></li>
+							<li><a class="con-mini" href="javascript:void(0);" title="奔驰">奔驰</a></li>
+							<li><a class="con-mini" href="javascript:void(0);" title="丰田">丰田</a></li>
+							<li><a class="con-mini" href="javascript:void(0);" title="宝马">宝马</a></li>
+							<li><a class="con-mini" href="javascript:void(0);" title="奥迪">奥迪</a></li>
+							<li class="current"><a class="con-mini" href="javascript:void(0);" title="本田">本田</a></li>
+							<li><a class="con-mini" href="javascript:void(0);" title="别克">别克</a></li>
+							<li><a class="con-mini" href="javascript:void(0);" title="福特">福特</a></li>
+							<li><a class="con-mini" href="javascript:void(0);" title="日产">日产</a></li>
+							<li><a class="con-mini" href="javascript:void(0);" title="马自达">马自达</a></li>
+							<li><a class="con-mini" href="javascript:void(0);" title="保时捷">保时捷</a></li>
+						</ul>
+						<div class="brand-pop pop-bottom">
+							<div class="brand-en" >
+								<a href="javascript:void(0)" class="current">A</a>
+								<a href="javascript:void(0)">B</a>
+								<a href="javascript:void(0)">C</a>
+								<a href="javascript:void(0)">D</a>
+								<a href="javascript:void(0)">F</a>
+								<a href="javascript:void(0)">G</a>
+								<a href="javascript:void(0)">H</a>
+								<a href="javascript:void(0)">J</a>
+								<a href="javascript:void(0)">K</a>
+								<a href="javascript:void(0)">L</a>
+								<a href="javascript:void(0)">M</a>
+								<a href="javascript:void(0)">N</a>
+								<a href="javascript:void(0)">O</a>
+								<a href="javascript:void(0)">Q</a>
+								<a href="javascript:void(0)">R</a>
+								<a href="javascript:void(0)">S</a>
+								<a href="javascript:void(0)">T</a>
+								<a href="javascript:void(0)">W</a>
+								<a href="javascript:void(0)">X</a>
+								<a href="javascript:void(0)">Y</a>
+								<a href="javascript:void(0)">Z</a>
+							</div>
+							<div class="brand-name">
+								<a href="javascript:void(0)">宝沃</a>
+								<a href="javascript:void(0)">北汽幻速</a>
+								<a href="javascript:void(0)">北汽新能源</a>
+								<a href="javascript:void(0)">北汽绅宝</a>
+								<a href="javascript:void(0)">宝骏</a>
+								<a href="javascript:void(0)">巴博斯</a>
+								<a href="javascript:void(0)">北汽威旺</a>
+								<a href="javascript:void(0)">北汽制造</a>
+								<a href="javascript:void(0)">奔驰</a>
+								<a href="javascript:void(0)">布加迪</a>
+								<a href="javascript:void(0)">别克</a>
+								<a href="javascript:void(0)">宾利</a>
+								<a href="javascript:void(0)">保时捷</a>
+								<a href="javascript:void(0)">比亚迪</a>
+								<a href="javascript:void(0)">奔腾</a>
+								<a href="javascript:void(0)">标致</a>
+								<a href="javascript:void(0)" class="current">本田</a>
+								<a href="javascript:void(0)">宝马</a>
+								<a href="javascript:void(0)">北京</a>
+							</div>
+						</div>
+					</div>
+					<a class="more" href="javascript:void(0)">更多<i class="iconfont icon-dropdown"></i></a>
+				</div>
+
+				<!--车系-->
+
+				<div class="condition-list clear_">
+					<div class="title">车系</div>
+					<div class="content-area car-series clear_">
+						<ul class="condition-con  clear_">
+							<li><a href="javascript:void(0);" class="con-mini" title="雅阁">雅阁</a></li>
+							<li><a href="javascript:void(0);" class="con-mini" title="本田CR-V">本田CR-V</a></li>
+							<li><a href="javascript:void(0);" class="con-mini current" title="思域">思域</a></li>
+							<li><a href="javascript:void(0);" class="con-mini" title="飞度">飞度</a></li>
+							<li><a href="javascript:void(0);" class="con-mini" title="奥德赛">奥德赛</a></li>
+							<li><a href="javascript:void(0);" class="con-mini" title="锋范经典">锋范经典</a></li>
+							<li><a href="javascript:void(0);" class="con-mini" title="思铂睿">思铂睿</a></li>
+							<li><a href="javascript:void(0);" class="con-mini" title="艾力绅">艾力绅</a></li>
+							<li><a href="javascript:void(0);" class="con-mini" title="歌诗图">歌诗图</a></li>
+							<li><a href="javascript:void(0);" class="con-mini" title="思迪">思迪</a></li>
+						</ul>
+						<a href="javascript:void(0)" class="more">更多<i class="iconfont icon-dropdown"></i></a>
+					</div>
+				</div>
+				<div class="condition-list clear_">
+					<div class="title">车系</div>
+					<div class="content-area car-series clear_">
+						<dl class="model-list clear_">
+							<dt>小型车：</dt>
+							<dd class="clear_">
+								<li><a href="javascript:void(0);" class="con-mini" title="飞度">飞度</a></li>
+								<li><a href="javascript:void(0);" class="con-mini current" title="锋范经典">锋范经典</a></li>
+								<li><a href="javascript:void(0);" class="con-mini" title="思迪">思迪</a></li>
+							</dd>
+						</dl>
+						<dl class="model-list clear_">
+							<dt>紧凑型：</dt>
+							<dd class="clear_">
+								<li><a href="javascript:void(0);" class="con-mini" title="思域">思域</a></li>
+								<li><a href="javascript:void(0);" class="con-mini" title="凌派">凌派</a></li>
+								<li><a href="javascript:void(0);" class="con-mini" title="杰德">杰德</a></li>
+								<li><a href="javascript:void(0);" class="con-mini" title="锋范">锋范</a></li>
+								<li><a href="javascript:void(0);" class="con-mini" title="哥瑞">哥瑞</a></li>
+							</dd>
+						</dl>
+						<dl class="model-list clear_">
+							<dt>中型车：</dt>
+							<dd class="clear_">
+								<li><a href="javascript:void(0);" class="con-mini" title="雅阁">雅阁</a></li>
+								<li><a href="javascript:void(0);" class="con-mini" title="思铂睿">思铂睿</a></li>
+								<li><a href="javascript:void(0);" class="con-mini" title="歌诗图">歌诗图</a></li>
+							</dd>
+						</dl>
+						<dl class="model-list clear_">
+							<dt>MPV：</dt>
+							<dd class="clear_">
+								<li><a href="javascript:void(0);" class="con-mini" title="奥德赛">奥德赛</a></li>
+								<li><a href="javascript:void(0);" class="con-mini" title="艾力绅">艾力绅</a></li>
+							</dd>
+						</dl>
+						<dl class="model-list clear_">
+							<dt>SUV：</dt>
+							<dd class="clear_">
+								<li><a href="javascript:void(0);" class="con-mini" title="本田CR-V">本田CR-V</a></li>
+								<li><a href="javascript:void(0);" class="con-mini" title="本田XR-V">本田XR-V</a></li>
+								<li><a href="javascript:void(0);" class="con-mini" title="缤智">缤智</a></li>
+								<li><a href="javascript:void(0);" class="con-mini" title="冠道">冠道</a></li>
+							</dd>
+						</dl>
+						<dl class="model-list clear_">
+							<dt>跑车：</dt>
+							<dd class="clear_">
+								<li><a href="javascript:void(0);" class="con-mini" title="本田CR-Z">本田CR-Z</a></li>
+							</dd>
+						</dl>
+						<a href="javascript:void(0)" class="more current">收起<i class="iconfont icon-dropdown"></i></a>
+						<a class="multiple-choose" href="javascript:void(0)"><i class="iconfont icon-jia1"></i>多选</a>
+					</div>
+				</div>
+				<div class="condition-list clear_">
+					<div class="title">车系</div>
+					<div class="content-area car-series  clear_">
+						<dl class="model-list clear_">
+							<dt>小型车：</dt>
+							<dd class="clear_">
+								<label class="active"><i class="iconfont icon-checkbox"></i>飞度</label>
+								<label><i class="iconfont icon-checkbox"></i>锋范经典</label>
+								<label><i class="iconfont icon-checkbox"></i>思迪</label>
+							</dd>
+						</dl>
+						<dl class="model-list clear_">
+							<dt>紧凑型：</dt>
+							<dd class="clear_">
+								<label><i class="iconfont icon-checkbox"></i>思域</label>
+								<label><i class="iconfont icon-checkbox"></i>凌派</label>
+								<label><i class="iconfont icon-checkbox"></i>杰德</label>
+								<label><i class="iconfont icon-checkbox"></i>锋范</label>
+								<label><i class="iconfont icon-checkbox"></i>哥瑞</label>
+							</dd>
+						</dl>
+						<dl class="model-list clear_">
+							<dt>中型车：</dt>
+							<dd class="clear_">
+								<label><i class="iconfont icon-checkbox"></i>雅阁</label>
+								<label><i class="iconfont icon-checkbox"></i>思铂睿</label>
+								<label><i class="iconfont icon-checkbox"></i>歌诗图</label>
+							</dd>
+						</dl>
+						<dl class="model-list clear_">
+							<dt>MPV：</dt>
+							<dd class="clear_">
+								<label><i class="iconfont icon-checkbox"></i>奥德赛</label>
+								<label><i class="iconfont icon-checkbox"></i>艾力绅</label>
+							</dd>
+						</dl>
+						<dl class="model-list clear_">
+							<dt>SUV：</dt>
+							<dd class="clear_">
+								<label><i class="iconfont icon-checkbox"></i>本田CR-V</label>
+								<label><i class="iconfont icon-checkbox"></i>本田XR-V</label>
+								<label><i class="iconfont icon-checkbox"></i>缤智</label>
+								<label><i class="iconfont icon-checkbox"></i>冠道</label>
+							</dd>
+						</dl>
+						<dl class="model-list clear_">
+							<dt>跑车：</dt>
+							<dd class="clear_">
+								<label><i class="iconfont icon-checkbox"></i>本田CR-Z</label>
+							</dd>
+						</dl>
+						<a href="javascript:void(0)" class="more current">收起<i class="iconfont icon-dropdown"></i></a>
+						<div class="confirm-handle clear_">
+							<p><i class="iconfont icon-Warning"></i> 最多可选3项</p>
+							<a class="btn-confirm disabled" href="javascript:void(0)">确定</a> <a class="btn-cancel" href="javascript:void(0)">取消</a>
+						</div>
+					</div>
+				</div>
+				<div class="condition-list clear_">
+					<div class="title">车型</div>
+					<div class="content-area car-goods clear_">
+						<ul class="condition-con clear_">
+							<li>
+								<div class="select">
+									<div class="select-selected">
+										<span>2014款</span><i class="iconfont icon-dropdown"></i>
+									</div>
+									<div class="select-option option5">
+										<div class="select-scroll clear_">
+											<label><i class="iconfont icon-checkbox"></i>2014款 征服者Z6 2.0L 手动 时尚版 国IV</label>
+											<label><i class="iconfont icon-checkbox"></i>2014款 征服者Z6 2.0L 手动 时尚版 国IV</label>
+										</div>
+										<div class="confirm-handle clear_">
+											<a href="javascript:void(0)" class="btn-confirm">确定</a> <a href="javascript:void(0)" class="btn-cancel">取消</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="select">
+									<div class="select-selected">
+										<span>2014款</span><i class="iconfont icon-dropdown"></i>
+									</div>
+									<div class="select-option option5">
+										<div class="select-scroll clear_">
+											<label><i class="iconfont icon-checkbox"></i>2014款 征服者Z6 2.0L 手动 时尚版 国IV</label>
+											<label><i class="iconfont icon-checkbox"></i>2014款 征服者Z6 2.0L 手动 时尚版 国IV</label>
+										</div>
+										<div class="confirm-handle clear_">
+											<a href="javascript:void(0)" class="btn-confirm">确定</a> <a href="javascript:void(0)" class="btn-cancel">取消</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="select">
+									<div class="select-selected">
+										<span>2014款</span><i class="iconfont icon-dropdown"></i>
+									</div>
+									<div class="select-option option5">
+										<div class="select-scroll clear_">
+											<label><i class="iconfont icon-checkbox"></i>2014款 征服者Z6 2.0L 手动 时尚版 国IV</label>
+											<label><i class="iconfont icon-checkbox"></i>2014款 征服者Z6 2.0L 手动 时尚版 国IV</label>
+										</div>
+										<div class="confirm-handle clear_">
+											<a href="javascript:void(0)" class="btn-confirm">确定</a> <a href="javascript:void(0)" class="btn-cancel">取消</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="select">
+									<div class="select-selected">
+										<span>2015款</span><i class="iconfont icon-dropdown"></i>
+									</div>
+									<div class="select-option option5">
+										<div class="select-scroll clear_">
+											<label><i class="iconfont icon-checkbox"></i>2014款 征服者Z6 2.0L 手动 舒适版 国IV2014款 征服者Z6 2.0L 手动 舒适版 国I</label>
+											<label><i class="iconfont icon-checkbox"></i>2014款 征服者Z6 2.0L 手动 舒适版 国IV2014款 征服者Z6 2.0L 手动 舒适版 国I</label>
+											<label><i class="iconfont icon-checkbox"></i>2014款 征服者Z6 2.0L 手动 时尚版 国IV</label>
+											<label><i class="iconfont icon-checkbox"></i>2014款 征服者Z6 2.0L 手动 时尚版 国IV</label>
+										</div>
+										<div class="confirm-handle clear_">
+											<a href="javascript:void(0)" class="btn-confirm">确定</a> <a href="javascript:void(0)" class="btn-cancel">取消</a>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="condition-list clear_">
+					<div class="title">价格</div>
+					<div class="content-area price-list clear_">
+						<ul class="condition-con clear_">
+							<li><a class="con-mini current" href="javascript:void(0);">3万以下</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">3-5万</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">5-8万</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">8-10万</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">10-15万</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">15-20万</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">20-30万</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">30-50万</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">50-100万</a></li>
+						</ul>
+						<a href="javascript:void(0)" class="more">自选<i class="iconfont icon-dropdown"></i></a>
+						<div class="price-handle">
+							<div class="ph"><input type="text" value="" maxlength="3"></div>
+							<em>－</em>
+							<div class="ph"><input type="text" value="" maxlength="3"></div>
+							<a class="btn-confirm disabled" href="javascript:void(0)">确定</a>
+						</div>
+					</div>
+				</div>
+				<div class="condition-list clear_">
+					<div class="title">级别</div>
+					<div class="content-area car-level clear_">
+						<ul class="condition-con clear_">
+							<li><a class="con-mini" href="javascript:void(0);">微型车</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">小型车</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">紧凑型车</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">中型车</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">中大型车</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">豪华车</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">MPV</a></li>
+							<li>
+								<div class="select current">
+									<div class="select-selected">
+										<a href="javascript:void(0);">SUV</a><i class="iconfont icon-dropdown"></i>
+									</div>
+									<div class="select-option option2">
+										<ul>
+											<li><a class="con-mini" href="javascript:void(0);">小型SUV</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">紧凑型SUV</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">中型SUV</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">中大型SUV</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">大型SUV</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li><a class="con-mini" href="javascript:void(0);">跑车</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">皮卡</a></li>
+							<li><a class="con-mini" href="javascript:void(0);">面包车</a></li>
+						</ul>
+						<a class="multiple-choose" href="javascript:void(0)"><i class="iconfont icon-jia1"></i>多选</a>
+					</div>
+				</div>
+				<div class="condition-list clear_">
+					<div class="title">级别</div>
+					<div class="content-area level-list clear_">
+						<div class="condition-con clear_">
+							<label><i class="iconfont icon-checkbox"></i>微型车</label>
+							<label><i class="iconfont icon-checkbox"></i>中大型车</label>
+							<label><i class="iconfont icon-checkbox"></i>小型车</label>
+							<label><i class="iconfont icon-checkbox"></i>MPV</label>
+							<label><i class="iconfont icon-checkbox"></i>中型车</label>
+							<label><i class="iconfont icon-checkbox"></i>紧凑型车</label>
+							<label><i class="iconfont icon-checkbox"></i>SUV</label>
+							<label><i class="iconfont icon-checkbox"></i>小型suv</label>
+							<label><i class="iconfont icon-checkbox"></i>紧凑型suv</label>
+							<label><i class="iconfont icon-checkbox"></i>中型suv</label>
+							<label><i class="iconfont icon-checkbox"></i>中大型suv</label>
+							<label><i class="iconfont icon-checkbox"></i>大型suv</label>
+							<label><i class="iconfont icon-checkbox"></i>跑车</label>
+							<label><i class="iconfont icon-checkbox"></i>面包车</label>
+							<label><i class="iconfont icon-checkbox"></i>皮卡</label>
+						</div>
+						<div class="confirm-handle clear_">
+							<a class="btn-confirm disabled" href="javascript:void(0)">确定</a> <a class="btn-cancel" href="javascript:void(0)">取消</a>
+						</div>
+					</div>
+				</div>
+				<div class="condition-list clear_">
+					<div class="title">其他</div>
+					<div class="content-area other-list clear_">
+						<ul class="condition-con clear_">
+							<li>
+								<div class="select">
+									<div class="select-selected">
+										<span>车龄</span><i class="iconfont icon-dropdown"></i>
+									</div>
+									<div class="select-option option4">
+										<ul>
+											<li><a class="con-mini" href="javascript:void(0);">1年内</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">2年内</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">2年内</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">3-5年</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">5-8年</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">8年以上</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="select">
+									<div class="select-selected">
+										<span>里程</span><i class="iconfont icon-dropdown"></i>
+									</div>
+									<div class="select-option option2">
+										<ul>
+											<li><a class="con-mini" href="javascript:void(0);">1万公里内</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">3万公里内</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">5万公里内</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">10万公里内</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<div class="select">
+									<div class="select-selected">
+										<span>排放标准</span><i class="iconfont icon-dropdown"></i>
+									</div>
+									<div class="select-option option3">
+										<ul>
+											<li><a class="con-mini" href="javascript:void(0);">国二</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">国三</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">国四</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">国五</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">欧二</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">欧三</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">欧四</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">欧五</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">京五</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">OBD</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="select">
+									<div class="select-selected">
+										<span>排量</span><i class="iconfont icon-dropdown"></i>
+									</div>
+									<div class="select-option option4">
+										<div class="select-scroll clear_">
+											<label><i class="iconfont icon-checkbox"></i>1.0升以下</label>
+											<label><i class="iconfont icon-checkbox"></i>1.1-1.5升</label>
+											<label><i class="iconfont icon-checkbox"></i>1.6升-2.0升</label>
+											<label><i class="iconfont icon-checkbox"></i>2.1-3.0升</label>
+											<label><i class="iconfont icon-checkbox"></i>3.1升以上</label>
+										</div>
+										<div class="confirm-handle clear_">
+											<a href="javascript:void(0)" class="btn-confirm">确定</a> <a href="javascript:void(0)" class="btn-cancel">取消</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="select current">
+									<div class="select-selected">
+										<span>国别</span><i class="iconfont icon-dropdown"></i>
+									</div>
+									<div class="select-option option2">
+										<ul>
+											<li><a class="con-mini" href="javascript:void(0);">中国</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">德国</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">法国</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">韩国</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">捷克</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">美国</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">日本</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">瑞典</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">英国</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">西班牙</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">意大利</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">澳大利亚</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="select">
+									<div class="select-selected">
+										<span>变速箱</span><i class="iconfont icon-dropdown"></i>
+									</div>
+									<div class="select-option option1">
+										<ul>
+											<li><a class="con-mini" href="javascript:void(0);">手动</a></li>
+											<li><a class="con-mini" href="javascript:void(0);">自动</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="select">
+									<div class="select-selected">
+										<span>颜色</span><i class="iconfont icon-dropdown"></i>
+									</div>
+									<div class="select-option option3">
+										<div class="select-scroll clear_">
+											<label><i class="iconfont icon-checkbox"></i>黑色</label>
+											<label><i class="iconfont icon-checkbox"></i>白色</label>
+											<label><i class="iconfont icon-checkbox"></i>银色</label>
+											<label><i class="iconfont icon-checkbox"></i>深灰色</label>
+											<label><i class="iconfont icon-checkbox"></i>绿色</label>
+											<label><i class="iconfont icon-checkbox"></i>黄色</label>
+											<label><i class="iconfont icon-checkbox"></i>红色</label>
+											<label><i class="iconfont icon-checkbox"></i>蓝色</label>
+											<label><i class="iconfont icon-checkbox"></i>香槟色</label>
+											<label><i class="iconfont icon-checkbox"></i>橙色</label>
+											<label><i class="iconfont icon-checkbox"></i>紫色</label>
+											<label><i class="iconfont icon-checkbox"></i>咖啡色</label>
+											<label><i class="iconfont icon-checkbox"></i>多彩色</label>
+										</div>
+										<div class="confirm-handle clear_">
+											<a href="javascript:void(0)" class="btn-confirm">确定</a> <a href="javascript:void(0)" class="btn-cancel">取消</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="select">
+									<div class="select-selected">
+										<span>亮点</span><i class="iconfont icon-dropdown"></i>
+									</div>
+									<div class="select-option option4">
+										<div class="select-scroll clear_">
+											<label><i class="iconfont icon-checkbox"></i>天窗</label>
+											<label><i class="iconfont icon-checkbox"></i>空气净化器</label>
+											<label><i class="iconfont icon-checkbox"></i>倒车影像</label>
+											<label><i class="iconfont icon-checkbox"></i>儿童锁</label>
+											<label><i class="iconfont icon-checkbox"></i>涡轮增压</label>
+											<label><i class="iconfont icon-checkbox"></i>无钥匙启动</label>
+											<label><i class="iconfont icon-checkbox"></i>四轮碟刹</label>
+											<label><i class="iconfont icon-checkbox"></i>整皮座椅</label>
+											<label><i class="iconfont icon-checkbox"></i>ESP</label>
+											<label><i class="iconfont icon-checkbox"></i>GPS导航</label>
+											<label><i class="iconfont icon-checkbox"></i>定速巡航</label>
+											<label><i class="iconfont icon-checkbox"></i>自动空调</label>
+											<label><i class="iconfont icon-checkbox"></i>氙气大灯</label>
+											<label><i class="iconfont icon-checkbox"></i>换挡拨片</label>
+											<label><i class="iconfont icon-checkbox"></i>电动座椅</label>
+											<label><i class="iconfont icon-checkbox"></i>胎压监测</label>
+											<label><i class="iconfont icon-checkbox"></i>自动泊车</label>
+											<label><i class="iconfont icon-checkbox"></i>儿童座椅接口</label>
+										</div>
+										<div class="confirm-handle clear_">
+											<a href="javascript:void(0)" class="btn-confirm">确定</a> <a href="javascript:void(0)" class="btn-cancel">取消</a>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--筛选 end --> 
+		
+	</div>
+	<div class="right-column-lg margin-top-md"> 
+		<!--常用工具 star -->
+		<div class="margin-xd">
+			<div class="title-xm-size">
+				<h3>常用工具</h3>
+			</div>
+			<div class="common-tools">
+				<ul>
+					<li class="common-tools-evaluation "> <a href=""><em></em><p>二手车估价</p></a> </li>
+					<li class="common-tools-buy"> <a href=""><em></em><p>我要求购</p></a> </li>
+					<li class="common-tools-sell"> <a href=""> <em></em><p>高价卖车</p></a> </li>
+					<li class="common-tools-standard"> <a href=""><em></em><p>查准入标准</p></a> </li>
+				</ul>
+			</div>
+		</div>
+		<!--常用工具 end --> 
+		
+		<!--地图找车 star -->
+		<div class="margin-xd">
+			<div class="title-xm-size">
+				<h3>地图找车</h3>
+				<span><a href="#">大图查看</a></span></div>
+			<div class="map-find-car"><img src="../images/map_300_200.gif" alt="地图找车"></div>
+		</div>
+		<!--地图找车 end --> 
+		
+		<!--推荐商家 star -->
+		<div class="margin-xd">
+			<div class="title-xm-size">
+				<h3>推荐商家</h3>
+			</div>
+			<div class="recommend-business">
+				<div class="recommend-business-list clearfix">
+					<h5><em>专业公司</em> <i>-</i> 融易车</h5>
+					<p class="recommend-business-text">电话：<span>18611352453</span> <a href="#" class="blue-link" target="_blank">地图&gt;</a></p>
+					<ul>
+						<li class=""> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+							<h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+							<P><em>34.15 万</em></P>
+						</li>
+						<li> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+							<h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+							<P><em>34.15 万</em></P>
+						</li>
+					</ul>
+				</div>
+				<div class="recommend-business-list clearfix">
+					<h5><em>专业公司</em> <i>-</i> 融易车</h5>
+					<p class="recommend-business-text">电话：<span>18611352453</span> <a href="#" class="blue-link" target="_blank">地图&gt;</a></p>
+					<ul>
+						<li class=""> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+							<h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+							<P><em>34.15 万</em></P>
+						</li>
+						<li> <a href="#" target="_blank"><img src="../images/120_80_pic.jpg" alt="" /></a>
+							<h6><a href="#" target="_blank">06款 奔驰GLK</a></h6>
+							<P><em>34.15 万</em></P>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--推荐商家 end --> 
+		
+		<!--猜您喜欢的二手车 star -->
+		<div class="margin-xd">
+			<div class="title-xm-size">
+				<h3>猜您喜欢的二手车</h3>
+			</div>
+			<div class="carlist-vertical">
+				<ul>
+					<li> <img src="../images/120_80_pic.jpg" alt="喜欢的二手车" />
+						<h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+						<P>2015年  12.43万公里</P>
+						<em>15.43万</em> </li>
+					<li> <img src="../images/120_80_pic.jpg" alt="喜欢的二手车" />
+						<h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+						<P>2015年  12.43万公里</P>
+						<em>15.43万</em> </li>
+					<li> <img src="../images/120_80_pic.jpg" alt="喜欢的二手车" />
+						<h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+						<P>2015年  12.43万公里</P>
+						<em>15.43万</em> </li>
+					<li> <img src="../images/120_80_pic.jpg" alt="喜欢的二手车" />
+						<h5><a href="#">科鲁兹鲁兹三厢2015</a></h5>
+						<P>2015年  12.43万公里</P>
+						<em>15.43万</em> </li>
+				</ul>
+			</div>
+		</div>
+		<!--猜您喜欢的二手车 end --> 
+		
+	</div>
+</div>
+
+<!--二手车城市直达 star-->
+<div class="container margin-md">
+	<div class="title-xm-size title-border">
+		<h3>二手车城市直达</h3>
+	</div>
+	<div class="section-tag-content">
+		<ul>
+			<li><a href="#">汽车</a></li>
+			<li><a href="#">二手车法</a></li>
+			<li><a href="#">兰克福车展</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">好友二手车 </a></li>
+			<li><a href="#">上海二手车</a></li>
+			<li><a href="#">淮安车网</a></li>
+			<li><a href="#">广州房价</a></li>
+			<li><a href="#">欧卡二手车</a></li>
+			<li><a href="#">上海二手车</a></li>
+			<li><a href="#">上海新闻</a></li>
+			<li><a href="#">上海天气汽车城</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">上海二手车</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">上海汽车网</a></li>
+			<li><a href="#">上海长途</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">搜车吧</a></li>
+			<li><a href="#">爱车族</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">南阳汽车网</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">上海车展2015</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">上海租车公司</a></li>
+			<li><a href="#">旅游地产</a></li>
+			<li><a href="#">团购麻豆网</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#"> 三亚会议</a></li>
+			<li><a href="#">上海车展</a></li>
+			<li><a href="#">汽车票</a></li>
+			<li><a href="#">网上订票</a></li>
+			<li><a href="#">上海二手车</a></li>
+			<li><a href="#">上海汽车站时刻表</a></li>
+			<li><a href="#">led广告车</a></li>
+			<li><a href="#">汽车标志大全 </a></li>
+			<li><a href="#">惠州汽车网</a></li>
+			<li><a href="#">金鹰汽车网</a></li>
+			<li><a href="#">搜车网</a></li>
+			<li><a href="#">上海汽车团购网</a></li>
+			<li><a href="#">汽车维修与保养</a></li>
+			<li><a href="#"> 上海车展</a></li>
+			<li><a href="#">养车网</a></li>
+			<li><a href="#">豪车之家</a></li>
+			<li><a href="#">学车</a></li>
+			<li><a href="#">洛阳汽车网</a></li>
+			<li><a href="#">上海易修网</a></li>
+			<li><a href="#">湖南汽车网</a></li>
+			<li><a href="#">丝路汽车网</a></li>
+			<li><a href="#">苏州二手房</a></li>
+			<li><a href="#">湖南汽车网</a></li>
+			<li><a href="#">上海汽车零部件展</a></li>
+			<li><a href="#">江阴汽车网</a></li>
+			<li><a href="#">汽车论坛</a></li>
+			<li><a href="#">蓝网二手车评估</a></li>
+		</ul>
+	</div>
+</div>
+<!--二手车城市直达 end --> 
+<!--footer start-->
+<footer class="footer">
+	<div class="footer-text">
+		<div class="container">
+			<p>CopyRight &copy; 2000-2014 BitAuto,All Rights Reserved.&nbsp;&nbsp;版权所有&nbsp;&nbsp;北京易车信息科技有限公司</p>
+			<p class="r">购车咨询：4000-168-168 (每天9:00&mdash;17:30，法定节日休息)</p>
+		</div>
+	</div>
+	<div class="footer-link">
+		<div class="container">
+			<ul class="about">
+				<li class="first"><a target="_blank" href="http://corp.bitauto.com/" rel="nofollow">关于易车</a></li>
+				<li><a target="_blank" href="http://corp.bitauto.com/business/" rel="nofollow">业务体系</a></li>
+				<li><a target="_blank" href="http://corp.bitauto.com/news/" rel="nofollow">易车动态</a></li>
+				<li><a target="_blank" href="http://corp.bitauto.com/job/" rel="nofollow">加入易车</a></li>
+				<li><a target="_blank" href="http://corp.bitauto.com/contact/" rel="nofollow">联系我们</a></li>
+				<li><a target="_blank" href="http://corp.bitauto.com/about/legal-notices.shtml" rel="nofollow">法律声明</a></li>
+				<li><a target="_blank" href="http://i.bitauto.com/authenservice/register/Licence.aspx" rel="nofollow">服务协议</a></li>
+				<li><a target="_blank" href="http://ir.bitauto.com/" rel="nofollow">Investor Relations</a></li>
+				<li><a target="_blank" href="http://uec.yiche.com/" rel="nofollow">用户体验中心</a></li>
+				<li><a target="_blank" href="http://dealer.easypass.cn/" rel="nofollow">易湃会员</a></li>
+				<li class="last"><a target="_blank" href="http://www.bitauto.com/feedback/" rel="nofollow">我要提意见</a></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<!--footer end--> 
+<div class="filterFixed">
+	<div class="default-order">
+		<h4><a href="javascript:void(0)" class="current">默认排序</a></h4>
+		<ul>
+			<li class="price">
+				<a class="selected" href="javascript:void(0)">价格<i class="iconfont icon-dropdown"></i></a>
+				<div class="options">
+					<dl>
+						<dt>排序调整</dt>
+						<dd><a href="javascript:void(0)" class="current">价格从高到低<i class="iconfont icon-jiantou_xia"></i></a><a href="javascript:void(0)">价格从低到高<i class="iconfont icon-jiantou_shang"></i></a></dd>
+					</dl>
+					<dl>
+						<dt>筛选</dt>
+						<dd>
+							<a href="javascript:void(0)">8-10万</a>
+							<a href="javascript:void(0)" class="current">50-100万</a>
+							<a href="javascript:void(0)">3万内</a>
+							<a href="javascript:void(0)">3-5万</a>
+							<a href="javascript:void(0)">5-8万</a>
+							<a href="javascript:void(0)">10-15万</a>
+							<a href="javascript:void(0)">15-20万</a>
+							<a href="javascript:void(0)">20-30万</a>
+							<a href="javascript:void(0)">30-50万</a>
+							<a href="javascript:void(0)">100万以上</a>
+						</dd>
+					</dl>
+				</div>
+			</li>
+			<li class="age">
+				<a class="selected" href="javascript:void(0)">车龄<i class="iconfont icon-dropdown"></i></a>
+				<div class="options">
+					<dl>
+						<dt>排序调整</dt>
+						<dd><a href="javascript:void(0)">车龄从长到短<i class="iconfont icon-jiantou_xia"></i></a><a href="javascript:void(0)" class="current">车龄从短到长<i class="iconfont icon-jiantou_shang"></i></a></dd>
+					</dl>
+					<dl>
+						<dt>筛选</dt>
+						<dd><a href="javascript:void(0)">1年内</a><a href="javascript:void(0)" class="current">2年内</a><a href="javascript:void(0)">3年内</a><a href="javascript:void(0)">3-5年内</a><a href="javascript:void(0)">5-8年内</a><a href="javascript:void(0)">8年以上</a></dd>
+					</dl>
+				</div>
+			</li>
+			<li class="mileage">
+				<a class="selected" href="javascript:void(0)">里程<i class="iconfont icon-dropdown"></i></a>
+				<div class="options">
+					<dl>
+						<dt>排序调整</dt>
+						<dd><a href="javascript:void(0)" class="current">里程从少到多<i class="iconfont icon-jiantou_xia"></i></a><a href="javascript:void(0)">里程从多到少<i class="iconfont icon-jiantou_shang"></i></a></dd>
+					</dl>
+					<dl>
+						<dt>筛选</dt>
+						<dd><a href="javascript:void(0)" class="current">1万公里内</a><a href="javascript:void(0)">3万公里内</a><a href="javascript:void(0)">5万公里内</a><a href="javascript:void(0)">10万公里内</a></dd>
+					</dl>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="default-option">
+		<label><i class="iconfont icon-checkbox"></i>准新车</label>
+		<label><i class="iconfont icon-checkbox"></i>保障车</label>
+		<label><i class="iconfont icon-checkbox"></i>认证车</label>
+		<label><i class="iconfont icon-checkbox"></i>个人车</label>
+	</div>
+	<div class="default-hot">
+		<h4>热门车系：</h4>
+		<ul>
+			<li><a href="javascript:void(0)">新蒙迪欧</a></li>
+			<li><a href="javascript:void(0)">宝马3系</a></li>
+			<li><a href="javascript:void(0)">奔驰3系</a></li>
+			<li><a href="javascript:void(0)">新蒙迪欧</a></li>
+			<li><a href="javascript:void(0)">宝马3系</a></li>
+		</ul>
+		<a class="more" href="javascript:void(0)">更多<i class="iconfont icon-dropdown"></i></a>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script type="text/javascript">
+$('.filter-options-en a').click(function(){
+	$(this).addClass('current').siblings().removeClass('current');
+	$('.filter-options-scroll').mCustomScrollbar("scrollTo", $('#sy_city_'+$(this).attr('data-code')))
+});
+	$(".filter-options-scroll").mCustomScrollbar({scrollButtons:{ enable: true }});
+$('.select,.filter-city,.default-order li').mouseenter(function(){$(this).addClass("active")}).mouseleave(function(){$(this).removeClass("active")})
+$('.price-list .more').mouseenter(function(){$(this).addClass("current");$(".price-handle").show()}).mouseleave(function(){$(this).removeClass("current");$(".price-handle").hide()})
+$('.icon-checkbox').click(function(){$(this).toggleClass('icon-checked');});
+$('.default-hot .more').mouseenter(function(){$('.default-hot').addClass("active")})
+$('.default-hot').mouseleave(function(){$(this).removeClass("active")})
+</script>
+</body>
+</html>

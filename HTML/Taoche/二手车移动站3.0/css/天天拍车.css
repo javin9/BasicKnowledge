@@ -1,0 +1,106 @@
+/**----天天拍车--------*/
+.clearfix:after{   content: ".";  display: block;  height: 0;  clear: both;  visibility: hidden;}
+.clearfix { *zoom: 1;}
+.hide{ display: none;}
+.hr{ clear: both; height: 10px;  width: 100%; background: #F6F6F6;}
+
+.daily-car{ width: 100%; clear: both;}
+.daily-hotsall{ width: 100%;position: relative; }
+.daily-hotsall img{ width: 100%; display: block;}
+.daily-seach{ position: relative; left:3%; bottom: 85px; background: #ffffff; width: 94%; height: 50px;border-radius: 3px; padding: 15px 0;line-height: 20px;font-size: 14px; }
+.daily-seach dt{ width:80px; border-right:#E5E5E5 solid 1px; text-align: center;  color: #333333; float: left;  }
+.daily-seach dt a{
+    display: block; width: 80px;
+}
+.daily-seach dt a:after{ content:"";width: 0;  height: 0;  font-size: 0;  overflow: hidden;  border-width: 5px;  border-style: solid dashed dashed dashed;  border-color: #C7C7CD transparent transparent transparent;  display: inline-block; margin-left: 10px; vertical-align:-3px;}
+.daily-seach dt a.daily-sel:after{  vertical-align:2px;border-color: transparent transparent  #FF9900 transparent;}
+
+/**/
+.daily-seach-list{ width: 100%;  position: absolute; left: 0%; max-height: 208px; top:50px; z-index: 100; background: #FFFFFF;
+    border: 0 solid #E5E5E5; border-top: #E5E5E5 solid 1px;
+    box-shadow: 0 2px 7px  rgba(0,0,0,0.12);
+    border-radius: 3px; overflow-x: hidden; overflow-y: auto; padding-top: 15px;}
+.daily-seach-list a{ font-size: 14px; height: 35px; width: 25%; float: left; display:block; padding-left: 26px; color: #3F3F3F;}
+.daily-seach-list a.daily-seach-sel{ color: #FF9900 ;}
+
+.daily-seach dd{ padding-left: 97px; height: 20px;}
+.daily-seach dd input{ width: 100%; border: 0px; background: #ffffff; font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px; height: 20px;}
+
+.daily-btn{ height:50px; width:94%;position: absolute; left:3%;bottom:25px; background: #FF9900;  box-shadow: 0 3px 6px 0 rgba(255,153,0,0.43); display: block;  border-radius: 3px; color: #ffffff; font-size: 18px; text-align: center; line-height: 50px;  }
+
+/*卖车流程*/
+.daily-box{ width: 100%;}
+.daily-title{font-size: 16px;  color: #000000; height: 45px; border-bottom: #E5E5E5 solid 1px; line-height: 45px; padding-left: 15px;}
+.daily-mc{ padding: 28px 13px 31px; overflow:hidden;}
+.daily-mc li{
+    float:left; 
+    width:32%;
+    text-align:center; 
+    position:relative;
+}
+.daily-mc li h3{font-size:14px; color:#333; padding-top:56px; line-height: 21px;}
+.daily-mc li p{font-size:12px; color:#999; line-height: 20px;}
+.daily-mc li.daily_ico1{
+    background:url(//image.bitautoimg.com/taoche/2016taoche_m/process1.png) no-repeat center 0; 
+    background-size:44px 38px;
+}
+.daily-mc li.daily_ico1:after{content:''; position:absolute; width:13px; height:14px; top:10px; right:-26px; background:url(../images/arrow.png) no-repeat 0 0; background-size:13px 14px;}
+.daily-mc li.daily_ico2:after{content:''; position:absolute; width:13px; height:14px; top:10px; right:-8px; background:url(../images/arrow.png) no-repeat 0 0; background-size:13px 14px;}
+.daily-mc li.daily_ico2{
+    background:url(//image.bitautoimg.com/taoche/2016taoche_m/process2.png) no-repeat center 2px; 
+    background-size:43px 36px;
+}
+.daily-mc li.daily_ico3{
+    background:url(//image.bitautoimg.com/taoche/2016taoche_m/process3.png) no-repeat center 4px; 
+    background-size:44px 35px;
+}
+.daily-cj{ padding: 25px 0 31px;}
+.daily-cj-list li{ width: 50%;  float: left; height: 115px; text-align: center; }
+.daily-cj-list li img{ width: 53px; height: 41px; display: inline-block;}
+.daily-cj-list li p{color: #999999; line-height:20px; font-size: 12px; }
+.daily-cj-list li p span{font-size: 14px;  color: #000000; display: block; padding-top:6px;}
+.zl-tan{    background: url(//image.bitautoimg.com/taoche/2016taoche_m/d_sprite.png) no-repeat;  background-size: 78px 547px;display: inline-block;  margin-left: 5px;  background-position: 0 -187px;  width: 13px;  height: 13px;  vertical-align: -3px;}
+
+.daily-cj-btn{ margin: 0 15px; clear: both;}
+.daily-cj-btn a{background: #FF9900;
+    border-radius: 3px; text-align: center; line-height: 45px; display: block; color: #ffffff; font-size: 16px;}
+
+/*弹层*/
+.daily-fix{ width: 100%; position: fixed; left: 0; top: 0; height: 100%; z-index: 900;}
+.daily-cover{ width: 100%; height: 100%;opacity: 0.94;  background: #333333;}
+.daily-fix-box{ width: 100%; position: absolute; left:0 ;top:0px;}
+.daily-txt{ text-align: center; font-size: 18px;  color: #FFFFFF; padding-top: 68px; height:120px;}
+.daily-fix-list{ width: 100%;}
+.daily-fix-list li{ width: 50%; height:90px; float: left; text-align: center; }
+.daily-fix-list li img{ width: 57px; height: 44px; display: inline-block;}
+.daily-fix-list li p{ color: #ffffff; font-size: 13px; padding-top: 8px;}
+
+.daily-close{ width: 100%; clear: both; height: 30px; width: 30px; position: absolute; right: 25px; top: 35px;}
+.daily-close img{ width: 100%; display: block;}
+
+
+@media screen and (device-width: 320px) {
+    .daily-fix-list{ max-height: 320px; overflow-y: auto; overflow-x: hidden;}
+    .daily-close{ top:13px;}
+    .daily-txt{ height: 90px; padding-top: 38px;}
+}
+
+@media screen and (device-width: 320px) and (device-height: 480px) {
+    .daily-fix-list{ max-height: 300px; overflow-y: auto; overflow-x: hidden;}
+
+    .daily-txt{ height: 80px; padding-top: 38px;}
+}
+/* 判断iphone5 */
+@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) {
+    .daily-fix-list{ max-height:350px; overflow-y: auto; overflow-x: hidden;}
+
+    .daily-txt{ height: 90px; padding-top: 38px;}
+    
+    .daily-mc {padding: 28px 6px 31px;}
+    .daily-mc li {margin: 0 2px;}
+    .daily-mc li.daily_ico2:after{right:0;}
+}
+.colf0{ color: #FF0000 !important ;}
+
+.daily-ts{position: fixed;  width: 100%; text-align: center;top: 40%;}
+.daily-ts span{color: #fff;  font-size: 1.6rem;  padding: 25px 30px;  display: inline-block;  background-color: rgba(0,0,0,0.8);  border-radius: 8px;  -webkit-border-radius: 8px;  -moz-border-radius: 8px; }

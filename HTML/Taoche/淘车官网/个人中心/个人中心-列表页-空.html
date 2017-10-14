@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>列表页-空</title>
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		    <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/html5shiv.min.js"></script>
+		    <script src="http://img1.bitautoimg.com/uimg/2016/yiche/js/Respond.min.js"></script>
+		<![endif]-->
+		  <link rel="stylesheet" type="text/css" href="../css/col.min.css">
+		  <link rel="stylesheet" type="text/css" href="../css/1200_com.css">
+		  <link rel="stylesheet" type="text/css" href="../css/1200_头.css">
+		  <link rel="stylesheet" type="text/css" href="../font/iconfont.css">
+		  <link rel="stylesheet" type="text/css" href="../css/淘车列表订单.css"/>
+		  <link rel="stylesheet" type="text/css" href="../css/翻页.css">
+		  <link rel="stylesheet" type="text/css" href="../css/浮层.css">
+		  <link rel="stylesheet" type="text/css" href="../css/淘车浮层_news.css"/>
+	</head>
+	<body>
+		<!--个人登录后 star -->
+		<div class="nav ">
+			<div class="container">
+				<ul class="nav-col-l">
+					<li ><a href="http://www.bitauto.com/" target="_blank">易车</a></li>
+					<li class="current"><a target="_blank" href="#" rel="nofollow">易车二手车</a></li>
+					<li><a rel="nofollow" href="#" target="_blank">易车•惠买车</a></li>
+					<li><a rel="nofollow" href="#" target="_blank">易车商城</a></li>
+					<li><a href="#" target="_blank">易车惠</a></li>
+					<li onMouseOver="document.getElementById('app-link').style.display='';this.className='app-link bit-hover';" onMouseOut="document.getElementById('app-link').style.display='none';this.className='app-link';" class="app-link"><a rel="nofollow" target="_blank" href="http://app.yiche.com/">APP<em></em></a>
+						<div class="app-list" id="app-link" style="display: none;">
+							<a rel="nofollow" href="http://app.yiche.com/wap/" target="_blank">手机易车网</a> <a rel="nofollow" href="http://app.yiche.com/yiche/" target="_blank">易车APP</a> <a rel="nofollow" href="http://app.yiche.com/qichebaojiadaquan/" target="_blank">汽车报价大全</a> <a rel="nofollow" href="http://app.yiche.com/huimaiche/" target="_blank">惠买车</a> <a rel="nofollow" href="http://app.yiche.com/taoche/" target="_blank">易车二手车</a> <a rel="nofollow" href="http://app.yiche.com/cheyouzhijia/" target="_blank">车友之家</a> <a rel="nofollow" href="http://app.yiche.com/chexingshouce/" target="_blank">车型手册</a>
+						</div>
+					</li>
+					<li><a href="#" target="_blank">北京车展</a></li>
+				</ul>
+				
+				<!--网站导航 start-->
+				<div class="nav-col-r">
+					<ul  class="nav-login">
+						<li class="noborderl">
+							<input type="button" onClick="location.href='http://i.yiche.com/authenservice/login.html?returnurl='+encodeURIComponent(location.href)" id="btnUserLoginHeader" class="bit-logintop" value="个人登录">
+							<a href="http://i.yiche.com/authenservice/registersimple/register.html" target="_blank">注册</a></li>
+						<li><a href="#" target="_blank">免费发车</a></li>
+						<li><a href="#" target="_blank">商家登录</a></li>
+						<li ><a href="#" target="_blank">商家发车</a></li>
+					</ul>
+				</div>
+				<!--网站导航 end-->
+			</div>
+		</div>
+		<!--个人登录后 end --> 
+		
+		<div class="content">
+			<!--所有订单-->
+			<div class="personal">
+				<!--订单-title-->
+				<div class="personal_title">
+					<h1>所有订单</h1>
+					<ul>
+						<li class="li_one">车源信息</li>
+						<li class="li_two">当前状态</li>
+						<li class="li_three">操作</li>
+					</ul>
+				</div>
+				
+				<div class="container_none">
+					
+					<div class="content_main">
+						<img src="../images/fail_150_150.png">
+						<div class="font_main">
+							<h2>您尚未提交过二手车订单</h2>
+							<p>更多优质淘车认证二手车供您选择,<a href="#">马上去选车 >></a></p>
+						</div>
+					</div>
+					
+				</div>
+			
+			</div>
+		</div>
+		
+		<div class="shadow" style="display:none;"></div>
+		
+		<!--弹层-->
+		<div id="pop" style="display:none;" class="popover popover-md">
+			<div class="popover-close">
+				<a href="javascript:;">关闭</a>
+			</div>
+			<div class="store-tel-box_news">
+				<div class="icons">
+					<span class="iconfont icon-Success"></span>
+				</div>
+				<dl class="store-tel-box-title submit_cg">
+					<dt>提交成功</dt>
+				</dl>
+				<h2 class="prompting">客服人员会尽快与您联系，请注意接听电话</h2>
+				<button class="submit_main_public submit_my" style="width:400px;">我知道了</button>
+			</div>
+		</div>
+		
+		
+		<!--footer start-->
+		<footer class="footer">
+			<div class="footer-text">
+				<div class="container">
+					<p>CopyRight &copy; 2000-2014 BitAuto,All Rights Reserved.&nbsp;&nbsp;版权所有&nbsp;&nbsp;北京易车信息科技有限公司</p>
+					<p class="r">购车咨询：4000-168-168 (每天9:00&mdash;17:30，法定节日休息)</p>
+				</div>
+			</div>
+			<div class="footer-link">
+				<div class="container">
+					<ul class="about">
+						<li class="first"><a target="_blank" href="http://corp.bitauto.com/" rel="nofollow">关于易车</a></li>
+						<li><a target="_blank" href="http://corp.bitauto.com/business/" rel="nofollow">业务体系</a></li>
+						<li><a target="_blank" href="http://corp.bitauto.com/news/" rel="nofollow">易车动态</a></li>
+						<li><a target="_blank" href="http://corp.bitauto.com/job/" rel="nofollow">加入易车</a></li>
+						<li><a target="_blank" href="http://corp.bitauto.com/contact/" rel="nofollow">联系我们</a></li>
+						<li><a target="_blank" href="http://corp.bitauto.com/about/legal-notices.shtml" rel="nofollow">法律声明</a></li>
+						<li><a target="_blank" href="http://i.bitauto.com/authenservice/register/Licence.aspx" rel="nofollow">服务协议</a></li>
+						<li><a target="_blank" href="http://ir.bitauto.com/" rel="nofollow">Investor Relations</a></li>
+						<li><a target="_blank" href="http://uec.yiche.com/" rel="nofollow">用户体验中心</a></li>
+						<li><a target="_blank" href="http://dealer.easypass.cn/" rel="nofollow">易湃会员</a></li>
+						<li class="last"><a target="_blank" href="http://www.bitauto.com/feedback/" rel="nofollow">我要提意见</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<!--footer end--> 
+	</body>
+</html>

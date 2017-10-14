@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>选择城市</title>
+	<link rel="stylesheet" type="text/css" href="../css/新头尾.css" />
+	<link rel="stylesheet" type="text/css" href="../css/公共控件.css" />
+    <link rel="stylesheet" type="text/css" href="../css/车型大全.css" />
+    <link rel="stylesheet" type="text/css" href="../css/2015选车工具.css" />
+    <link rel="stylesheet" type="text/css" href="../css/城市选择.css" />
+    <link rel="stylesheet" type="text/css" href="../css/底部控件.css" />
+    <link rel="stylesheet" type="text/css" href="../css/选车页面.css" />
+</head>
+<body>
+	<!-- 头部star -->
+	<div class="new-header">
+	  	<a class="new-btn-return" href="#">返回</a>
+	  	<h2>选择城市</h2>
+		<div class="new-return-rit">
+		    <a href="#" class="new-menu">菜单</a>
+		</div>
+	</div>
+	<!-- 头部end -->
+	
+	<!-- 城市选择  start -->
+    <div class="brandfilter">
+    	<!-- 当前定位城市  start -->
+    	<div class="current-city">
+    		<span class="current-tle">当前定位城市</span>
+    		<div class="city-now">
+    			<a href="#" class="c-refresh">
+    				<em></em>
+    			</a>
+    			<span>定位失败</span>
+    		</div>
+    	</div>
+    	<!-- 当前定位城市  end -->
+    	<!-- 当前定位城市  start -->
+    	<div class="current-city">
+    		<span class="current-tle">当前定位城市</span>
+    		<div class="city-now">
+    			<a href="#" class="c-refresh">
+    				<em></em>
+    			</a>
+    			<span>定位···</span>
+    		</div>
+    	</div>
+    	<!-- 当前定位城市  end -->
+        
+    </div>
+    <!-- 城市选择  end -->
+	
+	
+	
+    <script src="../js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="../js/iscroll.js"></script>
+	<script type="text/javascript" src="../js/underscore.js"></script>
+	<script type="text/javascript" src="../js/model.js"></script>
+	<script type="text/javascript" src="../js/note.js"></script>
+	<script type="text/javascript" src="../js/area.js"></script>
+	<script type="text/javascript" src="../js/rightswipe3.js"></script>
+	<script type="text/javascript">
+		$(function(){
+	        //当前定位城市图标
+	        $(".c-refresh").click(function(){
+	        	$(this).find("em").addClass("ref");
+	        });
+	    })
+	    
+	</script>
+</body>
+</html>
+	

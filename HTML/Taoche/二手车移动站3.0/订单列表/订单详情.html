@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<title>订单详情</title>
+		<link rel="stylesheet" type="text/css" href="../css/新头尾.css" />
+		<link rel="stylesheet" type="text/css" href="../css/公共控件.css" />
+		<link rel="stylesheet" type="text/css" href="../css/Order_list.css"/>
+		<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css"/>
+		<script src="../fonts/iconfont.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div class="content_list">
+			<div class="list">
+				<div class="list_title">
+					<i class="iconfont icon-orderlist"></i>提交意向
+				</div>
+				<div class="list_main">
+					<img src="../images/021701oxuj.jpg">
+					<div class="list_detail">
+						<h2>哈弗H6 2013款 运动版 1.5T 手动两驱</h2>
+						<h3 class="col">商家报价 <span>27.56万</span></h3>
+						<p><span>2011年</span> | <span>3.2万公里</span></p>
+					</div>
+				</div>
+				<div class="list_bottom">
+					<span class="state">等待客服电话联系</span>
+					<span class="loan">申请贷款</span>
+				</div>
+			</div>
+		</div>
+		<!--订单详情-->
+		<div class="order_details">
+			<div class="order_code">
+				<span class="num_tel">523496</span>
+				<span class="num_code">顾问预约码</span>
+			</div>
+			<div class="order_main">
+				<div class="order_div">
+					<span class="order_title">顾问姓名</span>
+					<span class="order_titleTwo">张小北</span>
+				</div>
+				<div class="order_div">
+					<span class="order_title">顾问电话</span>
+					<span class="order_titleTwo col"><i class="iconfont icon-orderinf_tel"></i>15810382582</span>
+				</div>
+			</div>
+		</div>
+		
+		<!--订单状态-->
+		<div class="schedule">
+			<ul>
+				<li>
+					<div class="sch_title">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_orange"></use>
+						</svg>
+						提交意向
+					</div>
+					<div class="sch_main">
+						<div class="sch_main_details">
+							<p>提交方式: 贷款订单<br>等待客服电话联系中</p>
+						</div>
+					</div>
+				</li>
+				
+				<li>
+					<div class="sch_title">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_orange"></use>
+						</svg>
+						预约看车
+					</div>
+					<div class="sch_main">
+						<div class="sch_main_details">
+							<p>提交方式: 贷款订单<br>等待客服电话联系中</p>
+						</div>
+					</div>
+				</li>
+				
+				<li>
+					<div class="sch_title">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_orange"></use>
+						</svg>
+						线下看车
+					</div>
+					<div class="sch_main">
+						<div class="sch_main_details">
+							<p>提交方式: 贷款订单<br>等待客服电话联系中</p>
+						</div>
+					</div>
+				</li>
+				
+				<li>
+					<div class="sch_title">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_orange"></use>
+						</svg>
+						预约复检
+					</div>
+					<div class="sch_main">
+						<div class="sch_main_details">
+							<p>提交方式: 贷款订单<br>等待客服电话联系中</p>
+						</div>
+					</div>
+				</li>
+				
+				<li>
+					<div class="sch_title">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_orange"></use>
+						</svg>
+						复检完成
+					</div>
+					<div class="sch_main">
+						<div class="sch_main_details">
+							<p>提交方式: 贷款订单<br>等待客服电话联系中</p>
+						</div>
+					</div>
+				</li>
+				
+				<!--
+					sch_nothing  -- 当没有状态消息的时候需要加上这个class
+					在最后结尾的时候不需要加
+				-->
+				<li>
+					<div class="sch_title sch_nothing">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_grey"></use>
+						</svg>
+						交易成功
+					</div>
+				</li>
+				
+				<li>
+					<div class="sch_title">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_grey"></use>
+						</svg>
+						订单取消
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<!--贷款申请状态-->
+		<div class="apply">
+			<h1>贷款申请状态</h1>
+			<!--<ul id="ul1">
+				<li>
+					<div class="apply_title">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_orange"></use>
+						</svg>
+						<div class="line"></div>
+					</div>
+					<p>已申请</p>
+				</li>
+				
+				<li>
+					<div class="apply_title">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_grey"></use>
+						</svg>
+						<div class="line"></div>
+					</div>
+					<p>待审核</p>
+				</li>
+				
+				<li>
+					<div class="apply_title">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_grey"></use>
+						</svg>
+						<div class="line"></div>
+					</div>
+					<p>审核中</p>
+				</li>
+				
+				<li>
+					<div class="apply_title">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_grey"></use>
+						</svg>
+						<div class="line"></div>
+					</div>
+					<p>审核完毕</p>
+				</li>
+				
+				<li>
+					<div class="apply_title">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_grey"></use>
+						</svg>
+					</div>
+					<p>付款成功</p>
+				</li>
+			</ul>-->
+			
+			<ul id="ul2">
+				<li>
+					<div class="apply_title">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_orange"></use>
+						</svg>
+						<div class="line"></div>
+					</div>
+					<p>已申请</p>
+				</li>
+				
+				<li>
+					<div class="apply_title">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_grey"></use>
+						</svg>
+						<div class="line"></div>
+					</div>
+					<p>待审核</p>
+				</li>
+				
+				<li>
+					<div class="apply_title">
+						<svg class="icon" aria-hidden="true">
+						  <use xlink:href="#icon-orderinf_grey"></use>
+						</svg>
+					</div>
+					<p>审核中</p>
+				</li>
+			</ul>
+			
+			<!--<div class="adopt">
+				 <svg class="icon icon_dui" aria-hidden="true">
+					<use xlink:href="#icon-zht_ok"></use>
+				 </svg>
+				 审核已通过
+			</div>-->
+			
+			<!--<div class="adopt error">
+				 <svg class="icon icon_cuo" aria-hidden="true">
+					<use xlink:href="#icon-zht_fail"></use>
+				 </svg>
+				 审核已通过
+			</div>-->
+			
+		</div>
+		
+		<!--订单编号-->
+		<div class="order_number">
+			<ul>
+				<li>
+					<span>订单编号</span> : <span>0123456</span>
+				</li>
+				
+				<li>
+					<span>下单时间</span> : <span>2017-07-11 12:23:45</span>
+				</li>
+				
+				<li>
+					<span>成交时间</span> : <span>2017-07-11 12:23:45</span>
+				</li>
+				
+				<li>
+					<span>取消时间</span> : <span>2017-07-11 12:23:45</span>
+				</li>
+				
+				<li>
+					<span>过期时间</span> : <span>2017-07-11 12:23:45</span>
+				</li>
+				
+			</ul>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>贷款方案</title>
+    <link rel="stylesheet" type="text/css" href="../css/新头尾.css" />
+    <link rel="stylesheet" type="text/css" href="../css/公共控件.css" />
+    <link rel="stylesheet" type="text/css" href="../css/loan.css" />
+    <link rel="stylesheet" type="text/css" href="../css/todos.css" />
+    <link rel="stylesheet" type="text/css" href="../fonts/iconfont.css" />
+    <script src="../fonts/iconfont.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="content_list">
+        <div class="list">
+            <div class="list_main">
+                <img src="../images/021701oxuj.jpg">
+                <div class="list_detail">
+                    <h2>哈弗H6 2013款 运动版 1.5T 手动两驱</h2>
+                    <h3 class="col">商家报价 <span>27.56万</span></h3>
+                    <p><span>2011年</span> | <span>3.2万公里</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--贷款计算-->
+    <div class="loan_reckon">
+        <div class="loan_title">贷款计算</div>
+        <div class="loan_main">
+            <div class="total">总花费 <span id="totalpay"></span></div>
+            <div class="total_left">
+                <div class="container">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="total_font" id="total_font">
+                    <i class="iconfont icon-mingxi"></i> 明细
+                    <i class="iconfont icon-icon_right icon1"></i>
+                </div>
+            </div>
+            <div class="total_right" id="total-right">
+                <ul>
+                    <li><i class="i-color1"></i>首付<span class="dprtxt"></span></li>
+                    <li><i class="i-color2"></i>贷款额度<span class="lat"></span></li>
+                    <li><i class="i-color3"></i>贷款成本<span class="tctxt"></span></li>
+                </ul>
+            </div>
+        </div>
+        <!--效果位置-->
+        <div class="slider">
+            <div class="slider_title">实际额度由最终成交价决定此处仅供参考</div>
+        </div>
+        <div id="package-rulers-wrapper"></div>
+    </div>
+    <!--贷款流程-->
+    <div class="schedule">
+        <div class="loan_title">贷款流程</div>
+        <ul>
+            <li>
+                <div class="sch_title">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-icon-test2"></use>
+                    </svg>
+                    线上预约, 急速审批
+                </div>
+                <div class="sch_main">
+                    <div class="sch_main_details">
+                        <p>提交方式: 贷款订单等待客服电话联系中提交方式: 贷款订单等待客服电话联系中</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="sch_title">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-icon-test"></use>
+                    </svg>
+                    实地看车, 随时换车
+                </div>
+                <div class="sch_main">
+                    <div class="sch_main_details">
+                        <p>提交方式: 贷款订单等待客服电话联系中提交方式: 贷款订单等待客服电话联系中</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="sch_title">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-icon-test1"></use>
+                    </svg>
+                    确认购车, 马上开走
+                </div>
+                <div class="sch_main" style="border:none;">
+                    <div class="sch_main_details">
+                        <p>提交方式: 贷款订单等待客服电话联系中提交方式: 贷款订单等待客服电话联系中</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--footer-->
+    <div class="foo_nav">
+        <ul>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-dianhua"></use>
+                </svg>
+                <p>电话咨询</p>
+            </li>
+            <li class="loan-trigger">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-daikuanqiehuan"></use>
+                </svg>
+                <p>切换贷款套餐</p>
+            </li>
+            <li class="li3">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-daikuandaohang"></use>
+                </svg>
+                <span>我要贷款</span>
+            </li>
+        </ul>
+    </div>
+    <!--阴影-->
+    <div id="shadow" style="display: none;"></div>
+    <!--套餐弹层-->
+    <div class="package_pop" id="loan-plan" style="display: none;">
+        <h2>套餐选择<i class="iconfont icon-Close-01"></i></h2>
+        <ul id="package-wrapper">
+        </ul>
+    </div>
+    <!--总花费-->
+    <div class="tab_total" style="display:none;" id="tab_total">
+        <i class="iconfont icon-Close-01 close"></i>
+        <h2>总花费: ￥10025</h2>
+        <ul>
+            <li>
+                <div class="li_left">
+                    <h4>首付</h4>
+                    <span class="orange">￥20025</span>
+                </div>
+                <div class="li_right">
+                    <div class="li_one">
+                        <h6>车价</h6>
+                        <span>80025</span>
+                    </div>
+                    <i>×</i>
+                    <div class="li_two">
+                        <h6>首付比例</h6>
+                        <span>30%</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="li_left">
+                    <h4>贷款额度</h4>
+                    <span class="orange">￥20025</span>
+                </div>
+                <div class="li_right">
+                    <div class="li_one">
+                        <h6>车价</h6>
+                        <span>80025</span>
+                    </div>
+                    <i>×</i>
+                    <div class="li_two">
+                        <h6>首付比例</h6>
+                        <span>30%</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="li_left">
+                    <h4>月供</h4>
+                    <span class="orange">￥20025</span>
+                </div>
+                <div class="li_right">
+                    <div class="li_one">
+                        <h6>月费率</h6>
+                        <span>0.68%</span>
+                    </div>
+                </div>
+            </li>
+            <li style="border:none;">
+                <div class="li_left">
+                    <h4 class="grey">贷款成本</h4>
+                    <span class="grey">￥15655</span>
+                </div>
+                <div class="li_right">
+                    <div class="li_one">
+                        <h6>利息</h6>
+                        <span class="span_1">156632</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+    <script src="../js/Chart.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    </script>
+    <script type="text/javascript" src='../js/tc.utils.js'></script>
+    <script type="text/javascript" src="../js/ruler.js"></script>
+    <script type="text/javascript" src="../js/loan.js"></script>
+    <script type="text/javascript" src="../js/toast.js"></script>
+    <script type="text/javascript" src="../js/order.js"></script>
+</body>
+
+</html>
