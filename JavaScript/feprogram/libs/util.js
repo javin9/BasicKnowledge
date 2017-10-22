@@ -6,6 +6,7 @@ var resolves = require('./resolves')
 var plugins = require('./plugins')
 var getProject = require('./project')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+//minimist模块来读取命令行的参数
 var argv = require('minimist')(process.argv.slice(2))
 
 module.exports = {

@@ -1,5 +1,6 @@
 const path = require('path')
-const CURR = process.cwd()
+//process.cwd() 是当前执行node命令时候的文件夹地址 ——工作目录，保证了文件在不同的目录下执行时，路径始终不变
+const CURR = process.cwd();
 const SRC = 'src'
 const DIST = 'dist'
 const pkg = require(path.resolve(process.cwd(), 'package.json'))

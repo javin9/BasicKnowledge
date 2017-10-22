@@ -6,6 +6,8 @@ var extractCss = new ExtractTextPlugin({
     filename: "[name].[contenthash].css"
 });
 
+var argv = require('minimist')(process.argv.slice(2));
+console.log(argv);
 
 module.exports = {
     //context:'./' //上下文默认是我们的根目录

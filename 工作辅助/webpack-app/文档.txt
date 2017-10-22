@@ -134,3 +134,9 @@ script 指定 babel:{"preset":['env']}
 
 include
 exclude
+
+
+npm install minimist
+
+//此处会把命令行的的参数都出来
+    const args = require("minimist")(process.argv.slice(2));
