@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <style>
+
+    </style>
+    <script>
+        var api_url = 'http://192.168.148.133:8008';
+        var CODE_GETTING_URL = '/Validate/GetCode';
+        var CODE_VALIDATING_URL = '/Validate/CheckCode';
+        var isLogin = false;
+        var loginUrl = "http://test.i.m.daikuan.com/User/CreateAccount?from=cardCenter";
+        var receiveUrl = api_url + '/Home/Receive';
+    </script>
+
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+    <div id="app">
+
+        <!-- header -->
+        <div action="GET-HEADER" data-text="领券中心"></div>
+
+        <div action="GET-NO-PRODUCT" isyao="1" id="no-product" >
+            <div class="no-data"></div>
+            <div class="no-data-text">
+              亲，卡券都被抢光了，更多优惠敬请期待
+            </div>
+           
+        </div>
+
+
+    </div>
+
+    </div>
+    <login-modal v-bind:callback="loginCallback" interface="http://test.i.m.daikuan.com/User/CreateAccount?from=cardCenter" v-bind:jsonp="true"
+        code-param-name="mobileValidateCode"></login-modal>
+
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

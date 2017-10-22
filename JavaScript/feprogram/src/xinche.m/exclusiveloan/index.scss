@@ -1,0 +1,220 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+.ctn {margin-top: px2rem(20);}
+.ml5 {margin-left: px2rem(10);}
+.mt5 {margin-top: px2rem(10);}
+.mr10 {margin-right: px2rem(20);}
+.pb10 {margin-bottom: px2rem(20);}
+.pt15 {padding-top: px2rem(30);}
+body, .mbt-page {background-color: #eee;}
+
+
+.exclusive-header {
+  width: px2rem(750);
+  font-size: 0;
+  img {
+    width: 100%;
+  }
+}
+.ctn-bg {background-color: #fff;}
+.title-ctn {
+  @include fsize(38);
+  padding: px2rem(20); 
+  border-bottom:1px solid #ececec; 
+  color:#2F2F2F; 
+  font-weight: bold; 
+  position: relative;
+}
+
+.box {display: -webkit-box; -webkit-box-orient:horizontal;}
+.categoryImg {
+  width: px2rem(160); 
+  padding: px2rem(30) 0; 
+  margin-left: px2rem(20);
+  img {
+    width: px2rem(150);
+    height: px2rem(150);
+  }
+}
+.category {
+  -webkit-box-flex:1; 
+  padding: px2rem(30) 0 px2rem(30) px2rem(30);
+  ul {
+    font-size: 0;
+    li {
+      @include fsize(28);
+      color: #999; 
+      line-height: px2rem(50); 
+      position: relative;      
+      i {
+        display: block; 
+        width: px2rem(6); 
+        height: px2rem(6); 
+        background:url(./images/dian.png) no-repeat; 
+        background-size: 100% auto; 
+        position: absolute; 
+        top: px2rem(22); 
+        left: px2rem(-30);
+      }
+      span {
+        color: #666;
+      }
+    }
+  }
+}
+
+.main {
+
+  .content {
+    @include fsize(28);
+    line-height: px2rem(50);
+    color: #666;
+    padding: px2rem(30);
+  }
+
+}
+.fit {
+  -webkit-box-flex:1; 
+  display: -webkit-box;
+  padding-left: px2rem(30);
+  .categoryIcon {
+    width: px2rem(72);
+    img{
+      margin-top: px2rem(4);
+      width: px2rem(62); 
+      height: px2rem(62);
+    }
+  }
+  .category1 {
+    -webkit-box-flex:1; 
+    width: px2rem(218);
+    div {
+      color: #666; 
+      padding-top: px2rem(4);
+    }
+    em {
+      @include fsize(20);
+      color: #999; 
+      line-height: px2rem(50);
+    }
+  }
+}
+
+.main-title {
+  padding: px2rem(20) px2rem(30) 0;
+  label {
+    display: inline-block; 
+    padding: px2rem(4); 
+    color: #DD2727; 
+    border-radius: px2rem(5); 
+    border:1px solid #DD2727; 
+    margin-right: px2rem(20);
+  }
+  span {
+    @include fsize(24);
+    color: #999;
+  }
+}
+.main-title-2 { 
+  padding: 0 px2rem(30); 
+  margin-top: px2rem(30);
+  span {
+    @include fsize(30);
+    em {
+      color: #DD2727;
+    }
+  }
+}
+.main-box {
+  padding: px2rem(30);
+  .swiper-container {
+    padding-bottom: px2rem(40);
+  }
+}
+.recommend-box {
+  border:1px solid #ececec;
+  .category2 {
+    width: px2rem(340); 
+    padding: px2rem(30) 0 px2rem(30) 0;
+    img {
+      width: 100%;
+    }
+    .recommendImg {
+      position: relative; 
+      top: 50%; 
+      margin-top: px2rem(30); 
+      width: px2rem(340);
+    }
+    .title { 
+      @include fsize(32);
+      color: #333; 
+      line-height: px2rem(60); 
+      white-space: nowrap; 
+      text-overflow: ellipsis; 
+      overflow: hidden; 
+      word-wrap:break-word
+    }
+    .deputy-title {
+      @include fsize(28);
+      color: #666; 
+      white-space: nowrap; 
+      text-overflow: ellipsis; 
+      overflow: hidden;
+    }
+    .recommend-ctn {
+      @include fsize(24);
+      margin-top: px2rem(20);
+      label {
+        color: #999;
+      }
+      em {
+        color: #DD2727;
+      }
+    }
+  }
+}
+
+.choice-btn {
+  width: px2rem(240); 
+  border: 1px solid #e9474d; 
+  border-radius: px2rem(5); 
+  margin-top: px2rem(20); 
+  text-align: center;
+  a{
+    @include fsize(28);
+    display: block; 
+    width: px2rem(240); 
+    color: #e9474d; 
+    text-align: center; 
+    padding: px2rem(20) px2rem(30);
+  }
+}
+.self-btn {
+  border:1px solid #e9474d; 
+  border-radius: px2rem(5); 
+  background-color: #e9474d; 
+  color: #fff; 
+  @include fsize(28);
+  text-align: center; 
+  padding: px2rem(30) 0;
+}
+
+
+.letter-list, .wrap, .loding, .bybrand_list {background-color: #fff;}
+.brand-list {margin: 0;}
+.footer-box {margin-top: 0;}
+.swiper-container .swiper-pagination .swiper-pagination-bullet {
+    width: px2rem(16);
+    height: px2rem(16);
+    background-color: #B4B4B4;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 px2rem(16);
+}
+.swiper-container .swiper-pagination.red .swiper-pagination-bullet-active {
+    background-color: #E60012;
+}
+.self-box {
+  padding: 0 px2rem(30) px2rem(30);
+}

@@ -1,0 +1,42 @@
+@import 'sassHelper/mixin';
+@import 'sassHelper/vars';
+
+.component-status{
+	background:#fff;
+	height:140px;
+	margin-bottom: 20px;
+	box-sizing:border-box;
+	text-align: center;
+
+	h1{
+		font-size:22px;
+		color:#000;
+		font-weight: normal;
+	}
+
+	p{
+		font-size:14px;
+		color:$normal-color;
+		margin-top: 10px;
+	}
+
+	dl{
+		@include clearfix;
+		display: inline-block;
+		margin-top: 30px;
+		min-width:440px;
+
+		dt{
+			@include size(81px);
+			float: left;
+			margin-right: 30px;
+			background:url(./success.png) no-repeat left top;
+		}
+		dd{
+			overflow: hidden;
+			text-align: left;
+			padding-top: 8px;
+			white-space: nowrap;
+		}
+	}
+}

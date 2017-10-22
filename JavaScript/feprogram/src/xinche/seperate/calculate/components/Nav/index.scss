@@ -1,0 +1,22 @@
+@import 'sassHelper/mixin';
+.nav{
+	@include clearfix;
+	border-bottom:2px solid #D0D0D0;
+	font-size:22px;
+	height:58px;
+
+	a{
+		float: left;
+		color:#333;
+		width: 210px;
+		text-align: center;
+		line-height: 60px;
+		font-weight: normal;
+	}
+
+	.active a{
+		background:#E9474D;
+		color:#fff;
+		margin-bottom: -2px;
+	}
+}

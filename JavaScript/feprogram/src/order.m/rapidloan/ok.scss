@@ -1,0 +1,25 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+
+.ok-icon{
+    margin:0 auto;
+    width: px2rem(140);
+    height: px2rem(140);
+    background: url(images/ok.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top:px2rem(80);
+}
+.ok-tip{
+    text-align: center;
+    height: px2rem(48);
+    @include fsize(32);
+    color: #394043;
+    line-height: px2rem(48);
+    margin-top: px2rem(20);
+    font-weight: bold;
+}

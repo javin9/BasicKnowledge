@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var xincheUrl = 'http://xinche.m.daikuan.com';
+        var getAlixOrdersUrl = '/WeiXinCRM/GetAlixOrders'
+        var detailUrl = ''
+        var planUrl = ''
+        var defaultCarImg = 'http://placeholder.it/200x400';
+
+        var APIURL = "http://testapi.chedai.bitauto.com/";
+        var xinche='http://test.xinche.m.daikuan.com';
+        var BusinessLine = 550;
+        var CODE_GETTING_URL='/Login/GetCode';
+        var CODE_VALIDATING_URL='/Login/CheckCode';
+        var USERCENTER='http://test.i.m.daikuan.com';
+        var usercenter='http://test.i.m.daikuan.com';
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+  
+<div id="yxWrapper">
+    <header class="header-bar">
+        <a href="http://xinche.m.daikuan.com/beijing"></a>
+        <h1 class="font-nav">个人中心</h1>
+        <div class="header_right font-title">
+            <span class="user_header_r" id="userExit"></span>
+            <ul class="header_user_top">
+                <li class="border">
+                    <a href="http://xinche.m.daikuan.com">
+                        <mark class="icon_index"></mark>首页
+                    </a>
+                </li>
+                <li>
+                    <a href="http://ershouche.m.daikuan.com">
+                        <mark class="icon_ershouche"></mark>二手车贷款
+                    </a>
+                </li>
+                <li>
+                    <a href="http://chedidai.m.daikuan.com/mortgage">
+                        <mark class="icon_chezhudai"></mark>车抵贷
+                    </a>
+                </li>
+                <li>
+                    <a href="http://baoxian.m.daikuan.com">
+                        <mark class="icon_baoxian"></mark>汽车保险
+                    </a>
+                </li>
+                <li>
+                    <a href="http://xinyongka.m.daikuan.com">
+                        <mark class="icon_xinyongka"></mark>车主信用卡
+                    </a>
+                </li>
+                <li class="border">
+                    <a href="/User/ViewChangePwd">
+                        <mark class="icon_password"></mark>修改密码
+                    </a>
+                </li>
+                <li>
+                    <a href="/User/Logout?currenturl=http%3A%2F%2Fxinche.m.daikuan.com">
+                        <mark class="icon_exit"></mark>退出登录
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section class="user_index">
+        <div class="questionnaire-wrapper"><a href="#"><img src="../images/ad.html.jpg"></a></div>
+        <section class="u_i_top u_i_body">
+            <div class="u_i_top_info">
+                <div class="poto">
+                    <img src="../images/user.html.png" class="poto_img" data-id="3" />
+                </div>
+                <div class="name_tel font-title col_black">
+                    <a href="/User/ViewChangePwd" class="u_i_password"></a>
+                    <span class="name">186****5236</span>
+                </div>
+            </div>
+            <ul class="u_i_three">
+                <li class="add_info">
+                    <a href="/User/ViewUserProfile" >个人资料<span class="col_blue">未完善</span></a>
+                </li>
+                <li class="add_info">
+                    <a href="/User/ViewQualification" >信用资质</a>
+                </li>
+                <li>
+                    <a href="/User/ViewCertificateInfo" >实名认证<span class="col_red">已认证</span></a>
+                </li>
+            </ul>
+        </section>
+        <section class="u_i_myorder u_i_body">
+            <div class="tit_box">
+                <div class="tit font-title col_black">我的订单</div>
+                <a href="/MyOrder/Index">查看全部订单<div class="tip_box"><mark class="tip_r"></mark></div></a>
+            </div>
+            <ul class="u_i_myO_ul">
+                <li class="item xinche">
+                    <a href="/myorder/index?carLoanType=1">
+                        <i></i>
+                        <span>新车</span>
+                    </a>
+                </li>
+                <li class="item ershouche">
+                    <a href="/myorder/index?carLoanType=2">
+                        <i></i>
+                        <span>二手车</span>
+                    </a>
+                </li>
+                <li class="item chezhudai">
+                    <a href="#">
+                        <i></i>
+                        <span>车抵贷</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="u_i_body u_i_two">
+            <a class="tit_box tit_insurance" href="http://baoxian.m.daikuan.com/InsuranceOrderCenter/MyOrders?m=18612565236&amp;sign=c8609329cdf0653199e96fe532bbe951">
+                <div class="tit font-title col_black">我的车险</div>
+                <div class="info">点击查看<div class="tip_box"><mark class="tip_r"></mark></div></div>
+            </a>
+
+            <a class="tit_box" href="">
+                <div class="tit font-title col_black">我的钱包</div>
+                <div class="info">2张<div class="tip_box"><mark class="tip_r"></mark></div></div>
+            </a>
+            
+            <a class="tit_box" href="/MyComment/Index">
+                <div class="tit font-title col_black">我的评价</div>
+                <div class="info">点击查看<div class="tip_box"><mark class="tip_r"></mark></div></div>
+            </a>
+            <a class="tit_box" href="/MyComment/ServedAdviserList">
+                <div class="tit font-title col_black">已联系顾问</div>
+                <div class="info">点击查看<div class="tip_box"><mark class="tip_r"></mark></div></div>
+            </a>
+                <a class="tit_box order-share" href="http://h5.ycapp.yiche.com/yixin/index?appsource=yixin">
+                    <div class="tit font-title col_black">
+                        晒单记录
+                            <font>show</font>
+                    </div>                
+                        <div class="info">
+                            <font>已提车，来晒一下吧</font><div class="tip_box"><mark class="tip_r"></mark></div>
+                        </div>
+                </a>
+            
+        </section>
+        
+        <!-- 还款计划 start -->
+        <section class="u_i_body u_i_pay" id="sectionPay">
+            <header class="com_tit">还款计划</header>
+
+            <!-- <div class="pay_item">
+                <a href="javascript:void(0);">
+                    <div class="pay_item_hd uf uf_ac">
+                        <img src="http://img3.bitautoimg.com/autoalbum/files/20160902/583/0450495832_8.jpg" alt="" class="car_pic">
+                        <div class="car_info uf_f1">                          
+                            <h4>一证贷（易鑫金融）</h4>
+                            <p>宝马5系 2017款 2.0T sportback自动 豪华版 (112.08万）</p>
+                        </div>
+                    </div>
+                </a>
+                <div class="pay_item_bd">
+                    <ul class="money_list uf uf_ac">
+                        <li class="uf_f1">贷款总额<span>¥<b>13.50</b>万</span></li>
+                        <li class="uf_f1">已还款<span>¥<b>5.83</b>万</span></li>
+                        <li class="uf_f1">剩余应还<span>¥<b>7.69</b>万</span></li>
+                    </ul>
+                </div>
+                <div class="pay_item_ft uf uf_ac">
+                    <div class="status uf_f1">
+                        <b>本期应还[<span class="col_red">6</span>/12期]</b>
+                        <p>还款日：2016-12-06</p>
+                    </div>
+                    <a class="num_box arr_r" href="">
+                        <span>3562.13元</span>
+                        <i class="tag tag_red">已逾期</i>
+                    </a>
+                </div>
+            </div> -->
+        </section>
+        <!-- 还款计划 end -->
+
+        <!-- 还款计划 loading -->
+        <div id="loadingPay" class="null_img" style="display: none">
+            <img src="http://img1.bitautoimg.com/jinrong/newmweb/images/loading_gray.gif?v=201612201931" />
+            <p>正在加载还款订单...</p>
+        </div>
+
+        <div class="order_ul"><div class="font-title col_black so_tit">最近申请</div></div>
+        <div id="loading" class="null_img" style="display: none">
+            <img src="http://img1.bitautoimg.com/jinrong/newmweb/images/loading_gray.gif?v=201612201931" />
+            <p>正在加载易鑫线下订单...</p>
+        </div>
+        <ul class="order_ul">
+            <li class="order_item">
+                <section class="header_tit">
+                        <div class="btn_box"><a href="/MyOrder/OrderDetail?childOrderId=941481705312060&amp;carLoanType=1" class="btn_blue">新车贷</a></div>
+                    <div class="time_box"><span class="time col_grey9 ">下单时间：2016-12-14 16:47:16</span></div>
+                    <div class="state_box"><span class="state col_red " stateid="0">提交成功</span></div>
+                </section>
+                <section class="info">
+                    <a href="/MyOrder/OrderDetail?childOrderId=941481705312060&amp;carLoanType=1" class="info_box">
+                        <div class="img_box"><img src="http://img2.bitautoimg.com/autoalbum/files/20151030/948/0520159482_2.jpg" /></div>
+                        <div class="txt_box">
+                            <div class="h6_tit font-28 ut-s">哈弗 哈弗H1 红标 1.5L MT 标准型</div>
+                            <div class="three_box">
+                                <div class="subscription col_grey6">
+                                    参考报价：5.49万
+                                </div>
+                                <div class="tip_box"><mark class="tip_r"></mark></div>
+                            </div>
+                            <div class="pro_box col_grey6">贷款方案：一证贷 (易鑫金融)</div>
+                        </div>
+                    </a>
+                    <div class="info_box">
+                        <a href="javascript:void(0);" class="btn_big">在线办理贷款手续</a>
+                    </div>
+                </section>
+            </li>
+            <li class="order_item">
+                <section class="header_tit">
+                        <div class="btn_box"><a href="/MyOrder/OrderDetail?childOrderId=251469009122680&amp;carLoanType=1" class="btn_blue">新车贷</a></div>
+                    <div class="time_box"><span class="time col_grey9 ">下单时间：2016-07-20 18:05:11</span></div>
+                    <div class="state_box"><span class="state col_red " stateid="142">取消</span></div>
+                </section>
+                <section class="info">
+                    <a href="/MyOrder/OrderDetail?childOrderId=251469009122680&amp;carLoanType=1" class="info_box">
+                        <div class="img_box"><img src="http://img1.bitautoimg.com/autoalbum/files/20160721/830/1057558303_2.jpg" /></div>
+                        <div class="txt_box">
+                            <div class="h6_tit font-28 ut-s">东风风行 风行F600 L 2.0L 手动 豪华型</div>
+                            <div class="three_box">
+                                <div class="subscription col_grey6">
+                                    参考报价：10.39万
+                                </div>
+                                <div class="tip_box"><mark class="tip_r"></mark></div>
+                            </div>
+                            <div class="pro_box col_grey6">贷款方案：一证贷 (易鑫金融)</div>
+                        </div>
+                    </a>
+                </section>
+            </li>
+        </ul>
+        <div id="noOrder" class="null_img" style="display: none">
+            <img src="../images/unll.html.png" />
+            <p>您还没有申请过订单，<a href="" class="col_blue">马上去申请</a>！</p>
+        </div>
+    </section>
+
+     <!--贷款礼包 弹层-->
+    <section class="pop-up-layer font-ctn" id="gift-layer" style="display: none;">
+        <header><div class="close-layer"></div></header>
+        <dl class="font-title">
+            <dt>恭喜您贷款成功，您已获得：</dt>
+        </dl>
+        <a class="confirm-btn" href="javascript:void(0);">完成领取</a>
+        <span> 稍后会有客服联系您</span>
+    </section>
+    <!--更换头像 弹框-->
+    <div class="potoIMg" id="potoIMg">
+        <div class="potoIMg_box">
+            <div class="poto_tit font-title">切换头像<div class="closeMin"></div></div>
+            <ul class="poto_img_ul">
+                <li class="itme">
+                    <div class="poto_div" data-id="1"><img src="http://img2.bitautoimg.com/jinrong/newmweb/css/usercenter/images/car-001.png?v=201612201931" /><div class="tag_bg"></div></div>
+                </li>
+                <li class="itme">
+                    <div class="poto_div" data-id="2"><img src="http://img3.bitautoimg.com/jinrong/newmweb/css/usercenter/images/car-002.png?v=201612201931" /><div class="tag_bg"></div></div>
+                </li>
+                <li class="itme">
+                    <div class="poto_div" data-id="3"><img src="http://img4.bitautoimg.com/jinrong/newmweb/css/usercenter/images/car-003.png?v=201612201931" /><div class="tag_bg"></div></div>
+                </li>
+                <li class="itme">
+                    <div class="poto_div" data-id="4"><img src="http://img1.bitautoimg.com/jinrong/newmweb/css/usercenter/images/car-004.png?v=201612201931" /><div class="tag_bg"></div></div>
+                </li>
+                <li class="itme">
+                    <div class="poto_div" data-id="5"><img src="http://img2.bitautoimg.com/jinrong/newmweb/css/usercenter/images/car-005.png?v=201612201931" /><div class="tag_bg"></div></div>
+                </li>
+                <li class="itme">
+                    <div class="poto_div" data-id="6"><img src="http://img3.bitautoimg.com/jinrong/newmweb/css/usercenter/images/car-006.png?v=201612201931" /><div class="tag_bg"></div></div>
+                </li>
+                <li class="itme">
+                    <div class="poto_div" data-id="7"><img src="http://img4.bitautoimg.com/jinrong/newmweb/css/usercenter/images/car-007.png?v=201612201931" /><div class="tag_bg"></div></div>
+                </li>
+                <li class="itme">
+                    <div class="poto_div" data-id="8"><img src="http://img1.bitautoimg.com/jinrong/newmweb/css/usercenter/images/car-008.png?v=201612201931" /><div class="tag_bg"></div></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<input type='hidden' name='__RequestVerificationToken' id='__RequestVerificationToken' data-id='rFHTS2GDAN2I6ZAqgjrlwXSacMz36BN6k-6j3ToIc5hWc_c01CWH-QY6nov1AGTo0zfdFvcM4-Py0E64z6WJ2AudlVk1' value='rFHTS2GDAN2I6ZAqgjrlwXSacMz36BN6k-6j3ToIc5hWc_c01CWH-QY6nov1AGTo0zfdFvcM4-Py0E64z6WJ2AudlVk1'>
+
+<!--整屏蒙层start-->
+  <div id="maskLayer"></div>
+<!--整屏蒙层end-->
+<div class="bottom-to-top">
+    <img src='http://img3.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=201610191560' />
+</div>
+
+<!-- 分享优惠券入口-->
+<coupon-tag href=""></coupon-tag>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

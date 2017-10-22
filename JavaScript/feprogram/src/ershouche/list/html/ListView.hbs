@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+      {{{htmlWebpackPlugin.options.shim}}}
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+    <script type="text/javascript">
+   //城市信息
+    var cityInfo = {
+        cityId: "1215",
+        cityName: "恩施土家族苗族自治州",
+        citySpell: "enshi",
+        regionId: "422800",
+        selectCityLevel: "0",
+        selectCityName: ""
+    };
+    var historyStep = -1;
+    var source = "708";
+    var xincheUrl = "http://xinche.huidu.daikuan.com/";
+    var ershoucheUrl = "http://ershouche.huidu.daikuan.com/";
+    var carList = false;
+    var totalCount = "36";
+    var pageSize = "20";
+    var ucarUrl = "/";
+    var chooserUrl = "/";
+    var pageindex = "1";
+</script>
+
+    <div id="app">
+  <!-- 头部轮播图start -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div  class="nivo-imageLink" >
+                        <img  src="http://img1.bitautoimg.com/chedai/48a0b71a-5d95-44b7-a317-58a39b6be8bf.jpg" >
+                    </div>
+                </div>
+                {{!--<div class="swiper-slide">
+                    <img  src="http://img1.bitautoimg.com/chedai/48a0b71a-5d95-44b7-a317-58a39b6be8bf.jpg" >
+                </div>--}}
+ 
+            </div>
+            <div class="pagination"></div>
+        </div>
+  <!-- 头部轮播图end -->
+        <!-- 搜索start -->
+        <section class="search-bg">
+            <!-- 面包屑导航start -->
+            <nav class="path-nav">
+                <a href="/" class="active">首页</a>
+                <i> &gt; </i>
+                <a class="path-a">北京 二手车贷款</a>
+            </nav>
+            <!-- 面包屑导航end -->
+            <div class="search">
+                <span class="sel-car-wrapper" style="height:44px;display:inline-block;"><input type="text"
+                                                                                           class="search-input"
+                                                                                           value=""><div
+                    class="sel-car-brands drop-layer" style="top: 44px;"><div class="sel-car-loading"></div><div
+                    class="brand_letters" id="master-index_letters"></div><div class="brand_name_bg"><div
+                    class="brand_name" id="masterIndexList"></div></div></div><div class="sel-car-type drop-layer"
+                                                                                   style="top: 44px;"><div
+                    class="sel-car-loading"></div></div><div class="sel-car-menu drop-layer" style="top: 44px;"></div><div
+                    class="empty-search"></div></span>
+                <div style="font-size: 16px; left: 13px; top: 11px; display: none;" class="serach-text">请输入心仪品牌或车型</div>
+                <div class="search-btn">搜索</div>
+                <div class="other-search" style="z-index:1;"><a href="javascript:;" >清除条件<i
+                    style="height: 0px;"></i></a></div>
+            </div>
+        </section>
+        <!-- 搜索end -->
+        <!-- 筛选条件start -->
+        <div class="screen-box">
+
+            <dl class="clrfix">
+                <dt>品牌：</dt>
+                <dd>
+                    <ul id="Brand">
+                        <li class="cur"><a href="javascript:void(0);" data-id="-1">不限</a></li>
+                        <li><a href="javascript:void(0);" data-id="8">大众</a></li>
+                        <li><a href="javascript:void(0);" data-id="196">丰田</a></li>
+                        <li><a href="javascript:void(0);" data-id="77">奥迪</a></li>
+                        <li><a href="javascript:void(0);" data-id="30">本田</a></li>
+                        <li><a href="javascript:void(0);" data-id="157">别克</a></li>
+                        <li><a href="javascript:void(0);" data-id="13">奔驰</a></li>
+                        <li><a href="javascript:void(0);" data-id="7">宝马</a></li>
+                        <li><a href="javascript:void(0);" data-id="9">福特</a></li>
+                        <li><a href="javascript:void(0);" data-id="2">标志</a></li>
+                        <li><a href="javascript:void(0);" data-id="3">马自达</a></li>
+                        <li><a href="javascript:void(0);" data-id="3">日产</a></li>
+                        <li><a href="javascript:void(0);" data-id="3">现代</a></li>
+                        <li><a href="javascript:void(0);" data-id="3">起亚</a></li>
+                        <li><a href="javascript:void(0);" data-id="3">铃木</a></li>
+                        <li id="moreBrandClick" class="special">
+                            <a href="javascript:void(0);" data-id="">更多<i class="icon_down"></i></a>
+                        </li>
+
+
+                    </ul>
+                    <div id="moreBrand">
+                        <div class="triangle-icon"></div>
+                        <div class="brand-section brand-section-1">
+                            <p>
+                                <span class="ba">A</span><span class="bn"><a data-id="9" href="javascript:void(0);">奥迪</a><a
+                                data-id="92" href="javascript:void(0);">阿尔法·罗密欧</a><a data-id="97"
+                                                                                      href="javascript:void(0);">阿斯顿·马丁</a><a
+                                data-id="228" href="javascript:void(0);">Artega</a></span></p>
+                            <p><span class="ba">B</span><span class="bn"><a data-id="2" href="javascript:void(0);">奔驰</a><a
+                                data-id="3" href="javascript:void(0);">宝马</a><a data-id="5" href="javascript:void(0);">标致</a><a
+                                data-id="14" href="javascript:void(0);">北汽制造</a><a data-id="15"
+                                                                                   href="javascript:void(0);">比亚迪</a><a
+                                data-id="26" href="javascript:void(0);">本田</a><a data-id="59"
+                                                                                 href="javascript:void(0);">奔腾</a><a
+                                data-id="82" href="javascript:void(0);">保时捷</a><a data-id="85"
+                                                                                  href="javascript:void(0);">宾利</a><a
+                                data-id="127" href="javascript:void(0);">别克</a><a data-id="135"
+                                                                                  href="javascript:void(0);">布加迪</a><a
+                                data-id="157" href="javascript:void(0);">宝骏</a><a data-id="163"
+                                                                                  href="javascript:void(0);">北京</a><a
+                                data-id="168" href="javascript:void(0);">北汽威旺</a><a data-id="172"
+                                                                                    href="javascript:void(0);">巴博斯</a><a
+                                data-id="184" href="javascript:void(0);">保斐利</a><a data-id="195"
+                                                                                   href="javascript:void(0);">北汽绅宝</a><a
+                                data-id="211" href="javascript:void(0);">北汽幻速</a><a data-id="216"
+                                                                                    href="javascript:void(0);">北汽新能源</a><a
+                                data-id="236" href="javascript:void(0);">宝沃</a></span></p>
+                            <p><span class="ba">C</span><span class="bn"><a data-id="21" href="javascript:void(0);">长城</a><a
+                                data-id="129" href="javascript:void(0);">昌河</a><a data-id="136"
+                                                                                  href="javascript:void(0);">长安轿车</a><a
+                                data-id="159" href="javascript:void(0);">长安商用</a><a data-id="221"
+                                                                                    href="javascript:void(0);">成功</a><a
+                                data-id="230" href="javascript:void(0);">长安跨越</a></span></p>
+                            <p><span class="ba">D</span><span class="bn"><a data-id="8" href="javascript:void(0);">大众</a><a
+                                data-id="29" href="javascript:void(0);">东南</a><a data-id="113"
+                                                                                 href="javascript:void(0);">道奇</a><a
+                                data-id="115" href="javascript:void(0);">东风风行</a><a data-id="141"
+                                                                                    href="javascript:void(0);">东风风神</a><a
+                                data-id="179" href="javascript:void(0);">DS</a><a data-id="197"
+                                                                                  href="javascript:void(0);">东风风度</a><a
+                                data-id="205" href="javascript:void(0);">东风小康</a><a data-id="215"
+                                                                                    href="javascript:void(0);">东风御风</a><a
+                                data-id="235" href="javascript:void(0);">东风·郑州日产</a><a data-id="253"
+                                                                                       href="javascript:void(0);">东风风光</a></span>
+                            </p>
+                            <p><span class="ba">F</span><span class="bn"><a data-id="7" href="javascript:void(0);">丰田</a><a
+                                data-id="17" href="javascript:void(0);">福特</a><a data-id="40"
+                                                                                 href="javascript:void(0);">菲亚特</a><a
+                                data-id="67" href="javascript:void(0);">福迪</a><a data-id="91"
+                                                                                 href="javascript:void(0);">法拉利</a><a
+                                data-id="128" href="javascript:void(0);">福田</a><a data-id="199"
+                                                                                  href="javascript:void(0);">飞驰商务车</a><a
+                                data-id="208" href="javascript:void(0);">福汽启腾</a></span></p>
+                            <p><span class="ba">G</span><span class="bn"><a data-id="63" href="javascript:void(0);">广汽吉奥</a><a
+                                data-id="109" href="javascript:void(0);">GMC</a><a data-id="110"
+                                                                                   href="javascript:void(0);">光冈</a><a
+                                data-id="133" href="javascript:void(0);">广汽日野</a><a data-id="147"
+                                                                                    href="javascript:void(0);">广汽传祺</a><a
+                                data-id="182" href="javascript:void(0);">观致汽车</a><a data-id="252"
+                                                                                    href="javascript:void(0);">广汽中兴</a></span>
+                            </p>
+                            <p><span class="ba">H</span><span class="bn"><a data-id="31" href="javascript:void(0);">哈飞</a><a
+                                data-id="32" href="javascript:void(0);">海马</a><a data-id="45"
+                                                                                 href="javascript:void(0);">汇众</a><a
+                                data-id="52" href="javascript:void(0);">黄海</a><a data-id="58"
+                                                                                 href="javascript:void(0);">红旗</a><a
+                                data-id="112" href="javascript:void(0);">华泰</a><a data-id="149"
+                                                                                  href="javascript:void(0);">海马商用车</a><a
+                                data-id="170" href="javascript:void(0);">海格</a><a data-id="181"
+                                                                                  href="javascript:void(0);">恒天汽车</a><a
+                                data-id="196" href="javascript:void(0);">哈弗</a><a data-id="225"
+                                                                                  href="javascript:void(0);">华颂</a><a
+                                data-id="251" href="javascript:void(0);">华泰新能源</a><a data-id="259"
+                                                                                     href="javascript:void(0);">汉腾</a><a
+                                data-id="262" href="javascript:void(0);">华凯</a></span></p>
+                            <p><span class="ba">J</span><span class="bn"><a data-id="4"
+                                                                        href="javascript:void(0);">Jeep</a><a
+                                data-id="34" href="javascript:void(0);">吉利汽车</a><a data-id="35"
+                                                                                   href="javascript:void(0);">江淮</a><a
+                                data-id="37" href="javascript:void(0);">江铃</a><a data-id="38"
+                                                                                 href="javascript:void(0);">江南</a><a
+                                data-id="39" href="javascript:void(0);">金杯</a><a data-id="57"
+                                                                                 href="javascript:void(0);">金龙</a><a
+                                data-id="98" href="javascript:void(0);">捷豹</a><a data-id="152"
+                                                                                 href="javascript:void(0);">九龙</a><a
+                                data-id="161" href="javascript:void(0);">金旅客车</a><a data-id="224"
+                                                                                    href="javascript:void(0);">江铃集团轻汽</a></span>
+                            </p>
+                            <p><span class="ba">K</span><span class="bn"><a data-id="51" href="javascript:void(0);">克莱斯勒</a><a
+                                data-id="107" href="javascript:void(0);">凯迪拉克</a><a data-id="145"
+                                                                                    href="javascript:void(0);">科尼赛克</a><a
+                                data-id="150" href="javascript:void(0);">开瑞</a><a data-id="188"
+                                                                                  href="javascript:void(0);">卡尔森</a><a
+                                data-id="212" href="javascript:void(0);">KTM</a><a data-id="213"
+                                                                                   href="javascript:void(0);">卡威</a><a
+                                data-id="218" href="javascript:void(0);">科瑞斯的</a><a data-id="220"
+                                                                                    href="javascript:void(0);">凯翼</a><a
+                                data-id="241" href="javascript:void(0);">康迪全球鹰电动汽车</a></span></p>
+                            <p><span class="ba">L</span><span class="bn"><a data-id="16" href="javascript:void(0);">铃木</a><a
+                                data-id="36" href="javascript:void(0);">陆风</a><a data-id="76"
+                                                                                 href="javascript:void(0);">力帆</a><a
+                                data-id="80" href="javascript:void(0);">劳斯莱斯</a><a data-id="83"
+                                                                                   href="javascript:void(0);">路特斯</a><a
+                                data-id="86" href="javascript:void(0);">兰博基尼</a><a data-id="94"
+                                                                                   href="javascript:void(0);">雷克萨斯</a><a
+                                data-id="95" href="javascript:void(0);">林肯</a><a data-id="96"
+                                                                                 href="javascript:void(0);">路虎</a><a
+                                data-id="99" href="javascript:void(0);">雷诺</a><a data-id="146"
+                                                                                 href="javascript:void(0);">莲花</a><a
+                                data-id="153" href="javascript:void(0);">猎豹汽车</a><a data-id="166"
+                                                                                    href="javascript:void(0);">理念</a><a
+                                data-id="200" href="javascript:void(0);">蓝海房车</a><a data-id="229"
+                                                                                    href="javascript:void(0);">雷丁电动</a><a
+                                data-id="249" href="javascript:void(0);">陆地方舟</a></span></p>
+                        </div>
+                        <div class="brand-section brand-section-2">
+                            <p><span class="ba">M</span><span class="bn"><a
+                            data-id="18" href="javascript:void(0);">马自达</a><a data-id="79"
+                                                                              href="javascript:void(0);">MG</a><a
+                            data-id="81" href="javascript:void(0);">MINI</a><a data-id="93" href="javascript:void(0);">玛莎拉蒂</a><a
+                            data-id="183" href="javascript:void(0);">迈凯伦</a><a data-id="201" href="javascript:void(0);">摩根</a></span>
+                            </p>
+                            <p><span class="ba">N</span><span class="bn"><a data-id="155" href="javascript:void(0);">纳智捷</a></span>
+                            </p>
+                            <p><span class="ba">O</span><span class="bn"><a data-id="84" href="javascript:void(0);">讴歌</a><a
+                                data-id="171" href="javascript:void(0);">欧朗</a><a data-id="243"
+                                                                                  href="javascript:void(0);">欧联</a></span>
+                            </p>
+                            <p><span class="ba">Q</span><span class="bn"><a data-id="28" href="javascript:void(0);">起亚</a><a
+                                data-id="42" href="javascript:void(0);">奇瑞</a><a data-id="43"
+                                                                                 href="javascript:void(0);">庆铃</a><a
+                                data-id="156" href="javascript:void(0);">启辰</a></span></p>
+                            <p><span class="ba">R</span><span class="bn"><a data-id="30" href="javascript:void(0);">日产</a><a
+                                data-id="78" href="javascript:void(0);">荣威</a></span></p>
+                            <p><span class="ba">S</span><span class="bn"><a data-id="10"
+                                                                        href="javascript:void(0);">斯柯达</a><a
+                                data-id="25" href="javascript:void(0);">三菱</a><a data-id="89"
+                                                                                 href="javascript:void(0);">smart</a><a
+                                data-id="102" href="javascript:void(0);">双龙</a><a data-id="111"
+                                                                                  href="javascript:void(0);">斯巴鲁</a><a
+                                data-id="137" href="javascript:void(0);">世爵</a><a data-id="165"
+                                                                                  href="javascript:void(0);">上汽大通MAXUS</a><a
+                                data-id="169" href="javascript:void(0);">陕汽通家</a><a data-id="209"
+                                                                                    href="javascript:void(0);">山姆</a><a
+                                data-id="239" href="javascript:void(0);">赛麟SALEEN</a><a data-id="242"
+                                                                                        href="javascript:void(0);">STARTECH</a><a
+                                data-id="244" href="javascript:void(0);">上喆汽车</a><a data-id="260"
+                                                                                    href="javascript:void(0);">斯威</a></span>
+                            </p>
+                            <p><span class="ba">T</span><span class="bn"><a data-id="175"
+                                                                        href="javascript:void(0);">腾势</a><a
+                                data-id="189" href="javascript:void(0);">特斯拉</a><a data-id="202"
+                                                                                   href="javascript:void(0);">泰卡特</a></span>
+                            </p>
+                            <p><span class="ba">W</span><span class="bn"><a data-id="19"
+                                                                        href="javascript:void(0);">沃尔沃</a><a
+                                data-id="48" href="javascript:void(0);">五菱</a><a data-id="132"
+                                                                                 href="javascript:void(0);">五十铃</a><a
+                                data-id="140" href="javascript:void(0);">威麟</a><a data-id="186"
+                                                                                  href="javascript:void(0);">威兹曼</a><a
+                                data-id="207" href="javascript:void(0);">潍柴英致</a><a data-id="247"
+                                                                                    href="javascript:void(0);">潍柴欧睿</a></span>
+                            </p>
+                            <p><span class="ba">X</span><span class="bn"><a data-id="6" href="javascript:void(0);">雪铁龙</a><a
+                                data-id="13" href="javascript:void(0);">现代</a><a data-id="49"
+                                                                                 href="javascript:void(0);">雪佛兰</a><a
+                                data-id="71" href="javascript:void(0);">新凯</a><a data-id="87"
+                                                                                 href="javascript:void(0);">西雅特</a><a
+                                data-id="174" href="javascript:void(0);">星客特</a></span></p>
+                            <p><span class="ba">Y</span><span class="bn"><a data-id="41"
+                                                                        href="javascript:void(0);">依维柯</a><a
+                                data-id="53" href="javascript:void(0);">一汽</a><a data-id="75"
+                                                                                 href="javascript:void(0);">永源</a><a
+                                data-id="100" href="javascript:void(0);">英菲尼迪</a><a data-id="138"
+                                                                                    href="javascript:void(0);">野马汽车</a><a
+                                data-id="194" href="javascript:void(0);">扬州亚星客车</a><a data-id="258"
+                                                                                      href="javascript:void(0);">驭胜</a><a
+                                data-id="268" href="javascript:void(0);">雅宾纳</a></span></p>
+                            <p><span class="ba">Z</span><span class="bn"><a data-id="33" href="javascript:void(0);">中兴</a><a
+                                data-id="60" href="javascript:void(0);">中华</a><a data-id="77"
+                                                                                 href="javascript:void(0);">众泰</a><a
+                                data-id="167" href="javascript:void(0);">中欧奔驰房车</a><a data-id="214"
+                                                                                      href="javascript:void(0);">浙江卡尔森</a><a
+                                data-id="233" href="javascript:void(0);">知豆</a><a data-id="246"
+                                                                                  href="javascript:void(0);">重汽王牌</a></span>
+                            </p>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="clrfix" id="chexingDl" style="overflow: hidden;">
+                <dt>车型：</dt>
+                <dd>
+                    <ul id="Chexing">
+                        <li class="cur"><a href="javascript:void(0);" data-id="-1">不限</a></li>
+                        <li><a href="javascript:void(0);" data-id="0">奥迪A6L</a></li>
+                        <li><a href="javascript:void(0);" data-id="1">雅阁</a></li>
+                        <li><a href="javascript:void(0);" data-id="2">宝马5系</a></li>
+                        <li><a href="javascript:void(0);" data-id="3">宝马3系</a></li>
+                        <li><a href="javascript:void(0);" data-id="4">迈腾</a></li>
+                        <li><a href="javascript:void(0);" data-id="5">凯美瑞</a></li>
+                        <li><a href="javascript:void(0);" data-id="6">马自达6</a></li>
+                        <li><a href="javascript:void(0);" data-id="7">奔驰C级</a></li>
+                        <li><a href="javascript:void(0);" data-id="8">凯越</a></li>
+                        <li><a href="javascript:void(0);" data-id="7">克鲁兹</a></li>
+                        <li><a href="javascript:void(0);" data-id="7">捷达</a></li>
+                        <li><a href="javascript:void(0);" data-id="7">朗逸</a></li>
+                        <li id="chexingMore" class="special">
+                            <a href="javascript:void(0);" data-id="">更多<i class="icon_down"></i></a>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+
+
+
+            <div class="screen-box-bottom" style="height: 150px; ">
+                <dl class="clrfix one-box">
+                    <dt>首付：</dt>
+                    <dd>
+                        <ul id="DownPayment">
+                            <li class="cur"><a href="javascript:void(0);" data-id="-1">不限</a></li>
+                            <li><a href="javascript:void(0);" data-id="0">2万以下</a></li>
+                            <li><a href="javascript:void(0);" data-id="1">2-3万</a></li>
+                            <li><a href="javascript:void(0);" data-id="2">3-5万</a></li>
+                            <li><a href="javascript:void(0);" data-id="3">5-10万</a></li>
+                            <li><a href="javascript:void(0);" data-id="4">10万以上</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="clrfix term-box border_bootm">
+                    <dt>其他：</dt>
+                    <dd>
+                        <div class="select-more" style="">
+                            <div class="limil" style="">
+                                <div class="select-ctrl">
+                                    <div data-id="" data-disabled="" data-type="">月供</div>
+                                    <ul class="drop-layer" style="display: none;">
+                                        <li data-id="" data-disabled="" data-type="" data-text="不限月供" class="first cur">不限月供</li>
+                                        <li class="" data-id="0|10000" data-disabled="" data-type="">10000</li>
+                                        <li class="" data-id="0|30000" data-disabled="" data-type="">30000</li>
+                                        <li class="" data-id="0|50000" data-disabled="" data-type="">50000</li>
+                                        <li class="" data-id="0|100000" data-disabled="" data-type="">100000</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="age" style="">
+                                <div class="select-ctrl">
+                                    <div data-id="" data-disabled="" data-type="">车龄</div>
+                                    <ul class="drop-layer" style="display: none;">
+                                        <li data-id="" data-disabled="" data-type="" data-text="不限车龄" class="first cur">不限车龄</li>
+                                        <li class="" data-id="-1|0" data-disabled="" data-type="">1年以内</li>
+                                        <li class="" data-id="-2|0" data-disabled="" data-type="">2年以内</li>
+                                        <li class="" data-id="-3|0" data-disabled="" data-type="">3年以内</li>
+                                        <li class="" data-id="-5|-3" data-disabled="" data-type="">3-5年</li>
+                                        <li class="" data-id="-8|-5" data-disabled="" data-type="">5-8年</li>
+                                        <li class="" data-id="-20|-8" data-disabled="" data-type="">8年以上</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="limil" style="">
+                                <div class="select-ctrl up">
+                                    <div data-id="" data-disabled="" data-type="">里程</div>
+                                    <ul class="drop-layer" style="display: none;">
+                                        <li data-id="" data-disabled="" data-type="" data-text="不限里程" class="first cur">不限里程</li>
+                                        <li class="" data-id="0|10000" data-disabled="" data-type="">1万公里内</li>
+                                        <li class="" data-id="0|30000" data-disabled="" data-type="">3万公里内</li>
+                                        <li class="" data-id="0|50000" data-disabled="" data-type="">5万公里内</li>
+                                        <li class="" data-id="0|100000" data-disabled="" data-type="">10万公里内</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="level" style="">
+                                <div class="select-ctrl">
+                                    <div data-id="0" data-disabled="" data-type="">级别</div>
+                                    <ul class="drop-layer" style="display: none;">
+                                        <li data-id="0" data-disabled="" data-type="" data-text="不限级别" class="first cur">不限级别</li>
+                                        <li class="" data-id="2" data-disabled="" data-type="">微型车</li>
+                                        <li class="" data-id="4" data-disabled="" data-type="">小型车</li>
+                                        <li class="" data-id="7" data-disabled="" data-type="">紧凑车型</li>
+                                        <li class="" data-id="6" data-disabled="" data-type="">中型车</li>
+                                        <li class="" data-id="3" data-disabled="" data-type="">中大型车</li>
+                                        <li class="" data-id="1" data-disabled="" data-type="">豪华型车</li>
+                                        <li class="" data-id="5" data-disabled="" data-type="">MPV</li>
+                                        <li class="" data-id="8" data-disabled="" data-type="">SUV</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="options" style="">
+                                <div class="select-ctrl">
+                                    <div data-id="-1" data-disabled="" data-type="">车源</div>
+                                    <ul class="drop-layer" style="display:none;">
+                                        <li data-id="-1" data-disabled="" data-type="" data-text="不限车源" class="first">不限车源</li>
+                                        <li class="" data-id="0" data-disabled="" data-type="">在售</li>
+                                        <li class="" data-id="1" data-disabled="" data-type="">已售</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+
+        </div>
+        <!-- 筛选条件end -->
+
+        <!-- 条件内容start -->
+        <section class="condition">
+            <div class="condition-title">
+                <ul>
+                    <li data-id="1" class="first-child checked on">
+                        <div class="new-publish">最新发布</div>
+                    </li>
+                    <li data-id="2" class="">
+                        <div class="price-low">车价最低</div>
+                    </li>
+                    <li data-id="3" class="">
+                        <div class="path-short">里程最短</div>
+                    </li>
+                    <li data-id="4" class="">
+                        <div class="age-low">车龄最低</div>
+                    </li>
+                    <div class="condition-youzhi">
+                        <i type="checkbox" class="cur" data-id="0"></i><span>优质商家车源</span>
+                    </div>
+                </ul>
+                <div class="car-kind">
+                    <span class="car-city" style="display:none;">北京</span> 符合条件二手车共有
+                    <span class="car-part">14371</span> 台
+                    <span class="car-all" style="display:none;">0</span>
+                </div>
+            </div>
+            <div class="condition-content">
+                <ul>
+                    <li>
+                        <div class="condition-car-img">
+                            <a href="/home/details?UCarId=11506867&amp;cityId=201&amp;productId=127974&amp;source=635&amp;isActive=0&amp;path=北京   二手车贷款"
+                                target="_blank">
+                                <span class="deal_img"></span>
+                                <img src="http://img5.taoche.cn/1c/02160tzjah.jpg">
+                                <div class="all_mark">
+                                    <!--<span class="icon_txt green"><em>原厂<br/>质保</em></span>-->
+                                    <span class="icon_txt blue"><em>延长<br/>质保</em></span>
+                                    <span class="icon_txt yellow"><em>免费<br/>过户</em></span>
+                                </div>
+                              
+                            </a>
+                        </div>
+                        <div class="condition-car-information">
+                            <div class="tit">
+                                <a href="/home/details?UCarId=11506867&amp;cityId=201&amp;productId=127974&amp;source=635&amp;isActive=0&amp;path=北京   二手车贷款"
+                                    target="_blank">
+                                    <div class="information-title">天语SX4两厢 2007款 1.6 自动豪华型</div>
+                                </a>
+                                <br />
+                                <div class="OrderNum"><i class="OrderNum_icon"></i>优质商家车源
+                                    <div class="tip">该车源由看看车提供售前检测及专业贷款顾问1对1服务</div>
+                                </div>
+                            </div>
+                            <div class="information-content">
+                                <div class="information-limit">
+                                    <div class="information-limit-name">贷款</div>
+                                    <div class="information-limit-price">2.79万</div>
+                                </div>
+                                <div class="information-month">
+                                    <div class="information-month-name">月供</div>
+                                    <div class="information-month-price">964元</div>
+                                </div>
+                                <div class="information-down">
+                                    <div class="information-down-name">首付</div>
+                                    <div class="information-down-price">1.19万</div>
+                                </div>
+                                <div class="information-cost">
+                                    <div class="information-cost-name">总成本</div>
+                                    <div class="information-cost-price">6849元</div>
+                                </div>
+                            </div>
+                            <div class="information-footer"><span>2007年上牌</span> 行驶<span>7.80万公里</span></div>
+                        </div>
+                        <div class="condition-price">
+                            <div class="old-price"><span class="old-kind">¥</span><span class="old-yuan">3.98万</span><span class="old-word"></span></div>
+                            <div class="new-price">新车价<span>12.90万</span>(含购置税)</div>
+                            <div class="extra">
+                                <div class="extra-save"><span class="extra-save-s">省</span><span class="extra-save-w">8.92万</span></div>
+                                <div class="extra-send" style="display: none;">送100元礼包</div>
+                            </div>
+                        </div>
+                        <div class="condition-details">
+                            <div class="details-word"><a href="/home/details?UCarId=11506867&amp;cityId=201&amp;productId=127974&amp;source=635&amp;isActive=0&amp;path=%E5%8C%97%E4%BA%AC%20%20%20%E4%BA%8C%E6%89%8B%E8%BD%A6%E8%B4%B7%E6%AC%BE"
+                                    target="_blank">查看详情</a></div>
+                        </div>
+                    </li>
+
+                </ul>
+                <div id="listPagination" class="list_pagination" style="display: block;"><span class="false">上一页</span><a class="active">1</a><a href="javascript:void(0);">2</a><a href="javascript:void(0);">3</a>
+                    <a href="javascript:void(0);">4</a><a href="javascript:void(0);">5</a><a href="javascript:void(0);">6</a>
+                    <a href="javascript:void(0);">7</a><span>...</span>
+                    <a href="javascript:void(0);">718</a><a href="javascript:void(0);">719</a><a href="javascript:void(0);">下一页</a></div>
+                <div class="list-left-box clrfix" >
+                    <div class="no-product">
+                        <div class="default">
+                            <p class="default-word1">此条件下没有棒棒哒二手车源~</p><br/>
+                            <p class="default-word2">您可以尝试<span>减少筛选条件</span>,或<span>清空条件</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="loading-list" style="display: none;">
+                    <div>
+                        <img src="http://img2.bitautoimg.com/jinrong/newpcweb//images/libs/load.jpg?v=201608091966">
+                    </div>
+                    正在努力加载中...
+                </div>
+            </div>
+
+        </section>
+        <!-- 条件内容end -->
+        <section class="more-listcar" id="more-listcar">
+            <div class="more-listcar-title">看看更多二手车</div>
+            <div class="recommend-car" id="morelist-swiper">
+                <div>
+                    <div id="morelist">
+                        <div class="good-car1">
+                            <a href="/home/details?UCarId=11506867&amp;cityId=201&amp;productId=127974&amp;source=633&amp;path=%E5%8C%97%E4%BA%AC%20%20%20%E4%BA%8C%E6%89%8B%E8%BD%A6%E8%B4%B7%E6%AC%BE"
+                                target="_blank">
+                                <div class="car-img"><img src="http://img5.taoche.cn/1c/02160tzjah.jpg">
+                                    <section class="car-mask" style="top: 100%;">
+                                        <aside></aside>
+                                        <div style="position:absolute;left:20px;top:99px;z-index:2;color:#fff;"><span></span></div>
+                                        <div class="car-des"><span>去看看</span></div>
+                                    </section>
+                                </div>
+                                <div class="good-car-info">
+                                    <div class="car-info-name">天语SX4两厢 2007款 1.6 自动豪华型</div>
+                                    <div class="car-info-loan">首付 <em>1.19万</em> 月供 <em>964元</em></div>
+                                    <div class="car-info-save"><span>省8.92万</span></div>
+                                </div>
+                                <div class="all-mark"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

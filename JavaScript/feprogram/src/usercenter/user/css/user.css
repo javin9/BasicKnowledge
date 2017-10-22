@@ -1,0 +1,182 @@
+@charset "utf-8";
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden }
+.col_org { color: #d68a5c }
+.col_black { color: #000 }
+.col_grey { color: #a9a9a9 }
+.col_grey2 { color: #777 }
+.col_grey3 { color: #333 }
+.col_grey6 { color: #666 }
+.col_grey9 { color: #999 }
+.col_red, .font_red, .input_item span.font_red { color: #fc654d }
+.col_red:hover { color: #f2614a!important }
+.bg_yellow { background-color: #ffc748 }
+.bg_pink { background-color: #ff7073 }
+.bg_blue { background-color: #2583b5 }
+.bg_red { background-color: #fc654d }
+.btn_org { background: #fc654d; color: #fff }
+.box_gray { color: #333; border: 1px solid #e4e7ea; background: #fafafa }
+.box_red { border: solid 1px #ff5231!important; }
+.btn_del,a.btn_del{background: #f5f5f5; color: #000;}
+.btn_pink_big { background: #ff6163; color: #fff }
+.f_12 { font-size: 12px }
+.f_14 { font-size: 14px }
+.f_16 { font-size: 16px }
+.f_w { font-weight: 700 }
+.w_1200 { }
+span { display: inline-block }
+.icon { }
+/*share*/
+.warning, .colse, .alert i, .user_p_tit i { background-image: url(../images/user_icon.png); background-repeat: no-repeat; }
+.bg_col { background: #f5f5f5 url(../images/bg.gif) top center repeat-y; }
+.user_warp { width: 1200px; margin: auto; background: #fff; }
+/*right*/
+.user_con { margin-left: 212px; overflow: hidden; width: 988px; }
+.user_tip_box { line-height: 35px; font-size: 12px; color: #d8895e; background: #f9f5da; border-top: solid 1px #f4deac; border-bottom: solid 1px #f4deac; padding: 0 0 0 40px; position: relative; }
+.warning { width: 18px; height: 18px; display: inline-block; background-position: 0 -301px; vertical-align: middle; margin-right: 6px; }
+.colse { width: 20px; height: 20px; display: block; position: absolute; top: 7px; right: 10px; background-position: 0 -271px; cursor: pointer; }
+.title_box { margin: 10px 40px; border-bottom: solid 2px #eee; }
+.title_box .h2 { border-bottom: solid 2px #ff6446; margin-bottom: -2px; display: inline-block; width: 100px; text-align: center; font-size: 18px; font-weight: 500; line-height: 44px; color: #666; }
+.user_from_box { padding: 50px 40px 320px; }
+.tab_input_box { display: none; }
+.user_from { }
+.user_from .item { padding-bottom: 20px; }
+.user_from .txt { color: #666; font-size: 16px; width: 120px; float: left; text-align: right; }
+.tab_input_box .user_from .txt { padding-top: 10px }
+.user_from .info { margin-left: 140px; }
+.user_from .i_txt { font-size: 16px; color: #000; }
+.user_from .alert { vertical-align: middle; display: inline-block; line-height: 23px; height: 23px; border: solid 1px #ff5231; background: #fff2ea; color: #666; font-size: 12px; padding: 0 10px; display: none; }
+.user_from .alert i { width: 18px; height: 18px; display: inline-block; background-position: 0 -301px; vertical-align: middle; margin-right: 6px; margin-top: -2px; }
+.user_from .input { vertical-align: middle; display: inline-block; }
+.user_from .input_line { width: 200px; height: 40px; /*line-height: 40px;*/ line-height: 40px\9; padding: 0 20px; border: solid 1px #ddd; color: #333; }
+.user_from .input_line2 { color: #333; width: 200px; height: 40px; line-height: 40px; padding: 0 20px; border: solid 1px #fff; }
+.user_from .input_line3 {  width: 200px; height: 40px; /*line-height: 40px;*/ line-height: 40px\9; padding: 0 20px; border: solid 1px #ddd; color: #333;}
+.input_select { width: 220px; border: solid 1px #ddd; padding-right: 20px; color: #000; font-size: 15px; }
+.selCityLeft { width: 182px; background: #fff; border: solid 1px #ddd; display: inline-block; height: 40px; line-height: 40px; padding: 0 40px 0 20px; background: url(../images/icon_down.png) no-repeat 207px 17px; font-size: 14px; color: #000; }
+.user_textarea { color: #333; width: 400px; height: 80px; padding: 10px; border: solid 1px #ddd; font-size: 15px; clear: both; }
+.user_textarea_tip { clear: both; display: block; color: #c4c4c4; }
+.user_btn_box { padding-left: 140px; }
+a.btn_org,a.btn_del { width: 240px; height: 50px; line-height: 50px; text-align: center; color: #fff; font-size: 16px; display: block; }
+a.btn_del{ color: #999; }
+.user_from #Birthday { background: url(../images/birthday.png) no-repeat 207px 7px; }
+/*信用信息*/
+.user_from_box_qua { }
+.user_from_box_qua .user_from .item { padding-left: 70px; }
+.user_from_box_qua .user_from .txt { text-align: left; width: 80px; }
+.user_from_box_qua .user_from .info { margin-left: 100px; }
+.user_from_box_qua .user_btn_box { padding-left: 70px; }
+/*信用信息 - 提示*/
+.prompt_tip { position: relative }
+.user_prompt_box { position: absolute; top: 0; right: 0; width: 310px; height: 280px; background: #fffafa; border: solid 1px #ffdad7; padding: 16px; }
+.user_p_tit { color: #333; font-size: 16px; border-bottom: solid 1px #ffdad7; padding-bottom: 10px; }
+.user_p_tit i { width: 18px; height: 18px; display: inline-block; background-position: 0 -301px; vertical-align: middle; margin-right: 6px; margin-top: -2px; }
+.user_p_info { padding: 14px; color: #999; height: 183px; font-size:14px; }
+a.user_btn_pink { width: 210px; text-align: center; height: 30px; line-height: 30px; color: #ff6446; border: solid 1px #ff6446; font-size: 14px; border-radius: 3px; display: block; margin: auto; }
+/*实名认证*/
+.user_prompt_cart { padding: 10px 40px; overflow: hidden; }
+.user_p_c_left, .user_p_c_right { float: left; width: 440px; height: 150px; background: #fffafa; border: solid 1px #ffdad7; }
+.user_p_c_right { float: right }
+.user_p_c_box { padding: 16px; }
+.user_p_c_tit { color: #d68a5c; font-size: 14px; border-bottom: solid 1px #ffdad7; padding-bottom: 10px; }
+.user_p_c_con { font-size: 14px; }
+.user_p_c_ul { color: #999; padding: 12px 0 0 12px; }
+.user_p_c_ul li { list-style: decimal; margin-left: 12px; padding: 0 0 6px 12px; line-height: 120%; }
+.user_from_box_cer { padding-left: 212px }
+.user_from_box_cer_t { }
+.user_from_box_cer_t .user_from { padding-left: 333px; }
+.user_from_box_cer_t { border: solid 1px #ddd; padding: 40px 0; }
+.u_f_b_cer_t { font-size: 22px; color: #333; text-align: center; padding-bottom: 20px; }
+.u_f_b_cer_t .ok { width: 53px; height: 53px; background: url(../images/ok.png) no-repeat center center; display: inline-block; vertical-align: middle; margin-right: 20px; }
+/*.user_from_box_cer { display: block; }*/
+.user_from_box_cer_t { display: none; }
+/*修改密码*/
+.tip_f12 { font-size: 12px; color: #999; display: block; clear: both; padding:10px 0 0; }
+.user_pwd_text_b_span { display: inline-block; text-align: left; vertical-align: middle }
+.user_pwd_text_b_f12 { font-size: 12px; color: #666; }
+/****/
+::-webkit-input-placeholder { /* WebKit browsers */
+color: #c4c4c4;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+color: #c4c4c4;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+color: #c4c4c4;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+color: #c4c4c4;
+}
+#Footer { margin-top: 0!important }
+/*修改密码手机号验证*/
+.hide {
+  display: none!important;
+}
+
+#checkTelphone {
+  display: block;
+  padding-left: 212px;
+}
+.title_box {
+  margin-bottom: 0;
+}
+#checkTelphone .tips {
+  font-size: 16px;
+  color: #9C9FA1;
+  line-height: 24px;
+  padding-left: 72px;
+  margin-bottom: 20px;
+}
+#checkTelphone .info-txt {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    color: #333;
+}
+#checkTelphone .btn_org {
+  width: 300px;
+}
+#checkTelphone .input_line{
+  width: 300px;
+  padding: 0;
+  border: 1px solid #ddd;
+}
+#checkTelphone input {
+  border: 0;
+  width: 169px;
+  height: 24px;
+  line-height: 24px;
+  padding: 8px 0 8px 20px;
+  /*box-sizing: border-box;*/
+  float: left;
+}
+#checkTelphone .btn {
+  width: 108px;
+  float: left;
+  font-size: 14px;
+  text-align: center;
+  /*padding: 10px 0;*/
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  cursor: pointer;
+  color: #ff5231;
+  box-sizing: border-box;
+}
+#checkTelphone .btn:before {
+  content: '';
+  display: block;
+  width: auto;
+  height: 24px;
+  border-right: 1px solid #ddd;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -12px;
+}
+#checkTelphone .alert {
+  position: relative;
+  bottom: 16px;
+}
+#GetValidateCode.disable{
+  background-color: transparent!important;
+  border: 0!important;
+}

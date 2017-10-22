@@ -1,0 +1,33 @@
+@import "sassHelper/mixin";
+@import "../../../../vars";
+
+.city-wrapper{
+	position: relative;
+	width: 150px;
+
+	&:after{
+		@include size(12px);
+		content:' ';
+		position: absolute;
+		background:url(jiantou.png) no-repeat left top;
+		right:10px;
+		top:20px;
+	}
+
+	input{
+		width: 148px;
+		height:$height;
+		line-height: $height;
+		padding:0 10px;
+		display: block;
+		cursor:pointer;
+		border:1px solid $border;
+		box-sizing:border-box;
+	}
+
+	.sel-city-menu{
+		top:40px;
+		left:0;
+		width: 427px;
+	}
+}

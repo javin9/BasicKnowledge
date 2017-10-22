@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+       var APIURL = "http://api.chedai.bitauto.com/";
+       var defaultQualification = {"Career":73,"Income":108,"Insurance":1,"Funds":1,"Credit":256,"HouseState":80};
+        var AddQuaUrl = "/rapidloan/AddQualification";
+        var applySuccessUrl = '/rapidloan/ResultSuccess';
+        var payUrl = '/Payment/Pay';
+        var jtlj="http://img3.bitautoimg.com/jinrong/newmweb//css/xinche/RapidLoan/images/sqdk11.png?v=201612151220";
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+ <div id="yxWrapper">
+        <img src="http://img4.bitautoimg.com/jinrong/newmweb/images/size4_w114_h114.png?v=201612151220" style="display: none;"/>
+        
+<header class="header-bar">
+    <a href="javascript:void(0);" onclick="window.history.go(-1);return false;"></a>
+    <h1 class="font-nav">购车人信息</h1>
+    <span></span>
+</header>
+<section class="form-box">
+    <header>您的信息仅作贷款审核使用，不会以任何形式泄露给其他人员或机构</header>
+        <dl class="authentication">
+            <dt><b class="font-title">尚斌杰</b><i>已实名验证</i></dt>
+            <dd class="font-title">211421***********1</dd>
+        </dl>
+    <h3>完善资质信息</h3>
+    <ul>
+        <li id="occupation" class="font-title select-con" data-aslider-in="occupation|fade|bottom"><i></i><b>职业身份</b><span><em>请选择</em></span></li>
+        <li class="warning">请选择职业身份</li>
+        <li id="socialSecurity" class="font-title select-con" data-aslider-in="socialSecurity|fade|bottom"><i></i><b>社保证明</b><span><em>请选择</em></span></li>
+        <li class="warning">请选择社保证明</li>
+    </ul>
+    <ul>
+        <li id="income" class="font-title select-con" data-aslider-in="income|fade|bottom"><i></i><b>税后收入</b><span><em>请选择</em></span></li>
+        <li class="warning">请选择税后收入</li>
+        <li id="accumulationFund" class="font-title select-con" data-aslider-in="accumulationFund|fade|bottom"><i></i><b>公积金</b><span><em>请选择</em></span></li>
+        <li class="warning">请选择公积金</li>
+    </ul>
+    <ul>
+        <li id="creditRecord" class="font-title select-con" data-aslider-in="creditRecord|fade|bottom"><i></i><b>信用记录</b><span><em>请选择</em></span></li>
+        <li class="warning">请选择信用记录</li>
+        <li id="housingSituation" class="font-title select-con" data-aslider-in="housingSituation|fade|bottom"><i></i><b>住房状况</b><span><em>请选择</em></span></li>
+        <li class="warning">请选择住房状况</li>
+    </ul>
+    <div class="submit-form disabled">
+
+
+<form action="/RapidLoan/ResultFail" id="formQ" method="post">            <input name="Career" type="hidden" value="" />
+            <input name="Income" type="hidden" value="" />
+            <input name="Credit" type="hidden" value="" />
+            <input name="HouseState" type="hidden" value="" />
+            <input name="Funds" type="hidden" value="" />
+            <input name="Insurance" type="hidden" value="" />
+            <input name="MaritalStatus" type="hidden" />
+            <input name="Education" type="hidden" />
+            <input name="CertificateNumber" type="hidden" value="211421198404150831" />
+            <input name="ProductIds" type="hidden" />
+            <input name="OrderID" type="hidden" value="361481877913926" />
+            <input name="CarId" type="hidden" />
+            <input name="CityId" type="hidden" />
+            <input name="CarPrice" type="hidden" />
+            <a href="javascript:void(0);" class="font-btn">获取额度</a>
+</form>
+    </div>
+    <footer style="display: none;"><i class="cur"></i><span>我已授权</span><a href="javascript:void(0);" class="authorization02">《信息使用授权书》</a></footer>
+</section>
+
+
+<!-- 职业身份 -->
+<aside class="sel-control-box" data-aslider="occupation">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">职业身份</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                        <li data-id="73">公务员/事业单位</li>
+                        <li data-id="74">企业主</li>
+                        <li data-id="75">个体户</li>
+                        <li data-id="76">上班族</li>
+                        <li data-id="77">自由职业者</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+
+<!-- 社保证明 -->
+<aside class="sel-control-box" data-aslider="socialSecurity">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">社保证明</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                    <li data-id="1">有社保</li>
+                    <li data-id="0">无社保</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<!-- 住房状态 -->
+<aside class="sel-control-box" data-aslider="housingSituation">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">住房状态</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                        <li data-id="79">自有全款</li>
+                        <li data-id="80">自有贷款</li>
+                        <li data-id="81">租赁</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<!-- 公积金 -->
+<aside class="sel-control-box" data-aslider="accumulationFund">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">公积金</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                    <li data-id="1">有公积金</li>
+                    <li data-id="0">无公积金</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+
+<!-- 信用记录 -->
+<aside class="sel-control-box" data-aslider="creditRecord">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">信用记录</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                        <li data-id="71">信用良好</li>
+                        <li data-id="72">少数逾期</li>
+                        <li data-id="70">多次逾期</li>
+                        <li data-id="256">无信用记录</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<!-- 税后收入 -->
+<aside class="sel-control-box" data-aslider="income">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">税后收入</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                        <li data-id="66">3000元以下</li>
+                        <li data-id="67">3000-5000元</li>
+                        <li data-id="68">5000-8000元</li>
+                        <li data-id="69">8000-12000元</li>
+                        <li data-id="108">12000-20000元</li>
+                        <li data-id="109">20000元以上</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+
+<section class="assessment-box">
+    <div class="assessment-bg"></div>
+    <div class="assessment-wrapper">
+        <div class="ass-ani-box">
+
+            <div class="ass-ani">
+                <div class="circle_process">
+                    <canvas id="canvas-preview"></canvas>
+                </div>
+            </div>
+            <div class="ass-bg">
+                <span class="font-label">正在评估您的<em>基本信息</em></span>
+                <b id="priceChange">--<em>万</em></b>
+                <div>预审批额度</div>
+            </div>
+        </div>
+        <div class="ass-btn font-nav">评估中</div>
+
+    </div>
+</section>
+<div id="tipBox"><div class="layout-text font-title">获取额度中...</div></div>
+
+
+        <!--整屏蒙层start-->
+        <div id="maskLayer"></div>
+        <!--整屏蒙层end-->
+    </div>
+    
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

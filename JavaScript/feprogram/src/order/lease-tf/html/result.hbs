@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width" />
+    <meta property="wb:webmaster" content="14dba3c44bd1a68e" />
+    <meta name="keywords" content="淘车,贷款买车,贷款购车,分期购车,汽车贷款,车辆贷款,二手车贷款,车贷" />
+    <meta name="description" content="淘车是易车、腾讯、京东三家公司合资成立的易鑫资本旗下的易鑫汽车交易平台，为用户提供全面的线上汽车交易平台，为金融客户提供有效的O2O运营服务。淘车提供优质的新车贷款服务、二手车贷款服务、车主贷款服务（汽车抵押贷款）、车险等汽车金融服务。" />
+    <link rel="icon" type="image/x-icon" href="https://www.taoche.com/favicon.ico">
+    <script type="text/javascript">
+        var citySpell = 'beijing';
+        var APIURL = "http://192.168.145.12:8060";
+        var RESURL = "http://192.168.145.9:8011/taoche/";
+        var USERCENTERURL = "http://test.home.taoche.com/";
+        var BusinessLine = 550;
+        var city = {"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":0,"SelectCityName":null,"LocateResultType":1};
+    </script>
+    <link href="http://192.168.145.9:8011/taoche/common/common.css?v=201502031133" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="http://192.168.145.9:8011/taoche/dll/shim.dll.js?v=201502031133"></script>
+    <![endif lt IE 9]-->
+
+    <link href="http://192.168.145.9:8011/taoche/order/apply/result/lease.css?v=201502031133" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<input name="__RequestVerificationToken" type="hidden" value="SQAvXt8nbsrmln_21z1h2yb2nOIRjBvNpuKqzx1ey3WrGXpVXWLEyMOgqXJ7kQ_roHX2OBLzIg16SGZxcRbdMidPgN01" />
+
+<script>
+    (function(){
+        if(window.location.host.indexOf("etaoche.cn")>=0){
+            var head = document.getElementsByTagName('head')[0],
+                    cssURL = 'http://img2.yixinfinance.com/taoche/common/common-etaoche.css?v=201512041718',
+                    linkTag = document.createElement('link');
+            linkTag.href = cssURL;
+            linkTag.setAttribute('rel','stylesheet');
+            linkTag.setAttribute('media','all');
+            linkTag.setAttribute('type','text/css');
+            head.appendChild(linkTag);
+        }
+    })();
+    window.FENQIURL = 'http://fenqi.huidu.taoche.com' + "/";
+</script>
+
+{{{htmlWebpackPlugin.options.header}}}
+
+<div class="apply-step">
+    <ul>
+        <li class="after-step"><i>1</i>选择车型和金融产品</li>
+        <li class="after-step"><i>2</i>在线提交申请信息</li>
+        <li class="cur-step"><i>3</i>顾问陪同到店</li>
+        <li><i>4</i>签订合同租车成功</li>
+    </ul>
+</div>
+<div class="payment">
+    <div class="payment-con">
+
+        <div class="payment2">
+            <div class="icon"></div>
+            <div class="payment2-right">
+                <h4>一小时内反馈审批结果</h4>
+                <p>审批通过后将发送给您<span>短信授信码</span>，届时贷款顾问会联系您到店</p>
+                <div class="clrfix"><span>凭短信授信码可直接到店办理租车</span></div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

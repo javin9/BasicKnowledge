@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var CODE_GETTING_URL = '/Validate/GetCode';
+        var CODE_VALIDATING_URL = '/Validate/CheckCode';
+        var USERCENTERURL = 'http://test.i.m.daikuan.com/';
+        var APIURL = 'http://192.168.15.153:8081/';
+        var RESURL = 'http://192.168.145.9:8011/MWeb/';
+        var CDNFileURL = 'http://t.image.bitautoimg.com/chedai/';
+        var BusinessLine = 552;
+        var dataSgin = "credit";
+        var option=3;
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+   <div id="yxWrapper">
+        <div id='wx_pic' style='margin:0 auto;display:none;'>
+            <img src='http://192.168.145.9:8011/MWeb/images/pic300.jpg?v=201605171437' />
+        </div>
+        <input name="__RequestVerificationToken" type="hidden" value="NVdM8LScTmf5jH9g-8eexqZMYlm7ociXNc9WngZ_Nz02IGHQLimwD6F3GCC77tEwzd5Djv3uu6bhB6aER-3ne9WtuNWefPybxHwpIzVh60A1" />
+            <!-- ViewBag.Title = "申请成功 - QQ钱包"; -->
+
+<article class="QQ">
+    <header class="header box_sizing">
+        <div class="header-title f-gray6">车辆抵押贷款咨询流程</div>
+        <div class="header-ctn">
+            <span class="uf-f1 cur">身份验证</span>
+            <span class="uf-f1 cur">提交车辆信息</span>
+            <span class="uf-f1 cur">提交资质信息</span>
+            <span class="uf-f1 cur">等待回访</span>
+        </div>
+    </header>
+
+    <blockquote class="result-box box_sizing">
+        <div class="result-icon"></div>
+        <div class="ut-c success">恭喜您 提交成功</div>
+        <div class="success-ctn">您的信息已成功提交至易鑫金融平台，稍后会有专业金融顾问与您联系，请保持<span>135****3832</span>手机畅通。
+        </div>
+    </blockquote>
+
+    <div class="btn"><a href="/Spread/QQIndex">重新申请</a></div>
+    <div class="statement">声明：本司非常重视对用户隐私权的保护，用户姓名手机号等个人资料为用户重要隐私，本站承诺不会将个人资料用作它途，仅用于申请抵押贷款，不会以任何形式泄露给其他人员或机构。</div>
+
+    <footer class="footer">本服务由易鑫车贷提供</footer>
+</article>
+
+        <div id="maskLayer"></div>
+        <div class="bottom-to-top"><img src='http://192.168.145.9:8011/MWeb/images/scroll-to-top-icon.png?v=201605171437' /></div>
+    </div>
+
+    <script src="http://open.mobile.qq.com/sdk/qqapi.js?_bid=152" type="text/javascript"></script>
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

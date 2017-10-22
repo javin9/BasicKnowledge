@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script>
+    var localCity={"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":-1,"SelectCityName":"北京"};
+    var ipLocationInfo={"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":-1,"SelectCityName":"北京"};
+
+    var deviceId = "8f00a536-78ce-4681-ae67-82fe37872cf7";
+    var loanUserId = 0;
+    var ershoucheURL='http://ershouche.m.daikuan.com/';
+
+    var CODE_GETTING_URL='/Login/GetCode';
+    var CODE_VALIDATING_URL='/Login/CheckCode';
+    var ADVISERAPIURL = "/";
+    var BusinessLine = 550;
+</script>
+<div id="yxWrapper">  
+  <div id='wx_pic' style='margin: 0 auto; display: none;'>
+      <img src='http://img1.bitautoimg.com/jinrong/newmweb/images/pic300.jpg?v=201610191560' />
+  </div>
+  <h1 class="hide">易鑫车贷</h1>
+  <div id="views">
+    <article class="width-percent-100">
+        <header class="header">
+            <div class="header-inner">
+                <a href="/" class="header-logo"></a>
+                <div id="searchcar" class="header-search"><span>真正0首付，为您鑫动</span></div>
+                <span class="header-location" id="selectCity"><em id="localText">北京</em></span>
+            </div>
+        </header>
+        <!--焦点图-->
+        <div class="swiper_banner" style="overflow:hidden;height:2.9rem;">
+        <section class="first-block width-percent-100">
+            <div class="swiper-container bg-color-ffffff">
+                <div class="swiper-wrapper">
+                    <a href="http://m.daikuan.com/article/index/10" class="swiper-slide">
+                        <img src='http://img1.bitautoimg.com/chedai/41f6cffb-a9ed-448d-9f6f-58aae2173cc3.jpg' class="width-percent-100" style="display: block">
+                    </a>
+                    <a href="http://m.daikuan.com/BuycarCalculator" class="swiper-slide">
+                        <img data-src='http://img1.bitautoimg.com/chedai/b4561332-5575-4485-8989-5a670c7a037c.png' class="width-percent-100 swiper-lazy" style="display: block">
+                        <div class="swiper-lazy-preloader"></div>
+                    </a>
+                    <a href="http://m.daikuan.com/activity/DQX2M?from=700" class="swiper-slide">
+                        <img data-src='http://img1.bitautoimg.com/chedai/390b4ca2-c1af-414b-9f1f-2e823cac9465.png' class="width-percent-100 swiper-lazy" style="display: block">
+                        <div class="swiper-lazy-preloader"></div>
+                    </a>
+                    <a href="http://m.daikuan.com/activity/Tiexi" class="swiper-slide">
+                        <img data-src='http://img1.bitautoimg.com/chedai/4f12541e-ffba-48d4-b8ca-384f56514898.jpg' class="width-percent-100 swiper-lazy" style="display: block">
+                        <div class="swiper-lazy-preloader"></div>
+                    </a>
+                    <a href="http://m.daikuan.com/activity/Beixian0xi?from=197  " class="swiper-slide">
+                        <img data-src='http://img1.bitautoimg.com/chedai/93fb3784-0aa4-4938-94c9-d03418c3e85c.png' class="width-percent-100 swiper-lazy" style="display: block">
+                        <div class="swiper-lazy-preloader"></div>
+                    </a>
+                    <a href="http://xinyongka.m.daikuan.com/CreditCard/Detail?productId=19" class="swiper-slide">
+                        <img data-src='http://img1.bitautoimg.com/chedai/46dc1f6d-c762-43df-89f8-5cc8ecb52062.png' class="width-percent-100 swiper-lazy" style="display: block">
+                        <div class="swiper-lazy-preloader"></div>
+                    </a>
+                    <a href="http://m.daikuan.com/www/hafuh6" class="swiper-slide">
+                        <img data-src='http://img1.bitautoimg.com/chedai/1bccdfd2-e9cd-487c-ba77-ea160ce6d448.png' class="width-percent-100 swiper-lazy" style="display: block">
+                        <div class="swiper-lazy-preloader"></div>
+                    </a>
+                    <a href="http://shop.m.daikuan.com/dfrc" class="swiper-slide">
+                        <img  data-src='http://img1.bitautoimg.com/chedai/06e5bb6b-4937-4bfb-ba24-e3d1b817defd.png' class="width-percent-100 swiper-lazy" style="display: block">
+                        <div class="swiper-lazy-preloader"></div>
+                    </a>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        </div>
+        <!--帮您贷款、二手车贷款 服务入口-->
+        <section class="service_two">
+            <a href="">
+                <div>
+                    <h6>帮您贷款</h6>
+                    <p>20秒锁定方案</p>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <h6>二手车</h6>
+                    <p>百万车源任你选</p>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <h6>开走吧</h6>
+                    <p>首付1万开新车</p>
+                </div>
+            </a>
+        </section>
+
+        <!-- B2C品牌区 -->
+        <section id="b2cBlock" class="b2c-block font-size-24">
+            <!-- 偶数 -->
+            <div class="brand-box odd uf">
+                <div class="uf-f1">
+                    <a href="javascript:void(0);" class="selCarEvent" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <p class="ut-s">日产</p>
+                    </a>
+                </div>
+                <div class="uf-f1">
+                    <a href="javascript:void(0);" class="selCarEvent" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <p class="ut-s">日产</p>
+                    </a>
+                </div>
+                <div class="uf-f1">
+                    <a href="javascript:void(0);" class="selCarEvent" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <p class="ut-s">日产</p>
+                    </a>
+                </div>
+                <div class="uf-f1">
+                    <a href="javascript:void(0);" class="selCarEvent" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <p class="ut-s">日产</p>
+                    </a>
+                </div>
+                <div class="uf-f1">
+                    <a href="javascript:void(0);" class="selCarEvent" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <p class="ut-s">日产</p>
+                    </a>
+                </div>
+            </div>
+            <!-- 奇数 -->
+            <div class="brand-box even uf">
+                <div class="uf-f1">
+                    <a href="javascript:void(0);" class="selCarEvent" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <p class="ut-s">日产</p>
+                    </a>
+                </div>
+                <div class="uf-f1">
+                    <a href="javascript:void(0);" class="selCarEvent" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <p class="ut-s">日产</p>
+                    </a>
+                </div>
+                <div class="uf-f1">
+                    <a href="javascript:void(0);" class="selCarEvent" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <p class="ut-s">日产</p>
+                    </a>
+                </div>
+                <div class="uf-f1">
+                    <a href="javascript:void(0);" class="selCarEvent" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                        <p class="ut-s">日产</p>
+                    </a>
+                </div>
+
+                <!-- 更多品牌 -->
+                <div class="uf-f1">
+                    <a id="more" href="javascript:void(0);">
+                        <div class="brand-img"></div>
+                        <p>更多</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 预算选择区 -->
+            <div class="budget-box">
+                <div class="uf">
+                    <span>首付</span>
+                    <a class="first" href="/@city.CitySpell/budget?dMin=0&dMax=0&source=941">0首付</a>
+                    <a class="uf-f1" href="/@city.CitySpell/budget?dMin=0&dMax=3&source=941">3万以下</a>
+                    <a class="uf-f1" href="/@city.CitySpell/budget?dMin=3&dMax=5&source=941">3-5万</a>
+                    <a class="uf-f1" href="/@city.CitySpell/budget?dMin=5&dMax=8&source=941">5-8万</a>
+                </div>
+                <div class="uf">
+                    <span>月供</span>
+                    <a class="first" href="/@city.CitySpell/budget?mMin=0&mMax=1000&source=941">1千以下</a>
+                    <a class="uf-f1" href="/@city.CitySpell/budget?mMin=1000&mMax=3000&source=941">1-3千</a>
+                    <a class="uf-f1" href="/@city.CitySpell/budget?mMin=3000&mMax=5000&source=941">3-5千</a>
+                    <a class="uf-f1" href="/@city.CitySpell/budget?mMin=5000&mMax=8000&source=941">5-8千</a>
+                </div>
+                <div class="uf">
+                    <span>车价</span>
+                    <a class="first" href="/@city.CitySpell/budget?cMin=0&cMax=3&source=941">3万以下</a>
+                    <a class="uf-f1" href="/@city.CitySpell/budget?cMin=3&cMax=5&source=941">3-5万</a>
+                    <a class="uf-f1" href="/@city.CitySpell/budget?cMin=5&cMax=8&source=941">5-8万</a>
+                    <a class="uf-f1" href="/@city.CitySpell/budget?cMin=8&cMax=10&source=941">8-10万</a>
+                </div>
+                <div class="uf">
+                    <span>级别</span>
+                    <a class="first" href="/@city.CitySpell/budget?sl=338&source=941">小型车</a>
+                    <a class="uf-f1" href="/@city.CitySpell/budget?sl=339&source=941">紧凑型车</a>
+                    <a class="uf-f1" href="/@city.CitySpell/budget?sl=424&source=941">SUV</a>
+                    <a class="uf-f1" href="/@city.CitySpell/budget?sl=340&source=941">中型车</a>
+                </div>
+            </div>
+
+            <!-- 更多筛选 -->
+            <div class="more-select font-size-30">
+                <a href="/home/budget?source=690">更多筛选<i></i></a>
+            </div>
+
+            <!-- 小鑫帮你贷入口 -->
+            <!--<div class="yixin-help">
+                <a href="http://sq.m.daikuan.com/secretary/index?Source=689"></a>
+            </div>-->
+            <!-- 五大服务 -->
+            <!--<div class="service-entry uf">
+                <a href="http://ershouche.m.daikuan.com?source=703" class="uf-f1">
+                    <div class="index-icon ershouche"></div>
+                    <p>二手车贷款</p>
+                </a>
+                <a href="http://m.daikuan.com/Lease/beijing?source=906" class="uf-f1">
+                    <div class="index-icon suixinzu"></div>
+                    <p>随心租</p>
+                </a>
+                <a href="http://chedidai.m.daikuan.com/mortgage/?source=704" class="uf-f1">
+                    <div class="index-icon chedidai"></div>
+                    <p>车抵贷</p>
+                </a>
+                <a href="http://baoxian.m.daikuan.com?source=693" class="uf-f1">
+                    <div class="index-icon baoxian"></div>
+                    <p>汽车保险</p>
+                </a>
+                <a href="http://shop.m.daikuan.com?source=691" class="uf-f1">
+                    <div class="index-icon qijiandian"></div>
+                    <p>品牌旗舰店</p>
+                </a>
+            </div>-->
+        </section>
+        <!--随心租 车抵贷 汽车保险 品牌旗舰店 服务入口-->
+        <section class="service_four">
+            <ul class="service_ul clearfix">
+                <li><a href=""><p>车抵贷</p></a></li>
+                <li><a href=""><p>汽车保险</p></a></li>
+                <li><a href=""><p>旗舰店</p></a></li>
+                <li><a href=""><p>易鑫体验店</p></a></li>
+                <li><a href=""><p>领券中心</p></a></li>
+            </ul>
+        </section>
+        <!------------>
+        <section class="apply-block">
+            <!-- 平台介绍 -->
+            <div class="introduction uf">
+                <div class="intro-img"></div>
+                <div class="uf-f1 intro-swiper-box uf">
+                    {{!-- <div class="intro-spot"></div> --}}
+                    <div id="introSwiper" class="uf-f1 intro-swiper">
+                        <div class="swiper-box">
+                            <div class="swiper-container width-percent-100 height-percent-100">
+                                <div class="swiper-wrapper" id="introSlide">
+                                    <a class="swiper-slide swiper-no-swiping" href="?0">
+                                        <div class="ut-s font-size-24">20000+贷款产品，已贷款总额<span class="TotalLoans"></span>亿</div>
+                                    </a>
+                                    <a class="swiper-slide swiper-no-swiping" href="?1">
+                                        <div class="ut-s font-size-24">最快10秒钟在线审批，当日放款</div>
+                                    </a>
+                                    <a class="swiper-slide swiper-no-swiping" href="?2">
+                                        <div class="ut-s font-size-24">0利息0月供，仅凭身份证即可贷款</div>
+                                    </a>
+                                    <a class="swiper-slide swiper-no-swiping" href="?3">
+                                        <div class="ut-s font-size-24">2000+品牌金融机构，提供私人订制方案</div>
+                                    </a>
+                                    <a class="swiper-slide swiper-no-swiping" href="?4">
+                                        <div class="ut-s font-size-24">全国300+城市，10000+专业金融服务顾问</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 最近申请 -->
+            <div class="second-block-line-3">
+                <div class="relative-position">
+                    <!--<div class="second-block-line-3-applyNow vertical-middle">
+                        <span class="font-size-22 font-color-999999 margin-top-20 line-height-percent-100">正在申请</span>
+                        <span id="applyNowPepoleNum" class="font-size-24 text-overflow-ellipsis line-height-percent-100 font-color-000000"></span>
+                    </div>-->
+                    <div class="second-block-line-3-applyHistory">
+                        <div class="relative-position">
+                            <div class="vertical-middle apply-box">
+                                <div class="width-percent-100 height-percent-100 padding-left-20">
+                                    <div class="relative-position">
+                                        <div class="font-size-22 apply-txt">最近申请</div>
+                                        <div class="font-size-24 apply-slide">
+                                            <div class="relative-position">
+                                                <div class="swiper-container width-percent-100 height-percent-100">
+                                                    <div class="swiper-wrapper swiper-no-swiping" id="applyHistoryInfo"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 贷款顾问入口
+        <section class="seven-block width-percent-100 margin-top-20">
+            <div class="swiper-container bg-color-ffffff swiper-container-horizontal">
+                <div class="swiper-wrapper">
+                    <a href="/Adviser?t=636128725785431570" class="swiper-slide swiper-slide-active" style="width: 100%;">
+                        <img class="width-percent-100" style="display: block;" src="http://img1.bitautoimg.com/jinrong/newmweb/css/xinche/Adviser/images/guwenrukou.jpg?v=201610191560">
+                    </a>
+                </div>
+                <div class="swiper-pagination swiper-pagination-bullets" style="display: none;"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span></div>
+            </div>
+        </section>
+         -->
+
+        
+        <!-- 易鑫自营开始 -->
+        <section class="ziying-block margin-top-20 width-percent-100 bg-color-ffffff">
+          <header class="block-header common-title-size border-bottom width-percent-100">
+            <div class="header-title">
+              <span class="ziying-block-title-icon header-title-text header-title-icon"></span>
+              <span class="font-size-30 font-weight-bold font-color-000000 margin-left-10 header-title-text">易鑫自营</span>
+              <a class="more" href="/Home/YxzyList">更多方案</a></div>
+          </header>
+          <div class="uf ziying-top border-bottom">
+            <a href="http://m.daikuan.com/activity/Tiexi?typeName=yxtx&amp;source=894" class="uf-f2 uf border-right">
+              <div class="uf-f1">
+                <div class="font-title">易鑫贴息</div>
+                <label class="ziying-label">数量有限，先到先得</label>
+                <div class="des">1-3年0息起</div>
+            </div>
+              <div class="carImg-box">
+                <img src="http://img1.bitautoimg.com/chedai/fccf9db2-35ba-41f0-bf78-aa13f4b73267.png"></div>
+            </a>
+            <a href="http://m.daikuan.com/home/Yxzy?typeName=dxd&amp;source=894" class="uf-f1 little-box relative-position">
+              <div class="absolute-position-only">
+                <div class="font-title">低息贷</div>
+                <div class="tag-label">首付低至0元</div></div>
+              <div class="relative-position">
+                <img class="vertical-bottom" src="http://img1.bitautoimg.com/chedai/e575da1e-e346-4c5e-b1e3-81ec7178976d.png"></div>
+            </a>
+          </div>
+          <div class="uf ziying-bottom">
+            <a href="http://m.daikuan.com/home/Yxzy?typeName=jsd&amp;source=894" class="uf-f1 little-box border-right box-sizing relative-position">
+              <div class="absolute-position-only padding-left-30">
+                <div class="font-title">极速贷</div>
+                <div class="des">都是贷款，选个快的</div></div>
+              <div class="relative-position">
+                <img class="vertical-bottom horizontal-center" src="http://img1.bitautoimg.com/chedai/819673be-27b8-49ed-a64c-60befd8bb26f.png"></div>
+            </a>
+            <a href="http://m.daikuan.com/home/Yxzy?typeName=yzd&amp;source=894" class="uf-f1 little-box border-right box-sizing relative-position">
+              <div class="absolute-position-only padding-left-30">
+                <div class="font-title">一证贷</div>
+                <div class="tag-label">月供798元, 0利率</div></div>
+              <div class="relative-position">
+                <img class="vertical-bottom horizontal-center" src="http://img1.bitautoimg.com/chedai/b8ec1388-6032-4da1-8786-5bcfd40822dd.png"></div>
+            </a>
+            <a href="http://m.daikuan.com/home/Yxzy?typeName=lzt&amp;source=894" class="uf-f1 little-box border-right box-sizing relative-position">
+              <div class="absolute-position-only padding-left-30">
+                <div class="font-title">两证通</div>
+                <div class="des">一证贷+低首付</div></div>
+              <div class="relative-position">
+                <img class="vertical-bottom horizontal-center" src="http://img1.bitautoimg.com/chedai/a9fa2482-5d97-448b-9848-e17abaffa55d.png"></div>
+            </a>
+          </div>
+        </section>
+        <!-- 易鑫自营结束 -->
+
+
+        <!--本周特惠/推荐金融-->
+        <section class="six-block margin-top-20 width-percent-100 bg-color-ffffff">
+          <header class="block-header common-title-size border-bottom width-percent-100">
+            <div class="header-title">
+              <span class="index-icon six-block-title-icon header-title-text header-title-icon"></span>
+              <span class="font-size-30 font-weight-bold font-color-000000 margin-left-10 header-title-text">本周特惠</span></div>
+          </header>
+          <div class="width-percent-100 relative-position" style="height: 5.333333333333333rem;">
+            <a href="http://m.daikuan.com/beijing/m118206/p77302?source=696" class="six-block-left height-percent-100 padding-top-24 padding-bottom-30 padding-left-30 border-right">
+              <div class="width-percent-100 six-block-left-top">
+                <div class="six-block-left-title">
+                  <span class="index-icon six-block-left-title-icon header-title-icon display-inlineblock display-inline block-algin-middle"></span>
+                  <span class="font-size-30 font-color-000000 font-weight-bold margin-left-10 display-inlineblock display-inlineblock-algin-middle text-overflow-ellipsis">仅身份证</span></div>
+                <div class="margin-top-10">
+                  <span class="red-block-tips font-color-e0a834 font-size-24 text-overflow-ellipsis">月费率低至0.63%</span></div>
+                  <div class="font-color-666666 font-size-24 margin-top-10">月供2813元<del>3845元</del></div></div>
+              <div class="width-percent-100 six-block-left-bottom">
+                <div class="relative-position width-percent-100 height-percent-100">
+                  <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img3.bitautoimg.com/autoalbum/files/20160721/474/1126154745_8.jpg' alt="MISTRA名图汽车贷款" class="vertical-bottom height-percent-100" style="width: 2.8rem;"></div>
+              </div>
+            </a>
+            <div class="six-block-right width-percent-100 height-percent-100">
+              <div class="relative-position">
+                <a href="http://m.daikuan.com/beijing/m112062/p115705?source=696" class="width-percent-50 height-percent-50 padding-left-30 padding-right-30 border-bottom border-right relative-position float-left over-flow-hide">
+                  <div class="six-block-right-top absolute-position-only">
+                    <div class="font-size-26 margin-top-10">雪铁龙C3-XR</div>
+                    <div class="margin-top-10">
+                      <span class="tag-label">日供49元起</span></div>
+                  </div>
+                  <div class="six-block-right-bottom padding-bottom-10 width-percent-100 height-percent-100">
+                    <div class="width-percent-100 height-percent-100 relative-position">
+                      <img class="vertical-middle horizontal-right" alt="雪铁龙C3-XR汽车贷款" src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img3.bitautoimg.com/autoalbum/files/20140919/795/0331227955_8.jpg' style="width: 2rem; height: 1.333333333333333rem;"></div>
+                  </div>
+                </a>
+                <a href="http://m.daikuan.com/beijing/m118397/p120842?source=696" class="width-percent-50 height-percent-50 padding-left-30 padding-right-30 border-bottom border-right relative-position float-left over-flow-hide">
+                  <div class="six-block-right-top absolute-position-only">
+                    <div class="font-size-26 margin-top-10">宝马7系(进口)</div>
+                    <div class="margin-top-10">
+                      <span class="hollow-block-tips font-color-e0a834 font-size-24">日供299元起</span></div>
+                  </div>
+                  <div class="six-block-right-bottom padding-bottom-10 width-percent-100 height-percent-100">
+                    <div class="width-percent-100 height-percent-100 relative-position">
+                      <img class="vertical-middle horizontal-right" alt="宝马7系(进口)汽车贷款" src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img4.bitautoimg.com/autoalbum/files/20160721/116/0436041167_8.jpg' style="width: 2rem; height: 1.333333333333333rem;"></div>
+                  </div>
+                </a>
+                <a href="http://m.daikuan.com/beijing/m112991/p123463?source=696" class="width-percent-50 height-percent-50 padding-left-30 padding-right-30 border-bottom border-right relative-position float-left over-flow-hide">
+                  <div class="six-block-right-top absolute-position-only">
+                    <div class="font-size-26 margin-top-10">陆风X7</div>
+                    <div class="margin-top-10">
+                      <span class="hollow-block-tips font-color-e0a834 font-size-24">最低0利息</span></div>
+                  </div>
+                  <div class="six-block-right-bottom padding-bottom-10 width-percent-100 height-percent-100">
+                    <div class="width-percent-100 height-percent-100 relative-position">
+                      <img class="vertical-middle horizontal-right" alt="陆风X7汽车贷款" src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img3.bitautoimg.com/autoalbum/files/20160725/244/1138462447_8.jpg' style="width: 2rem; height: 1.333333333333333rem;"></div>
+                  </div>
+                </a>
+                <a href="http://m.daikuan.com/beijing/m118094/p88340?source=696" class="width-percent-50 height-percent-50 padding-left-30 padding-right-30 border-bottom border-right relative-position float-left over-flow-hide">
+                  <div class="six-block-right-top absolute-position-only">
+                    <div class="font-size-26 margin-top-10">帕萨特</div>
+                    <div class="margin-top-10">
+                      <span class="hollow-block-tips font-color-e0a834 font-size-24">月费率0.42%</span></div>
+                  </div>
+                  <div class="six-block-right-bottom padding-bottom-10 width-percent-100 height-percent-100">
+                    <div class="width-percent-100 height-percent-100 relative-position">
+                      <img class="vertical-middle horizontal-right" alt="帕萨特汽车贷款" src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/autoalbum/files/20160721/625/1130416258_8.jpg' style="width: 2rem; height: 1.333333333333333rem;"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--本周特惠/推荐金融 new 20170613 liuhaiwei start-->
+        <div class="week-preferential">
+            <h6 class="week-header"><i class="week-icon"></i><span class="tit">本周特惠</span></h6>
+            <div class="week-conter">
+                <div class="week-left">
+                    <a href="">
+                        <div class="info">
+                            <div class="tit">极速审批 费率折扣</div>
+                            <span class="red-tag">月费率低至0.63%</span>
+                            <div class="tag">月供1802元<del>3845元</del></div>
+                        </div>
+                        <div class="img-box"><img alt="陆风X5汽车贷款" src="http://img1.bitautoimg.com/autoalbum/files/20160328/459/0324224593_8.jpg" data-echo="http://img1.bitautoimg.com/autoalbum/files/20160328/459/0324224593_8.jpg" ></div>
+                    </a></div>
+                <ul class="week-right">
+                    <li class="itmes">
+                        <a href="">
+                            <div class="info">
+                                <div class="tit">雪铁龙C3-XR</div>
+                                <div class="tag-box"><span class="tag">日供49元起</span></div>
+                            </div>
+                            <div class="img-box"><img alt="陆风X5汽车贷款" src="http://img1.bitautoimg.com/autoalbum/files/20160328/459/0324224593_8.jpg" data-echo="http://img1.bitautoimg.com/autoalbum/files/20160328/459/0324224593_8.jpg" ></div>
+                        </a>
+                    </li>
+                    <li class="itmes">
+                        <div class="info">
+                            <div class="tit">雪铁龙C3-XR</div>
+                            <div class="tag-box"><span>日供49元起</span></div>
+                        </div>
+                        <div class="img-box"><img alt="陆风X5汽车贷款" src="http://img1.bitautoimg.com/autoalbum/files/20160328/459/0324224593_8.jpg" data-echo="http://img1.bitautoimg.com/autoalbum/files/20160328/459/0324224593_8.jpg" ></div>
+                    </li>
+                    <li class="itmes">
+                        <div class="info">
+                            <div class="tit">雪铁龙C3-XR</div>
+                            <div class="tag-box"><span>日供49元起</span></div>
+                        </div>
+                        <div class="img-box"><img alt="陆风X5汽车贷款" src="http://img1.bitautoimg.com/autoalbum/files/20160328/459/0324224593_8.jpg" data-echo="http://img1.bitautoimg.com/autoalbum/files/20160328/459/0324224593_8.jpg" ></div>
+                    </li>
+                    <li class="itmes">
+                        <div class="info">
+                            <div class="tit">雪铁龙C3-XR</div>
+                            <div class="tag-box"><span>日供49元起</span></div>
+                        </div>
+                        <div class="img-box"><img alt="陆风X5汽车贷款" src="http://img1.bitautoimg.com/autoalbum/files/20160328/459/0324224593_8.jpg" data-echo="http://img1.bitautoimg.com/autoalbum/files/20160328/459/0324224593_8.jpg" ></div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!--本周特惠/推荐金融 new 20170613 liuhaiwei end-->
+        <!--中通1-->
+        <section class="twelve-block width-percent-100 margin-top-20">
+            <div class="swiper-container bg-color-ffffff">
+                <div class="swiper-wrapper">
+            <!--<a href="http://xinyongka.m.daikuan.com/ " class="swiper-slide" style="width: 4.986666666666667rem; height: 2.666666666666667rem;">-->
+                <!--<img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/888238a2-6575-417f-a4af-1f59306c0298.jpg' class="width-percent-100">-->
+            <!--</a>-->
+            <a href="http://m.daikuan.com/BuycarCalculator" class="swiper-slide" style="width: 10rem; height: 2.666666666666667rem;">
+                <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/f569c3dd-09a1-4159-94fb-e1306084e30a.jpg' class="width-percent-100"  style="width: 10rem; height: 2.666666666666667rem;">
+            </a>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+
+
+        <!--限时抢购-->
+        <section class="five-block margin-top-20 width-percent-100 bg-color-ffffff">
+            <header class="block-header common-title-size border-bottom width-percent-100">
+                <div class="header-title">
+                    <span class="index-icon five-block-title-icon header-title-text header-title-icon"></span>
+                    <span class="font-size-30 font-weight-bold font-color-000000 margin-left-10 header-title-text">限时抢购</span>
+                </div>
+            </header>
+            <div class="five-block-timeLimit-ul padding-left-30 padding-top-20 padding-bottom-20">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <a href="http://m.daikuan.com/beijing/m105695/p118243?source=695" class="five-block-timeLimit-ul-li swiper-slide">
+                            <div class="font-size-20 five-block-timeLimit-ul-li-time">
+                                68天0时37分
+                            </div>
+                            <div>
+                                <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/autoalbum/files/20160721/956/1046399567_8.jpg' alt="宝马5系(进口)汽车贷款" style="width: 2rem; height: 1.333333333333333rem;">
+                            </div>
+                            <div>
+                                <span class="font-size-28 line-height-percent-100 text-overflow-ellipsis">宝马5系(进口)</span>
+                            </div>
+                            <div class="width-percent-100 text-align-center">
+                                <div class="five-block-timeLimit-ul-li-tips font-size-22 ut-s"
+                                     style="margin: 0 auto">月利率0.32%起</div>
+                                </div>
+                                <div class="five-block-timeLimit-ul-li-price line-height-percent-100 ut-s">
+                                    <span class="font-size-24">6223元</span><span class="font-size-24">×36期</span>
+                                </div>
+                        </a>
+                        <a href="http://m.daikuan.com/beijing/m105695/p118243?source=695" class="five-block-timeLimit-ul-li height-percent-100 margin-right-20 swiper-slide">
+                            <div class="font-size-20 five-block-timeLimit-ul-li-time">
+                                68天0时37分
+                            </div>
+                            <div>
+                                <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/autoalbum/files/20160721/956/1046399567_8.jpg' alt="宝马5系(进口)汽车贷款" style="width: 2rem; height: 1.333333333333333rem;">
+                            </div>
+                            <div>
+                                <span class="font-size-28 line-height-percent-100 text-overflow-ellipsis">宝马5系(进口)</span>
+                            </div>
+                            <div class="width-percent-100 text-align-center">
+                                <div class="five-block-timeLimit-ul-li-tips font-size-22 text-overflow-ellipsis"
+                                     style="margin: 0 auto">月利率0.32%起</div>
+                                </div>
+                                <div class="five-block-timeLimit-ul-li-price line-height-percent-100 text-overflow-ellipsis font-size-24">
+                                    <span>6223元×36期</span>
+                                </div>
+                        </a>
+                        <a href="http://m.daikuan.com/beijing/m105695/p118243?source=695" class="five-block-timeLimit-ul-li height-percent-100 margin-right-20 swiper-slide">
+                            <div class="font-size-20 five-block-timeLimit-ul-li-time">
+                                68天0时37分
+                            </div>
+                            <div>
+                                <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/autoalbum/files/20160721/956/1046399567_8.jpg' alt="宝马5系(进口)汽车贷款" style="width: 2rem; height: 1.333333333333333rem;">
+                            </div>
+                            <div>
+                                <span class="font-size-28 line-height-percent-100 text-overflow-ellipsis">宝马5系(进口)</span>
+                            </div>
+                            <div class="width-percent-100 text-align-center">
+                                <div class="five-block-timeLimit-ul-li-tips font-size-22 text-overflow-ellipsis"
+                                     style="margin: 0 auto">月利率0.32%起</div>
+                                </div>
+                                <div class="five-block-timeLimit-ul-li-price line-height-percent-100 text-overflow-ellipsis font-size-24">
+                                    <span>6223元×36期</span>
+                                </div>
+                        </a>
+                        <a href="http://m.daikuan.com/beijing/m105695/p118243?source=695" class="five-block-timeLimit-ul-li height-percent-100 margin-right-20 swiper-slide">
+                            <div class="font-size-20 five-block-timeLimit-ul-li-time">
+                                68天0时37分
+                            </div>
+                            <div>
+                                <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/autoalbum/files/20160721/956/1046399567_8.jpg' alt="宝马5系(进口)汽车贷款" style="width: 2rem; height: 1.333333333333333rem;">
+                            </div>
+                            <div>
+                                <span class="font-size-28 line-height-percent-100 text-overflow-ellipsis">宝马5系(进口)</span>
+                            </div>
+                            <div class="width-percent-100 text-align-center">
+                                <div class="five-block-timeLimit-ul-li-tips font-size-22 text-overflow-ellipsis"
+                                     style="margin: 0 auto">月利率0.32%起</div>
+                                </div>
+                                <div class="five-block-timeLimit-ul-li-price line-height-percent-100 text-overflow-ellipsis font-size-24">
+                                    <span>6223元×36期</span>
+                                </div>
+                        </a>
+                        <a href="http://m.daikuan.com/beijing/m105695/p118243?source=695" class="five-block-timeLimit-ul-li height-percent-100 margin-right-20 swiper-slide">
+                            <div class="font-size-20 five-block-timeLimit-ul-li-time">
+                                68天0时37分
+                            </div>
+                            <div>
+                                <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/autoalbum/files/20160721/956/1046399567_8.jpg' alt="宝马5系(进口)汽车贷款" style="width: 2rem; height: 1.333333333333333rem;">
+                            </div>
+                            <div>
+                                <span class="font-size-28 line-height-percent-100 text-overflow-ellipsis">宝马5系(进口)</span>
+                            </div>
+                            <div class="width-percent-100 text-align-center">
+                                <div class="five-block-timeLimit-ul-li-tips font-size-22 text-overflow-ellipsis"
+                                     style="margin: 0 auto">月利率0.32%起</div>
+                                </div>
+                                <div class="five-block-timeLimit-ul-li-price line-height-percent-100 text-overflow-ellipsis font-size-24">
+                                    <span>6223元×36期</span>
+                                </div>
+                        </a>
+                        <a href="http://m.daikuan.com/beijing/m105695/p118243?source=695" class="five-block-timeLimit-ul-li height-percent-100 margin-right-20 swiper-slide">
+                            <div class="font-size-20 five-block-timeLimit-ul-li-time">
+                                68天0时37分
+                            </div>
+                            <div>
+                                <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/autoalbum/files/20160721/956/1046399567_8.jpg' alt="宝马5系(进口)汽车贷款" style="width: 2rem; height: 1.333333333333333rem;">
+                            </div>
+                            <div>
+                                <span class="font-size-28 line-height-percent-100 text-overflow-ellipsis">宝马5系(进口)</span>
+                            </div>
+                            <div class="width-percent-100 text-align-center">
+                                <div class="five-block-timeLimit-ul-li-tips font-size-22 text-overflow-ellipsis"
+                                     style="margin: 0 auto">月利率0.32%起</div>
+                                </div>
+                                <div class="five-block-timeLimit-ul-li-price line-height-percent-100 text-overflow-ellipsis font-size-24">
+                                    <span>6223元×36期</span>
+                                </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!--先开后买/管家分期-->
+        <section class="eight-block margin-top-20 width-percent-100 bg-color-ffffff">
+          <header class="block-header common-title-size border-bottom width-percent-100">
+            <div class="header-title">
+              <span class="index-icon eight-block-title-icon header-title-text header-title-icon"></span>
+              <span class="font-size-30 font-weight-bold font-color-000000 margin-left-10 header-title-text">先开后买</span></div>
+            <div class="header-more">
+              <div class="display-as-tablecell display-tablecell-middle">
+                <a href='http://h5.daikuan.com/ProductLease/index?source=697'>
+                  <span class="display-inlineblock display-inlineblock-algin-middle">更多车型</span>
+                  <span class="index-icon header-more-arrow margin-left-10"></span>
+                </a>
+              </div>
+            </div>
+          </header>
+          <div class="width-percent-100 relative-position line-height-percent-100" style="height: 5.333333333333333rem;">
+            <a href='http://h5.daikuan.com/ProductLease/Details?carId=109958&amp;ProductId=108930&amp;ApplyCount=2837&amp;cityId=201&amp;source=697' class="eight-block-left height-percent-100 padding-top-24 padding-left-30 padding-bottom-30 border-right">
+              <div class="width-percent-100 eight-block-left-top padding-right-30">
+                <div class="width-percent-100 height-percent-100">
+                  <div class="font-size-30 font-color-000000 width-percent-100 font-weight-bold text-overflow-ellipsis">贷款购车新玩法</div>
+                  <div class="font-size-30 font-color-666666 width-percent-100 margin-top-18 text-overflow-ellipsis">日租1元贷他回家</div>
+                  <div class="margin-top-20 width-percent-100">
+                    <span class="solid-block-tips font-color-ffffff font-size-24 text-overflow-ellipsis">数量有限</span></div>
+                </div>
+              </div>
+              <div class="width-percent-100 height-percent-100 eight-block-left-bottom">
+                <div class="relative-position over-flow-hide">
+                  <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/92dc7d9f-d7bd-48e7-9562-8bf87e63a3ce.png' class="vertical-middle" style="width: 2.8rem; height: 1.866666666666667rem;"></div>
+              </div>
+            </a>
+            <div class="eight-block-right">
+              <div class="relative-position">
+                <!--右上方-->
+                <a href='http://h5.daikuan.com/ProductLease/Details?carId=120140&amp;productId=124539&amp;CarLeftCount=1&amp;ApplyCount=1009&amp;cityId=201&amp;source=697' class="eight-block-right-top border-bottom padding-left-30 padding-right-30 padding-bottom-30 over-flow-hide">
+                  <div class="width-percent-50 height-percent-100 float-left">
+                    <div class="font-size-28 font-color-000000 margin-top-30 text-overflow-ellipsis">起亚K3</div>
+                    <div class="font-size-24 font-color-e0a834 margin-top-10 text-overflow-ellipsis">月供34元</div></div>
+                  <div class="width-percent-50 height-percent-100 float-left relative-position-only">
+                    <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img2.bitautoimg.com/autoalbum/files/20160802/915/0332079157_8.jpg' alt="起亚K3汽车贷款" class="horizontal-right vertical-bottom" style="width: 2.4rem; height: 1.6rem;"></div>
+                  <div class="clear"></div>
+                </a>
+                <div class="eight-block-right-bottom width-percent-100 height-percent-100 over-flow-hide">
+                  <div class="width-percent-100 height-percent-100">
+                    <a href='http://h5.daikuan.com/ProductLease/Details?carId=115806&amp;ProductId=124891&amp;CarLeftCount=1&amp;ApplyCount=1099&amp;cityId=201&amp;source=697' class="display-inlineblock float-left width-percent-50 padding-left-30 padding-right-30 padding-bottom-30 height-percent-100 border-right relative-position-only">
+                      <div class="absolute-position-only">
+                        <div class="font-size-28 font-color-000000 margin-top-30 text-overflow-ellipsis">捷达</div>
+                        <div class="font-size-24 font-color-e0a834 margin-top-10 text-overflow-ellipsis">月供1931元</div></div>
+                      <div class="relative-position">
+                        <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img4.bitautoimg.com/autoalbum/files/20160721/358/1054373580_8.jpg' alt="捷达汽车贷款" class="absolute-position-only vertical-bottom" style="width: 2rem; height: 1.333333333333333rem;"></div>
+                    </a>
+                    <a href='http://h5.daikuan.com/ProductLease/Details?productid=124850&amp;carid=113113&amp;cityId=201&amp;source=697' class="display-inlineblock float-left width-percent-50 padding-left-30 padding-right-30 padding-bottom-30 height-percent-100 border-right relative-position-only">
+                      <div class="absolute-position-only">
+                        <div class="font-size-28 font-color-000000 margin-top-30 text-overflow-ellipsis">标致3008</div>
+                        <div class="font-size-24 font-color-e0a834 margin-top-10 text-overflow-ellipsis">月供34元</div></div>
+                      <div class="relative-position">
+                        <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img4.bitautoimg.com/autoalbum/files/20160830/381/0509463818_8.jpg' alt="标致3008汽车贷款" class="absolute-position-only vertical-bottom" style="width: 2rem; height: 1.333333333333333rem;"></div>
+                    </a>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 手机号通道开始 -->
+        <section id="userTel" class="tel-channel"></section>
+        <!-- 手机号通道结束 -->
+
+        <!--好车嘉年华/热门车型-->
+        <section class="nine-block margin-top-20 width-percent-100 bg-color-ffffff">
+          <header class="block-header common-title-size border-bottom width-percent-100">
+            <div class="header-title">
+              <span class="index-icon nine-block-title-icon header-title-text header-title-icon"></span>
+              <span class="font-size-30 font-weight-bold font-color-000000 margin-left-10 header-title-text">好车嘉年华</span></div>
+            <div id="hcjnh_moreCar" class="header-more">
+              <div class="display-as-tablecell display-tablecell-middle">
+                <span class="display-inlineblock display-inlineblock-algin-middle">更多车型</span>
+                <span class="index-icon header-more-arrow margin-left-10"></span>
+              </div>
+            </div>
+          </header>
+          <div class="nine-block-top width-percent-100 border-bottom">
+            <a href='http://m.daikuan.com/beijing/maiteng?source=698' class="border-right padding-left-30 width-percent-33 height-percent-100 float-left">
+              <div class="relative-position">
+                <div class="absolute-position-only width-percent-100">
+                  <div class="margin-top-30 text-overflow-ellipsis min-height-icon">
+                    <span class="font-size-28 font-color-000000 text-overflow-ellipsis display-inlineblock display-inlineblock-algin-middle">迈腾</span>
+                    <span class="hollow-block-tips margin-left-10 font-size-24 display-inlineblock display-inlineblock-algin-middle">热门</span></div>
+                  <div class="font-size-24 font-color-9a9a9a margin-top-24-2">月供低至3630元起</div></div>
+                <div class="relative-position">
+                  <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img4.bitautoimg.com/autoalbum/files/20160719/926/0958049263_8.jpg' alt="迈腾汽车贷款" class="vertical-bottom horizontal-center" style="width: 2rem; height: 1.333333333333333rem;"></div>
+              </div>
+            </a>
+            <a href='http://m.daikuan.com/beijing/408sanxiang?source=698' class="border-right padding-left-30 width-percent-33 height-percent-100 float-left">
+              <div class="relative-position">
+                <div class="absolute-position-only width-percent-100">
+                  <div class="margin-top-30 text-overflow-ellipsis min-height-icon">
+                    <span class="font-size-28 font-color-000000 text-overflow-ellipsis display-inlineblock display-inlineblock-algin-middle">标致408</span></div>
+                  <div class="font-size-24 font-color-9a9a9a margin-top-24-2">0首付</div></div>
+                <div class="relative-position">
+                  <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/autoalbum/files/20140829/211/1031452113_8.jpg' alt="标致408汽车贷款" class="vertical-bottom horizontal-center" style="width: 2rem; height: 1.333333333333333rem;"></div>
+              </div>
+            </a>
+            <a href='http://m.daikuan.com/beijing/miniwumenxianbei?source=698' class="border-right padding-left-30 width-percent-33 height-percent-100 float-left">
+              <div class="relative-position">
+                <div class="absolute-position-only width-percent-100">
+                  <div class="margin-top-30 text-overflow-ellipsis min-height-icon">
+                    <span class="font-size-28 font-color-000000 text-overflow-ellipsis display-inlineblock display-inlineblock-algin-middle">MINI 5-DOOR</span></div>
+                  <div class="font-size-24 font-color-9a9a9a margin-top-24-2">百元日供</div></div>
+                <div class="relative-position">
+                  <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img2.bitautoimg.com/autoalbum/files/20141117/624/0351166242_8.jpg' alt="MINI 5-DOOR汽车贷款" class="vertical-bottom horizontal-center" style="width: 2rem; height: 1.333333333333333rem;"></div>
+              </div>
+            </a>
+          </div>
+          <div class="nine-block-bottom width-percent-100">
+            <a href='http://m.daikuan.com/beijing/baojun560?source=698' class="float-left display-inlineblock width-percent-50 height-percent-100 padding-left-30 padding-right-30 padding-bottom-30 padding-top-30 border-right">
+              <div class="relative-position">
+                <div class="height-percent-100 absolute-position-only" style="z-index: 20">
+                  <div class="text-overflow-ellipsis width-percent-100 min-height-icon">
+                    <span class="font-size-28 font-color-000000 display-inlineblock display-inlineblock-algin-middle">宝骏560</span>
+                    <span class="hollow-block-tips margin-left-10 font-size-24 display-inlineblock display-inlineblock-algin-middle">推荐</span></div>
+                  <div class="font-size-24 font-color-9a9a9a margin-top-24-2 text-overflow-ellipsis width-percent-100">首付0元起</div></div>
+                <div class="relative-position">
+                  <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img4.bitautoimg.com/autoalbum/files/20160725/584/1059495840_8.jpg' alt="宝骏560汽车贷款" class="vertical-middle horizontal-right" style="width: 2rem; height: 1.333333333333333rem;"></div>
+              </div>
+            </a>
+            <div class="class"></div>
+            <a href='http://m.daikuan.com/beijing/aodiq5-2855?source=698' class="float-left display-inlineblock width-percent-50 height-percent-100 padding-left-30 padding-right-30 padding-bottom-30 padding-top-30 border-right">
+              <div class="relative-position">
+                <div class="height-percent-100 absolute-position-only" style="z-index: 20">
+                  <div class="text-overflow-ellipsis width-percent-100 min-height-icon">
+                    <span class="font-size-28 font-color-000000 display-inlineblock display-inlineblock-algin-middle">奥迪Q5</span></div>
+                  <div class="font-size-24 font-color-9a9a9a margin-top-24-2 text-overflow-ellipsis width-percent-100">超低首付</div></div>
+                <div class="relative-position">
+                  <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/autoalbum/files/20120306/010/0930530106_8.jpg' alt="奥迪Q5汽车贷款" class="vertical-middle horizontal-right" style="width: 2rem; height: 1.333333333333333rem;"></div>
+              </div>
+            </a>
+            <div class="class"></div>
+          </div>
+        </section>
+        <!--官方旗舰店 品牌直营-->
+        <section class="ten-block margin-top-20 width-percent-100 bg-color-ffffff">
+          <header class="block-header common-title-size border-bottom width-percent-100">
+            <div class="header-title">
+              <span class="index-icon ten-block-title-icon header-title-text header-title-icon"></span>
+              <span class="font-size-30 font-weight-bold font-color-000000 margin-left-10 header-title-text">官方旗舰 品牌直营</span></div>
+            <div class="header-more">
+              <div class="display-as-tablecell display-tablecell-middle">
+                <a href='http://shop.m.daikuan.com?source=699'>
+                  <span class="display-inlineblock display-inlineblock-algin-middle">全部</span>
+                  <span class="index-icon header-more-arrow margin-left-10"></span>
+                </a>
+              </div>
+            </div>
+          </header>
+          <div class="ten-block-scroll padding-top-20 padding-bottom-20 padding-left-30 width-percent-100">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <a href='http://shop.m.daikuan.com/ptzy?source=699' class="swiper-slide margin-right-10 ten-block-scroll-brand">
+                  <div class="ten-block-scroll-brand">
+                    <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/0742a03f-5c56-448a-8cf6-46f1a895fb40.png' class="width-percent-100 ten-block-scroll-brand-bgimg">
+                    <div class="ten-block-scroll-brand-text-container text-overflow-ellipsis">
+                      <div class="ten-block-scroll-brand-text">
+                        <p class="font-size-30">易鑫自营</p>
+                        <p class="font-size-24 margin-top-30">仅需身份证 首付两成起</p></div>
+                    </div>
+                  </div>
+                </a>
+                <a href='http://shop.m.daikuan.com/dfrc?source=699' class="swiper-slide margin-right-10 ten-block-scroll-brand">
+                  <div class="ten-block-scroll-brand">
+                    <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/4d023d79-9b10-465f-b8a2-97a0b597a1f0.png' class="width-percent-100 ten-block-scroll-brand-bgimg">
+                    <div class="ten-block-scroll-brand-text-container text-overflow-ellipsis">
+                      <div class="ten-block-scroll-brand-text">
+                        <p class="font-size-30">东风日产</p>
+                        <p class="font-size-24 margin-top-30">东风日产车型 尽享0利率</p></div>
+                    </div>
+                  </div>
+                </a>
+                <a href='http://shop.m.daikuan.com/gmac?source=699' class="swiper-slide margin-right-10 ten-block-scroll-brand">
+                  <div class="ten-block-scroll-brand">
+                    <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/8de84f54-f156-4c31-b068-97ee244623af.png' class="width-percent-100 ten-block-scroll-brand-bgimg">
+                    <div class="ten-block-scroll-brand-text-container text-overflow-ellipsis">
+                      <div class="ten-block-scroll-brand-text">
+                        <p class="font-size-30">上汽通用</p>
+                        <p class="font-size-24 margin-top-30">在线秒批 极速贷款</p></div>
+                    </div>
+                  </div>
+                </a>
+                <a href='http://shop.m.daikuan.com/zxyh?source=699' class="swiper-slide margin-right-10 ten-block-scroll-brand">
+                  <div class="ten-block-scroll-brand">
+                    <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/77c50ae6-9a09-477d-b4d0-cc604bf0502f.png' class="width-percent-100 ten-block-scroll-brand-bgimg">
+                    <div class="ten-block-scroll-brand-text-container text-overflow-ellipsis">
+                      <div class="ten-block-scroll-brand-text">
+                        <p class="font-size-30">中信银行</p>
+                        <p class="font-size-24 margin-top-30">金融官方旗舰店</p></div>
+                    </div>
+                  </div>
+                </a>
+                <a href='http://shop.m.daikuan.com/htxc?source=699' class="swiper-slide margin-right-10 ten-block-scroll-brand">
+                  <div class="ten-block-scroll-brand">
+                    <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/8ad749c3-853b-42b0-880f-fc85d814ef1f.png' class="width-percent-100 ten-block-scroll-brand-bgimg">
+                    <div class="ten-block-scroll-brand-text-container text-overflow-ellipsis">
+                      <div class="ten-block-scroll-brand-text">
+                        <p class="font-size-30">汇通信诚</p>
+                        <p class="font-size-24 margin-top-30">超长期限 月供无压力</p></div>
+                    </div>
+                  </div>
+                </a>
+                <a href='http://shop.m.daikuan.com/yst?source=699' class="swiper-slide margin-right-10 ten-block-scroll-brand">
+                  <div class="ten-block-scroll-brand">
+                    <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/32803a4f-aa93-4c0a-b8b0-241d15c2e6a5.png' class="width-percent-100 ten-block-scroll-brand-bgimg">
+                    <div class="ten-block-scroll-brand-text-container text-overflow-ellipsis">
+                      <div class="ten-block-scroll-brand-text">
+                        <p class="font-size-30">赢时通</p>
+                        <p class="font-size-24 margin-top-30">首付0元起 好车开回家</p></div>
+                    </div>
+                  </div>
+                </a>
+                <a href='http://shop.m.daikuan.com/zajk?source=699' class="swiper-slide margin-right-10 ten-block-scroll-brand">
+                  <div class="ten-block-scroll-brand">
+                    <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/128fcca5-0633-40b3-b39f-dc04aa53963a.png' class="width-percent-100 ten-block-scroll-brand-bgimg">
+                    <div class="ten-block-scroll-brand-text-container text-overflow-ellipsis">
+                      <div class="ten-block-scroll-brand-text">
+                        <p class="font-size-30">中安金控</p>
+                        <p class="font-size-24 margin-top-30">湘鄂徽川渝 5省低利率</p></div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--私人订制-->
+        <section class="eleven-block margin-top-20 width-percent-100 bg-color-ffffff line-height-percent-100">
+          <header class="block-header common-title-size border-bottom width-percent-100">
+            <div class="header-title">
+              <span class="index-icon eleven-block-title-icon header-title-text header-title-icon"></span>
+              <span class="font-size-30 font-weight-bold font-color-000000 margin-left-10 header-title-text">私人订制</span></div>
+          </header>
+          <div class="eleven-block-top width-percent-100 border-bottom">
+            <a href='http://h5.daikuan.com/ExclusiveLoan/Index/3?source=700' class="border-right float-left width-percent-50 height-percent-100 padding-right-30 padding-left-30 padding-top-30 padding-bottom-30 display-inlineblock relative-position-only">
+              <div class="relative-position">
+                <div class="width-percent-100 absolute-position-only" style="z-index: 20">
+                  <div class="font-size-28 font-color-000000">职场鲜肉</div>
+                  <div class="margin-top-20 font-size-24 font-color-9a9a9a">付一半 开一年</div></div>
+                <div class="relative-position">
+                  <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/8d3d4c3e-bbfd-417f-9075-997989e120bf.png' class="horizontal-right vertical-bottom" style="width: 2.4rem; height: 1.6rem;"></div>
+              </div>
+            </a>
+            <a href='http://h5.daikuan.com/ExclusiveLoan/Index/4?source=700' class="border-right float-left width-percent-50 height-percent-100 padding-right-30 padding-left-30 padding-top-30 padding-bottom-30 display-inlineblock relative-position-only">
+              <div class="relative-position">
+                <div class="width-percent-100 absolute-position-only" style="z-index: 20">
+                  <div class="font-size-28 font-color-000000">老板老板娘</div>
+                  <div class="margin-top-20 font-size-24 font-color-9a9a9a">一证贷款 手续简单</div></div>
+                <div class="relative-position">
+                  <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/29aa5cf2-6eea-440e-9624-3816974a4d42.png' class="horizontal-right vertical-bottom" style="width: 2.4rem; height: 1.6rem;"></div>
+              </div>
+            </a>
+            <div class="clear"></div>
+          </div>
+          <div class="eleven-block-bottom width-percent-100">
+            <div class="relative-position">
+              <a href='http://h5.daikuan.com//ExclusiveLoan/Index/5?source=700' class="width-percent-25 height-percent-100 border-right float-left padding-bottom-20 padding-top-20">
+                <div class="relative-position text-overflow-ellipsis">
+                  <div class="absolute-position-only white-space-nowrap horizontal-center" style="z-index: 20">
+                    <div class="font-size-28 font-color-000000">败家男</div>
+                    <div class="margin-top-10 font-size-24 font-color-9a9a9a">换车如换衣</div></div>
+                  <div class="relative-position">
+                    <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/76c38bc3-6fd1-4a31-8baf-ebc4d1ce73ec.png' class="absolute-position-only vertical-bottom horizontal-center" style="width: 2rem; height: 1.333333333333333rem;"></div>
+                </div>
+              </a>
+              <a href='http://h5.daikuan.com/ExclusiveLoan/Index/6?source=700' class="width-percent-25 height-percent-100 border-right float-left padding-bottom-20 padding-top-20">
+                <div class="relative-position text-overflow-ellipsis">
+                  <div class="absolute-position-only white-space-nowrap horizontal-center" style="z-index: 20">
+                    <div class="font-size-28 font-color-000000">有家有口</div>
+                    <div class="margin-top-10 font-size-24 font-color-9a9a9a">有车有生活</div></div>
+                  <div class="relative-position">
+                    <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/2899ff51-7d0d-409b-a911-c5f04143d66e.png' class="absolute-position-only vertical-bottom horizontal-center" style="width: 2rem; height: 1.333333333333333rem;"></div>
+                </div>
+              </a>
+              <a href='http://h5.daikuan.com/ExclusiveLoan/Index/7?source=700' class="width-percent-25 height-percent-100 border-right float-left padding-bottom-20 padding-top-20">
+                <div class="relative-position text-overflow-ellipsis">
+                  <div class="absolute-position-only white-space-nowrap horizontal-center" style="z-index: 20">
+                    <div class="font-size-28 font-color-000000">工农兄弟</div>
+                    <div class="margin-top-10 font-size-24 font-color-9a9a9a">开车奔小康</div></div>
+                  <div class="relative-position">
+                    <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/6028c38b-edcf-452e-9260-954ba06b4fac.png' class="absolute-position-only vertical-bottom horizontal-center" style="width: 2rem; height: 1.333333333333333rem;"></div>
+                </div>
+              </a>
+              <a href='http://h5.daikuan.com/ExclusiveLoan/Index/13?source=700' class="width-percent-25 height-percent-100 border-right float-left padding-bottom-20 padding-top-20">
+                <div class="relative-position text-overflow-ellipsis">
+                  <div class="absolute-position-only white-space-nowrap horizontal-center" style="z-index: 20">
+                    <div class="font-size-28 font-color-000000">剁手女</div>
+                    <div class="margin-top-10 font-size-24 font-color-9a9a9a">超低月供</div></div>
+                  <div class="relative-position">
+                    <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/9302e86e-e157-4c0a-bb52-c9d5ee6b9e79.png' class="absolute-position-only vertical-bottom horizontal-center" style="width: 2rem; height: 1.333333333333333rem;"></div>
+                </div>
+              </a>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </section>
+        <!--身份测量仪-->
+        <section class="twelve-block width-percent-100 margin-top-20">
+          <div class="swiper-container bg-color-ffffff">
+            <div class="swiper-wrapper">
+              <a href="http://m.daikuan.com/worth?source=701" class="swiper-slide" style="width: 4.986666666666667rem; height: 2.666666666666667rem;">
+                <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img3.bitautoimg.com/jinrong/newmweb/images/home/shengjiaceliang.png?v=201610191560' class="height-percent-100"></a>
+              <a href="http://h5.daikuan.com/CreditCardLoan/Create?source=702" class="swiper-slide" style="width: 4.986666666666667rem; height: 2.666666666666667rem;">
+                <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img4.bitautoimg.com/jinrong/newmweb/images/home/xinyongkazhitong.png?v=201610191560' class="height-percent-100"></a>
+            </div>
+          </div>
+        </section>
+        <!-- 宝典 -->
+        <section class="baodian-block margin-top-20 width-percent-100 bg-color-ffffff">
+          <header class="block-header common-title-size border-bottom width-percent-100">
+            <div class="header-title">
+              <span class="baodian-block-title-icon header-title-text header-title-icon"></span>
+              <span class="font-size-30 font-weight-bold font-color-000000 margin-left-10 header-title-text">宝典</span></div>
+            <div class="header-more">
+              <div class="display-as-tablecell display-tablecell-middle">
+                <a href='http://baodian.m.daikuan.com/beijing/Listpage#1'>
+                  <span class="display-inlineblock display-inlineblock-algin-middle">查看更多</span>
+                  <span class="index-icon header-more-arrow margin-left-10"></span>
+                </a>
+              </div>
+            </div>
+          </header>
+          <div class="baodian-block-process white-space-nowrap">
+            <ul class="baodian-block-list">
+              <li>
+                <a href="http://baodian.m.daikuan.com/beijing/20">
+                  <dl>
+                    <dt>
+                      <img src="http://img1.bitautoimg.com/chedai/afbc81e0-982f-4a2f-9dc9-34e28df86b56.jpg" alt="">
+                      <i class="icon-baike"></i>
+                    </dt>
+                    <dd>
+                      <h3>
+                        <span title="新车计算器 | 任性带走宝马全新7系需要多少钱？">新车计算器 | 任性带走宝马全新7系需要多少钱？</span></h3>
+                      <p>2016-08-31</p>
+                    </dd>
+                  </dl>
+                </a>
+              </li>
+              <li>
+                <a href="http://baodian.m.daikuan.com/beijing/47">
+                  <dl>
+                    <dt>
+                      <img src="http://img1.bitautoimg.com/chedai/09ea4783-bd1a-4b42-a47b-b2a0b3ed993d.jpg" alt="">
+                      <i class="icon-discuzz"></i>
+                    </dt>
+                    <dd>
+                      <h3>
+                        <span title="融资租赁贷后玩法|百家论道第18期">融资租赁贷后玩法|百家论道第18期</span></h3>
+                      <p>2016-10-21</p>
+                    </dd>
+                  </dl>
+                </a>
+              </li>
+              <li>
+                <a href="http://baodian.m.daikuan.com/beijing/27">
+                  <dl>
+                    <dt>
+                      <img src="http://img1.bitautoimg.com/chedai/ec1fea3e-b66c-4017-8cec-761e6379a641.jpg" alt="">
+                      <i class="icon-video"></i>
+                      <em class="icon-play"></em>
+                    </dt>
+                    <dd>
+                      <h3>
+                        <span title="“坏人”长啥样？如何躲避坏人？">“坏人”长啥样？如何躲避坏人？</span></h3>
+                      <p>2016-09-01</p>
+                    </dd>
+                  </dl>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 易鑫资讯start -->
+        <section class="yxzixun">
+            <header>
+                <span class="yxzixun-icon"></span>
+                <span class="yxzixun-title">易鑫资讯</span>
+            </header>
+
+            <dl class="body">
+                <dd>
+                    <a href="#">
+                        <div class="title">车贷首付最低20%，你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！</div>
+                        <div class="info"><span class="label red">汽车贷款</span><span class="time">2017-07-14</span></div>
+                    </a>
+                </dd>
+                <dd>
+                    <a href="#">
+                        <div class="title">车贷首付最低20%，你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！</div>
+                        <div class="info"><span class="label blue">二手车贷款</span><span class="time">2017-07-14</span></div>
+                    </a>
+                </dd>
+                <dd>
+                    <a href="#">
+                        <div class="title">车贷首付最低20%，你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！</div>
+                        <div class="info"><span class="label green">车险资讯</span><span class="time">2017-07-14</span></div>
+                    </a>
+                </dd>
+                <dd>
+                    <a href="#">
+                        <div class="title">车贷首付最低20%，你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！</div>
+                        <div class="info"><span class="label gray">其他</span><span class="time">2017-07-14</span></div>
+                    </a>
+                </dd>
+            </dl>
+
+            <a href="#" class="btn">查看更多</a>
+        </section>
+        <!-- 易鑫资讯end -->
+
+        <!--车贷流程-->
+        <section class="thirteen-block margin-top-20 width-percent-100 bg-color-ffffff">
+          <header class="block-header common-title-size border-bottom width-percent-100">
+            <div class="header-title">
+              <span class="index-icon thirteen-block-title-icon header-title-text header-title-icon"></span>
+              <span class="font-size-30 font-weight-bold font-color-000000 margin-left-10 header-title-text">车贷流程</span></div>
+          </header>
+          <div class="thirteen-block-process padding-left-80 padding-right-80 padding-top-30 padding-bottom-30 white-space-nowrap">
+            <div class="width-percent-14-28 height-percent-100 float-left relative-position-only">
+              <div class="relative-position-center">
+                <div class="width-percent-100 display-as-table">
+                  <span class="thirteen-block-process-apply-online display-as-tablecell display-inlineblock-algin-middle"></span>
+                </div>
+                <div class="width-percent-100 margin-top-30">
+                  <span class="font-color-666666 font-size-24 margin-top-30">线上申请</span></div>
+              </div>
+            </div>
+            <div class="float-left width-percent-14-28 height-percent-100 relative-position-only">
+              <div class="relative-position-center">
+                <span class="thirteen-block-process-arrow display-inlineblock"></span>
+              </div>
+            </div>
+            <div class="width-percent-14-28 height-percent-100 float-left relative-position-only">
+              <div class="relative-position-center">
+                <div class="width-percent-100 display-as-table">
+                  <span class="thirteen-block-process-phone-callback display-as-tablecell display-inlineblock-algin-middle"></span>
+                </div>
+                <div class="width-percent-100 margin-top-30">
+                  <span class="font-color-666666 font-size-24 margin-top-30">电话回访</span></div>
+              </div>
+            </div>
+            <div class="float-left width-percent-14-28 height-percent-100 relative-position-only">
+              <div class="relative-position-center">
+                <span class="thirteen-block-process-arrow display-inlineblock"></span>
+              </div>
+            </div>
+            <div class="width-percent-14-28 height-percent-100 float-left relative-position-only">
+              <div class="relative-position-center">
+                <div class="width-percent-100 display-as-table">
+                  <span class="thirteen-block-process-service-home display-as-tablecell display-inlineblock-algin-middle"></span>
+                </div>
+                <div class="width-percent-100 margin-top-30">
+                  <span class="font-color-666666 font-size-24 margin-top-30">上门服务</span></div>
+              </div>
+            </div>
+            <div class="float-left width-percent-14-28 height-percent-100 relative-position-only">
+              <div class="relative-position-center">
+                <span class="thirteen-block-process-arrow display-inlineblock"></span>
+              </div>
+            </div>
+            <div class="width-percent-14-28 height-percent-100 float-left relative-position-only">
+              <div class="relative-position-center">
+                <div class="width-percent-100 display-as-table">
+                  <span class="thirteen-block-process-pick-offline display-as-tablecell display-inlineblock-algin-middle"></span>
+                </div>
+                <div class="width-percent-100 margin-top-30">
+                  <span class="font-color-666666 font-size-24 margin-top-30">线下提车</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--车主晒单start-->
+            <section class="fifteen-block width-percent-100 margin-top-20 bg-color-ffffff" style="display:none;">
+                <header class="block-header common-title-size border-bottom width-percent-100">
+                    <div class="header-title">
+                        <span class="index-icon order-share-title-icon header-title-text header-title-icon"></span>
+                        <span class="font-size-30 font-weight-bold font-color-000000 margin-left-10 header-title-text">车主晒单</span>
+                        <a class="more font-size-24" href="http://baodian.m.daikuan.com/shanghai/Listpage#7">更多</a>
+                    </div>
+                </header>
+                <footer class="swiper-container">
+                    <ul class="swiper-wrapper">
+                            
+                           
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                </footer>
+            </section>
+        <!--车主晒单end-->
+        <!-- 易问答start -->
+        <section class="easyAsk-block margin-top-20 width-percent-100 bg-color-ffffff">
+          <header class="block-header common-title-size border-bottom width-percent-100">
+            <div class="header-title">
+              <span class="index-icon easyAsk-block-title-icon header-title-text header-title-icon"></span>
+              <span class="font-size-30 font-weight-bold font-color-000000 margin-left-10 header-title-text">易问答</span></div>
+          </header>
+          <dl>
+            <dd data-id="7">
+              <div class="easyAsk-box">
+                <a href="/ExpertQuestion/Index?businessLine=550&expertId=1&sortOrder=hot">
+                  <div class="easyAsk-title font-size-30">
+                    <label class="font-size-22">热</label>不想付首付可以么？</div>
+                  <div class="easyAsk-body font-size-26">您空手套白狼啊？</div></a>
+                <div class="easyAsk-footer">
+                  <ul class="uf">
+                    <li class="font-size-24">
+                      <img src="http://img1.bitautoimg.com/chedai/1fea11aa-8108-45fe-ad29-7e76642e3c8c.jpg">
+                      <div class="easyAsk-name">Cathy姐</div></li>
+                    <li class="font-size-24">
+                      <span class="easyAsk-time">3天前</span>
+                      <span class="easyAsk-parise pariseEvent">赞(
+                        <span class="easyAsk-num">1972</span>)</span></li>
+                  </ul>
+                </div>
+              </div>
+            </dd>
+            <dd data-id="42">
+              <div class="easyAsk-box">
+                <a href="/ExpertQuestion/Index?businessLine=551&expertId=2&sortOrder=hot">
+                  <div class="easyAsk-title font-size-30">
+                    <label class="font-size-22">热</label>买二手车最看中什么？</div>
+                  <div class="easyAsk-body font-size-26">性价比高以及商家信誉度，易鑫车贷是易车、腾讯、京东、百度共同投资超过60亿的中国领先互联网汽车金融平台，二手车平台也是拥有良好的车源和信誉度，同时提供多种贷款方案，满足您一站式购车服务。</div></a>
+                <div class="easyAsk-footer">
+                  <ul class="uf">
+                    <li class="font-size-24">
+                      <img src="http://img1.bitautoimg.com/chedai/3356c1ab-9bf6-4a5d-923e-6aa56dac00b9.jpg">
+                      <div class="easyAsk-name">周伯通</div></li>
+                    <li class="font-size-24">
+                      <span class="easyAsk-time">3天前</span>
+                      <span class="easyAsk-parise pariseEvent">赞(
+                        <span class="easyAsk-num">559</span>)</span></li>
+                  </ul>
+                </div>
+              </div>
+            </dd>
+            <dd data-id="29">
+              <div class="easyAsk-box">
+                <a href="/ExpertQuestion/Index?businessLine=552&expertId=3&sortOrder=hot">
+                  <div class="easyAsk-title font-size-30">
+                    <label class="font-size-22">热</label>汽车抵押贷款最长可以多久？</div>
+                  <div class="easyAsk-body font-size-26">易鑫金融平台中的汽车抵押贷款有12、24、36期不等的产品，特殊产品可以做到48期的，也就是4年，还是非常具有竞争力的。</div></a>
+                <div class="easyAsk-footer">
+                  <ul class="uf">
+                    <li class="font-size-24">
+                      <img src="http://img1.bitautoimg.com/chedai/49a2a76e-8902-4709-8995-49b3ee4f4da1.jpg">
+                      <div class="easyAsk-name">COCO</div></li>
+                    <li class="font-size-24">
+                      <span class="easyAsk-time">3天前</span>
+                      <span class="easyAsk-parise pariseEvent">赞(
+                        <span class="easyAsk-num">191</span>)</span></li>
+                  </ul>
+                </div>
+              </div>
+            </dd>
+          </dl>
+        </section>
+        <!-- 易问答end -->
+        <!--底通 焦点图 750*160-->
+        <div class="swiper_bottom_banner">
+            <section class="width-percent-100">
+                <div class="swiper-container bg-color-ffffff">
+                    <div class="swiper-wrapper">
+                        <a href="http://m.daikuan.com/article/index/10" class="swiper-slide">
+                            <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/41f6cffb-a9ed-448d-9f6f-58aae2173cc3.jpg' class="width-percent-100" style="display: block">
+                        </a>
+                        <a href="http://m.daikuan.com/BuycarCalculator" class="swiper-slide">
+                            <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/b4561332-5575-4485-8989-5a670c7a037c.png' class="width-percent-100" style="display: block">
+                        </a>
+                        <a href="http://m.daikuan.com/activity/DQX2M?from=700" class="swiper-slide">
+                            <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/390b4ca2-c1af-414b-9f1f-2e823cac9465.png' class="width-percent-100" style="display: block">
+                        </a>
+                        <a href="http://m.daikuan.com/activity/Tiexi" class="swiper-slide">
+                            <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/4f12541e-ffba-48d4-b8ca-384f56514898.jpg' class="width-percent-100" style="display: block">
+                        </a>
+                        <a href="http://m.daikuan.com/activity/Beixian0xi?from=197  " class="swiper-slide">
+                            <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/93fb3784-0aa4-4938-94c9-d03418c3e85c.png' class="width-percent-100" style="display: block">
+                        </a>
+                        <a href="http://xinyongka.m.daikuan.com/CreditCard/Detail?productId=19" class="swiper-slide">
+                            <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/46dc1f6d-c762-43df-89f8-5cc8ecb52062.png' class="width-percent-100" style="display: block">
+                        </a>
+                        <a href="http://m.daikuan.com/www/hafuh6" class="swiper-slide">
+                            <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/1bccdfd2-e9cd-487c-ba77-ea160ce6d448.png' class="width-percent-100" style="display: block">
+                        </a>
+                        <a href="http://shop.m.daikuan.com/dfrc" class="swiper-slide">
+                            <img src='data:image/gif;base64,R0lGODlhgAKCAIAAAP///wAAACH5BAEHAAEALAAAAACAAoIAAAL/jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8aNkxw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzbAKAAA7' data-echo='http://img1.bitautoimg.com/chedai/06e5bb6b-4937-4bfb-ba24-e3d1b817defd.png' class="width-percent-100" style="display: block">
+                        </a>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+        </div>
+        <!--底通-->
+        <section class="escdk13">
+            <div class="escdk131 font-ctn">腾讯、京东、百度、易车旗下的中国领先互联网汽车金融平台</div>
+                <div class="escdk132">
+                    <div><span>触屏版</span></div>
+                    <div>
+                        <a href="http://www.daikuan.com/?from=newmweb">电脑版</a>
+                    </div>
+                    
+                    <div>
+                        <a href='http://m.daikuan.com/home/about#!/'>关于我们</a>
+                    </div>
+                </div>
+            <div class="escdk133">服务电话：4000-169-169 (9:00-21:00)</div>
+        </section>
+    </article>
+    <section id="locationChangeTips">
+      <div class="locationChangeTips-content">
+          <div class="tipsView">
+              <div class="tipsView-title">系统定位到您在北京，需要切换至北京么？</div>
+              <div class="tipsView-btn">
+                  <div class="tipsView-btn-cancel">取消</div>
+                  <div class="tipsView-btn-sure">确认</div>
+              </div>
+          </div>
+      </div>
+    </section>
+
+
+  </div>
+</div>
+
+<!--整屏蒙层start-->
+  <div id="maskLayer"></div>
+<!--整屏蒙层end-->
+<div class="bottom-to-top">
+    <img src='http://img3.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=201610191560' />
+</div>
+
+<navbar link="/" text="帮您贷款"></navbar>
+<top-promotion link="http://www.daikuan.com" img="http://placehold.it/590x790" cookie="pr_index"></top-promotion>
+<adviser-panel></adviser-panel>
+
+<car-selector v-bind:show-hot-series="true" v-bind:show-all-brand="true" search-placeholder="真正0首付， 为您鑫动" search-default-link="/test" v-on:callback="selectCarCallback" v-bind:show-all-series="true" v-bind:auto-close="false"></car-selector>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

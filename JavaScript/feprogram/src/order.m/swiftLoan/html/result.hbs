@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        //添加订单url
+        var addOderUrl = "/rapidloan/AddOrderInfo";
+        //添加成功后跳转资质页，需要带orderid
+        var QuaUrl = "/rapidloan/Qualification";
+        var channel = "667";  // 渠道，参数键：c
+        var sourceFromRecommend = "507";  // 首页推荐金融产品，参数键：s
+        var xinchesite = "http://chedai.m.yiche.com/";
+        var cityId = '201';
+        var cityName = '北京';
+        var ipLocationInfo={"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":2,"SelectCityName":"北京","LocateResultType":0};
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="yxWrapper">
+    <div class="mbt-page">
+        <section class="res_wrap">
+            <div class="tick_ok"></div>
+            <h2 class="txt_h">恭喜！您的资料已提交</h2>
+            <p class="txt_p">请保持电话畅通，我们会以最快的速度联系到您</p>
+        </section>
+    </div>
+    <div class="footer_n" style="display:block">    
+        <div class="foot-contact">
+            <p>购车热线：<a href="tel:4000169169">4000-169-169</a>&nbsp;(9:00 - 21:00)</p>
+        </div>
+        <div class="foot-copyright">
+            易鑫 © 2016 m.daikuan.com
+        </div>
+    </div>
+    <!--整屏蒙层start-->
+    <div id="maskLayer"></div>
+    <!--整屏蒙层end-->
+</div>
+
+
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

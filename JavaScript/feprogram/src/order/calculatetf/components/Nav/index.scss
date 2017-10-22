@@ -1,0 +1,25 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+.nav{
+	width: 1200px;
+	margin:40px auto;
+	@include clearfix;
+	border-bottom:2px solid #EBEBEB;
+	font-size:16px;
+	height:40px;
+
+	a{
+		float: left;
+		color:#333;
+		width: 150px;
+		text-align: center;
+		line-height: 42px;
+		font-weight: normal;
+	}
+
+	.active a{
+		background:#E9474D;
+		color:#fff;
+		margin-bottom: -2px;
+	}
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div class="" id="yxWrapper">
+    <header class="header-bar">
+        <a></a>
+        <h1 class="font-nav">订单提交成功</h1>
+        <span></span>
+    </header>
+    <section class="result-fail-box">
+        <i class="suc-icon"></i>
+        <h2 class="font-h2">订单提交成功，客服会尽快致电联系您，完成租车！</h2>
+        <a class="font-h2 orders-btn" href="http://i.m.daikuan.com/myorder/orderdetail?childOrderId=271485238870194" id="goOrder">查看订单</a><a class="font-h2" href="http://xinche.m.daikuan.com" id="goHome">返回首页</a>
+    </section>
+    <section class="weixin-box">
+        <div class="weixin-img"><img src="//img3.bitautoimg.com/jinrong/newmweb/images/home/weixin.jpg?v=201701231650"></div>
+        <div class="font-title">
+            关注微信公众号，订单状态随时跟进<br>
+            搜索微信公众号：yxchedai
+        </div>
+    </section>
+    <div class="pm_detail">
+        <section class="pm_bg pm_w">
+            <div class="dkdetail pm_bg">
+                <dl class="size28 uline">
+                    <dd class="uf uf_ac">
+                        <div class="uf_f1">保证金</div>
+                        <div class="dk_r">2万</div>
+                    </dd>
+                    <dd class="uf uf_ac">
+                        <div class="uf_f1">月租*租期</div>
+                        <div class="dk_r">2288元*12期</div>
+                    </dd>
+                    <dd class="uf uf_ac">
+                        <div class="uf_f1">订单编号</div>
+                        <div class="dk_r">271485238870194</div>
+                    </dd>
+                </dl>
+
+            </div>
+        </section>
+    </div>
+</div>
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

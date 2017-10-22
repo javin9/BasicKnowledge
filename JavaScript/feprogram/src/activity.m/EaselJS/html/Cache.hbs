@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>EaselJS Example: Using cache and snapToPixel</title>
+	{{{htmlWebpackPlugin.options.header}}}
+
+	<link href="../_assets/css/shared.css" rel="stylesheet" type="text/css"/>
+	<link href="../_assets/css/examples.css" rel="stylesheet" type="text/css"/>
+	<script src="../_assets/js/examples.js"></script>
+
+	<script src="../lib/easeljs-NEXT.combined.js"></script>
+	<!-- We also provide hosted minified versions of all CreateJS libraries.
+	  http://code.createjs.com -->
+
+	<style>
+		.controls {
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+
+<header class="EaselJS">
+	<h1>Cache as Bitmap Example</h1>
+
+	<p>This example demonstrates the effect of
+		<code>DisplayObject.cache()</code> and <code>snapToPixel</code>
+		on performance. Caching can provide performance benefits for some types
+		of content because the complex vector
+		shapes do not have to be re-rendered each tick. Different browsers have
+		different thresholds for when
+		caching makes sense. The results for snapToPixel vary between browsers,
+		but in general it will have no
+		effect on the un-cached shapes, but a significant effect when cached.
+	</p>
+</header>
+
+<div class="controls">
+	<input type="checkbox"
+		   id="toggleCache"/><label for="toggleCache">cache
+	enabled</label>
+</div>
+<canvas id="testCanvas" width="960" height="350"></canvas>
+<strong>Note:</strong> The performance benefit varies between browsers, based on
+the relative performance of
+vector rendering vs drawing small textures.
+
+<script src="http://192.168.145.9:8011/jinrong/assets/activity.m/anniversary/createjs/easeljs-0.8.2.min.js"></script>
+
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

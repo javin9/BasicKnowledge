@@ -1,0 +1,31 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+$width: 1200px;
+
+html{
+	font-size:100px;
+}
+body{
+	font-size:20px;
+}
+
+body > section, .container{
+  width: $width;
+  margin:0 auto;
+}
+
+header{
+  background-color:#6f5499;
+  color:#fff;
+  padding:60px 0;
+
+  h1{
+    font-size:60px;
+  }
+}
+
+nav{
+	width: $width;
+	margin:40px auto;
+}

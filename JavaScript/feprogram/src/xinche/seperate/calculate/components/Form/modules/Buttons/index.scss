@@ -1,0 +1,37 @@
+@import "sassHelper/mixin";
+@import "../../../../vars";
+
+.Buttons{
+  padding-left: 90px;
+
+  .Buttons-submit{
+    width: 180px;
+    line-height: 50px;
+    display: inline-block;
+    text-align: center;
+    color:#fff;
+    font-size:18px;
+    box-sizing:border-box;
+    margin-right: 20px;
+    background:$main url(cal.png) no-repeat 42px center;
+    text-indent: 18px;
+
+    &.disabled{
+        background-color: #999;
+        background-image: url(cal_disabled.png);
+    }
+  }
+
+  .Buttons-reset{
+    width: 180px;
+    line-height: 48px;
+    display: inline-block;
+    border:1px solid #ddd;
+    text-align: center;
+    color:#666;
+    font-size:18px;
+    box-sizing:border-box;
+    background:#F8F8F8 url(del.png) no-repeat 42px center;
+    text-indent: 18px;
+  }
+}

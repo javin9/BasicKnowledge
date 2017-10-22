@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script>
+        var locationCityId = 201;
+        var xinche='http://www.daikuan.com';
+        var citySpell = 'beijing';
+        var USERCENTERURL='http://i.daikuan.com';
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var RESURL = "http://img1.bitautoimg.com/jinrong/newpcweb/";
+        var CODE_GETTING_URL='/Login/GetCode';
+        var CODE_VALIDATING_URL='/Login/CheckCode';
+        var domainQueue = ["img1.bitautoimg.com","img2.bitautoimg.com","img3.bitautoimg.com","img4.bitautoimg.com"];
+        var BusinessLine = 550;
+        var returnurl = "http://www.daikuan.com/beijing/";
+        // var loadsign = 'login';
+        var loadsign = false;
+        var headerBusiFlag = "1";
+        var headerFunFlag = "0";
+        var isShowCaptcha = true
+        var getSlideVerifyApi = '/base/initialsign'
+        var CheckSign = '/checksign'
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div class="login" style="background: url('http://img4.bitautoimg.com/jinrong/newpcweb/css/gerenzhongxin/images/bg2.jpg?v=2017020819051') no-repeat center top;">
+    <!-- 首页大banner  换图片src即可 -->
+    <!-- 轮播图 -->
+    <article class="content clrfix">
+        <blockquote class="login-form">
+            <div class="form clrfix">
+                <header class="tab-box clrfix">
+                    <aside id="2" class="fl tab cur-p cur">手机快捷登录</aside>
+                    <aside id="1" class="fl tab cur-p">账号密码登录</aside>
+                </header>
+                <article class="login-con">
+                    <blockquote id="form">
+                        <!-- 账号密码登录 -->
+                        <blockquote id="tab1" class="hide">
+                            <div class="pad10B pad30RL">
+                                <div class="input-item clrfix">
+                                    <div class="input-box"><input id="mobile1" name="mobile" type="tel" maxlength="11" class="inputNumber AppCheck nocheck data" placeholder="请输入手机号"/></div>
+                                </div>
+                            </div>
+                            <div class="pad10B pad30RL">
+                                <div class="input-item clrfix">
+                                    <div class="input-box"><input id="password" name="password" type="password" minlength="6" maxlength="20" class="AppCheck nocheck data" placeholder="请输入密码"/></div>
+                                </div>
+                            </div>
+
+                            <div class="clrfix tools-box">
+                                <div class="fl"><input id="rememberMe1" name="rememberMe" class="data" type="checkbox" value="false"> 自动登录</div>
+                            </div>
+                            <div class="jyts-box bor-box font-red"><div><span class="jyts">密码或账号错误!</span></div></div>
+                        </blockquote>
+
+                        <!-- 动态密码登录 -->
+                        <blockquote id="tab2">
+                            <div class="pad10B pad30RL">
+                                <div class="input-item clrfix">
+                                    <div class="input-box"><input id="mobile" name="mobile" type="text" maxlength="11" class="inputNumber AppCheck nocheck data" placeholder="请输入手机号"/></div>
+                                </div>
+                            </div>
+
+                            <div id="ImgValidateCode2Box" class="pad10B pad30RL clrfix hide">
+                                <div class="input-item fl clrfix w-248">
+                                    <div class="input-box">
+                                        <input id="ImgValidateCode2" name="captcha" type="text" maxlength="4" class="inputNumber AppCheck data w-120" placeholder="请输入图片验证码"/>
+                                        <input type="hidden" name="type" value="login">
+                                    </div>
+                                </div>
+                                <div id="GetImgValidateCode2" class="GetImgValidateCode fr"><img src=""></div>
+                                <div id="changeImgValidateCode2" class="fr change">换一张</div>
+                            </div>
+
+                            <div class="pad10B pad30RL clrfix codebox">
+                                <div class="input-item fl clrfix w-180">
+                                    <div class="input-box"><input id="ValidateCode" name="mobileValidateCode" maxlength="4" type="text" class="inputNumber AppCheck data w-120" placeholder="请输入动态密码" /></div>
+                                </div>
+                                <div id="GetValidateCode" class="fr btn code-btn disable">获取动态密码</div>
+                            </div>
+
+                            <div class="clrfix tools-box">
+                                <div class="fl"><input id="rememberMe2" name="rememberMe" class="data" type="checkbox" value="false"> 自动登录</div>
+                            </div>
+                            <div class="jyts-box bor-box font-red"><div><span class="jyts">密码或账号错误!</span></div></div>
+                        </blockquote>
+
+                        <div id="user-btn1" class="btn user-btn hide disable">立即登录</div>
+                        <div id="user-btn2" class="btn user-btn disable">立即登录</div>
+                        <div class="reg-link">
+                            <a class="apart hide" href="/ForgetPwd?returnurl=http%253a%252f%252fwww.daikuan.com%252fbeijing%252f">忘记密码</a><span class="apart hide"> | </span><a href="/Register?returnurl=http%253a%252f%252fwww.daikuan.com%252fbeijing%252f">免费注册</a>
+                        </div>
+                        <dl class="other-login">
+                            <dt>其他方式登录</dt>
+                            <dd>
+                                <a href="/Login/LoginWeiXin?returnurl=http%253a%252f%252fwww.daikuan.com%252fbeijing%252f" class="icon01"></a>
+                                <a href="/Login/LoginSina?returnurl=http%253a%252f%252fwww.daikuan.com%252fbeijing%252f" class="icon02"></a>
+                                <a href="/Login/LoginQQ?returnurl=http%253a%252f%252fwww.daikuan.com%252fbeijing%252f" class="icon03"></a>
+                                <a href="/Login/LoginJD?returnurl=http%253a%252f%252fwww.daikuan.com%252fbeijing%252f" class="icon04"></a>
+                                <a href="/Login/LoginYiChe?returnurl=http%253a%252f%252fwww.daikuan.com%252fbeijing%252f" class="icon05"></a>
+                            </dd>
+                        </dl>
+                    </blockquote>
+                </article>
+            </div>
+        </blockquote>
+    </article>
+    <aside class="banner_btm"></aside>
+
+    <input name="__RequestVerificationToken" type="hidden" value="Vl7i75GZPcFkoiTQOBaT9tVJsn3vAL9LgWgWhlTWnQu9xg7rQo30FG8yEy3BeAAqZT8mezjXHUF6Tem_as_nFsBZksI1" />
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

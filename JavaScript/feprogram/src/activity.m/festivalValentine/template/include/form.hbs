@@ -1,0 +1,33 @@
+<div class="form-wrapper-inner">
+    <ul class="form_modu">
+        
+        {{#if isAuthenticated}}
+        <li class="form_modu_head uf uf_ac">
+            <b>姓名</b><span class="uf_f1"><input name="Name" id="Name" placeholder="请输入姓名" value="{{userName}}" disabled/></span>
+            <span class="authenticated-tip">已实名认证</span>
+        </li>
+        {{else}}
+        <li class="form_modu_head uf uf_ac">
+            <b>姓名</b><span class="uf_f1"><input name="Name" id="Name" placeholder="请输入姓名" /></span>
+        </li>
+        <li id="NameValidata" class="warning">姓名错误</li>
+        {{/if}}
+
+        {{#if isLoggedIn}}
+        {{!-- 修改手机号功能暂时去掉，需要打开则去掉注释 --}}
+        <li class="form_modu_head uf uf_ac {{!-- selcon --}}">
+            <b>手机号</b><span class="uf_f1"><input type="tel" name="Telphone" id="Telphone" placeholder="请输入手机号码" value="{{mobile}}" disabled/></span>{{!-- <a href="javascript:void(0)" class="edit-tel" id="edit-tel-btn">修改</a></span> --}}
+        </li>
+        {{else}}
+        <li class="form_modu_head uf uf_ac">
+            <b>手机号</b><span class="uf_f1"><input type="tel" name="Telphone" id="Telphone" placeholder="请输入手机号码" /></span><a id="getCodeBtn" rel="Telphone">获取验证码</a></span>
+        </li>
+        <li id="TelphoneValidata" class="warning">无效的手机号</li>
+        <li class="form_modu_head uf uf_ac">
+            <b>验证码</b><span class="uf_f1"><input type="tel" name="CheckCode" id="CheckCode" placeholder="请输入验证码"/>
+        </li>
+        <li id="CheckCodeValidata" class="warning">验证码错误</li>
+        {{/if}}
+        
+    </ul>
+</div>

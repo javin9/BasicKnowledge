@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <script type="text/javascript">
+        var carlisturl="http://webapi.daikuan.com/base/car/GetCarSelectorCarList";
+        var detailurl = 'index.html';
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="yxWrapper">
+    <car-selector v-on:callback="selectCarCallback" v-bind:level="3" v-bind:show-search="false" v-bind:interface-car="interfaceCar" v-bind:city-id="cityId" v-bind:auto-init="true" v-bind:auto-close="false"></car-selector>
+
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

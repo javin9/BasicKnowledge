@@ -1,0 +1,937 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+@import '../css/ershouche';
+#app {
+    padding-bottom: px2rem(100);
+}
+
+.icon-bg,
+.product-features-more {
+    background-image: url(../images/detail_icon.png);
+    background-repeat: no-repeat;
+    background-size: -2.8rem 0.54rem;
+    background-size: 4rem auto !important;
+}
+
+.detail_swiper .deal_img {
+    position: absolute;
+    width: 2.266667rem;
+    height: 1.76rem;
+    top: 0.533333rem;
+    left: 0.533333rem;
+    background-image: url(../images/deal_1.png);
+    background-size: 100% 100%
+}
+
+.detail_swiper .height-percent-100 {
+    width: 100%;
+}
+
+.detail_swiper {
+    width: 100%;
+    height: px2rem(360);
+    overflow: hidden
+}
+
+.detail_swiper .swiper-container {
+    width: 100%;
+    height: 100%
+}
+
+.detail_swiper .swiper-container .swiper-slide {
+    -webkit-align-items: flex-start;
+    align-items: flex-start
+}
+
+.detail_swiper .img {
+    width: 100%;
+    height: 100%;
+}
+
+.detail_swiper .swiper-pagination-fraction {
+    opacity: 0.5;
+    position: absolute;
+    width: px2rem(110);
+    height: px2rem(42);
+    line-height: px2rem(42);
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+    left: inherit;
+    right: px2rem(30);
+    bottom: px2rem(30);
+    z-index: 99997;
+    border-radius: px2rem(23);
+    @include fsize(20);
+}
+
+.detail_swiper .pic_loaction {
+    span {
+        display: inline-block;
+        width: px2rem(24);
+        height: px2rem(24);
+        position: relative;
+        top: px2rem(10);
+        background: url(../images/dingwei.png) no-repeat;
+        background-size: 100% 100%;
+        top: px2rem(5);
+        left: px2rem(-5);
+    }
+    opacity: 0.5;
+    position: absolute;
+    height: px2rem(42);
+    line-height: px2rem(42);
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+    left: px2rem(30);
+    bottom:px2rem(30);
+    z-index: 99997;
+    border-radius:px2rem(23);
+    max-width: px2rem(140);
+    padding:0 px2rem(20);
+    @extend .ellipsis;
+    @include fsize(20);
+}
+
+.detail_car_info {
+    background: #fff;
+    padding: px2rem(40) px2rem(30);
+    .car-jinzhengu {
+        padding-top: px2rem(30);
+        &-title {
+            height: px2rem(32);
+            width: px2rem(100);
+            background: #46ADF3;
+            border-radius: px2rem(3);
+            text-align: center;
+            line-height: px2rem(32);
+            @include fsize(22);
+            color: #FFFFFF;
+            display: inline-block;
+        }
+        &-text {
+            @include fsize(24);
+            color: #9C9FA1;
+            padding-left: px2rem(20);
+        }
+    }
+    .car-desc {
+        position: relative;
+        margin-top: px2rem(40);
+        padding-left: px2rem(30);
+        padding-right: px2rem(60);
+        background: rgba(233, 71, 77, 0.05);
+        border: 1px solid #E9474D;
+        border-radius: px2rem(5);
+        height: px2rem(74);
+        line-height: px2rem(74);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        @include fsize(30);
+        color: #E9474D;
+        i {
+            width: px2rem(15);
+            height: px2rem(15);
+            position: absolute;
+            top: 50%;
+            right: px2rem(30);
+            transform: translate(-50%, -50%) rotate(-135deg);
+            border-left: 0.04rem solid #E9474D;
+            ;
+            border-bottom: 0.04rem solid #E9474D;
+        }
+    }
+}
+
+.detail_car_info .car_name {
+    font-weight: bold;
+    @include fsize(36);
+    line-height: px2rem(54);
+    color: #394043;
+}
+
+.detail_car_info .car_info {
+    @extend .ub;
+    padding: px2rem(15) 0 0;
+}
+
+.detail_car_info .fl {
+    @extend .ub-f1;
+}
+
+.detail_car_info .fr {
+    @extend .ub;
+    @extend .ub-pc;
+    @extend .ub-ac;
+    @extend .f22;
+    border: solid 1px #36c3a3;
+    color: #36c3a3;
+    border-radius: px2rem(2);
+    padding: 0 px2rem(4)
+}
+
+.detail_car_info .col_red {
+    font-weight: bold;
+    @include fsize(36);
+    color: #E9474D;
+}
+
+.detail_car_info .col_grey9 {
+    padding-left: px2rem(20);
+    @include fsize(24);
+    color: #9C9FA1;
+}
+
+.jingzhengu {
+    min-height: 2.426667rem;
+    margin-top: px2rem(20);
+    background: #fff
+}
+
+.display-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    position: relative
+}
+
+.flex1 {
+    flex: 1;
+    -webkit-flex: 1;
+    -webkit-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1
+}
+
+.jingzhengu>div {
+    width: 2.133333rem;
+    box-sizing: border-box;
+    padding-left: .4rem;
+    padding-top: .9rem
+}
+
+.jingzhengu>div img {
+    width: 1.44rem;
+    vertical-align: middle
+}
+
+.jingzhengu>ul {
+    font-size: 0;
+    padding-top: .35rem;
+    box-sizing: border-box
+}
+
+.jingzhengu>ul li {
+    padding: .2rem 0
+}
+
+.jingzhengu>ul li span {
+    color: #ddb154
+}
+
+.jingzhengu i {
+    display: inline-block;
+    background: url(../images/sprite_icon.png) no-repeat left top;
+    background-size: .6rem auto !important;
+    vertical-align: middle
+}
+
+.jingzhengu i.diamond-icon {
+    width: .56rem;
+    height: .387rem
+}
+
+.jingzhengu i.money-icon {
+    width: .533rem;
+    height: .554rem;
+    background-position: left -.6rem
+}
+
+.jingzhengu i.histogram-icon {
+    width: .587rem;
+    height: .654rem;
+    background-position: left -1.15rem
+}
+
+.jingzhengu i.arrow-icon {
+    width: .2267rem;
+    height: .4867rem;
+    background-position: left -1.8rem;
+    position: absolute;
+    right: .4rem;
+    top: 50%;
+    margin-top: -.1933rem
+}
+
+#jingzhenguLayer {
+    width: 9rem;
+    position: fixed;
+    height: 12rem;
+    left: 50%;
+    top: 50%;
+    margin-left: -4.5rem;
+    margin-top: -6rem;
+    z-index: 999999;
+    display: none
+}
+
+#jingzhenguLayer iframe {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    margin: 0;
+    padding: .2rem 0
+}
+
+#jingzhenguLayer>div {
+    position: relative;
+    height: 12rem;
+    width: 9rem;
+    background: #fff
+}
+
+#jingzhenguLayer i {
+    display: block;
+    position: absolute;
+    width: 0.67rem;
+    height: 0.44rem;
+    background: url(../images/list9.png) no-repeat left top;
+    background-size: 0.67rem 0.44rem;
+    top: -0.32rem;
+    right: 0.27rem;
+    z-index: 9999
+}
+
+#wrapperIframe {
+    height: 12rem;
+    width: 9rem;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto
+}
+
+.package-wrapper {
+    background: #fff;
+    font-size: 0;
+    margin-top: px2rem(20);
+}
+
+.package-wrapper>div {
+    width: 1.533333rem;
+    box-sizing: border-box;
+    padding: .4rem 0 0 .4rem
+}
+
+.package-wrapper>div img {
+    width: px2rem(74);
+    height: px2rem(74)
+}
+
+.package-wrapper>article>h1 {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: .266667rem;
+    margin-top: .2rem
+}
+
+.package-wrapper>article .label {
+    display: inline-block
+}
+
+.package-wrapper>article {
+    padding-top: .2rem
+}
+
+.package-wrapper>article label {
+    display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0 .1rem;
+    height: .42rem;
+    line-height: .42rem;
+    text-align: center;
+    margin-right: .15rem;
+    border-radius: .04rem;
+    margin-top: .2rem;
+    @extend .f22;
+}
+
+.package-wrapper .subtitle {
+    padding-top: px2rem(20)
+}
+
+.package-wrapper>article .label label:nth-child(1) {
+    color: #5fc3e8;
+    border-color: #5fc3e8
+}
+
+.package-wrapper>article .label label:nth-child(2) {
+    color: #e15436;
+    border-color: #e15436
+}
+
+.product-features {
+    position: relative;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fafafa;
+    padding: 0 .4rem .4rem .4rem;
+    overflow: hidden;
+}
+
+.product-features.nowrap {
+    white-space: nowrap!important;
+}
+
+.product-features>div,
+.product-features-more>div {
+    color: #999;
+    margin-right: .5rem;
+    line-height: .35rem;
+    font-size: 0;
+    color: #333;
+    padding-top: .35rem;
+    display: inline-block
+}
+
+.product-features>div i,
+.product-features-more>div i {
+    width: .4rem;
+    height: .4rem;
+    display: inline-block;
+    position: relative;
+    top: .1rem;
+    margin-right: .1rem;
+    background-position: -.6rem -1.2rem
+}
+
+.product-features-more {
+    background-position: -2.78rem 0.55rem;
+    display: block;
+    height: 1.13rem;
+    width: 0.6rem;
+    position: absolute;
+    right: 0.4rem;
+    top: 0.1rem;
+}
+
+.product-features .more {
+    display: block;
+    height: 1.13rem;
+    width: .6rem;
+    position: absolute;
+    right: 0;
+    bottom: .1rem;
+    background-position: -2.8rem .54rem
+}
+
+.product-features .more span {
+    position: relative
+}
+
+.product-features .more span:after {
+    content: " ";
+    border-right: 1px solid #b2b2b2;
+    border-top: 1px solid #b2b2b2;
+    position: absolute;
+    top: .6rem;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    width: .2rem;
+    height: .2rem;
+    left: .4rem
+}
+
+.package-wrapper-info div {
+    padding: .2rem 0 .3rem 0;
+    white-space: nowrap
+}
+
+.package-wrapper-info div:last-child {
+    text-align: right;
+    padding-right: .4rem;
+    box-sizing: border-box
+}
+
+.discount-wrapper {
+    border-top: 1px solid #eee;
+    padding: .1rem .4rem .3rem 0
+}
+
+.discount-wrapper>div {
+    margin-top: .2rem
+}
+
+.discount-wrapper div.font-24 {
+    padding-right: .4rem
+}
+
+.discount-wrapper>.display-flex>.font-22 {
+    width: .640667rem
+}
+
+.discount-wrapper .label {
+    margin-right: .266667rem;
+    height: .374rem;
+    width: .374rem;
+    position: relative;
+    top: .02rem;
+    display: block
+}
+
+.discount-wrapper .hui-label {
+    background-position: left -1.2rem
+}
+
+.discount-wrapper .li-label {
+    background-position: left top
+}
+
+.discount-wrapper .fu-label {
+    background-position: left -.64rem
+}
+
+/////////////////////////////////////////////
+.price-wrapper {
+    border-top: 1px solid #eee;
+    padding: 0 .4rem;
+    background: #fff
+}
+
+.price-wrapper>ul {
+    padding-top: 1.2rem;
+    line-height: 0.6rem;
+    color: #666
+}
+
+.price-wrapper>ul li {
+    padding-left: 1.28rem;
+    position: relative
+}
+
+.price-wrapper>ul li i {
+    display: inline-block;
+    width: .188rem;
+    height: .188rem;
+    border-radius: 50%;
+    margin-right: 0.24rem
+}
+
+.price-wrapper>ul li span {
+    color: #000;
+    text-align: right;
+    position: absolute;
+    right: 0
+}
+
+.doughnut-chart>div {
+    width: 2.666667rem;
+    height: 2.666667rem;
+    margin: 0 auto;
+    z-index: 0;
+    position: relative;
+}
+
+.doughnut-chart {
+    width: 3.3rem;
+    text-align: center
+}
+
+.doughnut-chart>h3 {
+    display: block;
+    padding: .4rem 0 .1rem 0
+}
+
+.doughnut-chart>span {
+    display: inline-block;
+    padding: px2rem(30) 0;
+    color: #e15436;
+    margin: 0 auto;
+    position: relative;
+    padding-right: px2rem(26);
+}
+
+.doughnut-chart>span i.icon-bg {
+    display: inline-block;
+    background-position: -.6rem -.653333rem;
+    width: .38rem;
+    height: .46rem;
+    margin-right: 0.1rem;
+    position: relative;
+    top: 0.14rem
+}
+
+.doughnut-chart>span.price-detailed:after {
+    width: px2rem(10);
+    height: px2rem(10);
+    position: absolute;
+    top: 50%;
+    right: px2rem(2);
+    transform: rotate(225deg);
+    border-left: 1px solid #e15436;
+    border-bottom: 1px solid #e15436;
+    content: " ";
+    display: block;
+    margin-top: px2rem(-2)
+}
+
+//滑动首付价格和月供
+.down-payment-wrapper {
+    background: #fff;
+    padding: 0 px2rem(30) px2rem(10);
+    h3 {
+        @extend .f24;
+        padding: px2rem(10) 0 px2rem(30) px2rem(10);
+        .font-red {
+            @extend .col_red;
+            @extend .f24;
+            float: right;
+        }
+    }
+}
+
+//<!--车辆档案-->
+.car-files {
+    margin-top: px2rem(20);
+    background: #fff;
+    overflow: hidden;
+    padding-bottom: px2rem(50);
+    .car-files-title {
+        @include fsize(40);
+        padding: px2rem(50) px2rem(30) 0 px2rem(30);
+        position: relative;
+        font-weight: bold;
+    }
+    .car-files-info {
+        @extend .ub;
+        padding-top: px2rem(50);
+        .car-files-info-fx1 {
+            @extend .ub-f1;
+            width: 100%;
+            border-left: 1px solid #e5e5e5;
+            &>div {
+                text-align: center;
+            }
+            .car-files-info-fx1-up {
+                @include fsize(32);
+                color: #394043;
+                line-height: px2rem(45);
+            }
+            .car-files-info-fx1-dwon {
+                @include fsize(26);
+                color: #9C9FA1;
+                line-height: px2rem(37);
+                padding-top: px2rem(10);
+            }
+        }
+    }
+}
+
+//参数配置
+.car-file-ul {
+    padding: 0 px2rem(30);
+    background: #fff;
+    li {
+        border-top: solid 1px #e5e5e5;
+        span {
+            @include fsize(32);
+            color: #394043;
+            line-height: px2rem(110);
+            display: block;
+            position: relative;
+            i {
+                width: px2rem(56);
+                height: px2rem(60);
+                display: inline-block;
+                vertical-align: middle;
+                margin-top: px2rem(-5);
+                &.set {
+                    background: url("../images/peizhi.png") no-repeat center left;
+                    background-size: px2rem(38) px2rem(38);
+                }
+                &.info {
+                    background: url("../images/miaoshu.png") no-repeat center left;
+                    background-size: px2rem(38) px2rem(38);
+                }
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: px2rem(48);
+                right: 0;
+                width: px2rem(14);
+                height: px2rem(14);
+                border-top: solid 2px #999;
+                border-right: solid 2px #999;
+                transform: rotate(45deg)
+            }
+        }
+    }
+}
+
+//贷款购车
+.Loan-buy-cars {
+    margin-top: px2rem(20);
+    background: #fff;
+    overflow: hidden;
+    padding-bottom: px2rem(50);
+    .title {
+        @include fsize(40);
+        padding: px2rem(40) px2rem(30) px2rem(30) px2rem(30);
+        position: relative;
+        font-weight: bold;
+    }
+    .header-box {
+        height: px2rem(100);
+        @extend .ub;
+        width: 100%;
+        border-top: solid 1px #e5e5e5;
+        border-bottom: solid 1px #e5e5e5;
+        li {
+            width: 100%;
+            @extend .ub;
+            @extend .ub-pc;
+            @extend .ub-f1;
+            @extend .ub-ac;
+            &:after {
+                content: '';
+                position: absolute;
+                top: px2rem(30);
+                right: 0;
+                width: 1px;
+                height: px2rem(40);
+                border-right: solid 1px #e5e5e5;
+            }
+            .tit {
+                @include fsize(26);
+                color: #686868;
+                padding-right: px2rem(8);
+            }
+            .tip {
+                width: 0;
+                height: px2rem(4);
+                display: inline-block;
+                font-size: 0;
+                overflow: hidden;
+                border: px2rem(8) solid #999999;
+                border-bottom: 0;
+                border-left-color: transparent;
+                border-right-color: transparent;
+                &.tip-down {
+                    border-top: 0;
+                    border-bottom: px2rem(8) solid $red;
+                    margin-top: px2rem(-10);
+                    height: px2rem(0);
+                }
+            }
+        }
+    }
+    .conter-box {
+        .conter-ul {
+            padding: 0 px2rem(30);
+            .times {
+                padding: px2rem(40) 0;
+                border-bottom: solid 1px #e5e5e5;
+                .top {
+                    @extend .ub;
+                    .tit {
+                        @extend .ellipsis;
+                        padding-right: px2rem(120);
+                        position: relative;
+                        @include fsize(34);
+                        line-height: px2rem(50);
+                        max-width: 60%;
+                        a {
+                            position: absolute;
+                            right: px2rem(0);
+                            top: px2rem(4);
+                            width: px2rem(70);
+                            height: px2rem(38);
+                            line-height: px2rem(38);
+                            border: 1px solid #4178EC;
+                            border-radius: px2rem(5);
+                            color: #4178EC;
+                            @include fsize(24);
+                            padding-left: px2rem(40);
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: px2rem(40);
+                                height: px2rem(38);
+                                background: url("../images/phone02.png") no-repeat center center;
+                                background-size: px2rem(20) px2rem(22);
+                            }
+                        }
+                    }
+                    .more {
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        max-width: 60%;
+                        @extend .ub-f1;
+                        text-align: right;
+                        color: #9C9FA1;
+                        line-height: px2rem(50);
+                        @include fsize(24);
+                        position: relative;
+                        padding-right: px2rem(20);
+                        //&:after {
+                        // content: '';
+                        // position: absolute;
+                        // top: px2rem(16);
+                        // right: 0;
+                        // width: px2rem(12);
+                        // height: px2rem(12);
+                        // border-top: solid 2px #e5e5e5;
+                        // border-right: solid 2px #e5e5e5;
+                        // transform: rotate(45deg)
+                        //}
+                    }
+                }
+                .info {
+                    padding: px2rem(30) 0 0;
+                    @extend .ub;
+                    .l {
+                        @extend .ub-f1;
+                        line-height: px2rem(40);
+                        color: #9C9FA1;
+                        .price-box {
+                            @include fsize(26);
+                            color: #394043;
+                            &>span {
+                                @include fsize(32);
+                                color: $red;
+                                padding-left: px2rem(6);
+                            }
+                            .paydown {
+                                padding-right: px2rem(20);
+                            }
+                        }
+                        .tag {
+                            @extend .ellipsis;
+                            padding-top: px2rem(16);
+                        }
+                    }
+                    .r {
+                        .btn {
+                            width: px2rem(180);
+                            height: px2rem(80);
+                            line-height: px2rem(80);
+                            background: #FFFFFF;
+                            border: 1px solid #E9474D;
+                            display: inline-block;
+                            border-radius: px2rem(5);
+                            @include fsize(30);
+                            color: $red;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.detail-custom {
+    margin-top: px2rem(20);
+    height: px2rem(282);
+    background: #fff;
+    text-align: center;
+    &-title {
+        height: px2rem(45);
+        padding-top: px2rem(40);
+        color: #394043;
+        font-weight: bold;
+        @include fsize(32);
+    }
+    &-text {
+        height: px2rem(37);
+        padding-top: px2rem(10);
+        color: #9C9FA1;
+        @include fsize(26);
+    }
+    &-btn {
+        width: px2rem(180);
+        height: px2rem(80);
+        margin-top: px2rem(30);
+        @include fsize(32);
+        border: 1px solid #E9474D;
+        border-radius: px2rem(5);
+        line-height: px2rem(80);
+        letter-spacing: 0;
+        margin-left: px2rem(285);
+        a {
+            color: #E9474D;
+        }
+    }
+}
+
+.select-sel {
+    position: absolute;
+    top: 1.04rem;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    margin-left: -5rem;
+    z-index: 99999;
+    .sort-tap {
+        @include fsize(26);
+        padding: .33333rem 0 .33333rem 1.2rem;
+        line-height: .53333rem;
+        border-bottom: 1px solid #e5e5e5;
+        color: #333;
+        position: relative;
+    }
+    .cur {
+        color: #e9474d;
+        &:before {
+            content: '';
+            display: block;
+            width: px2rem(30);
+            height: px2rem(30);
+            background: url(../images/list_icon.png) no-repeat left top;
+            background-size: px2rem(150) auto;
+            background-position: px2rem(-90) px2rem(-46);
+            position: absolute;
+            left: px2rem(40);
+            top: 50%;
+            margin-top: px2rem(-15);
+        }
+    }
+}
+
+.detail-bottom {
+    width: 100%;
+    height: px2rem(120);
+    line-height: px2rem(120);
+    background: #F5F5F5;
+    text-align: center;
+    &-z-bian {
+        border-bottom: 1px solid #ddd;
+        display: inline-block;
+        width: px2rem(120);
+        position: relative;
+        top: px2rem(-8);
+        left: px2rem(20);
+    }
+    &-y-bian {
+        border-bottom: 1px solid #ddd;
+        display: inline-block;
+        width: px2rem(120);
+        position: relative;
+        top: px2rem(-8);
+        left: px2rem(-20);
+    }
+    &-text {
+        @include fsize(24);
+        color: #C4C4C4;
+    }
+}
+.info_wrapper{min-height: px2rem(380);}

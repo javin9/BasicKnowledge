@@ -1,0 +1,117 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+$color : (
+  red : #E9474D,
+  gray : #E5E5E5,
+);
+body * {
+  box-sizing: border-box;
+}
+.single-wrap {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wrap {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: box;
+  display: -webkit-box;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+.clamp2 {
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+}
+.clamp3 {
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+}
+.escdk13  {
+  margin-top: 0;
+}
+//预留手机号
+.tel-channel {
+  margin: px2rem(20) 0;
+  .channel-box {
+    height: px2rem(236);
+    padding: px2rem(30);
+    p {
+      @include fsize(30);
+      line-height: px2rem(46);
+    }
+
+    > div {
+      .input-box {
+        padding: px2rem(31) px2rem(20);
+        input {
+          @include fsize(32);
+          height: px2rem(48);
+          line-height: px2rem(48);
+          letter-spacing: 0;
+          &::-webkit-input-placeholder { /* WebKit browsers */ 
+              color: #C4C4C4; 
+              @include fsize(32);
+          } 
+          &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+              color: #C4C4C4; 
+              @include fsize(32);
+          } 
+          &::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+              color: #C4C4C4; 
+              @include fsize(32);
+          } 
+          &:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+              color: #C4C4C4; 
+              @include fsize(32);
+          } 
+        }
+      }
+
+      .btn {
+        width: px2rem(240);
+        @include fsize(32);
+        line-height: px2rem(46);
+        padding-top: px2rem(32);
+      }
+    }
+  }
+}
+
+[v-cloak] {
+  display: none;
+}
+
+// 面包屑导航
+.crumbs-font {
+  @include fsize(24);
+  color: #9C9FA1!important;
+}
+.crumbs {
+  font-size: 0;
+  line-height: px2rem(32);
+  padding: px2rem(34) px2rem(30);
+  background: #f5f5f5;
+  color: #686868;
+  > a {
+    @extend .crumbs-font;
+  }
+  > font {
+    @extend .crumbs-font;
+  }
+  > span {
+    @include fsize(24);
+  }
+}
+
+#navTips:before {
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}

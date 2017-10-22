@@ -1,0 +1,54 @@
+@mixin nav{
+	padding:20px 0;
+	border-bottom:1px solid #ececec;
+
+	ul{
+		height:38px;
+	}
+
+	li{
+
+		&:last-child em{
+			display: none;
+		}
+
+		em{
+			float: left;
+			height:22px;
+			border-right:2px solid #e6e6e6;
+			margin-left: 10px;
+			margin-top: 7px;
+		}
+
+		a{
+			float: left;
+			width: 120px;
+			text-align: center;
+			font-size:16px;
+			height:35px;
+			line-height: 35px;
+			color:#000;
+			border-radius:4px;
+			margin:0 0 0 10px;
+			position: relative;
+
+			&.current{
+				color:#fff;
+				background: #e9464d;
+				display: block;
+
+				&:after{
+					content:'';
+					background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAHCAYAAAA8sqwkAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpjNWVjMWM1OS1hMWQ4LTQyYzEtOTgwMS1iYWU2ZjkxYjhmZjAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDMwMjkwOUQ0RjJEMTFFNjg3RTI5QkNFM0RDQzIwNDIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDMwMjkwOUM0RjJEMTFFNjg3RTI5QkNFM0RDQzIwNDIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozNzUwYTAzMi0wYTY0LTQyOGQtOGM1My1hYzIwZWQzZjAwNGMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6YzVlYzFjNTktYTFkOC00MmMxLTk4MDEtYmFlNmY5MWI4ZmYwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+VYS5dAAAAHFJREFUeNpi/P//P8Mrd79FDAwMsQz4wWKxnZvimKCcHCC+h0fxPagaBpiGT0AcA8R/sCj+A5X7hKwBBI4DcTMWDc1QOQZ0DSDQCsRHkPhHoGIMuDT8hVr/AYpjoWJwwILFCQ+BOAuIGYH4AbokQIABADwSGxr6lS+rAAAAAElFTkSuQmCC) no-repeat left top;
+					display: block;
+					width: 12px;
+					height:7px;
+					position: absolute;
+					left:50%;
+					bottom:-7px;
+					margin-left:-6px;
+				}
+			}
+		}
+	}
+}

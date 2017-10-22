@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script>
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var source = '539';//source=
+        var styleUrl = 'http://img1.yixinfinance.com/chedai/';
+        var recProListUrl = '/CreditCard/GetRecPackageList';//recProListUrl?rightsAndInterests=-1&level=-1&pageIndex=1&pageSize = 6&companyId = -1 列表页数据接口
+        var detailUrl = '/CreditCard/Detail';//url=detailUrl+"?id="id+"&source="+source
+
+        var companyId = "-1";//银行
+        var rightAndInterest = "521";//用途
+        var cardLevel = "-1";//等级
+        var city = {
+            cityId: '201',
+            cityName: '北京',
+            citySpell: 'beijing'
+        };
+
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="yxWrapper">
+    <header class="header-bar">
+        <a href="javacript:void(0)" onclick="window.history.back();return false;"></a>
+        <h1 class="font-nav">车车信用卡</h1>
+        <span></span>
+    </header>
+    <script src="http://img4.yixinfinance.com/jinrong/assets/headtype.m/headtypecookies.js?v=201709071630"></script>
+    <section class="detail_page">
+        <article class="detail_card_box">
+            <div class="img">
+                <img src="http://img1.yixinfinance.com/chedai/77e1cccf-8458-4807-b80e-8e6a670032bd.jpg">
+            </div>
+            <h6 class="tit_h6 font-title">车车信用卡</h6>
+            <div class="has"><span class="number">24</span>人已申请</div>
+            <div class="recom_txt font-label">核卡率高，审核结果快</div>
+        </article>
+        <article class="detail_con">
+            <!--送好礼-->
+            <!--卡特权-->
+            <section class="detail_box">
+                <div class="detail_title  font-title"><i class="icon_tit_te"></i>卡特权</div>
+                <div class="detail_info">
+                    <ul class="detail_ul">
+                        <li class="item">
+                            <div class="dt">特权 1</div>
+                            <div class="dd font-ctn">加油返现、一元洗车</div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!--卡信息-->
+            <section class="detail_box">
+                <div class="detail_title  font-title"><i class="icon_tit_te3"></i>卡信息</div>
+                <div class="detail_info">
+                    <ul class="detail_ul">
+                        <li class="item">
+                            <div class="dt">卡等级</div>
+                            <div class="dd font-ctn">金卡</div>
+                        </li>
+                        <li class="item">
+                            <div class="dt">卡组织</div>
+                            <div class="dd font-ctn">
+                                &nbsp;<em class="icon_card01"></em>                        </div>
+                        </li>
+                        <li class="item">
+                            <div class="dt">年费</div>
+                            <div class="dd font-ctn">首年免年费</div>
+                        </li>
+                        <li class="item">
+                            <div class="dt">免息期</div>
+                            <div class="dd font-ctn">50天</div>
+                        </li>
+                        <li class="item">
+                            <div class="dt">提现额</div>
+                            <div class="dd font-ctn">总额度的40%</div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!--申请条件-->
+            <section class="detail_box">
+                <div class="detail_title font-title"><i class="icon_tit_te4"></i>申请条件</div>
+                <div class="detail_application  font-ctn">
+                    <p>
+                        有稳定工作（社保、公积金）</p>
+                    <p>
+                        有车核准率高</p>
+
+                </div>
+
+            </section>
+        </article>
+        <!--推荐办理-->
+        <article class="body_recommend">
+            <header class="body_tit"><i class="icon_tit_te2"></i>推荐办理</header>
+            <ul class="credotList_ul">
+                <li class="item">
+                    <a href="/beijing/proc39/?source=541">
+
+                        <div class="img_box"><img src="http://img1.yixinfinance.com/chedai/07fd9ab0-e3d2-4bd9-a056-45c66044d290.jpg" /></div>
+                        <div class="tit font-ctn">
+                            中信易鑫信用卡
+                            <i class="font-label jian">荐</i>
+                            <i class="font-label li">礼</i>
+
+                        </div>
+                        <div class="font-22 col_grey9 info">推荐理由：核卡率高，审核结果快</div>
+                        <div class="col_grey6 has font-24"><span class="col_red">24</span>人已申请</div>
+                        <div class="label font-label">
+                            <span class="tag">POLO免费开一年</span>
+
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="/beijing/proc38/?source=541">
+
+                        <div class="img_box"><img src="http://img1.yixinfinance.com/chedai/bc0cb781-5ec4-48c1-9900-913198e76ecc.jpg" /></div>
+                        <div class="tit font-ctn">
+                            中信易鑫信用卡
+                            <i class="font-label jian">荐</i>
+                            <i class="font-label li">礼</i>
+
+                        </div>
+                        <div class="font-22 col_grey9 info">推荐理由：核卡率高，审核结果快</div>
+                        <div class="col_grey6 has font-24"><span class="col_red">24</span>人已申请</div>
+                        <div class="label font-label">
+                            <span class="tag">POLO免费开一年</span>
+
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="/beijing/proc37/?source=541">
+
+                        <div class="img_box"><img src="http://img1.yixinfinance.com/chedai/77e1cccf-8458-4807-b80e-8e6a670032bd.jpg" /></div>
+                        <div class="tit font-ctn">
+                            车车信用卡
+                            <i class="font-label jian">荐</i>
+
+                        </div>
+                        <div class="font-22 col_grey9 info">推荐理由：核卡率高，审核结果快</div>
+                        <div class="col_grey6 has font-24"><span class="col_red">24</span>人已申请</div>
+                        <div class="label font-label">
+                            <span class="tag">核卡率高</span>
+                            <span class="tag">审批快</span>
+
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="/beijing/proc22/?source=541">
+
+                        <div class="img_box"><img src="http://img1.yixinfinance.com/chedai/77cb83af-7506-4569-943f-a696a88326f9.jpg" /></div>
+                        <div class="tit font-ctn">
+                            交通银行沃尔玛卡
+                            <i class="font-label jian">荐</i>
+
+                        </div>
+                        <div class="font-22 col_grey9 info">推荐理由：店内双倍积分，可参加“天天优惠”和“最红星期五”超市活动，积分可抵扣店内消费，回馈最高1%</div>
+                        <div class="col_grey6 has font-24"><span class="col_red">851</span>人已申请</div>
+                        <div class="label font-label">
+                            <span class="tag">加油5%返现</span>
+                            <span class="tag">沃尔玛购物5%返现</span>
+
+                        </div>
+                    </a>
+                </li>
+
+
+            </ul>
+        </article>
+        <div class="blk_btn font-32">&nbsp;</div>
+        <div class="btn_bottom_box">
+
+            <a class="btn_org font-32" href="https://creditcard.cmbc.com.cn/online/mobile/login.aspx?id=24&amp;tradeFrom=YX-BJYX&amp;EnStr=C0C66906969E64">免费申请</a>
+
+        </div>
+    </section>
+
+</div>
+
+
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

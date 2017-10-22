@@ -1,0 +1,27 @@
+// px => rem
+@function px2rem($px, $base: 75) {
+  @return ($px / $base) * 1rem;
+}
+
+// dpr font size
+@mixin fsize($size:24){
+	[data-dpr="1"] & {
+	  font-size: #{$size/2}px;
+	}
+	[data-dpr="2"] & {
+	  font-size: #{$size}px;
+	}
+	[data-dpr="3"] & {
+	  font-size: #{$size/2*3}px;
+	}
+}
+
+// color
+$c0 : #000;
+$c6 : #666;
+$c9 : #999;
+$ce : #eee;
+$cwhite : #fff;
+$cred : #e3532e;
+$cgold : #dbb76c;
+

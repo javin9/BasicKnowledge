@@ -1,0 +1,468 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+.clear {
+    clear: both;
+}
+/**
+新版css
+*/
+
+.vue-city-select-header-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-align: center;
+     .vue-city-select-backGoPage{
+        color:#4B4B4B;
+    }
+    .vue-city-select-font-navs{
+    @include fsize(32);
+        margin-left: px2rem(-105);
+        color: #394043;
+        line-height: px2rem(48);
+         font-weight: bold;
+    }
+}
+
+.vue-city-select-header-bar>a,.vue-city-select-header-bar>span {
+    display: inline-block!important;
+    width: px2rem(100);
+    position: relative;
+    height: px2rem(90);
+}
+
+.vue-city-select-header-bar a:after {
+    content: " ";
+    width: px2rem(22);
+    height: px2rem(22);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%) rotate(45deg);
+    transform: translate(-50%,-50%) rotate(45deg);
+    border-left: .04rem solid #4b4b4b;
+    border-bottom: .04rem solid #4b4b4b
+}
+
+.vue-city-select-header-bar.no-after a:after {
+    display: none
+}
+
+.vue-city-select-header-bar h1,.vue-city-select-header-bar h3 {
+    flex: 1;
+    -webkit-flex: 1;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    text-align: center;
+    line-height: px2rem(90);
+}
+
+.vue-city-select-header-bar {
+    position: relative
+}
+
+#citySelectComponent {
+    position: fixed;
+    top: 0px;
+    z-index: 9999;
+    background: #fff;
+    left: 50%;
+    margin-left: px2rem(-375);
+}
+
+#citySelectSearch {
+    position: fixed;
+    top: 0px;
+    z-index: 99998;
+    background: #fff;
+    left: 50%;
+    margin-left: px2rem(-375);
+    width: 100%;
+    height: 100%;
+}
+
+#citySelectCity {
+    position: fixed;
+    top: 0px;
+    z-index: 99999;
+    background: #fff;
+    left: 50%;
+    margin-left: px2rem(-375);
+     width: 100%;
+    height: 100%;
+}
+
+.citySelect-header {
+    position: relative;
+    width: 100%;
+    height: px2rem(88);
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #f8f8f8;
+}
+
+.citySelect-title {
+    position: absolute;
+    left: px2rem(90);;
+    right: px2rem(90);;
+    line-height: px2rem(88);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #333;
+    text-align: center;
+    float: left;
+}
+
+.citySelect-close-container{
+    position: absolute;
+    width: px2rem(60);
+    height: 100%;
+    right: px2rem(20);
+    text-align: center;
+}
+
+.citySelect-close {
+    width: px2rem(30);
+    height: px2rem(30);
+    background-image: url("images/newCity_close_icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top:50%;
+    margin-top:px2rem(-15);
+    left:px2rem(30);
+}
+
+
+.vue-citySelect-search {
+    width: px2rem(690);
+    height: px2rem(90);
+    background: #F5F5F5;
+    border-radius: px2rem(5);
+    margin-top: px2rem(30);
+    margin-left: px2rem(30);
+}
+
+.vue-citySelect-search-content {
+    width: 100%;
+    height: 100%;
+    padding-left:px2rem(20);
+}
+
+.vue-citySelect-search-icon {
+    width:px2rem(30);
+    height: px2rem(30);
+    display: inline-block;
+    background-image: url("images/newCity_search_icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    top: px2rem(5);
+    position: relative
+}
+
+.vue-citySelect-search-text {
+     padding-left:px2rem(10);
+    @include fsize(26);
+    color: #686868;
+    height: px2rem(90);
+    line-height: px2rem(90);
+}
+
+.citySelect-content {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+}
+
+/*城市标题*/
+.vue-citySelect-content-tips {
+    @include fsize(36);
+    color: #333333;
+    line-height: px2rem(54);
+    height: px2rem(54);
+    margin-top: px2rem(50);
+    margin-left: px2rem(20);
+    font-weight: 500;
+}
+
+/*城市区块*/
+.vue-citySelect-content-cityBlock {
+    @include fsize(26);
+    width: px2rem(210);
+    height: px2rem(68);
+    line-height: px2rem(68);
+    border-radius:  px2rem(5);
+    text-align: center;
+    background-color: #f5f5f5;
+    color: #686868;
+    margin-top: px2rem(30);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+    margin-left: px2rem(20);
+    padding-top: 1px;
+}
+
+
+.vue-citySelect-localCity,.citySelect-visitedCity {
+    width: 100%;
+    margin-left: px2rem(10);
+}
+.vue-citySelect-content-localCityBlock{
+    @include fsize(26);
+    margin-left: px2rem(30);
+    margin-top: px2rem(30);
+    width: px2rem(210);
+    height: px2rem(68);
+    line-height: px2rem(68);
+    border-radius:  px2rem(5);
+    text-align: left;
+    background-color: #f5f5f5;
+    float: left;
+    color: #686868;
+    padding:0 px2rem(45);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.citySelect-content-local-icon {
+    width: px2rem(30);
+    height: px2rem(30);
+    background-image: url("images/local_position_icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: px2rem(-5);
+    margin-right: 0.1333333333333333rem;
+}
+
+.citySelect-hotCity {
+    width: 100%;
+    position: relative;
+    margin-left: px2rem(10);
+}
+
+.citySelect-allCity {
+    width: 100%;
+    margin-top: px2rem(50);
+}
+
+.citySelect-allCity-letter {
+    height: px2rem(56);
+    margin-right: px2rem(30);
+    padding-left: px2rem(30);
+    background: #F5F5F5;
+    line-height: px2rem(56);
+     @include fsize(32);
+    color: #394043;
+    margin-top: px2rem(-2);
+}
+
+.citySelect-allCity-text {
+      color: #333;
+       @include fsize(32);
+    height: px2rem(110);
+    line-height: px2rem(110);
+    margin-right: px2rem(30);
+    margin-left: px2rem(30);
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+.citySelect-allCity-ul-li-text>span{
+    display:block;
+    line-height: px2rem(86);
+    border-bottom:1px solid #eee;
+}
+.vue-citySelect-letterList {
+    position: absolute;
+    width: px2rem(40);
+    text-align: center;
+    z-index: 9998;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    display: none;
+    top: 5%!important;
+    right: px2rem(-5) !important;
+    div {
+        width: 100%;
+        height: 3%;
+        color: #5a67ae;
+        padding-top: px2rem(14);
+    }
+}
+
+.vue-tipsLetter {
+    position: absolute;
+    background: #FFFFFF;
+    border: 1px solid #5A67AE;
+    border-radius: px2rem(5);
+    width: px2rem(160);
+    height: px2rem(160);
+    line-height: px2rem(160);
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-left: px2rem(-160/2);
+    margin-top: px2rem(-160/2);
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: none;
+   @include fsize(70);
+    color: #5A67AE;
+    font-weight: bold;
+}
+
+/**/
+.clear {
+    clear: both;
+}
+
+#citySelectSearch .wrapper,#citySelectCity .wrapper,#citySelectComponent .wrapper {
+    position: relative;
+    z-index: 99;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+#citySelectComponent .scroller {
+    position: absolute;
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    transform: translateZ(0);
+    user-select: none;
+    text-size-adjust: none;
+    padding-bottom: px2rem(300);
+}
+
+.loading_gray{
+    background-image: url("images/loading_gray.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: px2rem(160);
+    z-index: 9999;
+}
+
+.defaultAniCity{
+    -webkit-transform: translate(10rem,0);
+    transform: translate(10rem,0);
+    -webkit-transition: -webkit-transform .3s;
+    transition: transform .3s;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 0 0;
+}
+
+.drawAniCity{
+    -webkit-transform: translate( 0,0);
+    transform: translate(0,0);
+    -webkit-transition: -webkit-transform .3s;
+    transition: transform .3s;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 0 0;
+}
+.invalid-city{
+    padding:1rem 0;
+    line-height:px2rem(64);
+    text-align: center;
+    color:#A2A2A2;
+}
+.citySelect-curCity{
+    height:px2rem(80);
+    line-height:px2rem(80);
+    padding:0 px2rem(30);
+    background:#fff;
+    @include fsize(26);
+}
+.no-city{
+    color:#E9474D;
+}
+.no-locaton-city{
+    display:none;
+}
+.vue-search {
+    width: 100%;
+    padding:px2rem(20) px2rem(32) px2rem(10) 0;
+    border-bottom: 1px solid #d6d6d6;
+    position: relative;
+}
+
+.vue-search-content {
+    position: relative;
+    width: px2rem(614);
+    height: px2rem(62);
+    background-color: #fff;
+    border-radius: px2rem(5);
+    margin-left: px2rem(30);
+    border:1px solid #e5e5e5;
+    overflow: hidden;
+}
+
+.vue-search-icon {
+    width: px2rem(30);
+    height:px2rem(30);
+    background-image: url("images/newCity_search_icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: px2rem(20);
+}
+
+.vue-search-input {
+    border: none;
+    height:px2rem(58.5);
+    width: 100%;
+    padding-left: px2rem(60);
+    background-color: #fff;
+    outline: none;
+    color: #394043;
+    vertical-align: middle;
+    @include fsize(26);
+}
+.vue-colse{
+    position: absolute;
+    top: 0;
+    right: px2rem(-15);
+    color: #394043;
+    height: 100%;
+    line-height: px2rem(97);
+    width: px2rem(100);
+    @include fsize(28);
+}
+.vue-search-icon-colse {
+    width: px2rem(34);
+    height:px2rem(30);
+    background-image: url("images/qingchu.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right:px2rem(30);
+}
+.citySelect-search .title {
+    padding-right: px2rem(60);
+    @include fsize(30);
+    line-height: px2rem(60);
+    text-align: center;
+    color: #333333;
+}

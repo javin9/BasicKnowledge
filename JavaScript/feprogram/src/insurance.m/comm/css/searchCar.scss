@@ -1,0 +1,75 @@
+/*搜索车型*/
+.search_car{display: none;}
+.search_brandModel{ display: block; min-height: 100%; min-height: 5.333333rem; }1
+.parity_box.search_box .detailsInfo_box{ display: none; }
+.parity_box.search_box .wrap{ display: none; }
+.parity_box.search_box .search_brandModel{ display: block; }
+/*选择多个品牌*/
+.search_brandModel .chooseBrand{ padding-right: 0.266667rem; padding-left: 0.4rem; display: none; }
+.chooseBrand .chooseBrandTit{ padding-top: 0.426667rem; padding-bottom: 0.266667rem; color: #333333; line-height: 150%; }
+.chooseBrand .chooseBrandList { }
+.chooseBrand .chooseBrandList li{ float: left; line-height: 150%; margin-right: 0.266667rem; margin-bottom: 0.266667rem; }
+.chooseBrand .chooseBrandList li a{ display: block; border: 1px solid #d0d0d0; padding: 0.133333rem 0.266667rem; color: #666666; -moz-border-radius: 0.066667rem; -webkit-border-radius: 0.066667rem; border-radius: 0.066667rem; }
+.chooseBrand .chooseBrandList li a .red{ color: #e9474d; padding: 0 0.133333rem; }
+.chooseBrand .noBrand{ color: #666666; line-height: 150%; margin-bottom: 0.133333rem; }
+/*品牌型号填写提示*/
+.PatternSample_img{ padding: 0.4rem; padding-top: 0.533333rem; display: block; }
+.PatternSample_img p{ color: #333; padding-bottom: 0.133333rem;line-height: 0.56rem;word-wrap:break-word; white-space:normal; word-break:break-all; }
+.PatternSample_img img{ width: 100%; }
+.search_brandModel .search_title{ background-color: #ffffff; position: relative; padding: 0.253333rem 0.4rem; height: 0.826667rem;}
+.search_brandModel .search_title:before{ z-index: 2; content: ""; position: absolute; left: 0px; right: 0px; bottom: 0px; border: 0px; border-bottom: 1px solid #ececec; -webkit-transform: scaleY(.5); -webkit-transform-origin: 0 0; pointer-events: none; }
+.search_brandModel .search_title .return{ position: absolute; top: 0px; left: 0px; height: 1.173333rem; width: 1.066667rem; }
+/*h-88 w-80*/
+/*.search_brandModel .search_title .return i{ display: block; width: 0.533333rem; height: 0.533333rem; background-image: url(images/express_icon.png); background-size: 4.16rem auto; background-repeat: no-repeat; background-position: -3.386667rem -4.32rem; position: relative; top: 0.32rem; left: 0.266667rem; }*/
+/*w-40 h-40*/
+.search_brandModel .search_title .cancel{ position: absolute; top: 0px; right: 0px; height: 1.173333rem; width: 1.466667rem; text-align: center; font-size: 16px; color: #8d91a0; line-height: 44px; }
+/*h-44  w-55*/
+.search_brandModel .search_title .cancel a{ font-size: 16px; color: #8d91a0; }
+.search_brandModel .search_title .search_btn{position: absolute;top:0.253333rem;right: 0.4rem; width: 1.2rem;height: 0.826667rem;background-color: rgba(0,0,0,0);background: url('../images/icon/seach.png') no-repeat center;background-size: 0.4rem;}
+.search_brandModel .search_title .search_btn a{ font-size: 15px; color: #fff; height: 1.066667rem; line-height: 1.066667rem; }
+.search_brandModel .search_title .search_btn.active{ background-color: rgba(0,0,0,0); }
+.search_brandModel .search_title .search_btn .icon{display: none;}
+.search_inp{ padding: 0.146667rem 1.2rem 0.146667rem 0.4rem;width: 7.6rem; line-height: 0.533333rem;line-height: 0.533333rem;height: 0.533333rem; background-color: #f5f5f5;border:0;border-radius:0.106667rem;}
+.search_inp:before{ display: none;}
+.search_inp:after{ display: none;}
+/*.search_inp .icon{ display: block; width: 0.533333rem; height: 0.533333rem; background-image: url(images/express_icon.png); background-size: 4.16rem auto; background-repeat: no-repeat; background-position: 0 -5.146667rem; position: absolute; top: 0.186667rem; left: 0.133333rem; }*/
+
+.search_inp .input_text{display: block;width: 100%;padding: 0;background-color: #f5f5f5;height:0.533333rem;line-height:0.533333rem;}
+.search_main{ position: relative; display: none; }
+.search_main .result_list{ height: 1.173333rem; line-height: 1.173333rem; display: -webkit-box; display: -moz-box; display: box; position: relative; background-color: #ffffff; }
+.search_main .result_list:before{ z-index: 2; content: ""; position: absolute; left: 0px; right: 0px; bottom: 0px; border: 0px; border-bottom: 1px solid #ececec; -webkit-transform: scaleY(.5); -webkit-transform-origin: 0 0; pointer-events: none; }
+.search_main .result_list>li{ -moz-box-flex: 1; -webkit-box-flex: 1; box-flex: 1; position: relative; }
+.search_main .result_list>li a{ display: block; width: 2rem; padding-right: 0.4rem; margin: 0px auto; height: 1.173333rem; line-height: 1.173333rem; color: #333333; font-size: 15px; position: relative; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+/*w-178  h-88*/
+.search_main .result_list>li.active a{ color: #E9474D; }
+.search_main .result_list>li a em{ display: block; background-image: url(../images/icon/triangle-down.png); background-size: 0.186667rem 0.106667rem; background-repeat: no-repeat; background-position: center; position: absolute; right: 0px; top: 0.48rem; width: 0.186667rem; height: 0.106667rem; }
+/*w-52 h-40*/
+.search_main .result_list>li.down a em{ background-image: url(../images/icon/triangle-up.png);background-position: center; }
+.search_main .result_list>li:before{ z-index: 2; content: ""; position: absolute; right: 0px; bottom: 0.4rem; top: 0.4rem; border: 0px; border-right: 1px solid #ececec; -webkit-transform: scaleX(.5); -webkit-transform-origin: 0 0; pointer-events: none; }
+.search_main .result_list>li:last-child:before{ border-top: 0px; }
+.search_main .result_list ol.downmenu{ position: absolute; top: 1.173333rem; background-color: #fff; left: 0px; right: 0px; max-height: 3.733333rem; z-index: 9999; width: 300%; display: none; overflow: auto; border-bottom: 1px solid #ececec; }
+.search_main .result_list ol.downmenu li{ position: relative; }
+.search_main .result_list ol.downmenu li:before{ z-index: 2; content: ""; position: absolute; right: 0px; bottom: -1px; left: 0px; border: 0px; border-bottom: 1px solid #ececec; -webkit-transform: scaleY(.5); -webkit-transform-origin: 0 0; pointer-events: none; }
+.search_main .result_list ol.downmenu li a{ display: block; font-size: 14px; color: #666; padding: 0.266667rem 0.4rem; line-height: 0.533333rem; height: 0.533333rem; margin: 0px; text-align: left; width: auto; }
+/*h-40*/
+.search_main .list_main{ padding-left: 0; background-color: #fff;}
+.search_main .result_list ol.downmenu li.active a{ background-color: #F6F6F6; }
+.main_search_empty{ min-height: 0.64rem; padding: 0.266667rem 0px; line-height: 0.64rem; margin-left: 0.4rem; position: relative; font-size: 15px; color: #8d91a0; display: none; }
+.main_search_empty:before{ z-index: 2; content: ""; position: absolute; left: 0px; right: 0px; bottom: 0px; border: 0px; border-bottom: 1px solid #ececec; -webkit-transform: scaleY(.5); -webkit-transform-origin: 0 0; pointer-events: none; }
+.search_main .list_main li{ min-height: 0.64rem; padding: 0.333333rem 0.4rem;padding-left: 1.2rem; line-height: 0.533333rem; position: relative; }
+/*h-48*/
+.search_main .list_main li:before{ z-index: 2; content: ""; position: absolute; left: 0px; right: 0px; bottom: 0px; border: 0px; border-bottom: 1px solid #dddddd; -webkit-transform: scaleY(.5); -webkit-transform-origin: 0 0; pointer-events: none; }
+.search_main .list_main li a{ font-size: 15px; color: #333; display: block; width: 100%; line-height: 0.533333rem; font-family: Andale Mono; unicode-range: U+2E80-FFFF; src: local(苹方-简), local(WenQuanYi Zen Hei), local(Heiti SC), local(Heiti SC); }
+.search_main .list_main li a span{ color: #E9474D; }
+.search_main .list_main li.active{background-image: url("../images/icon/choose-red.png");background-repeat: no-repeat;background-size: 0.346667rem;background-position: 0.533333rem 0.48rem;}
+.remove_main{ height: 1.173333rem; line-height: 1.173333rem; text-align: center; color: #333333; font-size: 15px; }
+/*h-88*/
+.remove_main a{ color: #333333; font-size: 15px; }
+.remove_main a:before{ z-index: 2; content: ""; position: absolute; left: 0px; right: 0px; bottom: 0px; border: 0px; border-bottom: 1px solid #ececec; -webkit-transform: scaleY(.5); -webkit-transform-origin: 0 0; pointer-events: none; }
+.empty_search{ margin-top: 0.266667rem; line-height: 0.64rem; color: #8d91a0; font-size: 14px; padding: 0px 0.4rem; display: none; }
+.empty_search .left{ display: inline-block; width: 1.546667rem; height: 1.333333rem; text-align: center; float: left; display: none;}
+.empty_search em{ float: left; display: inline-block; width: 100%; color: #333;line-height: 0.56rem; border-left: 0;padding-left: 0; }
+.empty_search em b{ display: block; margin-bottom: 0.266667rem; color: #333; }
+.search_brandModel.empty_box .empty_search{ display: block; }
+.search_brandModel.empty_box .search_main{ display: none; }
+.search_brandModel .empty_search{ display: none; }

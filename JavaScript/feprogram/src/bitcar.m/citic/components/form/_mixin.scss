@@ -1,0 +1,67 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+@mixin form-element() {
+  ::-webkit-input-placeholder {
+    color: #C4C4C4;
+  }
+  :placeholder {
+    color: #C4C4C4;
+  }
+  margin:0 px2rem(30);
+  border-bottom:1px solid #E5E5E5;
+  height:px2rem(110);
+  display:flex;
+  align-items:center;
+  &.multi-line{
+    align-items:flex-start;
+    height:auto;
+    padding:px2rem(30) 0;
+  }
+  >dt{
+    width:px2rem(180);
+    @include fsize(32);
+    color: #394043;
+    display:block;
+  }
+  >dd{
+    flex:1;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height:px2rem(110);
+    line-height:px2rem(110);
+    display:block;
+    @include fsize(32);
+    position: relative;
+    textarea{
+      width:100%;
+      border:none;
+      height:px2rem(50);
+      padding-right:px2rem(30);
+      box-sizing: border-box;
+    }
+    input{
+      width:100%;
+      border:none;
+    }
+    em{
+      position:absolute;
+      width:px2rem(46);
+      height:px2rem(46);
+      display:block;
+      right:0;
+      top:50%;
+      transform: translate3d(0,-50%,0);
+      &.close{
+        background:url(../images/close.png) no-repeat center center;
+        background-size:px2rem(46) auto;
+      }
+      &.error{
+        background:url(../images/error.png) no-repeat center center;
+        background-size:px2rem(44) auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var curOrderInfo =
+        {
+            stateId: "142",
+            stateName: "未通过",
+            childOrderId: "791477553803219",
+            orderId: "891477553781507"
+        };
+        //贷款顾问编号
+        var adviserId = "236";
+        var adviserUrl = 'http://adviserapi.daikuan.com//getadviser/';
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<header class="header-bar">
+    <a href="javacript:void(0)" class="backGoPage" onclick="window.history.back();return false;"></a>
+    <h1 class="font-nav">晒单记录</h1>
+    <span class="font-ctn"><a href="">来晒单</a></span>
+</header>
+<section id="inOrderToShare" class="hide">
+
+    <dl v-for="inOrderToShare in inOrderToShareArr">
+        <a v-bind:href="inOrderToShare.href">
+            <dt class="font-title" v-text="inOrderToShare.title">80后准爸爸贷款购车：省时省钱</dt>
+            <dd>
+                <header class="font-title" v-text="inOrderToShare.summary">
+                    天的主角是它，我的新欢，并不是说不爱黄阿马，是确实到了该换车的时间了，准确点说，确实是被这家伙的外观确实太拉轰了，这个外观设计确实能领先同级别车型至少2-3年，非常的...
+                </header>
+                <footer>
+                    <span v-text="inOrderToShare.createdOn">0000-00-00</span>
+                    <div><i></i><span v-text="inOrderToShare.browserCount">0</span><i></i><span v-text="inOrderToShare.agreeCount">0</span></div>
+                </footer>
+            </dd>
+        </a>
+    </dl>
+
+    <div class="sliderUp-box font-ctn hide"></div>
+</section>
+<!-- 缺省页 -->
+<div class="order-share-default font-24 hide">
+    <a href="#">立即晒单</a>，成为首位晒单者<br />
+    <a href="#">更多车款晒单(1283)</a>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

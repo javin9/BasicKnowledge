@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+     <link rel="icon" type="image/x-icon" href="http://www.daikuan.com/favicon.ico">
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <title>易鑫车险</title>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="UserDetailInfo">
+	<index></index>
+</div>
+{{{htmlWebpackPlugin.options.footer}}}
+<div class="pop_alert" style="display: none;">
+    <p class="fontSize_17"></p>
+</div>
+<!--loading遮罩层-->
+<div id="loadingdiv" class="loading_mark">
+    <p class="fontSize_17">加载中...</p>
+</div>
+<div id="whiteLoading"></div>
+<!-- loadding - 百分比 -->
+<div id="loadding">
+    <div class="main">
+        <div class="prg-cont rad-prg" id="indicatorContainer2">
+            <img src='https://jd.yixinfinance.com.cn/chedai/insurance/mweb//images/insurance/loading-animate.gif' alt="加载中" />
+        </div>
+        <h3 class="fontSize_13">努力加载中...</h3>
+    </div>
+</div>
+<div id="loading">
+    <div class="main">
+        <span class="ouro ouro3">
+            <span class="left"><span class="anim"></span></span>
+            <span class="right"><span class="anim"></span></span>
+        </span>
+        <p class="fontSize_15">loading</p>
+        <h3 class="fontSize_13">努力加载中...</h3>
+    </div>
+</div>
+<!-- 返回顶部 start -->
+<a id="movetop" href="javascript:void(0);" class="float-r-ball float-top">
+    <div class="ico-top"></div>
+</a>
+<span id="dvCompute" class="fontSize_15" style="visibility: hidden; position: fixed;"></span>
+<!--提示框-->
+<div class="alert_box error_box">
+    <div class="alert_mark"></div>
+    <div class="alert_info">
+        <div class="alert_title fontSize_15">请确认您的地址</div>
+        <div class="box_box">
+            <div class="alert_info_box">
+                <div class="info_main fontSize_13">加载失败</div>
+            </div>
+        </div>
+        <div class="bottom">
+            <a href="javascript:void(0)" class="btn btn_save fontSize_15">确认</a>
+            <a href="javascript:void(0)" class="btn edit_btn btn_no fontSize_15">取消</a>
+            <a href="javascript:void(0)" class="btn edit_btn btn_yes fontSize_15">删除</a>
+            <a href="javascript:void(0)" class="btn btn_save_date fontSize_15">确认</a>
+            <a href="javascript:void(0)" class="btn change_btn fontSize_15">修改</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src='https://api.map.baidu.com/api?v=2.0&ak=o1uOc1CSQIzYBs9fwdNFi7MRNQKo9cAA'></script>
+<script type="text/javascript" src='https://open.mobile.qq.com/sdk/qqapi.js?_bid=152'></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"> </script>
+<script type="text/javascript" src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script type="text/javascript" src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<div id="chattingWrap">
+    <div id="chattingInner">
+        {{#if tf}}
+        <article id="Chatting_tip1" class="dialog_serv uf hide">
+            <i class="icon icon_serv mt"></i>
+            <div class="message uf_f1">
+                <div class="txt">易鑫车贷是易车、腾讯、京东、百度旗下的中国领先互联网汽车金融平台，为您提供全面的线上贷款购车服务。</div>
+            </div>
+        </article>
+        <article id="Chatting_tip2" class="dialog_serv uf hide">
+            <i class="icon icon_serv mt"></i>
+            <div class="message uf_f1">
+                <div class="txt">2000+品牌金融机构为您定制优质金融方案，20000+贷款产品，110万+新车二手车源，0息0月供购车无压力。</div>
+            </div>
+        </article>
+        <article id="Chatting_tip3" class="dialog_serv uf hide">
+            <i class="icon icon_serv mt"></i>
+            <div class="message uf_f1">
+                <div class="txt">全国300+城市，10000+专业金融顾问，易鑫车贷为您提供一对一免费VIP服务。</div>
+            </div>
+        </article>
+        <article id="Chatting_tip4" class="dialog_serv uf hide">
+            <i class="icon icon_serv mt"></i>
+            <div class="message uf_f1">
+                <div class="txt chatValentine">情人节活动持续升温，在您和4s店砍价基础上，易鑫再给您首付直减2000元，分享集赞还能享2年0息贷款。</div>
+            </div>
+        </article>
+        <article id="Chatting_0" class="dialog_serv uf hide">
+            <i class="icon icon_serv mt"></i>
+            <div class="message uf_f1">
+                <div class="txt">终于等到您，您心仪的车是哪款？您准备在哪儿购买呢？</div>
+            </div>
+        </article>
+        {{else}}
+        <article id="Chatting_0" class="dialog_serv uf hide">
+            <i class="icon icon_serv mt"></i>
+            <div class="message uf_f1">
+                <div class="txt">终于等到您，您心仪的车是哪款？您准备在哪儿购买呢？</div>
+            </div>
+        </article>
+        {{/if}}
+        <article id="Chatting_1" class="dialog_cust uf hide">
+            <div class="message uf_f1">
+                <div class="txt">
+                    <div class="uf">
+                        <div class="img_car">
+                            <img src="" id="dataLogo">
+                        </div>
+                        <div class="uf_f1">
+                            <p id="dataCar"></p>
+                            <p>购车城市：<span id="dataCity">{{cityName}}</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <i class="icon icon_cust mt"></i>
+        </article>
+
+        <article id="Chatting_2" class="dialog_serv uf hide">
+            <i class="icon icon_serv mt"></i>
+            <div class="message uf_f1">
+                <div class="txt">补充以下信息，我们会为您匹配最适合的金融产品</div>
+            </div>
+        </article>
+    </div>
+</div>
+
+<!-- 车&城市 -->
+{{#if lts}}
+    {{>panel/carcity.lts.hbs}}
+{{else}}
+    {{>panel/carcity.hbs}}
+{{/if}}
+
+<!-- 职业 -->
+{{>panel/career.hbs}}
+
+<!-- 信用 -->
+{{>panel/credit.hbs}}
+
+<!-- 住房 -->
+{{>panel/housestate.hbs}}
+
+<!-- 社保 -->
+{{>panel/insurance.hbs}}
+
+<!-- 月收入 -->
+{{>panel/income.hbs}}
+
+<!-- 百分比动画 -->
+{{>panel/circle.hbs}}

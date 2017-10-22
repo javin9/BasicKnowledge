@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script type="text/javascript">
+        var headerBusiFlag = "1";
+        var headerFunFlag = "0";
+        var carPrice = '18.49';
+        var mobile = '13269031795';
+        var uid = 1005576;
+        //添加成功后跳转页，需要带orderid
+        var NextPage = '/SwiftLoan/Qualification';
+        var orderId = '861483500657093';
+        var citySpell = 'beijing';
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var RESURL = "http://img1.bitautoimg.com/jinrong/newpcweb/";
+        var USERCENTERURL = "http://i.daikuan.com/";
+        var BusinessLine = 550;
+        var AddQuaUrl ='/SwiftLoan/Qualification';
+        var resultPage ='/swiftloan/resultSuccess.html';
+        var showIdNumber ='130************6';
+        var showUserName ='*亮';
+    </script> 
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div class="layx">
+    <div class="layx-con" style="position: relative;">
+        <a href="#" class="logo"></a>
+        <div class="layx2">
+            <div class="layx21">购车人信息</div>
+            <div class="layx22">
+                <div class="tips">亲，已经帮您推荐了一款适合的金融产品哦！
+                </div>
+                <div class="layx22-left">
+                    <div class="layx22-left1"><span>补充信息</span> <span class="info">补全信息，贷款时间平均缩短7天，我们将对您的信息严格保密。</span></div>
+                    <div class="layx22-left2">
+                        <div class="layx22-left2-zsxm items">
+                            <span>姓　　名</span>
+                            <input type="text" id="realName" name="realName" class="checked" value="*亮" placeholder="请输入真实姓名" maxlength="10"/>
+                            <input type="hidden" id="orderId" name="orderId"  class="checked" value="861483500657093" />
+                        </div>
+                        <div class="yzjs">请输入真实姓名</div>
+                        <div class="layx22-left2-sfzh items">
+                            <span>身份证号</span>
+                            <input type="text" id="IdNo" name="IdNo"  class="checked" value="130************6" placeholder="请输入身份证号" maxlength="18"/>
+                        </div>
+                        <div class="yzjs">请输入正确身份证号码</div>
+                        
+                        <div class="btn">
+                            <a href="javascript:void(0);" id="submit">提交</a>
+                        </div>
+                        <div class="tiaoguo"><a href="#">跳过</a></div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="layx22-right">
+                    <div class="layx22-right1">
+                        <div class="layx22-right1-ck">
+                            <img src="http://img1.bitautoimg.com/autoalbum/files/20160725/925/0436539251_1.jpg" />
+                            <p title="一汽奥迪 A3 Sportback 35TFSI 进取型">一汽奥迪 A3 Sportback 35TFSI 进取型</p>
+                        </div>
+                        <div class="layx22-right1-dkfa"><img src="http://img1.bitautoimg.com/chedai/b0214fb4-836f-4393-8545-2c987c435e65.jpg" />贷款方案：易鑫包商联合贷</div>
+                    </div>
+                    <div class="layx22-right2">
+                        <div class="layx22-right2-gcje">
+                            <div class="layx22-right2-gcje1">购车金额计算</div>
+                            <div class="layx22-right2-gcje2">报价：<span>18.49万</span></div>
+                        </div>
+                    </div>
+                    <div class="layx22-right3">
+                        <div class="layx22-right3-sf">
+                            <div class="fl">首付30%</div>
+                            <div class="fr">5.55万</div>
+                        </div>
+                        <div class="layx22-right3-item">
+                            <div class="fl">贷款额度：</div>
+                            <div class="fr">12.94万</div>
+                        </div>
+                        <div class="layx22-right3-item">
+                            <div class="fl">月供：</div>
+                            <div class="fr">4361.01元(36 期)
+                            </div>
+                        </div>
+                        <div class="layx22-right3-item">
+                            <div class="fl">总成本：</div>
+                            <div class="fr">2.76万</div>
+                        </div>
+                    </div>
+
+                    <div class="welfare">
+                        <div class="clrfix top">
+                            <div class="fl">贷款礼包：</div>
+                            <div class="fr"><a href="javascript:void(0);" id="howgetgifts">如何领取？</a></div>
+                            <font class="welfare-tip">贷款成功后，请在6个月之内进入个人中心领取礼包。</font>
+                        </div>
+                        <div class="clrfix">
+                            <div class="fl">邀请好友享优惠</div>
+                            <div class="fr">价值1000元</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">Copyright © 2015-2017 daikuan.com版权所有　北京易鑫信息科技有限公司　京ICP备15006372号-2　京公网安备11010802020005号</div>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

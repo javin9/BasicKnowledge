@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var APIURL = "http://api.chedai.bitauto.com/";
+        //提交资质url  
+        var addQualificationUrl = "/rapidloan/AddQualification";
+        //成功页，需要参数 orderid
+        var ResultUrl = "/rapidloan/Result";
+        var entryUrl = '/rapidloan?goto=new&amp;from=';
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="yxWrapper">
+    <div class="body-header" >
+        <div class="body-header-a">您当前申请的车型是：<span>奥迪 A4L 40 TFSI 时尚型</span></div>
+        <div class="body-header-b">为了加快审批速度和提升贷款金额，请完善您的资料</div>
+    </div>
+    <form id="form" action="" method="post" class="checkApp">
+        <div class="xqmore remove-margin-bottom padT0">
+            <ul>
+                <li class="nobg uf uf_ac">
+                    <i class="i2"></i><b>证件类型</b>
+                    <div id="CertificateTypeTrigger" class="triggerEvent triggerStyle uf_f1" data-aslider-in="certificateType|fade|bottom">
+                        <div data-id="-1"><em class="checkChose">请选择</em><i></i></div>
+                        <input name="CertificateType" id="CertificateType" type="hidden" value="">
+                    </div>
+                </li>
+                <li class="xqtis" style="display:none;">请选择证件类型</li>
+
+                <li class="nobg uf uf_ac">
+                    <i class="i3"></i><b>证件号码</b>
+                    <div class="uf_f1">
+                        <input name="CertificateNumber" id="CertificateNumber" type="text" placeholder="请输入" class="srwenz pdr-15">
+                    </div>
+                </li>
+                <li class="xqtis" style="display:none;">请输入证件号</li>
+
+                <li class="nobg uf uf_ac">
+                    <i class="i4"></i><b>职业</b>
+                    <div id="CareerTrigger" class="triggerEvent triggerStyle uf_f1" data-aslider-in="career|fade|bottom">
+                        <div data-id="-1"><em class="checkChose">请选择</em><i></i></div>
+                        <input name="Career" id="Career" type="hidden" value="">
+                    </div>
+                </li>
+                <li class="xqtis" style="display:none;">请选择职业类型</li>
+
+                <li class="nobg uf uf_ac">
+                    <i class="i5"></i><b>工资收入</b>
+                    <div id="IncomeTrigger" class="triggerEvent triggerStyle uf_f1" data-aslider-in="income|fade|bottom">
+                        <div data-id="-1"><em class="checkChose">请选择</em><i></i></div>
+                        <input name="Income" id="Income" type="hidden" value="">
+                    </div>
+                </li>
+                <li class="xqtis" style="display:none;">请选择工资收入范围</li>
+
+                <li class="nobg uf uf_ac">
+                    <i class="i6"></i><b>社保证明</b>
+                    <div id="InsuranceTrigger" class="triggerEvent triggerStyle uf_f1" data-aslider-in="insurance|fade|bottom">
+                        <div data-id="-1"><em class="checkChose">请选择</em><i></i></div>
+                        <input name="Insurance" id="Insurance" type="hidden" value="">
+                    </div>
+                </li>
+                <li class="xqtis" style="display:none;">请选择社保证明类型</li>
+
+                <li class="nobg uf uf_ac">
+                    <i class="i7"></i><b>公积金</b>
+                    <div id="FundsTrigger" class="triggerEvent triggerStyle uf_f1" data-aslider-in="funds|fade|bottom">
+                        <div data-id="-1"><em class="checkChose">请选择</em><i></i></div>
+                        <input name="Funds" id="Funds" type="hidden" value="">
+                    </div>
+                </li>
+                <li class="xqtis" style="display:none;">请选择公积金类型</li>
+
+                <li class="nobg uf uf_ac">
+                    <i class="i8"></i><b>信用记录</b>
+                    <div id="CreditTrigger" class="triggerEvent triggerStyle uf_f1" data-aslider-in="credit|fade|bottom">
+                        <div data-id="-1"><em class="checkChose">请选择</em><i></i></div>
+                        <input name="Credit" id="Credit" type="hidden" value="">
+                    </div>
+                </li>
+                <li class="xqtis" style="display:none;">请选择信用记录类型</li>
+
+                <li class="nobg uf uf_ac">
+                    <i class="i9"></i><b>住房状况</b>
+                    <div id="HouseStateTrigger" class="triggerEvent triggerStyle uf_f1" data-aslider-in="houseState|fade|bottom">
+                        <div data-id="-1"><em class="checkChose">请选择</em><i></i></div>
+                        <input name="HouseState" id="HouseState" type="hidden" value="">
+                    </div>
+                </li>
+                <li class="xqtis" style="display:none;">请选择住房状况类型</li>
+
+                <li class="nobg uf uf_ac">
+                    <i class="i10"></i><b>婚姻状况</b>
+                    <div id="MaritalStatusTrigger" class="triggerEvent triggerStyle uf_f1" data-aslider-in="maritalStatus|fade|bottom">
+                        <div data-id="-1"><em class="checkChose">请选择</em><i></i></div>
+                        <input name="MaritalStatus" id="MaritalStatus" type="hidden" value="">
+                    </div>
+                </li>
+                <li class="xqtis" style="display:none;">请选择婚姻状况类型</li>
+
+                <input id="OrderID" name="OrderID" type="hidden" value="171483002590200" />
+            </ul>
+        </div>
+    </form>
+    <a href="javascript:void(0);" class="btn-i-submit" id="submit">提交</a>
+
+    <div class="tip-a">本服务由易鑫车贷提供</div>
+    
+    <!-- loading -->
+    <div class="loadingCtn">
+        <div>
+            <div class="spinner">
+                <div class="spinner-container container1">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+                <div class="spinner-container container2">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+                <div class="spinner-container container3">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+            </div>
+            <p>提交中</p>
+        </div>
+    </div>
+    
+    <div class="footer_n" style="display: block;">    
+        <div class="foot-contact">
+            <p>购车热线：<a href="tel:4000169169">4000-169-169</a>&nbsp;(9:00 - 21:00)</p>
+        </div>
+        <div class="foot-copyright">
+            易鑫 © 2016 m.daikuan.com
+        </div>
+    </div>
+    <!--整屏蒙层start-->
+    <div id="maskLayer"></div>
+    <!--整屏蒙层end-->
+</div>
+
+
+<!-- 证件类型 -->
+<aside class="sel-control-box" data-aslider="certificateType">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">证件类型</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll">
+            <ul class="slider">
+                <li class="cur" data-id="105">身份证</li>
+                <li data-id="106">护照</li>
+                <li data-id="107">军官证</li>
+            </ul>
+        </div>
+    </div>
+</aside>
+
+<!-- 职业 -->
+<aside class="sel-control-box" data-aslider="career">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">职业</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll">
+            <ul class="slider">
+                <li data-id="73">公务员/事业单位</li>
+                <li data-id="74">企业主</li>
+                <li data-id="75">个体户</li>
+                <li data-id="76">上班族</li>
+                <li data-id="77">无固定职业</li>
+            </ul>
+        </div>
+    </div>
+</aside>
+
+<!-- 工资收入 -->
+<aside class="sel-control-box" data-aslider="income">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">工资收入</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll">
+            <ul class="slider">
+                <li data-id="66">3000元以下</li>
+                <li data-id="67">3000-5000元</li>
+                <li data-id="68">5000-8000元</li>
+                <li data-id="69">8000-12000元</li>
+                <li data-id="108">12000-20000元</li>
+                <li data-id="109">20000元以上</li>
+            </ul>
+        </div>
+    </div>
+</aside>
+
+<!-- 社保证明 -->
+<aside class="sel-control-box" data-aslider="insurance">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">社保证明</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll">
+            <ul class="slider">
+                <li data-id="1">有本地社保</li>
+                <li data-id="0">无本地社保</li>
+            </ul>
+        </div>
+    </div>
+</aside>
+
+<!-- 公积金 -->
+<aside class="sel-control-box" data-aslider="funds">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">公积金</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll">
+            <ul class="slider">
+                <li data-id="1">有公积金</li>
+                <li data-id="0">无公积金</li>
+            </ul>
+        </div>
+    </div>
+</aside>
+
+<!-- 信用记录 -->
+<aside class="sel-control-box" data-aslider="credit">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">信用记录</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll">
+            <ul class="slider">
+                <li data-id="71">信用良好</li>
+                <li data-id="72">少数逾期</li>
+                <li data-id="70">长期多数逾期</li>
+                <li data-id="256">无信用记录</li>
+            </ul>
+        </div>
+    </div>
+</aside>
+
+<!-- 住房状态 -->
+<aside class="sel-control-box" data-aslider="houseState">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">住房状态</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll">
+            <ul class="slider">
+                <li data-id="79">自有全款</li>
+                <li data-id="80">自有贷款</li>
+                <li data-id="81">租赁</li>
+            </ul>
+        </div>
+    </div>
+</aside>
+
+<!-- 婚姻 -->
+<aside class="sel-control-box" data-aslider="maritalStatus">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">婚姻</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll">
+            <ul class="slider">
+                <li data-id="215">已婚</li>
+                <li data-id="216">未婚</li>
+            </ul>
+        </div>
+    </div>
+</aside>
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

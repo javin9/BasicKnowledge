@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+     <link rel="icon" type="image/x-icon" href="http://www.daikuan.com/favicon.ico">
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <title>易鑫车险</title>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<header class="top_title">
+    <a href="javascript:window.history.go(-1);" class="return"  onClick="javascript:window.history.go(-1);">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAeCAYAAAAl+Z4RAAAAAXNSR0IArs4c6QAAAr9JREFUOBGVlEtoU1EQhnvzgojgEwSji4AxuAgESgUVi6jx1TxIIVCq+FipS90JgoIoiAtBCnHlRkQwmnctVavtRkQi3WgWyaIuCl0VXWiUPP3m9t5wE5MmOXByzpnz///MnZkTZWjA0Wg0FL/fPwXtpKIod80D8odyudxjOFeYW5n7TIMIBAKBh+AvMxVmgwhmZNPXIOx7hH9DB0N+mslkLvQVAeSbRjIiMbvdfgmRRk8ByNch3zF4zjgcjrOxWKwmtnWTODY2dhXMIwP5jdPpHI9Go+WmTd+0ryTsYr1ef4JdzRPhLhD2aTz/MWI7JhHPExCeEbr6iew/QfZB/mUky/4/ATyH8PySO4sKUJRFi8VyNJlM/pRz+2jJQTAYPIXXOCCrAPH8zWq1CvlHO1E/N6tAto/gOY6ATbssEPbxRCKxqoM7reonhEKhg7VabRbyRgHheclms43G4/HlTiSjTeGbT+A5gXGDdrFsMplG6bIlI7Db3oTXBzoZz6t4PtYvWUQlB2pHyQExc7lc1nMgpp7DhNdroH5ryM2sb8Ph8N6eTA2gJpHGGeY8x9yk2Zcp32HK9107d13UMk5PT3+hWc6A0iPZVa1W31NaR1emdtHsg1Qq9dFsNgew/5U78uFkmaO5dsi522gKCCCdTn+ghOPkRX1tiLjpD8nJtr4EBEQJZ1gmmFU5MzxUZjYSiej5WbNqvy0R6DfZbDZBJOeJpK7Zhkul0mtE1E7VcbK2PCbjRaFQ+OpyuaSVg0yp1u5KpXLA6/W+yOfzenTdBUSsWCwuut1ueUxSIRlORIYRiSHS+y9NGETyGZESW5+cGXsosWdycvLV/Px8XW2kNfv6v/TELapy24B6PjIycq5rDgxAdUskC0QiL/aQdudZWVnZ2beAkBB5h8h2tvs1kS19f4JGkA5V6M4pVh9lvv8P2UT5ZwHVEw0AAAAASUVORK5CYII=" alt="Alternate Text" /></a>
+    <a href="javascript:void(0);" class="center fontSize_17">买车险</a>
+</header>
+<div id="bannerCtn" class="swiper-container swiper-container-horizontal" data-proportion="0.29">
+    <div class="swiper-wrapper">
+        <div name="bannerImg" class="swiper-slide swiper-slide-prev">
+            <a href="javascript:void(0);" class="">
+                <img src="../../comm/images/banner/chexian1.html.png" alt="买车险就上chexian.com" data-bind="css: { hide: ShortEName() == 'BOCI' }"/>
+            </a>
+        </div>
+    </div>
+    <div id="bannerPagination" class="swiper-pagination right"></div>
+    </div>
+</div>
+<div id="UserBasicInfo">
+	<index></index>
+</div>
+{{{htmlWebpackPlugin.options.footer}}}
+<div class="pop_alert" style="display: none;">
+    <p class="fontSize_17"></p>
+</div>
+<!--loading遮罩层-->
+<div id="loadingdiv" class="loading_mark">
+    <p class="fontSize_18">加载中...</p>
+</div>
+<div id="whiteLoading"></div>
+<!-- loadding - 百分比 -->
+<div id="loadding">
+    <div class="main">
+        <div class="prg-cont rad-prg" id="indicatorContainer2">
+            <img src='https://jd.yixinfinance.com.cn/chedai/insurance/mweb//images/insurance/loading-animate.gif' alt="加载中" />
+        </div>
+        <h3 class="fontSize_13">努力加载中...</h3>
+    </div>
+</div>
+<div id="loading">
+    <div class="main">
+        <span class="ouro ouro3">
+            <span class="left"><span class="anim"></span></span>
+            <span class="right"><span class="anim"></span></span>
+        </span>
+        <p class="fontSize_15">loading</p>
+        <h3 class="fontSize_13">努力加载中...</h3>
+    </div>
+</div>
+<!-- 返回顶部 start -->
+<a id="movetop" href="javascript:void(0);" class="float-r-ball float-top">
+    <div class="ico-top"></div>
+</a>
+<span id="dvCompute" class="fontSize_15" style="visibility: hidden; position: fixed;"></span>
+<!--提示框-->
+<div class="alert_box error_box">
+    <div class="alert_mark"></div>
+    <div class="alert_info">
+        <div class="alert_title fontSize_15">请确认您的地址</div>
+        <div class="box_box">
+            <div class="alert_info_box">
+                <div class="info_main fontSize_13">加载失败</div>
+            </div>
+        </div>
+        <div class="bottom">
+            <a href="javascript:void(0)" class="btn btn_save fontSize_15">确认</a>
+            <a href="javascript:void(0)" class="btn edit_btn btn_no fontSize_15">取消</a>
+            <a href="javascript:void(0)" class="btn edit_btn btn_yes fontSize_15">删除</a>
+            <a href="javascript:void(0)" class="btn btn_save_date fontSize_15">确认</a>
+            <a href="javascript:void(0)" class="btn change_btn fontSize_15">修改</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://img4.bitautoimg.com/jinrong/assets/libs/cityLocation/tencent.m.js?v=201704051420"></script>
+<script type="text/javascript" src='https://open.mobile.qq.com/sdk/qqapi.js?_bid=152'></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"> </script>
+<script type="text/javascript" src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script type="text/javascript" src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

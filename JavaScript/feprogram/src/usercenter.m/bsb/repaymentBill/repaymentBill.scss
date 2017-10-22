@@ -1,0 +1,35 @@
+@import "../common/css/mixin.scss";
+
+// repayment
+.rpm_wrap {
+	background: #fff;
+	margin-bottom: px2rem(20);
+
+}
+
+.rpm_box {
+	padding: px2rem(30) 0 px2rem(30) px2rem(30);
+}
+
+.rpm_item {
+	position: relative;
+	border-top: 1px solid #e5e5e5;
+
+	b {
+		display: block;
+		margin-bottom: px2rem(8);
+		@include fsize(30);
+		line-height: px2rem(46);
+		color: #666;
+	}
+
+	p {
+		color: #999;
+		line-height: px2rem(36);
+	}
+
+	.arr_r {
+		display: block;
+		width: px2rem(30);
+	}
+}

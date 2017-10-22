@@ -1,0 +1,292 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+
+.ok-icon{
+    margin:0 auto;
+    width: px2rem(140);
+    height: px2rem(140);
+    background: url(images/ok.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top:px2rem(80);
+}
+.ok-tip{
+    text-align: center;
+    height: px2rem(48);
+    @include fsize(32);
+    color: #394043;
+    line-height: px2rem(48);
+    margin-top: px2rem(20);
+    font-weight: bold;
+}
+
+.order-tip{
+@include fsize(26);
+color: #999999;
+height: px2rem(80);
+line-height: px2rem(80);
+margin-left: px2rem(30);
+}
+
+.pro-groups {
+    position: relative;
+    padding: 0;
+    background-color: #fff;
+    overflow: hidden
+}
+
+.pro-groups:first-child {
+    margin-bottom: 0
+}
+
+.adviser,.tijiao {
+    position: absolute;
+    right: .4rem;
+    top: px2rem(-5);
+    z-index: 3;
+    padding: .4rem 0 .266667rem .4rem
+}
+
+.tijiao {
+    text-align: center
+}
+
+.tijiao .uf {
+    color: #e9474d;
+    border: 1px solid #e9474d;
+    border-radius: 1.73333rem
+}
+
+.tijiao .uf,.tijiao .yixuan {
+    padding: 1px;
+    overflow: hidden;
+    height: .6666666666rem;
+    width: 2.26666666666rem;
+    line-height: .6666666666rem;
+    text-align: center;
+    display: inline-block
+}
+
+.tijiao .yixuan {
+    border-radius: 1.73333rem;
+    color: #666;
+    border: 1px solid #666
+}
+
+.adviser>.uf {
+    background: #fff;
+    border-radius: .04rem;
+    padding: 1px;
+    overflow: hidden;
+    border: 1px solid #e9474d;
+    border-radius: 1.73333rem;
+    color: #686868
+}
+
+.adviser .ad-photo {
+    width: .426667rem;
+    height: .426667rem;
+    display: block;
+    border-radius: 1rem;
+    margin-left: 0;
+    margin-right: .133333rem;
+    position: relative;
+    top: .04rem;
+    
+}
+
+.adviser .ad-tel {
+    width: .506667rem;
+    height: .506667rem;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAVCAYAAABLy77vAAAAAXNSR0IArs4c6QAAAvlJREFUOBGNVE1IVFEUvue++WmepemmkMAyc5EZIRNZ2SKizcw4Qz8jwpiI2tAiWwVtKtxFRAktUqTFOGZEr4JxmBYlUpDQjxGoWGhiK11UilFvZsx5t++OPRn/vZtz7znf/c7PPecSwxJCkNtbW0OG0ciI9kMxxjm7GI12vZX2jSySIJcn0MoEu5B5gYjFLQpzRiJdw5n61fa8srLWI0mI6Csx5aRFsWcTZ5eEYI65FLWtdnGpntyemhhSc1kUpay7O/zJBLjdgV7B2HGrhZVsJCqOaMoYo/5Mknky3i6lYdARk3wtyRmJHBTqy1KQqtpeSB1S3LHUttKZIxpdkIBcvHTdhsyYMEgkFltWPkmCz0xQcabZ663PF/SrFTqycmss07bansPtezh2uk43FJiglJF8gnSPcaL6SCQ0aOrXklwhoUkAJWfPmkD0507U5qfTWdRp6taTfL57aUQwEWxqarLLC4ikA6L0w8fRK+sRmPb5InO6gfSKx8enrkpDfr7jOkQfKn3N5Tt3yASvJdMj4vc/VvR4ZAgp7SZGZbFY55DX27gtlYq/E0QOErbDdntyNpmk23C4HboREkpbLNbx0SRPE8kDRqXCEMZrbIdVh1qhae0zPl9gL8akT9aLEZtDU+F1SQdZlryDsXqkOrLPa9q93wv9E42G36A5WzAu+/7E9Wd+f7NNjgY8ncIAb4W0kaKceB57sFnhSgFYwsBW6/rMq7q6uk0LEUkP6RT1yFO0hA8RPMxy+Go1rSolbSstt7vmFh7pMspxcxGRBEv27z/mXsJbBbxGFVKro9F2pLN8/Xc8BpxlITUTFgqFEkxs8eLch5pUGobeKzvdtGfK3NweLoihqYWhZBrM/ehofyIQOBOenJx2AOQXzGgo3lOaLC8/MDgwMPBX4vz+hryp6cR9/B5H8X/dWZaaSWZK+fHhNe8i1V2y/6FPjwyRKJGfHwh6CgvzPOsSScJgMGidmNCrDCaqceEg+i0HRN8w7CFVLWrRtObZfwEmKw15KQGgAAAAAElFTkSuQmCC) no-repeat 50%;
+    background-size: 50%
+}
+
+.adviser .name {
+    color: #686868;
+    // background: #fff;
+    border-radius: 2px 0 0 2px;
+    padding: 0 .08rem;
+    line-height: .506667rem;
+    overflow: hidden
+}
+
+.pro-info {
+    display: -webkit-box;
+    display: box;
+    padding: .4rem 0 .266667rem .4rem;
+    position: relative;
+    background: #fff;
+    z-index: 1
+}
+
+.pro-info.special-a {
+    padding-bottom: 1rem
+}
+
+.pro-info .img_box {
+    padding-right: .266667rem
+}
+
+.pro-info .img_box img {
+    width: .853333rem;
+    height: .853333rem;
+    display: block
+}
+
+.pro-info .item_right_box {
+    -webkit-box-flex: 1;
+    box-flex: 1
+}
+
+.pro-info .dl {
+    display: -webkit-box;
+    display: box
+}
+
+.pro-info .dt {
+    -webkit-box-flex: 1;
+    box-flex: 1
+}
+
+.pro-info .dd {
+    text-align: right;
+    padding-right: .4rem
+}
+
+.pro-info .dl.apply_price .dd {
+    margin-top: -.04rem
+}
+
+.pro-info .dl.apply_evaluation .dd {
+    margin-top: .053333rem
+}
+
+.pro-info .font-title {
+    font-weight: 600;
+    color: #000
+}
+.col_rede{
+   color:#EC5330 !important;
+}
+.pro-info .subtitle {
+    color: #e15436;
+    padding-top: .266667rem
+}
+
+.top-tag {
+    color: #fff;
+    padding: 0 .133333rem;
+    border-radius: .2rem;
+    background: #dbb76c;
+    line-height: 150%;
+    display: inline-block;
+    position: absolute;
+    bottom: .16rem;
+    right: .4rem
+}
+
+.pro-info .apply_price {
+    padding: .4rem 0 0
+}
+
+.pro-info .apply_evaluation {
+    padding: .2rem 0 0
+}
+
+.pro-info .apply {
+    padding: 0 0 0 .16rem
+}
+
+.pro-info .level_one {
+    color: #e15436
+}
+
+.pro-info .level_two {
+    color: #5fc3e8
+}
+
+.pro-info .level_three {
+    color: #32ad67
+}
+
+.pro-info .apply_tag {
+    padding: .266667rem 0 0
+}
+
+.pro-info .apply_tag span {
+    height: .4rem;
+    line-height: .4rem;
+    display: inline-block;
+    margin-right: .133333rem;
+    padding: 0 .133333rem;
+    border-radius: .04rem
+}
+
+.pro-info .tag_blue {
+    color: #008af0;
+    border: 1px solid #008af0
+}
+
+.pro-info .tag_red {
+    color: #e15436;
+    border: 1px solid #e15436
+}
+
+.pro-info .img_info {
+    display: block;
+    clear: both;
+    margin-top: .266667rem
+}
+
+.pro-info .img_info li {
+    padding: .266667rem 0 0;
+    width: 80%;
+    line-height: .373333rem
+}
+#rapidLoan{
+  margin-top: px2rem(20);
+  background: #FFFFFF;
+}
+.rapidLoan-tip{
+@include fsize(26);
+color: #999999;
+height: px2rem(70);
+line-height: px2rem(70);
+padding-left: px2rem(30);
+border-bottom: 1px solid #E5E5E5;
+}
+.order-text{
+  @include fsize(26);
+color: #999999;
+height: px2rem(80);
+padding-left: px2rem(30);
+line-height: px2rem(40);
+
+}
+.f-green{
+color:#32ad67!important
+}
+.f-blue{
+color:#64c3e6!important
+}
+.f-red {
+color: #df553d!important;
+}
+#rapidLoan .inputwrap label{
+    color: #000 !important;
+}
+#rapidLoan .container{
+    padding-left: px2rem(30)!important;
+}
+.phone{
+        border-top: 1px solid #fff!important;
+             margin-bottom: px2rem(2)!important;
+}
+.w120{
+        width: 1.9rem !important;
+}

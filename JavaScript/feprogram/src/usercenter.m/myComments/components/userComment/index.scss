@@ -1,0 +1,233 @@
+.publish-rating dl{
+    background:#fff;
+}
+.publish-rating dt{
+    padding:0 0.4rem;
+    margin-top:0.266667rem;
+    line-height:1.066667rem;
+    color:#000;
+    border-bottom:1px solid #eee;
+}
+.publish-rating header{
+    position: relative;
+    padding: 0.533333rem 0 0 1.84rem;
+    font-size:0;
+}
+.publish-rating header ul,
+.adviser-score{
+    padding-bottom:0.133333rem;
+}
+.publish-rating header li b,
+.adviser-score b{
+    color:#ff6446;
+}
+.publish-rating header li,
+.adviser-score{
+    margin-bottom:0.4rem;
+}
+.head-portrait{
+    position:absolute;
+    left: 0.2rem;
+    top: 0.4rem;
+    width: 1.5rem;
+    color:#666;
+    white-space: normal;
+    word-break: break-all;
+    text-align: center;
+}
+.head-portrait img{
+    width:0.84rem;
+    margin:0 auto;
+}
+.star-level{
+    width:3.066666rem;
+    height:0.44rem;
+    position:relative;
+    left:-0.08rem;
+    display:inline-block;
+    font-size:0;
+    top: 0.05rem;
+}
+.star-level em{
+    width:20%;
+    background:url(images/star.png) no-repeat left top;
+    background-size: auto 0.88rem !important;
+    display:inline-block;
+    height:0.44rem; 
+}
+.star-level em.on{
+    background:url(images/star.png) no-repeat left bottom;
+    width:20%;
+    background-size: auto 0.88rem !important;
+    
+}
+.publish-rating .warn{
+    color:#e15436;
+    display:none;
+}
+.publish-rating .score{
+    color:#666666;
+}
+.publish-rating .score font{
+    color:#ff6446;
+}
+.tag{
+    color:#999;
+    border:1px solid #999;
+    display:inline-block;
+    margin-right:0.4rem;
+    height:0.67rem;
+    line-height:0.67rem;
+    padding:0 0.32rem;
+    border-radius: 0.066667rem;
+    margin-bottom:0.4rem;
+}
+.tag.on{
+    color:#e79500;
+    border:1px solid #e79500;
+}
+.publish-rating dl.adviser-comment{
+    padding-bottom:1.306667rem;
+}
+.publish-rating dl.adviser-comment .head-portrait img{
+    border-radius: 50%;
+}
+.publish-rating footer {
+    margin:0.133333rem 0 0 0.4rem;
+    border-top:1px solid #eee;
+    padding:0.4rem 0;
+}
+.publish-rating footer textarea{
+    height:1.8rem;
+    border:none;
+    display:block;
+    width: 100%;
+    color: #333;
+    box-sizing: border-box;
+    padding-right:0.4rem;
+}
+.submit-btn{
+    color:#fff;
+    background:#dbb76c;
+    line-height:1.306667rem;
+    height:1.306667rem;
+    text-align:center;
+    display:block;
+    width:100%;
+    position: fixed;
+    bottom:0;
+}
+.publish-rating footer .warn{
+    text-align: right;
+    padding-right:0.4rem;
+    display:none;
+}
+.backGoPageTip{
+    border-radius: 0.1333333rem;
+    background:#fff;
+    width:8.666666rem;
+/*  height:3.333334rem;*/
+    position: fixed;
+    left:50%;
+    top:50%;
+    margin-left:-4.333333rem;
+    margin-top:-1.666667rem;
+    z-index: 99999;
+    font-size:0;
+    display:none;
+}
+.backGoPageTip>div{
+    border-bottom:1px solid #eee;
+    text-align:center;
+    padding-top:0.8rem;
+    height:2rem;
+    box-sizing: border-box;
+    color:#000;
+}
+.backGoPageTip>a{
+    display: inline-block;
+    width:48%;
+    box-sizing: border-box;
+    height:1.306667rem;
+    line-height:1.306667rem;
+    text-align: center;
+}
+.backGoPageTip>a.cancel-btn{
+    position:relative;
+    color:#999;
+}
+.backGoPageTip>a.cancel-btn:after{
+    width:1px;
+    content:" ";
+    position: absolute;
+    right:0;
+    height:100%;
+    border-right:1px solid #eee;
+}
+.backGoPageTip>a.sure-btn{
+    color:#dbb76c;
+}
+[data-dpr="1"] .font-24{
+  font-size: 12px;
+}
+[data-dpr="2"] .font-24{
+  font-size: 24px;
+}
+[data-dpr="3"] .font-24{
+  font-size: 36px;
+}
+[data-dpr="1"] .font-28{
+  font-size: 14px;
+}
+[data-dpr="2"] .font-28{
+  font-size: 28px;
+}
+[data-dpr="3"] .font-28{
+  font-size: 42px;
+}
+[data-dpr="1"] .font-30{
+  font-size: 15px;
+}
+[data-dpr="2"] .font-30{
+  font-size: 30px;
+}
+[data-dpr="3"] .font-30{
+  font-size: 45px;
+}
+[data-dpr="1"] .font-32{
+  font-size: 16px;
+}
+[data-dpr="2"] .font-32{
+  font-size: 32px;
+}
+[data-dpr="3"] .font-32{
+  font-size: 48px;
+}
+/*成功页面*/
+.release-success{
+    padding-top:4rem;
+    text-align:center;
+    background:url(images/icon02.png) center 2.133333rem no-repeat;
+    background-size: 1.333333rem auto;
+    line-height:150%;
+    color:#000;
+    display:block;
+}
+.release-success a{
+    display:inline-block;
+    width:2.666667rem;
+    height:0.8rem;
+    line-height:0.8rem;
+    text-align:center;
+    border-radius: 0.066667rem;
+    margin:0.5rem 0.4rem;
+}
+.check-btn{
+    color:#fff;
+    background:#dbb76c;
+    border:1px solid #dbb76c;
+}
+.back-btn{
+    color:#999;
+    border:1px solid #999;
+}

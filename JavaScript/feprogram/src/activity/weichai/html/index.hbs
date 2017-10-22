@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <script>
+    	var SaveUrl = '/api/Common/GetCarListWithPrice'
+    	var DealerInfo = [
+    		{
+    			"name": "云南省",
+    			"citys" : [
+    				{
+    					"name" : "大理州",
+    					"district" : [
+    						{
+	    						"name" : "下关区",
+	    						"sellers" : [
+	    							{
+	    								"name" : "大理五源经贸有限公司"
+	    							}
+	    						]
+    						}
+    					]
+    				},
+    				{
+    					"name" : "玉溪市",
+    					"district" : [
+    						{
+	    						"name" : "红塔区",
+	    						"sellers" : [
+	    							{
+	    								"name" : "玉溪和泰汽车销售服务有限公司"
+	    							}
+	  							]
+    						}
+    					]
+    				}
+    			]
+    		},
+    		{
+    			"name": "四川省",
+    			"citys" : [
+    				{
+    					"name" : "凉山州",
+    					"district" : [
+    						{
+	    						"name" : "西昌市",
+	    						"sellers" : [
+	    							{
+	    								"name" : "凉山州天宇商贸有限责任公司"
+	    							}
+	    						]
+    						}
+    					]
+    				},
+    				{
+    					"name" : "南充市",
+    					"district" : [
+	    					{
+	    						"name" : "高坪区",
+	    						"sellers" : [
+	    							{
+	    								"name" : "南充市福荣汽车销售有限公司"
+	    							}
+	    						]
+	    					}
+    					]
+    				}
+    			]
+    		}
+    	]
+    </script>
+</head>
+<body>
+
+<header></header>
+
+<section class="form">
+	<form action=""  autocomplete="off">
+		<div class="form-row">
+			<div class="form-item form-short form-first">
+				<label>姓名</label>
+				<input type="text" name="UserName">
+			</div>
+
+			<div class="form-item form-short">
+				<label>性别</label>
+				<div class="select-wrapper">
+					<select name="Sex">
+						<option value="男">男</option>
+						<option value="女">女</option>
+					</select>
+				</div>
+				<em></em>
+			</div>
+
+			<div class="form-item">
+				<label>手机</label>
+				<input type="tel" name="Telephone">
+			</div>
+
+			<div class="form-item">
+				<label>车型</label>
+				<div class="select-wrapper">
+					<select name="CarSerial">
+						<option value="英致727">英致727</option>
+						<option value="英致737">英致737</option>
+						<option value="英致G3">英致G3</option>
+						<option value="英致G5">英致G5</option>
+					</select>
+				</div>
+				<em></em>
+			</div>
+
+			<div class="form-item">
+				<label>省份</label>
+				<div class="select-wrapper">
+					<select name="Province"></select>
+				</div>
+				<em></em>
+			</div>
+		</div>
+
+		<div class="form-row">
+			<div class="form-item">
+				<label>城市</label>
+				<div class="select-wrapper">
+					<select name="City"></select>
+				</div>
+				<em></em>
+			</div>
+
+			<div class="form-item">
+				<label>区/县</label>
+				<div class="select-wrapper">
+					<select name="County"></select>
+				</div>
+				<em></em>
+			</div>
+
+			<div class="form-item">
+				<label>经销商</label>
+				<div class="select-wrapper select-overflow">
+					<select name="Dealer"></select>
+				</div>
+				<em></em>
+			</div>
+
+			<div class="form-item form-date">
+				<label>时间</label>
+				<div class="select-wrapper" id="datepicker">
+					<span id="year"></span>
+					<em></em>
+					<span id="month"></span>
+					<em></em>
+					<span id="day"></span>
+					<em></em>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<input type="submit" class="submit" value="立即预约试驾">
+		</footer>
+	</form>
+</section>
+
+<section class="bg-1"></section>
+<section class="bg-2"></section>
+<section class="bg-3"></section>
+<section class="bg-4"></section>
+
+<div id="maskLayer"></div>
+
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

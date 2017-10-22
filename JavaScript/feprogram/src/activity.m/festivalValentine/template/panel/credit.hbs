@@ -1,0 +1,18 @@
+<!-- 信用 -->
+<div id="CreditDiv" class="choose_bot" style="display: none">
+    <ul class="form_modu">
+        <li class="form_modu_head uf uf_ac">
+            <div class="icon-unmber"><i class="icon icon_credit"></i></div>
+            <b class="uf_f1">您的信用记录如何？</b>
+            <!-- update -->
+            <span class="progress">3/6</span>
+            <!-- update end -->
+        </li>
+        <li class="form_modu_body choose_area">
+            {{#each data.credits}}
+            <a id="{{id}}" href="javascript:void(0);">{{name}}</a>
+            {{/each}}
+        </li>
+    </ul>
+    
+</div>

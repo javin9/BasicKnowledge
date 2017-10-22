@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        // var IsGameOver = 'True';
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="yxWrapper">
+    <header class="header-bar">
+        <a href="javascript:history.back();" class="nav-back"></a>
+        <h1 class="font-nav">易鑫粽动员</h1>
+        <span></span>
+    </header>
+    <div id="app"></div>
+</div>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

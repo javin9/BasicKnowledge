@@ -1,0 +1,80 @@
+@using YiXin.Platform.Framework.MVC.Extensions
+@using YiXin.Platform.Utils
+@using YiXin.XinChe.ActivityWeb.Controllers
+@using YiXin.XinChe.Model.DataModel
+@using YiXin.XinChe.ViewModel;
+
+@{
+ViewBag.commonjs=true;
+    ViewActivitiesStyleC viewmodel = ViewBag.activity;
+    ActivitiesStyleC activity = viewmodel.activity;
+    ActivitiesStyleC_Template template = viewmodel.template;
+    IList<ActivitiesStyleC_FocusPic> piclist = viewmodel.focuspic;
+
+    ViewBag.Title = activity.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+@section header{
+
+    <style>
+        body {
+            background-color:@template.BackgroundColor
+        }
+    </style>
+}
+<link href="@Url.GetStaticResource("activity/ActivityC/ActivityC.css")" rel="stylesheet" type="text/css" />
+<div id="style_box" class="style_box" style="background: url('@(FileManager.ReadFromCDNServer(activity.PCBackGroundPic))') no-repeat top center;">
+    <div id="style_box_w1200" class="style_box_w1200">
+        <div class="style_box_img">
+            <div class="swiper_banner" id="swiper_banner">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        
+                        @if (template.IsAddFoucusPic && piclist.Count > 0)
+                        {
+                            for (int i = 0; i < piclist.Count; i++)
+                            {
+                                <div class="swiper-slide">
+                                    <a href="@piclist[i].URL" target="_blank"><img src="@FileManager.ReadFromCDNServer(piclist[i].Picture)" alt="查看详情" title="查看详情" /></a>
+                                </div>
+                            }
+                        }                           
+                    </div>
+                    <div class="pagination"></div>
+                </div>
+            </div>
+        </div>
+        @Html.Raw(activity.PCImageMap);
+    </div>
+</div>
+
+<script>
+
+    /*@if (false&&template.IsAddFoucusPic&&!string.IsNullOrEmpty(template.FocusPicSetting))
+    {
+        <text>
+    seajs.use(['jquery', 'swiper'], function (jquery, swiper) {
+        var $ = jquery;
+        $(function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                @Html.Raw(template.FocusPicSetting)
+            })
+        })
+    });
+    </text>
+    }*/
+</script>
+@section footer{
+
+<script src="@Url.GetStaticResource("activity/ActivityC/ActivityC.js")" type="text/javascript" charset="utf-8"></script>
+
+}
+
+
+
+
+   
+   
+

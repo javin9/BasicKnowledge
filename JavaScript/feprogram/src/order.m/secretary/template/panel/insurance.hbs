@@ -1,0 +1,30 @@
+<!-- 社保 -->
+<div id="FundAndInsurance" class="choose_bot" style="display: none">
+    <ul class="form_modu">
+        <li class="form_modu_head uf uf_ac">
+            <b>那您有缴社保和公积金么？</b>
+            <!-- update -->
+            <span class="progress"><em>5</em>/6</span>
+            <!-- update end -->
+        </li>
+        <li class="progress-bar"><div style="width:83.333%"></div></li>
+        <li class="form_modu_body choose_area">
+            <div id="InsuranceDiv">
+                <span>社 保</span>
+                {{#each data.insurances}}
+                <a id="{{id}}" href="javascript:void(0);">{{name}}</a>
+                {{/each}}
+            </div>
+            <div id="FundsDiv">
+                <span>公积金</span>
+                {{#each data.funds}}
+                    <a id="{{id}}" href="javascript:void(0);">{{name}}</a>
+                {{/each}}
+            </div>
+        </li>
+    </ul>
+    
+    <input type="hidden" name="FundsText" id="FundsText" />
+    
+    <input type="hidden" name="InsuranceText" id="InsuranceText" />
+</div>

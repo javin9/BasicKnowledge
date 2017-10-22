@@ -1,0 +1,64 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+$fullpage-border-color:#e5e5e5;
+$fullpage-gray: #666;
+.component-popup {
+  * {
+    box-sizing: border-box;
+  }
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.6);
+  padding-top: px2rem(70);
+  section {
+    width: 100%;
+    background-color: $white-color;
+    position: absolute;
+    bottom:0;
+  }
+
+  &-title {
+    // @include fsize(40);
+    font-size: px2rem(40);
+    height: px2rem(132);
+    line-height: px2rem(132);
+    text-align: center;
+    color: $dark-color;
+  }
+
+  &-container-body {
+    overflow: hidden;
+    dl {
+      font-size: 0;
+      padding: 0 px2rem(30) px2rem(40) px2rem(30);
+
+      dd {
+        // @include fsize(28);
+        font-size: px2rem(28);
+        line-height: px2rem(48);
+      }
+      h3 {
+        padding: px2rem(15) 0 px2rem(10);
+        color: $dark-color;
+        word-wrap:break-word;
+      }
+      p {
+        color: $fullpage-gray;
+        word-wrap:break-word;
+       }
+    }
+  }
+  &-container-close {
+    height: px2rem(102);
+    // @include fsize(32);
+    font-size: px2rem(32);
+    line-height: px2rem(102);
+    border-top: 1px solid $fullpage-border-color;
+    text-align: center;
+    color: $main-color;
+  }
+} 

@@ -1,0 +1,502 @@
+/*常见问题*/
+#commonSwiper {
+    height: 690px;
+    overflow: hidden;
+}
+#commonSwiper li{
+	height:230px;
+}
+.modular_9_qusbtn a:hover{
+	text-decoration: none;
+}
+/*广告弹层*/
+#layerAD{
+	position:fixed;
+	width:1000px;
+	height:600px;
+	left:50%;
+	top:50%;
+	margin-left:-500px;
+	margin-top:-300px;
+	overflow: hidden;
+	text-align: center;
+	z-index:99999;
+	display:none;
+}
+#layerAD>span{
+	position:relative;
+	display: block;
+}
+#layerAD .close-btn{
+	position:absolute;
+	top:0;
+	right:0;
+	cursor: pointer;
+}
+
+
+/*焦点图*/
+.modular_pagination{
+	bottom: 0px;
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    text-align: center;
+}
+/*选车*/
+.fail-tip{
+	width: 240px;
+    box-sizing: border-box;
+}
+#carTip{
+	position:absolute;
+	font-size: 12px;
+    font-family: '\5b8b\4f53';
+    top: 0;
+    left: 0px;
+    height: 44px;
+    width: 146px;
+    padding: 0 12px;
+    line-height: 44px;
+    color: #e9474d;
+    display:none;
+    background: #fff;
+}
+
+/*卖点*/
+.selling-point-box{
+	height:220px;
+	background:#fbfbfb;
+	text-align:center;
+}
+.selling-point-box ul{
+	margin:0 auto;
+	width:1200px;
+}
+.selling-point-box li{
+	float:left;
+	width:240px;
+	border-right:1px solid #ececec;
+	margin-top:30px;
+	font-size:14px;
+	color:#666;
+	padding-top: 70px;
+	background:url(images/selling_point.png) no-repeat left top;
+	height:162px;
+	box-sizing: border-box;
+}
+.selling-point-box li b{
+	display: block;
+	font-size:18px;
+	color:#000;
+	padding-bottom:20px;
+}
+.selling-point-box li span{
+	color:#bfa05e;
+	font-size:16px;
+
+}
+.selling-point-box li.li01{
+	background-position: -169px -455px;
+}
+.selling-point-box li.li02{
+  background-position: 73px top;
+}
+.selling-point-box li.li03{
+  background-position: 73px -228px;
+}
+.selling-point-box li.li04{
+  background-position: 73px -455px;
+}
+.selling-point-box li.li05{
+	background-position: -166px 5px;
+  border-right:0px;
+}
+
+.measurement{
+	display: block;
+	width: 1200px;
+	height: 120px;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.measure-t{
+	font-size: 20px;
+	color: #000;
+	position: absolute;
+    bottom: 22px;
+    left: 424px;
+}
+.test-btn{
+	width: 90px;
+	font-size: 18px;
+	color: #fff;
+	background-color: #ef464f;
+	text-align: center;
+	padding: 1px 15px;
+	margin-left: 15px;
+}
+
+.xinzeng{
+    margin-top:40px;
+}
+.xinzeng-con{
+    width:1200px;
+    float:left;
+        margin-top: 10px;
+}
+.xinzeng-list {
+    width: 510px;
+    height: 483px;
+    border-bottom: 1px solid #eee;
+  
+}
+.xinzeng-list-a-div {
+    float: left;
+    width: 253px;
+    height: 241px;
+    text-align: center;
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #eee;
+   
+}
+.xinzeng-list-a-div-desc_bg {
+       width: 219px;
+    margin: 30px auto 5px;
+    text-align: center;
+    background-image: url(images/modular_2_line.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+.xinzeng-list-a-div-desc_bg span{
+        font-size: 13px;
+    color: #fff;
+    background-color: #fc654d;
+    padding: 1px 5px;
+    font-family: '\5b8b\4f53';
+   
+}
+.xinzeng-list-a-div-desc_bg em{
+        color: #fc654d;
+    margin-left: 7px;
+    font-size: 17px;
+    
+   
+}
+.xinzeng-list-desc_text{
+        font-size: 16px;
+    color: #000;
+    text-align: center;
+}
+.xinzeng-list-div{
+      width: 150px;
+    height: 100px;
+    position: relative;
+    top: 30px;
+    left: 60px;
+}
+.xinzeng-list-img{
+        display: inline-block;
+    margin-left: 0px;
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+  
+}
+.xinzeng-con-zuoshang{
+    width:460px;
+    height:247px;
+    overflow: hidden;
+   position:relative;
+}
+
+.xinzeng-con-zuoshang-div{
+   position:absolute;
+   left:8%;
+   top:10%;
+}
+
+
+.xinzeng-con-zuoshang-div>span{
+ font-size:24px;
+ color:#000000;
+ font-weight: bold;
+}
+
+.xinzeng-con-zuoshang-div-p1{
+ font-size:18px;
+ color:#dd0733;
+ margin-top: 10px;
+  font-weight: bold;
+}
+.xinzeng-con-zuoshang-div-p2{
+ font-size:18px;
+ color:#000000;
+ margin-top: 10px;
+
+}
+.branch_cur{
+    color: #5a67ae !important;
+}
+
+
+.xinzeng-con-zuoxia{
+    width:460px;
+    height:244px;
+    overflow: hidden;
+   position:relative;
+   margin-top:-7px;
+}
+
+.xinzeng-con-zuoxia-div{
+   position:absolute;
+   left:8%;
+   top:10%;
+}
+
+
+.xinzeng-con-zuoxia-div>span{
+ font-size:24px;
+ color:#000000;
+ font-weight:bold;
+}
+
+
+.xinzeng-con-zuoxia-div-p{
+    font-size: 18px;
+    color: #dd0733;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.xinzeng-con-biankuang{
+    width: 112px;
+    height: 30px;
+    /* border: 2px solid #eee; */
+    position: absolute;
+    line-height: 30px;
+    left: 0;
+    top: 134px;
+    text-align: center;
+    background: #e9474d;
+}
+    .xinzeng-con-biankuang span {
+        font-size:14px;
+ color:#eee;
+    }
+
+
+
+    
+
+.xinzeng-con-zhong{
+    width: 230px;
+    height:484px;
+overflow: hidden;
+   position:relative;
+}
+
+.xinzeng-con-zhong-div{
+   position:absolute;
+   left:26%;
+   top:10%;
+}
+.xinzeng-con-zhong-div-p {
+    font-size:20px;
+    color:#666666;
+    margin-left: -32px;
+}
+
+.xinzeng-con-zhong-div>span{
+ font-size:24px;
+ color:#000000;
+ margin-left:10px;
+font-weight: bold;
+}
+
+
+.xinzeng-con-zhong-div-p{
+ font-size:19px;
+ color:#999;
+}
+
+.actionImg{
+
+}
+
+.xinzeng-con-zhong-biankuang{
+    width: 122px;
+    height: 25px;
+    border: 1px solid #e15436;
+    position: absolute;
+    left: -3%;
+    top: 103px;
+    text-align: center;
+}
+.xinzeng-con-zhong-biankuang span {
+    font-size:16px;
+    color:#e15436;
+}
+.xinzeng-hd-title{
+    font-size: 28px;
+    font-weight: bolder;
+    color: #000;
+    float: left;
+}
+
+.localCity-box {
+	width: 584px;
+	height: 355px;
+	padding: 50px 50px 25px 50px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 10px #e6e5e5;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-top: -215px;
+	margin-left: -342px;
+	background-color: #fff;
+	z-index: 88889;
+}
+
+.localCity-box .localCity-close {
+	width: 18px;
+	height: 18px;
+	background: url(images/close.png) no-repeat;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer
+}
+
+.localCity-box .earth-img {
+	width: 123px;
+	height: 89px;
+	background: url(images/earth.png) no-repeat
+}
+
+.localCity-box .tips-info {
+	margin-left: 30px
+}
+
+.localCity-box .tips-info .tips-txt {
+	font-size: 22px;
+	color: #333;
+	padding-bottom: 30px
+}
+
+.localCity-box .tips-info .tips-txt .col_red {
+	color: #ff6446
+}
+
+.tips-info a.city-btn {
+	display: block;
+	width: 180px;
+	padding: 10px 0;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	background-color: #ff6446
+}
+
+.tips-info a.city-btn:hover {
+	background-color: #f2614a
+}
+
+.localCity-box .comm-city {
+	padding: 35px 20px 20px
+}
+
+.localCity-box .comm-city .comm-header {
+	font-size: 18px;
+	color: #666
+}
+
+.localCity-box .comm-city .cities-box {
+	padding-top: 15px
+}
+
+.localCity-box .comm-city .cities-box span {
+	padding-bottom: 15px;
+	display: inline-block;
+	width: 19%;
+}
+
+.localCity-box .comm-city .cities-box span a {
+	font-size: 18px;
+	color: #000
+}
+
+.localCity-box .comm-city .cities-box span a:hover {
+	color: #ff6446
+}
+
+// 新版帮你贷款
+.nivo-controlNav {
+	top: 396px;
+	margin-left: 0;
+}
+
+.help-box {
+  box-sizing: border-box;
+  width: 240px;
+  height: 460px;
+  padding: 10px 0;
+  margin-right: -600px;
+  right: 50%;
+  position: absolute;
+  top: 0;
+  z-index: 8;
+  .help {
+    display: block;
+    box-sizing: border-box;
+    width: 240px;
+    height: 290px;
+    color: #fff;
+    padding: 47px 30px;
+    top: 0;
+    background: url(./images/help_bg.png) no-repeat;
+    text-align: center;
+    &-txt {
+      font-size: 36px;
+      position: relative;
+      &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #fff;
+        opacity: 0.2;
+        filter:alpha(opacity=20);
+        padding-top: 11px;
+      }
+    }
+    &-subtitle {
+      padding-top: 11px;
+      padding-bottom: 45px;
+      font-size: 20px;
+    }
+    &-btn {
+      height: 42px;
+      font-size: 20px;
+      background: url(./images/help_btn.png) no-repeat left top;
+      &:hover {
+        background: url(./images/help_btn2.png) no-repeat left top;
+      }
+      span {
+        // padding: 5px 0;
+        display: block;
+        i {
+          display: block;
+          height: 40px;
+          line-height: 40px;
+          color: #fff;
+
+        }
+      }
+    }
+  }
+}
+

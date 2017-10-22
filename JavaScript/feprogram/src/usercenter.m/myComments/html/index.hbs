@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var APIURL = "/";
+        var xinche='';
+        var BusinessLine = 550;
+        var CODE_GETTING_URL='/';
+        var CODE_VALIDATING_URL='/';
+        var USERCENTER='/';
+        var usercenter='/';
+        var returnurl = "";
+        var loginSign = true;
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+    <header class="header-bar">
+        <a href="javacript:void(0)" class="backGoPage" onclick="window.history.back();return false;"></a>
+        <h1 class="font-nav">我的评价</h1>
+        <span></span>
+    </header>
+    <article class="evaluate-list">
+	<div class="no-comment" style="display:none;" data-bind="visible:isNoCommentList">
+		<span>暂无评价</span>
+		贷款申请成功后，即可进行评价  <a href="/MyOrder/Index">查看订单</a>
+	</div>
+    <ul style="display:none;" data-bind="foreach: myCommentArr,visible:isCommentList">
+        <li>
+            <dl>
+                <dt class="display-flex product-title" data-bind="attr:{'data-link':detailLink},visible:isProductId">
+                    <h3 class="font-title" data-bind="text:packageName+'('+ companyName +')'"></h3>
+                    <div class="car-info" data-bind="text:'　'+carFullName"></div>
+                </dt>
+                <dd data-bind="visible:isProductId">
+                    <header>
+                        <div class="star-level"><div data-bind="style:{'width':productJudgeScoreWidth}"></div></div>
+                        <div data-bind="html:productTagHtml"></div>
+                    </header>
+                    <footer class="font-ctn" data-bind="text:productJudgeContent,visible:isProductJudgeContent"></footer>
+                    <div class="date-box date-box24" data-bind="text:createTime"></div>
+                </dd>
+                <dd class="adviser-box" data-bind="visible:isAdviser1">
+                    <h3 class="adviser-h3">
+                        <img data-bind="attr:{'src':adviserPhoto}" />
+                        <div class="adviser-name" data-bind="text:adviserName"></div>
+                        <i data-bind="attr:{'class':adviserSkillLevelCls}"></i>
+                        <span class="date-box24" data-bind="text:'从业'+adviserWorkingYears+'年-已帮'+ adviserServeNumber +'人贷款-'+ adviserRate +'好评'"></span>
+                        <a data-bind="attr:{href:telHref}"></a>
+                    </h3>
+                    <header>
+                        <div class="star-level" data-bind="visible:isAdviserScore"><div data-bind="style:{'width':adviserScore}"></div></div>
+                        <span data-bind="html:adviserTagHtml"></span>
+                    </header>
+                    <footer class="font-ctn" data-bind="text:adviserContentText"></footer>
+                    <div class="date-box date-box24" data-bind="text:createTime"></div>
+                </dd>
+            </dl>
+
+            <dl data-bind="visible:isAdviser2">
+                <dt class="adviser-box">
+                    <h3 class="adviser-h3">
+                        <img src="http://image.bitautoimg.com/jinrong/2016/05/03/59de7102-2bdb-4ac0-8f16-1149d5dc329e.png" />
+                        <div class="adviser-name">蒋雅雯</div>
+                        <i class="medal-2"></i>
+                        <span class="date-box24">从业8年-已帮332人贷款-89%好评</span>
+                        <a data-bind="attr:{href:telHref}"></a>
+                    </h3>
+                </dt>
+                <dd>
+                    <header>
+                        <div class="star-level"></div>
+                        <label class="adviser-name">审批快</label>
+                        <label class="adviser-name">资料简单</label>
+                        <label class="adviser-name">服务贴心</label>
+                    </header>
+                    <footer class="font-ctn">
+                        申请很方便，只提供了少量信息，客服就直接联系我了。大概审批下来用了将近 1 周的时间。真的是很愉快的一次贷款体验，谢谢！
+                    </footer>
+                    <div class="date-box date-box24">2016-01-05</div>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+    <div style="display:none;" class="sliderUp-box" data-bind="visible:isCommentList"></div>
+</article>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

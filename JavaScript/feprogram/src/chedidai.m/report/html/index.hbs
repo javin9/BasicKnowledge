@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var CODE_GETTING_URL = '/Validate/GetCode';
+        var CODE_VALIDATING_URL = '/Validate/CheckCode';
+        var USERCENTERURL = 'http://i.m.daikuan.com';
+        var APIURL = 'http://api.chedai.bitauto.com/';
+        var RESURL = 'http://img1.bitautoimg.com/jinrong/newmweb/';
+        var CDNFileURL = 'http://img1.bitautoimg.com/chedai/';
+        var BusinessLine = 552;
+
+         var localCity = {
+            CityId: '114',
+            CityName: '芜湖',
+            CitySpell: 'wuhu',
+            RegionId: '340200'
+        };
+        var source = '704';
+        var xincheUrl = 'http://xinche.m.daikuan.com';
+        var IsTF = true;
+        var ApplyAmount = 0;
+
+        var HomePageUrl = '/'
+
+        var ScrapValue = [{"Year":2016,"Price":12},{"Year":2017,"Price":10},{"Year":2018,"Price":8}]
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="app" success-title="信息提交成功 !" success-description="我们已经收到您的申请信息，稍后贷款顾问将与您联系" success-align="left" v-bind:close="false">
+    <div slot="result" class="result-panel">
+        <h2>奥迪A4 2008款 1.8T 手动 舒适型</h2>
+        <p class="info"><span>2014年3月</span><span>3万公里</span><span>北京</span></p>
+        <ul>
+            <li class="dark">
+                <h6><span>17.11</span><em>万</em></h6>
+                <p>申请额度</p>
+            </li>
+            <li>
+                <h6><span>17.11</span><em>万</em></h6>
+                <p>车辆估值</p>
+            </li>
+            <li>
+                <h6><span>15.97</span><em>万</em></h6>
+                <p>易鑫可贷额度</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

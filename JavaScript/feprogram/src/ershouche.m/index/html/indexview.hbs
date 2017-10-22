@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script>
+        var cityInfo= {
+                id: "201",
+                name: "北京",
+                level: "2",
+                spell: "beijing"
+                
+                }
+
+        var xincheUrl = "http://test.xinche.m.daikuan.com/";
+        var ershoucheUrl = "http://test.ershouche.mr.daikuan.com/";
+        //易问答 点赞 要的数据
+    var loanUserId = 22; var deviceId = 90;
+    var source = 775;
+    /*最新发布--推荐车源 The latest release - the recommended options*/
+        var latest='1'
+        var recommended='2'
+        var source='88888888'
+
+
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<!--<div class="" style="width: 100%;height: 30px"></div>
+<div class="bg_radian"></div>
+<div class="" style="width: 100%;height: 30px"></div>-->
+
+<div id="app">
+    <city-select v-bind:only-city-list="false" get-city-list="http://test.webapi.daikuan.com/base/region/GetCityList" share-city-url="http://test.webapi.daikuan.com/base/region/SearchCity" interface="http://test.webapi.daikuan.com/base/region/GetGroupingProvinceList" get-hot-areas-url="http://test.ershouche.mr.daikuan.com/Interface/GetHotAreas" @selected="selectedHanlder" location-city-id="201" location-city-name="北京" location-city-spell="beijing"></city-select>
+    <header class="header-bar header-bar-has-logo header-bar-hide-back">
+        <a href="javascript:history.back();" class="nav-back"></a>
+        <h1 class="header-bar-subtitle"><em>·</em>二手车</h1>
+        <div class="selectcity" id="selectCity" data-id="201">北京北京北京</div>
+        <span><em class="search" id="erssearch"></em></span>
+          <div class="tips_text hide">您可以在这里更改所在城市</div>
+    </header>
+  
+    <!--banner-->
+    <div class="swiperBanner_box">
+        <div class="swiper-container swiperTopBanner" id="swiperTopBanner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../../images/bgbanner.html.png" data-echo="http://img1.yixinfinance.com/chedai/435882f2-242a-4259-a629-735e8383b23d.jpg" /></div>
+                <div class="swiper-slide"><img src="../../images/imgbg.html.png" data-echo="http://img1.yixinfinance.com/chedai/4eea8ac6-5735-4d0e-9a1c-1469526a5baa.jpg" /></div>
+                <div class="swiper-slide"><img src="../../images/imgbg.html.png" data-echo="http://img1.yixinfinance.com/chedai/851c23dc-c63a-4a03-83f7-11bc99585c23.jpg" /></div>
+            </div>
+            <div class="swiper-pagination "></div>
+            <div class="bg_radian"></div>
+        </div>
+    </div>
+    <!--四个入口-->
+    <div class="business">
+        <ul class="business_ul">
+            <li class="icon_1">
+                <a href="#c2b">
+                    <i></i>
+                    <p>贷款评估</p>
+                </a>
+            </li>
+            <li class="icon_2">
+                <a href="#HotSalesRanking">
+                    <i></i>
+                    <p>买车估值</p>
+                </a>
+            </li>
+            <li class="icon_3">
+                <i></i>
+                <p>排行榜</p>
+            </li>
+            <li class="icon_4" id="choosecar">
+                <a href="#list">
+                    <i></i>
+                    <p>品牌选车</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--最近成交-->
+    <div class="recent">
+        <dl class="recent_dl">
+            <dt class="recent_dt">最近成交</dt>
+            <dd class="recent_dd">
+                <div class="swiper-container swiper-container-vertical swiperRecent" id="swiperRecent">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-no-swiping">
+                            <div class="top">
+                                <div class="name">奔驰A级 &nbsp; 2011/6.28万公里/北京</div>
+                                <div class="time">1分钟前</div>
+                            </div>
+                            <div class="bot">
+                                <div class="name">宝马1系 2015/3.28万公里/石家庄</div>
+                                <div class="time">3分钟前</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide swiper-no-swiping">
+                            <div class="top">
+                                <div class="name">奔驰B级 2011/6.28万公里/北京</div>
+                                <div class="time">2分钟前</div>
+                            </div>
+                            <div class="bot">
+                                <div class="name">宝马2系 2015/3.28万公里/石家庄</div>
+                                <div class="time">5分钟前</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide swiper-no-swiping">
+                            <div class="top">
+                                <div class="name">奔驰C级 2011/6.28万公里/北京</div>
+                                <div class="time">7分钟前</div>
+                            </div>
+                            <div class="bot">
+                                <div class="name">宝马3系 2015/3.28万公里/石家庄</div>
+                                <div class="time">9分钟前</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+    </div>
+    <!--猜你喜欢 开始-->
+    <div class="love_box" v-html="codehtml">
+        <!--<ul class="love_ul">
+            <li class="items">
+                <div class="tit red">热门车系</div>
+                <div class="txt">本地热销车</div>
+                <div class="img_box">
+                    <img src="" data-echo="http://img1.yixinfinance.com/chedai/12d28b32-41d6-4b46-9a91-d01f519edd98.png" class="small" />
+                    <img src="" data-echo="http://img1.yixinfinance.com/chedai/12d28b32-41d6-4b46-9a91-d01f519edd98.png" class="big"  />
+                </div>
+            </li>
+            <li class="items">
+                <div class="tit green">同级好车</div>
+                <div class="txt">同级竞品车</div>
+                <div class="img_box">
+                    <img src="http://img1.yixinfinance.com/chedai/8b3facf3-30dd-44d3-bb6c-ed2f5bb35fba.jpg" data-echo="http://img1.yixinfinance.com/chedai/8b3facf3-30dd-44d3-bb6c-ed2f5bb35fba.jpg" class="small" />
+                    <img src="http://img1.yixinfinance.com/chedai/8b3facf3-30dd-44d3-bb6c-ed2f5bb35fba.jpg" data-echo="http://img1.yixinfinance.com/chedai/8b3facf3-30dd-44d3-bb6c-ed2f5bb35fba.jpg" class="big"  />
+                </div>
+            </li>
+            <li class="items">
+                <div class="tit blue">车友推荐</div>
+                <div class="txt">大家买什么车</div>
+                <div class="img_box">
+                    <img src="http://img1.yixinfinance.com/chedai/8b3facf3-30dd-44d3-bb6c-ed2f5bb35fba.jpg" data-echo="http://img1.yixinfinance.com/chedai/8b3facf3-30dd-44d3-bb6c-ed2f5bb35fba.jpg" class="small" />
+                    <img src="http://img1.yixinfinance.com/chedai/8b3facf3-30dd-44d3-bb6c-ed2f5bb35fba.jpg" data-echo="http://img1.yixinfinance.com/chedai/8b3facf3-30dd-44d3-bb6c-ed2f5bb35fba.jpg" class="big"  />
+                </div>
+            </li>
+            <li class="items">
+                <div class="tit org">非常大牌</div>
+                <div class="txt">同品牌热销车</div>
+                <div class="img_box">
+                    <img src="http://img1.yixinfinance.com/chedai/8b3facf3-30dd-44d3-bb6c-ed2f5bb35fba.jpg" data-echo="http://img1.yixinfinance.com/chedai/8b3facf3-30dd-44d3-bb6c-ed2f5bb35fba.jpg" class="small" />
+                    <img src="http://img1.yixinfinance.com/chedai/8b3facf3-30dd-44d3-bb6c-ed2f5bb35fba.jpg" data-echo="http://img1.yixinfinance.com/chedai/8b3facf3-30dd-44d3-bb6c-ed2f5bb35fba.jpg" class="big"  />
+                </div>
+            </li>
+        </ul>-->
+    </div>
+    <!--猜你喜欢 结束-->
+    <!--快速找车-->
+    <div class="brand_box">
+        <div class="brand_box_title">快速找车</div>
+        <div class="brand_sel_box">
+            <dl class="carpice">
+                <!--<dt>车价</dt>-->
+                <dd><a href="#">1万以内</a><a href="#">3万以内</a><a href="#">3-5万</a><a href="#">5–10万</a></dd>
+            </dl>
+            <dl class="carpice">
+                <!--<dt>车价</dt>-->
+                <dd><a href="#">10-15万</a><a href="#">15-20万</a><a href="#">20-30万</a><a href="#">30万以上</a></dd>
+            </dl>
+            <!--<dl class="payment">
+                &lt;!&ndash;<dt>首付</dt>&ndash;&gt;
+                <dd><a href="#">1万以内</a><a href="#">1-2万</a><a href="#">2–3万</a><a href="#">3万以上</a></dd>
+            </dl>-->
+            <dl class="level">
+                <!--<dt>级别</dt>-->
+                <dd><a href="#">轿车</a><a href="#">SUV</a><a href="#">MPV</a><a href="#">跑车</a></dd>
+            </dl>
+        </div>
+        <div class="brand_logo_box">
+            <ul class="logo_box_ul">
+                <li><a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                    <div class="img"><img src="../../images/imgbg.html.png" data-echo="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_3_100.png" alt="宝马"></div>
+                    <div class="name">宝马</div>
+                </a></li>
+                <li><a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                    <div class="img"><img src="" data-echo="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_8_100.png" alt="宝马"></div>
+                    <div class="name">宝马</div>
+                </a></li>
+                <li><a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                    <div class="img"><img src="../../images/imgbg.html.png" data-echo="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_3_100.png" alt="宝马"></div>
+                    <div class="name">宝马</div>
+                </a></li>
+                <li><a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                    <div class="img"><img src="../../images/imgbg.html.png" data-echo="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_8_100.png" alt="宝马"></div>
+                    <div class="name">阿尔</div>
+                </a></li>
+                <li><a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                    <div class="img"><img src="../../images/imgbg.html.png" data-echo="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_3_100.png" alt="宝马"></div>
+                    <div class="name">宝马</div>
+                </a></li>
+                <li><a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                    <div class="img"><img src="../../images/imgbg.html.png" data-echo="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_8_100.png" alt="宝马"></div>
+                    <div class="name">宝马</div>
+                </a></li>
+                <li><a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                    <div class="img"><img src="" data-echo="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_3_100.png" alt="宝马"></div>
+                    <div class="name">五菱汽车</div>
+                </a></li>
+                <li><a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                    <div class="img"><img src="../../images/imgbg.html.png" data-echo="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_8_100.png" alt="宝马"></div>
+                    <div class="name">宝马</div>
+                </a></li>
+
+            </ul>
+        </div>
+        <div class="brand_btn"><a href="/opstion/OpstionView.html" class="btn_yellow" id="brandbtn">全部筛选条件<i class="tip_r"></i></a></div>
+    </div>
+    <!--爆款车型-->
+    <div class="hot_car_box">
+        <ul class="ul_top">
+            <li>
+                <div class="name">放心车</div>
+                <div class="info">品质认证车</div>
+                <div class="img"><img src="../../images/imgbg.html.png" data-echo="../../images/index/fangxinche3x.html.png" /></div>
+            </li>
+            <li>
+                <div class="name">热销车</div>
+                <div class="info">5万元轿车</div>
+                <div class="img"><img src="../../images/imgbg.html.png" data-echo="../../images/index/rexiaoche3x.html.png" /></div>
+            </li>
+        </ul>
+        <ul class="ul_bot">
+            <li>
+                <div class="name">准新车</div>
+                <div class="info">1年2万公里</div>
+                <div class="img"><img src="../../images/imgbg.html.png" data-echo="../../images/index/zhunxinche3x.html.png" /></div>
+            </li>
+            <li>
+                <div class="name">小排量</div>
+                <div class="info">1.6升以下</div>
+                <div class="img"><img src="../../images/imgbg.html.png" data-echo="../../images/index/xiaopailiang3x.html.png" /></div>
+            </li>
+            <li>
+                <div class="name">SUV</div>
+                <div class="info">时尚大空间</div>
+                <div class="img"><img src="../../images/imgbg.html.png" data-echo="../../images/index/SUV3x.html.png" /></div>
+            </li>
+            <li>
+                <div class="name">MPV</div>
+                <div class="info">家庭商务车</div>
+                <div class="img"><img src="../../images/imgbg.html.png" data-echo="../../images/index/MPV3x.html.png" /></div>
+            </li>
+        </ul>
+    </div>
+    <!--template-->
+    <div id="template"></div>
+    <!--车贷流程-->
+    <div class="car_loan_box">
+        <header class="title">
+            <div class="left">车贷流程</div>
+        </header>
+        <ul class="car_loan_conter">
+            <li class="icon_01"><i></i><p>线上申请</p></li>
+            <li class="icon_02"><i></i><p>电话回访</p></li>
+            <li class="icon_03"><i></i><p>资质审核</p></li>
+            <li class="icon_04"><i></i><p>线下提车</p></li>
+        </ul>
+    </div>
+
+    <navbar link="/" text="帮您贷款"></navbar>
+</div>
+
+<section class="escdk13">
+    <div class="escdk131 font-ctn">腾讯、京东、百度、易车旗下的互联网汽车金融平台</div>
+        <div class="escdk132">
+            <div><span>触屏版</span></div>
+            <div><a href="http://ershouche.daikuan.com/?from=newmweb">电脑版</a></div>
+            <div><a href="http://m.daikuan.com//home/about#!/">关于我们</a></div>
+            <div><a href="http://m.daikuan.com//Feedback/">意见反馈</a></div>
+        </div>
+    <div class="escdk133">服务电话：4000-169-169 (9:00-21:00)</div>
+</section>
+
+
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

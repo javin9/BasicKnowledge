@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script>
+        var locationCityId = 201;
+        var xinche='http://www.daikuan.com';
+        var citySpell = 'beijing';
+        var USERCENTERURL='http://i.daikuan.com';
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var RESURL = "http://img1.bitautoimg.com/jinrong/newpcweb/";
+        var CODE_GETTING_URL='/Login/GetCode';
+        var CODE_VALIDATING_URL='/Login/CheckCode';
+        var domainQueue = ["img1.bitautoimg.com","img2.bitautoimg.com","img3.bitautoimg.com","img4.bitautoimg.com"];
+        var BusinessLine = 550;
+        var returnurl = "http://www.daikuan.com/beijing/";
+        // var loadsign = 'login';
+        var loadsign = false;
+        var headerBusiFlag = "1";
+        var headerFunFlag = "0";
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div class="login" style="background: url('http://img4.bitautoimg.com/jinrong/newpcweb/css/gerenzhongxin/images/bg2.jpg?v=2017020819051') no-repeat center top;">
+    <article class="content clrfix">
+        <blockquote class="login-form">
+            <div class="form clrfix">
+                <header class="tab-box">
+                    <aside class="reg-tab">快速注册</aside>
+                    <div>已注册可直接<a href="#">登录</a></div>
+                </header>
+                <article id="form" class="login-con">
+                    <blockquote id="regForm"  class="reg-box">
+                        <div class="pad10B pad30RL">
+                            <div class="input-item clrfix">
+                                <div class="input-box"><input id="mobile" name="mobile" type="text" maxlength="11" class="AppCheck nocheck data" placeholder="请输入手机号" autocomplete="off" /></div>
+                            </div>
+                        </div>
+
+                        <div id="ImgValidateCode2Box" class="pad10B pad30RL clrfix hide">
+                            <div class="input-item fl clrfix w-248">
+                                <div class="input-box">
+                                    <input id="ImgValidateCode2" name="captcha" type="text" maxlength="4" class="inputNumber AppCheck data w-120" placeholder="请输入右侧验证码"/>
+                                    <input type="hidden" name="type" value="register">
+                                </div>
+                            </div>
+                            <div id="GetImgValidateCode2" class="GetImgValidateCode fr"><img src=""></div>
+                            <div id="changeImgValidateCode2" class="fr change">换一张</div>
+                        </div>
+
+                        <div class="pad10B pad30RL clrfix codebox">
+                            <div class="input-item fl clrfix w-180">
+                                <div class="input-box"><input id="RegValidateCode" name="validateCode" maxlength="6" type="text" class="AppCheck data w-120" placeholder="请输入验证码" autocomplete="off" /></div>
+                            </div>
+                            <div  id="GetRegValidateCode" class="fr btn code-btn disable">获取验证码</div>
+                        </div>
+
+                        <div class="pad10B pad30RL">
+                            <div class="input-item clrfix">
+                                <div class="input-box"><input id="password" name="password" type="password" minlength="6" maxlength="20" class="AppCheck nocheck data" placeholder="请输入密码" autocomplete="off" /></div>
+                            </div>
+                        </div>
+                        <div class="checked-num">
+                            密码至少包含两种字母、数字、符号，6-20位
+                        </div>
+                        <div class="jyts-box"><div class="jyts warning-tips">密码或账号错误!</div></div>
+                        <div class="tools-box terms-service">
+                            <div><input id="rule" type="checkbox" checked="checked" value=""> 我已经看过并同意<a target="_blank" href="http://sq.daikuan.com/LoanApply/servicecondition" class="reg-rule">《网络服务条款》</a></div>
+                        </div>
+                        <div id="reg-btn" class="btn reg-btn disable">立即注册</div>
+                    </blockquote>
+                </article>
+            </div>
+        </blockquote>
+    </article>
+    <aside class="banner_btm"></aside>
+
+    <input name="__RequestVerificationToken" type="hidden" value="UzKMwxxXmv2SxfBCOIUBUvKY37t-7xhkJpNN1dX2fZVYLlbiYgEwiVl6jH_ujduS_oS3QgzuxuNp6vUl5yHjDEYzYX41" />
+</div>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

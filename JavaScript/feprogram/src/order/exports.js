@@ -1,0 +1,22 @@
+module.exports = [
+    'secretary/index/indexview.js',
+    'swiftloan/index.js',
+    'swiftloan/qualification.js',
+    'swiftloan/resultFail.js',
+    'swiftloan/resultSuccess.js',
+    'swiftloan/recProductsDisplay.js',
+    'apply/index/hxm.js',
+    'apply/index/lease.js',
+    'apply/result/lease.js',
+    'apply/result/index.js',
+    'apply/qualification/hxm.js',
+    'orderapply/index/index.js',
+    'loanapplyyx/index/index.js',
+    'credit-card-loan/index.js',
+    'credit-card-loan/result.js',
+    'calculatetf/calculate.js',
+    'lease-tf/index.js',
+    'lease-tf/middle.js',
+    'lease-tf/result.js',
+    'sem-undertake/index.js'
+]

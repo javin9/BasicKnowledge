@@ -1,0 +1,16 @@
+<div class="recommend-wrapper" id="recommend-wrapper">
+    <div class="title-top-desc" id="product-newcar-tit">已为您匹配到最适合您的<span></span>金融产品</div>
+    <article class="form_wrap res_module" id="product-newcar"></article>
+    <div class="title-top-desc" id="product-lease-tit"></div>
+    <article class="form_wrap res_module" id="product-lease"></article>
+</div>
+
+<div id="form-wrapper">
+    {{> include/form.hbs}}
+</div>
+
+{{#if isLoggedIn}}
+    {{!-> panel/editphone.hbs -}}
+{{/if}}
+
+{{> panel/certificate.hbs}}

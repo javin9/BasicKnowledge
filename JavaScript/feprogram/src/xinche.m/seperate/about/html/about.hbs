@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script>
+        var helpcenterUrl = 'http://www.baidu.com';
+        var tiyandianYrl = 'http://www.baidu.com'
+        var thisYear = 2011;
+        var BASE_URL = 'http://192.168.145.9:8011/jinrong/assets/';
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="app">
+    <router-view></router-view>
+</div>
+
+<div class="bottom-to-top">
+    <img src='http://img4.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=2016091322417' />
+</div>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

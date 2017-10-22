@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var fileName = '银行流水';
+        var fileSrcs = ['http://placehold.it/50x50', 'http://placehold.it/50x50', 'http://placehold.it/50x50', 'http://placehold.it/50x50'];
+        var helpText = {
+            require: '原件，有银行盖章，如没有户名需要一份存或取款银行回单原件',
+            replace: '个人所得税税单；个体户对公流水；独资企业或夫妻占股100%企业对公流水'
+        };
+        var to_login_url = "http://i.m.daikuan.com/login/index?returnurl=http%3a%2f%2fsq.m.daikuan.com%2fsnap%2fanother%3forderId%3d151490692390338%26childOrderId%3d861490650333781%26docType%3dD2";
+        var snap_getting_url = "/snap/getsnap";
+        var snap_uploading_url = "/snap/upload";
+        var docSnapInfos = {"IsOldSnap":true,"IsUnconfirmed":true,"IsEditingEnabled":true,"DocTypeInfo":{"DocType":"D2","DocTypeName":"银行流水","DocDescription":"上传最近6个月银行流水账单","Replacement":"个人所得税税单;个体户对公流水;独资企业或夫妻占股100%企业对公流水","Requirement":"上传全部原件。有银行盖章，如没有户名需要上传一份存或取款银行回单原件","IsEnabled":true,"IsIdCardDocType":false},"SnapInfos":[]};
+
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="main">
+    <uploadfile v-bind:file-name="fileName" v-bind:file-srcs="fileSrcs" v-bind:help-text="helpText" v-bind:submit-url="submitUrl" v-bind:file-ready="fileReady" v-bind:editable="editable"></uploadfile>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

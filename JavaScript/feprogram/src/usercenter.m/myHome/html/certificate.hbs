@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var xincheUrl = 'http://xinche.m.daikuan.com';
+        var getAlixOrdersUrl = '/WeiXinCRM/GetAlixOrders'
+        var detailUrl = ''
+        var planUrl = ''
+        var defaultCarImg = 'http://placeholder.it/200x400'
+        var IMAGECODE_GETTING_URL = '/Login/GetImageValidateCode';
+        var IMAGECODE_VALIDATING_URL = '/Login/IsLegalValidateCode';
+        /*var srcImg='http://img6.taoche.cn/1c/02170ny5y9.jpg'*/
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<input type='hidden' name='__RequestVerificationToken' id='__RequestVerificationToken' data-id='S2CuHJvQVEKMASD9L5is_1_YKYbkB4HS5ZMfFcpzQPhJ1zVKa1WNRoTZR8s_9o4fPvYVy7CpX__bukG0u6eHKbY7kpw1' value='S2CuHJvQVEKMASD9L5is_1_YKYbkB4HS5ZMfFcpzQPhJ1zVKa1WNRoTZR8s_9o4fPvYVy7CpX__bukG0u6eHKbY7kpw1'>
+    <div id="yxWrapper">
+        <div id='wx_pic' style='margin: 0 auto; display: none;'>
+            <img src='http://img1.bitautoimg.com/jinrong/newmweb/images/pic300.jpg?v=201701130224' alt="易鑫车贷" />
+        </div>
+        
+
+<header class="header-bar">
+    
+    <a href="javascript:" onclick="history.go(-1);"></a>
+    <h1 class="font-nav">实名认证</h1>
+    <span></span>
+</header>
+
+
+<article class="userCert_con">
+
+    <!-- liuhaiwei 第一步-->
+    <section class="userCert_one" style="display:block;">
+        <article class="userCert_o_box">
+            <header class="userCert_o_t font-title">易鑫实名认证须知</header>
+            <section class="userCert_o_art font-28">
+                <div class="userCert_o_div col_black">实名认证前，您需要：</div>
+                <p class="col_grey6">1、提供本人有效期内身份证件信息，不得使用或冒用他人信息。</p>
+                <p class="col_grey6">2、阅读并同意《易鑫实名认证服务协议》</p>
+                <div class="userCert_o_div col_black">实名认证后，您可以：</div>
+                <p class="col_grey6">1、获取精准易鑫一证贷额度</p>
+                <p class="col_grey6">2、快速申请、极速审批特权</p>
+                <p class="col_grey6">3、提升申请额度、提高账户安全等级</p>
+            </section>
+        </article>
+        <div class="btn_Apply font-32 submitApply" id="submitApply">立即申请</div>
+        <div class="btn_Apply_text col_grey9"><span class="CertificateXieYi" id="CertificateXieYi"><i class="small_ok checked"></i>我已授权</span><span class="col_blue" id="xieYi">《易鑫认证服务协议》</span></div>
+    </section>
+    <!--liuhaiwei 第二步-->
+    <section class="userCert_two" style="display: block;">
+        <article class="bg_white">
+            <section class="upf_item_box" id="Name" is-data="true">
+                <div class="hd font-title">姓名</div>
+                <div class="ft_box SaveBox">
+                    <div class="td"><input type="text" placeholder="请输入您的姓名" value="尚斌杰" class="upf_input font-title"></div>
+                </div>
+            </section>
+            <!--<section class="upf_item_box" id="CertificateType">
+                <div class="hd font-title">身份证</div>
+                <div class="ft_box EidtBox">
+                    <div class="bd font-title">身份证</div>
+                </div>
+            </section>-->
+            <section class="upf_item_box" id="CertificateNumber"  data-id="105">
+                <div class="hd font-title">身份证</div>
+                <div class="ft_box SaveBox">
+                    <div class="td"><input type="text" placeholder="请输入证件号码" class="upf_input font-title" maxlength="18"></div>
+                </div>
+            </section>
+            <section class="upf_item_box imgcode hide" id="ImgCode">
+                <div class="hd font-title">图片校验码</div>
+                <div class="ft_box">
+                    <div class="td"><input type="text" placeholder="请输入图片校验码" class="upf_input font-title" maxlength="4"></div>
+                </div>
+                <div class="ft_box imgbox"><img src="" /><i class="refresh">刷新</i></div>
+            </section>
+        </article>
+        <div class="btn_certificate font-32" id="submitCert">提交</div>
+    </section>
+
+<!-- 第三步 -->
+    <section class="userCert_three" style="display:block;">
+        <div class="userCert_t_tit">已完成实名认证</div>
+        <article class="bg_white">
+            <section class="upf_item_box">
+                <div class="hd font-title">真实姓名</div>
+                <div class="ft_box EidtBox">
+                    <div class="bd font-title">钱远</div>
+                </div>
+            </section>
+            <section class="upf_item_box">
+                <div class="hd font-title">证件类型</div>
+                <div class="ft_box EidtBox">
+                    <div class="bd font-title">身份证</div>
+                </div>
+            </section>
+            <section class="upf_item_box">
+                <div class="hd font-title">证件号码</div>
+
+                <div class="ft_box EidtBox">
+                    <div class="bd font-title">110104***********6</div>
+                </div>
+            </section>
+        </article>
+    </section>
+    <section class="Tips_box"  style="display:none">
+        <p class="font-28 col_black">小贴士：</p>
+        <p class="font-28 col_black">恭喜您已通过易鑫实名认证审核，成为易鑫优选用户， 优选用户将有机会获得易鑫独家特权！</p>
+        <p class="font-28 col_grey6">1、获取精准易鑫一证贷额度</p>
+        <p class="font-28 col_grey6">2、快速申请、极速审批特权</p>
+        <p class="font-28 col_grey6">3、提升申请额度、提高账户安全等级</p>
+    </section>
+</article>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

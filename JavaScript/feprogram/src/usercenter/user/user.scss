@@ -1,0 +1,44 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+@import './css/user_left.css';
+@import './css/user.css';
+
+.user_from {
+  .input_line {
+    width: 340px;
+  }
+  .imgValidateCodeBox {
+    .input {
+      position: relative;
+    }
+    .input_line {
+      width: 300px;
+    }
+    .GetImgValidateCode {
+      img {
+        height: 40px;
+        position: absolute;
+        top: 1px;
+        right: 47px;
+      }
+    }
+    .changeCode {
+      font-size: 14px;
+      color: #3385FF;
+      line-height: 22px;
+      position: relative;
+      left: 5px;
+      top: 2px;
+    }
+  }
+
+  .alert{
+    margin-left: 5px;
+  }
+}
+#tabTextBoxCer {
+  padding-left: 184px;
+}
+#ChangePwdInput {
+  padding-left: 150px;
+}

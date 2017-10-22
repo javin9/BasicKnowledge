@@ -1,0 +1,863 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+@import '../css/ershouche';
+$hei:#394043;
+$grey:#9C9FA1;
+$red:#E9474D;
+$bulebg:#6C90CD;
+
+/*heard*/
+
+header.header-bar {
+    position: relative;
+    border-bottom: 0;
+}
+
+header.header-bar span {
+    text-align: right;
+}
+
+header.header-bar span em.search {
+    margin: .38667rem .4rem 0 0;
+    width: .4rem;
+    height: .4rem;
+    display: inline-block;
+    background-image: url(../images/search.png);
+    background-repeat: no-repeat;
+    background-size: .4267rem .4267rem;
+}
+
+header.header-bar .selectcity {
+    line-height: 1.2rem;
+    position: absolute;
+    right: 1.2rem;
+    padding-right: .4rem;
+    width: 2rem;
+    text-align: right;
+}
+
+.ellipsis,
+.localText,
+header.header-bar .selectcity {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+header.header-bar .selectcity:after {
+    content: '';
+    position: absolute;
+    width: .14667rem;
+    height: .14667rem;
+    border-top: 2px solid #4a4b5b;
+    border-left: 2px solid #4a4b5b;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    right: .05333rem;
+    top: .45333rem;
+}
+
+.header_right {
+    display: block;
+    cursor: pointer;
+    line-height: 1.2rem;
+    position: absolute;
+    width: auto;
+    top: 0;
+    right: 0;
+    @extend .f24;
+}
+
+.location_icon {
+    width: .426666rem;
+    height: .506666rem;
+    background-image: url(../images/location_icon.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.localText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 0.133333rem;
+    max-width: px2rem(140);
+    @extend .ellipsis;
+}
+
+
+/*top banner*/
+
+.swiperTopBanner {
+    height: px2rem(240)
+}
+
+.swiperTopBanner img {
+    width: 100%;
+    height: 100%
+}
+
+.swiper-slide {
+    background: #fff;
+}
+
+
+/*
+.swiperBanner_box{padding:0 px2rem(30);overflow: hidden;background: #fff}*/
+
+#swiperTopBanner.swiper-container-horizontal>.swiper-pagination-bullets {
+    bottom: px2rem(14);
+    left: 0;
+    width: 100%;
+    text-align: center!important;
+}
+
+.swiperTopBanner .swiper-pagination {
+    text-align: right;
+    padding: 0 px2rem(20) 0;
+}
+
+.swiperTopBanner .swiper-pagination-bullet,
+#swiper-container-zhongtong .swiper-pagination-bullet {
+    width: 0.19rem;
+    height: 0.19rem;
+    display: inline-block;
+    border-radius: 1rem;
+    border: 1px solid #d4d4d4;
+    background: #fff;
+    opacity: 1
+}
+
+.swiperTopBanner .swiper-pagination-bullet-active,
+#swiper-container-zhongtong .swiper-pagination-bullet-active {
+    border-radius: 1rem;
+    border: 1px solid #dbb76c;
+    background: $red;
+    opacity: 1
+}
+
+.swiperBanner_box {
+    .swiperTopBanner {
+        /* &:after{content: '';
+      background: #fff;height:px2rem(24);width: 100%;position: absolute;left:0;bottom:px2rem(-1);
+      z-index: 9;border-radius: 50% / 100% 100% 0 0;
+    }*/
+    }
+    .bg_radian {}
+}
+
+
+/*四个入口*/
+
+.business {
+    background: #fff;
+    padding: px2rem(30) 0;
+    .business_ul {
+        @extend .ub;
+        padding: 0 px2rem(38);
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        li {
+            display: block;
+        } //112 width    left rgiht38
+        i {
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: top left;
+            width: px2rem(88);
+            height: px2rem(88);
+            margin: auto;
+            display: block;
+        }
+        .icon_1 i {
+            background-image: url("../images/index/t_icon1.png");
+        }
+        .icon_2 i {
+            background-image: url("../images/index/t_icon2.png");
+        }
+        .icon_3 i {
+            background-image: url("../images/index/t_icon3.png");
+        }
+        .icon_4 i {
+            background-image: url("../images/index/t_icon4.png");
+        }
+        p {
+            text-align: center;
+            padding-top: px2rem(16);
+            line-height: px2rem(40);
+            @include fsize(26);
+            color: $hei;
+        }
+    }
+}
+
+
+/*最近成交*/
+
+.recent {
+    padding: 0 px2rem(30);
+    background: #fff;
+    .recent_dl {
+        @extend .ub;
+        border-top: solid 1px #e5e5e5;
+    }
+    .recent_dt {
+        height: px2rem(130);
+        width: px2rem(108);
+        display: block;
+        background: url("../images/index/zuixinfabu.png") left center no-repeat;
+        background-size: px2rem(72) auto;
+        font-size: 0;
+    }
+    .recent_dd {
+        height: px2rem(130);
+        display: block;
+        overflow: hidden;
+        position: relative;
+        @extend .ub-f1;
+        .swiperRecent {
+            height: px2rem(130);
+            .swiper-no-swiping {
+                padding: px2rem(20) 0;
+            }
+        }
+        .top,
+        .bot {
+            @extend .ub;
+            overflow: hidden;
+            line-height: 100%;
+            color: #686868;
+            .name,
+            .time {
+                line-height: px2rem(45);
+                @include fsize(26);
+            }
+            .name{width:px2rem(459);@extend .ellipsis; @extend .ub-f1;}
+            .time {
+                text-align: right;
+                width:px2rem(80);
+            }
+        }
+    }
+}
+
+
+/*快速找车*/
+
+.brand_box {
+    @extend .mt;
+    background: #fff;
+    margin-bottom: px2rem(20);
+}
+
+
+/*爆款车型*/
+
+.hot_car_box {
+    margin: px2rem(20) 0;
+    background: #fff;
+    ul {
+        @extend .ub;
+        li {
+            display: block;
+            @extend .ub-f1;
+            height: px2rem(250);
+        }
+    }
+    .ul_top {
+        border-bottom: solid 1px #e5e5e5;
+        li {
+            padding: px2rem(30);
+            position: relative;
+            width: 50%;
+            &:last-child {
+                border-left: solid 1px #e5e5e5;
+            }
+            .name {
+                @include fsize(34);
+                color: $red;
+                line-height: px2rem(50);
+                font-weight: bold;
+            }
+            .info {
+                @include fsize(26);
+                color: $grey;
+                line-height: px2rem(40);
+                padding-top: 0;
+                position: relative;
+                z-index: 2
+            }
+            .img {
+                position: absolute;
+                right: px2rem(30);
+                bottom: px2rem(20);
+                img {
+                    height: px2rem(120);
+                    width: px2rem(180);
+                }
+            }
+        }
+    }
+    .ul_bot {
+        li {
+            border-left: solid 1px #e5e5e5;
+            padding: px2rem(30) 0 px2rem(10) px2rem(30);
+            width: 25%;
+            .name {
+                @include fsize(32);
+                color: $hei;
+                line-height: px2rem(48);
+                font-weight: bold;
+            }
+            .info {
+                @include fsize(26);
+                color: $grey;
+                line-height: px2rem(40);
+            }
+            .img {
+                padding-top: px2rem(21);
+                img {
+                    height: px2rem(100);
+                    width: px2rem(150);
+                }
+            }
+        }
+    }
+}
+
+
+/*最新发布--推荐车源*/
+
+.list_box {
+    background: #fff;
+    padding-top: px2rem(12);
+    .title {
+        @extend .ub;
+        padding: px2rem(28) px2rem(30) px2rem(0) px2rem(30);
+        .left {
+            @include fsize(40);
+            @extend .col_grey3;
+            line-height: px2rem(54);
+            @extend .ub-f1;
+            font-weight: bold;
+        }
+    }
+    .tabs {
+        height: px2rem(100);
+        line-height: px2rem(100);
+        border-bottom: solid 1px #e5e5e5;        padding-left: px2rem(15);
+        li {
+            padding: 0 px2rem(35);
+            display: inline-block;
+            text-align: center;
+            span {
+                line-height: px2rem(100);
+                display: inline-block;
+                padding: 0 px2rem(6);
+                @include fsize(32);
+                @extend .col_grey6;
+            }
+            &.cur {
+                span {
+                    border-bottom: solid px2rem(4) #E9474D;
+                    @extend .col_red;
+                    height: px2rem(99);
+                }
+            }
+        }
+    }
+    .list_cont_box {
+        overflow: hidden;
+    }
+    .ok_list {
+        overflow: hidden;
+        li {
+            padding: 0px;
+            margin: 0px;
+            width: 50%;
+            background: #fff;
+            display: block;
+            overflow: hidden;
+            float: left;
+            a {
+                border-right: solid px2rem(5) #f5f5f5;
+                border-left: solid px2rem(5) #f5f5f5;
+                border-bottom: solid px2rem(10) #f5f5f5;
+                display: block;
+                height: px2rem(512);
+                .img {
+                    height: px2rem(246);
+                    background-image: url("../images/imgbg.png");
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    img {
+                        width: 100%;
+                        height: px2rem(246);
+                    }
+                }
+                .info {
+                    padding: px2rem(30) px2rem(20) 0 px2rem(20);
+                    .tit {
+                        @include fsize(32);
+                        line-height: px2rem(48);
+                        max-height: px2rem(100);
+                        width: 100%;
+                        @extend .clamp2;
+                        color: $hei;
+                        font-weight: bold;
+                        overflow: hidden;
+                    }
+                    .txt {
+                        @include fsize(24);
+                        line-height: px2rem(36);
+                        display: block;
+                        color: $grey;
+                        padding-top: px2rem(4);
+                        overflow: hidden;
+                    }
+                    .pricetag {
+                        @extend .ub;
+                        padding-top: px2rem(15);
+                        .price {
+                            color: $red;
+                            @extend .ub;
+                            @include fsize(28);
+                            line-height: px2rem(42);
+                            @extend .clamp2;
+                            /*span{color:$red;}*/
+                        }
+                        .tag {
+                            @extend .ub-f1;
+                            text-align: right;
+                            @extend .ub;
+                            @extend .ub-pe;
+                            font-size: px2rem(24);
+                            line-height: px2rem(42);
+                            color: #9C9FA1;
+                        }
+                    }
+                }
+            }
+            &:nth-child(odd) {
+                a {
+                    border-left: 0;
+                }
+            }
+            &:nth-child(2n) {
+                a {
+                    border-right: 0;
+                }
+            }
+        }
+    }
+    .btn_more {
+        margin: px2rem(30) px2rem(30) 0;
+        display: block;
+        text-align: center;
+        @include fsize(30);
+        line-height: px2rem(74);
+        background: rgba(233, 71, 77, 0.05);
+        border: 1px solid $red;
+        border-radius: px2rem(5);
+        color: $red;
+        i {
+            border-right: solid 1px $red;
+            border-top: solid 1px $red;
+            transform: rotate(45deg);
+            height: px2rem(15);
+            width: px2rem(15);
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: px2rem(-6);
+            margin-left: px2rem(10);
+        }
+    }
+}
+
+.ok_page {
+    margin-top: px2rem(20);
+    .tabs {
+        height: px2rem(100);
+        line-height: px2rem(100);
+        border-bottom: solid 1px #e5e5e5;
+        padding-left: px2rem(15);
+        background: #fff;
+        li {
+            padding: 0 px2rem(35);
+            display: inline-block;
+            text-align: center;
+            span {
+                line-height: px2rem(100);
+                display: inline-block;
+                padding: 0 px2rem(6);
+                @include fsize(32);
+                @extend .col_grey6;
+            }
+            &.cur {
+                span {
+                    border-bottom: solid px2rem(4) #E9474D;
+                    @extend .col_red;
+                }
+            }
+        }
+    }
+}
+
+
+/*易问答*/
+
+.easyask_box {
+    padding: px2rem(80) px2rem(30) px2rem(0) px2rem(30);
+    background: #fff;
+    .title {
+        @extend .ub;
+        .left {
+            @include fsize(40);
+            @extend .col_grey3;
+            line-height: px2rem(54);
+            @extend .ub-f1;
+            font-weight: bold;
+        }
+        .right {
+            line-height: px2rem(54);
+            a {
+                display: block;
+                vertical-align: middle;
+                position: relative;
+                padding-right: px2rem(28);
+                text-align: right;
+                color: $grey;
+                @include fsize(26);
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 50%!important;
+                    margin-top: px2rem(-10);
+                    right: 0;
+                    display: block;
+                    width: px2rem(12);
+                    height: px2rem(20);
+                    background-image: url("../images/sel_right.png");
+                    background-size: px2rem(12) px2rem(20)!important;
+                    background-repeat: no-repeat;
+                    background-position: left top;
+                }
+            }
+        }
+    }
+    .easyask_conter {
+        .ul {}
+        .item {
+            padding: px2rem(40) 0 px2rem(50);
+            border-top: solid 1px #E5E5E5;
+            &:first-child {
+                border-top: none;
+            }
+            .tit {
+                @extend .ub;
+                .hot {
+                    height: px2rem(50);
+                    width: px2rem(32);
+                    @extend .ub;
+                    @extend .ub-pc;
+                    @extend .ub-ac;
+                    i {
+                        width: px2rem(28);
+                        height: px2rem(28);
+                        line-height: px2rem(28);
+                        @include fsize(22);
+                        overflow: hidden;
+                        color: $red;
+                        text-align: center;
+                        border: solid 1px $red;
+                        font-style: normal;
+                        display: inline-block;
+                    }
+                }
+                .txt {
+                    line-height: px2rem(46);
+                    @include fsize(30);
+                    color: $hei;
+                    @extend .ub-f1;
+                    padding-left: px2rem(16);
+                }
+            }
+            .info {
+                color: $grey;
+                padding: px2rem(13) 0 px2rem(25) 0;
+                @include fsize(28);
+                line-height: px2rem(42);
+            }
+            .footer {
+                overflow: hidden;
+                @extend .ub;
+                .l {
+                    @extend .ub-f1;
+                    span {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    .img {
+                        width: px2rem(42);
+                        height: px2rem(42);
+                        overflow: hidden;
+                        border-radius: 60%;
+                        img {
+                            width: px2rem(42);
+                            height: px2rem(42);
+                        }
+                    }
+                    .name {
+                        padding-left: px2rem(10);
+                        color: $grey;
+                        line-height: px2rem(36);
+                        @include fsize(24)
+                    }
+                    ;
+                }
+                .r {
+                    @extend .ub-f1;
+                    text-align: right;
+                    span {
+                        display: inline-block;
+                        position: relative;
+                        color: $grey;
+                    }
+                    .time {
+                        position: relative;
+                        &:before {
+                            content: '';
+                            width: px2rem(2);
+                            height: px2rem(24);
+                            border-right: 1px solid #e5e5e5;
+                            position: absolute;
+                            right: px2rem(-20);
+                            top: 50%;
+                            margin-top: px2rem(-12)
+                        }
+                    }
+                    .parise {
+                        padding-left: px2rem(33);
+                        margin-left: px2rem(41);
+                        position: relative;
+                        &:before {
+                            content: '';
+                            width: px2rem(22);
+                            height: px2rem(23);
+                            position: absolute;
+                            left: px2rem(0);
+                            top: 50%;
+                            margin-top: px2rem(-12);
+                            background-image: url("../images/index/zan3x.png");
+                            background-size: 99% 99%;
+                            background-repeat: no-repeat;
+                            background-position: left bottom;
+                        }
+                        &.colred {
+                            color: $red;
+                            &:before {
+                                background-image: url("../images/index/zanred3x.png");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*<!--车贷流程-->*/
+
+.car_loan_box {
+    padding: px2rem(40) 0 px2rem(40);
+    background: #fff;
+    .title {
+        @extend .col_grey3;
+        line-height: px2rem(54);
+        @include fsize(40);
+        padding: 0 px2rem(30);
+        font-weight: bold;
+    }
+    .car_loan_conter {
+        padding: 0 px2rem(56);
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        li {
+            padding: px2rem(30) 0 0 0;
+            line-height: px2rem(36);
+            display: block;
+            i {
+                background-size: px2rem(60) px2rem(60);
+                background-repeat: no-repeat;
+                background-position: left top;
+                display: block;
+                width: px2rem(60);
+                height: px2rem(60);
+                position: relative;
+                margin-left: px2rem(26);
+                &:after {
+                    border-left: solid px2rem(12) #e6e6e6;
+                    border-top: solid px2rem(12) transparent;
+                    border-bottom: solid px2rem(12) transparent;
+                    position: absolute;
+                    top: px2rem(20);
+                    right: px2rem(-54);
+                    width: 0;
+                    height: 0;
+                    content: '';
+                }
+            }
+            &.icon_01 {
+                i {
+                    background-image: url("../images/index/application-icon-0013x.png");
+                }
+            }
+            &.icon_02 {
+                i {
+                    background-image: url("../images/index/phone-icon-0023x.png");
+                }
+            }
+            &.icon_03 {
+                i {
+                    background-image: url("../images/index/server-icon-0033x.png");
+                }
+            }
+            &.icon_04 {
+                i {
+                    background-image: url("../images/index/car-icon-0053x.png");
+                }
+            }
+            &:last-child {
+                i {
+                    background-size: px2rem(60) px2rem(60);
+                    background-repeat: no-repeat;
+                    background-position: left top;
+                    display: block;
+                    width: px2rem(60);
+                    height: px2rem(60);
+                    margin-left: px2rem(26);
+                    &:after {
+                        background: none!important;
+                        border: 0!important;
+                    }
+                }
+            }
+            p {
+                line-height: px2rem(36);
+                padding-top: px2rem(24);
+                @include fsize(24);
+            }
+        }
+    }
+}
+
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2) {
+    /* 兼容iphone5 */
+    [data-dpr="2"] .hot_car_box .ul_bot li .info {
+        font-size: 24px!important;
+    }
+    [data-dpr="1"] .hot_car_box .ul_bot li .info {
+        font-size: 12px!important;
+    }
+}
+
+.escdk13 {
+    margin-top: 0!important;
+}
+
+
+/*猜你喜欢*/
+
+.love_box {
+    width: 100%;
+    background: #fff;
+    margin-top: px2rem(20);
+    .love_ul {
+        overflow: hidden;
+        li {
+            border-top: solid 1px #e5e5e5;
+        }
+        li:nth-child(1) {
+            border-top: 0;
+        }
+        li:nth-child(2) {
+            border-top: 0;
+        }
+        li:nth-child(even) {
+            border-left: solid 1px #e5e5e5;
+        }
+    }
+    .items {
+        width: 50%;
+        height: px2rem(200);
+        float: left;
+        padding: px2rem(20) 0 0;
+        position: relative;
+        .tit {
+            @include fsize(34);
+            padding: 0 0 0 px2rem(80);
+            line-height: px2rem(48);
+            background-size: px2rem(34) px2rem(34);
+            background-repeat: no-repeat;
+            background-position: px2rem(30) px2rem(8);
+            @extend .ellipsis;
+            &.red {
+                color: #F65E6C;
+                background-image: url("../images/index/love1.png")
+            }
+            &.green {
+                color: #4CE0BE;
+                background-image: url("../images/index/love2.png")
+            }
+            &.blue {
+                color: #58BCF6;
+                background-image: url("../images/index/love3.png")
+            }
+            &.org {
+                color: #FBA359;
+                background-image: url("../images/index/love4.png")
+            }
+        }
+        .txt {
+            @include fsize(26);
+            color: #9C9FA1;
+            line-height: px2rem(40);
+            padding: 0 0 0 px2rem(30);
+            position: relative;
+            z-index: 1;
+            @extend .ellipsis;
+        }
+        .img_box {
+            position: absolute;
+            bottom: 0;
+            margin: 0 px2rem(20) px2rem(9) px2rem(40);
+            overflow: hidden;
+            height: px2rem(120);
+            .small {
+                width: px2rem(120);
+                height: px2rem(80);
+            }
+            .big {
+                width: px2rem(180);
+                height: px2rem(120);
+            }
+        }
+    }
+}

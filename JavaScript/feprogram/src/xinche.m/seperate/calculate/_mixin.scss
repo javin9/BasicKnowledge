@@ -1,0 +1,16 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+@mixin font($size){
+	@include fsize(map-get($mfont,$size));
+}
+
+// 主题分派器
+@mixin theme($style: color, $type: main){
+	@each $key, $theme in $themes{
+		@content;
+		.theme-#{$key} &{
+			#{$style}:map-get($theme, $type);
+		}
+	}
+}

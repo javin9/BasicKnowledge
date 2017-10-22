@@ -1,0 +1,366 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+$fullpage-border-color:#e5e5e5;
+$fullpage-h3 :#3d3d3d;
+$fullpage-gray: #666;
+.icon {
+  background: url(./images/icon.png) no-repeat left top;
+}
+.component-fullpage {
+  * {
+    box-sizing: border-box;
+  }
+  .section {
+    position: relative;
+    &:after {
+      content:'';
+      width: px2rem(40);
+      height: px2rem(24);
+      background: url(./images/arrow_up.png) no-repeat left top;
+      background-size: contain;
+      position: absolute;
+      bottom: px2rem(30);
+      left: 50%;
+      margin-left: px2rem(-23);
+    }
+    &:nth-child(4):after {
+      width: 0;
+      height: 0;
+    }
+    &:first-child:after {
+      @extend .icon;
+      background-position: left bottom;
+      background-size: px2rem(64) auto;
+    }
+  }
+  &-one {
+    padding-top: px2rem(20);
+    background: url(./images/bg.jpg) no-repeat left top;
+    background-size: cover;
+
+    &-logo {
+      width: px2rem(329);
+      height: px2rem(34);
+      margin-left: px2rem(40);
+      background: url(./images/logo.png) no-repeat left top;
+      background-size: contain;
+    }
+
+    &-header {
+      width: px2rem(600);
+      height: px2rem(363);
+      margin: px2rem(30) auto px2rem(10);
+      background: url(./images/text.png) no-repeat left top;
+      background-size: contain;
+    }
+
+    &-container {
+      h3 {
+        // @include fsize(32);
+        font-size: px2rem(32);
+        text-align: center;
+        padding-bottom: px2rem(20);
+      }
+
+      .swiper-container {
+        padding-bottom: px2rem(50);
+        .swiper-img {
+          display: block;
+          width: px2rem(450);
+          height: px2rem(284);
+          margin: 0 auto;
+          background-size: contain;
+          background-position: left top;
+          background-repeat: no-repeat;
+          &.img01 {
+            background-image: url(./images/card03.png);
+          }
+          &.img02 {
+            background-image: url(./images/card04.png);
+          }
+          &.img03 {
+            background-image: url(./images/card01.png);
+          }
+          &.img04 {
+            background-image: url(./images/card02.png);
+          }
+        }
+        .swiper-pagination {
+          bottom: px2rem(20);
+        }
+        .swiper-button {
+          width: px2rem(150);
+          height: px2rem(215);
+          background: url(./images/arrow.png) no-repeat left top;
+          background-size: px2rem(400) auto;
+          top: auto;
+          margin-top: 0;
+          bottom: px2rem(50);
+        }
+        .swiper-button-prev {
+          @extend .swiper-button;
+          left: 0;
+        }
+        .swiper-button-next {
+          @extend .swiper-button;
+          background-position: right top;
+          right: 0;
+        }
+      }
+
+      a {
+        display: block;
+        width: px2rem(358);
+        height: px2rem(152);
+        margin: 0 auto;
+        background: url(./images/button.png) no-repeat left top;
+        background-size: contain;
+      }
+    }
+  }
+
+  &-two {
+    background-color: #fff;
+    padding-top: px2rem(20);
+    header {
+      // @include fsize(36);
+      font-size: px2rem(34);
+      color: $dark-color;
+      text-align: center;
+      padding-bottom: px2rem(20);
+      border-bottom: 1px solid $fullpage-border-color;
+
+      span {
+        display: block;
+        // @include fsize(24);
+        font-size: px2rem(24);
+        width: px2rem(180);
+        height: px2rem(46);
+        line-height: px2rem(45);
+        padding: 0 px2rem(23);
+        margin: px2rem(10) auto 0;
+        border: 1px solid #c4c1c8;
+        border-radius: px2rem(23);
+      }
+    }
+    dl {
+      font-size: 0;
+
+      dd {
+        display: inline-block;
+        width: 50%;
+        padding: px2rem(25) px2rem(20) px2rem(20);
+        border-bottom: 1px solid $fullpage-border-color;
+        text-align: center;
+        position: relative;
+        &:nth-child(odd) {
+          border-right: 1px solid $fullpage-border-color;
+        }
+        label {
+          display: block;
+          width: px2rem(64);
+          height: px2rem(70);
+          @extend .icon;
+          background-size: px2rem(64) auto;
+          position: absolute;
+          top: 0;
+          right: px2rem(20);
+        }
+        h3 {
+          // @include fsize(36);
+          font-size: px2rem(34);
+          color: $fullpage-h3;
+          margin-bottom: px2rem(15);
+        }
+        p {
+          // @include fsize(26);
+          font-size: px2rem(26);
+          color:$fullpage-gray;
+          margin-bottom: px2rem(10);
+        }
+        div {
+          // @include fsize(26);
+          font-size: px2rem(26);
+          color:$fullpage-gray;
+          margin-bottom: px2rem(10);
+        }
+        a {
+          display: block;
+          width: px2rem(186);
+          padding: px2rem(10);
+          // @include fsize(26);
+          font-size: px2rem(26);
+          line-height: px2rem(26);
+          color: $white-color;
+          background-color: $main-color;
+          border-radius: $main-border-radius;
+          margin: 0 auto px2rem(20);
+        }
+        span {
+          display: block;
+          // @include fsize(24);
+          font-size: px2rem(24);
+          color: $light-color;
+        }
+      }
+    }
+  }
+
+  &-three {
+    padding-top: px2rem(20);
+    header {
+      // @include fsize(36);
+      font-size: px2rem(36);
+      color: $dark-color;
+      text-align: center;
+      padding-bottom: px2rem(20);
+      p {
+        width: px2rem(631);
+        margin-top: px2rem(12);
+        margin: 0 auto;
+        // @include fsize(24);
+        font-size: px2rem(24);
+        color: $dark-color;
+        position: relative;
+        background: url(./images/line.png) no-repeat center center;
+        background-size: contain;
+      }
+    }
+
+    &-info {
+      display: table;
+      margin: 0 auto;
+      font-size: 0;
+
+      .info-text {
+        // @include fsize(24);
+        font-size: px2rem(24);
+        line-height: px2rem(26);
+        color: $fullpage-gray;
+        margin-bottom: px2rem(10);
+      }
+      p {
+        @extend .info-text;
+      }
+      ul {
+        li {
+          @extend .info-text;
+          padding-left: px2rem(30);
+          position: relative;
+          &:before {
+            content: '';
+            display: block;
+            width: px2rem(10);
+            height: px2rem(10);
+            border-radius: 50%;
+            background-color: $main-color;
+            position: absolute;
+            top: 50%;
+            left: px2rem(10);
+            margin-top: px2rem(-5);
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    dl {
+      font-size: 0;
+      padding: px2rem(10) px2rem(30) px2rem(20);
+      dd {
+        display: inline-block;
+        width: 50%;
+        margin-top: px2rem(12);
+        // @include fsize(24);
+        font-size: px2rem(24);
+
+        &:nth-child(odd) {
+          padding-right: px2rem(6);
+        }
+        &:nth-child(even) {
+          padding-left: px2rem(6);
+        }
+
+        > div {
+          padding: px2rem(20);
+          background-color: $white-color;
+          text-align: center;
+          h3 {
+            // @include fsize(24);
+            font-size: px2rem(24);
+          }
+          .car-img {
+            width: 100%;
+            height: px2rem(194);
+            margin: px2rem(15) 0;
+            background: url(./images/card01.png) no-repeat left top;
+            background-size: contain;
+          }
+
+          a {
+            display: block;
+            width: px2rem(186);
+            padding: px2rem(8) 0;
+            // @include fsize(26);
+            font-size: px2rem(24);
+            line-height: px2rem(26);
+            border-radius: px2rem(22);
+            margin: 0 auto;
+            color: $white-color;
+            background-color: $main-color;
+          }
+        }
+
+        &:nth-child(2) .car-img{
+          background-image: url(./images/card02.png);
+        }
+        &:nth-child(3) .car-img{
+          background-image: url(./images/card03.png);
+        }
+        &:nth-child(4) .car-img{
+          background-image: url(./images/card04.png);
+        }
+      }
+    }
+  }
+
+  &-four {
+    background-color: $background-color;
+    padding: 0 px2rem(50);
+    header {
+      text-align: center;
+      padding-top: px2rem(20);
+      p {
+        font-size: px2rem(34);
+        line-height: px2rem(46);
+        color: #333;
+      }
+    }
+    .second-content{
+      width:px2rem(652);
+      height:px2rem(1012);
+      background:url(images/bg.png) no-repeat center center;
+      background-size:px2rem(652) px2rem(1012);
+      position: absolute;
+      left:50%;
+      transform: translate3d(-50%,0,0);
+      margin-top:px2rem(25);
+      span {
+        display: block;
+        font-size: px2rem(24);
+        color: #686868;
+        width: px2rem(180);
+        height: px2rem(46);
+        line-height: px2rem(45);
+        padding: 0 px2rem(23);
+        border: 1px solid #abaaaa;
+        border-radius: px2rem(23);
+        margin:0 auto;
+        &:first-child{
+          margin:px2rem(580) auto px2rem(155) auto;
+        }
+      }
+    }
+  }
+}

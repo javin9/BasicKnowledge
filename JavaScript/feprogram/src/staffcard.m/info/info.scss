@@ -1,0 +1,34 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: map-get($bg, white) url(images/page-bg.png) repeat;
+}
+
+.header-bar {
+
+}
+
+.topinfo {
+	height: px2rem(262);
+	margin: px2rem(14);
+	padding: px2rem(60) px2rem(30);
+	color: #fff;
+	text-align: center;
+	background: transparent url(images/card-bg.png) 0 0 no-repeat;
+	background-size: contain;
+
+	.name {
+		@include fsize(40);
+		line-height: 2;
+	}
+
+	.num {
+		@include fsize(32);
+		line-height: 1.5;
+	}
+}

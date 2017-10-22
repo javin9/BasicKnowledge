@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var APIURL = "/";
+        var xinche='';
+        var BusinessLine = 550;
+        var CODE_GETTING_URL='/';
+        var CODE_VALIDATING_URL='/';
+        var USERCENTER='/';
+        var usercenter='/';
+        var returnurl = "";
+        var loginSign = true;
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}    
+<header class="header-bar">
+    <a href="javacript:void(0)" class="backGoPage"></a>
+    <h1 class="font-nav">发布评价</h1>
+    <span></span>
+</header>
+
+
+<article class="publish-rating">
+    <dl class="product-comment">
+        <dt class="font-30">贷款产品评价</dt>
+        <dd>
+            <header>
+                <div class="head-portrait font-24">
+                    <img src="http://img1.bitautoimg.com/chedai/6c644c81-bf76-4f9c-a13e-352110f19c75.jpg" /><br />
+                    广发
+                </div>
+                <ul>
+                    <li class="font-28"><b>* </b><span>总体评价：</span><div class="star-level"><em></em><em></em><em></em><em></em><em></em></div><span class="score-details"><span class="warn font-24">请做出评价</span></span></li>
+                    <li class="font-28"><b>* </b><span>反馈速度：</span><div class="star-level"><em></em><em></em><em></em><em></em><em></em></div><span class="score-details"><span class="warn font-24">请做出评价</span></span></li>
+                    <li class="font-28"><b>* </b><span>机构服务：</span><div class="star-level"><em></em><em></em><em></em><em></em><em></em></div><span class="score-details"><span class="warn font-24">请做出评价</span></span></li>
+                    <li class="font-28"><b>* </b><span>审批速度：</span><div class="star-level"><em></em><em></em><em></em><em></em><em></em></div><span class="score-details"><span class="warn font-24">请做出评价</span></span></li>
+                </ul>
+                <label class="font-28 tag" data-id="743">资料简便</label>
+                <label class="font-28 tag" data-id="744">审核快</label>
+            </header>
+            <footer>
+                <textarea placeholder="还可以对产品进行评价哦~" class="font-28" maxlength="200"></textarea>
+                <div class="warn font-24">输入不足20字</div>
+            </footer>
+        </dd>
+    </dl>
+    <dl class="adviser-comment" style="display:none;">
+        <dt class="font-30">咨询了贷款顾问？快来评价吧</dt>
+        <dd>
+            <header>
+                <div class="head-portrait font-24">
+                    <img src=""><br>
+                    
+                </div>
+                <div class="font-28 adviser-score"><b> </b><span>贷款顾问：</span><div class="star-level"><em></em><em></em><em></em><em></em><em></em></div><span class="score-details"></span></div>
+                
+                    <label class="font-28 tag" data-id="749">反馈快</label>
+                    <label class="font-28 tag" data-id="750">服务好</label>
+                    <label class="font-28 tag" data-id="751">态度好</label>
+                    <label class="font-28 tag" data-id="752">专业性强</label>
+                    <label class="font-28 tag" data-id="753">细致周到</label>
+                    <label class="font-28 tag" data-id="759">有责任心</label>
+            </header>
+            <footer>
+                <textarea placeholder="还可以对贷款顾问进行评价哦~" class="font-28" maxlength="200"></textarea>
+                <div class="warn font-24">输入不足20字</div>
+            </footer>
+        </dd>
+    </dl>
+    <a href="javascript:void(0);" class="font-30 submit-btn">提交评价</a>
+</article>
+
+<!--隐藏域-->
+<input type="hidden" id="AdviserId" name="AdviserId" value="" />
+<input type="hidden" id="AdviserId" name="AdviserId" value="" />
+<input type="hidden" id="Car_ID" name="Car_ID" value="" />
+<input type="hidden" id="ChildOrderID" name="ChildOrderID" value="" />
+<input type="hidden" id="CompanyID" name="CompanyID" value="" />
+<input type="hidden" id="PackageID" name="PackageID" value="" />
+
+<div class="backGoPageTip">
+    <div class="font-32">亲，评价还未完成，您确定要离开？</div>
+    <a href="javacript:void(0)" class="cancel-btn font-32">取消</a>
+    <a href="javacript:void(0)" class="sure-btn font-32">确定</a>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

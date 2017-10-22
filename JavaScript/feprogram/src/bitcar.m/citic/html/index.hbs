@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var APIURL = "http://192.168.145.12:8060/";
+        var step = 2;//0：一步都未完成，1：完成填写常住地址，2：完成工作单位，3：完成联系人，20：完成上传身份证，30：完成运营商验证
+        var cityIdOnOrder = 201; //下单时用户填写的城市
+        var coupon_card_info_getting_url = '/snap/getavailablecouponcardinfo';
+        var user_center_url = 'http://www.daikuan.com';
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="main">
+    <component-index
+            :cur-city='{cityId: "1830",cityName: "阿拉善盟",citySpell: "alashanmeng",regionId: "152900"}'
+            :institution-data="[{text:'中信银行',value:80}]"
+            car-price-interface="/Citic/GetDealderQuoteInfo"
+            list-interface='api/FinancialProduct/SearchFinancialProducts'
+    ></component-index>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

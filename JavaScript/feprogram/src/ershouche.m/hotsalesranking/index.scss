@@ -1,0 +1,130 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+@import '../css/ershouche';
+[data-dpr="1"] .font_22 { font-size: 11px; }
+[data-dpr="2"] .font_22 { font-size: 22px; }
+[data-dpr="3"] .font_22 { font-size: 33px; }
+
+[data-dpr="1"] .font_24 { font-size: 12px; }
+[data-dpr="2"] .font_24 { font-size: 24px; }
+[data-dpr="3"] .font_24 { font-size: 36px; }
+
+[data-dpr="1"] .font_26{ font-size: 13px; }
+[data-dpr="2"] .font_26 { font-size: 26px; }
+[data-dpr="3"] .font_26 { font-size: 39px; }
+
+
+[data-dpr="1"] .font_28 { font-size: 14px; }
+[data-dpr="2"] .font_28 { font-size: 28px; }
+[data-dpr="3"] .font_28 { font-size: 42px; }
+
+[data-dpr="1"] .font_32 { font-size: 16px; }
+[data-dpr="2"] .font_32 { font-size: 32px; }
+[data-dpr="3"] .font_32 { font-size: 48px; }
+
+[data-dpr="1"] .font_36 { font-size: 18px; }
+[data-dpr="2"] .font_36 { font-size: 36px; }
+[data-dpr="3"] .font_36 { font-size: 54px; }
+
+[data-dpr="1"] .font_86 { font-size: 43px; }
+[data-dpr="2"] .font_86 { font-size: 86px; }
+[data-dpr="3"] .font_86 { font-size: 129px; }
+
+
+.col_red { color: #fc654d!important }
+.col_org { color: #d68a5c }
+.col_black { color: #000 }
+.col_grey { color: #a9a9a9 }
+.col_grey2 { color: #777 }
+.col_grey3 { color: #333 }
+.col_grey6 { color: #666 }
+.col_grey9 { color: #999 }
+.col_white { color: #fff }
+.financeBox{}
+.last_month .top{ background:#242633; padding: 0.533333rem; }
+.last_month .top .txt{ color: #a7a8ad; }
+
+.last_month .top .price_box{color: #a7a8ad; padding-top:0.2rem;}
+.last_month .bottom_box{ background:#2b2e3e; padding: 0.4rem 0.533333rem; }
+.last_month .box_l,.last_month .box_r{ display: inline-block; width: 49%;color:#a7a8ad!important }
+.tip_top{ width: 0.133333rem; height: 0.306667rem; display: inline-block; vertical-align: middle; background-image: url(../images/tip.png);background-repeat:no-repeat;background-size:100%; }
+.tip_down{
+  width: 0.133333rem; height: 0.306667rem; display: inline-block; vertical-align: middle; background-image: url(../images/down.png);background-repeat:no-repeat;background-size:100%;margin-top:-0.01rem;
+}
+.last_month .bottom_box .txt{display: block;   }
+.last_month .bottom_box .price{display: block;padding-top:0.133333rem;   }
+.last_month .top .price{color:#df553d; font-weight:bold;}
+.last_month .bottom .font_36{color:#df553d; font-weight:bold;}
+.bottom_box .txt .txt_new_l{display: inline-block; vertical-align: middle;}
+.bottom_box .txt font{display: inline-block; vertical-align: middle;}
+.bottom_box .txt font span{display: inline-block; vertical-align: middle;line-height: 100%;}
+.bottom_box .txt font i{display: inline-block; vertical-align: middle;}
+
+.Chart{    background: #fff;margin-top: 0.266667rem;}
+.Chart .title,.top_five_title{ color: #000; font-weight: 600; height:1.04rem; line-height: 1.04rem;border-bottom:solid 1px #eee;    padding-left: 0.4rem; }
+.payment_box,.Monthly_box{padding:0.666667rem 0.533333rem 0.666667rem; display: -webkit-box!important; display: box!important }
+.chart_box{position: relative; width:3.9rem;display: -webkit-box; display: box;-webkit-box-align: center; box-align: center; padding:0 0.5rem 0 0; }
+.chart_box .payment{ width:4.4rem; height: 4.4rem }
+.chart_ul{ display: block;-webkit-box-flex: 1; box-flex: 1 }
+.chart_ul li{ display: block; }
+.chart_ul li>a{ display: block; position: relative; padding: 0.333333rem 0.4rem 0.333333rem 0;}
+
+.chart_ul li span{ display: inline-block;vertical-align: middle;}
+.chart_ul .round{ width:0.186667rem; height: 0.186667rem; display: inline-block; background: #c00;border-radius: 10rem;    margin-right: 0.266667rem;
+  vertical-align: middle;}
+.chart_ul .bg_01{background: #ebcc8b;}
+.chart_ul .bg_02{background: #db8b6c;}
+.chart_ul .bg_03{background: #6480a3;}
+.chart_ul .bg_04{background: #a698cb;}
+.chart_ul .tip_r {width: 0.24rem;height: 0.24rem;display: inline-block;border-top: 1px #bebebe solid;border-left: 1px #bebebe solid;transform: rotate(135deg);-webkit-transform: rotate(135deg);position: absolute;right: 0.133333rem;top: 0.45rem;}
+/**/
+.brand,.carModels,.levelCar,.oldYear,.mileage{background: #fff;margin-top: 0.266667rem}
+.top_five_ul{padding:0 0.266667rem;
+  li{ display: block;border-bottom: solid 1px #eee; }
+  li:last-child{ display: block;border-bottom: 0; }
+  li>a{padding:0.213333rem 0;display: -webkit-box!important; display: box!important}
+  .unmber{display: -webkit-box!important; display: box!important;-webkit-box-align: center; box-align: center;-webkit-box-pack: center; box-pack: center;padding:0 0.4rem 0 0;}
+  .name{ width: 3.066667rem;}
+  .percentage{-webkit-box-flex: 1; box-flex: 1 ;display: -webkit-box; display: box;-webkit-box-align: center; box-align: center;padding-right: 0.133333rem;overflow: hidden;}
+  .sum{ width: 1.666667rem;display: -webkit-box; display: box;-webkit-box-pack: end; box-pack: end;-webkit-box-align: center; box-align: center;}
+  .tip_box{}
+  .unmber .bg{ width: 0.4rem; height: 0.4rem; line-height: 0.373333rem;border-radius:0.16rem;color: #fff;  display: inline-block; text-align: center; }
+  .unmber .bg_1{background: #ed4243;}
+  .unmber .bg_2{background: #ed7a42;}
+  .unmber .bg_3{background: #edab42 ;}
+  .unmber .bg_4{color: #dab671;}
+  .unmber .bg_5{color: #dab671;}
+  .name img{ width:0.72rem; display: inline-block; vertical-align: middle; }
+  .name .car_name{display: inline-block; vertical-align: middle; color: #000; }
+  .carModels .name .car_name,.carModels .name .car_name,.oldYear .name .car_name,.mileage .name .car_name{overflow:hidden;text-overflow:ellipsis; white-space:nowrap; width: 100%;}
+  .percentage i{ background: #dbb76c; height: 0.4rem; width: 100%;display:block; }
+  .tip_box{
+    .tip_r {width: 0.24rem;height: 0.24rem;display: inline-block;border-top: 1px #bebebe solid;border-left: 1px #bebebe solid;transform: rotate(135deg);-webkit-transform: rotate(135deg); margin-left: .133333rem ;    margin-top: 0.24rem;}
+  }
+}
+/**/
+.Look_at_all{background: #fff;margin-top: 0.266667rem;}
+.Look_at_all>a{padding:0.213333rem 0.266667rem;display: -webkit-box; display: box;}
+.Look_at_all .txt{-webkit-box-flex: 1; box-flex: 1 ;}
+.Look_at_all .sum{width: 1.666667rem;display: -webkit-box; display: box;-webkit-box-pack: end; box-pack: end;-webkit-box-align: center; box-align: center;}
+.Look_at_all .tip_box{}
+.Look_at_all .tip_r{width: 0.24rem;height: 0.24rem;display: inline-block;border-top: 1px #bebebe solid;border-left: 1px #bebebe solid;transform: rotate(135deg);-webkit-transform: rotate(135deg); margin-left: .133333rem }
+
+/*new */
+.brand {
+  .top_five_ul {
+    .name{
+      .car_name{width:px2rem(172);@extend .ellipsis;}
+    }
+  }
+}
+
+@media only screen and (max-device-width: 320px) {
+  /*.last_month .bottom_box .txt font{*/
+  /*display:block;*/
+  /*}*/
+  /*.last_month .box_l, .last_month .box_r{*/
+  /*width:48.5%;*/
+  /*}*/
+}
+/*20161226打包*/

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=750,user-scalable=no" name="viewport" />
+
+
+</head>
+<script>
+    var topY= 100;
+    var setting=''
+</script>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div class="style_box">
+    <div class="style_box_con">
+        <!--swiper banner start-->
+        <div class="swiper_box" style="display:none">
+            <div class="swiper-container swiperTopBanner" id="swiperTopBanner">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="http://t.image.bitautoimg.com/chedai/6fd30e10-452f-495e-b13c-012373c91ebd.png" alt="e35a0595-1a2d-4e7f-b958-0c62e302ce1c.jpg"></div>
+                    <div class="swiper-slide"><img src="http://t.image.bitautoimg.com/chedai/6fd30e10-452f-495e-b13c-012373c91ebd.png" alt="e35a0595-1a2d-4e7f-b958-0c62e302ce1c.jpg"></div>
+                    <div class="swiper-slide"><img src="http://t.image.bitautoimg.com/chedai/6fd30e10-452f-495e-b13c-012373c91ebd.png" alt="e35a0595-1a2d-4e7f-b958-0c62e302ce1c.jpg"></div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <p><img src="../images/1.html.jpg" usemap="#imgmap20161222173521">
+            <!--<map name="imgmap20161222173521" onclick="alert('map')">
+                <area shape="rect" coords="0,0,90,90" onclick="alert('area')">
+            </map>-->
+            <map id="imgmap20161222173521" name="imgmap20161222173521">
+                <area coords="202,197,397,397" href="/2" shape="rect" title="222222222222222222222222">
+                <area coords="500,160,599,200" href="/1" shape="rect" title="111111111111111111">
+                <area coords="400,399,500,439" href="/3" shape="rect" title="33333333333333333333333333">
+            </map>
+        </p>
+    </div>
+</div>
+00000
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="apple-touch-icon-precomposed" href="http://staticm.hd.baofeng.com/images/share/logo57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://staticm.hd.baofeng.com/images/share/logo114.png" />
+    <div style="display: none;">
+        <img src="http://staticm.hd.baofeng.com/images/share/logo300.jpg" />
+    </div>
+    <link rel="apple-touch-icon" href="http://staticm.hd.baofeng.com/favicon.ico">
+    <link rel="shortcut icon" href="http://staticm.hd.baofeng.com/favicon.ico">
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+    <script>
+        //城市信息
+        var cityInfo = {
+            id: "201",
+            name: "北京",
+            spell: "beijing",
+            regionId: "0"
+        };
+        var historyStep = -1;
+        var source = "706";
+        var xincheUrl = "http://test.xinche.m.daikuan.com/";
+        var ershoucheUrl = "http://test.ershouche.m2.daikuan.com/";
+        var carList = false;
+        var totalCount = "0";
+        var pageSize = "10";
+        var ucarUrl = "/";
+        var DownKey = "";
+        var MonthKey = "";
+        var BrandId = "0";
+        var SerialId = "0";
+        var chooserUrl = "/";
+        var pageindex = "1";
+        var serialName = "";
+        var brandName = "";
+
+        //选择器参数
+        var selectDown = "";
+        var selectMonth = "";
+        var selectYear = "";
+        var selectLicheng = "";
+        var selectIsBastCar = "";
+        var selectGearBoxType = "";
+        var selectExhaust = "";
+        var selectEnvirStandard = "";
+        var selectLevel = "";
+        var selectOrder = "";
+        var selectCarPrice = "";
+        var CustomYear = "";
+        var CustomLicheng = "";
+        var CustomPrice = "";
+        var CustomDown = "";
+        var gearBoxTypeName = "";
+        var exhaustName = "";
+        var envirStandardName = "";
+        var bastCarName = "";
+        var cityList = '[{ "id": 201, "name": "北京北京北京1北京北京北京1", "spell": "beijing" },{ "id": 2401, "name": "上海", "spell": "shanghai" },{ "id": 905, "name": "秦皇岛", "spell": "qinhuangdao" },{ "id": 908, "name": "衡水", "spell": "hengshui" },{ "id": 912, "name": "承德", "spell": "chengde" },{ "id": 911, "name": "张家口", "spell": "zhangjiakou" },{ "id": 1014, "name": "安阳", "spell": "anyang" }]';
+        //推荐车系
+        var serialList ='[{"id":1798,"name":"POLO","spell":"boluo"},{"id":4016,"name":"YARiS L 致炫","spell":"yarislzhixuan"},{"id":2407,"name":"威驰","spell":"xinweichi"},{"id":4610,"name":"锋范","spell":"fengfan-4610"}]';
+ 
+
+    </script>
+
+
+    <div id="yxWrapper">
+        <city-select get-city-list="http://test.webapi.daikuan.com/base/region/GetCityList" share-city-url="http://test.webapi.daikuan.com/base/region/SearchCity"
+            interface="http://test.webapi.daikuan.com/base/region/GetGroupingProvinceList" get-hot-areas-url="http://test.ershouche.mr.daikuan.com/Interface/GetHotAreas"
+            @selected="selectedHanlder" location-city-id="201" location-city-name="北京" location-city-spell="beijing"></city-select>
+        <div id="app" style="max-width:10rem">
+            <!-- header -->
+            <header class="header-bar" id="indexHeader">
+                <a id="gobackHistoryList" onclick="window.history.go(-1); return false;"></a>
+                <h1 class="font-nav">二手车列表</h1>
+                <div class="selectcity" id="selectCity" data-id="201">北京北京北京</div>
+                <span><em class="search" id="erssearch"></em></span>
+                <div class="tips_text hide">您可以在这里更改所在城市</div>
+            </header>
+            <div class="swiper-container swiperTopBanner" id="swiperTopBanner">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="http://test.ershouche.m.daikuan.com/#position?source=705">
+                        <img src="http://t.image.bitautoimg.com/chedai/daa77164-aa95-4bb4-ba47-57b993057ca6.png"
+                             alt="0fd06824-f4af-403d-81dc-d1f97641ebfc.png">
+                    </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="http://www.ershouche.jzg.com/list?source=705">
+                        <img src="http://t.image.bitautoimg.com/chedai/daa77164-aa95-4bb4-ba47-57b993057ca6.png"
+                             alt="46257a47-a405-4e66-8596-bba6e7ad5967.png">
+                    </a>
+                    </div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <!-- search conditions -->
+            <div class="sort" id="sortpage">
+                <!--tap-->
+                <ul class="tabul">
+                    <li class="comprehensiveLi">
+                        <div>
+                            <span class="">综合排序</span>
+                            <i class=""></i>
+                        </div>
+                    </li>
+                    <li id="selectCar" class="selectCar">
+                        <div>
+                            <span class="">品牌</span>
+                            <i class=""></i>
+                        </div>
+                    </li>
+                    <li class="carprice">
+                        <div>
+                            <span class="">车价</span>
+                            <i class=""></i>
+                        </div>
+                    </li>
+                    <li class="level">
+                        <div>
+                            <span class="">级别</span>
+                            <i class=""></i>
+                        </div>
+                    </li>
+                    <li class="moreShow">
+                        <div>
+                            <span class="">筛选</span>
+                            <i class=""></i>
+                        </div>
+                        <em class="last-child-tip" style="display:none;" v-text="sorfSelNumber">0</em>
+                    </li>
+                </ul>
+                <!--conter-->
+                <!-- 综合排序 -->
+                <div class="sort_comprehensive hide">
+                    <div class="iscroll">
+                        <ul>
+                            <li class="cur"><a href="#1">综合排序</a></li>
+                            <li><a href="#2">价格最低</a></li>
+                            <li><a href="#3">价格最高</a></li>
+                            <li><a href="#4">最新发布</a></li>
+                            <li><a href="#5">车龄最短</a></li>
+                            <li><a href="#6">里程最少</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--车价-->
+                <div class="sort_carprice hide">
+                    <div class="iscroll">
+                        <div class="ul_box item carprice" v-bind:url="url.carprice" v-bind:data="ajaxdata.carPrice">
+                            <div class="tit_2">自定义</div>
+                            <div class="custom">
+                                <div class="input"><input type="number" maxlength="4" name="min">年</div>
+                                <div class="line">-</div>
+                                <div class="input"><input type="number" maxlength="4" name="max">年</div>
+                                <div class="btn"><span>确定</span></div>
+                            </div>
+                            <div class="tit">车价</div>
+                            <dl class="radio">
+                                <dd class="cur"><a href="javascript:;">不限</a></dd>
+                                <dd><a href="javascript:;">1万以内</a></dd>
+                                <dd><a href="javascript:;">3万以内</a></dd>
+                                <dd><a href="javascript:;">3-5万</a></dd>
+                                <dd><a href="javascript:;">5-10万</a></dd>
+                                <dd><a href="javascript:;">10-15万</a></dd>
+                                <dd><a href="javascript:;">15-20万</a></dd>
+                                <dd><a href="javascript:;">20-30万</a></dd>
+                                <dd><a href="javascript:;">30万以上</a></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <!--级别-->
+                <div class="sort_level hide" id="sortlevel">
+                    <div class="iscroll">
+                        <div class="ul_box item level" v-bind:url="url.level" v-bind:data="ajaxdata.Carlevelid">
+                            <dl class="radio checkbox" data-url="l">
+                                <dd class="cur"><a href="javascript:;" data-option data-id="">不限</a></dd>
+                                <dd><a href="javascript:;" data-url="1" data-id="1">轿车</a></dd>
+                                <dd><a href="javascript:;" data-url="2" data-id="2">MPV</a></dd>
+                                <dd><a href="javascript:;" data-url="3" data-id="3">SUV</a></dd>
+                                <dd><a href="javascript:;" data-url="4" data-id="4">跑车</a></dd>
+                                <dd><a href="javascript:;" data-url="5" data-id="5">微型车</a></dd>
+                                <dd><a href="javascript:;" data-url="6" data-id="6">皮卡</a></dd>
+                                <dd><a href="javascript:;" data-url="7" data-id="7">面包车</a></dd>
+                                <dt><a href="javascript:;" class="btnLevelSure" data-id="">确定</a></dt>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <!--conter end-->
+            </div>
+            <div class="newscorlltop">
+                <!-- search conditions box-->
+                <div class="sort_conter_box">
+                    <span class="sel" data-url="d4">首付 3-4万</span>
+                    <span class="sel" data-url="c4">车价 5-10万</span>
+                    <span class="sel" data-url="y4">5-8年</span>
+                    <span class="sel" data-url="g4">5-8万公里</span>
+                    <span class="sel" data-url="l1">轿车</span>
+                    <span class="sel" data-url="l4">跑车</span>
+                    <span class="sel" data-url="l7">面包车</span>
+                    <span class="sel" data-url="k1">优质车</span>
+                    <span class="sel" data-url="k3">保障车</span>
+                    <span class="sel" data-url="e1">手动</span>
+                    <span class="sel" data-url="f1">1.0L以下</span>
+                    <span class="sel" data-url="f2">1.0-1.6L</span>
+                    <span class="sel" data-url="f4">2.0-3.0L</span>
+                    <span class="sel" data-url="i4">欧4</span>
+                    <div class="del_sort"></div>
+                </div>
+                <!-- 快速找车 -->
+                <div class="quicklyfindcar">
+                    <div class="brand_sel_box">
+                        <dl class="carpice">
+                            <!--<dt>车价</dt>-->
+                            <dd><a href="#">1万以内</a><a href="#">3万以内</a><a href="#">3-5万</a><a href="#">5–10万</a></dd>
+                        </dl>
+                        <dl class="carpice">
+                            <!--<dt>车价</dt>-->
+                            <dd><a href="#">10-15万</a><a href="#">15-20万</a><a href="#">20-30万</a><a href="#">30万以上</a></dd>
+                        </dl>
+                        <!--<dl class="payment">
+                        &lt;!&ndash;<dt>首付</dt>&ndash;&gt;
+                        <dd><a href="#">1万以内</a><a href="#">1-2万</a><a href="#">2–3万</a><a href="#">3万以上</a></dd>
+                    </dl>-->
+                        <dl class="level">
+                            <!--<dt>级别</dt>-->
+                            <dd><a href="#">轿车</a><a href="#">SUV</a><a href="#">MPV</a><a href="#">跑车</a></dd>
+                        </dl>
+                    </div>
+                    <div class="brand_logo_box">
+                        <ul class="logo_box_ul">
+                            <li>
+                                <a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                                    <div class="name">宝马</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                                    <div class="name">宝马</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                                    <div class="name">宝马</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                                    <div class="name">阿尔</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                                    <div class="name">宝马</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                                    <div class="name">宝马</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                                    <div class="name">五菱汽车</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Home/ListPage#cid=201&amp;Mbid=3&amp;MName=宝马&amp;source=708">
+                                    <div class="name">宝马</div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- page index -->
+                <input id="npage" type="hidden" value="7">
+                <!-- list -->
+                <div class="search-list list-view list_bg list_w">
+                    <ul class="new_ul">
+                        <li>
+                            <a href="#">
+                                <div class="img"><img src="" data-echo="http://img5.taoche.cn/01/02160uhqsh.jpg">
+                                    <div>北京</div>
+                                </div>
+                                <div class="info">
+                                    <h6 class="tit">朗逸 2011款 2.0L 自动品悠自动品悠版</h6>
+                                    <div class="txt">11.68万/2011年/6.4万公里</div>
+                                    <div class="pricetag">
+                                        <div class="price">首付<span>3050元</span></div>
+                                        <div class="tag">全款11.68万</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="item.url">
+                                <div class="img"><img src="" data-echo="http://img5.taoche.cn/01/02160uhqsh.jpg">
+                                    <div>黑龙江</div>
+                                </div>
+                                <div class="info">
+                                    <h6 class="tit">朗逸 2011款 2.0L 自动品悠自动品悠版</h6>
+                                    <div class="txt">11.68万/2011年/6.4万公里</div>
+                                    <div class="pricetag">
+                                        <div class="price">首付<span>3.50万</span></div>
+                                        <div class="tag">
+                                            <span>品牌认证</span>
+                                            <span>质保</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="item.url">
+                                <div class="img"><img src="" data-echo="http://img5.taoche.cn/01/02160uhqsh.jpg"></div>
+                                <div class="info">
+                                    <h6 class="tit">朗逸 2011款 2.0L 自动品悠自动品悠版</h6>
+                                    <div class="txt">11.68万/2011年/6.4万公里</div>
+                                    <div class="pricetag">
+                                        <div class="price">首付<span>3.50万</span></div>
+                                        <div class="tag">
+                                            <span>品牌认证</span>
+                                            <span>质保</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="item.url">
+                                <div class="img"><img src="" data-echo="http://img5.taoche.cn/01/02160uhqsh.jpg">
+                                </div>
+                                <div class="info">
+                                    <h6 class="tit">朗逸 2011款 2.0L 自动品悠自动品悠版</h6>
+                                    <div class="txt">11.68万/2011年/6.4万公里</div>
+                                    <div class="pricetag">
+                                        <div class="price">首付<span>3.50万</span></div>
+                                        <div class="tag">
+                                            <span>品牌认证</span>
+                                            <span>质保</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="item.url">
+                                <div class="img"><img src="" data-echo="http://img5.taoche.cn/01/02160uhqsh.jpg"></div>
+                                <div class="info">
+                                    <h6 class="tit">朗逸 2011款 2.0L 自动品悠自动品悠版</h6>
+                                    <div class="txt">11.68万/2011年/6.4万公里</div>
+                                    <div class="pricetag">
+                                        <div class="price">首付<span>3.50万</span></div>
+                                        <div class="tag">
+                                            <span>品牌认证</span>
+                                            <span>质保</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="item.url">
+                                <div class="img"><img src="" data-echo="http://img5.taoche.cn/01/02160uhqsh.jpg"></div>
+                                <div class="info">
+                                    <h6 class="tit">朗逸 2011款 2.0L 自动品悠自动品悠版</h6>
+                                    <div class="txt">11.68万/2011年/6.4万公里</div>
+                                    <div class="pricetag">
+                                        <div class="price">首付<span>3.50万</span></div>
+                                        <div class="tag">
+                                            <span>品牌认证</span>
+                                            <span>质保</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- reload tip -->
+                <div class="l_bottom">
+                    <div id="pullup" class="pullup size24"></div>
+                </div>
+            </div>
+            <supplement cityList = '[{ "id": 201, "name": "北京北京北京1北京北京北京1", "spell": "beijing" },
+        { "id": 2401, "name": "上海", "spell": "shanghai" },
+        { "id": 905, "name": "秦皇岛", "spell": "qinhuangdao" },
+        { "id": 908, "name": "衡水", "spell": "hengshui" },
+        { "id": 912, "name": "承德", "spell": "chengde" },
+        { "id": 911, "name": "张家口", "spell": "zhangjiakou" },
+        { "id": 1014, "name": "安阳", "spell": "anyang" }]'></supplement>
+            <div class="leftmask"></div>
+        </div>
+        <!-- 更多选择 -->
+        <selcettemplate v-bind:url="url" v-bind:sorthih="sorthih" v-bind:ajaxdata="ajaxdata" v-bind:txt="txt" v-bind:brandname="brandname"></selcettemplate>
+
+
+    </div>
+    <div class="bottom-to-top">
+        <img src='http://img4.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=2016091322417' />
+    </div>
+    </div>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

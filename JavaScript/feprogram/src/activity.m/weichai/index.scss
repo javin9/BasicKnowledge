@@ -1,0 +1,39 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+%bg-contain{
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+	width: 100%;
+}
+
+.main{
+	@extend %bg-contain;
+	background-image: url(./images/header.jpg);
+	height:px2rem(1515);
+}
+
+.bg-1{
+	@extend %bg-contain;
+	background-image:url(./images/bar1.jpg);
+	height:px2rem(467);
+}
+
+.bg-2{
+	@extend %bg-contain;
+	background-image:url(./images/bar2.jpg);
+	height:px2rem(466);
+}
+
+.bg-3{
+	@extend %bg-contain;
+	background-image:url(./images/bar3.jpg);
+	height:px2rem(465);
+}
+
+.bg-4{
+	@extend %bg-contain;
+	background-image:url(./images/bar4.jpg);
+	height:px2rem(474);
+}

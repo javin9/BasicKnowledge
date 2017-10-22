@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var APIURL = "http://api.chedai.bitauto.com/";
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+ <div id="yxWrapper">
+        <img src="http://img4.bitautoimg.com/jinrong/newmweb/images/size4_w114_h114.png?v=201612151220" style="display: none;"/>
+        
+
+
+
+<header class="header-bar">
+    <a href="javascript:void(0);" onclick="window.history.go(-1);return false;"></a>
+    <h1 class="font-nav">购车人信息</h1>
+    <span></span>
+</header>
+<div id="rapidLoan">
+    <div class="intro">啦啦啦，小鑫已经帮您挑选了一款适合的产品哦！</div>
+     <!--推荐产品（子订单）-->
+    <ul class="product-list">        
+        <li>
+            <div class="icon">
+                <img src="http://img1.bitautoimg.com/chedai/9e1bdfb2-7b85-4d2c-a917-96d593b274fe.jpg" alt="">
+            </div>
+            <div class="text">
+                <div class="tit">一证贷(易鑫金融)</div>
+                <div class="tags">
+                            <span data-id="24" class="blue">低利率</span>
+                            <span data-id="26" class="red">极速审批</span>
+                </div>
+            </div>
+            <div class="price">
+
+                <div class="month"><em> 8116</em>元/月
+                </div>
+                <div class="total">贷款成本 5.43万</div>
+            </div>
+        </li>
+        <li class="more">
+            <a href="http://xinche.m.daikuan.com/beijing//quanxinaodia4l?source=" id="seeOthers"><span>不喜欢，去看看别哒</span></a>
+        </li>
+    </ul>
+    
+    <div class="container">
+            <p class="authenticated">亲，您已经是实名认证的用户啦，继续填写更多信息吧！</p>
+            <p><a href="javascript:void(0)" class="btn" id="continuBtn">继续</a></p>
+    </div>
+
+    <div class="law">您的信息仅作贷款审核使用、不会以任何形式泄露给其他人员机构</div>
+    <div class="agree">我已详细阅读并同意<a href="javascript:void(0)">《信息使用授权书》</a></div>
+</div>
+
+<script>
+    //添加成功后跳转页，需要带orderid
+    var NextPage = '/rapidloan/Qualification';
+    var MWebSite = 'http://xinche.m.daikuan.com/beijing/';
+</script>
+
+    <!--整屏蒙层start-->
+    <div id="maskLayer"></div>
+    <!--整屏蒙层end-->
+</div>
+    
+
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

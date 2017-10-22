@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script>
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var source = '539';//source=
+        var styleUrl = 'http://img1.yixinfinance.com/chedai/';
+        var recProListUrl = '/CreditCard/GetRecPackageList';//recProListUrl?rightsAndInterests=-1&level=-1&pageIndex=1&pageSize = 6&companyId = -1 列表页数据接口
+        var detailUrl = '/CreditCard/Detail';//url=detailUrl+"?id="id+"&source="+source
+
+        var companyId = "-1";//银行
+        var rightAndInterest = "521";//用途
+        var cardLevel = "-1";//等级
+        var city = {
+            cityId: '201',
+            cityName: '北京',
+            citySpell: 'beijing'
+        };
+
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="yxWrapper">
+    <header class="header-bar">
+        <a href="javacript:void(0)" onclick="window.history.back();return false;"></a>
+        <h1 class="font-nav">车主信用卡</h1>
+        <span></span>
+    </header>
+    <script src="http://img1.yixinfinance.com/jinrong/assets/headtype.m/headtypecookies.js?v=201709071630"></script>
+    <section class="creditList">
+        <article class="credListNav" id="credListNav">
+            <nav class="creditList_nav_list font-ctn">
+                <div id="companyId" class="company_id"><span class="s">所有银行</span><i class="tip_bot"></i></div>
+                <div id="AllPurpose" class="all_purpose"><span class="s">所有用途</span><i class="tip_bot"></i></div>
+                <div id="level" class="level"><span class="s">所有等级</span><i class="tip_bot"></i></div>
+            </nav>
+            <div class="NavCon" id="companyId_con">
+                <ul>
+                    <li class="h_tit font-28" data-id="-1"><span class="t font-nav">所有银行</span></li>
+                    <li data-id="10">
+                        <span class="font-nav">中信银行</span>
+                    </li>
+                    <li data-id="3">
+                        <span class="font-nav">招商银行</span>
+                    </li>
+                    <li data-id="5">
+                        <span class="font-nav">中国交通银行</span>
+                    </li>
+                    <li data-id="6">
+                        <span class="font-nav">花旗银行</span>
+                    </li>
+                    <li data-id="7">
+                        <span class="font-nav">华夏银行</span>
+                    </li>
+                    <li data-id="9">
+                        <span class="font-nav">民生银行</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="NavCon" id="AllPurpose_con">
+                <ul>
+                    <li class="h_tit font-28" data-id="-1"><span class="t font-nav">所有用途</span></li>
+                    <li data-id="521">
+                        <span class="font-nav">加油返现</span>
+                    </li>
+                    <li data-id="522">
+                        <span class="font-nav">道路救援</span>
+                    </li>
+                    <li data-id="523">
+                        <span class="font-nav">保养减免</span>
+                    </li>
+                    <li data-id="524">
+                        <span class="font-nav">保险免息</span>
+                    </li>
+                    <li data-id="525">
+                        <span class="font-nav">便捷ETC</span>
+                    </li>
+                    <li data-id="526">
+                        <span class="font-nav">维修打折</span>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="NavCon" id="level_con">
+                <ul>
+                    <li class="h_tit font-28" data-id="-1"><span class="t font-nav">所有等级</span></li>
+                    <li data-id="528">
+                        <span class="font-nav">普卡</span>
+                    </li>
+                    <li data-id="529">
+                        <span class="font-nav">金卡</span>
+                    </li>
+                    <li data-id="530">
+                        <span class="font-nav">白金卡</span>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="creditList_con">
+            <div class="creditList_prompt">为您找到<em id="creditListNumber">--</em>张符合条件的卡片</div>
+            <article class="body_recommend">
+                <ul class="credotList_ul">
+
+                </ul>
+                <div class="more_box">查看更多 >></div>
+            </article>
+        </article>
+        <article class="creditList_default" id="creditDefault">
+            <div class="default font-title">
+                抱歉，没有找到符合条件的信用卡<br />换个条件再来试试吧~
+            </div>
+        </article>
+    </section>
+
+</div>
+
+
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

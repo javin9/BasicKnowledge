@@ -1,0 +1,195 @@
+.success-top{
+	position: relative;
+	padding:px2rem(80) 0;
+	text-align: center;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+
+	.succ-icon{
+		width: px2rem(140);
+		height: px2rem(140);
+		background:url(#{$img-base}/mark.png) no-repeat center center;
+		background-size: 100% 100%;
+		margin: 0 auto px2rem(30);
+	}
+
+	h3 {
+		margin-bottom: px2rem(10);
+		font-weight: normal;
+		@include fsize(32);
+		line-height: px2rem(48);
+		text-align: center;
+	}
+
+	p {
+		@include fsize(28);
+		line-height: px2rem(42);
+	}
+
+	&-btn{
+		text-align: center;
+		margin-top: px2rem(50);
+
+		a {
+			display: inline-block;
+			width: px2rem(300);
+			height: px2rem(90);
+			@include fsize(32);
+			line-height: px2rem(90);
+			-webkit-border-radius: px2rem(5);
+			border-radius: px2rem(5);
+			margin: 0 px2rem(13);
+		}
+	}
+}
+
+.success-progress {
+	padding: px2rem(60) px2rem(30);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+
+	h3 {
+		@include fsize(34);
+		line-height: px2rem(52);
+		font-weight: bold;
+	}
+
+	ul {
+		margin: px2rem(40) px2rem(-20) 0;
+		overflow: hidden;
+
+		li {
+			position: relative;
+			float: left;
+			width: 25%;
+			text-align: center;
+			@include fsize(24);
+			line-height: 1.5;
+
+			.icon {
+				display: block;
+				width: px2rem(60);
+				height: px2rem(60);
+				margin: 0 auto px2rem(24);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: 100% 100%;
+			}
+
+			.icon-1 {
+				background-image: url(#{$img-base}/progress01.png);
+			}
+
+			.icon-2 {
+				background-image: url(#{$img-base}/progress02.png);
+			}
+
+			.icon-3 {
+				background-image: url(#{$img-base}/progress03.png);
+			}
+
+			.icon-4 {
+				background-image: url(#{$img-base}/progress04.png);
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				right: 0;
+				top: px2rem(30);
+				width: 0;
+				height: 0;
+				border-top: px2rem(11) solid transparent;
+				border-bottom: px2rem(11) solid transparent;
+				border-left-width: px2rem(12);
+				border-left-style: solid;
+				-webkit-transform: translate(50%, -50%);
+				transform: translate(50%, -50%);
+			}
+
+			&:nth-last-child(1):after {
+				display: none;
+			}
+		}
+	}
+}
+
+// 帮助中心
+// qianyuan
+// 2017/3/16
+.qa-list {
+	padding: px2rem(60) px2rem(30) px2rem(120);
+
+	dt {
+		position: relative;
+		margin-bottom: px2rem(40);
+		@include fsize(34);
+		line-height: px2rem(52);
+		font-weight: bold;
+
+		.more {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			font-weight: normal;
+			@include fsize(26);
+			-webkit-transform: translate(0, -50%);
+			transform: translate(0, -50%);
+			padding-right: px2rem(30);
+
+			&:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: 0;
+				width: px2rem(16);
+				height: px2rem(16);
+				-webkit-transform: translate(-50%, -50%) rotate(-45deg);
+				transform: translate(-50%, -50%) rotate(-45deg);
+			}
+		}
+	}
+
+	dd {
+		a {
+			display: block;
+			position: relative;
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
+			@include fsize(30);
+			line-height: px2rem(46);
+			padding: px2rem(32) px2rem(30) px2rem(32) px2rem(50);
+			box-sizing: content-box;
+			height: px2rem(48);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			&:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: 0;
+				width: px2rem(16);
+				height: px2rem(16);
+				-webkit-transform: translate(-50%, -50%) rotate(-45deg);
+				transform: translate(-50%, -50%) rotate(-45deg);
+			}
+
+			em {
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: px2rem(30);
+				height: px2rem(30);
+				text-align: center;
+				@include fsize(22);
+				line-height:px2rem(30);
+				-webkit-transform: translate(0, -50%);
+				transform: translate(0, -50%);
+				-webkit-border-radius: px2rem(2);
+				border-radius: px2rem(2);
+			}
+		}
+	}
+}

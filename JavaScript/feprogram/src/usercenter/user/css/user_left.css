@@ -1,0 +1,109 @@
+@charset "utf-8";
+/*left*/
+.user_nav_box{ width:210px; float:left; background:#e2e8f1; border:solid 1px #c2cddd;}
+.user_nav_box .user_photo_box{ padding:40px 0 0; }
+.user_nav_box .user_photo{width:102px; height:92px;position:relative;overflow:hidden;    margin: auto;}
+.bg_txt{background: rgba(0,0,0,0.2);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000); position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 92px;
+    z-index:2; color: #fff; text-align: center; line-height: 92px; padding: 0 0 0 1px; font-size: 14px; display: none;}
+.user_nav_box .user_photo_bg{     cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 102px;
+    height: 92px;
+    z-index: 3;}
+.user_nav_box .photo{ position:absolute; left:7px; top:0; width:88px; height:88px; z-index:1;}
+.user_photo_box .user_name{ padding:0 0 40px; font-size:18px; color:#333; text-align:center;}
+.user_icon_art{text-align:center; padding: 0 0 40px;border-bottom:solid 1px #c2cddd;}
+.user_icon{width:32px; height:32px; display:inline-block; padding:0 6px; position:relative;}
+.user_icon i,.tip_r{ background-image: url(../images/user_icon.png); background-repeat:no-repeat; }
+.user_icon>i{ width:32px; height:32px; display:inline-block; }
+.user_icon.add_info .i_1{ background-position:0 0px;}
+.user_icon.add_info .i_2{ background-position:0 -45px;}
+.user_icon.add_info .i_3{ background-position:0 -90px;}
+.user_icon .i_1{ background-position:0 -135px;}
+.user_icon .i_2{ background-position:0 -180px;}
+.user_icon .i_3{ background-position:0 -225px;}
+.user_icon .text{ display:none; padding:0 4px; color:#9a9a9a; font-size:12px; position:absolute; left:0; top:39px; z-index:1; line-height:25px; height:25px;background: #fff;white-space: nowrap;border:solid 1px #c2cddd;}
+.user_icon .text .tip_top{background-position:0 -333px;position:absolute; left:20px; top:-6px; z-index:2; width:11px; height:6px; display:inline-block;}
+.user_nav{ padding:40px 0 80px;}
+.user_ul{}
+.user_ul li{}
+.user_ul li a{ display:block; height:50px; line-height:50px; position:relative; padding:0 0 0 40px; color:#666;}
+.user_ul li.cur a{ border-top:solid 1px #c2cddd;border-bottom:solid 1px #c2cddd; background:#fff; margin-right:-1px;}
+.user_ul .tip_r{background-position:0 -359px; width:8px; height:14px; position:absolute; right:20px; top:18px;}
+
+.user_ul .shareOrder_label {
+    width: 44px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 10px;
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    background-color: #e9474d;
+}
+       
+/*二维码*/
+.QRCode_box {
+    width: 630px;
+    height: 270px;
+    padding: 40px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -315px;
+    margin-top: -135px;
+    background-color: #fff;
+    z-index: 99999;
+}
+.QRCode_box .QRCode {
+    width: 188px;
+    height: 188px;
+    margin-right: 40px;
+}
+.QRCode_box .QRCode > img {
+    width: 188px;
+    height: 188px;
+}
+.QRCode_box .share_r {
+    padding-top: 40px;
+}
+.QRCode_box .share_r .close {
+    width: 18px;
+    height: 18px;
+    background: url(../images/share_order.png) no-repeat right top;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.QRCode_box .share_r .QRCode_title {
+    color: #000;
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 34px;
+}
+.QRCode_box .share_r .scanning {
+    width: 50px;
+    height: 46px;
+    background: url(../images/share_order.png) no-repeat left bottom;
+}
+.QRCode_box .share_r .share_txt {
+    margin-left: 20px;
+    font-size: 16px;
+    color: #000;
+}    
+.box-sizing {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+

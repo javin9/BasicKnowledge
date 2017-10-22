@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var APIURL = "/";
+        var xinche='';
+        var BusinessLine = 550;
+        var CODE_GETTING_URL='/';
+        var CODE_VALIDATING_URL='/';
+        var USERCENTER='/';
+        var usercenter='/';
+        var returnurl = "";
+        var loginSign = true;
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}   
+<header class="header-bar">
+        <a href="javacript:void(0)" class="backGoPage" onclick="window.history.back();return false;"></a>
+        <h1 class="font-nav">顾问点评</h1>
+        <span></span>
+    </header>
+
+<!--page conter start-->
+<div class="AdviserToReview">
+    <div class="font_24 tip">咨询了贷款顾问？快来评价吧</div>
+    <div class="adviser_box">
+        <div class="adviser_l">
+            <img src="http://placehold.it/300x300" class="pohto" />
+        </div>
+        <div class="adviser_r">               
+            <div class="Personal"><span class="name font_28">名称</span><span class="adviser_server font_24">顾问服务</span><i class="skillLevel_1"></i></div>                
+            <div class="star_box"><span class="star-level"><i></i><i></i><i></i><i></i><i></i></span></div>
+            <div class="tag_box">
+                    <span class="tag  font_24" data-id="123">托尔斯泰</span>                
+            </div>
+        </div>
+    </div>
+    
+    <div class="textarea_box">
+        <textarea class="taxtarea font_28" placeholder="请为TA的服务做出评价" maxlength="20" oninput="if(value.length>20) value=value.slice(0,20)"></textarea>
+        <div class="alert_info font_24">请输入<span class="numTextstart">5</span>至<span class="numTextEnd">20</span>个文字评价，还可输入<span class="numTextCanBe">20</span>个文字</div>
+    </div>
+</div>
+<!--提交评价 submit start-->
+<div class="font-title">&nbsp;</div>
+<div class="btn_box">
+    <a href="javarscritps:;" class="font-title submit-btn">提交评价</a>
+</div>
+<!--window start-->
+<div class="window_bg">
+    <div class="wind_box">
+        <div class="info font_28">请对顾问石英表标签吧</div>
+        <div class="close font-title">关闭</div>
+    </div>
+</div> 
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

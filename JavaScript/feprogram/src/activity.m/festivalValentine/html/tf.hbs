@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var CODE_GETTING_URL = '/secretary/GetCode';//GetCode(string mobile, int line = 550)
+        var CODE_VALIDATING_URL = '/secretary/CheckCode';//CheckCode(string mobile, string validatecode, int line = 550)
+        var USERE_INFO_SUBMIT = '/secretary/SubmitOrder';
+        var PRODUCT_LISTS_GET = '/secretary/GetLoanUserOrderProductsList';  //参数 orderid
+        var feaures_getting_url = '/secretary/GetPackageFeatures';
+        var order_creating_url = '/secretary/Create';
+        var similar_products_getting_url = '/secretary/GetSimilarProducts';
+        var account_switching_url = '/secretary/SwitchAccount'
+        var authUrl = '/secretary/SwitchAccount'
+        var usercenter_url = 'http://i.m.daikuan.com';
+        var home_page_url = 'http://xinche.m.daikuan.com';
+
+        var activity_url = 'choose.html';
+
+        var order_updating_url = '/secretary/Create'
+        var okIcon = 'http://img1.bitautoimg.com/jinrong/newmweb/images/secretary/icon-ok.png?v=201610191767';
+        var channal = '667';
+        var source = '689';
+        var from = '761';
+        var cityId = '2401';
+        var cityName = '上海';
+
+        var userName = '王之彦';
+        var mobile = '18575832500';
+        var identityNumber = '370303198703187410';
+        var isLoggedIn = true;
+        var isAuthenticated =true;
+
+        var shouldHideLinks = '';
+
+        // var userName = '';
+        // var mobile = '';
+        // var identityNumber = '';
+        // var isLoggedIn = false;
+        var isAuthenticated =false;
+
+        var isTF = true;
+
+        var qualifications = {
+            careers : [
+                {id: 73, name: '公务员/事业单位'},
+                {id: 74, name: '企业主'},
+                {id: 75, name: '个体户'},
+                {id: 76, name: '上班族'},
+                {id: 77, name: '自由职业者'}
+            ],
+            credits: [
+                {id: 71, name: '信用良好'},
+                {id: 72, name: '少数逾期'},
+                {id: 70, name: '多次逾期'},
+                {id: 256, name: '无信用记录'}
+            ],
+            houseStates: [
+                {id: 79, name: '自有全款'},
+                {id: 80, name: '自有贷款'},
+                {id: 81, name: '租赁'}
+            ],
+            insurances: [
+                {id: 1, name: '有社保'},
+                {id: 0, name: '无社保'}
+            ],
+            funds: [
+                {id: 1, name: '有公积金'},
+                {id: 0, name: '无公积金'}
+            ],
+            incomes: [
+                {id: 109, name: '20000元以上'},
+                {id: 108, name: '12000-20000元'},
+                {id: 69, name: '8000-12000元'},
+                {id: 68, name: '5000-8000元'},
+                {id: 67, name: '3000-5000元'},
+                {id: 66, name: '3000元以下'}
+            ]
+        }
+
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div style="display: none; width: 0; height: 0;">
+    <img src="../images/weixinshare.html.png" alt="">
+</div>
+
+<div id="SecretaryMain">
+    <header class="header-bar" style="">
+        <div class="title-img">
+            <img src="../images/yixin.html.png">
+        </div>
+        <h1 class="font-nav">小鑫帮您贷</h1>
+        <span></span>
+    </header>
+</div>
+
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

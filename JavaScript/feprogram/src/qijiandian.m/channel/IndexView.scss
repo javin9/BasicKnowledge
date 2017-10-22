@@ -1,0 +1,272 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+$fcolor: (
+  gray : #666,
+  light : #999,
+  yellow : #dbb76c
+);
+a:hover {
+    text-decoration: none !important;
+}
+.module_group {
+  background: map-get($bg, white);
+  margin-top: px2rem(20); 
+  header {
+    height: px2rem(80);
+    @include box-center;
+    @include fsize(30);
+    border-bottom:1px solid map-get($border, normal);
+    i {
+      display: block;
+      width: px2rem(38);
+      height:px2rem(38);
+      margin-right: px2rem(15);
+      background-image: url(../images/shop_chanel.png);
+      background-size: px2rem(100) auto;
+      background-repeat: no-repeat;
+      &.icon_hui {
+        background-position: px2rem(4) px2rem(1);
+      }
+      &.icon_bao {
+        background-position: px2rem(4) px2rem(-48);
+      }
+      &.icon_qi {
+        background-position: px2rem(-62) px2rem(6);
+      }
+    }
+  }
+
+  .module_body {
+    // 超值钜惠
+    > aside {
+      height: px2rem(380);
+      font {
+        display: block;
+      }
+      &:first-child {
+        width: px2rem(290);
+        border-right: 1px solid map-get($border, normal);
+
+        a {
+          display: block;
+          padding: px2rem(60) px2rem(30) px2rem(30);
+
+          span {
+            display: block;
+            @include fsize(30);
+            // font-weight: 700;
+            padding-bottom: px2rem(15)
+          }
+
+          font {
+            @include fsize(26);
+            color: map-get($fcolor, yellow);
+          }
+
+          img {
+            height: px2rem(120);
+            margin-top: px2rem(60);
+          }
+        }
+      }
+
+      &:last-child {
+        .group_r_t {
+          display: block;
+          border-bottom: 1px solid map-get($border, normal);
+          padding: px2rem(30) px2rem(34);
+          height: px2rem(150);
+          > aside {
+            padding-right: px2rem(10);
+          } 
+          img {
+            width: px2rem(170);
+          }
+        }
+
+        div {
+          a {
+            display: block;
+            width: 50%;
+            height: px2rem(230);
+            padding: px2rem(30) px2rem(34);
+            &:first-child {
+              border-right: 1px solid map-get($border, normal);
+            }
+          }
+        }
+
+        span {
+          display: block;
+          @include fsize(28);
+          padding-bottom: px2rem(15);
+        }
+
+        font {
+          @include fsize(24);
+          color: map-get($fcolor, yellow);
+        }
+
+        img {
+          height: px2rem(100);
+        }
+      }
+    } 
+
+    //爆款推荐
+    .hot {
+      display: block;
+      padding-left: px2rem(30);
+      
+
+      .hot_commit {
+        padding: px2rem(30) px2rem(30) px2rem(30) 0;
+        border-bottom: 1px solid map-get($border, normal);
+        > img {
+          width: px2rem(210);
+          margin-right: px2rem(30);
+        }
+        aside {
+          > div {
+            @include box-center($justify:false);
+            @include fsize(28);
+            margin-bottom: px2rem(15);
+
+            &:first-child {
+              margin-bottom: px2rem(5);
+              @include box-center($justify:false);
+              img {
+                width: px2rem(60);
+                height: px2rem(60);
+                margin-right: px2rem(15);
+              }
+              font {
+                position: relative;
+                top: px2rem(-18);
+              }
+            }
+            &:nth-child(2) {
+              color: map-get($fcolor, yellow);
+            }
+
+            &:last-child {
+              width: 100%;
+              margin-bottom: 0;
+              span:last-child {
+                display: block;
+                margin-left: px2rem(30);
+              }
+              font {
+                color: #e9474d;
+              }
+            }
+            &.detail_name {
+              width: px2rem(450);
+              display: block;
+            }
+
+          }
+        }
+      }
+      &:last-child > div{
+        border-bottom: 0;
+      }
+    }
+
+    //旗舰品牌
+    .flagship {
+      display: block;
+      padding-top: px2rem(10);
+      background: #f2f2f2;
+
+      .img_box {
+        height: px2rem(280);
+        overflow: hidden;
+        font-size: 0;
+        img {
+          width: 100%;
+        }
+      }
+
+      .box_footer {
+        background-color: map-get($bg, white);
+        .footer_txt {
+          padding: px2rem(30);
+          div {
+            @include fsize(30);
+            margin-bottom: px2rem(13);
+          }
+
+          span {
+            display: block;
+            @include fsize(24)
+            color: map-get($fcolor, yellow);
+          }
+        }
+
+        .car_brands {
+          position: relative;
+          bottom: px2rem(30);
+          font-size: 0;
+          div {
+            display: inline-block;
+            width: px2rem(130);
+            height: px2rem(137);
+            label {
+              background-color: #fff;
+              display: inline-block;
+              width: px2rem(100);
+              height: px2rem(100);
+              border-radius: 50%;
+              border: px2rem(4) solid map-get($border, normal);
+              margin-right: px2rem(30);
+              position: relative;
+              img {
+                width: px2rem(70);
+                height: px2rem(70);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: px2rem(-35);
+                margin-left: px2rem(-35);
+              }
+            }
+            span {
+              display: block;
+              width: px2rem(100);
+              text-align: center;
+              @include fsize(22);
+              color: map-get($mfont, normal);
+              margin-top: px2rem(15);
+            }
+
+            &.more label {
+              @include box-center;
+              
+              i {
+                display: inline-block;
+                width: px2rem(70);
+                height: px2rem(20);
+                background: url(../images/shop_chanel.png) no-repeat px2rem(9) px2rem(-96);
+                background-size: px2rem(100) auto;
+              }
+            }
+          }
+        }
+      }
+
+    }
+    .noshop-tip {
+      @include fsize(26);
+      padding: px2rem(30);
+      color: map-get($fcolor, light);
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+  }
+}
+
+.header-bar h1{
+  margin-left: 0 !important;
+}

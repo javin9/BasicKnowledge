@@ -1,0 +1,41 @@
+@import 'sassHelper/vars';
+
+/*@import 'sassHelper/mixin';*/
+
+@import '../css/ershouche';
+@mixin font($size) {
+    @include fsize(map-get($mfont, $size));
+}
+
+.success {
+    background: #fff;
+    padding: px2rem(80) 0;
+    .icon_ok {
+        width: px2rem(140);
+        height:px2rem(140);
+        margin: 0 auto px2rem(30);
+        display: block;
+        background: url("../images/okgreen3x.png") center center no-repeat;
+        background-size: px2rem(140) px2rem(140);
+    }
+    .txt {
+        text-align: center;
+        line-height: px2rem(48);
+        @include fsize(32);
+        color: $hei;
+        padding-bottom: px2rem(50);
+    }
+    .btn_red_line {
+        width: px2rem(300);
+        height: px2rem(90);
+        display: block;
+        line-height: px2rem(90);
+        background: #fff;
+        border: solid 2px $red;
+        border-radius: px2rem(5);
+        @include fsize(32);
+        color: $red;
+        margin: 0 auto;
+        text-align: center;
+    }
+}

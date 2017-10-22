@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no" />
+	<script type="text/javascript">
+		var APIURL = "http://testapi.chedai.bitauto.com/";
+		var xinche = 'http://test.xinche.m.daikuan.com';
+		var BusinessLine = 550;
+		var CODE_GETTING_URL = '/Login/GetCode';
+		var CODE_VALIDATING_URL = '/Login/CheckCode';
+		var USERCENTER = 'http://test.i.m.daikuan.com/';
+		var usercenter = 'http://test.i.m.daikuan.com/';
+		var returnurl = "";
+		var loginSign = true;
+	    var businessid = '2'
+		var getSlideVerifyApi = '/base/initialsign'
+        var CheckSign = '/base/checksign'
+	</script>
+</head>
+
+<body>
+	{{{htmlWebpackPlugin.options.header}}}
+	<div id="main"
+		header-link="/index/register"
+		forget-password-link="/myHome/forgetPwd.html"
+		tp-sina="/sina"
+		tp-qq="/qq"
+		tp-jd="/jd"
+		tp-yiche="/yiche"
+		redirect-url="/"
+	></div>
+	{{{htmlWebpackPlugin.options.footer}}}
+	<script src="{{htmlWebpackPlugin.options.common}}"></script>
+	<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+	<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

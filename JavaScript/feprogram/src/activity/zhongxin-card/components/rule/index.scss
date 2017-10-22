@@ -1,0 +1,32 @@
+@import 'sassHelper/mixin';
+@import 'sassHelper/vars';
+
+.component-rule{
+	@include border;
+	width: 1200px;
+	margin:0 auto 50px;
+	padding:30px;
+	box-sizing:border-box;
+	color:$dark-color;
+
+	h6{
+		font-size:22px;
+		line-height: $main-line-height;
+		font-weight: normal;
+	}
+
+	ul{
+		margin-top: 20px;
+		list-style-position: inside;
+		font-size:14px;
+	}
+
+	li{
+		list-style-type: decimal;
+		margin-bottom: 16px;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}

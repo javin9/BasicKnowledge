@@ -1,0 +1,159 @@
+@charset "utf-8";
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden }
+.col_red { color: #fc654d!important }
+.col_org { color: #d68a5c }
+.col_black { color: #000 }
+.col_grey { color: #a9a9a9 }
+.col_grey2 { color: #777 }
+.col_grey3 { color: #333 }
+.col_grey6 { color: #666 }
+.col_grey9 { color: #999 }
+.col_white { color: #fff }
+.col_blue { color: #5fc3e8; }
+.col_yellow { color: #de9c33; }
+.btn_blue, .btn_yellow, .btn_green { color: #fff; padding: 0.08rem 0.133333rem; display: inline-block; border-radius: 0.08rem; }
+.btn_blue { background-color: #0d99fc; }
+.btn_yellow { background: #ffcd2d; }
+.btn_green { background: #019999; }
+.btn_line_yellow { border-radius: 0.133333rem; border: solid 1px #dbb76c; color: #dbb76c; padding: 0.133333rem 0.4rem; }
+.f_w { font-weight: 700 }
+span { display: inline-block }
+/*share*/
+[data-dpr="1"] .font-22 { font-size: 11px; }
+[data-dpr="2"] .font-22 { font-size: 22px; }
+[data-dpr="3"] .font-22 { font-size: 33px; }
+[data-dpr="1"] .font-24 { font-size: 12px; }
+[data-dpr="2"] .font-24 { font-size: 24px; }
+[data-dpr="3"] .font-24 { font-size: 36px; }
+[data-dpr="1"] .font-28 { font-size: 14px; }
+[data-dpr="2"] .font-28 { font-size: 28px; }
+[data-dpr="3"] .font-28 { font-size: 42px; }
+[data-dpr="1"] .font-32 { font-size: 16px; }
+[data-dpr="2"] .font-32 { font-size: 32px; }
+[data-dpr="3"] .font-32 { font-size: 48px; }/**/
+[data-dpr="1"] .doCard input,[data-dpr="1"] .apply_page input{ font-size: 15px; }
+[data-dpr="2"] .doCard input,[data-dpr="2"] .apply_page input{ font-size: 30px; }
+[data-dpr="3"] .doCard input,[data-dpr="3"] .apply_page input{ font-size: 45px; }
+body { background: #f2f2f2; }
+/*share*/
+.ub { display: -webkit-box!important; display: box!important }
+.ub-con { position: absolute; width: 100% }
+.ub-f1, .ub-f2, .ub-f3, .ub-f4 { position: relative }
+.ub-ac { -webkit-box-align: center; box-align: center }
+.ub-ae { -webkit-box-align: end; box-align: end }
+.ub-pc { -webkit-box-pack: center; box-pack: center }
+.ub-pe { -webkit-box-pack: end; box-pack: end }
+.ub-pj { -webkit-box-pack: justify; box-pack: justify }
+.ub-ver { -webkit-box-orient: vertical; box-orient: vertical }
+.ub-f1 { -webkit-box-flex: 1; box-flex: 1 }
+.ub-f2 { -webkit-box-flex: 2; box-flex: 2 }
+.ub-f3 { -webkit-box-flex: 3; box-flex: 3 }
+.ub-f4 { -webkit-box-flex: 4; box-flex: 4 }
+.ub-img { -webkit-background-size: contain; background-size: contain; background-repeat: no-repeat; background-position: center }
+.ut-s { text-overflow: ellipsis; overflow: hidden; white-space: nowrap }
+.box_sizing { box-sizing: border-box; -webkit-box-sizing: border-box }
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+	-webkit-appearance: none !important;
+}
+input[type="number"] { -moz-appearance: textfield; }
+::-webkit-input-placeholder {
+	text-align:left;
+}
+::-moz-placeholder {
+	text-align:left;
+}
+input[type="search"] { -webkit-appearance: textfield; }/***/
+#Education .icon { background-image: url(../images/c01.png); }
+#HouseState .icon { background-image: url(../images/c02.png); }
+#CreditState .icon { background-image: url(../images/c03.png); }
+#WorkState .icon { background-image: url(../images/c04.png); }
+#WorkUnit .icon { background-image: url(../images/c05.png); }
+#UnitType .icon { background-image: url(../images/c06.png); }
+#Insurance .icon { background-image: url(../images/c07.png); }
+#WorkProve .icon { background-image: url(../images/c08.png); }
+#UserName .icon { background-image: url(../images/c09.png); }
+#Age .icon { background-image: url(../images/c10.png); }
+#Telphone .icon { background-image: url(../images/c11.png); }
+#OfficePhone .icon{ background-image: url(../images/detail4.png); }
+#ValidateCode .icon { background-image: url(../images/c12.png); }
+#CityId .icon { background-image: url(../images/c13.png); }
+.do_card { }
+.do_card_nav { display: -webkit-box; display: box; background: #fff; }
+.do_card_nav>div { display: -webkit-box; display: box; -webkit-box-flex: 1; box-flex: 1; -webkit-box-align: center; box-align: center; -webkit-box-pack: center; box-pack: center;/* height: 0.4rem;*/ line-height: 100%; margin-left: -1px; padding: 0.266667rem 0; }
+.do_card_nav>div.cur { color: #dbb76c; border-bottom: solid 2px #dbb76c; }
+/*基本信息*/
+.doCard_from {
+	padding:  0; background: #fff; margin: 0.266667rem 0; }
+.doCard_from .item { display: -webkit-box; display: box; padding: 0.4rem 0.266667rem; border-top: solid 1px #eee; }
+.doCard_from li.item:last-child { border-bottom: 0; }
+.doCard_from .hd { display: -webkit-box; display: box; -webkit-box-align: center; box-align: center; -webkit-box-pack: center; box-pack: center; }
+.doCard_from .ft_box { display: -webkit-box; display: box; -webkit-box-flex: 1; box-flex: 1; -webkit-box-align: center; box-align: center; -webkit-box-pack: end; box-pack: end; }
+.doCard_from .ft { -webkit-box-align: center; box-align: center; -webkit-box-pack: end; box-pack: end; width: 0.4rem;
+	padding-left: 0.133333rem;}
+.doCard_from .tip_r {width: 0.24rem;height: 0.24rem; border-top: solid 1px #bebebe; border-right: solid 1px #bebebe; display: block; -webkit-transform: rotate(45deg); transform: rotate(45deg); background: 0 0; }/*.doCard_from .icon { width: 0.44rem; height: 0.48rem;  margin: .026667rem .08rem 0 0;display: block; background-size: .44rem .48rem;background-repeat: no-repeat; }*/
+.doCard_from .choose { color: #d0d0d0; }
+.doCard_from .icon { width: 0.426667rem; height: 0.426667rem; display: inline-block; vertical-align: middle; background-size: 100% 100%; background-repeat: no-repeat; margin-right: 0.266667rem; }
+.ft_box input { border: 0!important; text-align: right; }
+#WorkUnitInput{ width: 90%!important;display: block!important;text-overflow: ellipsis; overflow: hidden; white-space: nowrap }
+#ValidateCode input { padding-right: 0.133333rem; }
+/*联系信息*/
+.doCard_from #ValidateCode { padding: 0 0.266667rem; }
+.doCard_from #ValidateCode>div { padding: 0.4rem 0; }
+.doCard_from #ValidateCode .ft_box, .doCard_from #ValidateCode .hd { -webkit-box-flex: 3; }
+.doCard_from #ValidateCode .hd { -webkit-box-pack: inherit; box-pack: inherit; }
+.doCard_from #ValidateCode #GetCode { border-left: solid 1px #eee; -webkit-box-flex: 1; }
+.doCard_from .disable { color: #999; }
+.doCardJobInfo, .doCardContactInfo { display:none ; }
+/*btn*/
+.card_btn_org { margin: 0 0.266667rem 0.533333rem; }
+.btn_org {
+	padding: .373333rem; color: #fff; border-radius: .08rem;
+	font-weight: 700; text-align: center; background: #dbb76c; margin: 0 0.266667rem 0.266667rem; }
+.btn_org.ContactInfo { background: #ccc; }
+.small_ok {
+	background-size: .44rem .48rem;
+	width: .44rem;
+	height: .48rem; display: inline-block; vertical-align: middle; margin-right: .08rem;
+	background-image: url(../images/cok.png) }
+.small_ok.checked { background-image: url(../images/cok2.png) }
+/*失败页*/
+.DoCardError-header-bar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1 }
+.DoCardError { }
+.DoCardError_pf { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; }
+.DoCardError_box { padding: 50% 0; text-align: center; }
+.icon_error { width: 1.333333rem; height: 1.333333rem; display: inline-block; background: url(../images/error.png) no-repeat; background-size: 100% 100%; margin-right: 0.266667rem; }
+.DoCardError .txt { color: #000; padding: 0.266667rem 0; }
+.DoCardError .info { line-height: 150%; }
+/*民生银行主卡申请-成功页*/
+.result-apply-header-bar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1 }
+.result_apply { }
+.result_apply_pf { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; }
+.result_apply_box { padding: 50% 0; text-align: center; }
+.icon_apply_ok { width: 1.333333rem; height: 1.333333rem; display: inline-block; background: url(../images/ok.png) no-repeat; background-size: 100% 100%; margin-right: 0.266667rem; }
+.result_apply .txt { color: #000; padding: 0.266667rem 0; }
+.result_apply .info { line-height: 150%; padding: 0 0.666667rem; }
+.result_apply_btn_box { padding: 0.266667rem 0; text-align: center; }
+.result_apply_btn_box>a { display: inline-block; width: 2.666667rem; height: 0.8rem; line-height: 0.8rem; margin: 0 0.266667rem; }
+.result_apply_btn_box .result_apply_btn_org { color: #fff; background: #dbb76c; border-radius: 0.16rem; border: solid 1px #dbb76c; }
+.result_apply_btn_box .result_apply_btn_grey { color: #999; border-radius: 0.16rem; border: solid 1px #999; }
+/*民生银行主卡申请*/
+#applyPage { display: block; }
+.apply_con_info { padding: 0.4rem 0.266667rem; background: #fff; line-height: 150%; }
+.apply_page .doCard_from { margin-top: 0; padding-top: 0; }
+
+.apply_remind { color: #a4a4a4; padding: 0 0.533333rem 0.266667rem; line-height: 150%; }
+/**/
+
+.doCard_from ::-webkit-input-placeholder { /* WebKit browsers */
+	direction: rtl;text-align:right ;
+}
+.doCard_from :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	direction: rtl;text-align:right ;
+}
+.doCard_from ::-moz-placeholder { /* Mozilla Firefox 19+ but I'm not sure about working */
+	direction: rtl;text-align:right ;
+}
+.doCard_from :-ms-input-placeholder { /* Internet Explorer 10+ */
+	direction: rtl;text-align:right ;
+}
+.citySelect-search-input{margin-top:0.266666rem;line-height:normal;height:auto;}

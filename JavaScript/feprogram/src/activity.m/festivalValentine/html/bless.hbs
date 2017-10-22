@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        //是否是微信浏览器
+        var isWeiXinBroswer = 'True'.toLowerCase();
+        //微信用户信息，非微信浏览器下为空
+        var voteUserName= "小冰冰";
+        var voteUser= "12345";
+        var voteUserImgUrl= "http://placeholder.it/80x80";
+        //活动编号
+        var v = "";
+
+        var GetActivity = "GetActivity";
+        var GetActivityVoteList = "GetActivityVoteList";
+        var SaveActivityVote = 'SaveActivityVote';
+        //整个活动的首页
+        var ActivityIndex = 'http://192.168.151.116:8080/festivalValentine/tf.html';
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="valentineBless">
+
+    <header class="top">
+
+        <h3 class="name" v-text="hostName">饼饼</h3>
+        
+        <article class="text">
+            <p class="txt1" v-text="prizeNow" v-show="isLimit">已在易鑫车贷获得了首付直降1000元优惠</p>
+            <p class="txt2" v-html="prizeThen" v-bind:class="classSpecial">距离首付直降<span class="highlight">2000元</span></p>
+            <p class="txt3 highlight" v-show="isLimit">还差<span v-text="voteNumLeft">5</span><span v-text="textTypeNum">颗心</span></p>
+        </article>
+
+        <div class="btn uf">
+            <a href="javascript:void(0);" id="btnBenefit" class="btn_bless btn_benefit uf_f1"></a>
+            <a href="javascript:void(0);" id="btnHelp" class="btn_bless uf_f1"v-bind:class="classTypeBtn"></a>
+            <i class="eleAnimate"></i>
+            <i class="eleAnimate eleAnimate1"></i>
+            <i class="eleAnimate eleAnimate2"></i>
+            <i class="eleAnimate eleAnimate3"></i>
+            <i class="eleAnimate eleAnimate4"></i>
+            <i class="eleAnimate eleAnimate5"></i>
+        </div>
+
+        <div class="desc">
+            <a href="javascript:void(0);" id="btnDesc" class="btn_desc">活动说明 &gt;</a>
+        </div>
+        
+    </header>
+
+    <section class="main">
+
+        <div class="tit">谁来为TA点过</div>
+
+        <div class="list" id="voteWrapper">
+            <ul>
+                <li class="uf uf_ac" v-for="item in items">
+                    <img src="" alt="" class="avatar" v-bind:src="item.guestAvatar">
+                    <div class="uf_f1">
+                        <h4 class="name" v-text="item.guestName">饼饼</h4>
+                        <p class="word" v-text="item.guestWord">助你买车一臂之力</p>
+                    </div>
+                    <div class="time" v-text="item.guestTime">今天</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="note"></div>
+
+    </section>
+
+</div>
+
+<div id="moduleDesc">
+    <a href="javascript:void(0);" class="closeX"></a>
+
+    <section class="desc_wrap">
+
+        <article class="time">
+            <b class="tit">活动时间：</b>2月10日-2月24日
+        </article>
+
+        <div id="wrapper">
+
+            <div>
+                <ul>
+                    <li class="rule">
+                        <div class="tit">活动玩法：</div>
+                        <p><i>1</i>用户参加本次首付直降购车活动，可在活动期间对购车心愿进行分享，以获取更多优惠；</p>
+                        <p><i>2</i>用户邀请好友对购车心愿进行支持。达到相应的支持数，获取阶梯式的进阶购车优惠；</p>
+                        <p><i>3</i>支持者整个活动期间只能投票一次。最高免息奖励名额有限，先到先得。</p>
+                    </li>
+                    <li class="price">
+                        <div class="tit">奖品说明：</div>
+                        <img src="../images/table-pop.html.png" alt="" class="pic">
+                    </li>
+                    <li class="note">
+                        <div class="tit">备注：</div>
+                        <p>此优惠活动仅限选择易鑫自营金融产品用户；</p>
+                        <p>当车辆的官方指导价≦5万，同时满足贷款期限≧1年和融资额≧2万，首付最高直降1000元；</p>
+                        <p>当车辆的官方指导价>5万，满足贷款期限≧2年或者融资额≧4万条件之一，首付最高直降2000元；</p>
+                        <p>完成获取条件可获2年免息优惠，此优惠不与首付直降优惠同享。</p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

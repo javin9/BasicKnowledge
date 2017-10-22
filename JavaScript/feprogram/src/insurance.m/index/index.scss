@@ -1,0 +1,112 @@
+/*标题栏*/
+.index_tit{ text-align: center; color: #000000;height: 1.2rem; line-height: 1.2rem;border-bottom: 1px solid #e5e5e5;text-align: center;background-color: #fff;position: relative;
+	.main{ display: inline-block;font-weight: 700; }
+	.main img{display: inline-block;height: 0.453333rem; padding-right: 13px;vertical-align: -0.075rem;}
+	.details{ position: absolute; right: 0.2rem;top: 0; color: #9a9a9a; font-size: 12px; height: 1.2rem; line-height: 1.2rem;display: block; }
+	.details img{display: inline-block;vertical-align: middle; width: 0.16rem;height: 0.266667rem;padding-left: 0.133333rem;}
+}
+/*车险小工具*/
+.insurance_tool{ width: 100%; background-color: #fff;
+	li{ float: left; position: relative;padding-bottom: 0.266667rem; }
+	li:before{ content: ""; position: absolute; border-right: 1px solid #e5e5e5; top: 0; right: 0; bottom: 0px; height: 100%; z-index: 2; }
+	li:nth-child(2),.insurance_tool li:nth-child(5){ border: 0px; }
+	li.a_half{ width: 50%; }
+	li.a_third{ width: 33.3%; }
+	li a{ display: block; text-align: center; position: relative; padding-top: 0.16rem; }
+	li a img{width: 2.8rem;display: block;margin: 0 auto;}
+	li a h3{ color: #333; text-align: center;  line-height: 0.56rem; height: 0.56rem; text-align: center;font-weight: 700; }
+	li a span{  display: inline-block; text-align: center; color: #999; line-height: 0.48rem;}
+	li a span.border_btn{ padding: 0.066667rem 0.133333rem; }
+}
+.toolList{widows: 10rem;margin: 0 auto;background-color: #Fff;
+	div{text-align: center;height:2.986667rem;line-height: auto; border-bottom: 0px;
+		a{display: block;height: auto;;}
+		img{width: 1.173333rem;height: 1.173333rem;margin: 0 auto;padding-top: 0.4rem;display: block;}
+		p{text-align: center;line-height: 0.48rem;color: #333;padding-top: 0.213333rem;}
+	}
+}
+
+/*最新优惠*/
+.LatestOffer{ line-height: 0.56rem;padding: 0 0.266667rem 0.346667rem;background-color: #fff;
+	span{color:#e9474d;font-weight:600;float:left;padding-right: 0.4rem;}
+	img{display: inline-block;float: left;vertical-align: middle;}
+	img:first-child{padding-right: 0.4rem;width: 1.813333rem;height: 0.506667rem;}
+	img:last-child{float: right;width: 0.16rem;height: 0.266667rem;padding-top: 0.133333rem;}
+	.recentCtn{width:6.546667rem;height: 0.506667rem;line-height: 0.506667rem;overflow: hidden;padding-left: 0.266667rem;background:url('../comm/images/icon/dot.png') no-repeat left center;background-size: 0.133333rem;float: left;}
+	.recentCtn.swiper-container .swiper-wrapper .swiper-slide a{color: #9C9FA1;}
+}
+.LatestOffer:before{content: '';display: block;border-top: 1px solid #e5e5e5;width: 100%;padding-bottom: 0.266667rem;}
+/*套餐推荐*/
+.Package_box{ background-color: #fff; padding: 0.266667rem; height: 3.2rem;
+	.small_list{ width:3.013333rem; height: 3.2rem; float: left; margin-right: 0.213333rem;}
+	.small_list:last-child{margin-right: 0;}
+	.small_list img{width: 100%;display: block;}
+}
+/*为你精选*/
+.smallInsuranceList{margin: 0 auto;background-color: #fff;overflow: hidden;width: 10rem;
+	.box{ margin: 0.266667rem 0.4rem;width: 9.2rem;overflow: hidden; }
+	.swiper-container{margin-left:-0.266667rem;overflow-y: hidden;position: relative;}
+	.swiper-slide{width: 4.466667rem!important;float: left; padding-left: 0.266667rem;}
+	.swiper-slide dl{width:  4.466667rem;}
+	.swiper-slide dl dt{width: 100%;}
+ 	.swiper-slide dl dt img{width:  4.466667rem;display: block;}
+	.swiper-slide dl h3{padding-top: 0.186667rem;color: #333333;line-height: 0.613333rem;}
+	.swiper-slide dl p{padding-bottom: 0.186667rem;color: #999;line-height: 0.48rem;}
+	.swiper-slide dl p.red{color: #e9474d;padding-bottom: 0.72rem;}
+	.swiper-container .swiper-pagination .swiper-pagination-bullet{background-color: #c4c4c4;border:0;width: 0.186667rem;height: 0.186667rem;margin-right: 0.266667rem;}
+	.swiper-container .swiper-pagination .swiper-pagination-bullet:last-child{margin-right: 0;}
+	.swiper-container .swiper-pagination .swiper-pagination-bullet-active{background-color: #e9474d;}
+}
+/*车主评论*/
+.evaluateListBox{padding: 0.266667rem 0 0.266667rem 0.133333rem;background-color: #fff;overflow: hidden;height: 3.226667rem;
+	.listInfo{-webkit-overflow-scrolling : touch;width: 100%;overflow-x: scroll;overflow-y: hidden;padding-bottom: 0.4rem;}
+	ul{width: 219%;
+		li{float: left;margin-left: 0.266667rem;border:1px solid #e5e5e5;padding: 0.266667rem; display: block;height: 2.666667rem;
+			a{display: block;height: 2.666667rem;}
+			.left{width: 3.633333rem;float: left;
+				h3{height: 1.066667rem;line-height: 1.066667rem;color: #333;padding-bottom: 0.213333rem;}
+				h3 img{display: block;float: left;width: 1.066667rem;height: 1.066667rem;padding-right: 0.32rem;}
+				h3 span{color: #333;}
+				p{ color: #686868; line-height: 0.48rem; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+			}
+			.right{position: relative;float: left;
+				img{display: block;width: 2.666667rem;}
+				p{position: absolute;right: 0;bottom: 0;display: inline-block;}
+			}
+		}
+	}
+}
+
+/*常见问题*/
+.question_box{ background-color: #fff; margin-bottom: 0.266667rem;
+	h3{ height: 1.333333rem; line-height: 1.333333rem; padding-left: 0.4rem; font-size: 18px; font-weight: bold; position: relative; }
+	.index_question_list .swiper-slide:before{ z-index: 2; content: ""; position: absolute; bottom: 0; left: 0; right: 0; border-bottom: 1px solid #e5e5e5; }
+	.index_question_list .swiper-slide:last-child:before{ border: 0px; }
+	.index_question_list{ padding-left: 0.4rem; }
+	.index_question_list .swiper-slide{ position: relative; }
+	.swiper-container .swiper-wrapper.index_question_list{ display: block!important; }
+	.index_question_list .swiper-slide div.ask_box{ padding: 0.266667rem 0px 0.133333rem; padding-right: 0.4rem; position: relative; }
+	.index_question_list .swiper-slide div.ask_box .left_icon{ display: inline-block;padding:0.026667rem; text-align: center; border: 1px solid #E9474D; border-radius: 0.026667rem;color: #E9474D; position: absolute;left: 0; top: 0.333333rem; vertical-align: middle;}
+	.index_question_list .swiper-slide div.ask_box .right_box{ padding-left: 0.746667rem; }
+	.index_question_list .swiper-slide div.ask_box .right_box .ask_main{ padding-bottom: 0.133333rem; color: #333; font-weight: 600; line-height: 0.613333rem; }
+	.index_question_list .swiper-slide div.ask_box .right_box .ask_name{ color: #b2b2b2; line-height: 0.48rem; }
+	.index_question_list .swiper-slide div.ask_box.answer .ask_main{ padding-bottom: 0.306667rem; font-weight: normal; color: #686868;line-height: 0.56rem; }
+	.index_question_list .swiper-slide div.ask_box.answer .ask_name{ padding-bottom: 0.4rem;line-height: 0.48rem;color: #b2b2b2; }
+	.baoe{ color: #0A4e8a; padding-right: 0.133333rem; position: absolute; top: 0px; right: 0.133333rem; }
+	.slide_btn{ background-color: #fff; text-align: right; color: #333333; font-size: 12px; padding: 0.266667rem 0px; padding-right: 0.4rem; }
+	.slide_btn .icon{ float: none; vertical-align: middle; display: inline-block; margin-left: 0.133333rem; }
+}
+#cover{ position: fixed; width: 10rem; height: 100%; background-color: rgba(0,0,0,0.65); top: 0; z-index: 9999; margin: 0 auto; }
+.modal{ position: fixed; right: 0.4rem; left:0.4rem; top: 25%; z-index: 2; background-color: #fff; border-radius: 0.266667rem; -webkit-border-radius: 0.266667rem; width: 9.2rem; margin: 0 auto; }
+.modal .cor_hd{ border-bottom: 1px solid #f2f2f2; height: 1.066667rem; line-height: 1.066667rem; text-align: center; color: #3269b4; position: relative; }
+.modal .cor_hd .cor_close{ position: absolute; right: 0;top: -0.746667rem; width: 0.613333rem; height:0.613333rem;  text-align: center; vertical-align: middle; -moz-border-radius: 100%; -webkit-border-radius: 100%; border-radius: 100%;   }
+.modal .cor_hd .cor_close:before{ width: 0.613333rem; height: 0.613333rem; content: ""; display: inline-block; background-image: url("../comm/images/icon/close-round-whigt.png"); background-repeat: no-repeat; background-position: 0.0rem 0.0rem; background-size: 0.613333rem auto; background-position: 0; position: relative; }
+.modal .cor_ft{ padding: 0.8rem 0.4rem 0.666667rem; }
+.modal .title{ font-size: 16px; color: #666666; }
+.modal .cor_btn{ -moz-border-radius: 0.066667rem; -webkit-border-radius: 0.066667rem; border-radius: 0.066667rem; background-color: #e9474d; color: #fff; text-align: center; line-height: 1.333333rem; height: 1.333333rem; width: 100%; color: #fff; }
+.modal .cor_bd{padding-top: 0.666667rem;}
+.modal .cor_bd .li{ width: 50%; float: left; font-size: 12px; color: #999999; line-height: 0.72rem; position: relative; }
+.modal .cor_bd .li a{ padding-left:1.146667rem; line-height: 0.64rem; color: #666;padding-bottom: 0.32rem; }
+.modal .cor_bd .li:before{ content: ""; display: inline-block; width: 0.48rem; height: 0.48rem; background-image: url("../comm/images/icon/choose04.png"); background-repeat: no-repeat;margin:0.08rem 0.266667rem 0.08rem 0.4rem;  position: absolute; background-size: 0.48rem;background-position: center;}
+.isShow { display: block; }
+.isBlank { display: none; }

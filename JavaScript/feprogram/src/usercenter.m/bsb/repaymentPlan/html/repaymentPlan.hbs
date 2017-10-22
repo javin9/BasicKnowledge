@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>还款计划账单</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="yxWrapper">
+
+	<header class="header-bar">
+	    <a href="javascript:history.go(-1);"></a>
+	    <h1 class="font-nav">还款计划账单</h1>
+	    <span class="font-title"></span>
+	</header>
+	
+	<div class="rpm_wrap">
+
+		<section class="rpm_box">
+			<div class="uf uf_ac status">
+				<div class="uf_f1 c_9">当前应还 (元)</div>
+				<i class="tag tag_red">已逾期</i>
+			</div>
+			<div class="uf uf_ac total">
+				<div class="uf_f1"><b>6325.13</b></div>
+				<div class="c_6">明细<i class="arr_r arr_line"></i></div>
+			</div>
+			<div class="c_6 date">还款日 06-19</div>
+		</section>
+
+	</div>
+
+	<div class="rpm_wrap">
+
+		<div class="rpm_box">				
+			<div class="c_9">贷款总额：<span class="c_gold">133,400.00元</span></div>
+			<div class="c_6 issue">共12期 已还款2期<em>|</em>未还款10期<em>|</em>逾期<span class="c_red">2</span>期</div>
+			<div class="uf c_6 haspay">
+				<div class="uf_f1">已还款</div>
+				<div>3.5万<i class="arr_r arr_line"></i></div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="rpm_wrap">
+		
+		<header class="rpm_title">未还款订单</header>
+
+		<!-- repeat item demo-1 start -->
+		<a href="">
+			<section class="rpm_box rpm_item uf uf_ac">
+				<div class="uf_f1">
+					<b>5/12期</b>
+					<p>2015-05-19<span class="c_red"> (逾期37天)</span></p>
+				</div>
+				<div class="ta_r">
+					<b><span class="c_red">2500元</span></b>
+					<p><span class="c_red">逾期未还款</span></p>
+				</div>
+				<i class="arr_r arr_gray"></i>
+			</section>
+		</a>
+		<!-- repeat item demo-1 end -->
+
+		<!-- repeat item demo-2 start -->
+		<a href="">
+			<section class="rpm_box rpm_item uf uf_ac">
+				<div class="uf_f1">
+					<b>6/12期</b>
+					<p>2015-06-19</p>
+				</div>
+				<div class="ta_r">
+					<b><span class="c_red">2500元</span></b>
+					<p><span class="c_yellow">未还款</span></p>
+				</div>
+				<i class="arr_r arr_gray"></i>
+			</section>
+		</a>
+		<!-- repeat item demo-2 end -->
+
+		<!-- repeat item demo-3 start -->
+		<a href="">
+			<section class="rpm_box rpm_item uf uf_ac">
+				<div class="uf_f1">
+					<b>7/12期</b>
+					<p>2015-07-19</p>
+				</div>
+				<div class="ta_r">
+					<b><span class="">2500元</span></b>
+					<p><span class="">未出账单</span></p>
+				</div>
+				<i class="arr_r arr_gray"></i>
+			</section>
+		</a>
+		<!-- repeat item demo-3 end -->
+
+	</div>
+</div>
+
+<!--整屏蒙层start-->
+  <div id="maskLayer"></div>
+<!--整屏蒙层end-->
+<div class="bottom-to-top">
+    <img src='http://img3.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=201610191560' />
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

@@ -1,0 +1,670 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+$gold:#E9474D;
+body{background: #f2f2f2!important;}
+.search-list {
+  background: #fff;
+  padding: 0 px2rem(10) 0 px2rem(40);
+overflow:hidden;
+  dt {
+    @include fsize(26);
+    line-height: 1;
+    color: #333;
+    padding-top: px2rem(40);
+    margin-bottom: px2rem(6);
+  }
+
+  dd {
+    overflow: hidden;
+
+    .choice {
+      display: block;
+      float: left;
+      width:px2rem(150);
+      box-sizing: border-box;
+      text-align: center;
+      line-height: px2rem(56);
+      background: #F5F5F5;
+      border-color: #F5F5F5;
+      border-style: solid;
+      border-width: 1px;
+      border-right-width: 0;
+      margin-top: px2rem(14);
+      margin-right: px2rem(20);
+      border-radius: px2rem(5);
+      @include fsize(24);
+      color: #666;
+
+      &:nth-child(4n),
+      &:nth-last-child(1) {
+        border-right-width: 1px;
+      }
+
+      &.active {
+        position: relative;
+        z-index: 10;
+        border-right-width: 1px;
+        border-color:#E9474D;
+        background:#fff;
+        color: #E9474D;
+      }
+    }
+
+    &.monthlypayment span {
+      width:px2rem(200);
+      &:nth-child(3n),
+      &:nth-last-child(1) {
+        border-right-width: 1px;
+      }
+    }
+
+    &.brand {
+      padding: px2rem(10) px2rem(25) px2rem(30);
+      margin: px2rem(20) px2rem(-25) 0;
+      background: #FFFFFF;
+      justify-content: space-between;
+      
+      .choice {
+        position: relative;
+        box-sizing: border-box;
+        width: px2rem(160);
+        height: px2rem(160);
+        border: 0px;
+        border-radius:px2rem(4);
+        overflow: hidden;
+        margin-top: px2rem(20);
+        margin-right: px2rem(20);
+        background: #FFFFFF;
+
+        &:nth-child(4n) {
+          margin-right: 0;
+        }
+
+        .logo {
+          display: block;
+          height: px2rem(110);
+          text-align: center;
+
+          img {
+            max-width: px2rem(106);
+            max-height: px2rem(72);
+            vertical-align: middle;
+          }
+
+          &:after {
+            content: '';
+            width: 0;
+            line-height: px2rem(110);
+            vertical-align: middle;
+          }
+        }
+
+        .name {
+          position: absolute;
+          left:px2rem(1);
+          bottom: 0;
+          width: 100%;
+          height: px2rem(50);
+          text-align: center;
+          @include fsize(26);
+          line-height: 1;
+          color:#686868;
+        }
+
+        &.active {
+          background: transparent;
+          box-shadow: inset #E9474D 0 0 0 1px;
+          -webkit-box-shadow: inset 0 0 0 1px #E9474D;
+          /*{text-shadow:投影方式 X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色}*/
+          .name {
+            color:#E9474D;
+          }
+
+          &:before {
+            content: '';
+            position: absolute;
+            right:px2rem(0);
+            bottom:px2rem(0);
+            width:px2rem(30);
+            height:px2rem(30);
+            background: url("./images/choose-mark.png") right bottom no-repeat;
+            background-size: 100% auto;
+            z-index: 1;
+            /*background:#E9474D;
+            transform: rotate(45deg);*/
+            /*-webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform-origin: left top;
+            -webkit-transform: rotate(45deg);
+            -o-transform-origin: left top;
+            -webkit-transform: rotate(-25deg);*/
+          }
+
+          /*&:after {
+            content: '';
+            position: absolute;
+            right: px2rem(2);
+            bottom: px2rem(10);
+            width: px2rem(14);
+            height: px2rem(7);
+            border-bottom: 1px solid #FFFFFF;
+            border-left: 1px solid #FFFFFF;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+          }*/
+        }
+      }
+    }
+  }
+}
+
+.car-select {
+  @include fsize(30);
+  color: #000000;
+  padding-left: px2rem(30);
+  padding-right: px2rem(30);
+  line-height: px2rem(88);
+  background: #FFFFFF;
+  margin-top: px2rem(1);
+  margin-bottom: px2rem(120);
+  overflow: hidden;
+  border-top: 1px solid #ececec;
+
+  .name {
+    float: left;
+    color: #333;
+  }
+
+  .select {
+    @include fsize(26);
+    float: right;
+    color: #999;
+
+    i {
+      position: relative;
+      top: px2rem(-0);
+      display: inline-block;
+      width: px2rem(18);
+      height: px2rem(18);
+      border-top: 1px solid #c8c8c8;
+      border-right: 1px solid #c8c8c8;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      margin-left: px2rem(8);
+    }
+
+    .sel {
+      color:#686868;
+
+      &+i {
+        border-color:#686868;
+      }
+    }
+  }
+}
+
+#carSelectComponent .carSelect-recommendBrand {
+  display: none;
+}
+
+.bottom-btn {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  max-width: px2rem(750);
+
+  a {
+    display: block;
+    height: px2rem(100);
+
+    line-height: px2rem(100);
+    text-align: center;
+    background:#E9474D;
+    color: #FFFFFF;
+    text-decoration: none;
+
+    &.reset {
+      width: 0;
+      flex: 1 1 0;
+      background:#FFF7F7;
+      color: #333;@include fsize(28);
+    }
+
+    &.view {
+      width: 0;
+      flex: 2 1 0;
+      color: #FFFFFF !important;@include fsize(32);
+    }
+  }
+}
+
+/* --------------
+    list
+   -------------- */
+html, body {
+}
+
+#yxWrapper {
+  position: relative;
+}
+/*#yxWrapper .loading-gray{
+  background: url(../../common.m/images/loading_white.gif) no-repeat center center;
+  background-size: px2rem(160) px2rem(160);
+  height:px2rem(200);
+}*/
+.budget-carlist {
+  margin-top: px2rem(80);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+
+  .carlist {
+    background: #FFFFFF;
+
+    .car {
+      padding: px2rem(30);
+      border-bottom: 1px solid #eeeeee;
+      overflow: hidden;
+
+      .image {
+        float: left;
+        width: px2rem(240);
+        height: px2rem(160);
+        overflow: hidden;
+
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .text {
+        margin-left: px2rem(240+24);
+
+        dl {
+          height: px2rem(160);
+          display: -webkit-box;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .name {
+            font-weight: bold;
+            @include fsize(30);
+            line-height: px2rem(46);
+            color: #000000;
+          }
+
+          .info {
+            @include fsize(26);
+            line-height: px2rem(34);
+            color: #999999;
+          }
+
+          .price {
+            @include fsize(26);
+            line-height: px2rem(34);
+            color: #666666;
+
+            .num {
+              @include fsize(28);
+              line-height: px2rem(40);
+              color: #e9474d;
+
+              .unit {
+                @include fsize(24);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 没有更多了
+    .no-more {
+      padding: px2rem(20) 0;
+      background: #f2f2f2;
+      text-align: center;
+      color: #999;
+    }
+  }
+}
+
+#car-loading {
+  display:none;
+}
+
+// 没有产品了
+.default-box{
+  margin-top: 0.266667rem;
+  padding: 1.066667rem 0;
+  transform: inherit!important;
+}
+.default-box .default-img{
+  width:3.8rem;
+  height: 2.48rem;
+  margin: 0 auto;
+  background: url(images/default.png) no-repeat;
+  background-size: 100%;
+}
+
+.default-box .default-title{
+  padding: px2rem(50) 0 0;
+  @include fsize(30);
+  color: #333;
+  text-align: center;
+}
+.default-box .default-text{
+  font-size: 0.346667rem;
+  color: #d0d0d0;
+  text-align: center;
+}
+
+// 筛选栏
+.search-bar {
+  position: relative;
+  z-index: 20;
+  height: px2rem(80);
+  background: #FFFFFF;
+  display: -webkit-box;
+  display: flex;
+  border-bottom: 1px solid #eeeeee;
+  box-sizing: content-box;
+
+  &>div {
+    width: 0;
+    flex: 1 0 0;
+    -webkit-box-flex: 1;
+
+    &:nth-last-child(n+2):before {
+      content: '';
+      float: right;
+      right: 0;
+      height: px2rem(40);
+      margin-top: px2rem(20);
+      border-right: 1px solid #EEEEEE;
+    }
+  }
+}
+
+.dropdown {
+  .trigger {
+    position: relative;
+    display: block;
+    @include fsize(26);
+    height: px2rem(80);
+    line-height: px2rem(80);
+    color: #666666;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      max-width: 4em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: middle;
+      position: relative;
+      top: px2rem(-2);
+    }
+
+    .arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left:px2rem(10) solid transparent;
+      border-right:px2rem(10) solid transparent;
+      border-bottom:0;
+      border-top:px2rem(10) solid #bebebe;
+      margin-left:px2rem(10);
+      position: relative;
+      /*top: -0.08rem;*/
+      vertical-align: middle;
+
+    }
+
+    .sup {
+      display: none;
+      position: absolute;
+      top: px2rem(4);
+      right: px2rem(30);
+      width: 1.2em;
+      height: 1.2em;
+      text-align: center;
+      line-height: 1.2;
+      @include fsize(22);
+      border-radius: 100%;
+      background: #E9474D;
+      color: #FFFFFF;
+    }
+
+    &.selected {
+      color:#E9474D;
+    }
+  }
+
+  .down-wrapper {
+    position: absolute;
+    top: px2rem(80);
+    left: 0;
+    width: px2rem(750);
+    height: 0;
+    margin-top: 1px;
+    overflow: hidden;
+
+    .down-content {
+      position: relative;
+      z-index: 2;
+      background: #f2f2f2;
+      overflow: hidden;
+    }
+
+    .choice-list {
+      .choice {
+        display: block;
+        padding: 0 px2rem(30) 0 px2rem(90);
+        background-color: #fff;
+
+
+
+
+
+
+        @include fsize(28);
+        line-height: px2rem(88);
+        color: #000000;
+        border-bottom: 1px solid #EEEEEE;
+
+        &:nth-last-child(1) {
+          border-bottom: 0;
+        }
+
+        &.active {
+          color:#E9474D;
+          /*background-image: url(./images/fast-icon.png);
+          background-repeat: no-repeat;
+          background-position:px2rem(40) px2rem(36);
+          background-size:px2rem(25) auto!important;*/
+          position: relative;
+          &:after{
+            content: '';
+            width:px2rem(12);
+            height:px2rem(20);
+            transform:rotate(45deg);
+            border-right: solid px2rem(3) #E9474D;
+            border-bottom: solid px2rem(3) #E9474D;
+            position: absolute;
+            top: px2rem(32);left:px2rem(40);
+          }
+        }
+      }
+    }
+
+    &.opened {
+      display: block;
+    }
+  }
+  
+  &.active {
+    .trigger {
+      color:#E9474D;
+      
+      .arrow {
+        border-right:px2rem(10) solid transparent;
+        border-left:px2rem(10) solid transparent;
+        border-bottom:px2rem(10) solid #E9474D;
+        border-top:0;
+
+
+        /*border-right:px2rem(10) solid transparent;
+        border-top:px2rem(10) solid #E9474D;
+        border-bottom:0;*/
+        top:-0.08rem;
+
+      }
+    }
+  }
+}
+
+#more-filter {
+  .search-list {
+
+    padding-bottom: px2rem(20);
+
+    dt:nth-child(1) {
+      padding-top: px2rem(30);
+    }
+  }
+
+  .bottom-btn {
+    position: relative;
+    bottom: -1px;
+  }
+
+  &.fixed {
+    .search-list {
+      padding-bottom: px2rem(120);
+    }
+
+    .bottom-btn {
+      position: absolute;
+    }
+  }
+}
+
+#maskLayer {
+  z-index: 9993 !important;
+  background: transparent;
+  opacity: 1;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+  }
+}
+.header-bar,
+.search-bar {
+  position: relative;
+  z-index: 9994;
+  max-width: px2rem(750);
+}
+
+body #carSelectComponent {
+  z-index: 9995;
+}
+
+
+#header-bar.fixed {
+  position: relative;
+  top: 0;
+  width: 100%;
+/*  -webkit-transition: top 0.3s ease 0s;
+  -moz-transition: top 0.3s ease 0s;
+  -ms-transition: top 0.3s ease 0s;
+  -o-transition: top 0.3s ease 0s;
+  transition: top 0.3s ease 0s; */
+}
+#search-bar {
+  position: absolute;
+  top: px2rem(90);
+  width: 100%;
+  margin-top: 1px;
+/*   -webkit-transition: top 0.3s ease 0s;
+  -moz-transition: top 0.3s ease 0s;
+  -ms-transition: top 0.3s ease 0s;
+  -o-transition: top 0.3s ease 0s;
+  transition: top 0.3s ease 0s; */
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    margin-top: -2px;
+    padding-top: 2px;
+  }
+}
+.appShow {
+  /* #header-bar.fixed {
+    top: px2rem(108);
+  } */
+  #search-bar.fixed {
+    top: px2rem(108);
+  }
+}
+
+.sliderUp-box{
+  display: none;
+  width: 100%;
+  text-align: center;
+  padding: 0.266667rem 0;
+  color: #999;
+
+  .sliderUp {
+    width: 0.48rem;
+    height: 0.48rem;
+    display: inline-block;
+    background: url(images/pullup.png) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    top: 0.106667rem;
+    margin-right: 0.133333rem;
+  }
+}
+
+
+body.no-header {
+  #header-bar {
+    display: none;
+  }
+
+  #search-bar {
+    top: 0;
+  }
+
+  .budget-carlist {
+    padding-top: px2rem(80);
+    margin-top: 0;
+  }
+}
+.dropdown .down-wrapper .down-content{background: #fff!important;}
+#appDown>div{
+  z-index:9995 !important;
+}

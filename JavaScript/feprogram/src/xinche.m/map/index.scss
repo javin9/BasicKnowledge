@@ -1,0 +1,126 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+.city-list{
+  span{
+    height:px2rem(56);
+    line-height:px2rem(56);
+    display:block;
+    @include fsize(28);
+    color: #394043;
+    padding-left:px2rem(30);
+  }
+  a,a:link,a:visited{
+    display:block;
+    background:#fff;
+    @include fsize(32);
+    color: #394043;
+    padding-left:px2rem(30);
+    line-height:px2rem(86);
+    position: relative;
+    width:100%;
+    box-sizing: border-box;
+    overflow:hidden;
+    &:last-child:after{
+      border: none;
+    }
+    &:after{
+      content: ' ';
+      border-bottom:1px solid #E5E5E5;;
+      position:absolute;
+      width:100%;
+      bottom:0;
+      left:px2rem(30);
+    }
+  }
+}
+
+.city-nav-list{
+  top:0;
+  right:0;
+  position:fixed;
+  width:px2rem(60);
+  text-align:center;
+  height:90%;
+  padding:px2rem(120) 0 px2rem(30) 0;
+  box-sizing: border-box;
+  display:flex;
+  flex-direction: column;
+  z-index: 9993;
+  &>a{
+    display:block;
+    flex:1;
+  }
+}
+.path-nav{
+  padding:px2rem(20) px2rem(30);
+  height: px2rem(40);
+  line-height: px2rem(40);
+  @include fsize(30);
+  color:#B7B7B7;
+  background: #f5f5f5;
+  &>a{
+    color: #666666;
+  }
+}
+.escdk13{
+  margin-top:0 !important;
+
+}
+/*品牌页面样式*/
+.brands-list{
+  font-size:0;
+  a{
+    display:inline-block;
+  }
+  dt>a{
+    width:100%;
+    position:relative;
+    padding:0 px2rem(30);
+    box-sizing: border-box;
+    @include fsize(28);
+    color: #394043;
+    line-height:px2rem(66);
+    &:after{
+      @include arrow(right, px2rem(16), px2rem(16), right, #999);
+      right:px2rem(30);
+    }
+  }
+  dd{
+    background:#fff;
+    padding:px2rem(30) px2rem(20);
+    a,a:link,a:visited{
+      width:px2rem(216);
+      line-height:px2rem(68);
+      padding:0 px2rem(30);
+      overflow:hidden;
+      white-space:nowrap;
+      text-overflow: ellipsis;
+      text-align:center;
+      @include fsize(26);
+      color: #686868;
+      border: 1px solid #D6D6D6;
+      border-radius:px2rem(5);
+      box-sizing: border-box;
+      margin:px2rem(10);
+    }
+  }
+}
+.tipsLetters {
+    position: fixed;
+    border-radius: .1333333333333333rem;
+    background-color: rgba(0,0,0,.5);
+    width: 1.6rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-left: -0.8rem;
+
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+    display: none;
+    color: #fff
+}

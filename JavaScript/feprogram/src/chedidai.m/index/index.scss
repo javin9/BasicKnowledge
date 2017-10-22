@@ -1,0 +1,30 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+header.block-header{
+	@include fsize(30);
+	color:#333;
+	text-align: center;
+	height:px2rem(90);
+	line-height: px2rem(90);
+	border-bottom:1px solid #E5E5E5;
+	background: #fff;
+
+	&:before{
+		@include size(px2rem(32));
+		display: inline-block;
+		content:' ';
+		background-size: contain;
+		background-position: center center;
+		background-repeat: no-repeat;
+		display: inline-block;
+		position: relative;
+		top:px2rem(3);
+		margin-right: px2rem(5);
+	}
+}
+
+section.block{
+	margin-bottom: px2rem(20);
+	background:#fff;
+}

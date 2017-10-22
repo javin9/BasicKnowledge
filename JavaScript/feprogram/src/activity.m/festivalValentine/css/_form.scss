@@ -1,0 +1,39 @@
+.form-wrapper-inner{
+	background:#fff;
+
+	.form_modu input{
+		text-align: left;
+		background:#fff !important;
+		outline:none;
+	}
+
+	.form_modu li.form_modu_head > span{
+		text-align: left;
+	}
+
+	.form_modu li.form_modu_head > b{
+		width: px2rem(120);
+	}
+
+	.form_modu #getCodeBtn{
+		border-radius:px2rem(10);
+	}
+
+	.edit-tel{
+		color:#666;
+	}
+
+	.authenticated-tip{
+		color:#35B88B;
+
+		&:before{
+			content:' ';
+			width: px2rem(30);
+			height:px2rem(22);
+			background:url(images/auth.png) no-repeat left top;
+			background-size: contain;
+			display: inline-block;
+			margin-right: px2rem(10);
+		}
+	}
+}

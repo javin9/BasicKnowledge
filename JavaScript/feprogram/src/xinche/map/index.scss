@@ -1,0 +1,163 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+.map-wrapper{
+  width:1200px;
+  margin:0 auto;
+  position:relative;
+}
+.map-wrapper-left{
+  a:hover{
+    color:#E9474D;
+  }
+  float: left;
+  width:940px;
+  header{
+    text-align:left;
+    display:block;
+    height:50px;
+    background:#fafafa;
+    border-bottom:1px solid #eee;
+    font-size: 16px;
+    color: #000000;
+    line-height: 50px;
+    padding-left:30px;
+    position:relative;
+    a,a:link, a:visited{
+      color: #000000;
+      &:hover{
+        color:#E9474D;
+      }
+    }
+    &:after{
+      position:absolute;
+      content:' ';
+      width:3px;
+      height:18px;
+      background:#e9474d;
+      left:20px;
+      top:16px;
+    }
+  }
+  /*周边城市*/
+  .periphery-city{
+    border:1px solid #eee;
+    margin-top:20px;
+    ul{
+      padding:22px 30px;
+      li{
+        float:left;
+        padding:8px 0px;
+        margin-right:40px;
+        line-height:150%;
+        a{
+          font-size:14px;
+          color:#666;
+        }
+        a:hover{
+          color:#E9474D;
+        }
+      }
+    }
+  }
+  .brands-list{
+    border:1px solid #eee;
+    text-align:center;
+    dl{
+      width:900px;
+      margin:0 auto;
+      border-bottom:1px dotted #eee;
+      text-align:left;
+      padding:22px 0;
+      clear:both;
+      color:#666;
+      font-size:14px;
+      line-height:150%;
+      &:last-child{
+        border-bottom:none;
+      }
+    }
+    dt{
+      float:left;
+      width:80px;
+      margin:8px 0;
+      a{
+        color:#000;
+        &:hover{
+          color:#E9474D;
+        }
+      }
+    }
+    dd{
+      float:right;
+      width:800px;
+      a{
+        display:block;
+        float:left;
+        color:#666;
+        margin:8px 40px 8px 0;
+        &:hover{
+          color:#E9474D;
+        }
+      }
+    }
+  }
+}
+/**/
+.loan-facility{
+  float:right;
+  width:240px;
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  padding-bottom:20px;
+  .right-header{
+    line-height:50px;
+    font-size: 14px;
+    color: #000000;
+    padding-left:20px;
+    background:#FAFAFA;
+    margin-bottom:10px;
+    border-bottom:1px solid #EEEEEE;
+  }
+  dd{
+    padding: 0;
+    font-size: 12px;
+    color: #999;
+    line-height: 180%;
+    a{
+      display: block;
+      color: #999;
+      padding: 10px 0;
+      &:hover{
+        background:#fafafa;
+      }
+    }
+    img{
+      float: left;
+      width: 54px;
+      height: 54px;
+      margin-left:20px;
+    }
+    div{
+      font-size: 10px;
+      line-height: 16px;
+      color: #666;
+      float: left;
+      margin-left: 14px;
+      width: 130px;
+    }
+    span{
+      display: block;
+      line-height: 100%;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #000;
+    }
+  }
+}
+.clrfix:after{
+  clear:both;
+  display:block;
+  height:0;
+  visibility:hidden;
+  content:".";
+}

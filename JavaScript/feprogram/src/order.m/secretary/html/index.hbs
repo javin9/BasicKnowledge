@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var CODE_GETTING_URL = '/secretary/GetCode';//GetCode(string mobile, int line = 550)
+        var CODE_VALIDATING_URL = '/secretary/CheckCode';//CheckCode(string mobile, string validatecode, int line = 550)
+        var USERE_INFO_SUBMIT = '/secretary/SubmitOrder';
+        var PRODUCT_LISTS_GET = '/secretary/GetLoanUserOrderProductsList';  //参数 orderid
+        var feaures_getting_url = '/secretary/GetPackageFeatures';
+        var order_creating_url = '/secretary/Create';
+        var ki_order_creating_url = '/secretary/CreateKi';
+        var snap_index_url = '/snap';
+        //var similar_products_getting_url = '/secretary/GetSimilarProducts';
+        //var account_switching_url = '/secretary/SwitchAccount';
+        var special_coupon_card_info_getting_url =  '/secretary/GetAvailableCouponCardInfoByChannelFrom';
+        var qa_list_getting_url = '/secretary/GetQaList';
+        var user_sign_in_url = '/secretary/SignIn';
+        var id_checking_url = '/secretary/IdChecking';
+        var user_center_url = 'http://i.m.daikuan.com';
+        var xin_che_url = 'http://xinche.m.daikuan.com';
+        var order_updating_url = '/secretary/Create';
+        var channel = '667';
+        var source = '689';
+        var from = '761';
+        var cityId = '2401';
+        var cityName = '上海';
+
+        var carInfo = {
+            "CarId": 122000,
+            "CarName": "蓝标 1.5T 手动 舒适型",
+            "CarSerialId": 4852,
+            "CarSerialName": "哈弗H2s",
+            "CarBrandId": 20211,
+            "CarBrandName": "哈弗",
+            "CarMasterBrandId": 196,
+            "CarMasterBrandName": "哈弗",
+            "CarYear": 2017,
+            "CarReferPrice": 8.38,
+            "CarSerialImgUrl": "//img4.bitautoimg.com/autoalbum/files/20161109/189/0531141893_1.jpg",
+            "CarSerialAllSpell": "hafuf2",
+            "CarSerialShowName": "哈弗H2s"
+        };
+
+        var businessLineId = '550';  // 新车业务线id
+        var adviser_api_url = "http://adviserapi.daikuan.com/";
+
+        var c2bConfigInfo = {
+            IsC2CEnabled: true,     // 打电话的按钮是否启用
+            SkinId: 0,      // css皮肤id
+            ActivityPic: 'http://img1.yixinfinance.com/chedai/fb043b7c-4f2a-47e0-b2a6-af39366d2cfb.jpg',    // 活动图片路径
+            ActivityContent: '热销品牌0息购，将贴息进行到底！',    // 活动文案
+            GuideContent: '引导文案',    //引导文案
+            ToastPic: "http://placehold.it/590x900",
+            RedirectText: "跳转按钮文案",
+            RedirectCarInfo: {
+                CarMasterBrandId: 1, //int类型
+                CarMasterBrandName: "奥迪",
+                CarMasterBrandLogoUrl: "http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_13_100.png",
+                CarSerialId: 111,//int类型
+                CarSerialName: "车系名称",
+                CarSerialImgUrl: "车系图片",
+                CarSerialShowName: "车系显示名称",
+                CarSerialAllSpell: "车系全拼",
+                CarYear: "车款年份",//int类型
+                CarId: "车款ID",//int类型
+                CarName: "车款名称",
+                CarReferPrice: "车款厂商指导价"
+            }
+        };
+
+        // 已登录 已实名认证
+        var showingUserName = '*远';
+        var showingMobile = '189****4060';
+        var userName = '钱远';
+        var mobile = '18911754060';
+        var isLoggedIn = true;
+        var isAuthenticated = true;
+
+        // 已登录 未实名认证
+        var showingUserName = '';
+        var showingMobile = '189****4060';
+        var userName = '';
+        var mobile = '18911754060';
+        var isLoggedIn = true;
+        var isAuthenticated = false;
+
+        // 未登录（未实名认证会弹层，已实名认证直接去结果页）
+        var showingUserName = '';
+        var showingMobile = '';
+        var userName = '';
+        var mobile = '';
+        var isLoggedIn = false;
+        var isAuthenticated = false;
+
+         var tfPageNumber = 1;    // 投放类型 1、2，非投放页无此变量
+        var shouldShowLinks = true; // 投放页，58同城渠道号（from=775），左上角Logo不可点，结果页没有跳转按钮，其他时候为true
+
+        var qualifications = {
+            careers : [
+                {id: 73, name: '公务员/事业单位'},
+                {id: 76, name: '上班族'},
+                {id: 74, name: '企业主'},
+                {id: 75, name: '个体户'},
+                {id: 77, name: '自由职业者'}
+            ],
+            credits: [
+                {id: 71, name: '信用良好'},
+                {id: 72, name: '少数逾期'},
+                {id: 70, name: '多次逾期'},
+                {id: 256, name: '无信用记录'}
+            ],
+            houseStates: [
+                {id: 79, name: '自有全款'},
+                {id: 80, name: '自有贷款'},
+                {id: 81, name: '租赁'}
+            ],
+            insurances: [
+                {id: 1, name: '有社保'},
+                {id: 0, name: '无社保'}
+            ],
+            funds: [
+                {id: 1, name: '有公积金'},
+                {id: 0, name: '无公积金'}
+            ],
+            incomes: [
+                {id: 109, name: '20000元以上'},
+                {id: 108, name: '12000-20000元'},
+                {id: 69, name: '8000-12000元'},
+                {id: 68, name: '5000-8000元'},
+                {id: 67, name: '3000-5000元'},
+                {id: 66, name: '3000元以下'}
+            ]
+        }
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="SecretaryMain">
+</div>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div class="success-top">
+	<div class="succ-icon"></div>
+	<h3>您已成功提交申请！</h3>
+    <p>贷款顾问将会尽快联系您！</p>
+    {{#if shouldShowLinks}}
+        <div class="success-top-btn">
+            <a class="btn-chakan" href="javascript:void(0)">查看订单</a>
+            {{#if tf}}
+                <a class="btn-fanhui" href="javascript:void(0)">前往车贷首页</a>
+            {{else}}
+                <a class="btn-fanhui" href="javascript:void(0)">返回首页</a>
+            {{/if}}
+        </div>
+    {{/if}}
+</div>
+
+<div class="success-progress">
+    <h3>车贷流程</h3>
+    <ul>
+        <li><span class="icon icon-1"></span>线上申请</li>
+        <li><span class="icon icon-2"></span>电话回访</li>
+        <li><span class="icon icon-3"></span>上门服务</li>
+        <li><span class="icon icon-4"></span>线下提车</li>
+    </ul>
+</div>
+
+<div id="other-wrapper"></div>
+<div id="qa-wrapper"></div>
+

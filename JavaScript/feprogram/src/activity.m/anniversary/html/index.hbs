@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        // var IsGameOver = 'True';
+        var GetUserInfoURL = '';    // 获取员工姓名
+        var InitActiveInfoURL = ''; // 获取游戏数据
+        var SaveActivityRewardURL = ''; // 存储游戏结果
+        var GetActivitycodeRankingURL = '';// 获得排行榜数据
+        var SaveActivityPraiseURL = ''; // 点赞
+
+        var BASE_URL = 'http://192.168.145.9:8011/jinrong/assets/';
+        var BASE_IMAGE_URL = 'http://192.168.145.9:8011/jinrong/assets/activity.m/anniversary/images/'
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="yxWrapper">
+    <div id="app"></div>
+</div>
+
+<script src="http://192.168.145.9:8011/jinrong/assets/activity.m/anniversary/createjs/preloadjs-0.6.2.min.js"></script>
+<script src="http://192.168.145.9:8011/jinrong/assets/activity.m/anniversary/createjs/soundjs-0.6.2.min.js"></script>
+<script src="http://192.168.145.9:8011/jinrong/assets/activity.m/anniversary/createjs/easeljs-next.min.js"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

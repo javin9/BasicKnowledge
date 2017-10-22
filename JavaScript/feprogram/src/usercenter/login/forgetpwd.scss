@@ -1,0 +1,209 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+$main: map-get($colors, red);
+$main_bg: map-get($colors, red);
+
+/*base*/
+em,i{font-style:normal;}
+ul{ margin: 0;}
+li{ display: inline-block; margin: 0}
+a:hover{ text-decoration: none;}
+blockquote, ul, li{ -webkit-margin-start:0; -webkit-margin-end:0; -webkit-margin-before:0; -webkit-margin-after:0;margin: 0; padding: 0; }
+
+.font-red{ color: #ff6446 !important;}
+.pad10T{ padding-top: 10px;}
+.pad15T{ padding-top: 15px;}
+.pad5B{ padding-bottom: 5px;}
+.pad10B{ padding-bottom: 10px;}
+.pad20B{ padding-bottom: 20px;}
+.pad25B{ padding-bottom: 25px;}
+.pad30RL{ padding-right: 30px; padding-left: 30px;}
+.pad100L{ padding-left: 100px;}
+.pad175L{ padding-left: 175px !important;}
+.pad280{ padding-left: 280px !important;}
+.hide{ display: none !important;}
+.w-180{ width: 180px !important;}
+.w-120{ width: 120px !important;}
+.w-150{ width: 150px !important;}
+.w-210{ width: 210px !important;}
+/*.w-238{ width: 238px !important;}*/
+#Footer{ margin-top: 0;}
+.btn-gray{ background-color: #f5f5f5 !important;}
+.font-9{ color: #999!important;}
+
+.login{ position: relative;}
+.login #index-slider{ width: 100%; height: 590px; position: relative; overflow: hidden;}
+.wrapper{ height:590px;width:1920px; position:absolute;left:50%;margin-left:-960px;}
+.wrapper img{ width:100%; height:590px;}
+.nivo-controlNav{ top: 520px;}
+
+.login .content{ width: 1200px; height: 590px; position: absolute; top: 0; left: 50%; margin-left: -600px; z-index: 8;}
+.login .header{ padding-top: 100px; font-size: 36px; color: #fff;}
+.login-form{ position: absolute; padding-top: 60px; width: 361px; height: 520px; right: 0; top: 0; box-sizing: border-box;}
+
+.form{ width: 360px; background-color: #fff;}
+/*.form blockquote{ padding: 15px 0 0;}*/
+.tab-box aside{ width: 50%; padding: 13px 0; background-color: #f1f1f1; text-align: center;}
+.tab-box aside.cur{ background-color: #fff;}
+.tab-box aside.reg-tab{ width: 100%;}
+.cur-p{ cursor: pointer;}
+.reg-box{ padding-bottom: 15px !important;}
+.jyts-box{font-size: 14px; padding-left: 28px;}
+.jyts{ display: none;}
+.input-item{ border: 1px solid #ddd;}
+.input-item .icon-box{ padding: 10px; line-height: 0; background-color: #f4f4f4;}
+.input-item .input-box{ padding: 6px 10px;}
+.input-item .icon{ width: 20px; height: 20px; display: inline-block; background: #f4f4f4 url(images/icon1.png) no-repeat;}
+.input-item .icon.icon01{ background-position: -9px -9px;}
+.input-item .icon.icon02{ background-position: -9px -48px;}
+.input-item .icon.icon03{ background-position: -9px -84px;}
+.input-item .icon.icon09{width: 20px; height: 20px; display: inline-block; background: #f4f4f4 url(images/icon3.png) no-repeat; position: relative; top: 2px; left: 4px;}
+.input-item input{ font-size: 14px; color: #333; width: 220px; border-width: 0;}
+/*::-webkit-input-placeholder,
+::-moz-placeholder{ color: #c4c4c4 !important; font-size: 12px; font-family: 'Microsoft YaHei';}*/
+/*.input-item input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;}*/
+.form img{ width: 110px; height: 40px;}
+.tools-box{ font-size: 12px; color: #999;}
+.tools-box a{ color: #999!important; margin-left: 6px; }
+.tools-box a.reg-rule{ color: #91ccf4!important; margin-left: 0; text-decoration: none;}
+.tools-box .apart { margin-left: 6px; font-size: 11px; color: #999; vertical-align: text-top; }
+.btn{ width: 300px; height: 50px; line-height: 50px; margin: 0 auto; font-size: 18px; color: #fff; background-color: $main_bg; text-align: center; cursor: pointer;}
+.code-btn{ width: 110px; height: 42px; line-height: 42px; font-size: 14px;}
+.another-tip { width: 220px; margin: 10px auto 15px; height: 1px; font-size: 12px; color: #999; border-top: 1px solid #ddd; text-align: center; }
+.another-tip > span{ position: relative; top: -10px; background: #fff;
+    padding: 0 8px; }
+.another-tip>span { padding-top: -10px; }
+.another-icon a{ display: inline-block; width: 22px; height: 22px; background: url(images/icon2.png) no-repeat;}
+.another-icon a.icon04{ background-position: 0 0;}
+.another-icon a.icon05{ background-position: -40px 0;}
+.another-icon a.icon06{ background-position: -120px 0;}
+.another-icon a.icon07{ background-position: -78px 0;}
+.another-icon a.icon08{ background-position: -160px 0;}
+
+
+.banner_btm{position:absolute;bottom:0;left:0;background:#000;color:#fff;width:100%;height:88px;z-index:8;opacity: 0.8;overflow: hidden;-moz-opacity: 0.8;filter:alpha(opacity=80);-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.banner_cover{position:absolute;bottom:14px;left:50%;width:1200px;margin-left:-600px;z-index:9;color:#fff;}
+.banner_cover .money{font-size:28px;}
+.banner_cover>div{height:60px;line-height: 60px;}
+.banner_cover .opc6.title{font-size:20px;}
+.banner_cover .fr .opc6.title{font-size:18px;}
+.item_num i,#person_num i{height:40px;margin: 10px 0 0 6px;}
+
+/*找回密码*/
+.forgetPwd, .bindAccount { width: 100%; padding: 30px 0;}
+.for-ctn{ width: 1200px; height: 510px; margin: 0 auto; }
+.ctn-header{ width: 100%; height: 45px; border-bottom: 1px solid #eee; position: relative; }
+.header-text{ font-size: 25px; color: #000; }
+.forgetPwd .nav{ padding: 40px 0 90px;}
+.step-box{ width: 710px; height: 40px; margin: 0 auto; background: url(images/step.png) no-repeat;}
+.step01{ background-position: 0 0;}
+.step02{ background-position: 0 -44px;}
+.step03{ background-position: 0 -88px;}
+.step04{ background-position: 0 -132px;}
+.forget-box{ width: 710px; margin: 0 auto;}
+.forget-box .input-item{ width: 330px;}
+.forget-box .jyts{ background-color: #fff3ea; color: #666; font-size: 12px; border: 1px solid $main; padding: 0 5px; position: relative; top: 10px; margin-left: 10px;}
+.waring{ width: 16px; height: 16px; display: inline-block; background: url(images/user_icon.png) no-repeat; background-position: 0 -404px; position: relative; top: 2px;}
+.forget-box img{ width: 110px; height: 40px; margin-left: 10px;}
+.step-btn{ width: 330px; margin-left: 175px;}
+.checked-num{ padding-bottom: 15px; font-size:12px; padding-left:266px;}
+.forget-box .code-btn{ margin-left: 10px;}
+.btn-group .sbtn{ width: 160px; height: 50px; line-height: 50px; text-align: center; color: #fff; font-size: 18px; cursor: pointer;}
+.sbtn.sbtn01{ background-color: $main_bg; margin-right: 10px;}
+.sbtn.sbtn02{ background-color: #f5f5f5; color: #999;}
+
+.forgetPwd #form03 .input-item, .bindAccount .input-item{ border: 0;}
+.forgetPwd #form03 .input-box, .bindAccount .input-box{ border: 1px solid #ddd; width: 216px;}
+.forgetPwd #form03 .input-name, .bindAccount .input-name{ width: 80px; padding: 6px; text-align: right; font-size: 16px; line-height: 32px;}
+
+.forgetPwd .success-icon{ width: 52px; height: 52px; background: url(images/true.png) no-repeat; display: block;}
+.success-box{ padding-bottom: 40px;}
+.forgetPwd .success-ctn{ margin-left: 20px;}
+.forgetPwd .success-tit{ font-size: 22px; color: #666; padding-bottom: 10px;}
+.forgetPwd .success-des{ font-size: 14px; color: #999;}
+.re-login{ width: 180px; margin-left: 140px; display: block;}
+.user-btn:hover, .code-btn:hover, .reg-btn:hover, .step-btn:hover, .sbtn01:hover{ background-color: $main_bg !important}
+.code-btn.disable:hover{ background: #E7E7E7 !important;}
+/*绑定账号*/
+.bindAccount header{ width: 1200px; margin: 0 auto; padding-left: 40px; font-size: 18px; color: #333; position: relative; bottom: 15px;}
+#bindForm{ padding-top: 130px;}
+.cus-ser{ font-size: 12px; color: #999;}
+.ser-num{ font-size: 16px; color: #666;}
+#bindForm.forget-box .input-item{ width: auto;}
+.bindAccount .tel{ display: inline-block; width: 16px; height: 16px; background: url(images/icon4.png) no-repeat; position: relative; top: 2px; right: 2px;}
+.bindAccount .input-name{ width: 75px; margin-right: 9px;}
+#bindForm .code-btn{ width: 110px; height: 42px; line-height: 42px; margin-left: 10px; margin-right: 7px;}
+.set-btn{ width: 300px; margin-left: 195px;}
+.bindAccount .checked-num{ font-size:12px; padding-left:196px; padding-bottom:5px;}
+.bindAccount .input-box { width: 266px; padding: 8px 16px; }
+.bindAccount .input-item input { width: 100%; }
+.bindAccount .input-box.w-180 { width: 146px!important; padding: 8px 16px; }
+
+/*遮罩层*/
+.mask{ position: fixed; top: 0; left: 0; bottom: 0; right: 0;}
+.mask-layer{ position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: #000; opacity: .3; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"; filter: alpha(opacity=30);}
+.mask-ctn{ width: 460px; height: 200px; position: absolute; top: 50%; left: 50%; margin-top: -120px; margin-left: -250px; padding: 20px; background-color: #fff; border-radius: 4px;}
+.close{ width: 15px; height: 15px; background: url(images/close.png) no-repeat;}
+.mask-ctn-body{ padding: 55px 0 0 50px;}
+.mask-icon{ width: 50px; height: 71px; background: url(images/true2.png) no-repeat; position: relative; top: 20px; -webkit-background-size: 46px auto; background-size: 46px auto;}
+.mask-text{ margin-left: 20px;}
+.thanks{ font-size: 16px; color: #000; padding-bottom: 25px;}
+.mask-tip{ font-size: 14px; color: #999;}
+.mask-tel{ font-size: 14px; color: #999; padding-bottom: 35px;}
+.go-index{ display: block; color: #fff !important;}
+
+input[type=checkbox]{
+	position: relative;
+	top: -1px;
+	margin-right: 5px;
+}
+input::-webkit-input-placeholder { /* WebKit browsers */
+color: #c4c4c4;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+color: #c4c4c4;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+color: #c4c4c4;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+color: #c4c4c4;
+}
+
+.input-item input,
+#mobile,
+#ImgValidateCode1,
+#ValidateCode {
+	height: 30px;
+	line-height: 30px;
+}
+.bindAccount .input-box,
+.bindAccount .input-box.w-180{
+	padding: 5px 16px;
+}
+.bindAccount .input-name {
+	line-height: 30px;
+}
+#bindForm #GetValidateCode {
+	margin-right: 0;
+}
+.forget-box .jyts {
+	margin-left: 15px;
+}
+#form02 .pad10B {
+	margin-top: 5px;
+}
+.forget-box img {
+	display: block;
+	height: 44px;
+}
+input.ie-placeholder {
+	color: #d0d0d0 !important;
+}
+#form01 #mobile {
+	width: 270px;
+}
+#form02 #ValidateCode1 {
+	width: 190px !important;
+}

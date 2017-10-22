@@ -1,0 +1,57 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+body{
+  background-color: #fff;
+}
+.app-bg{
+  position: relative;
+  margin: 0; padding: 0; background-color: #fff;
+  background: url('../images/app_bg.png') no-repeat;
+  width: 100%;
+  height: px2rem(1200);
+  background-size: 100% px2rem(977);
+}
+.app-title{
+  text-align: center;
+   @include fsize(34);
+  color: #333333;
+  padding-top: px2rem(387);
+}
+.app-text{
+  text-align: center;
+     @include fsize(28);
+  color: #999999;
+  padding-top: px2rem(18);
+    padding-bottom: px2rem(200);
+}
+.app-cp{
+  text-align: center;
+  @include fsize(24);
+  color: #c4c4c4;
+  padding-top: px2rem(17);
+
+}
+.app-btn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: px2rem(180);
+  background: #FFFFFF;
+  box-shadow: 0 px2rem(-2) px2rem(4) 0 rgba(0,0,0,0.10);
+  z-index: 3;
+  a{
+    display: inline-block;
+    margin-left: px2rem(30);
+    width: px2rem(690);
+    height: px2rem(90);
+    line-height: px2rem(90);
+    margin-top: px2rem(20);
+    background: #E9474D;
+    border-radius: px2rem(5);
+    text-align: center;
+    @include fsize(32);
+    color: #FFFFFF;
+      z-index: 4;
+  }
+}

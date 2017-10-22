@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script type="text/javascript">
+        var footerBusiFlag = "1";
+        var footerFunFlag = "0";
+        var citySpell = 'beijing';
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var RESURL = "http://img1.bitautoimg.com/jinrong/newpcweb/";
+        var USERCENTERURL = "http://i.daikuan.com/";
+        var BusinessLine = 550;
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div class="payment">
+    <div class="payment-box">
+        <a href="#" class="logo"></a>
+        <div class="payment-con">
+            <div class="payment2">
+                <p class="top">您已成功提交订单！</p>
+                <p class="bottom">24小时之内，金融顾问免费为您服务！</p>
+            </div>
+            <div class="payment3">
+                <a href="http://i.daikuan.com/myorder/orderdetail?orderId=201483495604391" class="order">查看订单</a>
+                <a href="http://www.daikuan.com" class="back">返回首页</a>
+            </div>
+            <div class="payment4">
+                <div class="payment41">
+                    <img src="http://image.bitautoimg.com/jinrong/2016/11/08/9423a206-439e-42a2-a4e9-e21ef31181b3.png" />
+                    <div style="float:left;">
+                        <p class="payment41-jrgw">我是您的专属金融顾问-甘燕</p>
+                        <p class="payment41-wtzx">已帮<span class="ServeNumber">8621</span>人贷款 <span class="Rate">93%</span>好评</p>
+                        <p class="payment41-lxdh">18317027514</p>
+                    </div>
+                </div>
+                <div class="payment42">
+                    <img src="../images/new/cord-logo.html.png">
+                    <p>下载畅享0息购车</p>
+                </div>
+                <input type="hidden" value="306" name="AdviserId" />
+                <input type="hidden" value="2" name="SkillLevelId" />
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">Copyright © 2015-2017 daikuan.com版权所有　北京易鑫信息科技有限公司　京ICP备15006372号-2　<a href="#">京公网安备11010802020005号</a></div>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

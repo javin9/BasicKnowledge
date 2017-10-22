@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+
+    <script>
+        var localCity = {
+            "CityId": 201,
+            "RegionId": 110100,
+            "CityName": "北京",
+            "CitySpell": "beijing",
+            "SelectCityLevel": 2,
+            "SelectCityName": "北京"
+        };
+        var ipLocationInfo = {
+            "CityId": 201,
+            "RegionId": 110100,
+            "CityName": "北京",
+            "CitySpell": "beijing",
+            "SelectCityLevel": 2,
+            "SelectCityName": "北京"
+        };
+
+        var deviceId = "8f00a536-78ce-4681-ae67-82fe37872cf7";
+        var loanUserId = 0;
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var carId = '115806';//120172\115806
+        var testURL = 'http://zujs.m.daikuan.com/'
+        var adviserApi = "http://test.adviserapi.daikuan.com/";
+        //车款信息
+        var car = {
+            masterBrandId: "196",
+            masterBrandName: "哈弗",
+            masterBrandLogo: "http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_196_100.png",
+            serialId: "3152",
+            serialName: "哈弗H6",
+            carId: "112890",
+            carPrice: "9.98",
+            purchaseTaxRate: "0.1",
+            carSerialAllSpell: "hafuh6",
+            carSerialShowName: "哈弗H6" //车系（显示）全称
+        };
+        //城市信息
+        var city = {
+            CityId: "201",
+            CityName: "北京",
+            RegionId: "110100",
+            CitySpell: "beijing",
+            SelectCityLevel: "2",
+            SelectCityName: "北京",
+            cityId: "201",
+            cityName: "北京",
+            regionId: "110100",
+            citySpell: "beijing",
+            selectCityLevel: "2",
+            selectCityName: "北京"
+        };
+        //经销商信息
+        /*var dealer = {
+            dealerId: "",
+            dealerName: "北京4S店平均报价"
+        };*/
+        var Channel = "";
+        var Source = "714";
+
+    </script>
+</head>
+<body>
+
+{{{htmlWebpackPlugin.options.header}}}
+<div class="" id="yxWrapper">
+    <div class="photos-box">
+        <header class="header-bar">
+            <a href="javascript:history.go(-1);"></a>
+            <h1 class="font-nav">2016款 自动风尚版</h1>
+            <span></span>
+        </header>
+        <div id="photo-container">
+            <div class="photo-mark">
+                <div class="mark" v-for="mark in marks" v-html="mark">
+                </div>
+            </div>
+            <div class="photo-wrapper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" v-for="image in images">
+                            <div class="imagewrap"><img v-bind:data-src="image.Url" alt="" class="swiper-lazy" /></div>
+                            <div class="swiper-lazy-preloader"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <!---添加查看按钮 start see-finance-box-->
+                <div class="see-finance-box" id="see-finance-box">
+                    <div id="see-finance" class="see-finance">查看<span>--</span>个金融方案</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="list">
+        <!---列表页面--->
+        <div class="finance-list-box" >
+            <header class="header-bar">
+                <h1 class="font-nav">选择金融产品</h1>
+                <span class="close"></span>
+            </header>
+            <!-- 筛选列表 -->
+            <div class="sel-box">
+                <div id="sel-top" class="sel-top">
+                    <div class="sel-header uf">
+                        <div class="tap"><span>首付 <font class="">30%</font></span><i class="list-icon"></i></div>
+                        <div class="tap"><span>还款 <font class="">12期</font></span><i class="list-icon"></i></div>
+                    </div>
+                    <!-- 下拉开始 -->
+                    <!-- 排序 首付 30%-->
+                    <div class="tap-ctn sort" id="payment" v-html="downPaymentTxt" ></div>
+                    <!-- 排序 还款 12 分期-->
+                    <div class="tap-ctn sort" id="installment">
+                        <div class="sort-tap cur" data-installment="12">12期</div>
+                        <div class="sort-tap" data-installment="18">18期</div>
+                        <div class="sort-tap" data-installment="24">24期</div>
+                        <div class="sort-tap" data-installment="36">36期</div>
+                        <div class="sort-tap" data-installment="48">48期</div>
+                        <div class="sort-tap" data-installment="60">60期</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listCtn" id="listCtn" v-show="isShowListCtn">
+                <!--0.1 prodcut start-->
+                <div class="pro-groups uf" v-bind:data-month="product.MonthlyPaymentText+product.MonthlyPaymentUnit" v-bind:data-applyurl="product.applyUrl" v-bind:data-order="product.order" v-for="product in productsView" v-bind:data-Idx="product.Idx">
+                    <!--贷款顾问 statr-->
+                    <!--选择框 start -->
+                    <div v-bind:class="[product.checked?'check-box cur':'check-box']" v-bind:data-month="product.MonthlyPaymentText+product.MonthlyPaymentUnit" v-bind:data-applyurl="product.applyUrl" v-bind:data-order="product.order" ></div>
+                    <!--剩下的产品信息 start-->
+                    <div class="pro-items">
+                        <a class="pro-info" v-bind:href="product.detailUrl">
+                            <div class="img_box">
+                                <img src="http://t.image.bitautoimg.com/chedai/19014b01-3703-4bfc-93d9-e265c44f171f.png" v-bind:src="product.CompanyLogoUrl" />
+                                <div class="top-tag" v-bind:class="product.IsTopKlass">置顶</div>
+                            </div>
+                            <div class="item_right_box">
+                                <div class="dl title_box uf uf-ic">
+                                    <div class="dt font-title tit uf-f1 ut-s">
+                                        <span v-text="product.PackageName">一证贷N</span>(<span v-text="product.CompanyName">易鑫金融</span>)
+                                    </div>
+                                    <div class="dd"></div>
+                                </div>
+                                <!-- 副标题 -->
+                                <div class="dl subtitle" v-bind:class="product.IsSubtitleKlass" v-text="product.SubHeading">5成首付，1小时速批</div>
+
+                                <div class="dl apply_price">
+                                    <div class="dt"><span v-text="product.CommonRequirementName">申请信息</span>：<span class="font-28 level_one" v-bind:class="product.CommonRequirementKlass" v-text="product.CommonRequirement">宽松</span></div>
+                                    <div class="dd price font-ctn"><span v-text="product.MonthlyPaymentPrefix"></span><span class="col_rede font-34" v-text="product.MonthlyPaymentText">3243</span><span v-text="product.MonthlyPaymentUnit"></span>/月</div>
+                                </div>
+                                <div class="dl apply_evaluation">
+                                    <div class="dt">
+                                        <span v-html="product.CommentHtml"></span>
+                                        <span class="apply"><span v-text="product.ApplyCount">4833</span>人申请</span>
+                                    </div>
+                                    <div class="dd">
+                                        <span class="col_grey9"><span v-text="product.TotalCostPrefix">贷款成本</span><span v-text="product.TotalCostText">1.20万</span></span>
+                                    </div>
+                                </div>
+                                <div class="dl apply_tag" v-show="product.IsPackageShow">
+                                    <div class="dt" v-html="product.PackageFeatureHrml">
+                                        <!-- <span class="font-22 tag_blue">在线秒批</span><span class="font-22 tag_red">仅身份证</span> -->
+                                    </div>
+                                </div>
+                                <ul class="img_info" v-bind:class="product.ImgInfoKlass">
+                                    <li class="uf uf-ic ut-s" v-bind:class="product.MultiLabelKlass"><i class="icon icon-hui"></i><span class="uf-f1 ut-s" v-text="product.MultiLabel">首次下单减免购置税、赠送2800元交强险、首次下单送礼品</span></li>
+                                    <li class="uf uf-ic ut-s" v-bind:class="product.PackageGiftValueKlass"><i class="icon icon-li"></i><span class="uf-f1 ut-s">申请即送<span v-text="product.PackageGiftValueAmount">398</span>礼包</span></li>
+                                    <li class="uf uf-ic ut-s" v-bind:class="product.FuLabelKalss"><i class="icon icon-fu"></i><span class="uf-f1 ut-s" v-text="product.PaySimpleInfo">在线支付一元押金抵1000元</span></li>
+                                </ul>
+                                <div class="boom-view hide">
+                                    <span class="btn-conslut"><i></i>电话咨询</span><span class="btn-apply">立即申请</span>
+                                </div>
+                            </div>
+                            <div v-bind:class="product.RecommendTextKlass" ><span v-text="product.RecommendText"></span></div>
+                        </a>
+                    </div>
+                </div>
+                <!--0.1 prodcut end -->
+                <div id="empty" class="bottom-empty"></div>
+            </div>
+            <!-- 加载中 -->
+            <div class="login-box" v-show="isShowLogin">
+                <div class="login-img"></div>
+            </div>
+            <!-- 缺省页 -->
+            <div class="default-box" v-show="isShowDefault">
+                <div class="default-img"></div>
+                <div class="default-title">抱歉，没有匹配的金融产品</div>
+                <div class="default-text">建议您调整首付比例、还款期限或减少筛选条件</div>
+                <div class="bottom-empty" v-show="isShowEmpty"></div>
+            </div>
+            <!-- 立即申请  -->
+            <div class="apply-box uf" v-show="isShowBtn">
+                <div class="left uf-f1">
+                    <div id="advBox" class="adv" v-show="isShowAdv" v-bind:data-href="isShowAdvTel">
+                        <div class="adv-tel-r"></div>
+                        <span v-text="isShowAdvName"></span>顾问
+                    </div>
+                    <div class="no-adv" v-show="isShowMonth">
+
+                    </div>
+                    <div class="no-checked" v-show="isShowNoChecked">请选金融产品</div>
+                </div>
+                <div v-bind:class="isShowNoChecked?'right disabled':'right'" v-on:click="clickApplyNow">立即申请</div>
+            </div>
+        </div>
+        <!-- 贷款顾问开始 -->
+        <blockquote id="adviserBox" class="adviser-box hide">
+            <div class="adv-header">贷款顾问</div>
+            <div id="adviserScroll" class="win_box_max">
+                <div>
+                    <div>
+                        <div class="adviser-groups win_left_pad uf uf-ic" v-for="adviser in loanAdviserOrders">
+                            <div v-bind:data="adviser.Id" name="gotoAdviser" class="adv-img"><img v-bind:src="adviser.photo"/></div>
+                            <div v-bind:data="adviser.Id" name="gotoAdviser" class="adv-body uf-f1">
+                                <div class="adv-body-top"><span v-text="adviser.name">贷款顾问</span><i v-bind:class="adviser.skillLevelClass"></i></div>
+                                <div class="adv-body-bottom" v-text="adviser.serveNumber"></div>
+                            </div>
+                            <a class="adv-tel" v-bind:href="'tel:'+adviser.cN400+','+adviser.exTen"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="javascript:;" class="adv-close"></a>
+        </blockquote>
+        <!-- 贷款顾问结束 -->
+
+    </div>
+</div>
+
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<app-down></app-down>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

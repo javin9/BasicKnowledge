@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var CODE_GETTING_URL = '/Validate/GetCode';
+        var CODE_VALIDATING_URL = '/Validate/CheckCode';
+        
+        //添加订单url
+        var addOrderUrl = "/swiftloan/AddOrderInfo";
+        //添加成功后跳转资质页，需要带orderid
+        var QuaUrl = "/rapidloan/Qualification";
+        var channel = "667";  // 渠道，参数键：c
+        var sourceFromRecommend = "507";  // 首页推荐金融产品，参数键：s
+        var xinchesite = "http://chedai.m.yiche.com/";
+        var cityId = '201';
+        var cityName = '北京';
+        var ipLocationInfo={"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":2,"SelectCityName":"北京","LocateResultType":0};
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="yxWrapper">
+    <div class="index-header">
+        <div class="flow_hd">车贷咨询流程</div>
+        <section class="flow_bd uf">
+            <div class="flow_item uf_f2">
+                <span class="icon_online"></span>
+                <b>线上申请</b>
+            </div>
+            <div class="flow_apar"></div>
+            <div class="flow_item uf_f2">
+                <span class="icon_callback"></span>
+                <b>电话回访</b>
+            </div>
+            <div class="flow_apar"></div>
+            <div class="flow_item uf_f2">
+                <span class="icon_pick"></span>
+                <b>上门服务</b>
+            </div>
+            <div class="flow_apar"></div>
+            <div class="flow_item uf_f2">
+                <span class="icon_service"></span>
+                <b>线下提车</b>
+            </div>
+        </section>
+    </div>
+    <form id="form" action="" method="post" class="index_form checkApp">
+        <div class="xqmore">
+            <ul>
+                <li class="nobg uf uf_ac">
+                    <i class="i11"></i><b>城市</b>
+                    <div class="uf_f1">
+                            <div data-id="-1"><em id="SelProvinceTrigger" class="checkChose car-c-name active">北京</em><i></i></div>
+                            <input name="BuyCarCityID" id="BuyCarCityID" type="hidden" value="201">
+                    </div>
+                </li>
+                <li class="xqtis" style="display: none;"></li>
+
+                <li class="nobg uf uf_ac">
+                    <i class="i12"></i><b>选择车型</b>
+                    <div class="triggerEvent triggerStyle uf_f1">
+                        <div id="SelCar" data-id="-1"><em class="car-s-name checkChose">请选择车型</em><i></i></div>
+                        <input name="CarId" id="CarId" type="hidden" value="">
+                        <input name="CarPrice" id="CarPrice" type="hidden" value="">
+                    </div>
+                </li>
+                <li class="xqtis" style="display: none;"></li>
+                
+                <li class="nobg uf uf_ac">
+                    <i class="i13"></i><b>姓名</b>
+                    <div class="uf_f1" >
+                        <input name="Name" id="Name" placeholder="请输入您的姓名" type="text" class="srwenz pdr-15">
+                    </div>
+                </li>
+                <li class="xqtis" style="display: none;"></li>
+
+                <li class="nobg uf uf_ac">
+                    <i class="i14"></i><b>手机</b>
+                    <div class="uf_f1" >
+                        <input id="Telephone" name="Telephone" placeholder="请输入常用手机号" type="tel" class="srwenz pdr-15">
+                    </div>
+                </li>
+                <li class="xqtis" style="display: none;"></li>
+
+                <li class="nobg uf uf_ac">
+                    <i class="i15"></i><b>手机验证码</b>
+                    <div class="uf_f1">
+                        <input id="ValidateCode" placeholder="请输入" name="ValidateCode" type="text" class="srwenz pdr-15" maxlength="6">
+                    </div>
+                    <div id="GetValidateCodeBtn" class="code_btn" data-seconds="60" data-detail="s倒计时">获取验证码</div>
+                </li>
+                <li class="xqtis" style="display: none;"></li>
+            </ul>
+        </div>
+
+        <input type="hidden" name="Orders" id="Orders" value="2976_69334_0">  
+        <input id="CityId" name="CityId" type="hidden" value="201" />
+        <input id="Source" name="Source" type="hidden" value="507" />
+        <input id="Channel" name="Channel" type="hidden" value="667" />
+        <input id="From" name="From" type="hidden" value="" />
+
+    </form>
+    <a href="javascript:void(0);" class="btn-i-submit bgEvent" id="submitIndex">提交</a>
+    
+    <div class="tip-a">本服务由易鑫车贷提供</div>
+    
+    <!-- loading -->
+    <div class="loadingCtn">
+        <div>
+            <div class="spinner">
+                <div class="spinner-container container1">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+                <div class="spinner-container container2">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+                <div class="spinner-container container3">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+            </div>
+            <p>提交中</p>
+        </div>
+    </div>
+
+    <div class="footer_n" style="display: block;">  
+        <div class="foot-contact">
+            <p>购车热线：<a href="tel:4000169169">4000-169-169</a>&nbsp;(9:00 - 21:00)</p>
+        </div>
+        <div class="foot-copyright">
+            易鑫 © 2016 m.daikuan.com
+        </div>
+    </div>
+    <!--整屏蒙层start-->
+    <div id="maskLayer"></div>
+    <!--整屏蒙层end-->
+</div>
+
+
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

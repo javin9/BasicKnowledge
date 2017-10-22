@@ -1,0 +1,310 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+@import "varibles";
+@import "mixin";
+
+// ref: https://bugs.webkit.org/show_bug.cgi?id=FontBoosting
+body, body * {
+    max-height: 1000000px;
+}
+
+.header-bar{
+	background:#fff;
+}
+
+article{
+	background:#fff;
+	padding:px2rem(30);
+
+	h1{
+		@include fsize(48);
+		color:$font-dark;
+		font-weight: bold;
+		padding:px2rem(10) 0 px2rem(26);
+		line-height: 1.5;
+	}
+
+	.des{
+		@include clearfix;
+		@include fsize(24);
+		color:$font-light;
+
+		.info{
+			float: left;
+
+			img,span{
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.time{
+				margin-left: px2rem(40);
+			}
+
+			.avatar{
+				width: px2rem(42);
+				height: px2rem(42);
+				border-radius:px2rem(42);
+				margin-right: px2rem(20);
+			}
+		}
+
+		// .status{
+		// 	float: right;
+		// 	margin-top: px2rem(10);
+
+		// 	span{
+		// 		margin-left: px2rem(40);
+		// 	}
+		// }
+	}
+
+	table{
+		@include fsize(28);
+		margin:px2rem(35) 0 px2rem(30);
+		width: 100%;
+		color:$font-dark;
+
+		th{
+			dl{
+				@include clearfix;
+				display: table;
+
+				dt{
+					display: table-cell;
+					vertical-align: middle;
+					padding-left: px2rem(20);
+
+					img{
+						width: px2rem(180);
+						// height:px2rem(120);
+					}
+				}
+
+				dd{
+					@include fsize(28);
+					color:$font-dark;
+					overflow: hidden;
+					padding-left: px2rem(20);
+					display:table-cell;
+					vertical-align: middle;
+
+					p:first-child{
+						line-height: 1.3;
+						padding:px2rem(22) 0 px2rem(18);
+						text-decoration: underline;
+					}
+					p:last-child{
+						margin-bottom: px2rem(22);
+					}
+				}
+			}
+		}
+
+		th,td{
+			border:1px solid $border-light;
+			@include fsize(28);
+
+			&.align-left{
+				text-align: left !important;
+			}
+		}
+
+		tbody{
+			tr{
+				td:first-child{
+					width: 35%;
+					padding:px2rem(30) 0;
+					text-indent: px2rem(40);
+				}
+
+				td:last-child{
+					text-align: center;
+					padding:px2rem(30) 0;
+
+					p{
+						@include fsize(24);
+						color:$font-light;
+						padding:px2rem(18) 0;
+					}
+				}
+			}
+		}
+	}
+
+	[class^="ico-"]{
+		@include fsize(20);
+		color:$font-dark;
+		font-style:normal;
+		display: inline-block;
+		width: px2rem(104);
+		height:px2rem(104);
+		text-align: center;
+		margin:0 0 px2rem(10) px2rem(10);
+
+		@each $ico in walk, cross, freight, speed, travel, business {
+		  &.ico-#{$ico}:before {
+		    content:' ';
+		    display: block;
+		    margin:0 auto px2rem(10);
+		    @include icon($ico, px2rem(65), px2rem(64))
+		  }
+		}
+
+	}
+
+	.content{
+		@include fsize(30);
+		line-height: 1.5;
+		color:$font-dark;
+		font-weight: normal;
+
+		embed,img{
+			max-width:100%;
+		}
+		a{
+			 color:#5A67AE;
+		}
+		.pic-wrapper{
+			position: relative;
+			margin-bottom: px2rem(10);
+
+			img{
+				display: block;
+				width: 100%;
+			}
+
+			h6{
+				@include fsize(26);
+				background:rgba(0,0,0,.7);
+				position: absolute;
+				color:#fff;
+				left:0;
+				bottom:0;
+				line-height: px2rem(40);
+				width: 100%;
+				box-sizing:border-box;
+				padding:px2rem(8) px2rem(10);
+			}
+		}
+
+		footer{
+			@include fsize(24);
+			color:#999;
+			overflow: hidden;
+			.status{
+				float: right;
+				margin-top: px2rem(25);
+
+				span{
+					margin-left: px2rem(40);
+				}
+			}
+		}
+	}
+}
+
+aside{
+	margin-top: px2rem(20);
+	background:#fff;
+	line-height:$line-height;
+
+	header{
+		@include clearfix;
+		padding:px2rem(20) px2rem(30);
+
+		>span{
+			@include fsize(30);
+			float: left;
+			font-weight: bold;
+			color:$font-dark;
+		}
+
+		.more{
+			@include fsize(24);
+			float: right;
+			color:$font-light;
+			position: relative;
+			margin-right: px2rem(8);
+
+			&:after{
+				content: ' ';
+		    position: absolute;
+		    top: 50%;
+		    right: px2rem(-15);
+		    width: px2rem(12);
+		    height: px2rem(12);
+		    border: 1px solid;
+		    border-bottom: 0;
+		    border-right: 0;
+		    margin-top:px2rem(-6);
+		    color: $font-light;
+        -webkit-transform: rotateZ(135deg);
+		    transform: rotateZ(135deg);
+			}
+		}
+	}
+
+	.content{
+		a{
+			display: block;
+			border-top:1px solid $border-light;
+		}
+
+		dl{
+			@include clearfix;
+			padding:px2rem(20) px2rem(30);
+		}
+
+		h6{
+			@include fsize(30);
+			color:$font-dark;
+			margin-bottom: px2rem(20);
+		}
+
+		dd{
+			overflow: hidden;
+			@include fsize(24);
+			color:$font-light;
+
+			.link-left{
+				float: left;
+			}
+
+			.link-right{
+				float: right;
+
+				.icon{
+					margin-left: px2rem(40);
+					width: px2rem(80);
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+}
+
+.icon{
+	display: inline-block;
+}
+
+.icon-browser:before{
+  @include icon(show,px2rem(31),px2rem(21));
+  content:' ';
+  display: inline-block;
+  margin-right: px2rem(10);
+}
+
+.icon-like:before{
+  @include icon(like,px2rem(21),px2rem(21));
+  content:' ';
+  display: inline-block;
+  margin-right: px2rem(10);
+}
+
+.icon-liked:before{
+  @include icon(liked,px2rem(21),px2rem(21));
+  content:' ';
+  display: inline-block;
+  margin-right: px2rem(10);
+}

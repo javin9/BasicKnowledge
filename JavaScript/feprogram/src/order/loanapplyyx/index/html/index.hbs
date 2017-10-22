@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script type="text/javascript">
+        var citySpell = 'beijing';
+        var APIURL = "http://testapi.chedai.bitauto.com/";
+        var RESURL = "http://192.168.145.9:8011/Web/";
+        var USERCENTERURL = "http://test.i.daikuan.com";
+        var BusinessLine = 550;
+        var authUrl = 'http://testapi.chedai.bitauto.com/api/YxRiskOnline/RealNameAuthenticate';
+        var mobile = '13269031795';
+        var uid = 2712400;
+        var product = 111363;
+        var xincheUrl ="http://zujs.test.daikuan.com";
+        var id_checking_url = '/common/idchecking';
+        var image_code_getting_url = '/common/getimagecode';
+    </script>
+</head>
+<body>
+ {{{htmlWebpackPlugin.options.header}}}
+
+ <div class="layx">
+     <div class="layx-con">
+        <div class="layx1">
+            <ul>
+               <li class="pass1"></li>
+               <li class="passing2 marl8"></li>
+               <li class="nopass3 marl8"></li>
+               <li class="nopass4 marl8"></li>
+            </ul>
+        </div>
+        <div class="layx2">
+             <div class="layx21">购车人信息<div>您的信息将只作为贷款审核使用，不会以任何形式泄露给其他人员或机构<i></i></div></div>
+             <div class="layx22">
+                 <div class="layx22-left">
+                     <div class="layx22-left1">身份信息</div>
+                     <div class="layx22-left2">
+                         <div class="layx22-left2-zsxm items"><span class="title">姓名</span><input type="text" value="请输入您的中文全名" maxlength="10" /><span class="tips">请与身份证姓名一致</span></div>
+                         <div class="layx22-left2-cwxx" style="display:none;">姓名格式错误，请核实</div>
+                         <div class="layx22-left2-sfzh items"><span class="title">身份证号</span><input type="text" value="请输入18位证件号" maxlength="18" /><span class="tips">身份证信息将被加密保护，绝不外泄</span></div>
+                         <div class="layx22-left2-cwxx" style="display:none;">身份证号码格式错误，请核实</div>
+
+                        <div id="imgValidateCodeBox" class="layx22-left2-tpjy items hide">
+                            <span class="title">图片校验码</span>
+                            <input type="text" id="imgValidateCode" value="请输入图片验证码" maxlength="4" />
+                            <div id="GetImgValidateCode" class="GetImgValidateCode fr"><img src="../../images/GetImageValidateCode.html.jpg"></div>
+                            <a class="changeCode" id="changeCode">换一个</a>
+                        </div>
+                        <div class="layx22-left2-cwxx" style="display:none;">请输入正确的验证码</div>
+
+                         <div class="layx22-left2-cwxx2" style="display:none;">验证不通过，请核实姓名与身份证信息是否符合<a href="javascript:;"></a></div>
+                     </div>
+                 </div>
+                 <div class="layx22-right">
+            <div class="layx22-right1">
+                <div class="layx22-right1-ck">
+                    <img src="//img4.bitautoimg.com/autoalbum/files/20161114/280/0339252804_1.jpg">
+                    <p style="margin-top:0;font-size:16px;height:18px;line-height:18px;" title="一汽奥迪 A4L 40 TFSI 进取型">一汽奥迪 A4L 40 TFSI 进取型</p>
+                </div>
+                <div class="layx22-right1-dkfa"><img src="http://img1.yixinfinance.com/chedai/339.jpg">贷款方案：易鑫包商联合贷_SHINE</div>
+            </div>
+            <div class="layx22-right2">
+                <div class="layx22-right2-gcje">
+                    <div class="layx22-right2-gcje1">购车金额计算</div>
+                    <div class="layx22-right2-gcje2">报价：<span>25.95万</span></div>
+                </div>
+                <div class="layx22-right2-sf">
+                    <div class="layx22-right2-sf1">首付 30%</div>
+                    <div class="layx22-right2-sf2">7.79万</div>
+                </div>
+                            </div>
+            <div class="layx22-right3">
+                <div class="layx22-right3-dked">
+                    <div class="layx22-right3-dked1">贷款额度：</div>
+                    <div class="layx22-right3-dked2">18.17万</div>
+                </div>
+                <div class="layx22-right3-yg">
+                    <div class="layx22-right3-yg1">月供：</div>
+                    <div class="layx22-right3-yg2">5550.56元(36 期)
+                    </div>
+                </div>
+                <div class="layx22-right3-zcb">
+                    <div class="layx22-right3-zcb1">总成本：</div>
+                    <div class="layx22-right3-zcb2">2.08万</div>
+                </div>
+            </div>
+                    <div class="layx22-right4">
+                <font class="tip" style="display: none;">贷款成功后，请在6个月之内进入个人中心领取礼包。</font>
+                <div class="layx22-right3-dked">
+                    <div class="layx22-right3-dked1">贷款礼包：</div>
+                    <div class="layx22-right4-dked2" id="howgetgifts">如何领取?</div>
+                </div>
+                        <div class="layx22-right3-zcb">
+                            <div class="layx22-right3-zcb1">11111111</div>
+                            <div class="layx22-right3-zcb2">价值1111元</div>
+                        </div>
+            </div>
+                    <!-- 赠险 -->
+            <section class="sec_insurance">
+                <input type="checkbox">勾选可免费领取<a href="javascript:void(0);" id="popInsuranceTrig">赠险60W</a>，出行更多保障
+            </section>
+            <article id="popInsuranceCont1" class="popCont popInsuranceCont hide">
+                <div class="popCont_hd">
+                    <a href="javascript:void(0);" class="popCont_close"></a>
+                    赠险60W说明
+                </div>
+                <div class="popCont_bd">
+                    <p align="left">
+    <span style="color:#ff0000;"><span style="font-size:14px;"><strong>活动规则</strong></span></span></p>
+<p>
+    <span style="color:#ff0000;"><span style="font-size:14px;">1、每一客户限领取1份保障，保险对象为24-50周岁，身体健康、能正常工作和劳动。</span></span></p>
+<p>
+    <span style="color:#ff0000;"><span style="font-size:14px;">2、本保险仅提供电子保单，领取成功后，不可受理任何变更，投保时请正确填写投保信息。</span></span></p>
+<p>
+    <span style="color:#ff0000;"><span style="font-size:14px;">3、赠险由中国平安、泰康、友邦、中美、中意、太平洋、前海、百年、北大正方人寿之一提供，领取成功与否以保险公司审核为准。</span></span></p>
+<p>
+    <span style="color:#ff0000;"><span style="font-size:14px;">4、投保成功后，请妥善保存您手机短信中的电子保单号，以方便查询和理赔。</span></span></p>
+<p>
+    &nbsp;</p>
+<p align="left">
+    <span style="color:#ff0000;"><span style="font-size:14px;"><strong>产品责任</strong></span></span></p>
+<p align="left">
+    <span style="color:#ff0000;"><span style="font-size:14px;">根据您实际领取成功的赠险，您可获乘民用航空最高100万意外保障，乘地铁/火车/高铁/轻轨及轮船等最高10万元意外保障，乘营运车最高10万元意外保障等意外险。</span></span></p>
+
+                </div>
+            </article>            
+    </div>
+             </div>
+         </div>
+     </div>
+     <div class="layx3-con" style="background:#7a7a7a;margin-top:30px;">
+         <div class="layx3" style="margin:0 auto 0 auto;text-align:right;padding-right:50px;width:580px;">
+             <form action="/OrderApplyYxHxm/Qualification" id="formQ" method="post"><input id="CarId" name="CarId" type="hidden" value="112890" /><input id="CarPrice" name="CarPrice" type="hidden" value="9.98" /><input id="CityId" name="CityId" type="hidden" value="201" /><input id="Orders" name="Orders" type="hidden" value="4107_111363_0" /><input id="Source" name="Source" type="hidden" value="969" /><input id="Channel" name="Channel" type="hidden" value="605" /><input id="SourceDicName" name="SourceDicName" type="hidden" value="" /><input id="From" name="From" type="hidden" value="" /><input id="AdviserId" name="AdviserId" type="hidden" value="0" /><input id="line" name="line" type="hidden" value="550" /><input id="OrderType" name="OrderType" type="hidden" value="1" />                <input type="checkbox" checked/>我已详细阅读并同意<a href="/LoanApply/servicecondition" target="_blank">《车贷服务条款》</a><a href="javascript:;" class="hqdk">提交订单</a>
+             </form>    
+
+             <form action="" method="post" id="cgbSendInfoForm">
+                <input type="hidden" name="applyAmt" required="required" value="">
+                <input type="hidden" name="custName" value="">
+                <input type="hidden" name="certNo" value="">
+                <input type="hidden" name="carPrice" required="required" value="">
+                <input type="hidden" name="itemNo" required="required" value="">
+                <input type="hidden" name="mobilePhone" value="">
+                <input type="hidden" name="mergeProvince" value="">
+                <input type="hidden" name="mergeCity" value="">
+                <input type="hidden" name="mergeArea" value="">
+                <input type="hidden" name="orderNo" required="required" value="">
+                <input type="hidden" name="signature" required="required" value="">
+                <input type="hidden" name="outChannelCode" value="23">
+            </form>
+
+        </div>
+     </div>
+ </div>
+
+ {{{htmlWebpackPlugin.options.footer}}}
+ <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

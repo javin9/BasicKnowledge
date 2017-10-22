@@ -1,0 +1,168 @@
+@import "sassHelper/mixin";
+@import "../../vars";
+
+.insurance-modal{
+
+	.modal{
+		width: 900px;
+		height:600px;
+		position: fixed;
+		left:50%;
+		top:50%;
+		margin-left: -450px;
+		margin-top: -300px;
+		background:#fff;
+		box-sizing:border-box;
+		z-index: 999;
+		padding:40px;
+
+
+	}
+
+	.cover{
+		position: fixed;
+		z-index: 100;
+		background:#000;
+		opacity:.3;
+		filter:alpha(opacity=30);
+		width: 100%;
+		height:100%;
+		left:0;
+		top:0;
+	}
+
+	.insurance-close{
+		position: absolute;
+		width: 24px;
+		height:24px;
+		background:url(close.png) no-repeat right top;
+		top:24px;
+		right:11px;
+		cursor:pointer;
+	}
+}
+
+.insurance-header{
+	@include clearfix;
+	line-height: 60px;
+	color:#000;
+	font-size:18px;
+	border-bottom:2px solid #eee;
+
+	ul{
+		float: left;
+		margin-bottom: -2px;
+	}
+
+	.insurance-summary{
+		float: right;
+		font-size:16px;
+
+		span,em,i{
+			vertical-align: bottom;
+		}
+
+		em{
+			font-style:normal;
+			color:$main;
+			font-size:22px;
+			margin:0 6px 0 10px;
+		}
+
+		i{
+			font-style:normal;
+			color:#666;
+			font-size:14px;
+			margin-left: 6px;
+		}
+	}
+
+	li{
+		float: left;
+		height:60px;
+		width: 80px;
+		text-align: center;
+		font-weight: normal;
+		cursor:pointer;
+
+		&.active{
+			border-bottom:2px solid $main;
+			color:$main;
+		}
+	}
+}
+
+.insurance-content{
+	@include clearfix;
+	padding-top:20px;
+	height:443px;
+
+	&-left{
+		float: left;
+		width: 478px;
+		height:100%;
+		border-right:2px solid #eee;
+
+		li{
+			@include clearfix;
+			color:#000;
+			font-size:14px;
+			line-height: 32px;
+			margin-bottom: 22px;
+
+			label{
+				float: left;
+				width: 60%;
+			}
+			.insurance-item{
+				float: left;
+
+				em{
+					font-style:normal;
+				}
+			}
+
+			.insurance-select{
+				display: inline-block;
+				width: 80px;
+
+				.Select{
+					margin-left: 10px;
+					.Select-control{
+						height:30px;
+					}
+				  .Select-placeholder{
+				    line-height: 30px;
+				  }
+				  .Select-input{
+				    height:30px;
+				  }
+				  .Select-input > input{
+				    height:30px;
+				    border-radius: 2px;
+				  }
+				}
+			}
+		}
+	}
+
+	&-right{
+		overflow: hidden;
+		height:100%;
+		position: relative;
+
+		button{
+			width: 180px;
+			height:50px;
+			border:0;
+			background:$main;
+			color:#fff;
+			font-size:18px;
+			text-align: center;
+			left:50%;
+			margin-left: -90px;
+			bottom:0;
+			position: absolute;
+		}
+	}
+}

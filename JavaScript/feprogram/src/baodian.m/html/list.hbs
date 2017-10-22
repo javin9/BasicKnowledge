@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="app""  v-cloak>
+<header class="header-bar">
+    <a href="javascript:history.go(-1);"></a>
+    <h1 class="font-nav">宝典</h1>
+    <a class="font-title header-more" href="" v-if="type === typeSpe">来晒单</a>
+    <span v-if="type !==typeSpe" class="font-title"></span>
+</header>
+<div>
+    <nav class="baodian-nav">
+        <ul>
+            <li><a href="javascript:void(0)" v-on:click="setType(0)" :class="{current: type === 0}">首页精选</a></li>
+            <li><a href="javascript:void(0)" v-on:click="setType(1)" :class="{current: type === 1}">车贷攻略</a></li>
+            <li><a href="javascript:void(0)" v-on:click="setType(2)" :class="{current: type === 2}">购车指南</a></li>
+            <li><a href="javascript:void(0)" v-on:click="setType(3)" :class="{current: type === 3}">车险常识</a></li>
+            <li><a href="javascript:void(0)" v-on:click="setType(4)" :class="{current: type === 4}">用车技巧</a></li>
+            <li><a href="javascript:void(0)" v-on:click="setType(5)" :class="{current: type === 5}">百家论道</a></li>
+            <li><a href="javascript:void(0)" v-on:click="setType(6)" :class="{current: type === 6}">原创视频</a></li>
+            <li><a href="javascript:void(0)" v-on:click="setType(7)" :class="{current: type === 7}">车主晒单</a></li>
+        </ul>
+    </nav>
+    <div class="baodian-list" :class="{loading:loadingData && !list.length}">
+      <div class="baodian-list-scroller" v-cloak>
+        <ul class="common-list" v-if="type !== typeSpe && type !== typeHome">
+          <li v-for="one in list">
+              <a :href="one.ID">
+                  <dl>
+                      <dt>
+                          <img :src="one.CoverPictureName">
+                      </dt>
+                      <dd>
+                          <h3 v-text="one.Title"></h3>
+                          <p v-text="one.UpdateTime | formatJsonDate"></p>
+                      </dd>
+                  </dl>
+              </a>
+          </li>
+        </ul>
+        <ul class="show-list" v-if="type === typeSpe">
+          <li v-for="one in list">
+            <a :href="one.url">
+              <dl>
+                <dt>
+                  <div class="show-list-info">
+                    <img :src="one.UserHeadPicture" v-if="one.UserHeadPicture">
+                    <div class="show-list-info-wrapper">
+                      <h6 class="show-list-info-name" v-text="one.NikeName"></h6>
+                      <p>
+                        <span class="show-list-info-des" v-text="one.CreatedOn | formatJsonDate 'YYYY-MM-DD'"></span>
+                        <span class="show-list-info-status">
+                          <span class="icon-browser" v-text="one.BrowserCountSelf"></span>
+                          <span class="icon-like" v-text="one.ClickCountSelf"></span>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </dt>
+                <dd>
+                  <p v-text="one.Title"></p>
+                  <div class="show-list-img" v-if="one.ImageList.length" :class="{'img-large': one.ImageList.length === 1, 'img-normal' : one.ImageList.length === 2}">
+                    <div class="img-wrapper" v-for="url in one.ImageList" track-by="$index" :style="{backgroundImage:'url('+url+')'}">
+                    </div>
+                  </div>
+                </dd>
+              </dl>
+            </a>
+          </li>
+        </ul>
+        <div class="mix-list" v-if="type === typeHome">
+          <div class="swiper-container" v-if="bannerList.length">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="one in bannerList" :rel="one.MOutURL"><img :src="one.MHomePicture" /></div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <ul>
+            <li v-for="one in list">
+              <a v-if="one.Type !== typeSpe" class="common-item" :href="one.ID">
+                <dl>
+                      <dt>
+                          <img :src="one.Picture">
+                      </dt>
+                      <dd>
+                          <h3 v-text="one.Title"></h3>
+                          <p><span v-text="one.Type | getType"></span><span v-text="one.UpdateTime | formatJsonDate"></span></p>
+                      </dd>
+                  </dl>
+              </a>
+              <div v-if="one.Type === typeSpe">
+                <a class="show-item" :href="one.url">
+                  <dl>
+                    <dt>
+                      <div class="show-list-info">
+                        <img :src="one.UserHeadPicture" v-if="one.UserHeadPicture">
+                        <div class="show-list-info-wrapper">
+                          <h6 class="show-list-info-name" v-text="one.UserName"></h6>
+                          <p>
+                            <span class="show-list-info-des" v-text="one.UpdateTime | formatJsonDate 'YYYY-MM-DD'"></span>
+                            <span class="show-list-info-status">
+                              <span class="icon-browser" v-text="one.BrowserCount"></span>
+                              <span class="icon-like" v-text="one.ClickCount"></span>
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    </dt>
+                    <dd>
+                      <p v-text="one.Title"></p>
+                      <div class="show-list-img" v-if="one.ImageList.length" :class="{'img-large': one.ImageList.length === 1, 'img-normal' : one.ImageList.length === 2}">
+                        <div class="img-wrapper" v-for="url in one.ImageList" track-by="$index" :style="{backgroundImage:'url('+url+')'}">
+                        </div>
+                      </div>
+                    </dd>
+                  </dl>
+                </a>
+                <p class="show-item-footer">
+                  <span>车主晒单</span>
+                  <a href="javascript:void(0)" v-on:click="setTypeAndNav(7)" >更多晒单</a>
+                </p>
+              </div>
+              <a :href="adList[($index+1)/5-1].URL" class="list-banner" v-if="($index+1)%5 === 0 && adList[($index+1)/5-1]"><img :src="adList[($index+1)/5-1].Picture" /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="pull-request" :class="{loading: loadingData}" v-show="!allData && list.length && type !== typeHome"><i class="icon-pull-up"></i><span class="pull-request-text" v-text="loadingData ? '正在加载数据' : '向上滑动刷新'"></span></div>
+      </div>
+    </div>
+</div>
+</div>
+<script>
+  var isNavHide = false
+  var citySpell = 'beijing'
+  var apiUrl = {
+    'list': '/Home/GetBaoDianForListPage',
+    'showList' : '/Home/GeTopicForListPage',
+    'home' : '/Home/GetHomeSelection',
+    'banner' : '/Home/GetBanner',
+    'focusBanner' : '/Home/GetFocusBanner'
+  }
+</script>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

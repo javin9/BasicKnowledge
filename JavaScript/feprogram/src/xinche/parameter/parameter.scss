@@ -1,0 +1,201 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+.icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url(./images/param_icon.png) no-repeat 0px -51px;
+}
+.container {
+  article {
+    width: 1200px;
+    margin: 0 auto;
+    .switching-models { 
+      .select-ctrl { 
+        display: inline-block;
+        position: relative; 
+        padding-left: 0;
+        background-position: right 10px;
+        &.up-arrow {
+          background-position: right -85px;
+        }
+        &.no-arrow{ 
+          background: none; 
+        }
+        div { 
+          height: auto;
+          font-size: 16px;
+          color: #000; 
+          line-height: 24px;
+          padding-right: 22px;
+          
+        }
+        ul {
+          weight: 280px; 
+          overflow-y: scroll; 
+          border: 1px solid #eee; 
+          min-width: 430px; 
+          *width:430px;
+          width: 430px \9;
+          top: 30px;
+          max-height: 280px;
+          li {
+            span {
+              float: right;
+              display: block;
+              width: 50px;
+              text-align: left;
+              position: absolute;
+              top: 0px;
+              right: 0px;
+              padding: 10px;
+            }
+            a { 
+              padding-right: 55px;
+              white-space: nowrap; 
+              text-overflow: ellipsis; 
+              overflow: hidden; 
+              display: block;
+            }
+          }
+        }
+      }
+      .info {
+        width: 300px;
+        text-align: right;
+        margin-right: 140px;
+        span {
+          display: inline-block;
+          font-size: 12px;
+          color: map-get($font, normal);
+          line-height: 18px;
+          margin-left: 20px;
+          i{
+            @extend .icon;
+            margin-right: 4px;
+            position: relative;
+            top: 4px;
+            &.matching {
+              background-position: 0px -83px;
+            }
+            &.default {
+              background-position: 0px -29px;
+            }
+          }
+        }
+      }
+    }
+
+ 
+    .body {
+      position: relative;
+      &-ctn {
+        width: 1060px;
+        dl {
+          border: 1px solid #E5E5E5;
+          margin-bottom: 20px;
+          dt {
+            font-size: 14px;
+            color: #666;
+            line-height: 22px;
+            padding: 10px 20px;
+            background: #F4F4F4;
+          }
+          dd {
+            width: 100%;
+            border-top: 1px solid #eee;
+            &.standard {
+              background: url(./images/gray.png) repeat;
+            }
+            div {
+              float: left;
+              padding: 10px 0;
+              font-size: 14px;
+              line-height: 22px;
+              &.info-name {
+                width: 330px;
+                height: 100%;
+                color: #666;
+                text-align: right;
+                padding-right: 60px;
+              }
+              &.info-det {
+                width: 606px;
+                padding-left: 60px;
+                color: #000;
+                border-left: 1px solid #eee;
+                &.calculator {
+                  padding-top: 9px;
+                  padding-bottom: 9px;
+                }
+                a {
+                  display: inline-block;
+                  width: 18px;
+                  height: 18px;
+                  margin-left: 6px;
+                  background: url(images/param_icon.png) no-repeat -3px -3px;
+                  position: relative;
+                  top: 3px;
+                }
+
+                i {
+                  @extend .icon;
+                  height: 16px;
+                  position: relative;
+                  top: 2px;
+                  &.matching {
+                    background-position: 0px -83px;
+                  }
+                  &.default {
+                    background-position: 0px -29px;
+                  }
+                }
+              }
+              &.body-color {
+                span {
+                  font-size: 14px;
+                  white-space: nowrap;
+                }
+              }
+            }
+          }
+        }
+      }
+      &-nav {
+        width: 120px;
+        border: 1px solid #094F8D;
+        position: absolute;
+        top: 0;
+        left: 1080px;
+        ul {
+          font-size: 0;
+          text-align: center;
+          li {
+            padding: 9px 0;
+            font-size: 14px;
+            color: #666;
+            line-height: 22px;
+            cursor: pointer;
+            &.cur, &:hover {
+              color: #fff;
+              background-color: #094F8D;
+              position: relative;
+            }
+            &:before {
+              content: '';
+              display: inline-block;
+              border: 4px solid #fff;
+              border-top-color: transparent;
+              border-left-color: transparent;
+              border-bottom-color: transparent;
+              position: absolute;
+              top: 16px;
+              left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

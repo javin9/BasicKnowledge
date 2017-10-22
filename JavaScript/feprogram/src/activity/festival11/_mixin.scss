@@ -1,0 +1,32 @@
+@import 'sassHelper/mixin';
+
+@mixin margin-gap{
+	margin-bottom: 28px;
+}
+
+
+@mixin each-stack($num){
+	@while $num > 0 {
+		&.product-item-#{$num}{
+			a {
+				background: #fff url(./images/#{$num}.jpg) no-repeat center 140px;
+			}
+		}
+	  $num: $num - 1;
+	}
+}
+
+@mixin main-stack(){
+	@each $key, $item in $main{
+		.main-#{$key}{
+			width: map-get($item, width);
+			height: map-get($item, height);
+			top:map-get($item, top);
+			left:map-get($item,left);
+			background-image: url(./images/main-#{$key}.#{map-get($item, ext)});
+			background-position: no-repeat;
+			background-position: left top;
+			// background:url(./images/main-#{$key}.#{map-get($item, ext)}) no-repeat left top;
+		}
+	}
+}

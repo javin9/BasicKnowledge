@@ -1,0 +1,167 @@
+.uploadMain{position: fixed;top: 0;left: 0;right: 0;bottom: 0;background: rgba(0,0,0,0.70);z-index: 200;display: none;}
+.uploadMain h3{padding-top: 2.933333rem;height: 0.64rem;line-height: 0.64rem;margin: 0 auto;text-align: center;color: #fff;}
+.uploadMain img{width: 7.306667rem;height: 5.093333rem;display: block;margin: 0 auto;padding-top: 0.666667rem;padding-bottom: 0.44rem;}
+.uploadMain p{width: 7.306667rem;text-align: left;margin: 0 auto;line-height: 0.64rem;color: #c4c4c4;}
+.form_list.carInfoMian{ margin-bottom: 0.266667rem; display: none; }
+.form_list li.carInfo{ height: 1.76rem; line-height: auto; }
+.form_list li.carInfo a{ padding-left: 0.8rem; padding-top: 0.4rem; height: 1.333333rem; line-height: auto; }
+.form_list li.carInfo .left_tit{ top: 0.5rem; margin-top: 0; }
+.form_list li.carInfo .icon{ top: 0; }
+.form_list li.carInfo a span{ text-align: left; height: 0.64rem; line-height: initial; }
+.form_list li.carInfo a span.bottom{ }
+.form_list li.carInfo:after{ content: ""; position: absolute; right: 0.0rem; left: 0rem; top: 0; border-top: 1px solid #eeeeee; }
+/*选择险种*/
+.detail_box{padding-bottom: 1.733333rem;}
+.detail_box b.recommend{display: inline-block;width: 0.72rem;height: 0.363333rem;line-height: 0.363333rem;text-align: center;color: #fff;background-color: #e3532e;-webkit-border-radius: 0.026667rem;-moz-border-radius: 0.026667rem;border-radius: 0.026667rem;position: relative;top: -0.026667rem;}
+.price_main_box{position: relative;background-color: #fff;border-radius: 0.066667rem;margin: 0.4rem 0.4rem 0.266667rem;padding-bottom: 0.4rem;}
+.price_main_box>div{padding:0;}
+.price_main_box>div.recommend{display: block;}
+.price_main_box h3{ height: 1.333333rem; line-height: 1.333333rem; padding: 0 0.4rem; color: #333; box-shadow: inset 0 -1px 0 0 #E5E5E5;}
+.price_main_box h3 .edit_insure_btn{ color: #686868; float: right; position: inherit; display: inline-block; border: 0; border-radius: 0; height: 1.333333rem; line-height: 1.333333rem; width: auto; }
+.price_main_box h3 .edit_insure_btn img{display: inline-block;width: 0.16rem;height: 0.266667rem;padding-left: 0.266667rem;}
+.price_main_box h4{background: rgba(50,133,255,0.15);height: 0.8rem;line-height: 0.8rem;color: #3385FF;padding: 0 0.4rem;margin-bottom: 0.413333rem;}
+.price_main_box h4 img{padding-right: 0.186667rem;display: inline-block;width: 0.4rem;height: 0.4rem;vertical-align: middle;}
+.price_main_box table{padding:0.0rem;width: 100%;}
+.price_main_box table tr{display: none;}
+.price_main_box table tr.buji_box span{display: inline-block;float: left;}
+.price_main_box table tr td{padding: 0.12rem 0.0rem;font-size: 13px;line-height: 0.533333rem;}
+.price_main_box table tr.buji_box td{padding: 0.106667rem 0.0rem;}
+.price_main_box table tr td:first-child{padding-left: 0.4rem;color: #999999;}
+.price_main_box table tr td:last-child{padding-right: 0.4rem;color: #E9474D;text-align: right;}
+.price_main_box table tr.tr-date td:first-child{color: #333;font-weight: bold;}
+.price_main_box table tr.tr-date td:last-child{min-width: 2.1rem;color: #333;}
+.price_num_box{position: fixed;width:10rem;bottom: 0;left:0px;right:0px;height: 1.333333rem;text-align: center;line-height: 1.333333rem;z-index: 100;width: 10rem;margin: 0 auto;}
+.price_num_box:before{z-index:2;content: ""; position: absolute;right:0.0rem; left: 0.0rem; top:0px;border-top: 1px solid #eeeeee;-webkit-transform: scaleY(.5);-webkit-transform-origin: 0 0; pointer-events: none;}
+.price_num_box div{height: 1.333333rem;line-height: 1.333333rem;color: #000000;font-size: 12px;}
+.price_num_box div.actualPayment.active:before{border:0px;background-color: #fff;}
+.price_num_box div:first-child{font-size: 12px;color: #e15436;}
+.price_num_box div:first-child span{color: #e15436;font-size: 18px;}
+.price_num_box div:first-child .icon{ float: none;top: 0.573333rem;display: inline-block;margin-left: 0.266667rem;top: -0.066667rem}
+.price_num_box div.gift_box{text-align: center;display: none;}
+.price_num_box div.gift_box .gift_btn{display: inline-block;}
+.price_num_box .sub_btn{background-color: #E9474D;height: 1.333333rem;line-height: 1.333333rem;display: block;color: #fff;font-size: 16px;}
+.price_num_box .sub_btn.error{ background-color: #d2d2d2;color:#fff;}
+/*灰色背景*/
+.parice_mark_main{position: fixed;bottom: 0px;left:0px;z-index: 21;width: 10rem;margin:0px auto;}
+.parice_mark_main .mark{z-index: 20;}
+.parice_mark_main .main{position: fixed;width: 10rem;background-color: #fff; bottom: 1.306667rem;z-index: 21;margin:0 auto;left:0;right:0;}
+.parice_mark_main .main h3{position: relative;height: 1.066667rem;line-height: 1.066667rem;padding-left: 0.533333rem;color: #000;font-size: 0.2rem;}
+.parice_mark_main .main h3:before{z-index:2;content: ""; position: absolute;right:0.0rem; left: 0.0rem; bottom:0px;border-bottom: 1px solid #eeeeee; }
+.parice_mark_main .main .table_main{padding: 0.2rem 0.533333rem;}
+.parice_mark_main .main .table_main table{width: 100%;}
+.parice_mark_main .main .table_main table td{padding: 0.2rem 0.0rem;font-size: 12px;color: #000000;}
+.parice_mark_main .main .table_main table td.left{}
+.parice_mark_main .main .table_main table td.center{width: 3.333333rem;text-align: center;}
+.parice_mark_main .main .table_main table td.right{color: #e15436;}
+.parice_mark_main .main .table_main table tr.show{display: table-row;}
+.insurance_type_box{background-color: rgba(0,0,0,0);padding-left:0.4rem;}
+.insurance_type{padding:0px 0px;margin-bottom:0;width: 100%;background-color: #fff;}
+/*.insurance_type.chooseMoreBox{margin-bottom: 0.266667rem;}
+*/
+.insurance_type.insuranceNoChecked{border-top: 1px solid #ececec;}
+.insurance_type tr{position: relative;height: 1.173333rem;}
+.insurance_type tr:before{z-index:2;content: ""; position: absolute; left: 0;right:0px; border:0px; border-bottom: 1px solid #ececec; }
+.insurance_type tr.chechuan:before{border:0;}
+.insurance_type tr:first-child:before{border:0px;}
+.insurance_type tr.chooseMore:before{border-bottom: 1px solid #ececec;}
+.insurance_type tr.buji:before{border-bottom: 1px solid #ececec;}
+.insurance_type tr td.insurance_type_buji{text-align: right;width: 3.066667rem;}
+.insurance_type tr td{font-size: 13px;color: #666666;vertical-align: middle;}
+.insurance_type tr td{ color: #333333;}
+.insurance_type tr td.insurance_type_name{font-size: 14px;color: #666666;width: 3.98rem;}
+.insurance_type tr td.insurance_type_price{color: #686868;padding-right: 0.4rem;text-align: right;padding-left: 0.213333rem; }
+.insurance_type tr td.choose_date_box{text-align: right;padding-right: 0.8rem;position: relative;padding-left: 0.0rem;font-family: 'PingFangSC-Regular';visibility: hidden;}
+.insurance_type tr td.choose_date_box.show{visibility: visible;}
+.insurance_type tr td.choose_date_box:before{content: "";position: absolute;right:0.4rem; display: block;width: 0.186667rem; height:0.106667rem; background-image: url(../comm/images/icon/triangle-down.png);background-size: 0.186667rem 0.106667rem;background-repeat: no-repeat;background-position: center;top: 50%;margin-top: -0.053333rem;}
+.insurance_type tr td.choose_date_box b{display:inline-block;color:#e9474d;font-weight:600;vertical-align:middle;padding-right: 0;padding-left: 0;}
+.insurance_type tr td.choose_date_box input.input_text{display:inline-block;width:2.08rem;text-align: center; float:none;color:#e9474d!important;height:1.173333rem;line-height:1.173333rem;padding:0;}
+.insurance_type tr td.choose_date_box .imgBox{width: 0.48rem;height: 0.48rem;display: inline-block;padding-right: 0.266667rem;}
+.insurance_type tr td.choose_date_box .imgBox img{width: 0.48rem;height: 0.48rem;display: inline-block;vertical-align: middle;}
+.insurance_type tr td.insurance_type_name{line-height: 1.173333rem;}
+.insurance_type tr td.insurance_type_name em{float: left;}
+.insurance_type tr td.insurance_type_name .sex-ctn{height: 1.173333rem;line-height: 1.173333rem;float: left;width:0.7rem;position: relative;}
+.insurance_type tr td.insurance_type_name .sex-ctn.radio-box .radio-normal{margin-top: 0.266667rem; margin-right: 0.266667rem;background-image: url(../comm/images/icon/choose-round-grey.png);background-size:0.586667rem 0.586667rem;background-repeat: no-repeat;width: 0.586667rem;height:0.586667rem!important;background-position: center;}
+.insurance_type tr td.insurance_type_name .sex-ctn.radio-box .radio-normal.checked{background-image: url(../comm/images/icon/choose-round-red.png);background-position: left top;height:0.586667rem!important;}
+.insurance_type tr.chechuan{height: 0.533333rem;line-height: 0.533333rem;}
+.insurance_type tr.chechuan td.insurance_type_name{height: 0.533333rem;line-height: 0.533333rem;padding-bottom: 0.4rem;}
+.insurance_type tr.chechuan td.insurance_type_name .sex-ctn{height: 0.533333rem;line-height: 0.533333rem;}
+.insurance_type tr td.insurance_type_coverage{text-align: right; width: 2.286667rem;position: relative;color: #666;padding-right: 1rem;}
+.insurance_type tr td.insurance_type_coverage .type_select{position: relative;height:1.173333rem;line-height: 1.173333rem;text-align: right;}
+.insurance_type tr td.insurance_type_coverage .type_select.chose{padding-right: 0.373333rem;}
+.insurance_type tr td.insurance_type_coverage .type_select.chose:before{content: "";position: absolute;right:0px;width: 0.186667rem; height:0.106667rem;display: block;background-image: url(../comm/images/icon/triangle-down.png);background-size: 0.186667rem 0.106667rem;background-repeat: no-repeat;background-position: center;top: 50%;margin-top: -0.053333rem;}
+.insurance_type tr td.insurance_type_coverage.checked .type_select.chose:before{background-image: url(../comm/images/icon/triangle-up.png);}
+.buji_main {padding:0 1.04rem 0 1.053333rem; background-color: #fff;}
+.buji_main a{ display: block; width: 2.133333rem; height: 0.8rem; background: #FFFFFF; border: 1px solid #C6C6C6; border-radius: 0.066667rem; margin: 0px 0.2rem; float: left; text-align: center; line-height: 0.8rem; color: #686868; font-size: 14px; margin-bottom: 0.266667rem; }
+.buji_main a.checked{background-color: #fff;color: #e9474d;border-color: #e9474d;}
+.buji_main a.no_checked{ background-color: #f5f5f5;border:1px dashed #e5e5e5;}
+.buji_main div{width: 7.2rem;}
+.modular{background-color: #fff;padding-left: 0;margin-bottom: 0.266667rem;}
+.modular .t_tit{height: 1.333333rem;line-height: 1.333333rem;padding:0 0.4rem; color: #333;position: relative;box-shadow: inset 0 -1px 0 0 #E5E5E5;}
+.modular .t_tit:before{z-index:2;content: ""; border:0;}
+.modular .t_tit span{font-size: 12px;color: #000;}
+.modular .t_tit span i{font-size:9px;color: #e15436;}
+/*.modular .form_list li{padding-left: 0.0rem;}
+.modular .form_list li.xqtis{padding-left: 0.4rem;margin-left: -0.4rem;}
+*/
+.insuran_price .top{position: relative;/*padding: 0.266667rem 0.0rem;*/ padding-bottom: 0px; display: -webkit-box;display: -webkit-box;display: -moz-box;display: box;border-bottom: 1px solid #ececec;}
+.insuran_price .top>div{-moz-box-flex: 1;-webkit-box-flex: 1;box-flex: 1;}
+.insuran_price .top .left{height: 1.333333rem;line-height: 1.333333rem;color: #000000; font-size: 16px;}
+.insuran_price .top .left .icon{padding-right: 0.293333rem; top: 0.333333rem;width: 0.613333rem;height: 0.613333rem;background-size: 0.613333rem 0.613333rem;background-repeat: no-repeat;background-image: none;}
+.insuran_price .top .left .icon.AXATP{background-image: url("../comm/images/logo/title-axatp.html.png");}
+.insuran_price .top .left .icon.CCIC{background-image: url("../comm/images/logo/titl-cic.html.png");}
+.insuran_price .top .left .icon.YGBX{background-image: url("../comm/images/logo/title-ygbx.html.png");}
+.insuran_price .top .left .icon.AIC{background-image: url("../comm/images/logo/titl-aic.html.png");}
+.insuran_price .top .left .icon.ZABX{background-image: url("../comm/images/logo/title-zabx.html.png");}
+.insuran_price .top .left .icon.CPIC{background-image: url("../comm/images/logo/title-cpic.html.png");}
+.insuran_price .top .left .icon.PICC{background-image: url("../comm/images/logo/title-picc.html.png");}
+.insuran_price .top .left .icon.BOCI{background-image: url("../comm/images/logo/title-boci.html.png");}
+.insuran_price .top .left .icon.UBI{background-image: url("../comm/images/logo/title-ubi.html.png");}
+.insuran_price .top .left .icon.ERGO{background-image: url("../comm/images/logo/title-ergo.html.png");}
+.insuran_price .top .left .icon.CLIC{background-image: url("../comm/images/logo/title-clic.html.png");}
+.insuran_price .top .left .icon.CIC{background-image: url("../comm/images/logo/title-cic.html.png");width: 0.853333rem;height: 0.613333rem;background-size: auto 0.613333rem;}
+.insuran_price .top .right{text-align: right;padding-right: 0.4rem;}
+.insuran_price .top .right span{display: block;color: #2c2c2c;font-size: 12px;font-style: normal;padding: 0.133333rem;height: 0.48rem;}
+.insuran_price .top .right.one span{padding:0.346667rem  0.133333rem;}
+.insuran_price .top .right span em{color: #e15436;font-style: normal;}
+.insuran_price .top .right span em i{color: #e15436;font-size: 18px;font-style: normal;}
+.insuran_price .top .right b{color: #c8c8c8;font-weight: normal;font-size: 12px;}
+.insuran_price .top .right b i{ text-decoration:line-through;}
+.insuran_price .bottom{ line-height: 1.066667rem;height: 1.066667rem;color: #666666;font-size: 14px;}
+.insuran_price .bottom .icon{margin-right: 0.32rem; margin-left: 0.17rem;}
+.adjustment_insure{padding-bottom: 1.733333rem;}
+.adjustment_insure .submit_btn_box{ position: fixed;left:0px;right:0px;bottom:0px;z-index: 100;-webkit-box-shadow:0.133333rem 0.133333rem 0.8rem rgba(129, 129, 129, 0.79);width: 10rem;margin: 0 auto;}
+.adjustment_insure .submit_btn_box .submit_btn{width: 100%;-moz-border-radius: 0px;-webkit-border-radius: 0px; border-radius: 0px;}
+.adjustment_insure .submit_btn_box .submit_btn.goRecommend{background-color: #313132;display: none;}
+.adjustment_insure .submit_btn_box.goRecom .submit_btn{width: 60%;float: left;}
+.adjustment_insure .submit_btn_box.goRecom .submit_btn.goRecommend{display: block;width: 40%;background-color: #fff8f8;color: #333;}
+.adjustment_insure .insurance_type_box{padding-left: 0.0rem;}
+.adjustment_insure .insurance_type_name{padding-left: 0.4rem;}
+
+.adjustment_insure tr.false td.insurance_type_name .sex-ctn.radio-box .radio-normal{background-position:center;background-image: url(../comm/images/icon/choose-round-ban.png);}
+/*.adjustment_insure tr.buji td.insurance_type_name .sex-ctn.radio-box .radio-normal{background-position:center;background-image: url(../images/icon/choose-round-ban.png);}
+.adjustment_insure tr.shy td.insurance_type_name .sex-ctn.radio-box .radio-normal{background-position:center;background-image: url(../images/icon/choose-round-ban.png);}
+*/
+.adjustment_insure tr.false {background-color: #f5f5f5;}
+.adjustment_insure tr.false .tr_mark{display: block;background-color: rgba(0,0,0,0);}
+.adjustment_insure tr.false td.insurance_type_name{color: #d9d9d9;}
+.adjustment_insure tr.false td.insurance_type_coverage{color: #d9d9d9;}
+.adjustment_insure tr.false td.insurance_type_price{color: #d9d9d9;}
+.adjustment_insure  .insurance_type.insurance_list tr:first-child:before{border:0px;}
+.adjustment_insure  .insurance_type.shy_date_table tr:first-child:before{top: 2.346667rem;border-bottom: 1px solid #ececec;}
+/*积分兑换*/
+.giftBox{margin: 0 0.4rem; background: #FFFFFF; border-radius: 0.066667rem;display: none; }
+.giftBox h3{color: #333;padding-top: 0.36rem;padding-left: 0.4rem;line-height: 0.613333rem;}
+.giftBox .integral{color: #999;line-height: 0.533333rem;padding-top: 0.133333rem;padding-left: 0.4rem;padding-bottom: 0.36rem;}
+.giftBox .mainBox{padding-left: 0.4rem;padding-top: 0.2rem;}
+.giftBox .mainBox p{display: block;width:1.52rem;color: #888;line-height: 0.533333rem;float: left;}
+.giftBox .mainBox ul{width: 7.28rem;float: left;}
+.giftBox .mainBox ul li{height: 0.586667rem;line-height: 0.586667rem;padding-bottom: 0.4rem;vertical-align: middle;}
+.giftBox .mainBox ul li .sex-ctn{width: 0.586667rem;height: 0.586667rem;display: inline-block;float: left;vertical-align: middle;}
+.giftBox .mainBox ul li span{color: #333;padding-left: 0.28rem;}
+.giftBox .mainBox ul li .sex-ctn .radio-normal{margin: 0; background-image: url(../comm/images/icon/choose-round-grey.png);background-size:0.586667rem 0.586667rem;background-repeat: no-repeat;width: 0.586667rem;height:0.586667rem!important;background-position: center;}
+.giftBox .mainBox ul li .sex-ctn .radio-normal.checked{background-image: url(../comm/images/icon/choose-round-red.png);}
+tr.show{display: table-row!important;}
+/*选择更多*/
+.moreBtn{width: 0.586667rem;height: 0.586667rem;position: absolute;left: 0;margin-top: 0.266667rem; margin-right: 0.266667rem;  background: url('../comm/images/icon/choose-round-packup.png') no-repeat center;background-size: 0.586667rem 0.586667rem;}
+.moreBtn.checked{background-image: url('../comm/images/icon/choose-round-more.png');}
+table.show{display: table!important;}

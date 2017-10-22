@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        //是否是微信浏览器
+        var isWeiXinBroswer = true;
+        //加密后的订单号
+        var encryptv = "O93a7crt6Oa4rU8JsOCOSA==";
+        var username = "饼饼";
+        //Action的路径
+        var ActivityPageAction = "";
+        var ActivityShareAction = "bless.html";
+
+        var SaveActivity = "SaveActivity";
+        var SaveActivityOrder = "SaveActivityOrder";
+        //Action的路径
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="valentineMain">
+    <header class="header-bar">
+        <div class="title-img">
+            <img src="../images/yixin.html.png">
+        </div>
+        <h1 class="font-nav">小鑫帮您贷</h1>
+        <span></span>
+    </header>
+
+    <section class="main">
+
+        <div class="main_wrap">
+            
+            <a href="javascript:void(0);" id="btnPartner" class="btn_choose btn_partner"></a>
+
+            <a href="javascript:void(0);" id="btnSingle" class="btn_choose btn_single"></a>
+            
+        </div>
+        
+        <p class="tip">选择路径，完成流程，赢好友投票，获免息大奖</p>
+
+        <div class="note"></div>
+
+    </section>
+</div>
+
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

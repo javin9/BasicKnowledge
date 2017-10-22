@@ -1,0 +1,51 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+.component-map{
+	float: right;
+	border:1px solid #e5e5e5;
+
+	.marker{
+		width: 200px;
+		overflow: hidden;
+
+		&.marker-pic{
+			width: 300px;
+		}
+
+		dt{
+			float: left;
+
+			img{
+				display: block;
+				width: 126px;
+				height:84px;
+				margin-right: 12px;
+			}
+		}
+
+		dd{
+			overflow: hidden;
+		}
+
+		h6{
+			color:#000;
+			font-size:14px;
+			line-height: $main-line-height;
+			margin-bottom: 5px;
+		}
+
+		p{
+			color:#151515;
+			font-size:12px;
+			line-height: $main-line-height;
+			margin-top: 6px;
+			overflow: hidden;
+
+			label{
+				color:$normal-color;
+				margin-right: 3px;
+			}
+		}
+	}
+}

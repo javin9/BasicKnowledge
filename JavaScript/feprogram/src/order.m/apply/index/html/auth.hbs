@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>实名认证</title>
+    <script type="text/javascript">
+        var CODE_VALIDATING_URL = '/secretary/CheckCode'
+        var CODE_GETTING_URL = '/secretary/GetCode'
+        var authUrl = '/secretary/SwitchAccount'
+//        var userId = 11;
+//        var mobile = '13269031795';
+        var auth_url = '/secretary/SwitchAccount';
+        var qualification_url = '/'
+        var recognitionUrl = '/';
+        var isFromShopCGBBank=true;
+        var order_creating_url = '/secretary/Create'
+        var order_updating_url = '/secretary/Create'
+        var user_center_url = '###';
+        var snap_index_url = '####';
+        var orderId = 1233123;
+        var cgbFormActionUrl = ''
+
+        // var carPriceName = '参考价'
+        // var carPriceText = '11.5'
+        var carImgUrl = 'http://img1.bitautoimg.com/autoalbum/files/20160725/925/0436539251_2.jpg'
+        var carName = '大众宝来三厢2016款 双离合TSI 1.6L运动款'
+
+        /*var mobile = '18575832500';*/
+       /* var identityNumber = '370303198703187410';*/
+        /*var userName = '王之彦'*/
+        // var isLoggedIn = true;
+        // var isAuthenticated =true;
+
+        var mobile = '';
+        var identityNumber = '';
+        var userName = ''
+        var isLoggedIn = false;
+        var isAuthenticated =false;
+
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="main">
+    <Auth></Auth>
+</div>
+
+<input type="hidden" value="1123" name="test">
+<!--广发银行表单-->
+<form action="/" method="post" id="cgbSendInfoForm">
+<input type="hidden" name="applyAmt" required="required" value="">
+<input type="hidden" name="custName" value="">
+<input type="hidden" name="certNo" value="">
+<input type="hidden" name="carPrice" required="required" value="">
+<input type="hidden" name="itemNo" required="required" value="">
+<input type="hidden" name="mobilePhone" value="">
+<input type="hidden" name="mergeProvince" value="">
+<input type="hidden" name="mergeCity" value="">
+<input type="hidden" name="mergeArea" value="">
+<input type="hidden" name="orderNo" required="required" value="">
+<input type="hidden" name="signature" required="required" value="">
+</form>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

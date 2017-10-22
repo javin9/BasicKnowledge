@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="param">
+  <header class="header-bar">
+      <a href="javascript:history.back();" class="nav-back"></a>
+      <h1 class="font-nav">参数配置</h1>
+      <span></span>
+  </header>
+
+  <!-- 参数配置列表 -->
+  <section class="param-ctn">
+    <h2 class="car-name">奥迪A6L 2016款 TFSI技术型</h2>
+    <!-- 基本信息 -->
+    <dl>
+      <dt id="group_1">
+        <p>注：以下参数配置信息仅供参考，实际参数以卖家售卖车辆为准</p>
+        <h4>基本信息</h4>
+      </dt>
+      <dd id="price" class="uf">
+        <div class="uf-f1">厂商指导价</div>
+        <div class="uf-f1"><a href="http://m.daikuan.com/BuycarCalculator?from=776" class="calculator"></a>41.35万</div>
+      </dd>
+      <dd id="4S" class="uf">
+        <div class="uf-f1">4S店平均报价</div>
+        <div class="uf-f1">27.24万</div>
+      </dd>
+      <dd id="guarantee" class="uf">
+        <div class="uf-f1">保修政策</div>
+        <div class="uf-f1">三年或10万公里</div>
+      </dd>
+      <dd id="displacement" class="uf">
+        <div class="uf-f1">排量（L）</div>
+        <div class="uf-f1">1.8</div>
+      </dd>
+      <dd id="gearbox " class="uf">
+        <div class="uf-f1">变速箱</div>
+        <div class="uf-f1 ut-s">7挡双离合</div>
+      </dd>
+      <dd id="general " class="uf">
+        <div class="uf-f1">综合工况油耗</div>
+        <div class="uf-f1">6.5</div>
+      </dd>
+      <dd id="netFriend" class="uf">
+        <div class="uf-f1">网友油耗</div>
+        <div class="uf-f1">9.81</div>
+      </dd>
+      <dd id="official" class="uf">
+        <div class="uf-f1">官方0-100公里加速时间</div>
+        <div class="uf-f1">8.5</div>
+      </dd>
+      <dd id="maxSpeed" class="uf">
+        <div class="uf-f1">最高车速（km/h）</div>
+        <div class="uf-f1">235</div>
+      </dd>
+      <dd id="people" class="uf">
+        <div class="uf-f1">乘员人数（含司机）</div>
+        <div class="uf-f1">5个</div>
+      </dd>
+    </dl>
+    <!-- 车体 -->
+    <dl id="body">
+      <dt id="group_2" class="uf">
+        <div>车体</div>
+        <div class="uf-f1">
+          <span class="standard">标配</span>
+          <span class="matching">选配</span>
+          <span class="default">无</span>
+        </div>
+      </dt>
+      <dd id="color" class="uf body-color">
+        <div class="uf-f1">车身颜色</div>
+        <div class="uf-f1">
+          <span>神秘黑、</span>
+          <span>碧玺绿套星光银、</span>
+          <span>正红闪光贝蓝、</span>
+          <span>激情红普通漆、</span>
+          <span>纳斯达克银、</span>
+          <span>香槟金、</span>
+          <span>勃艮第红、</span>
+          <span>勃艮第红、</span>
+          <span>金、</span>
+          <span>神秘黑、</span>
+          <span>珍珠白、</span>
+          </div>
+      </dd>
+      <dd id="length" class="uf">
+        <div class="uf-f1">车长</div>
+        <div class="uf-f1">4818mm</div>
+      </dd>
+      <dd id="width" class="uf">
+        <div class="uf-f1">车宽</div>
+        <div class="uf-f1">1843mm</div>
+      </dd>
+      <dd id="height" class="uf">
+        <div class="uf-f1">车高</div>
+        <div class="uf-f1">1432mm</div>
+      </dd>
+      <dd id="wheelbase" class="uf">
+        <div class="uf-f1">轴距</div>
+        <div class="uf-f1"><i class="default"></i></div>
+      </dd>
+      <dd id="frontTrack" class="uf">
+        <div class="uf-f1">前轮距</div>
+        <div class="uf-f1"><i></i></div>
+      </dd>
+      <dd id="rearWheel" class="uf">
+        <div class="uf-f1">后轮距</div>
+        <div class="uf-f1"><i class="bundled"></i></div>
+      </dd>
+      <dd id="curb" class="uf">
+        <div class="uf-f1">整备质量</div>
+        <div class="uf-f1">1565kg</div>
+      </dd>
+      <dd id="fullLoad" class="uf">
+        <div class="uf-f1">满载质量</div>
+        <div class="uf-f1">1565kg</div>
+      </dd>
+      <dd id="minDisGround" class="uf">
+        <div class="uf-f1">最小离地间距</div>
+        <div class="uf-f1">110mm</div>
+      </dd>
+    </dl>
+  </section>
+
+  <!-- 导航 -->
+  <section class="param-nav">
+    <div class="left uf hide" v-show='isShowClassify'>
+      <div class="uf-f1">
+        <a href="javascript:void(0);" v-on:click="onClickToScroll('basic')">基本信息</a>
+        <a href="javascript:void(0);" v-on:click="onClickToScroll('chassis')">底盘制动</a>
+        <a href="javascript:void(0);" v-on:click="onClickToScroll('driving')">行车辅助</a>
+        <a href="javascript:void(0);" v-on:click="onClickToScroll('inside')">内部配置</a>
+        <a href="javascript:void(0);" v-on:click="onClickToScroll('pleasure')">娱乐通讯</a>
+        <a href="javascript:void(0);" v-on:click="onClickToScroll('safety')">安全配置</a>
+        <a href="javascript:void(0);" v-on:click="onClickToScroll('airCon')">空调/冰箱</a>
+      </div>
+      <div class="uf-f1">
+        <a href="javascript:void(0);" v-on:click="onClickToScroll('body')">车体</a>
+        <a href="javascript:void(0);" v-on:click="onClickToScroll('wheel')">车轮</a>
+        <a href="javascript:void(0);" v-on:click="onClickToScroll('light')">灯光</a>
+        <a href="javascript:void(0);" v-on:click="onClickToScroll('seat')">座椅</a>
+        <a href="javascript:void(0);" v-on:click="onClickToScroll('engine')">发动机</a>
+        <a href="javascript:void(0);" v-on:click="onClickToScroll('door')">门窗/后视镜</a>
+        <a href="javascript:void(0);" v-on:click="onClickToScroll('battery')">电池/发动机</a>
+      </div>
+    </div>
+    <div id="classify" class="right" v-on:click="showClassify"></div>
+  </section>
+  <!-- app下载 -->
+  <!-- <down></down> -->
+</div>
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

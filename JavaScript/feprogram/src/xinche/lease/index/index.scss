@@ -1,0 +1,755 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+$main: #E9474D;
+$main_bg: #E9474D;
+
+$main-lease: #FF3047;
+$border-color: #e5e5e5;
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+}
+
+.banner {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+
+  .swiper-container {
+    position: relative;
+    height: 420px;
+  }
+
+  .swiper-slide {
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+  }
+
+  img {
+    display: block;
+    position: relative;
+    left: 50%;
+    width: 1920px;
+    height: 420px;
+    margin-left: -960px;
+  }
+
+  .swiper-pagination {
+    position: absolute;
+    z-index: 300;
+    bottom: 15px;
+    left: 50%;
+    width: 400px;
+    margin-left: -200px;
+    text-align: center;
+
+    .swiper-pagination-switch {
+      margin: 0 5px;
+    }
+  }
+
+  .filter-box {
+    position: absolute;
+    z-index: 100;
+    left: 50%;
+    top: 30px;
+    margin-left: -600px;
+    width: 300px;
+    height: 340px;
+    background: #ffffff;
+    border-radius: 5px;
+
+    dl {
+      padding: 10px 10px 20px 20px;
+
+      dt {
+        margin-top: 10px;
+        margin-bottom: 6px;
+        font-size: 16px;
+        line-height: 24px;
+        color: $main;
+      }
+
+      dd {
+        overflow: hidden;
+        margin-right: -20px;
+        font-size: 14px;
+        line-height: 22px;
+        max-height: 64px;
+        overflow: hidden;
+
+        a {
+          float: left;
+          margin-bottom: 10px;
+          margin-right: 20px;
+          margin-right: 15px; // todo
+          color: #666666;
+
+          &:hover {
+            color: $main;
+          }
+        }
+      }
+    }
+
+    .all-cars {
+      margin: 0 20px;
+      border-top: 1px solid $border-color;
+
+      a {
+        display: block;
+        padding: 19px 0;
+        text-align: center;
+        font-size: 16px;
+        line-height: 24px;
+        color: $main;
+      }
+    }
+  }
+}
+
+.container-center {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    clear: both;
+  }
+}
+
+section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .title {
+    margin-bottom: 0;
+    padding: 0 0 30px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 34px;
+    color: #394043;
+  }
+
+  &.banner {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  // 标签
+  .tag-special {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100px;
+    height: 40px;
+    background: url(images/tag-special.png) no-repeat;
+    color: #ffffff;
+
+    .tag-special-l {
+      float: left;
+      width: 12px;
+      font-size: 12px;
+      line-height: 17px;
+      padding: 3px 8px 3px 6px;
+      background: url(images/dash-2.png) repeat-y right 1px;
+    }
+
+    .tag-special-r {
+      display: block;
+      margin-left: 26px;
+      height: 40px;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+
+      span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      &:after {
+        content: ' ';
+        display: inline-block;
+        width: 0;
+        height: 100%;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .tag-hot {
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    width: 46px;
+    height: 50px;
+    background: url(images/tag-hot.png) no-repeat;
+    color: #ffffff;
+    text-align: center;
+
+    .tag-hot-con {
+      display: block;
+      padding-top: 3px;
+      width: 100%;
+      height: 40px;
+      font-size: 14px;
+      line-height: 20px;
+
+      span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      &:after {
+        content: ' ';
+        display: inline-block;
+        width: 0;
+        height: 40px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  // 活动专区
+  &.activity-first {
+    padding-top: 20px;
+    margin-bottom: -50px;
+
+    .product-list {
+      margin-right: -20px;
+      overflow: hidden;
+
+      li {
+        position: relative;
+        float: left;
+        width: 285px;
+        margin-right: 20px;
+
+        a {
+          display: block;
+          border: 1px solid $border-color;
+
+          &:hover {
+            border-color: $main_bg;
+          }
+        }
+
+        .image {
+          width: 210px;
+          height: 140px;
+          margin: 26px auto;
+          overflow: hidden;
+
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+
+        .text {
+          height: 94px;
+        }
+
+        .tit {
+          padding: 10px 20px 4px;
+          font-size: 16px;
+          line-height: 24px;
+          height: 48px;
+          overflow: hidden;
+          color: #394043;
+        }
+
+        .tax {
+          padding: 0 20px;
+          font-size: 14px;
+          line-height: 22px;
+          color: $main-lease;
+        }
+
+        .price {
+          position: relative;
+          width: 285px;
+          height: 96px;
+          margin-left: -1px;
+          margin-bottom: -1px;
+          background: url(images/bg-red.png) no-repeat;
+          color: #ffffff;
+          overflow: hidden;
+
+          dl {
+            position: relative;
+            float: left;
+            width: 163px;
+            padding: 0 20px;
+            top: 11px;
+            line-height: 36px;
+
+            dt, dd {
+              font-size: 14px;
+              margin-bottom: 5px;
+              height: 36px;
+              line-height: 36px;
+            }
+
+            dt {
+              float: left;
+              clear: left;
+              width: 4em;
+              text-align: justify;
+              overflow: hidden;
+
+              &:after {
+                content: ' ';
+                display: inline-block;
+                width: 100%;
+                height: 0;
+                line-height: 0;
+              }
+            }
+
+            dd {
+              margin-left: 4em;
+              text-align: right;
+
+              em {
+                font-style: normal;
+                font-size: 22px;
+              }
+            }
+          }
+
+          &:after {
+            content: ' ';
+            position: absolute;
+            top: 20px;
+            left: 203px;
+            width: 2px;
+            height: 60px;
+            background: url(images/dash-1.png) repeat-y left top;
+          }
+        }
+
+        .go {
+          position: absolute;
+          bottom: 23px;
+          right: 20px;
+          width: 32px;
+          height: 32px;
+          padding: 6px;
+          font-size: 14px;
+          line-height: 16px;
+          text-align: center;
+          background: #ffffff;
+          color: $main-lease;
+
+          &:after {
+            content: ' ';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            border-left: 8px solid #ffffff;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            margin-top: -5px;
+          }
+        }
+      }
+    }
+  }
+
+  // 活动标题
+  &.activity-second {
+    margin-top: 50px;
+    background: #F8F8F8;
+
+    ul {
+      margin-right: -20px;
+      margin-bottom: -20px;
+
+      li {
+        position: relative;
+        float: left;
+        width: 416px;
+        height: 210px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        background: #FFFFFF;
+        box-shadow: 0 4px 10px 4px rgba(89,131,181,0.06);
+
+        a {
+          display: block;
+          height: 208px;
+          border: 1px solid #ffffff;
+
+          &:hover {
+            border-color: $main-bg;
+
+            .go {
+              color: #ffffff;
+              background-image: url(images/back-white.png);
+              background-color: $main-lease;
+            }
+          }
+        }
+
+        .tag-special {
+          top: 0;
+          left: 0;
+        }
+
+        .tag-hot {
+          left: auto;
+          top: 0;
+          right: 10px;
+        }
+
+        .image {
+          position: absolute;
+          top: 69px;
+          right: 10px;
+          width: 210px;
+          height: 140px;
+          overflow: hidden;
+
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+
+        .text {
+          margin-left: 20px;
+          margin-top: 20px;
+          width: 270px;
+          height: 74px;
+
+          .tit {
+            font-size: 16px;
+            line-height: 24px;
+            height: 48px;
+            overflow: hidden;
+            color: #394043;
+          }
+
+          .tax {
+            margin-top: 4px;
+            font-size: 14px;
+            line-height: 22px;
+            color: #7684D3;
+          }
+        }
+
+        .price {
+          margin-top: 14px;
+          margin-left: 20px;
+
+          dl {
+            position: relative;
+            width: 160px;
+            line-height: 36px;
+
+            dt, dd {
+              font-size: 14px;
+              margin-bottom: 2px;
+              height: 36px;
+              line-height: 36px;
+            }
+
+            dt {
+              float: left;
+              clear: left;
+              width: 4em;
+              text-align: justify;
+              overflow: hidden;
+              color: #686868;
+
+              &:after {
+                content: ' ';
+                display: inline-block;
+                width: 100%;
+                height: 0;
+                line-height: 0;
+              }
+            }
+
+            dd {
+              margin-left: 4em;
+              text-align: right;
+              color: $main-lease;
+
+              em {
+                font-style: normal;
+                font-size: 22px;
+              }
+            }
+          }
+        }
+
+        .go {
+          display: none;
+        }
+
+        &.prime {
+          width: 328px;
+          height: 440px;
+
+          a {
+            height: 438px;
+          }
+
+          .image {
+            position: static;
+            margin: 40px auto;
+            width: 240px;
+            height: 160px;
+          }
+
+          .text {
+            position: relative;
+            width: auto;
+            margin: 106px 20px 0;
+
+            .tax {
+              position: absolute;
+              left: 0;
+              top: -38px;
+            }
+          }
+
+          .price {
+            position: absolute;
+            left: 20px;
+            top: 220px;
+            width: 288px;
+            height: 42px;
+            background: url(images/downpayment.png) no-repeat center center;
+            margin: 0;
+
+            dt, dd {
+              float: none;
+              display: inline-block;
+              color: #ffffff;
+              margin: 0;
+              vertical-align: middle;
+              height: 36px;
+              line-height: 36px;
+            }
+
+            dt {
+              width: auto;
+              margin-right: 2px;
+            }
+
+            dd {
+              margin-top: -1px;
+            }
+
+            .downpayment {
+              position: absolute;
+              top: 3px;
+              right: 0px;
+              width: 166px;
+              white-space: nowrap;
+              text-align: center;
+            }
+
+            .monthly-payment {
+              position: absolute;
+              left: 0;
+              top: 8px;
+              width: 138px;
+              white-space: nowrap;
+              text-align: center;
+
+              dd {
+                margin-top: -3px;
+                em {
+                  font-size: 20px;
+                }
+              }
+            }
+          }
+
+          .go {
+            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: 30px;
+            width: 56px;
+            padding: 0 47px 0 35px;
+            height: 30px;
+            border: 1px solid $main-lease;
+            background: url(images/back.png) no-repeat 97px center;
+            border-radius: 16px;
+            margin-left: -70px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: $main-lease;
+          }
+        }
+      }
+    }
+  }
+
+  &.recommond-more {
+    padding-bottom: 20px;
+  }
+
+  // 全部车源
+  &.ki-all {
+    padding: 0;
+
+    .title {
+      padding: 0;
+
+      a {
+        display: block;
+        font-size: 14px;
+        font-weight: normal;
+        height: 48px;
+        line-height: 48px;
+        border: 1px solid $border-color;
+        color: #394043;
+
+        &:hover {
+          color: $main-lease;
+          border-color: $main-lease;
+        }
+      }
+    }
+  }
+
+  // 申请流程
+  &.ki-process {
+    .process {
+      margin-top: 10px;
+      height: 75px;
+      background: url(images/progress.png) no-repeat center center;
+    }
+  }
+}
+
+#Footer {
+  margin-top: 0;
+}
+
+.ki-list {
+  margin-right: -20px;
+  margin-bottom: -20px;
+  overflow: hidden;
+
+  li {
+    position: relative;
+    float: left;
+    width: 285px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    a {
+      display: block;
+      position: relative;
+      height: 378px;
+      border: 1px solid $border-color;
+
+      &:hover {
+        border-color: $main-bg;
+      }
+    }
+
+    .price {
+      position: relative;
+      width: 153px;
+      height: 91px;
+      margin: 30px auto 0;
+      overflow: hidden;
+
+      dl {
+        position: relative;
+        line-height: 34px;
+
+        dt {
+          float: left;
+          clear: left;
+          font-size: 14px;
+          color: $main-lease;
+          width: 4em;
+          text-align: justify;
+          height: 34px;
+          overflow: hidden;
+
+          &:after {
+            content: ' ';
+            display: inline-block;
+            width: 100%;
+            height: 0;
+            line-height: 0;
+          }
+        }
+
+        dd {
+          height: 34px;
+          margin-left: 4em;
+          text-align: right;
+          color: $main-lease;
+
+          em {
+            font-style: normal;
+            font-size: 22px;
+          }
+        }
+
+        &.downpayment {
+          border-bottom: 1px solid #F4F4F4;
+        }
+      }
+
+      .tax {
+        font-size: 14px;
+        line-height: 22px;
+        background: $main-lease;
+        color: #ffffff;
+        text-align: center;
+        border-radius: 2px;
+      }
+    }
+
+    .image {
+      width: 210px;
+      height: 140px;
+      margin: 6px auto;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .text {
+      margin: 10px 20px 0;
+
+      .tit {
+        font-size: 16px;
+        line-height: 24px;
+        height: 48px;
+        overflow: hidden;
+        color: #394043;
+      }
+
+      .car-price {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 22px;
+        color: #989898;
+      }
+    }
+  }
+}

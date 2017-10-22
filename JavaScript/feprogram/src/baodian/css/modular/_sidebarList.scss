@@ -1,0 +1,106 @@
+@import 'sassHelper/mixin';
+@import "./vars";
+
+@mixin sidebarList{
+	width: 100%;
+	border:1px solid #eee;
+	box-sizing:border-box;
+
+	h3{
+		background: #fafafa;
+		height:44px;
+		line-height: 44px;
+		font-size:18px;
+		color:#000;
+		border-bottom:1px solid #eee;
+		padding:0 30px;
+	}
+
+	ul{
+		padding:20px 18px 5px;
+
+		li{
+			margin-bottom: 15px;
+		}
+
+		a{
+			color:#333;
+
+			&:hover h6{
+				color:$colorMain;
+			}
+		}
+
+		h6{
+			font-size:16px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+
+		em{
+			font-size:14px;
+			font-style:normal;
+			background: #8f8f8f;
+			margin-right: 8px;
+			color:#fff;
+			border-radius:3px;
+			display: inline-block;
+			width: 20px;
+			text-align: center;
+
+			&.hot{
+				background: #eb4549;
+			}
+		}
+
+		p{
+			color:#999;
+			font-size:14px;
+			padding-left:27px;
+			padding-top: 8px;
+			overflow: hidden;
+
+			span{
+				&:first-child{
+					float: left;
+				}
+				&:last-child{
+					float: right;
+				}
+			}
+		}
+	}
+
+	dl{
+		dt{
+			position: relative;
+			img{
+				width: 100%;
+				display: block;
+			}
+			h6{
+				@include ellipsis(100%);
+				position: absolute;
+				bottom:0;
+				left:0;
+				height:30px;
+				line-height: 30px;
+				color:#fff;
+				width: 100%;
+				background:#000;
+				background:rgba(0,0,0,.6);
+				font-size:14px;
+				padding:0 20px;
+				box-sizing:border-box;
+			}
+		}
+
+		li{
+			@include ellipsis(100%);
+			font-size:14px;
+			margin-bottom: 10px;
+			display: block;
+		}
+	}
+}

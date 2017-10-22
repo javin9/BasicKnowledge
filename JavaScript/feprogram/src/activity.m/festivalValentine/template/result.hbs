@@ -1,0 +1,43 @@
+{{#if lts}}
+<header class="topguide" id="topGuide">
+    <h2>根据您的相关资质，下面这款金融产品最适合您</h2>
+    <p>月供及贷款成本仅供参考，稍后会有专属电话客服与您联系。</p>
+</header>
+<article class="form_wrap res_module" id="res_cont">
+</article>
+<div class="btn-div">
+    {{#if shouldShowLinks}}
+    <div>
+        <a class="btn-fanhui" href="javascript:void(0)">返回首页</a>
+        <a class="btn-chakan" href="javascript:void(0)">查看申请进度</a>
+    </div>
+    {{/if}}
+    <p>选择更多金融产品，更高审批通过几率</p>
+</div>
+{{else}}
+        <div class="success-top success-top-zy" id="successTopZy">
+            {{#if shouldShowLinks}}
+                <div class="success-top-btn">
+                    <a href="javascript:void(0);" class="btn-only"></a>
+                </div>
+            {{/if}}
+
+            <p>分享好友，即享首付直减！</p>
+            <p>参与活动，赢取0息机会！</p>
+        </div>
+
+        <div class="success-top" id="successTop">
+            <div class="succ-icon"></div>
+            <p>您已成功提交申请，贷款顾问将会尽快联系您</p>
+        
+            {{#if shouldShowLinks}}
+                <div class="success-top-btn">
+                    <a class="btn-fanhui" href="javascript:void(0)">返回首页</a>
+                    <a class="btn-chakan" href="javascript:void(0)">查看订单</a>
+                </div>
+            {{/if}}
+        </div>
+
+{{/if}}
+
+<div id="other-wrapper"></div>

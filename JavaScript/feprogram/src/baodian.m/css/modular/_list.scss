@@ -1,0 +1,298 @@
+@import 'sassHelper/mixin';
+
+%commom-item{
+  @include clearfix;
+  display: block;
+  padding-bottom: px2rem(30);            
+  border-bottom:1px solid #eee;
+  background:#fff;
+
+  dt{
+    float: left;
+    position: relative;
+    margin-right: px2rem(30);
+    img{
+        width: px2rem(260);
+        height:px2rem(150);
+    }
+
+    .icon-play{
+        @include icon(play,px2rem(60),px2rem(60));
+        position: absolute;
+        left:50%;
+        top:50%;
+        margin-left: px2rem(-30);
+        margin-top: px2rem(-30);
+    }
+  }
+
+  dd{
+    overflow: hidden;
+
+    h3{
+        @include fsize(30);
+        height:px2rem(124);
+        color:#000;
+        line-height: 1.8;
+        white-space:normal;
+        max-height:px2rem(120);
+        overflow: hidden;
+    }
+
+    p{
+        @include fsize(24);
+        color:#999;
+
+        span{
+          margin-right: px2rem(20);
+        }
+    }
+  }
+}
+
+%show-item{
+  display: block;
+  background:#fff;
+  padding:px2rem(30);
+  margin-bottom: px2rem(20);
+
+  dt{
+      @include clearfix;
+    }
+
+    dd{
+      p{
+        @include fsize(30);
+        margin:px2rem(30) 0 px2rem(20);
+        color:$font-dark;
+        line-height: 1.5;
+      }
+
+    }
+
+    .show-list-info{
+
+      &-wrapper{
+        overflow: hidden;
+
+        p{
+          overflow: hidden;
+        }
+      }
+
+      img{
+        width: px2rem(80);
+        height:px2rem(80);
+        border-radius:px2rem(80);
+        margin-right: px2rem(25);
+        float: left;
+      }
+
+      &-name{
+        @include fsize(32);
+        margin: px2rem(5) 0 px2rem(10);
+        color:$font-dark;
+      }
+
+      &-des{
+        @include fsize(24);
+        float: left;
+        color:$font-light;
+      }
+
+      &-status{
+        @include fsize(24);
+        float: right;
+        color:$font-light;
+
+        span{
+          display: inline-block;
+          margin-left: px2rem(40);
+        }
+
+        .icon-browser:before{
+          @include icon(show,px2rem(31),px2rem(21));
+          content:' ';
+          display: inline-block;
+          margin-right: px2rem(10);
+        }
+
+        .icon-like:before{
+          @include icon(like,px2rem(21),px2rem(21));
+          content:' ';
+          display: inline-block;
+          margin-right: px2rem(10);
+        }
+      }
+    }
+
+    .show-list-img{
+      @include clearfix;
+
+      .img-wrapper{
+        float: left;
+        box-sizing:border-box;
+        width: px2rem(220);
+        height:px2rem(160);
+        margin-right: px2rem(10);
+        overflow: hidden;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+
+      &.img-normal .img-wrapper{
+        width: px2rem(330);
+        height:px2rem(240);
+      }
+
+      &.img-large .img-wrapper{
+        width: px2rem(440);
+        height:px2rem(320);
+      }
+    }
+}
+
+@mixin list{
+	background:#f2f2f2;
+  position:relative;
+  position: absolute;
+  overflow: hidden;
+  top:px2rem(173);
+  bottom:0;
+  width: 10rem;
+
+  
+
+  // 通用列表样式
+  .common-list{
+    background:#fff;
+
+    li{
+        padding:px2rem(30) px2rem(30) 0;
+
+        &:last-child a{
+            border-bottom: 0;
+        }
+    }
+
+    a{
+      @extend %commom-item;
+    }
+  }
+
+  // 车主晒单列表样式
+  .show-list{
+
+    li:last-child a{
+      margin-bottom: 0;
+    }
+
+    a{
+      @extend %show-item;
+    }
+  }
+
+  // 首页精选样式
+  .mix-list{
+    .swiper-container{
+      height:px2rem(220);
+    }
+    .swiper-slide a,.swiper-slide img{
+      width: px2rem(750);
+      height:px2rem(220);
+    }
+
+    .swiper-pagination{
+      text-align: right;
+      padding:0 px2rem(30);
+      box-sizing:border-box;
+      position: absolute;
+      right:0;
+      bottom:px2rem(15);
+      width: auto;
+      left:auto;
+
+      .swiper-pagination-bullet{
+        @include size(px2rem(13));
+        margin:0 px2rem(5);
+        border-radius:50%;
+        box-sizing: border-box;
+        border:0 !important;
+
+        &-active{
+          background:$font-current;
+        }
+      }
+    }
+
+    a.common-item{
+      @extend %commom-item;
+      padding:px2rem(30);
+    }
+
+    a.show-item{
+      @extend %show-item;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .show-item-footer{
+      @include clearfix;
+      @include fsize(30);
+      background:#fff;
+      padding:px2rem(30);
+      margin-bottom: px2rem(20);
+
+
+      span{
+        float: left;
+        color:#000;
+      }
+
+      a{
+        float: right;
+        color:#666;
+        position: relative;
+        display: block;
+        padding-right: px2rem(20);
+
+        &:after{
+          @include arrow(right, px2rem(18));
+          border-width: px2rem(3);
+        }
+      }
+    }
+  }
+
+
+  .pull-request{
+    @include fsize(24);
+    padding: 5px 10px;
+    color: $font-dark;
+    background: #fff;
+    height: px2rem(60);
+    line-height: px2rem(60);
+    width: 100%;
+    text-align: center;
+
+    .icon-pull-up {
+      @include icon(pull,px2rem(36),px2rem(36));
+      display: inline-block;
+      position: relative;
+      top: px2rem(8);
+      margin-right: px2rem(10);
+    }
+  }
+}
+
+.list-banner{
+  img{
+    width: 100%;
+    display: block;
+  }
+}

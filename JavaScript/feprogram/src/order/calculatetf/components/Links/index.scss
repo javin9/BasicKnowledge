@@ -1,0 +1,48 @@
+@import "sassHelper/mixin";
+@import "../../vars";
+
+.links-wrapper{
+  text-align: center;
+  margin:30px 0;
+}
+
+a.button-link, span.button-link{
+  display: inline-block;
+  width: 180px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 24px;
+  font-size:18px;
+  background:$main;
+  color:#fff;
+  border-radius: 2px;
+  
+  &:hover{
+    color:#fff;
+  }
+
+  &.disabled{
+    background:#D0D0D0;
+  }
+
+}
+
+span.button-link{
+  background:#D0D0D0;
+}
+
+a.normal-link{
+  color:#666;
+  text-decoration: underline;
+
+  &:hover{
+    color:$main;
+    text-decoration: underline;
+  }
+
+  &:after{
+    content: '>>';
+    font-family:SimSun;
+  }
+}

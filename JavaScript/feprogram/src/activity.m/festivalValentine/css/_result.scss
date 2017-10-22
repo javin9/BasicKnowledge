@@ -1,0 +1,35 @@
+.success-top{
+	background:#fff;
+	position: relative;
+	width: 100%;
+	height:px2rem(416);
+	padding:px2rem(60) 0;
+
+	.succ-icon{
+		@include size(px2rem(110));
+		background:url(./images/succ.png) no-repeat left top;
+		background-size: contain;
+		margin:0 auto px2rem(30);
+	}
+
+	p{
+		color:#000;
+		font-size:px2rem(30);
+		text-align: center;
+	}
+
+	&-btn{
+		text-align: center;
+		margin-top: px2rem(38);
+
+		span{
+			display: inline-block;
+			margin:0 px2rem(40);
+			width: px2rem(200);
+			height:auto;
+			line-height: px2rem(74);
+			font-size:px2rem(32);
+			border-radius:px2rem(12);
+		}
+	}
+}

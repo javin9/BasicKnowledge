@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <style>
+    </style>
+    <script>
+        var api_url = 'http://192.168.151.118:8008';
+    </script>
+
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+
+    <body>
+        {{{htmlWebpackPlugin.options.header}}}
+        <div id="app">
+            <!-- header -->
+            <div action="GET-HEADER" data-text="易鑫车贷"></div>
+            <div class="wel-icon"></div>
+            <div class="wel-text">
+                <p><span></span>年年开新车，租买都灵活</p>
+                <p><span></span>10%超低首付，送购置税、一年车险</p>
+                <p><span></span>到期后可选：分期买车／继续租车</p>
+            </div>
+            <a href="#" class="ok-btn">立即进入</a>
+        </div>
+
+
+        <script src="{{htmlWebpackPlugin.options.common}}"></script>
+        {{{htmlWebpackPlugin.options.footer}}}
+        <script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+        <script src="{{htmlWebpackPlugin.options.script}}"></script>
+    </body>
+
+</html>

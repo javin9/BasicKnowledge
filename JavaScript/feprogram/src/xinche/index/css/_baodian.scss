@@ -1,0 +1,160 @@
+/*宝典*/
+@mixin baodianImg($width, $height, $bleft:left, $btop:top,$left:0,$top:0){
+    background: url(images/baodian.png) no-repeat $bleft $btop;
+    width: $width;
+    height:$height;
+    position: absolute;
+    left:$left;
+    top:$top;
+}
+
+.modular-baodian{
+  @include blockLayout;
+
+  &-hd{
+    @include blockTitle;
+  }
+
+  &-con{
+    overflow: hidden;
+  }
+
+  &-main{
+    float: left;
+    width: 420px;
+    margin-right: 22px;
+    background: #f4f4f4;
+
+    img{
+      width: 100%;
+      height:100%;
+    }
+
+    dt a{
+      position: relative;
+      display: block;
+      height:285px;
+
+      // for ie 10 :hover:after problem
+      &:hover{
+        cursor:pointer;
+      }
+
+      &:hover:after{
+        content:' ';
+        width: 100%;
+        height:100%;
+        box-sizing:border-box;
+        border:1px solid #e9474d;
+        position: absolute;
+        left:0;
+        top:0;
+        z-index: 99;
+      }
+
+      h6{
+        font-size:16px;
+        color:#fff;
+        position: absolute;
+        bottom:0;
+        width: 100%;
+        text-indent: 20px;
+        height:40px;
+        line-height: 40px;
+        background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAKCAYAAAB4zEQNAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDphNjczMDFkNS1jOTE5LTRlMjItOWIxNi1hYjVmMzFhZjY2YjMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjQ3QTVERkU1RTA0MTFFNkIxQzFFRDc4OEUwMjVFQTIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjQ3QTVERkQ1RTA0MTFFNkIxQzFFRDc4OEUwMjVFQTIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDphMjU1NGE1MC0xOTAzLTRkM2MtOTQ2Ni05ODdjODBmZDdiYWIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6YTY3MzAxZDUtYzkxOS00ZTIyLTliMTYtYWI1ZjMxYWY2NmIzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Cm7rmwAAABhJREFUeNpiZGBg2MyAAzAx4AEjRRIgwADUcADHFQahFwAAAABJRU5ErkJggg==);
+        background: rgba(0,0,0,.6);
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    dd{
+      padding:15px 18px 0;
+      height: 161px;
+      overflow: hidden;
+
+      p{
+        margin-bottom: 15px;
+
+        a{
+          font-size:14px;
+          color:#000;
+          line-height: 1.8;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          width: 100%;
+          display: block;
+
+          &:hover{
+            color:#e9474d;
+          }
+        }
+      }
+    }
+  }
+
+  &-sub{
+    overflow: hidden;
+
+    >a:hover dd h6{
+      color:#e9474d;
+    }
+
+    dl{
+      background: #f4f4f4;
+      overflow: hidden;
+
+      &:first-child{
+        margin-bottom: 20px;
+      }
+    }
+
+    dt{
+      float: left;
+      display: block;
+      width: 260px;
+      height: 220px;
+      position: relative;
+
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    dd{
+      overflow: hidden;
+      padding:20px;
+
+      h6{
+        font-size:18px;
+        color:#000;
+        padding:10px 0;
+      }
+
+      p{
+        font-size:14px;
+        color:#666;
+        line-height: 2;
+      }
+    }
+  }
+
+
+  .icon-baodian-shipin{
+    @include baodianImg(163px,40px,left,-80px);
+  }
+  .icon-baodian-baijia{
+    @include baodianImg(163px,40px,left,-40px);
+  }
+  .icon-baodian-baike{
+    @include baodianImg(163px,40px);
+  }
+  .icon-baodian-play{
+    @include baodianImg(62px,62px,left,-122px,50%,50%);
+    margin-left: -31px;
+    margin-top: -31px;
+  }
+}

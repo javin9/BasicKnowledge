@@ -1,0 +1,146 @@
+.zixun * {
+  box-sizing: border-box;
+}
+
+.wrap {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: box;
+  display: -webkit-box;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+.clamp2 {
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+}
+.clamp3 {
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+}
+.zixun {
+  padding-top: 34px;
+  header {
+    padding-bottom: 10px;
+    position: relative;
+    .zixun-title {
+      font-size: 30px;
+      font-weight: bold;
+      color: #000;
+      line-height: 46px;
+    }
+    .zixun-more {
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      position: absolute;
+      bottom:10px;
+      right: 0;
+      i {
+        display: inline-block;
+        width: 6px;
+        height: 10px;
+        margin-left: 10px;
+        background: url(./images/yxzx_arrow.png) no-repeat left top;
+      }
+      &:hover {
+        color: #E9474D;
+        i {
+          background-position: left bottom;
+        }
+      }
+    }
+  }
+
+  .zixun-body {
+    width: 1200px;
+    height: 481px;
+    .left {
+      width: 340px;
+      height: 481px;
+      overflow: hidden;
+
+      > img {
+        width: 100%;
+      }
+    }
+
+    .right {
+      width: 860px;
+      height: 480px;
+      box-sizing: border-box;
+      border-top: 1px solid #E5E5E5;
+      dl {
+        width: 100%;
+        font-size: 0;
+
+        dd {
+          width: 50%;
+          height: 240px;
+          padding: 20px 30px 0;
+          border-right: 1px solid #E5E5E5;
+          border-bottom: 1px solid #E5E5E5;
+          position: relative;
+
+          .header {
+            font-size: 20px;
+            color: #394043;
+            line-height: 30px;
+            @extend .wrap;
+            @extend .clamp2;
+            &:hover {
+              color: #E9474D;
+            }
+          }
+
+          .container {
+            margin: 20px 0 30px;
+            font-size: 14px;
+            color: #686868;
+            line-height: 22px;
+            @extend .wrap;
+            @extend .clamp3;
+          }
+
+          .footer {
+            font-size: 0;
+            color: #9C9FA1;
+            position: absolute;
+            bottom: 24px;
+            left: 30px;
+            .label {
+              display:inline-block;
+              height: 20px;
+              padding: 0 6px;
+              border: 1px solid #9C9FA1;
+              border-radius: 2px;
+              color: #9C9FA1;
+              font-size: 12px;
+              &.label-red {
+                color: #F8592D;
+                border: 1px solid #F8592D;
+              }
+
+              &.label-blue {
+                color: #628CF0;
+                border: 1px solid #628CF0;
+              }
+
+              &.label-green {
+                color: #1EC08D;
+                border: 1px solid #1EC08D;
+              }
+            }
+
+            span {
+              display: inline-block;
+              margin-left: 10px;
+              line-height: 20px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

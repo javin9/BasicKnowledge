@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <style>
+
+    </style>
+    <script>
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var BusinessLine = 551;
+        var getAdviserUrl = '/c2btf/GetAdvisers';
+        var getCarListUrl_M = '/Interface/GetMoreCarList_New';
+        var getCarListUrl_App = '/Interface/GetMoreCarList';
+        var indexUrl = '/c2btf/index?source=793&channel=667&from=';
+        var carPriceScope = '0|5';
+        var applyCountToday = 0;
+        var city = {"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":0,"SelectCityName":null,"LocateResultType":1};
+        var source = '793';
+        var channel = '667';
+        var from = '';
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+  <div id="yxWrapper">
+        <div id='wx_pic' style='margin:0 auto;display:none;'>
+            <img src='http://img1.bitautoimg.com/jinrong/newmweb/images/pic300.jpg?v=201612161917' />
+        </div>
+        
+<header class="header-bar">
+    <a id="backBtn"></a>
+    <h1 class="font-nav">先拿钱再看车</h1>
+    <span class=""></span>
+</header>
+<script src="http://img4.bitautoimg.com/jinrong/assets/headType.m/headTypeCookies.js?v=201612261940"></script>
+
+<article class="CustomerToCustomer">
+    <section class="c2b_banner"><img src="http://img2.bitautoimg.com/jinrong/newmweb/css/ershouche/images/c2b/banner.png?v=201612161917" /></section>
+    <section class="c2b_conter">
+        <!--登录页面 start-->
+        <div class="login_box  ">
+            <ul class="c2b_from">
+                <li class="row rowName">
+                    <div class="from_box_bg font_30">
+                        <div class="from_box">
+                            <div class="input"><input type="text" class="name font_30" id="name" placeholder="请输入姓名" maxlength="8" oninput="if(value.length>11) value=value.slice(0,8)" /></div>
+                        </div>
+                    </div>
+                    <div class="alert">请输入正确姓名</div>
+                </li>
+                <li class="row rowPhone">
+                    <div class="from_box_bg font_30">
+                        <div class="from_box">
+                            <div class="input"><input type="text" class=" font_30 Phone" id="Phone" placeholder="请输入手机号" maxlength="11" oninput="if(value.length>11) value=value.slice(0,9)" /></div>
+                            <div class="btn_code font_24" id="btnCode">获取验证码</div>
+                        </div>
+                    </div>
+                    <div class="alert">请输入正确手机号</div>
+                </li>
+                <li class="row">
+                    <div class="from_box_bg font_30">
+                        <div class="from_box">
+                            <div class="input"><input type="text" class="font_30 code" id="code" placeholder="请输入验证码" maxlength="6" oninput="if(value.length>11) value=value.slice(0,6)" /></div>
+                            <div class="btn"></div>
+                        </div>
+                    </div>
+                    <div class="alert">请输入正确验证码</div>
+                </li>
+            </ul>
+            <div class="btn_yellow font_30" id="submitLogin">获取额度</div>
+        </div>
+        <!--登录页面 end-->
+
+        <!--资质信息页面 start-->
+        <div class="qualification_box hide">
+            
+            <ul class="c2b_from">
+                <li class="row cityId">
+                    <div class="from_box_bg font_30">
+                        <div class="from_box">
+                            <div class="input"><font class="col_grey6">购车城市</font></div>
+                            <div class="choose_box">
+                                <div class="choose">北京</div>
+                                <div class="tip_box"><div class="tip_r"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert">请输入正确姓名</div>
+                </li>
+                <li class="row CarPriceScope">
+                    <div class="from_box_bg font_30">
+                        <div class="from_box">
+                            <div class="input"><font class="col_grey6">目标车价</font></div>
+                            <div class="choose_box selectBottom" data-aslider-in="occupation|fade|bottom">
+                                <div class="choose"><font class="col_grey9">请选择</font></div>
+                                <div class="tip_box"><div class="tip_r"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert">请选择车价</div>
+                </li>
+                <li class="row LoanMoney">
+                    <div class="from_box_bg font_30">
+                        <div class="from_box">
+                            <div class="input"><font class="col_grey6">贷款金额 (万）</font></div> 
+                            <div class="input_end"><input class="LoanMoney font_30" type="text" id="txtMile" placeholder="请输入" maxlength="4" onfocus="if($.trim($(this).val())=='请输入'){$(this).val('').focus()}"></div>
+                        </div>
+                    </div>
+                    <div class="alert">请输入贷款金额</div>
+                </li>
+            </ul>
+            <div class="btn_show_from">选填以下信息，额度平均提升30% <i class="tip_t"></i></div>
+            <div class="from_qualification_box">
+                <div class="c2b_qua_tip2 font_28">选填以下信息，额度平均提升30%</div>
+                <ul class="c2b_from">
+
+                    <li class="row Career" data-number="">
+                        <div class="from_box_bg font_30">
+                            <div class="from_box">
+                                <div class="input">
+                                    <font class="col_grey6">职业身份</font>
+                                </div>
+                                <div class="choose_box selectBottom" data-aslider-in="occupation2|fade|bottom">
+                                    <div class="choose">
+                                            <font class="col_grey9">请选择</font>
+                                    </div>
+                                    <div class="tip_box">
+                                        <div class="tip_r"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="row Insurance" data-number="">
+                        <div class="from_box_bg font_30">
+                            <div class="from_box">
+                                <div class="input">
+                                    <font class="col_grey6">社保证明</font>
+                                </div>
+                                <div class="choose_box selectBottom" data-aslider-in="occupation3|fade|bottom">
+                                    <div class="choose">
+                                            <font class="col_grey9">请选择</font>
+                                    </div>
+                                    <div class="tip_box">
+                                        <div class="tip_r"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blk10"></div>
+                    </li>
+
+                    <li class="row Income" data-number="">
+                        <div class="from_box_bg font_30">
+                            <div class="from_box">
+                                <div class="input">
+                                    <font class="col_grey6">税后收入</font>
+                                </div>
+                                <div class="choose_box selectBottom" data-aslider-in="occupation4|fade|bottom">
+                                    <div class="choose">
+                                            <font class="col_grey9">请选择</font>
+                                    </div>
+                                    <div class="tip_box">
+                                        <div class="tip_r"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="row Funds" data-number="">
+                        <div class="from_box_bg font_30">
+                            <div class="from_box">
+                                <div class="input">
+                                    <font class="col_grey6">公积金</font>
+                                </div>
+                                <div class="choose_box selectBottom" data-aslider-in="occupation5|fade|bottom">
+                                    <div class="choose">
+                                            <font class="col_grey9">请选择</font>
+                                    </div>
+                                    <div class="tip_box">
+                                        <div class="tip_r"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blk10"></div>
+                    </li>
+
+                    <li class="row Credit" data-number="">
+                        <div class="from_box_bg font_30">
+                            <div class="from_box">
+                                <div class="input">
+                                    <font class="col_grey6">信用记录</font>
+                                </div>
+                                <div class="choose_box selectBottom" data-aslider-in="occupation6|fade|bottom">
+                                    <div class="choose">
+                                            <font class="col_grey9">请选择</font>
+                                    </div>
+                                    <div class="tip_box">
+                                        <div class="tip_r"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="row HouseState" data-number="">
+                        <div class="from_box_bg font_30">
+                            <div class="from_box">
+                                <div class="input">
+                                    <font class="col_grey6">住房状况</font>
+                                </div>
+                                <div class="choose_box selectBottom" data-aslider-in="occupation7|fade|bottom">
+                                    <div class="choose">
+                                            <font class="col_grey9">请选择</font>
+                                    </div>
+                                    <div class="tip_box">
+                                        <div class="tip_r"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="btn_show_from">
+                    收起 <i class="tip_b"></i>
+                </div>
+            </div>
+            <div class="btn_yellow font_30" id="submitInfo">获取额度</div>
+            <form action='/c2b/Details' method="post" id="DetailsInfoForm">
+                <input name="UserName" type="hidden" value="">
+                <input name="CityId" type="hidden" value="">
+                <input name="CarPriceScope" type="hidden" value="">
+                <input name="LoanMoney" type="hidden" value="">
+                <input name="Channel" type="hidden" value="667">
+                <input name="Source" type="hidden" value='777'>
+                <input name="From" type="hidden">
+                <input name="Career" type="hidden" value="">
+                <input name="Income" type="hidden" value="">
+                <input name="Insurance" type="hidden" value="">
+                <input name="Funds" type="hidden" value="">
+                <input name="Credit" type="hidden" value="">
+                <input name="HouseState" type="hidden" value="">
+                <input type="submit" name="sub" value="" />
+            </form>
+        </div>
+        <!--资质信息页面 end-->
+    </section>
+    <section class="c2b_bottom_con">
+        <ul class="c2b_bot_ul font_24">
+            <li class="itme one_icon"><div class="btn_txt font_30">顾问陪同</div><div class="info">专家级顾问线下陪同，<span class="col_red">1对1</span>一站式免费服务</div></li>
+            <li class="itme two_icon"><div class="btn_txt font_30">审批快</div><div class="info">最快<span class="col_red">10秒钟</span>在线审批，最快可当日放款</div></li>
+            <li class="itme three_icon"><div class="btn_txt font_30">门槛低</div><div class="info">最简<span class="col_red">只需身份证</span></div></li>
+        </ul>
+    </section>
+</article>
+<!-----------------------------------弹框开始--------------------------------------------->
+<!--目标车价-->
+<aside class="sel-control-box CarPriceScope" data-aslider="occupation">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">目标车价</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                        <li data-id="770"   class="cur"   >5万以下</li>
+                        <li data-id="771" >5-10万</li>
+                        <li data-id="772" >10-15万</li>
+                        <li data-id="773" >15-20万</li>
+                        <li data-id="774" >20万以上</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+<!--职业身份-->
+<aside class="sel-control-box selCareer" data-aslider="occupation2">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">职业身份</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                        <li data-id="73"   class="cur"    >公务员/事业单位</li>
+                        <li data-id="74" >企业主</li>
+                        <li data-id="75" >个体户</li>
+                        <li data-id="76" >上班族</li>
+                        <li data-id="77" >自由职业者</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+<!--社保证明-->
+<aside class="sel-control-box selInsurance" data-aslider="occupation3">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">社保证明</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                    <li data-id="1"   class="cur"   >有社保</li>
+                    <li data-id="0" >无社保</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+<!--税后收入-->
+<aside class="sel-control-box selIncome" data-aslider="occupation4">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">税后收入</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                        <li data-id="66"   class="cur"   >3000元以下</li>
+                        <li data-id="67" >3000-5000元</li>
+                        <li data-id="68" >5000-8000元</li>
+                        <li data-id="69" >8000-12000元</li>
+                        <li data-id="108" >12000-20000元</li>
+                        <li data-id="109" >20000元以上</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+<!--公积金-->
+<aside class="sel-control-box selFunds" data-aslider="occupation5">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">公积金</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                    <li data-id="1"   class="cur"    >有公积金</li>
+                    <li data-id="0" >无公积金</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+<!--信用记录-->
+<aside class="sel-control-box selCredit" data-aslider="occupation6">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">信用记录</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                        <li data-id="71"   class="cur"    >信用良好</li>
+                        <li data-id="72" >少数逾期</li>
+                        <li data-id="70" >多次逾期</li>
+                        <li data-id="256" >无信用记录</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+<!--住房状况-->
+<aside class="sel-control-box selHouseState" data-aslider="occupation7">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">住房状况</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                        <li data-id="79"   class="cur"     >自有全款</li>
+                        <li data-id="80" >自有贷款</li>
+                        <li data-id="81" >租赁</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

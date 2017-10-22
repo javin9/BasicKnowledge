@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+
+</head>
+<script>
+ 
+    //车款信息
+    var car = {
+        masterBrandId: "77", //品牌ID
+        masterBrandName: "众泰", //品牌名称
+        masterBrandLogo: "", //品牌logoUrl
+        serialId: "3465", //车系ID
+        serialName: "T200",//车系名称
+        serialSpell: "zhongtait200", //车型全拼
+        carId: "103838", //车ID
+        carPrice: "5.3999", //车价
+        purchaseTaxRate: "5.3999" //购置税
+    };
+    var ershoucheCar = {
+        id: '11571961',
+        price: '2.98'
+    }
+    var packageInfo = {
+        name: '众泰T200 2013款 1.3L 手动 精英型',
+        price:2.98,//车主报价
+        newCarPrice:5.3999,//新车含税
+        intervalPrice:'2.60-2.76',
+        downPayment:0.298,
+        downPaymentRate:0.1,
+        repaymentPeriod:36,
+        monthlyPayment:0.090145,
+        orderNumber:1,
+        carImg: 'http://img1.bitautoimg.com/chedai/35f66dd3-8cd6-48f3-bb83-801853ccd335.jpg',
+        packageName:"二手车",
+        IsGuZhi:true
+    }
+    var cityInfo = {
+        localCityId:"3101",
+        cityId: "0",
+        cityName: "全国",
+        citySpell: "china",
+        regionId: "0",
+        selectCityLevel: "2",
+        selectCityName: "全国"
+    }
+    //产品
+    var product = {
+        productID: "112479",
+        packageID: "3977",
+        productPromotionId: "0"
+    };
+    //经销商信息
+    var dealer = {
+        dealerId: "0",
+        dealerName: "北京4S店平均报价"
+    };
+    var fromTxt = "";
+    var channel = "667";
+    var source = "1171";
+    var companyID = "472";
+    var adviserApi = "http://test.adviserapi.daikuan.com/";
+    var SoldOrUnSold = "0";
+    var ershoucheUrl = "http://test.ershouche.m.daikuan.com/";
+    var xincheUrl = "http://test.m.daikuan.com/";
+    var carParamUrl = "/carinfo/";
+
+</script>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+    <div id="yxWrapper">
+        <div id="app">
+            
+            <bottombtn v-bind:is-show-btn="isShowBtn" v-bind:apply-now="applyNow" v-bind:bottombtn="bottombtn" v-bind:submit="submit"></bottombtn>
+            <package v-bind:view-package-info="viewPackageInfo" v-bind:is-show-package="isShowPackage" v-bind:close-package="closePackage" v-bind:bottombtn="bottombtn"></package>
+            <Description v-bind:desc="desc" v-bind:is-show-description="isShowDescription" v-bind:close-description="closeDescription">
+                <div slot="descriptions"></div>
+            </Description>
+            <!--头部-->
+            <header id="cheliang" class="header-bar">
+                <a href="javascript:;" v-on:click="backList()" class="nav-back"></a>
+                <div>
+                    <a href="javascript:;" class="cur">车辆</a><a href="javascript:;" v-on:click="scrollTo('daikuan')">贷款</a><a href="javascript:;" v-on:click="scrollTo('tuijian')" >推荐</a>
+                </div>
+            </header>
+            <!--swiper start-->
+            <div class="detail_swiper" id="detailSwiper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img class="img" src="http://img1.bitautoimg.com/chedai/35f66dd3-8cd6-48f3-bb83-801853ccd335.jpg">
+                        </div>
+                        <div class="swiper-slide"><img class="img" src="http://img1.bitautoimg.com/chedai/3ec419e5-78ed-4c2a-b7e7-8cc1ffdc8782.jpg">
+                        </div>
+                        <div class="swiper-slide"><img class="img" src="http://img1.bitautoimg.com/chedai/3ec419e5-78ed-4c2a-b7e7-8cc1ffdc8782.jpg">
+                        </div>
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+                    <div class="pic_loaction font-ctn"><span></span>北京</div>
+                </div>
+            </div>
+            <!--车信息-->
+            <div class="info_wrapper"><info v-bind:view-package-info="viewPackageInfo"></info></div>
+
+      
+            <!--车辆档案-->
+            <div class="car-files">
+                <div class="car-files-title">车辆档案</div>
+                <div class="car-files-info">
+                    <div class="car-files-info-fx1">
+                        <div class="car-files-info-fx1-up">0.5万公里</div>
+                        <div class="car-files-info-fx1-dwon">表显里程</div>
+                    </div>
+                    <div class="car-files-info-fx1">
+                        <div class="car-files-info-fx1-up">2016-06</div>
+                        <div class="car-files-info-fx1-dwon">上牌日期</div>
+                    </div>
+                    <div class="car-files-info-fx1">
+                        <div class="car-files-info-fx1-up">北京</div>
+                        <div class="car-files-info-fx1-dwon">所在地</div>
+                    </div>
+                </div>
+                <div class="car-files-info">
+                    <div class="car-files-info-fx1">
+                        <div class="car-files-info-fx1-up">0.5万公里</div>
+                        <div class="car-files-info-fx1-dwon">表显里程</div>
+                    </div>
+                    <div class="car-files-info-fx1">
+                        <div class="car-files-info-fx1-up">2016-06</div>
+                        <div class="car-files-info-fx1-dwon">上牌日期</div>
+                    </div>
+                    <div class="car-files-info-fx1">
+                        <div class="car-files-info-fx1-up">北京</div>
+                        <div class="car-files-info-fx1-dwon">所在地</div>
+                    </div>
+                </div>
+            </div>
+            <!--参数配置-->
+            <ul class="car-file-ul">
+                <li><span  v-on:click="toCarParam"><i class="set"></i>参数配置</span></li>
+                <li id="ShowDescription"><span><i class="info"></i>车主描述</span></li>
+            </ul>
+            <!--贷款购车-->
+            <loan id="daikuan" v-bind:apply-now="applyNow"  v-bind:view-package-info="viewPackageInfo" v-bind:select_sort-is-show="select_sortIsShow" v-bind:select_sf-is-show="select_sfIsShow" v-bind:select_qx-is-show="select_qxIsShow"></loan>
+            <!--定制方案-->
+            <div class="detail-custom">
+                <div class="detail-custom-title">竟没有适合我的贷款方案</div>
+                <div class="detail-custom-text">先定个小目标，比方说定制个方案</div>
+                <div class="detail-custom-btn"><a href="/information/index.html">定制方案</a></div>
+            </div>
+            <!--更多推荐 最新成交 -->
+            <div id="tuijian" >
+                  <list v-bind:sourceidone="sourceidone" v-bind:sourceidtwo="sourceidtwo" v-bind:prosize="prosize" v-bind:car="car" v-bind:cityid="cityid"></list>
+            </div> 
+            <div class="detail-bottom">
+                <span class="detail-bottom-y-bian"></span>
+                <span class="detail-bottom-text">已经到底啦</span>
+                <span class="detail-bottom-z-bian"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+@import 'sassHelper/mixin';
+i, b { font-style: normal; }
+$main: #E9474D;
+[data-dpr="1"] .font-btn{
+  font-size: 16px; }
+[data-dpr="2"] .font-btn{font-size: 32px; }
+[data-dpr="3"] .font-btn{font-size: 48px; }
+
+.hide { display: none!important; }
+
+.form-box ul{background: #fff; padding-left:0.4rem; margin-bottom:0.266667rem; }
+.form-box ul li{display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; border-bottom:1px solid #eee; height:1.466667rem; line-height:1.466667rem; }
+.form-box ul li.warning{height:auto; line-height:200%; display:none; }
+.form-box ul li:last-child{border-bottom:none; }
+
+.form-box li i{display:block; width:0.48rem; height:0.62rem; background-size:px2rem(36) px2rem(36)!important; background-repeat: no-repeat; background-position:center center; position:relative; top:0.48rem; }
+.form-box li#SocialSecurity i,
+.form-box li#CertificateNumber i {background-image: url("images/id.png");}
+.form-box li#Income i{background-image: url("images/after-tax-income.png");}
+.form-box li#AccumulationFund i{ background-position: 0 -2.4rem; }
+.form-box li#Credit i{ background-image: url("images/credit-record.png"); }
+.form-box li#HouseState i{ background-position: 0 -4.04rem;display: none; }
+.form-box li#Education i{ background-image: url("images/xueli.png");}
+.form-box li#MaritalStatus i{background-image: url("images/married.png");}
+.form-box li#Work i,
+.form-box li#WorkDetail i,
+.form-box li#Career i {background-image: url("images/job.png");}
+.form-box li#Mobile i { background-position: 0 -6.266667rem; display: none; }
+.form-box li#Code i { background-position: 0 -7.093333rem;display: none; }
+.form-box li#DealerCode i { background-position: 0 -7.946667rem;display: none; }
+.form-box li#Mobile b,.form-box li#Code b,.form-box li#DealerCode b{padding-left:0}
+.form-box li#PurchaseTime i { background-position: -1.013333rem -7.946667rem;display: none; }
+.form-box li#UserName i{ background-position: -0.986667rem -7.133333rem;display: none; }
+.form-box li#UserName b,.form-box li#HouseState b,.form-box li#PurchaseTime b{padding-left:0}
+
+.form-box li em{ color:#d0d0d0; }
+.form-box li span{ color:#666; text-align:right; flex: 1; -webkit-flex: 1; -webkit-box-flex: 1; padding-right: 0.906667rem; padding-left: 0.266667rem; position:relative; display:block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; box-sizing: border-box; }
+.form-box li.select-con span:after{width: 0.253333rem; right: 0.4rem; position: absolute; top: 50%; transform: rotate(45deg); -webkit-transform: rotate(45deg); -o-transform: rotate(45deg); -moz-transform: rotate(45deg); height: 0.253333rem; border-right: 1px solid #b2b2b2; border-top: 1px solid #b2b2b2; content: " "; margin-top:-0.153333rem; }
+.form-box li b{ white-space: nowrap; font-weight:normal; padding-left:0.373333rem; }
+.form-box li span input { width: 100%; height: 100%; text-align: right; border: 0; }
+.form-box li span input:disabled { background-color: #fff; }
+.form-box li b s { text-decoration: none; }
+
+.form-box li.sub_rad { -webkit-align-items: center; align-items: center; }
+.form-box li.sub_rad span { color: #999; }
+.form-box li.sub_rad.active span { color: #666; }
+.form-box li.sub_rad span div { display: none; }
+.form-box li.sub_rad.active span div { display: block; }
+.form-box li .radio { display: block; width: 0.426667rem; height: 0.426667rem; background-size: 6.8rem auto !important; background: url(images/icon.png) no-repeat -0.64rem -0.613333rem; -webkit-appearance: none; border: 0; }
+.form-box li.sub_rad.active .radio { background-position: -0.64rem 0; -webkit-appearance: none; border: 0; }
+
+.form-box li#Code span { padding-right: 0.4rem;
+ /* height:px2rem(50);
+  width: px2rem(170);border-radius:px2rem(24);font-size:13px;*/
+}
+.form-box li#Code .getValidateCodeBtn { padding: 0 0.6rem; color:#fff; border-left: 1px solid #eee; position: relative; }
+.form-box li#Code .getValidateCodeBtn:before { content:'获取验证码';border: 1px solid $main;
+  height:px2rem(50);
+  width: px2rem(170);line-height:px2rem(50);border-radius:px2rem(24);font-size:0.35rem;
+  position: absolute;
+  top: 0.41rem;
+  left: 0.6rem;
+  z-index: 1;
+  text-align: center;
+  background: #fff;color:$main;  }
+.form-box li#Code .getValidateCodeBtn.disable { color: #999; }
+
+.form-box header{line-height:150%; align-items:center; -webkit-box-align: center; text-align:left; padding:0.4rem; color:#999; }
+.form-box h3{text-align: center; display: block; line-height:0.973333rem; color:#999; }
+.authentication{margin:0 0.266667rem; height:1.973333rem; background:#5fc3e8; border-radius:0.133333rem; color:#fff; }
+.authentication dt{display: -webkit-box; display: -webkit-flex; display: flex; padding:0.373333rem; }
+.authentication dt b{font-weight: normal; display: block; flex: 3; -webkit-flex: 3; -webkit-box-flex: 3; }
+.authentication dt i{width:2.226667rem; display: block; background-size: 6.8rem auto !important; background: url(images/icon.png) no-repeat -4.8rem -1.5rem; padding-left:0.64rem; flex: 1; -webkit-flex: 1; -webkit-box-flex: 1; box-sizing: border-box; }
+.authentication dd{padding:0 0.373333rem; }
+
+.submit-form{background:$main; margin: 0 0.266667rem 0.266667rem 0.266667rem; border-radius: 0.133333rem; height: 1.28rem; }
+.submit-form a{display:block; line-height:1.28rem; color:#fff; text-align: center; }
+.submit-form.disabled{background:#dcdcdc; }
+
+.form-box footer {color: #999; margin:0 0.266667rem 0.733333rem 0.266667rem; }
+.form-box footer a{color:#5fc3e8; }
+.form-box footer i{display:inline-block; width:0.46rem; height:0.46rem; background-size: 6.8rem auto !important; background: url(images/icon.png) no-repeat -0.63rem -0.6rem; margin-right:0.133333rem; position: relative; top: 0.09rem; }
+.form-box footer i.cur{background-position:-0.63rem top; }
+
+/*评估弹层*/
+.assessment-box{position: fixed; overflow: hidden; width: 100%; height: 100%; top: 0; left: 0; display:none; z-index: 88888; }
+.assessment-wrapper{position:absolute; top:50%; left:50%; margin-left:-4.333333rem; margin-top:-4.533333rem; width:8.666666rem; height:9.066666rem; border-radius: 0.266667rem; background: #fff; z-index: 99999; }
+.assessment-bg{position: absolute; width: 100%; height: 100%; opacity: 0.4; background-color: #000; }
+.ass-btn{width:7.6rem; height:1.306667rem; background:#dbb76c; text-align: center; line-height:1.306667rem; border-radius: 0.133333rem; color:#fff; margin:0 auto; font-weight:bold; }
+.ass-btn a{display: block; color: #fff; }
+.ass-ani-box{height:6.666667rem; position: relative; }
+.ass-bg{position:absolute; width: 100%; height:6.666667rem; left:0; top:0; background-size: 6.026667rem auto !important; background:url(images/loading_bg.png) no-repeat center 1.36rem; text-align:center; padding-top:2.826667rem; box-sizing: border-box; }
+.ass-bg>span{display:block; color:#a4a4a4; }
+.ass-bg>span em{color:#5fc3e8; }
+.ass-bg>b{display:block; color:#5fc3e8; }
+.ass-bg>div{color:#999; }
+[data-dpr="1"] .ass-bg>div{font-size: 15px; }
+[data-dpr="2"] .ass-bg>div{font-size: 30px; }
+[data-dpr="3"] .ass-bg>div{font-size:45px; }
+
+[data-dpr="1"] .ass-bg>b em{font-size: 18px; }
+[data-dpr="2"] .ass-bg>b em{font-size: 36px; }
+[data-dpr="3"] .ass-bg>b em{font-size: 54px; }
+
+[data-dpr="1"] .ass-bg>b{font-size: 50px; }
+[data-dpr="2"] .ass-bg>b{font-size: 100px; }
+[data-dpr="3"] .ass-bg>b{font-size: 150px; }
+
+/*易鑫流程*/
+[data-dpr="1"] .font-input{font-size: 14px; }
+[data-dpr="2"] .font-input{font-size: 28px; }
+[data-dpr="3"] .font-input{font-size: 42px; }
+
+.credit-input{margin:0.266667rem; background:#fff; height:1.28rem; border-radius: 0.133333rem; border:1px solid #eeeeee; display: -webkit-box; display: -webkit-flex; display: flex; align-items:center; -webkit-box-align: center; }
+.credit-input input{height:1.28rem; text-indent:0.4rem; border:none; display:block; flex: 1; -webkit-flex: 1; -webkit-box-flex: 1; -moz-box-flex: 1; -ms-flex: 1; }
+.warning{margin:0 0.266667rem 0.266667rem 0.266667rem; }
+
+.ass-ani-box>dt{width: 7.6rem; margin:0 auto; text-align: center; padding:1.12rem 0 0.8rem 0; }
+.ass-ani-box>dd{width: 7.6rem; margin:0 auto; line-height:150%; }
+#noResultLayer .assessment-wrapper{height:7.546667rem; }
+#noResultLayer .ass-ani-box{height:5.7rem; }
+#tipBox{position: fixed; width: 100%; height: 100%; left: 0; top: 0; display: none; z-index: 100; overflow: hidden; transition: all .5s ease; -webkit-transition: all 1.5s ease; transform-origin: 0 0 0; opacity: 1; transform: scale(1,1); }
+
+#tipBox .layout-text {width: 5rem; min-height: 1.40626rem; line-height: 150%; position: absolute; left: 50%; top: 50%; margin-top: -.70313rem; margin-left: -2.5rem; text-align: center; background-color: rgba(75,75,75,.8); border-radius: .133333rem; color: #fcfcfc; box-sizing: border-box; padding: .5rem .2rem; }
+
+/*selectcon*/
+aside[data-aslider="dealerCode"] .slider li { padding-left: 0.4rem; padding-right: 0.4rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#popCool { position: fixed; z-index: 9999; color: #fff; font-size: 24px; top: 20%; left: 15%; right: 15%; line-height: 1.2; }
+[data-dpr="1"] #popCool { font-size: 24px; }
+[data-dpr="2"] #popCool { font-size: 46px; }
+[data-dpr="3"] #popCool { font-size: 68px; }
+
+.loadmask { display: none; position: fixed; top: 0; bottom: 0; right: 0; left: 0; background-color: #000; opacity: .6; }
+.loadmask .load { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 3.2rem; height: 3.2rem; background: url(images/login.gif) no-repeat 0 0 transparent; -webkit-background-size: 100%; background-size: 100%; }
+
+/*赠险*/
+.sec_insurance { display: -webkit-box; display: -webkit-flex; display: flex; position:relative; -webkit-align-items: center; align-items: center; -webkit-box-align: center;
+	margin-bottom: 0.26667rem; padding: 0 0 0 0.32rem; background-color: #fff; }
+.sec_insurance b { color: #5fc3e8; font-weight: normal; }
+.sec_insurance i { display: inline-block; width: 0.613333rem; height: 0.613333rem; background: url(images/icon.png) -0.546667rem -4.973333rem no-repeat; -webkit-background-size: 6.8rem 8.613333rem; background-size: 6.8rem 8.613333rem; vertical-align: middle; }
+.sec_insurance i.cur { background-position: -0.546667rem -4.28rem; }
+[data-dpr="1"] .font_24 { font-size: 12px; }
+[data-dpr="2"] .font_24 { font-size: 24px; }
+[data-dpr="3"] .font_24 { font-size: 36px; }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script>
+
+</script>
+<div id="yxWrapper">
+    <header class="header-bar" style="">
+        <a href="javascript:history.back();" class="nav-back"></a>
+        <h1 class="font-nav">我的提问</h1>
+        <span></span>
+    </header>
+  
+    <section class="ques_list" id="quesList">
+    
+        <article class="ques_list">
+            <ul>
+                <!-- <li class="ques_item" v-for="item in items">
+                    <h3 v-text="item.question"></h3>
+                    <p v-text="item.answer" v-if="item.trig"></p>
+                    <aside v-if="item.trig"><span v-text="item.date"></span>|<span>向<b v-text="item.advisername"></b>提问</span>|<span>赞(<b v-text="item.goodnum"></b>)</span></aside>
+                </li> -->
+            </ul>
+        </article>
+
+        <article class="ques_nocont" id="quesEmpty">
+            <img src="../images/empty.html.png" alt="">
+        </article>
+
+        <article class="ques_loading" id="quesLoading">
+            <img src="../images/loading_white.html.gif" alt="">
+        </article>
+
+        <article class="ques_tipbox" id="queTipbox">
+            上拉加载更多            
+        </article>
+
+    </section>
+</div>
+
+
+    <!--整屏蒙层start-->
+    <div id="maskLayer"></div>
+    <!--整屏蒙层end-->
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

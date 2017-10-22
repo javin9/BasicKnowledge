@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script>
+    var getFeedbackListUrl = 'http://192.168.145.9:8041/feedback/GetFeedbackList?terminal=-1';
+    var addFeedbackUrl = 'http://192.168.145.9:8041/feedback/AddFeedback';
+</script>
+<div id="yxWrapper">
+  <header class="header-bar" style="">
+      <a href="javascript:history.back();" class="nav-back"></a>
+      <h1 class="font-nav">意见反馈</h1>
+      <span></span>
+  </header>
+  <article class="container clrfix">
+    <div class="container-top">
+      请留下您的意见和建议，帮助我们做的更好<br/>电话咨询请拨打4000-169-169（9:00-21:00）<br/>
+      <textarea name="" id="messageTextarea" placeholder="请在此输入您的问题和建议"></textarea>
+      <ul>
+        <li class="name-li">
+          您的姓名：<input type="text" id="nameInput" name="" value="" placeholder="">
+        </li>
+        <li class="tel-li">
+          手机号：　<input type="number" id="telInput" name="" value="" placeholder="">
+        </li>
+      </ul>
+      
+      <div id="submitBtn">提交</div>
+    </div>
+    <dl class="container-bottom">
+        <dt><span></span><div>常见问题</div></dt>
+        <dd class="question-list">
+           <div class="loading-white"></div>
+        </dd>
+    </dl>
+  </article>
+</div>
+
+<!--整屏蒙层start-->
+    <div id="maskLayer"></div>
+    <!--整屏蒙层end-->
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

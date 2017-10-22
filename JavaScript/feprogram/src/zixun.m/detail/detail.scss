@@ -1,0 +1,97 @@
+@import '../main.scss';
+.detail {
+  .article {
+    padding: px2rem(40) px2rem(30) px2rem(42);
+    background: #fff;
+
+    > h1 {
+      @include fsize(48);
+      line-height: px2rem(72);
+      font-weight: bold;
+      color: #394043;
+    }
+
+    > p {
+      font-size: 0;
+      padding-top: px2rem(30);
+      > span {
+        @include fsize(24);
+        line-height: px2rem(34);
+        color: #9c9fa1;
+        margin-right: px2rem(40);
+      }
+    }
+
+    .container {
+      width: 100%;
+      @include fsize(34);
+      padding-top: px2rem(50);
+      color: #394043;
+      line-height: px2rem(56);
+      overflow: hidden;
+      strong, b {
+        font-weight: bold;
+      }
+      a {
+        color: #333!important;
+        border-bottom: 1px dashed #333 !important;
+        &:hover {
+          color: map-get($color, red);
+          border-bottom: 1px dashed map-get($color, red);
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .relatyzx {
+    background: #fff;
+    header {
+      padding-left: px2rem(50);
+      color: #686868;
+      border-bottom: 1px solid map-get($color, gray);
+      a {
+        display: inline-block;
+        padding: px2rem(25) px2rem(6);
+        @include fsize(32);
+        line-height: px2rem(50);
+        text-align: center;
+        font-weight: bold;
+        &.cur {
+          border-bottom: px2rem(4) solid map-get($color, red);
+          color: map-get($color, red);
+        }
+        &:first-child {
+          margin-right: px2rem(64);
+        }
+      }
+    }
+    dl {
+      font-size: 0;
+
+      dd {
+        a {
+          display: block;
+          padding: px2rem(40) px2rem(30) 0;
+        }
+        h3 {
+          @include fsize(30);
+          color: #394043;
+          line-height: px2rem(46);
+          max-height: px2rem(92);
+          font-weight: bold;
+        }
+        div {
+          @include fsize(24);
+          color: #9c9fa1;
+          line-height: px2rem(36);
+          padding:px2rem(20) 0 px2rem(40);
+          border-bottom: 1px solid map-get($color, gray);
+        }
+      }
+    }
+  }
+}

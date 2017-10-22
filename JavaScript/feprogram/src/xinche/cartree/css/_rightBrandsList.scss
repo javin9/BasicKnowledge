@@ -1,0 +1,44 @@
+.seo-brands-list {
+  font-size: 12px;
+  padding: 0px 10px;
+  a{
+    color: #000;
+    &:hover{
+      color:#E9474D;
+    }
+  }
+
+  dd{
+    height: 125px;
+    overflow: hidden;
+    clear: both;
+    padding-top: 13px;
+    a{
+      display:block;
+      float:left;
+      margin:7px 20px 7px 0;
+    }
+  }
+  dt {
+    a{
+      display:block;
+      float:left;
+      width:33.3%;
+      text-align:center;
+      line-height: 18px;
+      span{
+        display:block;
+        word-break:keep-all;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+      img{
+        width:50px;
+        height:50px;
+        display:block;
+        margin:0 auto;
+      }
+    }
+  }
+}

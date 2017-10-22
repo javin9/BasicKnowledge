@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="app">
+	<index></index>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script>
+	var initData = {
+
+		// 车款名称
+		car: '哈弗H6升级版两驱',
+
+		// 车款id
+		carId: 1111,
+
+		// 城市
+		city: '北京',
+
+		// 城市id
+		cityId: 2501,
+
+		// 车价, Number
+		price: 13.57,
+
+		baseUrl: '/',
+
+		// 优惠购买商业险链接
+		link1: 'http://www.baidu.com',
+
+		// 查看贷款产品链接
+		link2: 'http://www.baidu.com/2',
+
+		// 精确报价链接
+		link3: 'http://www.baidu.com/',
+
+		// 车型排量档位
+		// 0 => 1.0L(含)以下
+		// 1 => 1.0-1.6L(含)以下
+		// 2 => 1.6-2.0L(含)以下
+		// 3 => 2.0-2.5L(含)以下
+		// 4 => 2.5-3.0L(含)以下
+		// 5 => 3.0-4.0L(含)以下
+		// 6 => 4.0L 
+		cc: 2,
+
+		// 6座以上: 0
+		// 6座以下: 1
+		seatCountType: 0
+	}
+</script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

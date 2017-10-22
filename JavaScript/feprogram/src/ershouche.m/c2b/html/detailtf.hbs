@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <style>
+
+    </style>
+    <script>
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var BusinessLine = 551;
+        var getAdviserUrl = '/c2b/GetAdvisers';
+        var getCarListUrl_M = '/Interface/GetMoreCarList_New';
+        var getCarListUrl_App = '/Interface/GetMoreCarList';
+        var indexUrl = '/c2b/index?source=777&channel=667&from=';
+        var carPriceScope = '0|5';
+        var applyCountToday = 0;
+        var city = {"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":0,"SelectCityName":null,"LocateResultType":1};
+        var source = '777';
+        var channel = '667';
+        var from = '';
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+ <div id="yxWrapper">
+        <div id='wx_pic' style='margin:0 auto;display:none;'>
+            <img src='http://img4.bitautoimg.com/jinrong/newmweb/images/pic300.jpg?v=201612161917' />
+        </div>
+        
+<header class="header-bar">
+    <a href="javascript:history.go(-1);"></a>  
+    <h1 class="font-nav">先拿钱再看车</h1>
+    <span></span>
+</header>
+<script src="http://img4.bitautoimg.com/jinrong/assets/headType.m/headTypeCookies.js?v=201612261940"></script>
+<div id="c2bDetail">
+    <section class="det_amount" v-pre>
+        <div class="det_amount_article uf">
+            <div class="uf_f1 font-30 c_gold">
+                您的预审批额度：<span class="mark_shadow"><b class="font-46">22230</b>元</span>
+            </div>
+            <div class="box_btn">
+                <a href="javascript:void(0);" class="btn_whiteline font-22" id="btnEvaluate">重新评估</a>
+            </div>
+        </div>
+        <aside class="det_amount_desc font-24">该额度仅供参考，最终额度以实际购车情况为准。</aside>
+    </section>
+    <section class="det_adviser">
+        <dl class="det_adviser_item det_bg">
+            <dt class="uf">
+                <div class="uf_f1">
+                    <h2 class="font-30">您的专属贷款顾问</h2>
+                    <p class="font-24 c6">全程陪同，贷款无忧</p>
+                </div>
+                <div class="box_btn">
+                    <a href="javascript:void(0);" class="btn_change font-24 c9" id="btnChange">换一个</a>
+                </div>
+            </dt>
+            <dd class="uf uf_ac">
+                <div>
+                    <img :src="advAvatar" alt="" class="pic_avatar">
+                </div>
+                <div class="uf_f1">
+                    <h3><span class="font-26" v-text="advName"></span><i v-bind:class="advLevelClass"></i></h3>
+                    <p class="font-24 c6">已帮<span v-text="advAlready"></span>人贷款　<b class="c_red font-26" v-text="advRate + '%'"></b>好评</p>
+                </div>
+                <div class="box_btn">
+                    <a href="javascript:void(0);" class="btn_tel" :href="'tel:'+ cN400+','+ advExTen"></a>
+                </div>
+            </dd>
+        </dl>
+        <dl class="det_adviser_item det_adviser_empty det_bg hide">
+            <dt class="uf c6">若您有任何疑问，可拨打下方服务电话联系我们。</dt>
+            <dd class="uf uf_ac">
+                <div class="uf_f1 c6">服务电话：<span class="font-30 c_red c6">4000-169-169</span></div>
+                <div class="box_btn">
+                    <a href="tel:4000169169" class="btn_tel"></a>
+                </div>
+            </dd>
+        </dl>
+    </section>
+    <section class="det_recom">
+        <p class="det_recom_tit font-26">为您推荐以下二手车</p>
+        <div class="det_recom_cont">        
+            <div v-for="car in cars">
+                <a :href="car.link">
+                    <dl class="det_recom_item det_bg uf">
+                        <dd class="box_car">
+                            <img :src="car.picPath" alt="" class="pic_car">
+                        </dd>
+                        <dt class="uf_f1">
+                            <h2 class="font-26" v-text="car.carName"></h2>
+                            <p class="font-24 c6"><span v-text="car.buyCarDate"></span> / <span v-text="car.drivingmileage"></span>万公里</p>
+                            <div class="label" v-html="car.warrantyType"> </div>
+                            <div class="font-24">
+                                首付 <b class="font-28 c_red" v-text="car.downPaymentAmount">万</b>
+                                月供 <b class="font-28 c_red" v-text="car.monthlyPayment">元</b>
+                            </div>
+                        </dt>
+                        
+                    </dl>
+                </a>
+            </div>          
+        </div>
+    </section>
+    <section class="det_bot" v-pre>
+        <a href="/beijing/list?source=777" class="btn_main font-28">逛逛更多二手车</a>
+    </section>
+</div>
+        <div id="maskLayer"></div>
+        <div class="bottom-to-top"><img src='http://img1.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=201612161917' /></div>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>提交订单</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width" />
+    <meta property="wb:webmaster" content="14dba3c44bd1a68e" />
+    <meta name="keywords" />
+    <meta name="description" />
+    <link rel="icon" type="image/x-icon" href="https://www.taoche.com/favicon.ico">
+    <script type="text/javascript">
+        var citySpell = 'beijing';
+        var APIURL = "http://192.168.145.12:8060";
+        var RESURL = "http://192.168.145.9:8011/taoche/";
+        var USERCENTERURL = "http://test.home.taoche.com/";
+        var BusinessLine = 550;
+        var city = {"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":0,"SelectCityName":null,"LocateResultType":1};
+    </script>
+    <link href="http://192.168.145.9:8011/taoche/common/common.css?v=201502031133" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="http://192.168.145.9:8011/taoche/dll/shim.dll.js?v=201502031133"></script>
+    <![endif lt IE 9]-->
+
+    <link href="http://192.168.145.9:8011/taoche/order/apply/index/lease.css?v=201502031133" rel="stylesheet" type="text/css" />
+    <script type="text/javascript"> var BEACON_INIT = { data: { pid: 70 } }; </script>
+    <script type="text/javascript">
+        var orderInfo = {"OrderId":"661504003730168","ChildOrderId":"881504074210885","OrderPayAmount":0.0,"UserId":2716291,"Mobile":"18911754060","UserName":"钱远","IsAuthenticated":true,"IdentityNumber":"110104198702122516","BigDataUrl":"http://m.seehoo.cn/CL/m/homepc.html?c=580040&middleIframeUrl=http://kzb.test.sq.taoche.com/carrentalapply/middleiframe"};
+        var back_url = "http://kzb.test.sq.taoche.com/carrentalapply/success/?orderId=661504003730168&childOrderId=881504074210885";
+        var order_updating_url = '/carrentalapply/update';
+        var id_checking_url = '/common/idchecking';
+        var image_code_getting_url = '/common/getimagecode';
+    </script>
+
+</head>
+<body>
+<input name="__RequestVerificationToken" type="hidden" value="R3JDHhZhsUNv801WdNIPTeQj23nGY83ehFn9uA2sMFQ8xORwn5LMjM8Om_Qm0AHbdzMLxzHVHHLLOqFF-9anMVQNmEE1" />
+
+<script>
+    (function(){
+        if(window.location.host.indexOf("etaoche.cn")>=0){
+            var head = document.getElementsByTagName('head')[0],
+                    cssURL = 'http://img2.yixinfinance.com/taoche/common/common-etaoche.css?v=201512041718',
+                    linkTag = document.createElement('link');
+            linkTag.href = cssURL;
+            linkTag.setAttribute('rel','stylesheet');
+            linkTag.setAttribute('media','all');
+            linkTag.setAttribute('type','text/css');
+            head.appendChild(linkTag);
+        }
+    })();
+    window.FENQIURL = 'http://fenqi.huidu.taoche.com' + "/";
+</script>
+
+{{{htmlWebpackPlugin.options.header}}}
+
+<div class="apply-step">
+    <ul>
+        <li class="after-step"><i>1</i>选择车型和金融产品</li>
+        <li class="cur-step"><i>2</i>在线提交申请信息</li>
+        <li><i>3</i>顾问陪同到店</li>
+        <li><i>4</i>签订合同租车成功</li>
+    </ul>
+</div>
+<!-- 运营商验证 -->
+<div class="payment" style=''>
+    <div class="iframe-con">
+        <iframe id="paymentIframe" width="1200" height="550" frameborder="0" scrolling="no" src="http://m.seehoo.cn/CL/m/homepc.html?c=580040&amp;middleIframeUrl=http://kzb.test.sq.taoche.com/carrentalapply/middleiframe"></iframe>
+    </div>
+</div>
+
+<!-- 运营商验证 end -->
+
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

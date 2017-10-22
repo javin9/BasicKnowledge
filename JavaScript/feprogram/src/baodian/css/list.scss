@@ -1,0 +1,202 @@
+@import 'sassHelper/mixin';
+@import 'vars';
+@import 'mixin';
+@import 'modular/nav';
+
+body{
+	background: #fbfbfb;
+}
+
+.baodian-list{
+
+	width:$containerWidth;
+	margin:0 auto;
+
+	&-nav{
+		@include nav;
+	}
+
+	&-content{
+		padding:30px 40px;
+
+		.grid{
+			margin-bottom: 50px;
+		}
+	}
+
+	&-item{
+		width: 550px;
+		background: #fff;
+		border:1px solid #e4e4e4;
+		box-shadow:1px 1px 5px #ccc;
+		float: left;
+		margin-bottom: 22px;
+
+		.common-item{
+			dt{
+				background: #fafafa;
+				padding:24px 40px;
+				border-bottom:1px solid #e4e4e4;
+
+				h3{
+					font-size:24px;
+					color:#000;
+					line-height: 1.2;
+					margin-bottom: 14px;
+				}
+
+				p{
+					color:#999;
+					overflow: hidden;
+					font-size:14px;
+					line-height: 1;
+
+					em{
+						color:#5b9fe3;
+						font-style:normal;
+						margin-left: 5px;
+					}
+
+					.fl{
+						float: left;
+					}
+					.fr{
+						float: right;
+					}
+				}
+			}
+
+			dd{
+				padding:20px 40px;
+
+				img{
+					width: 100%;
+					margin-bottom: 20px;
+				}
+
+				p{
+					color:#666;
+					font-size:16px;
+					line-height: 1.6;
+				}
+			}
+		}		
+
+		.show-item{
+			dt{
+				padding:18px 40px;
+
+				.avatar{
+					float: left;
+					margin-right: 20px;
+
+					img{
+						width: 70px;
+						height: 70px;
+						border-radius:35px;
+					}
+				}
+
+				.des{
+					overflow: hidden;
+
+					h4{
+						color:#000;
+						font-size:18px;
+						padding:12px 0;
+						line-height: 1;
+					}
+
+					p{
+						font-size:14px;
+						color:#999;
+					}
+
+					.fl{
+						float: left;
+						font-size:14px;
+						color:#999;
+					}
+
+					.fr{
+						float: right;
+
+						span{
+							display: inline-block;
+		          margin-left: 26px;
+		          vertical-align: middle;
+		          line-height: 1;
+						}
+					}
+
+					.icon-browser:before{
+	          @include icon(show,22px,13px);
+	          content:' ';
+	          display: inline-block;
+	          margin-right: 10px;
+	        }
+
+	        .icon-like:before{
+	          @include icon(like,15px,15px);
+	          content:' ';
+	          display: inline-block;
+	          margin-right: 10px;
+	        }
+				}
+			}
+
+			dd{
+				padding: 10px 40px 30px;
+
+				img{
+					width: 100%;
+				}
+
+				h6{
+					@include ellipsis(100%);
+					color:#000;
+					font-size:18px;
+					line-height: 1;
+					margin:15px 0;
+					display: block;
+				}
+
+				p{
+					@include ellipsis(100%);
+					font-size:16px;
+					color:#666;
+				}
+			}
+		}
+
+		img{
+			display: none;
+		}
+
+	}
+
+	&-loading{
+		font-size:20px;
+		text-align: center;
+		color:#333;
+		border-top:1px solid #ececec;
+		padding:32px 0;
+		display: none;
+
+		.loading-icon{
+			background:url(images/loading.gif) no-repeat left top;
+			height: 28px;
+			width: 28px;
+			display: inline-block;
+			vertical-align:middle;
+			margin-right: 18px;
+		}
+
+		span{
+			display: inline-block;
+			height:40px;
+			line-height: 40px;
+			vertical-align:middle;
+		}
+	}
+}

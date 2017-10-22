@@ -1,0 +1,382 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+.view-content{
+  display: none;
+}
+
+.share-box{
+  width:100%;
+  height: 100%;
+  background: url('./images/bg.png') no-repeat;
+  background-size: 100% 100%;
+  padding-bottom: px2rem(50);
+  position: relative;
+  .title{
+    height: px2rem(543);
+    background: url('./images/index-title.png') no-repeat;
+    background-size: 100% 100% !important;
+    &.title2{
+      background: url('./images/index-title2.png') no-repeat;
+    }
+    &:before{
+      content: ' ';
+      position: absolute;
+      width: px2rem(179);
+      height:px2rem(49);
+      left: px2rem(42);
+      top:px2rem(46);
+      background:url(./images/logo.png) no-repeat left top;
+      background-size: contain;
+    }
+  }
+  .title-get{
+      height: px2rem(543);
+  background: url('./images/share-title.png') no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+      .left{
+         color: #FFFFFF;
+      position:absolute;
+       margin-left: .5rem;
+        margin-top: px2rem(115);
+      .left-money{
+        .fh{
+            @include fsize(26);
+        }
+        .m{
+            @include fsize(87);
+        }
+      }
+      .left-text{
+          margin-top: px2rem(2);
+          margin-left: px2rem(45);
+        //text-align: center;
+         @include fsize(28);
+     
+      }
+      .left-date{
+      @include fsize(22);
+      margin-left: -1;
+      margin-top: px2rem(12);
+      }
+
+    }
+  }
+  .desc{
+  @include fsize(30);
+  color: #FBE74C;
+//   width: px2rem(486);
+  height: px2rem(106);
+//   margin-left: px2rem(132);
+  text-align: center;
+      margin-top: px2rem(-115);
+
+  }
+    .desc-get{
+        position: relative;
+  @include fsize(28);
+  color: #fff;
+  // width: px2rem(486);
+  height:100%;
+  text-align: center;
+      margin-top: px2rem(-125);
+      span{
+         color: #FBE74C;
+      }
+       a{
+         color: #FBE74C;
+      }
+  }
+      .desc-get-1{
+            position: relative;
+  @include fsize(28);
+  color: #fff;
+  // width: px2rem(486);
+  height: px2rem(42);
+  text-align: center;
+      margin-top: px2rem(10);
+      span{
+         color: #FBE74C;
+      }
+        a{
+         color: #FBE74C;
+      }
+      
+  }
+  .form_modu{
+  background: #fff;
+  margin: 0 auto;
+  width: px2rem(670);
+  margin-top: px2rem(20);
+  border-radius: px2rem(5);
+
+}
+.form_modu li {
+    position: relative;
+    line-height: 1.33333rem
+}
+
+.form_modu .warning {
+    line-height: 2;
+    padding: 0 .266667rem;
+    text-align: right
+}
+
+.form_modu input {
+  @include fsize(30);
+    width: 100%;
+    border: 0;
+    color: #333!important;
+    border-radius: px2rem(5);
+}
+
+.form_modu input#CheckCode {
+    // width: 2.526667rem
+}
+
+.form_modu #getCodeBtn {
+   @include fsize(26);
+    display: inline-block;
+    width: px2rem(170);
+    height: px2rem(54);
+    color: #E9474D;
+    border: 1px solid #E9474D;
+    text-align: center;
+    line-height:  px2rem(54);
+    background-color: #fff;
+    border-radius: .373333rem;
+        position: absolute;
+    right:px2rem(30);
+    top: px2rem(22);
+}
+
+.form_modu li.form_modu_head {
+    height: px2rem(100);
+    line-height:  px2rem(100);
+    padding: 0 .266667rem;
+    @include fsize(30);
+    border-top: 1px solid #eee;
+       border-radius: px2rem(5);
+}
+
+.form_modu li.form_modu_head>b,.form_modu li.form_modu_head>span {
+    display: block
+}
+
+.form_modu li.form_modu_head>b {
+    width: 1.866667rem;
+    font-weight: 400;
+    @include fsize(30);
+}
+
+.form_modu li.form_modu_head>span {
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.form_modu li.form_modu_head em {
+    color: #d0d0d0
+}
+
+.form_modu li.form_modu_head .icon {
+    width: .666667rem;
+    height: .666667rem;
+    margin-right: .133333rem
+}
+
+.form_modu li.selcon {
+    padding-right: .746667rem!important
+}
+
+.form_modu li.selcon:after {
+    content: "";
+    position: absolute;
+    top: .533333rem;
+    right: .4rem;
+    display: block;
+    width: .293333rem;
+    height: .293333rem;
+    border-top: 1px solid #bebebe;
+    border-right: 1px solid #bebebe;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.form_modu li.form_modu_body {
+    margin-left: .4rem;
+    padding: .266667rem 0;
+    border-top: 1px solid #eee
+}
+
+.form_modu li.choose_area a {
+    display: inline-block;
+    height: .853333rem;
+    margin-top: .266667rem;
+    margin-right: .133333rem;
+    padding: 0 .373333rem;
+    line-height: .853333rem;
+    font-size: .32rem;
+    color: #333;
+    background-color: #f5f5f5;
+    border-radius: .106667rem
+}
+
+.form_modu li.choose_area a.cur {
+    color: #fff;
+    background-color: #dbb76c
+}
+
+.form_modu li.choose_area>span {
+    margin-right: .2rem;
+    font-size: .4rem;
+    color: #333
+}
+
+.form_modu li.choose_area#FundsDiv,.form_modu li.choose_area#InsuranceDiv {
+    padding-left: .8rem
+}
+
+.form_modu li.choose_area+li.choose_area {
+    margin-left: .976666rem;
+    padding-left: .266667rem!important
+}
+
+.form_modu .select-con span:after {
+    content: "";
+    display: inline-block;
+    width: .266667rem;
+    height: .266667rem;
+    margin-right: .133333rem;
+    border-top: 1px solid #666;
+    border-right: 1px solid #666;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: center center;
+    transform-origin: center center
+}
+a.btn_main {
+    display: block;
+    margin: .4rem .266667rem;
+    height: 1.306667rem;
+    font-size: .426667rem;
+    line-height: 1.306667rem;
+    text-align: center;
+    color: #fff;
+    background-color: #E9474D;
+    border-radius: px2rem(5);
+}
+.index-btn{
+    display: block;
+  width:px2rem(670);
+  height: px2rem(100);
+  text-align: center;
+  line-height: px2rem(100);
+  @include fsize(32);
+  color: #EB4A4A;
+  margin-left: px2rem(40);
+  margin-top: px2rem(60);
+  background: url('./images/button.png') no-repeat;
+  background-size: 100% 100%;
+  font-weight: bold;
+  
+}
+btn-no{
+  background-color: #C4C4C4 !important;
+}
+
+}
+
+//活动结束
+.over-box{
+  width: 100%;
+  height: 100%;
+    padding-bottom: px2rem(50);
+  background: #fff;
+  .over-box-tip{
+     @include fsize(64);
+    color: #333333;
+    padding-top: px2rem(100);
+    text-align: center;
+  }
+  .over-box-img-over{
+    width: px2rem(256);
+    height: px2rem(236);
+    margin-top: px2rem(53);
+    margin-left: px2rem(255);
+    background: url('./images/share-over.png') no-repeat;
+    background-size: 100% 100%;
+  }
+   .over-box-img{
+    width: px2rem(256);
+    height: px2rem(236);
+    margin-top: px2rem(53);
+    margin-left: px2rem(255);
+    background: url('./images/share.png') no-repeat;
+    background-size: 100% 100%;
+  }
+  .over-box-text{
+    text-align: center;
+    margin:0 auto;
+    margin-top: px2rem(43);
+    @include fsize(28);
+    color: #686868;
+  }
+  .over-box-text-user{
+    text-align: center;
+    margin:0 auto;
+    margin-top: px2rem(43);
+    @include fsize(28);
+    color: #686868;
+    padding-left: px2rem(40);
+    padding-right:  px2rem(40);
+  }
+  .over-box-btn{
+      display: block;
+    background: #E9474D;
+    border-radius: px2rem(5);
+    width: px2rem(480);
+    text-align: center;
+    height: px2rem(100);
+    line-height:  px2rem(100);
+    margin-top: px2rem(50);
+    margin-left: px2rem(135);
+    @include fsize(32);
+    color: #fff;
+    display: block;
+  }
+}
+
+.share-weixin{
+    width: px2rem(611);
+    height: px2rem(375);
+    position: absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top:px2rem(35);
+    background:url(./images/share-weixin.png) no-repeat center center;
+    background-size: contain;
+}
+
+.share-browser{
+  width: px2rem(645);
+  height: px2rem(260);
+  position: absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:px2rem(151);
+  background:url(./images/share-browser.png) no-repeat left top;
+  background-size: contain;
+}
+
+.share-view{
+  .header-bar{
+    background:#f8f8f8;
+  }
+
+  #app{
+    display: none;
+  }
+}

@@ -1,0 +1,359 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+@import '../main.scss';
+$height: (
+  imgHeight : 360px
+);
+$border: 1px;
+$hui: (
+  pad: 30px,
+
+  width: 300px,
+  height: 240px 
+);
+
+$hotLi: (
+  s: 10px,
+  m: 18px,
+  l: 24px,
+
+  width: 228px,
+  height: 284px
+);
+.sel-car-brands, .sel-car-type {
+  top: 76px!important;
+}
+.main {
+  width: 100%!important;
+  .group-item {
+    width: 1200px!important;
+    margin: 0 auto;
+  }
+}
+.container {
+  // background-color: map-get($pbg, gray);
+  .qijiandian {
+    overflow: auto;
+  }
+  // 旗舰店
+  .qijian {
+    li {
+      padding-bottom: 10px;
+      width:595px;
+      float: left;
+      &.odd {
+        margin-right: 5px;
+      }
+      &.even {
+        margin-left: 5px;
+      }
+      > div {
+        height: 240px;
+        background-color: #fff;
+        aside {
+          font-size: 14px;
+          &.left {
+            width: 360px;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            img {
+              display: block;
+              width: 100%;
+              height: 240px;
+            }
+            .box-txt {
+              width: 100%;
+              background-color: #000;
+              @include pcOpacity(0.6);
+              color: map-get($font, white);
+              height: 38px;
+              line-height: 38px;
+              position: relative;
+              left: 0;
+              bottom: 38px;
+              span {
+                margin-left: 20px;
+                margin-right: 5px;
+                color: map-get($pcfont, yellow);
+              }
+            }
+
+            .box-popup {
+              display: block;
+              width: 360px;
+              height: 240px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 10;
+              background: url(../images/transparent.gif) repeat;
+              &:hover {
+                width: 356px;
+                height: 236px;
+                border: 2px solid map-get($pbg, yellow);
+              }
+            }
+          }
+          &.right {
+            ul {
+              width: 224px;
+              padding: 30px 0 0 10px;
+              font-size: 0;
+              li {
+                display: inline-block;
+                width: 64px;
+                height: 95px;
+                text-align: center;
+                margin-right: 10px;
+                .car-box {
+                  max-width: 60px;
+                  display: inline-block;
+                  cursor: pointer;
+                  img {
+                    width: 38px;
+                    height: 38px;
+                  }
+                  span {
+                    display: block;
+                    padding-top: 8px;
+                    font-size: map-get($font, m);
+                    color: map-get($font, normal);
+                  }
+                  &:hover {
+                    img {
+                      width: 36px;
+                      height: 36px;
+                    }
+                  }
+                }
+                &.more {
+                  > a {
+                    max-width: 78px;
+                    display: inline-block;
+                    cursor: pointer;
+                    img {
+                      width: 38px;
+                      height: 38px;
+                    }
+                    span {
+                      display: block;
+                      padding-top: 8px;
+                      font-size: map-get($font, m);
+                      color: map-get($font, light);
+                    }
+                    &:hover{
+                      span {
+                        color: map-get($pbg, red);
+                      }
+                      .more-img {
+                        background-position: 10px -82px;
+                      }
+                    }
+                    .more-img {
+                      width: 38px;
+                      height: 38px;
+                      padding-top: 0;
+                      background: url(../images/shop_icon.png) no-repeat;
+                      background-position: -38px -82px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 超值钜惠
+  .hui {
+    background-color: map-get($bg, white);
+    > div.swiperParent {
+      width: 600px;
+      height: 240px;
+      position: relative;
+      #swiper.swiper-container {
+        width: 100%;
+        height: 100%;
+        .swiper-wrapper {
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            img {
+              width: 600px;
+              height: 240px;
+            }
+          }
+        }
+        .swiper-pagination {
+          width: 560px;
+          text-align: right;
+          position: relative;
+          bottom: 38px;
+          .swiper-pagination-switch {
+            width: 6px;
+            height: 6px;
+            background-color: transparent;
+            border: 1px solid map-get($pbg, yellow);
+            margin: 0 3px;
+            &.swiper-active-switch {
+              background-color: map-get($pbg, yellow);
+            }
+          }
+        }
+      }
+    }
+    .hui-bottom {
+      font-size: 0;
+      a {
+        display: block;
+        width: map-get($hui, width) - map-get($hui, pad)*2 - $border;
+        height: map-get($hui, height) - map-get($hui, pad) - $border;
+        font-size: 16px;
+        padding: map-get($hui, pad) map-get($hui, pad) 0 map-get($hui, pad);
+        border-right: $border solid #eee;
+        border-top: $border solid #eee;
+        position: relative;
+        overflow: hidden;
+        .hui-title {
+          width: 100%;
+          color: map-get($font, dark);
+          font-size: 18px;
+        }
+        .car-name {
+          width: 100%;
+          color: #ff9900;
+          padding-top: 2px;
+        }
+        img {
+          display: block;
+          width: 210px;
+          height: 140px;
+          margin: 0 auto;
+        }
+        .btn {
+          width: map-get($hui, width);
+          height: 46px;
+          line-height: 46px;
+          text-align: center;
+          color: map-get($font, white);
+          background-color: map-get($pbg, red);
+          position: absolute;
+          bottom: -46px;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  // 爆款推荐
+  .hot {
+    background-color: map-get($bg, white);
+    ul {
+      padding: 10px 0 0 10px;
+      font-size: 0;
+      li {
+        display: inline-block;
+        padding: 0 10px 10px 0;
+        font-size: 16px;
+        position: relative;
+        z-index: 1;
+        > div {
+          display: block;
+          // width: 206px;
+          // height: 216px;
+          // border: 1px solid #eee;
+          // padding: 24px 10px 18px;
+          width: map-get($hotLi, width) - map-get($hotLi, s)*2 - $border*2;
+          height: map-get($hotLi, height) - map-get($hotLi, l) - map-get($hotLi, m) - $border*2;
+          border: $border solid #eee;
+          padding: map-get($hotLi, l) map-get($hotLi, s) map-get($hotLi, m);
+          z-index: 2;
+          position: relative;
+          .hot-ctn-t {
+            margin-left: 20px;
+            padding-bottom: 25px;
+            img {
+              width: 28px;
+              height: 28px;
+              margin-right: 10px;
+            }
+            div {
+              max-width: 148px;
+              color: map-get($font, normal);
+            }
+          }
+
+          > img {
+            display: block;
+            margin-left: 20px;
+            width: 170px;
+            // height: 90px;
+          }
+          .hot-name {
+            padding-top: 18px;
+            width: 100%;
+            color: map-get($font, black);
+          }
+          .hot-ctn-b {
+            padding-top: 2px;
+            font-size: 0;
+            span{
+              max-width: (map-get($hotLi, width) - map-get($hotLi, s)*2 - $border*2 - 18px)/2;
+              color: map-get($font, dark);
+              margin-right: 18px;
+              font-size: 14px;
+              &.yuegong {
+                margin-right: 0;
+              }
+              font {
+                font-size: 16px;
+                color: map-get($pcfont, red);
+              }
+            }
+          }
+          > a {
+            display: block;
+            width: map-get($hotLi, width) - $border*4;
+            height: map-get($hotLi, height) - $border*4;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index:10;
+            zoom:1;
+            background: url(../images/transparent.gif) repeat;//IE8空元素没有占位符，使用透明背景，实现占位效果
+            &:hover {
+              border: $border*2 solid map-get($pbg, yellow);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 底部广告位
+#Footer {
+  margin-top: 0;
+}
+
+#company {
+  width: 1200px;
+  height:120px;
+  background-color: #fff;
+  margin: 40px auto 60px;
+  padding-top: 0;
+
+  .company {
+    #footSwiper{ 
+      width: 100%;
+      height:120px;
+      img{ 
+        width: 1200px;
+        height:120px;
+      }
+    }
+  }
+}

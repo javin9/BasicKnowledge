@@ -1,0 +1,69 @@
+@import "sassHelper/mixin";
+@import "../../../../vars";
+
+.FormItem{
+  @include clearfix;
+  margin-bottom: 20px;
+
+  label{
+    float: left;
+    font-size:14px;
+    color:#000;
+    min-width: 90px;
+    line-height: $height;
+    box-sizing:border-box;
+    padding-right: 20px;
+
+    >span{
+      display: inline-block;
+      vertical-align: middle;
+
+      // ie8 Bug:
+      // http://web.archive.org/web/20120224235209/http://www.compsoft.co.uk/Blog/2009/11/inline-block-not-quite-inline-blocking.html
+      margin-right: 1px;
+    }
+  }
+  &-content{
+    float: left;
+    width: 430px;
+  }
+
+  &-inline{
+    display: inline-block;
+    width: 50%;
+  }
+
+  &-inline &-content{
+    max-width:130px;
+  }
+
+  .StaticInput{
+    position: relative;
+
+    >span{
+      display: block;
+      color:#000;
+      height:$height;
+      line-height: $height;
+      box-sizing:border-box;
+      width: 100%;
+      padding:0 10px;
+      border:1px solid $border;
+      cursor:pointer;
+
+      &.disabled{
+        @include disabled;
+      }
+    }
+
+    &:after{
+      content:' ';
+      width: 8px;
+      height:$height;
+      background:url(jiantou.png) no-repeat left center;
+      position: absolute;
+      right:10px;
+      top:0px;
+    }
+  }
+}

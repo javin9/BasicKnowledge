@@ -1,0 +1,49 @@
+@import "../common/css/mixin.scss";
+
+// repayment
+.rpm_title {
+	padding: px2rem(12) px2rem(30);
+	@include fsize(30);
+}
+
+.rpm_box {
+
+	.status {
+		padding-right: px2rem(40);
+		padding-left: px2rem(10);
+	}
+
+	.total {
+		margin-top: px2rem(30);
+		padding-bottom: px2rem(20);
+		padding-left: px2rem(10);
+		@include fsize(26);
+
+		b {
+			@include fsize(60);
+		}
+	}
+
+	.date {
+		padding-left: px2rem(10);
+	}
+
+	.issue {
+		margin-top: px2rem(20);
+		margin-bottom: px2rem(30);
+		line-height: px2rem(40);
+
+		em {
+			margin: 0 px2rem(10);
+			color: #ddd;
+			@include fsize(30);
+			vertical-align: middle;
+		}
+	}
+
+	.haspay {
+		padding-top: px2rem(30);
+		@include fsize(30);
+		border-top: 1px solid #e5e5e5;
+	}	
+}

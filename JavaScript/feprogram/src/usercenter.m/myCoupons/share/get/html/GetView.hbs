@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <style>
+
+    </style>
+    <script>
+    var IsPopup='True';
+    var PopupMsg='老用户领取完了';
+    </script>
+
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+    <div id="app">
+        <!-- header -->
+        <div action="GET-HEADER" data-text="易鑫车贷送您车贷礼包"></div>
+
+        <div class="share-box">
+            <div class="title-get">
+                <div class="left">
+                    <div class="left-money">
+                        <span class="fh">¥</span> <span class="m">1000</span></div>
+                    <div class="left-text">京东E卡</div>
+                    <div class="left-date">有效期至 2017-01-14</div>
+                </div>
+            </div>
+            <div class="desc-get">1000元京东E卡已放至易鑫车贷帐户<a> 13810805844</a><br /></div>
+            <div class="desc-get-1"><a> 个人中心-我的卡券</a>，贷款成功后即可激活</div>
+            <a class="index-btn">立即体验</a>
+
+            <!-- 活动规则 -->
+            <div action="GET-RULES"></div>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

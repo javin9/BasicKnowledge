@@ -1,0 +1,122 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+header {
+  .home-link {
+    text-indent: -100em;
+    overflow: hidden;
+    //background: url(images/home-icon.png) no-repeat center center;
+    background-size: px2rem(36) auto;
+
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.brand-wrapper {
+
+  .brand {
+    padding: 0 px2rem(30);
+    background: #ffffff;
+    overflow: hidden;
+
+    .logo {
+      position: relative;
+      float: left;
+      width: px2rem(120);
+      height: px2rem(120);
+      margin-right: px2rem(24);
+
+      img {
+        position: absolute;
+        left: 0;
+        top: 10%;
+        height: 80%;
+      }
+    }
+
+    .text {
+      float: left;
+      height: px2rem(120);
+      line-height: px2rem(120);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include fsize(28);
+      color: #000000;
+    }
+  }
+
+  .carlist {
+
+    .title {
+      padding: 0 px2rem(30);
+      @include fsize(24);
+      line-height: px2rem(44);
+    }
+
+    .detail {
+      display: block;
+      padding: 0 px2rem(30);
+      border-bottom: 1px solid #E5E5E5;
+      background: #ffffff;
+      overflow: hidden;
+
+      a {
+        display: block;
+        margin-left: px2rem(-30);
+        margin-right: px2rem(-30);
+        padding: 0 px2rem(30);
+        overflow: hidden;
+      }
+
+      .image {
+        position: relative;
+        float: left;
+        width: px2rem(120);
+        height: px2rem(150);
+        margin-right: px2rem(24);
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 90%;
+          -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+        }
+      }
+
+      &:nth-last-child(1) {
+        border-bottom: 0;
+      }
+    }
+
+    .text {
+      display: table;
+      position: relative;
+      float: left;
+      height: px2rem(150);
+      text-align: left;
+      color: #000000;
+
+      .text-cetenr {
+        display: table-cell;
+        vertical-align: middle;
+
+        .name {
+          white-space: nowrap;
+          @include fsize(28);
+        }
+
+        .price {
+          margin-top: px2rem(30);
+          white-space: nowrap;
+          @include fsize(24);
+          color: #E9474D;
+        }
+      }
+    }
+  }
+}

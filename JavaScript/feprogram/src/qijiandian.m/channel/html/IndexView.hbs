@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script type="text/javascript">
+    var localcityid = '910';
+    var localcityspell = 'baoding';
+</script>
+<div id="app">
+  <header class="header-bar header-bar-has-logo">
+      <a href="/" class="nav-back"></a>
+      <h1 class="header-bar-subtitle"><em>·</em>旗舰店</h1>
+      <div class="header_right ellipsis" id="selectCity" data-cityid="201" v-on:click="changeCity">
+          <span class="location_icon"></span>
+          <span id="localText" class="localText">北京</span>
+      </div>
+  </header>
+
+  <article class="">
+    <!-- 轮播图start -->
+    <div class="swiper-container swiperTopBanner" id="swiperTopBanner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="http://img1.bitautoimg.com/chedai/e35a0595-1a2d-4e7f-b958-0c62e302ce1c.jpg" alt="e35a0595-1a2d-4e7f-b958-0c62e302ce1c.jpg"></div>
+            <div class="swiper-slide"><img src="http://img1.bitautoimg.com/chedai/e35a0595-1a2d-4e7f-b958-0c62e302ce1c.jpg" alt="e35a0595-1a2d-4e7f-b958-0c62e302ce1c.jpg"></div>
+            <div class="swiper-slide"><img src="http://img1.bitautoimg.com/chedai/e35a0595-1a2d-4e7f-b958-0c62e302ce1c.jpg" alt="e35a0595-1a2d-4e7f-b958-0c62e302ce1c.jpg"></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- 轮播图end-->
+
+    <!-- 超值钜惠start -->
+    <section class="module_group">
+      <header><i class="icon_hui"></i>超值钜惠</header>
+      <div class="module_body ub">
+        <aside class="box_sizing">
+          <a href="javascript:void(0);">
+            <span class="ut-s">奥迪Q5</span>
+            <font class="ut-s">月费率低至0.65%</font>
+            <img src="http://img2.bitautoimg.com/autoalbum/files/20160802/915/0332079157_8.jpg" alt="起亚K3汽车贷款">
+          </a>
+        </aside>
+        <aside class="ub-f1 box_sizing">
+          <a class="group_r_t ub box_sizing" href="javascript:void(0);">
+            <aside class="ub-f1">
+              <span class="ut-s">陆风X7</span>
+              <font class="ut-s">月供1389元</font>
+            </aside>
+            <img src="http://img2.bitautoimg.com/autoalbum/files/20160802/915/0332079157_8.jpg" alt="起亚K3汽车贷款">
+          </a>
+          <div class="ub">
+            <a class="ub-f1 box_sizing" href="javascript:void(0);">
+              <span class="ut-s">陆风X7</span>
+              <font class="ut-s">日供49元起</font>
+              <img src="http://img2.bitautoimg.com/autoalbum/files/20160802/915/0332079157_8.jpg" alt="起亚K3汽车贷款">
+            </a>
+            <a class="ub-f1 box_sizing" href="javascript:void(0);">
+              <span class="ut-s">陆风X7</span>
+              <font class="ut-s">日供49元起</font>
+              <img src="http://img2.bitautoimg.com/autoalbum/files/20160802/915/0332079157_8.jpg" alt="起亚K3汽车贷款">
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <!-- 超值钜惠end -->
+
+    <!-- 爆款推荐start -->
+    <section class="module_group">
+      <header><i class="icon_bao"></i>爆款推荐</header>
+      <div class="module_body">
+        <a href="javascript:void(0);" class="hot">
+          <div class="ub box_sizing hot_commit">
+            <img src="http://img2.bitautoimg.com/autoalbum/files/20160802/915/0332079157_8.jpg" alt="起亚K3汽车贷款">
+            <aside class="ub-f1">
+              <div class="ub">
+                <img src="http://img1.bitautoimg.com/chedai/c06d7d3d-c38a-4de1-8891-6efbf498d1eb.jpg" alt="积木盒子">
+                <font>上汽通用</font>
+              </div>
+              <div>名爵MG6三厢</div>
+              <div>
+                <span>首付 <font>1万起</font></span>
+                <span>月供 <font>2168元起</font></span>
+              </div>
+            </aside>
+          </div>
+        </a>
+        <a href="javascript:void(0);" class="hot">
+          <div class="ub box_sizing hot_commit">
+            <img src="http://img2.bitautoimg.com/autoalbum/files/20160802/915/0332079157_8.jpg" alt="起亚K3汽车贷款">
+            <aside class="ub-f1">
+              <div class="ub">
+                <img src="http://img1.bitautoimg.com/chedai/c06d7d3d-c38a-4de1-8891-6efbf498d1eb.jpg" alt="积木盒子">
+                <font>上汽通用</font>
+              </div>
+              <div>名爵MG6三厢</div>
+              <div>
+                <span>首付 <font>1万起</font></span>
+                <span>月供 <font>2168元起</font></span>
+              </div>
+            </aside>
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- 爆款推荐end -->
+
+    <!-- 旗舰品牌start -->
+    <section class="module_group">
+      <header><i class="icon_qi"></i>旗舰品牌</header>
+      <div class="module_body bg_gray" id="flagship">
+        <blockquote data-href="http://www.baidu.com"  class="flagship flagshipEvent" v-on:click="flagshipClick">
+          <div class="img_box">
+            <img src="http://img1.bitautoimg.com/chedai/393b20b3-a274-4c81-8df4-229536065688.jpg">
+          </div>
+          <div class="box_footer ub">
+            <div class="footer_txt ub-f1">
+              <div>东风日产金融旗舰店</div>
+              <span>首付2成起，尽享0利率</span>
+            </div>
+            <div id="car_brands" class="car_brands">
+
+              <div class="shopEvent" data-companyid="3" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png" v-on:click="changeCar">
+                <label class="box_sizing">
+                  <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png" alt="日产">
+                </label>
+                <span class="ut-s">日产</span>
+              </div>
+
+              <div class="shopEvent" data-companyid="3" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png" v-on:click="changeCar">
+                <label class="box_sizing">
+                  <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png" alt="日产">
+                </label>
+                <span class="ut-s">日产</span>
+              </div>
+
+              <div data-href="http://shop.m.daikuan.com" class="shopEvent more">
+                <label class="box_sizing">
+                  <i></i>
+                </label>
+                <span class="ut-s">更多</span>
+              </div>
+            </div>
+          </div>
+        </blockquote>
+
+        <blockquote data-href="http://www.baidu.com"  class="flagship flagshipEvent" v-on:click="flagshipClick">
+          <div class="img_box">
+            <img src="http://img1.bitautoimg.com/chedai/393b20b3-a274-4c81-8df4-229536065688.jpg">
+          </div>
+          <div class="box_footer ub">
+            <div class="footer_txt ub-f1">
+              <div>东风日产金融旗舰店</div>
+              <span>首付2成起，尽享0利率</span>
+            </div>
+            <div id="car_brands" class="car_brands">
+
+              <div class="shopEvent" data-companyid="3" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png"  v-on:click="changeCar">
+                <label class="box_sizing">
+                  <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png" alt="日产">
+                </label>
+                <span class="ut-s">日产</span>
+              </div>
+
+              <div data-href="http://shop.m.daikuan.com" class="shopEvent more">
+                <label class="box_sizing">
+                  <i></i>
+                </label>
+                <span class="ut-s">更多</span>
+              </div>
+            </div>
+          </div>
+        </blockquote>
+        <blockquote data-href="http://www.baidu.com"  class="flagship flagshipEvent" v-on:click="flagshipClick">
+          <div class="img_box">
+            <img src="http://img1.bitautoimg.com/chedai/393b20b3-a274-4c81-8df4-229536065688.jpg">
+          </div>
+          <div class="box_footer ub">
+            <div class="footer_txt ub-f1">
+              <div>东风日产金融旗舰店</div>
+              <span>首付2成起，尽享0利率</span>
+            </div>
+            <div id="car_brands" class="car_brands">
+
+              <div class="shopEvent" data-companyid="3" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png"  v-on:click="changeCar">
+                <label class="box_sizing">
+                  <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png" alt="日产">
+                </label>
+                <span class="ut-s">日产</span>
+              </div>
+
+              <div data-href="http://shop.m.daikuan.com" class="shopEvent more">
+                <label class="box_sizing">
+                  <i></i>
+                </label>
+                <span class="ut-s">更多</span>
+              </div>
+            </div>
+          </div>
+        </blockquote><blockquote data-href="http://www.baidu.com"  class="flagship flagshipEvent" v-on:click="flagshipClick">
+          <div class="img_box">
+            <img src="http://img1.bitautoimg.com/chedai/393b20b3-a274-4c81-8df4-229536065688.jpg">
+          </div>
+          <div class="box_footer ub">
+            <div class="footer_txt ub-f1">
+              <div>东风日产金融旗舰店</div>
+              <span>首付2成起，尽享0利率</span>
+            </div>
+            <div id="car_brands" class="car_brands">
+
+              <div class="shopEvent" data-companyid="3" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png"  v-on:click="changeCar">
+                <label class="box_sizing">
+                  <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png" alt="日产">
+                </label>
+                <span class="ut-s">日产</span>
+              </div>
+
+              <div data-href="http://shop.m.daikuan.com" class="shopEvent more">
+                <label class="box_sizing">
+                  <i></i>
+                </label>
+                <span class="ut-s">更多</span>
+              </div>
+            </div>
+          </div>
+        </blockquote><blockquote data-href="http://www.baidu.com"  class="flagship flagshipEvent" v-on:click="flagshipClick">
+          <div class="img_box">
+            <img src="http://img1.bitautoimg.com/chedai/393b20b3-a274-4c81-8df4-229536065688.jpg">
+          </div>
+          <div class="box_footer ub">
+            <div class="footer_txt ub-f1">
+              <div>东风日产金融旗舰店</div>
+              <span>首付2成起，尽享0利率</span>
+            </div>
+            <div id="car_brands" class="car_brands">
+
+              <div class="shopEvent" data-companyid="3" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png"  v-on:click="changeCar">
+                <label class="box_sizing">
+                  <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png" alt="日产">
+                </label>
+                <span class="ut-s">日产</span>
+              </div>
+
+              <div data-href="http://shop.m.daikuan.com" class="shopEvent more">
+                <label class="box_sizing">
+                  <i></i>
+                </label>
+                <span class="ut-s">更多</span>
+              </div>
+            </div>
+          </div>
+        </blockquote><blockquote data-href="http://www.baidu.com"  class="flagship flagshipEvent" v-on:click="flagshipClick">
+          <div class="img_box">
+            <img src="http://img1.bitautoimg.com/chedai/393b20b3-a274-4c81-8df4-229536065688.jpg">
+          </div>
+          <div class="box_footer ub">
+            <div class="footer_txt ub-f1">
+              <div>东风日产金融旗舰店</div>
+              <span>首付2成起，尽享0利率</span>
+            </div>
+            <div id="car_brands" class="car_brands">
+
+              <div class="shopEvent" data-companyid="3" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png"  v-on:click="changeCar">
+                <label class="box_sizing">
+                  <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png" alt="日产">
+                </label>
+                <span class="ut-s">日产</span>
+              </div>
+
+              <div data-href="http://shop.m.daikuan.com" class="shopEvent more">
+                <label class="box_sizing">
+                  <i></i>
+                </label>
+                <span class="ut-s">更多</span>
+              </div>
+            </div>
+          </div>
+        </blockquote><blockquote data-href="http://www.baidu.com"  class="flagship flagshipEvent" v-on:click="flagshipClick">
+          <div class="img_box">
+            <img src="http://img1.bitautoimg.com/chedai/393b20b3-a274-4c81-8df4-229536065688.jpg">
+          </div>
+          <div class="box_footer ub">
+            <div class="footer_txt ub-f1">
+              <div>东风日产金融旗舰店</div>
+              <span>首付2成起，尽享0利率</span>
+            </div>
+            <div id="car_brands" class="car_brands">
+
+              <div class="shopEvent" data-companyid="3" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png"  v-on:click="changeCar">
+                <label class="box_sizing">
+                  <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png" alt="日产">
+                </label>
+                <span class="ut-s">日产</span>
+              </div>
+
+              <div data-href="http://shop.m.daikuan.com" class="shopEvent more">
+                <label class="box_sizing">
+                  <i></i>
+                </label>
+                <span class="ut-s">更多</span>
+              </div>
+            </div>
+          </div>
+        </blockquote><blockquote data-href="http://www.baidu.com"  class="flagship flagshipEvent" v-on:click="flagshipClick">
+          <div class="img_box">
+            <img src="http://img1.bitautoimg.com/chedai/393b20b3-a274-4c81-8df4-229536065688.jpg">
+          </div>
+          <div class="box_footer ub">
+            <div class="footer_txt ub-f1">
+              <div>东风日产金融旗舰店</div>
+              <span>首付2成起，尽享0利率</span>
+            </div>
+            <div id="car_brands" class="car_brands">
+
+              <div class="shopEvent" data-companyid="3" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png"  v-on:click="changeCar">
+                <label class="box_sizing">
+                  <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png" alt="日产">
+                </label>
+                <span class="ut-s">日产</span>
+              </div>
+
+              <div data-href="http://shop.m.daikuan.com" class="shopEvent more">
+                <label class="box_sizing">
+                  <i></i>
+                </label>
+                <span class="ut-s">更多</span>
+              </div>
+            </div>
+          </div>
+        </blockquote><blockquote data-href="http://www.baidu.com"  class="flagship flagshipEvent" v-on:click="flagshipClick">
+          <div class="img_box">
+            <img src="http://img1.bitautoimg.com/chedai/393b20b3-a274-4c81-8df4-229536065688.jpg">
+          </div>
+          <div class="box_footer ub">
+            <div class="footer_txt ub-f1">
+              <div>东风日产金融旗舰店</div>
+              <span>首付2成起，尽享0利率</span>
+            </div>
+            <div id="car_brands" class="car_brands">
+
+              <div class="shopEvent" data-companyid="3" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png"  v-on:click="changeCar">
+                <label class="box_sizing">
+                  <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png" alt="日产">
+                </label>
+                <span class="ut-s">日产</span>
+              </div>
+
+              <div data-href="http://shop.m.daikuan.com" class="shopEvent more">
+                <label class="box_sizing">
+                  <i></i>
+                </label>
+                <span class="ut-s">更多</span>
+              </div>
+            </div>
+          </div>
+        </blockquote><blockquote data-href="http://www.baidu.com"  class="flagship flagshipEvent" v-on:click="flagshipClick">
+          <div class="img_box">
+            <img src="http://img1.bitautoimg.com/chedai/393b20b3-a274-4c81-8df4-229536065688.jpg">
+          </div>
+          <div class="box_footer ub">
+            <div class="footer_txt ub-f1">
+              <div>东风日产金融旗舰店</div>
+              <span>首付2成起，尽享0利率</span>
+            </div>
+            <div id="car_brands" class="car_brands">
+
+              <div class="shopEvent" data-companyid="3" data-bsid="30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png"  v-on:click="changeCar">
+                <label class="box_sizing">
+                  <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png" alt="日产">
+                </label>
+                <span class="ut-s">日产</span>
+              </div>
+
+              <div data-href="http://shop.m.daikuan.com" class="shopEvent more">
+                <label class="box_sizing">
+                  <i></i>
+                </label>
+                <span class="ut-s">更多</span>
+              </div>
+            </div>
+          </div>
+        </blockquote>
+        <div class="noshop-tip">没有更多了~</div>
+      </div>
+    </section>
+    <!-- 旗舰品牌end -->
+    <!-- app下载 -->
+    <down></down>
+  </article>
+</div>
+
+<div class="bottom-to-top">
+    <img src='http://img4.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=2016091322417' />
+</div>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

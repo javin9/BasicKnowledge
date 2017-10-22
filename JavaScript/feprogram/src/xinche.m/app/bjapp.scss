@@ -1,0 +1,60 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+body{
+  background-color: #fff
+}
+.app-bg{
+  position: relative;
+  margin: 0; padding: 0;
+  width: 100%;
+  height: px2rem(1200);
+  background:url("images/bg.png") no-repeat center px2rem(476);
+  background-size: px2rem(515) px2rem(520);
+}
+.app-title{
+  text-align: center;
+   @include fsize(32);
+  color: #333333;
+  padding-top: px2rem(280);
+  background: url("images/app_down_icon.png") no-repeat center px2rem(100);
+  background-size:px2rem(160) px2rem(160);
+}
+.app-text{
+  text-align: center;
+  @include fsize(28);
+  color: #686868;
+  padding-top: px2rem(62);
+  padding-bottom: px2rem(40);
+}
+.app-cp{
+  text-align: center;
+  @include fsize(24);
+  color: #c4c4c4;
+  padding-top: px2rem(17);
+}
+.app-btn{
+  position: fixed;
+  bottom: 0;
+  left:50%;
+  margin-left:px2rem(-375);
+  width: px2rem(750);
+  height: px2rem(210);
+  background: #FFFFFF;
+  box-shadow: 0 px2rem(-2) px2rem(4) 0 rgba(0,0,0,0.10);
+  z-index: 3;
+  a{
+    display: inline-block;
+    margin-left: px2rem(30);
+    width: px2rem(690);
+    height: px2rem(100);
+    line-height: px2rem(100);
+    margin-top: px2rem(30);
+    background: #E9474D;
+    border-radius: px2rem(5);
+    text-align: center;
+    @include fsize(32);
+    color: #FFFFFF;
+      z-index: 4;
+  }
+}

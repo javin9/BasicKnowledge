@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="app">
+	<header class="header-bar">
+	    <a href="javascript:history.go(-1);"></a>
+	    <h1 class="font-nav">车主晒单详情</h1>
+	    <span class="font-title"></span>
+	</header>
+
+	<article>
+		<h1>长安测试长安测试长安测</h1>
+		<div class="des">
+			<div class="info">
+				<img src="http://img4.bitautoimg.com/jinrong/newpcweb/css/gerenzhongxin/images/car-001.png" class="avatar">
+				<span>我的名字</span>
+				<span class="time">2016-05-22</span>
+			</div>
+		</div>
+
+
+		<table>
+			<thead>
+				<tr>
+					<th colspan="2">
+						<a href="">
+							<dl>
+								<dt>
+									<img src="http://img2.bitautoimg.com/autoalbum/files/20160721/683/0438266839_2.jpg">
+								</dt>
+								<dd>
+									<p>速腾 2016款 2.0T DSG GLI速腾 2016款 2.0T DSG GLI</p>
+									<p>贷款机构：易鑫金融(一证贷)</p>
+								</dd>
+							</dl>
+						</a>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>购车价格</td>
+					<td>10.05万<p>(裸车价10.00万 + 选装费用0.50万)</p></td>
+				</tr>
+				<tr>
+					<td>厂商指导价</td>
+					<td>11.18万</td>
+				</tr>
+				<tr>
+					<td>购买时间</td>
+					<td>2015-11-19</td>
+				</tr>
+				<tr>
+					<td>购车地点</td>
+					<td>广州</td>
+				</tr>
+				<tr>
+					<td>经销商</td>
+					<td>测试</td>
+				</tr>
+				<tr>
+					<td>购车目的</td>
+					<td class="align-left">
+						<i class="ico-walk">日常代步</i>
+						<i class="ico-travel">旅行</i>
+						<i class="ico-business">商务</i>
+						<i class="ico-cross">越野</i>
+						<i class="ico-freight">货运</i>
+						<i class="ico-speed">赛车</i>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="content">
+			<p>长安测试长安测试长安测长安测试长安测试长安测长安测试长安测试长安测长安测试长安测试长安测长安测试长安测试长安测</p>
+			<p>长安测试长安测试长安测长安测试长安测试长安测长安测试长安测试长安测长安测试长安测试长安测长安测试长安测试长安测</p>
+			<p>
+				<img src="http://img1.bitautoimg.com/chedai/932c6da8-0c5b-446f-9b0c-409feb1ac7f9.jpg" alt="">
+			</p>
+
+			<div class="pic-wrapper">
+          <img src="http://image.bitautoimg.com/appimage/cheyou/m/20160805/w200_h200_f6a062a87ae7432c9651c1e4392719e6.jpeg">
+          <h6>就算大雨让整座城市跌倒，我也给你怀抱，忘不了谁也都背影苍老，写下我度日如年的爱的离骚。</h6>   
+      </div>
+      <div class="pic-wrapper">
+          <img src="http://image.bitautoimg.com/appimage/cheyou/m/20160805/w200_h200_f6a062a87ae7432c9651c1e4392719e6.jpeg">
+          <h6>就算大雨让整座城市跌倒，我也给你怀抱，忘不了谁也都背影苍老，写下我度日如年的爱的离骚。</h6>   
+      </div>
+			<footer>
+				<div class="status">
+					<span class="icon-browser icon">22</span>
+				  <span class="icon" :class="{'icon-liked' : liked, 'icon-like' : !liked}" v-on:click="like()" data-liked="False" data-count="22" v-text="count"></span>
+				</div>
+			</footer>
+		</div>
+	</article>
+
+	<aside>
+		<header>
+			<span>热门晒单：</span>
+			<a href="" class="more"><span>查看更多</span></a>
+		</header>
+		<div class="content">
+			<a href="" class="link">
+				<dl>
+					<dt>
+						<h6>新车计算器|搞定梅赛德斯奔驰到底需要花费多少钱？</h6>
+					</dt>
+					<dd>
+							<span class="link-left">2016-06-13</span>
+							<span class="link-right">
+								<span class="icon-browser icon">22</span>
+			          <span class="icon-like icon">333</span>
+							</span>
+					</dd>
+				</dl>
+			</a>
+			<a href="" class="link">
+				<dl>
+					<dt>
+						<h6>新车计算器|搞定梅赛德斯奔驰到底需要花费多少钱？</h6>
+					</dt>
+					<dd>
+		        <span class="link-left">2016-06-13</span>
+							<span class="link-right">
+								<span class="icon-browser icon">223</span>
+			          <span class="icon-like icon">3</span>
+							</span>
+					</dd>
+				</dl>
+			</a>
+		</div>
+	</aside>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

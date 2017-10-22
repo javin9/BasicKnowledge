@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <title>易鑫车贷送您车带礼包</title>
+    <script>
+        var api_url = 'http://192.168.151.36:8008';
+        var CODE_GETTING_URL = api_url + '/Login/GetCode';
+        var CODE_VALIDATING_URL = api_url + '/Login/CheckCode';
+
+        var Sign = "df979545bab55094a0b91e033d7c3822bc07a5882cecbdc80edf932d1a9d983a882539746e0fd2e826323c135bbab4e8";
+        var ShareUrl = 'http://www.baidu.com';
+        var WeiXinUserSessionId='WeiXinUserSessionId';
+        var showShare = false
+    </script>
+
+</head>
+
+<body>
+    <img src="http://img4.bitautoimg.com/jinrong/newmweb/images/pic300.jpg" style="display:none">
+    {{{htmlWebpackPlugin.options.header}}}
+    <div id="app">
+        <!-- header -->
+        <div action="GET-HEADER" data-text="易鑫车贷送您车贷礼包"></div>
+
+        <div class="share-box">
+            <div class="title"></div>
+            <div class="desc">接受好友邀请，可获得<br />1000元京东E卡</div>
+            <ul class="form_modu">
+                <li class="form_modu_head uf">
+                    <span><input type="tel" name="Telphone" id="Telphone" placeholder="请输入手机号" oninput="if(value.length>13)value=value.slice(0,13)"></span>
+                </li>
+            </ul>
+            <ul class="form_modu">
+                <li class="form_modu_head  uf">
+                    <span><input type="tel" name="CheckCode" id="CheckCode" placeholder="请输入验证码" oninput="if(value.length>4)value=value.slice(0,4)"><a id="getCodeBtn">获取验证码</a></span>
+                </li>
+            </ul>
+            <div class="index-btn">领取优惠券</div>
+
+        <!-- 活动规则 -->
+        <div action="GET-RULES"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var APIURL = "http://192.168.145.12:8060/";
+        var step = 2;//0：一步都未完成，1：完成填写常住地址，2：完成工作单位，3：完成联系人，20：完成上传身份证，30：完成运营商验证
+        var cityIdOnOrder = 201; //下单时用户填写的城市
+        var CODE_GETTING_URL = '/citic/getcode';
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<input name="__RequestVerificationToken" type="hidden" value="JPhJ3hA-BCopEb_jaWvnXkDWCifK4GPWsaigBm5o8RJZTdbknsIIDn8ERSn0PaP8xkkNvz7Khj5S9Ep--IrT_3xfhFI1" />
+
+<div id="yxWrapper">
+    <component-apply
+            :app-info="{'CityId':201,'CarId': 123605,'CompanyId': 80,'DownPayRate':0.3,'LoanPeriod':'36','PackageId':3923,'CarPrice':26.3,'ProductId':107975}"
+            apply-order-url="/Citic/AddLoanOrder"
+            citic-form-data-url="/OrderApply/GetCiticSendInfo"
+            code-validating-url="/citic/checkcode"
+    ></component-apply>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

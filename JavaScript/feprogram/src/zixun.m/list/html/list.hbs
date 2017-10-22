@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="format-detection" content="telephone=no"/>
+  </head>
+
+  <body>
+
+    {{{htmlWebpackPlugin.options.header}}}
+    <script>
+      var CityId = '201';
+      var CityName = "北京";
+      var BusinessLine = 550;
+      var CODE_GETTING_URL='/Login/GetCode';
+      var CODE_VALIDATING_URL='/Login/CheckCode';
+      var ADVISERAPIURL = "http://test.adviserapi.daikuan.com/";
+      var sliderId = 4;
+    </script>
+
+    <div id="yxWrapper">
+      <div id="list" class="list">
+        <!-- 导航开始 -->
+        <header class="header-bar">
+          <a href="javascript:void(0);" v-on:click="goBack" class="nav-back"></a>
+          <h3 class="font-nav">易鑫资讯</h3>
+          <div id="tools-nav"></div>
+          <div id="navTips" class="nav-tips hide">
+              <a href="#"><i></i>首页</a>
+              <a href="#"><i></i>我的申请</a>
+              <a href="javascript:void(0);" id="shareNavTip"><i></i>分享</a>
+          </div>
+        </header>
+        <!-- 导航结束 -->
+        <div class="list-tap">
+          <div id="selSwiper" class="swiper-container">
+            <div class="swiper-wrapper">
+              <a href="#" class="swiper-slide">推荐</a>
+              <a href="#" class="swiper-slide">汽车贷款</a>
+              <a href="#" class="swiper-slide">二手车贷款</a>
+              <a href="#" class="swiper-slide">车险资讯</a>
+              <a href="#" class="swiper-slide cur">其他</a>
+            </div>
+          </div>
+        </div>
+        <!-- list内容 -->
+        <article>
+
+          <!-- 第一条资讯开始 -->
+          <a href="#" class="groups first">
+            <h3 class="wrap clamp2"><span class="label">热点资讯</span>2017年最新银行存贷款利率表央最最央行最新基准利2017年最新银行存贷款利率表央最最央行最新基准利率表率表</h3>
+            <div class="body wrap clamp3">
+              身边很多人买车的诉求看似很复杂，其实简单总结起来也无非就这两类最多，一是最热门的SUV，也不知道什么时候开始对SUV着迷了也不知道什么时候开始对SUV着迷了。
+            </div>
+            <div class="time">2017-07-14</div>
+          </a>
+          <!-- 第一条资讯结束 -->
+       
+          <a href="#" class="groups">
+            <div class="group">
+              <h3 class="wrap clamp2">新车计算器|搞定梅赛德斯奔驰需要花多少钱？搞定梅赛德斯奔驰需要花多少钱？搞定梅赛德斯奔驰需要花多少钱？搞定梅赛德斯奔驰需要花多少钱？</h3>
+              <div class="footer">
+                <span class="label red">汽车贷款</span>
+                <span class="time">2017-07-14</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="groups">
+            <div class="group">
+              <h3 class="wrap clamp2">新车计算器|搞定梅赛德斯奔驰需要花多少钱？</h3>
+              <div class="footer">
+                <span class="label blue">二手车贷款</span>
+                <span class="time">2017-07-14</span>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="groups">
+            <div class="group">
+              <h3 class="wrap clamp2">新车计算器|搞定梅赛德斯奔驰需要花多少钱？</h3>
+              <div class="footer">
+                <span class="label green">车险资讯</span>
+                <span class="time">2017-07-14</span>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="groups">
+            <div class="group">
+              <h3 class="wrap clamp2">新车计算器|搞定梅赛德斯奔驰需要花多少钱？</h3>
+              <div class="footer">
+                <span class="label gray">其他</span>
+                <span class="time">2017-07-14</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- 手机号通道开始 -->
+          <section id="userTel" class="tel-channel"></section>
+          <!-- 手机号通道结束 -->
+
+          <a href="#" class="groups">
+            <div class="group">
+              <h3 class="wrap clamp2">新车计算器|搞定梅赛德斯奔驰需要花多少钱？搞定梅赛德斯奔驰需要花多少钱？搞定梅赛德斯奔驰需要花多少钱？搞定梅赛德斯奔驰需要花多少钱？</h3>
+              <div class="footer">
+                <span class="label red">汽车贷款</span>
+                <span class="time">2017-07-14</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="groups">
+            <div class="group">
+              <h3 class="wrap clamp2">新车计算器|搞定梅赛德斯奔驰需要花多少钱？</h3>
+              <div class="footer">
+                <span class="label blue">二手车贷款</span>
+                <span class="time">2017-07-14</span>
+              </div>
+            </div>
+          </a>
+        
+        </article>
+
+        <!-- 分页开始 -->
+        <div class="pagenation">
+          <a href="javascript:void(0);" class="label disabled">上一页</a>
+          <span class="label"><font class="index">1</font>/<font>3</font></span>
+          <a href="javascript:void(0);" class="label">下一页</a>
+        </div>
+        <!-- 分页结束 -->
+
+        <!-- 面包屑导航开始 -->
+        <nav class="crumbs">
+          <a href="#">首页&gt;</a>
+          <span>易鑫资讯</span>
+        </nav>
+        <!-- 面包屑导航结束 -->
+        <!-- 分享 -->
+        <share :options="shareOptions" qrcode-title="二维码描述标题" title="分享描述标题" view="share"></share>
+      </div>
+    </div>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+article[class^="dialog_"] { position: relative; margin-top: 0.266667rem; margin-bottom: 0.4rem; }
+article[class^="dialog_"] .message { font-size: 0.4rem; }
+article[class^="dialog_"] .message .txt { display: inline-block; padding: 0.213333rem 0.346667rem; line-height: 0.586667rem; border-radius:0.133333rem; }
+article[class^="dialog_"] .icon { width: 1.066667rem; height: 1.066667rem; }
+article[class^="dialog_"] .img_car { width: 1.066667rem; height: 1.066667rem; line-height: 1.066667rem; background-color: #fff; border-radius:0.133333rem; }
+article[class^="dialog_"] .img_car img {
+     display: block; width: 1.066667rem; margin-top: 0.186667rem; margin-bottom: 0.186667rem;
+    
+}
+.mt{ margin-top: 0rem !important; }
+.dialog_serv { width: 8.026667rem; margin-left: 0.266667rem; color: #000; }
+.dialog_serv .message { max-width:6.533333rem; }
+.dialog_serv .message .txt { background-color: #fff; }
+.dialog_serv:before,
+.dialog_serv:after { content: ""; position: absolute; top: 0.373333rem; left: 1.386667rem; display: block; width: 0; height: 0; border-top: 0.133333rem solid transparent; border-bottom: 0.133333rem solid transparent; }
+.dialog_serv:before { border-right: 0.133333rem solid #fff; }
+.dialog_serv:after { left: 1.413333rem; border-right: 0.133333rem solid #fff; }
+.dialog_serv .icon { margin-right: 0.453333rem; }
+
+.dialog_cust { width: 8.8rem; margin-left: 0.933333rem; color: #fff; }
+.dialog_cust .message { max-width:7.333333rem; }
+.dialog_cust .message .txt { float: right; background-color: #dbb76c; border:1px solid #cfab60; }
+.dialog_cust:before { content: ""; position: absolute; top: 0.373333rem; right: 1.4rem; display: block; width: 0; height: 0; border-top: 0.133333rem solid transparent; border-bottom: 0.133333rem solid transparent; }
+.dialog_cust:before { border-left: 0.133333rem solid #cfab60; }
+.dialog_cust .icon { margin-left: 0.453333rem; }
+.dialog_cust .img_car { margin-right: 0.266667rem; }

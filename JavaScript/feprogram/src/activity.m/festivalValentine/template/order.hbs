@@ -1,0 +1,26 @@
+<div class="title-top-desc">已为您匹配到最适合您的<span id="p_characteristic"></span>金融产品</div>
+<article class="form_wrap res_module" id="result"></article>
+<header class="topguide">
+		{{#if lts}}
+    <p>请留下基本信息，以便金融机构确认您的身份，尽快联系到您！</p>
+    {{else}}
+    	{{#if isLoggedIn}}
+    		<p>已根据您的登录信息自动填充部分资料，补充资料并申请该金融产品，贷款顾问将会尽快联系到您</p>
+    	{{else}}
+	    	<p>填写基本信息，立即申请该金融产品，贷款顾问将会尽快联系您</p>
+    	{{/if}}
+    {{/if}}
+
+</header>
+<div id="form-wrapper">
+    {{>./include/form.hbs}}
+</div>
+<footer>
+    <a id="submitBtn" href="javascript:void(0);" class="btn_main">立即申请</a>
+</footer>
+
+{{#if isLoggedIn}}
+{{>./panel/editphone.hbs}}
+{{/if}}
+
+{{>./panel/certificate.hbs}}

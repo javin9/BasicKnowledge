@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">        
+        var myorderUrl = "/";
+        if (document.referrer != "")
+        {
+            myorderUrl = document.referrer;
+        }
+        var loginSign = false;
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<article>
+    <header class="header-bar">
+        <a href="javascript:history.back();"></a>
+        <h1 class="font-nav">申请退款</h1>
+        <span></span>
+    </header>
+
+    <blockquote class="mag20T bg-white detail">
+        <header class="font-title">商品信息</header>
+        <article class="detail-ctn pad30A uf uf-ic">
+            <aside class="car-img">
+                <img src="http://placehold.it/300x200">
+            </aside>
+            <aside class="uf-f1 car-ctn box_sizing">
+                <div class="ut-s font-btn car-name">名称</div>
+                <div class="font-gray1">參考报价：&yen;3333</div>
+            </aside>
+        </article>
+        <footer class="pad30A uf uf-ic">
+            <img src="http://placehold.it/300x200" class="company-name">
+            <div class="uf-f1 font-btn daikun ut-s">贷款方案：测试 (测试)</div>
+        </footer>
+    </blockquote>
+
+    <blockquote class="form pad30A mag20T bg-white">
+        <div>
+            <div class="uf font-title mag40B">
+                <div class="item-name"><span class="font-red">*</span>退款金额：</div>
+                <div class="uf-f1 font-red">&yen;121</div>
+            </div>
+            <div class="uf uf-ic font-title mag40B">
+                <div class="item-name"><span class="font-red">*</span>退款原因：</div>
+                <div id="refundReason" data-id="-1" class="uf-f1 select-con" data-aslider-in="occupation|fade|bottom">请选择退款原因</div>
+                <!-- 退款原因 -->
+                <aside class="sel-control-box" data-aslider="occupation">
+                    <div class="asilder_wrapper">
+                        <div class="sel-ctrl-fun-btn">
+                            <div class="sel-ctrl-close font-nav">取消</div>
+                            <div class="sel-ctrl-title font-nav">退款原因</div>
+                            <div class="sel-ctrl-complete font-nav">确定</div>    
+                        </div>
+                        <div class="scroll-wrapper">
+                            <div class="scroll">
+                                <ul class="slider">                             
+                                    <li data-id="1">贷款额度不够</li>
+                                    <li data-id="2">贷款利率过高</li>
+                                    <li data-id="3">购车首付不够</li>
+                                    <li data-id="4" class="cur">我想买其他车</li>
+                                    <li data-id="5">我不想买了</li>
+                                    <li data-id="0">其他</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="refund-area font-title mag40B hide">
+                <div class="item-name"><span class="font-red">*</span>退款说明：</div>
+                <div>
+                    <textarea id="refundRemark" name="" class="textarea font-btn box_sizing" maxlength="200" placeholder="请描述详细问题"></textarea>
+                    <span class="area-tit box_sizing ut-r font-gray3">200字以内</span>
+                </div>
+            </div>
+
+            <input type="hidden" id="childOrderId" name="childOrderId" data-id="1111" value="2222" />
+
+            <div id="refund" class="btn bg-yellow font-white ut-c font-32">提交申请</div>
+        </div>
+    </blockquote>
+</article>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>年会晚宴选座专享</title>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<script type="text/javascript">
+    //Get 传递：JobNum 工号.返回的Data为Object对象，属性有：UserName用户名,EmployeeNumber工号，Telphone电话
+    var GetUserInfo_url = 'GetUserInfo';
+    //Get 传递：JobNum 工号.返回的Data为Object对象，属性有：IsLeader是否是领导，UserName用户名,EmployeeNumber工号，Telphone电话,DeskID 桌子编号
+    //DeskName 桌子名称，TotalSeatCount该桌子总人数,SurplusCount该桌子剩余人数
+    var GetUserDesk_url = 'GetUserDesk';
+</script>
+
+<div style="display: none; width: 0; height: 0;">
+    <img src="../images/weixinshare.html.jpg" alt="">
+</div>    
+
+<div id="yxWrapper" class="anualParty">
+	
+	<!-- <header class="header-bar" style="">
+        <a href="javascript:history.go(-1);"></a>
+        <h1 class="font-nav">摇号入座</h1>
+        <span></span>
+    </header> -->
+
+	<header class="head">
+		<h2><span class="hide">2017年易鑫金融年会</span></h2>
+	</header>
+
+	<section class="main">
+		<h3 class="title">
+			<span class="hide">请输入工号</span>
+		</h3>
+		<div class="number">
+			<input type="tel" maxlength="5" placeholder="请输入你的工号" class="id" id="jobId">
+			<input placeholder="易鑫员工" class="name" id="jobName" readonly>
+		</div>
+		<div class="msg hide">
+			<span class="error">工号有误，请再输一次试试吧！</span>
+		</div>
+
+		<div class="bottom">
+			<a href="javascript:void(0);" class="btn disable" id="seekBtn">查看我的桌号</a>
+		</div>
+		<p class="extra">
+			清真同学请直接到R1桌用餐，无需查号。
+		</p>
+		<p class="warmtip">互联网产品中心提示：饮酒要适量 不要贪杯哦</p>
+	</section>
+
+	<footer class="foot">
+		<span class="hide">易鑫金融logo</span>
+	</footer>
+	
+	<!-- 弹层 start -->
+	<div id="masklayer" class="hide"></div>
+	<aside class="pop hide">
+		<p class="hello">亲爱的领导<br/>请您到VIP桌就餐</p>
+		<h3 class="desk">VIP</h3>
+		<a href="javascript:void(0);" class="close"></a>
+	</aside>
+	<!-- 弹层 end -->
+</div>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

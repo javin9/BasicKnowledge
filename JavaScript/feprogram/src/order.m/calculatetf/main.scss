@@ -1,0 +1,141 @@
+@import './mixin';
+@import './vars';
+
+body{
+  @include font-family(font-hei);
+
+  &.limit-height{
+  	height:100vh;
+  	overflow: hidden;
+  }
+  .component-mobile-verify-button {
+    background-color: #f2f2f2;
+  }
+}
+
+::-webkit-scrollbar
+{
+  display: none;
+}
+
+.pannel{
+	@include font(s);
+	background:map-get($bg, white);
+	margin-bottom: px2rem(20);
+
+	> ul{
+		@include fsize(32);
+		padding:0 px2rem($padding);
+		color: #394043;
+
+		li{
+			@include clearfix;
+			line-height: px2rem(110);
+			border-bottom:1px solid #e5e5e5;
+
+			@include last(1){
+				border:0;
+			}
+
+			span:first-child{
+				float: left;
+
+				i{
+					font-size:px2rem(24);
+					// @include font(s);
+
+					&.error{
+						color:map-get($mfont, important);
+					}
+				}
+			}
+
+			span:last-child{
+				float: right;
+				color: #333;
+				input{
+					border:0;
+					background:none;
+					text-align: right;
+					width: px2rem(75);
+				}
+			}
+
+			.select:after{
+				@include arrow(right, px2rem(20), 0, left, #c7c7c7);
+				position: static;
+				display: inline-block;
+				margin-left: px2rem(17);
+				vertical-align: middle;
+				margin-top: px2rem(-3);
+				border-width:px2rem(3);
+			}
+
+			em{
+				font-style:normal;
+				color: $main-color;
+			}
+
+			i{
+				color:$des-color;
+				font-style:normal;
+			}
+
+			b{
+				@include ellipsis(px2rem(440));
+				vertical-align: middle;
+				font-weight: normal;
+			}
+		}
+	}
+}
+
+.aside{
+	width: 100%;
+	background:map-get($bg, white);
+	position: fixed;
+	bottom:0;
+	left:0;
+	transform:translateY(300%);
+	transition:all 0.6s;
+	z-index: 2000;
+
+	&.active{
+		transform:translateY(0);
+	}
+
+	ul{
+		li{
+			@include fsize(30);
+			border-top:1px solid map-get($border,normal);
+			line-height:px2rem(100);
+			padding:0 px2rem(30);
+			position: relative;
+
+			&.current{
+				&:after{
+					background-image: url(images/dot2.png);
+				}
+			}
+
+			&:after{
+				content:' ';
+				position: absolute;
+				width: px2rem(41);
+				height:px2rem(40);
+				right:px2rem(30);
+				top:px2rem(25);
+				display: block;
+				background:url(images/dot.png) no-repeat center center;
+				background-size: contain;
+			}
+		}
+	}
+
+	header{
+		@include fsize(30);
+		font-weight: bold;
+		text-align: center;
+		line-height:px2rem(80);
+	}
+}

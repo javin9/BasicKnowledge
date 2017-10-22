@@ -1,0 +1,34 @@
+@mixin nav{
+	@include clearfix;
+	background:#fff;
+	height:px2rem(80);
+	line-height: px2rem(80);
+	position: relative;
+	border-bottom:2px solid #eee;
+	z-index: 9999;
+
+	ul{
+		white-space: nowrap;
+		// overflow-x:scroll;
+		overflow:auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	li{
+		display: inline-block;
+	}
+
+	a{
+		@include fsize(30);
+		color: $font-normal !important;
+		display: inline-block;
+		margin:0 px2rem(30);
+		border-bottom:2px solid transparent;
+		text-decoration: none;
+
+		&.current{
+			color: $font-current !important;
+			border-color:$font-current;
+		}
+	}
+}

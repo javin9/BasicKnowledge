@@ -1,0 +1,18 @@
+<!-- 月收入 -->
+<div id="IncomeDiv" class="choose_bot" style="display: none">
+    <ul class="form_modu">
+        <li class="form_modu_head uf uf_ac">
+            <b>麻烦选择一下您的月收入范围？</b>
+            <!-- update -->
+            <span class="progress"><em>6</em>/6</span>
+            <!-- update end -->
+        </li>
+        <li class="progress-bar"><div style="width:100%"></div></li>
+        <li class="form_modu_body choose_area">
+            {{#each data.incomes}}
+            <a id="{{id}}" href="javascript:void(0);">{{name}}</a>
+            {{/each}}
+        </li>
+    </ul>
+    
+</div>

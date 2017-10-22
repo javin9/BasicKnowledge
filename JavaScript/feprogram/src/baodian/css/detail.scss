@@ -1,0 +1,74 @@
+@import 'vars';
+
+@import 'modular/breadcrumbs';
+@import 'modular/pager';
+@import 'modular/sidebarList';
+
+.baodian-detail{
+	width:$containerWidth;
+	margin:18px auto;
+	overflow: hidden;
+
+	&-left{
+		width: $leftWidth;
+		float: left;
+		margin-right: 40px;
+	}
+
+	&-right{
+		overflow: hidden;
+	}
+
+	&-breadcrumbs{
+		@include breadcrumbs;
+		margin:10px 0;
+	}
+
+	article{
+		h1{
+			font-size:30px;
+			font-weight: bold;
+			color:#000;
+			margin:13px 0;
+		}
+	}
+
+	&-summary{
+		background: #fbfbfb;
+		border:1px solid #e9e9e9;
+		color:#333;
+		font-size:16px;
+		padding:20px 30px;
+		margin:18px 0;
+	}
+
+	&-info{
+		font-size:14px;
+		color:#9e9e9e;
+
+		span{
+			margin:0 5px;
+		}
+	}
+
+	&-content{
+		font-size:16px;
+		color:#666666;
+		line-height: 200%;
+
+		img{
+			max-width:100%;
+		}
+	}
+
+	&-footer{
+		margin-top:40px;
+
+		@include pager;
+	}
+
+	&-list{
+		@include sidebarList();
+		margin-top: 140px;
+	}
+}

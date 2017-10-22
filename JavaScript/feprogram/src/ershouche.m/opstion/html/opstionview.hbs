@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <style>
+
+    </style>
+    <script>
+        var cityInfo= {
+            cityId: "2601",
+            cityName: "天津",
+            citySpell: "tianjin",
+            regionId: "120100",
+            selectCityLevel: "2",
+            selectCityName: "天津市"
+        };
+        var xincheUrl="http://192.168.145.9:8040/";
+        var ershoucheUrl = "http://test.ershouche.m2.daikuan.com/";
+
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="app">
+    <!--头部-->
+    <header class="header-bar">
+        <a href="javascript:history.back();" class="nav-back"></a>
+        <h1 class="font-nav">二手车贷款</h1>
+        <span></span>
+    </header>
+    <!--购车城市 start-->
+    <div class="city-select" id="city-select">
+        <span class="name">购车城市</span>
+        <span class="select"><span class="text">北京</span><i></i></span>
+    </div>
+    <!--三大业务入口 start-->
+    <dl class="search-list">
+
+        <dt>首付（万）</dt>
+        <dd class="downpayment">
+            <span date="" link="" class="choice active">不限</span>
+            <span date="0|1" link="1" class="choice">1万以下</span>
+            <span date="1|2" link="2" class="choice">1-2万</span>
+            <span date="2|3" link="3" class="choice">2-3万</span>
+            <span date="3|4" link="4" class="choice">3-4万</span>
+            <span date="4|6" link="5" class="choice">4-6万</span>
+            <span date="6|8" link="6" class="choice">6-8万</span>
+            <span date="8|10" link="7" class="choice">8-10万</span>
+            <span date="10|99999" link="8" class="choice">10万以上</span>
+        </dd>
+
+        <dt>月供</dt>
+        <dd class="monthlypayment">
+            <span date="" link="" class="choice active">不限</span>
+            <span date="0|2000" link="1" class="choice">2000元以下</span>
+            <span date="2000|3000" link="2" class="choice">2000-3000元</span>
+            <span date="3000|4000" link="3" class="choice">3000-4000元</span>
+            <span date="4000|6000" link="4" class="choice">4000-6000元</span>
+            <span date="6000|8000" link="5" class="choice">6000-8000元</span>
+            <span date="8000|99999" link="6" class="choice">8000元以上</span>
+        </dd>
+
+        <dt>级别</dt>
+        <dd class="level">
+            <span date="0" link="" class="choice active">不限</span>
+            <span date="2" link="1" class="choice">微型车</span>
+            <span date="4" link="2" class="choice">小型车</span>
+            <span date="7" link="3" class="choice">紧凑型车</span>
+            <span date="6" link="4" class="choice">中型车</span>
+            <span date="3" link="5" class="choice">中大型车</span>
+            <span date="1" link="6" class="choice">豪华车</span>
+            <span date="5" link="7" class="choice">MPV</span>
+            <span date="8" link="8" class="choice">SUV</span>
+        </dd>
+        <dt>车龄</dt>
+        <dd class="oldyear">
+            <span date="" link="" class="choice active">不限</span>
+            <span date="0|1" link="1" class="choice">1年以内</span>
+            <span date="0|2" link="2" class="choice">2年以内</span>
+            <span date="0|3" link="3" class="choice">3年以内</span>
+            <span date="3|5" link="4" class="choice">3-5年</span>
+            <span date="5|8" link="5" class="choice">5-8年</span>
+            <span date="8|20" link="6" class="choice">8年以上</span>
+        </dd>
+        <dt>里程</dt>
+        <dd class="mileage">
+            <span date="" link="" class="choice active">不限</span>
+            <span date="0|1" link="1" class="choice">1万公里内</span>
+            <span date="0|3" link="2" class="choice">3万公里内</span>
+            <span date="0|5" link="3" class="choice">5万公里内</span>
+            <span date="0|10" link="4" class="choice">10万公里内</span>
+            <span date="10|" link="5" class="choice">10万公里以上</span>
+        </dd>
+        <dt>选择品牌</dt>
+        <dd class="brand" id="brand">
+            <div link=""  date="10" class="choice active">
+                <span class="logo limit"><img src="../../images/all@3x.html.png"></span>
+                <span class="name">不限</span>
+            </div>
+            <div link="/m136" date="/m136" class="choice">
+                <span class="logo"><img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_26_100.png" alt=""></span>
+                <span class="name">本田</span>
+            </div>
+            <div link="/m136" date="/m136" class="choice">
+                <span class="logo"><img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_30_100.png" alt=""></span>
+                <span class="name">日产</span>
+            </div>
+            <div link="/m136" date="/m136" class="choice">
+                <span class="logo"><img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_36_100.png" alt=""></span>
+                <span class="name">陆风</span>
+            </div>
+            <div link="/m136" date="/m136" class="choice">
+                <span class="logo"><img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_48_100.png" alt=""></span>
+                <span class="name">五菱</span>
+            </div>
+            <div link="/m136" date="/m136" class="choice">
+                <span class="logo"><img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_77_100.png" alt=""></span>
+                <span class="name">众泰</span>
+            </div>
+            <div link="/m136" date="/m136" class="choice">
+                <span class="logo"><img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_157_100.png" alt=""></span>
+                <span class="name">宝骏</span>
+            </div>
+            <div link="/m136" date="/m136" class="choice">
+                <span class="logo"><img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_196_100.png" alt=""></span>
+                <span class="name">哈弗</span>
+            </div>
+        </dd>
+    </dl>
+    <div class="car-select" id="car-select">
+        <span class="name">更多品牌</span>
+        <span class="select"><span class="text">请选择</span><i></i></span>
+    </div>
+    <div class="bottom-btn">
+        <a href="#" class="reset" id="reset-btn">重置</a>
+        <a href="#" class="view" id="view-btn">查看<span id="count">502</span>条车源</a>
+    </div>
+
+</div>
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

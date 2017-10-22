@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script>
+    	var CODE_GETTING_URL = '/Validate/GetCode';
+      var CODE_VALIDATING_URL = '/Validate/CheckCode';
+      var __WX_AUTH__ = {}
+    var couponCard = {
+        CardInfoName: "京东E卡",/*C2券优惠形式*/
+        CardInfoValue: "100",/*C2券面值*/
+        ShareUrl: "https://i.m.daikuan.com/AgentCard/AlreadyGet?sign=d192da1e7f377884dc2004cdd2c7fe4a46aeeaba3d1599df53ffe685623226722687f5990d148391542a025ba19bf548",/*分享链接*/
+        ShortUrl: "t.daikuan.com/Bh9RLE",/*短链接*/
+        IsLoggedin: "true",/*是否登录*/
+        IsParticularChannel: "false",/*是否特殊渠道*/
+        ForceOtherView:"false"
+    };
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="main" share-url="http://www.daikuan.com/" card-info-name="京东E卡" card-info-value="1000" short-link="http://www.baidu.com/" v-bind:login="true" v-bind:channel="false" login-interface="/CouponCard/LoginAndShare" :force-other-view="true"></div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

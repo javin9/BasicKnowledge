@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+
+</head>
+<script>
+     var RESURL = "http://img1.bitautoimg.com/jinrong/newmweb/";
+        var oldshopWebAddress = "http://mzt.chedai.bitauto.com/";
+        var staticResourceUrl = "http://img1.bitautoimg.com/jinrong/newmweb/";
+        //车款信息
+        var car = {
+            masterBrandId: "9", //品牌ID
+            masterBrandName: "奥迪", //品牌名称
+            masterBrandLogo: "http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_9_100.png", //品牌logoUrl
+            serialId: "2593", //车系ID
+            serialName: "A4L",//车系名称
+            serialSpell: "quanxinaodia4l", //车型全拼
+            carId: "116516", //车ID
+            carPrice: "24.65", //车价
+            purchaseTaxRate: "" //购置税
+        };
+        //城市信息
+        var city = {
+            CityId: "201",
+            CityName: "北京",
+            RegionId: "110100",
+            CitySpell: "beijing",
+            SelectCityLevel: "2",
+            SelectCityName: "北京",
+            cityId: "201",
+            cityName: "北京",
+            regionId: "110100",
+            citySpell: "beijing",
+            selectCityLevel: "2",
+            selectCityName: "北京"
+        };
+          var cityInfo = {
+        cityId: "201",
+        cityName: "北京",
+        citySpell: "beijing",
+        regionId: "110100"
+    }
+
+        //产品
+        var product = {
+            productID: "78794",
+            packageID: "3191",
+            productPromotionId: "0"
+        };
+        //经销商信息
+        var dealer = {
+            dealerId: "0",
+            dealerName: "北京4S店平均报价"
+        };
+        var channel = "";
+        var source = "695";
+        var companyID = "472";
+        var adviserApi = "http://test.adviserapi.daikuan.com/";
+
+        var starYellow = "http://img3.bitautoimg.com/jinrong/newmweb/css/xinche/images/list6.png?v=201610121127";
+        var starGray = "http://img1.bitautoimg.com/jinrong/newmweb/css/xinche/images/list7.png?v=201610121127";
+
+        var isForCity = 'True';//是否支持该城市
+        var hasCityFitCar = 'True';//是否有城市支持该车款
+        var isPromotionExpired = 'False';//促销是否已过期
+        var isPackageExpired = 'False';//套餐是否已过期
+        var orderApplyUrl = "http://sq.m.daikuan.com/OrderApply/Index";
+        var baseRoutes = "";
+
+        var deviceId = "3ac91bab-cada-4c79-b1a7-8a4d51fcfab0";
+        var loanUserId = 0;
+        var commentCount=12;
+          var cityInfo = {
+        cityId: "201",
+        cityName: "北京",
+        citySpell: "beijing",
+        regionId: "110100",
+        selectCityLevel: "0",
+        selectCityName: ""
+    }
+    var cityId_local ="201";
+    var v_ucarId ="10881246";
+    var v_carId ="10674";
+    var ucarPrice ="34.6";
+    var productDownPay="0.1000000000";
+    var productPeriod="36";
+    var v_productID="109518";
+    var packageId = "3978";
+    var pictureLength = "8";
+    var channel = "667";
+    var source = "";
+    var fromTxt= "";
+    var line = "551";
+    var SoldOrUnSold ="2";
+    var mbid = "2";
+    var ershoucheUrl = "http://test.ershouche.m2.daikuan.com/";
+     var xincheUrl = "http://test.xinche.daikuan.com/";
+
+
+</script>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="yxWrapper">
+    <div id="app">
+        <!--头部-->
+        <header class="header-bar">
+            <a href="javascript:history.back();" class="nav-back"></a>
+            <h1 class="font-nav">产品详情</h1>
+            <span></span>
+        </header>
+        <!--swiper start-->
+        <div class="detail_swiper" id="detailSwiper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><span class="deal_img"></span><img class="img"
+                                                                                 src="http://img1.bitautoimg.com/chedai/35f66dd3-8cd6-48f3-bb83-801853ccd335.jpg">
+                    </div>
+                    <div class="swiper-slide"><img class="img"
+                                                   src="http://img1.bitautoimg.com/chedai/3ec419e5-78ed-4c2a-b7e7-8cc1ffdc8782.jpg">
+                    </div>
+                    <div class="swiper-slide"><img class="img"
+                                                   src="http://img1.bitautoimg.com/chedai/3ec419e5-78ed-4c2a-b7e7-8cc1ffdc8782.jpg">
+                    </div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+                <div class="pic_loaction font-ctn">北京</div>
+            </div>
+        </div>
+        <!--车信息-->
+        <div class="detail_car_info">
+            <div class="car_name">唯雅诺 13款 3.5L 皓驰版</div>
+            <div class="car_info">
+                <div class="fl">
+                    <span class="col_red">12.80万</span> &nbsp;<span class="col_grey9">新车价格16.23万(含税)</span>
+                </div>
+                <div class="fr"><span class="grenn_box">省3.5万</span></div>
+            </div>
+        </div>
+        <!--精真估-->
+        <section class="jingzhengu display-flex" id="jingzhengu">
+            <div><img
+                    src="http://img4.bitautoimg.com/jinrong/newmweb/images/ershouche/detail_w/jingzhengu.jpg?v=201609191722">
+            </div>
+            <ul class="flex1 font-ctn">
+                <li><i class="diamond-icon"></i>第三方公信力二手车估值平台</li>
+                <li><i class="money-icon"></i>查询历史<span>成交均价</span> <i class="histogram-icon"></i>计算年<span>用车成本</span></li>
+            </ul>
+            <i class="arrow-icon"></i>
+        </section>
+        <!--套餐信息开始-->
+        <section class="package-wrapper display-flex">
+            <div><img src="http://img1.bitautoimg.com/chedai/d0ef8099-92e6-412b-a817-5754eb289f58.png"></div>
+            <article class="flex1">
+                <h1 class="font-title">悦贷金融计划 (宝马金融)</h1>
+                <span class="label">
+                <label class="font-ctn">1-3天审批</label>
+                            <label class="font-ctn">身份证明+收入证明</label>
+        </span>
+                <div class="subtitle font-ctn">30%尾款—悦贷金融计划</div>
+
+                <div class="f24 package-wrapper-info display-flex">
+                    <div>
+                        <span class="font-title col_red">4.7</span><span>分／20条评价</span>
+                        <span>7213人申请</span>
+                    </div>
+                    <div class="flex1">申请信息：<span class="f-green font-28">宽松</span></div>
+                </div>
+                <div class="discount-wrapper">
+                    <div class="display-flex">
+                        <div class="f22"><i class="label icon-bg li-label"></i></div>
+                        <div class="f24 flex1">送盗抢保障；可融保险</div>
+                    </div>
+                    <div class="display-flex">
+                        <div class="f22"><i class="label icon-bg fu-label"></i></div>
+                        <div class="f24 flex1">送盗抢保障；可融保险</div>
+                    </div>
+                    <div class="display-flex">
+                        <div class="f22"><i class="label icon-bg hui-label"></i></div>
+                        <div class="f24 flex1">送盗抢保障；可融保险</div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="product-features">
+            <div class="f24"><i class="icon-bg"></i>低利率</div>
+            <div class="f24"><i class="icon-bg"></i>低首付</div>
+            <div class="f24"><i class="icon-bg"></i>低付</div>
+            <div class="f24"><i class="icon-bg"></i>低付</div>
+            <div class="f24"><i class="icon-bg"></i>低付</div>
+            <div class="more hide"><span class=""></span></div>
+            <span class="product-features-more hide"></span>
+        </section>
+        <!-- 贷款计算信息开始 -->
+        <section class="price-wrapper display-flex" id="priceWrapper">
+            <div class="doughnut-chart font-ctn">
+                <h3 class="font-ctn">总花费￥<span id="total_price"><span></h3>
+                <div>
+                    <canvas id="myChart" width="400" height="400" style="width: 200px; height: 200px;"></canvas>
+                </div>
+                <span class="font-24 price-detailed" id="detailPrice"><i class="icon-bg"></i>明细</span>
+            </div>
+            <ul class="flex1 font-24" id="chartFour">
+                <li><i class="bg-black"></i>首付<span class="font-ctn" id="downPaymentChart">--</span></li>
+                <li><i class="bg-golden"></i>贷款额度<span class="font-ctn" id="loanAmountChart">--</span></li>
+                <li id="weikuan"><i class=""></i>尾款<span class="font-ctn" id="weikuanChart">--</span></li>
+                <li><i class="bg-darkGrey"></i>贷款成本<span class="font-ctn" id="borrowingCostsChart">--</span></li>
+            </ul>
+        </section>
+
+        <section class="down-payment-wrapper">
+            <div class="sel-items">
+                <h3>首付<span id="index_shoufu_text" class="font-red font-ctn">￥</span></h3>
+                <div class="yx-silder-wrapper">
+                    <div id="index_shoufu"></div>
+                </div>
+            </div>
+            <div class="sel-items">
+                <h3>月供<span id="index_yuegong_text" class="font-red font-ctn">￥</span></h3>
+
+                <div class="yx-silder-wrapper">
+                    <div id="index_yuegong"></div>
+                </div>
+            </div>
+        </section>
+        <!--车辆档案-->
+        <div class="Car_files">
+            <div class="title">车辆档案<span class="body_right_more font_24 car_modle" id="carModle">车型参数配置<i class="body_more_tipr"></i></span></div>
+            <ul class="Car_files_ul">
+                <li class="itme">
+                    <div class="icon_txt"><i class="icon_place"></i>所在地</div>
+                    <div class="txt">北京</div>
+                </li>
+                <li class="itme">
+                    <div class="icon_txt"><i class="icon_otime"></i>上牌时间</div>
+                    <div class="txt">2013-04-01</div>
+                </li>
+            </ul>
+            <a href="#" class="Car_files_more">查看全部车辆档案</a>
+        </div>
+        <!--贷款详情 用户评价 易问答-->
+        <div class="details_tabs_box">
+            <ul class="tabs_ul">
+                <li class="cur" data-id="loanDetails">贷款详情</li>
+                <li action="GET-COMMENT-LIST" data-packgeId='3978' data-html="#userCommentList" data-id="userEvaluation">用户评价</li>
+                <li data-html="#easyAnswer" data-id="easyAnswer">易问答</li>
+            </ul>
+            <div class="details_tabs_con">
+                <!-- 贷款详情 start -->
+                <div id="loanDetails" class="tabs_content loanDetails">
+                    <div class="title">利率说明</div>
+                    <div class="table_box">
+                        <table class="tables">
+                            <tr>
+                                <th>贷款期限(期/月)</th>
+                                <td>12期</td>
+                                <td>24期</td>
+                                <td>36期</td>
+                            </tr>
+                            <tr>
+                                <th>月费率</th>
+                                <td>0.54%</td>
+                                <td>0.50%</td>
+                                <td>0.43%</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="title">产品说明</div>
+                    <ul class="loanDetails_ul">
+                        <li>申请人名下拥有个人汽车贷款或信用卡分期车贷（含个人住房公积金贷款），且还款期≥12期</li>
+                        <li>申请金额大，申请额度可达20 万元</li>
+                    </ul>
+                    <div class="title">申请条件</div>
+                    <ul class="loanDetails_ul">
+                        <li>1、申请人二代身份证</li>
+                        <li>2、银行流水或社保卡</li>
+                        <li>3、房产证（如有）</li>
+                    </ul>
+
+                </div>
+                <!-- 用户评价 start -->
+                <div id="userEvaluation" class="tabs_content hide">
+                    <header class="evaluation-header">
+        <span class="grade-star">
+            <div style="width:94.00%"></div>
+        </span>
+                        <span class="font-title font-red font-bold">4.7</span><span>/<span class="font-22">5分</span></span>
+
+                        <div class="display-flex font-24">
+                            <div class="flex1">反馈速度 <span class="font-red">4.7分</span></div>
+                            <div class="flex1">机构服务 <span class="font-red">4.6分</span></div>
+                            <div class="flex1">审批速度 <span class="font-red">4.7分</span></div>
+                        </div>
+
+
+                        <div class="evaluation-header-tag">
+                            <label class="font-24">审核快 11</label>
+                            <label class="font-24">额度高 10</label>
+                            <label class="font-24">月供少 9</label>
+                            <label class="font-24">资料简便 8</label>
+                            <label class="font-24">首付低 4</label>
+                            <label class="font-24">放款快 4</label>
+                            <label class="font-24">还款期限长 1</label>
+                        </div>
+
+                    </header>
+                    <div class="bg_f2"></div>
+                    <div class="userCommentList" id="userCommentList"></div>
+                </div>
+                <!-- 易问答start -->
+                <div id="easyAnswer" class="tabs_content hide">
+                    <div class="eQ-con eQEvent">
+                        <dl>
+                            <dt class="expert font-24">
+                                <img src="http://img1.bitautoimg.com/chedai/1fea11aa-8108-45fe-ad29-7e76642e3c8c.jpg">
+                                <b class="font-ctn">Cathy姐</b>易鑫车贷高级服务顾问
+                            <div>外企汽车金融公司4年从业经验，专业解决车贷难题</div>
+                            <div>
+                                <label>外企汽车</label>
+                                <label>外企汽车</label>
+                            </div>
+                            <a href="/ExpertQuestion/Index?businessLine=550&amp;expertId=1" class="ask-btn font-26">点我提问</a>
+                            </dt>
+                            <dd class="eQ-list">
+                                <ul class="eQ-list-con font-24">
+                                    <!-- 循环单元start -->
+                                    <li data-id="7">
+                                        <dl>
+                                            <dt>
+                                                <img src="http://img2.bitautoimg.com/jinrong/newmweb/css/usercenter/images/car-008.png?v=201610121127">
+                                                <b class="font-28">不想付首付可以么？</b>用户:134****9137
+                                            </dt>
+                                            <dd>
+                                                <img src="http://img1.bitautoimg.com/chedai/1fea11aa-8108-45fe-ad29-7e76642e3c8c.jpg">
+                                                <div class="font-ctn">您空手套白狼啊？</div>
+                                                <span>3天前</span><i class="pariseEvent">赞(<span>1348</span>)</i>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li data-id="2">
+                                        <dl>
+                                            <dt>
+                                                <img src="http://img3.bitautoimg.com/jinrong/newmweb/css/usercenter/images/car-003.png?v=201610121127">
+                                                <b class="font-28">办车贷需要准备哪些东西？</b>用户:135****6134
+                                            </dt>
+                                            <dd>
+                                                <img src="http://img1.bitautoimg.com/chedai/1fea11aa-8108-45fe-ad29-7e76642e3c8c.jpg">
+                                                <div class="font-ctn">客官好，各家金融机构的要求是不一样的，比较常见的有身份证，户口本，银行流水，驾照等，有的还会要求提供房产，结婚证，居住证明等等，具体要求肯定还是要看具体金融机构和金融产品的要求啦。</div>
+                                                <span>3天前</span><i class="pariseEvent">赞(<span>191</span>)</i>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li data-id="3">
+                                        <dl>
+                                            <dt>
+                                                <img src="http://img4.bitautoimg.com/jinrong/newmweb/css/usercenter/images/car-004.png?v=201610121127">
+                                                <b class="font-28">我信用卡有几次忘还款了，还能申请车贷么？</b>用户:137****9137
+                                            </dt>
+                                            <dd>
+                                                <img src="http://img1.bitautoimg.com/chedai/1fea11aa-8108-45fe-ad29-7e76642e3c8c.jpg">
+                                                <div class="font-ctn">亲，那要看您忘还款的具体次数和具体金额了，如果比较严重的话，可能会导致车贷的首付比提高，还款期限降低等。如果特别严重的话，可能短期内就无法获得车贷了。养成良好的还款习惯很重要哦！</div>
+                                                <span>3天前</span><i class="pariseEvent">赞(<span>187</span>)</i>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <!-- 循环单元end -->
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--贷款顾问 列表-->
+        <div class="details_loan_adviser">
+            <div class="adviser-wrapper adviser-status">
+                <div class="font-title">贷款顾问<span class="font-24">全程陪同，贷款无忧</span></div>
+                <span class="body_right_more font_24">更多查看<i class="body_more_tipr"></i></span>
+            </div>
+            <ul class="adviser-list adviser-status">
+                <li>
+                    <div class="gotoAdviser" data="132"><img
+                            src="http://image.bitautoimg.com/jinrong/2016/08/08/86a0d478-1373-43d0-b01d-98ef8068a04b.png"/>
+                    </div>
+                    <div class="gotoAdviser" data="132">
+                        <p class="font-ctn"><span>禹雅姣</span><i class="adviser-level skillLevel-2"></i></p>
+                        <p class="font-22">已帮4100人贷款</p>
+                    </div>
+                    <a href="tel:4008155609,1112"></a>
+                </li>
+                <li>
+                    <div class="gotoAdviser" data="131"><img
+                            src="http://image.bitautoimg.com/jinrong/2016/08/08/42e16a0e-a270-42ba-8b1d-14340485b20e.png">
+                    </div>
+                    <div class="gotoAdviser" data="131">
+                        <p class="font-ctn"><span>李晓映</span><i class="adviser-level skillLevel-3"></i></p>
+                        <p class="font-22">已帮4526人贷款</p>
+                    </div>
+                    <a href="tel:4008155609,1174"></a>
+                </li>
+                <li>
+                    <div class="gotoAdviser" data="131"><img
+                            src="http://image.bitautoimg.com/jinrong/2016/08/08/42e16a0e-a270-42ba-8b1d-14340485b20e.png">
+                    </div>
+                    <div class="gotoAdviser" data="131">
+                        <p class="font-ctn"><span>李晓映</span><i class="adviser-level skillLevel-3"></i></p>
+                        <p class="font-22">已帮4526人贷款</p>
+                    </div>
+                    <a href="tel:4008155609,1174"></a>
+                </li>
+            </ul>
+        </div>
+        <!--更多推荐 最新成交 -->
+        <div class="details_tabs_more">
+            <ul class="tabs_ul_more">
+                <li class="cur" data-id="MoreRecommended">更多推荐</li>
+                <li data-id="latestDeal">最新成交</li>
+            </ul>
+            <div class="details_tabs_con">
+                <div id="MoreRecommended" class="tabs_content MoreRecommended">
+                    <ul class="MoreRecommended_ul">
+                        <li>
+                            <a href="#">
+                                <div class="img"><img src="http://img5.taoche.cn/01/02160tihmt.jpg"/></div>
+                                <div class="text">
+                                    <div class="name">福瑞迪三厢 12款 1.6L 自动 Premium 纪念版</div>
+                                    <div class="car_info">
+                                        <span class="info">2012年上牌/5.79万公里</span>
+                                        <span class="icon_txt">延长质保</span>
+                                    </div>
+                                    <div class="price">
+                                        <span class="price_txt">首付</span>
+                                        <span class="price_nub">1.83万</span>
+                                        <span class="price_txt">月供</span>
+                                        <span class="price_nub">1.83万</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="img"><img src="http://img5.taoche.cn/01/02160tihmt.jpg"/></div>
+                                <div class="text">
+                                    <div class="name">福瑞迪三厢 12款 1.6L 自动 Premium 纪念版</div>
+                                    <div class="car_info">
+                                        <span class="info">2012年上牌/5.79万公里</span>
+                                        <span class="icon_txt">延长质保</span>
+                                    </div>
+                                    <div class="price">
+                                        <span class="price_txt">首付</span>
+                                        <span class="price_nub">1.83万</span>
+                                        <span class="price_txt">月供</span>
+                                        <span class="price_nub">1.83万</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="latestDeal" class="tabs_content latestDeal hide">
+                    <ul class="MoreRecommended_ul latestDeal_ul">
+                        <li>
+                            <a href="#">
+                                <div class="img"><span class="deal_img"></span><img
+                                        src="http://img5.taoche.cn/01/02160tihmt.jpg"/></div>
+                                <div class="text">
+                                    <div class="name">福瑞迪三厢 12款 1.6L 自动 Premium 纪念版</div>
+                                    <div class="car_info">
+                                        <span class="info">2012年上牌/5.79万公里</span>
+                                        <span class="icon_txt">延长质保</span>
+                                    </div>
+                                    <div class="price">
+                                        <span class="price_txt">首付</span>
+                                        <span class="price_nub">1.83万</span>
+                                        <span class="price_txt">月供</span>
+                                        <span class="price_nub">1.83万</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部 按钮-->
+    <div class="button_blk"></div>
+    <ul class="button_box">
+        <li class="but_adviser"><i class="icon_adviser"></i><br/>顾问</li>
+        <li class="but_loan"><span>切换金融方案（9898款）</span></li>
+        <li id="but_apply" class="but_apply" href="#">立即申请</li>
+    </ul>
+    <!--精真估 弹层-->
+    <div id="maskLayer"></div>
+    <div id="jingzhenguLayer" class="">
+        <div>
+            <i class="close"></i>
+            <div id="wrapperIframe">
+                <iframe id="jingzhenguIframe" data-src="http://m.jingzhengu.com/yixin-s4882-r2008-02-01-m1200000000-c201.html" frameborder="0" src=""></iframe>
+            </div>
+        </div>
+    </div>
+        <ul class="financial_button_box">
+             <li id="financial_but_apply" style="display:none;" class="financial_but_apply" href="#">立即申请</li>
+              <li id="financial_but_apply_no" class="financial_but_apply_no" href="#">请选择金融产品</li>
+        </ul>
+    <!--切换金融方案 弹层-->
+    <div class="financial_plan" id="financialPlanLayer">
+        <i class="close"></i>
+        <div class="financial_iscroll" id="financialIscroll">
+            <ul class="financial_plan_ul">
+                
+            </ul>
+        
+        </div>
+    </div>
+    
+    <!--价格明细弹层start -->
+    <section id="priceListLayer" class="" >
+        <div class="layer-close-btn"><i class="icon-bg close"></i></div>
+        <ul id="priceHtml">
+
+        </ul>
+    </section>
+    <!-- 贷款顾问弹层start -->
+    <dl id="adviserLayer" class="">
+        <dt class="font-title">贷款顾问<i class="icon-bg close"></i></dt>
+        <dd id="adviserLayerCon">
+            <ul style="">
+                <li>
+                    <div class="gotoAdviser" data="131"><img
+                            src="http://image.bitautoimg.com/jinrong/2016/08/08/42e16a0e-a270-42ba-8b1d-14340485b20e.png">
+                    </div>
+                    <div class="gotoAdviser" data="131">
+                        <p class="font-ctn"><span>李晓映</span><i class="adviser-level skillLevel-3"></i></p>
+                        <p class="font-22">已帮4676人贷款</p>
+                    </div>
+                    <a href="tel:4008155609,1174"></a>
+                </li>
+            </ul>
+        </dd>
+    </dl>
+    <div class="bottom-to-top">
+        <img src='http://img4.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=2016091322417'/>
+    </div>
+</div>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

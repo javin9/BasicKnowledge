@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var xin_che_url = 'http://test.m.daikuan.com';
+        var user_center_url = 'http://test.i.m.daikuan.com';
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="main">
+    <component-basic-data
+            :relationship="[{'value':1133,'text':'亲属'},{'value':1134,'text':'同事'},{'value':1135,'text':'朋友'}]"
+            :qualification='{"LiviingCityID":201,"LivingDetailAddress":"中华民国","WorkUnit":null,"EmergencyContactRelationship":0,"EmergencyContact":null,"EmergencyContactMobile":"1333****3"}'
+            :default-city="{'Id':201,'Name':'上海'}"
+            address-setting-url="/onlineapproval/setaddress"
+            work-unit-setting-url="/onlineapproval/setworkunit"
+            contact-setting-url="/onlineapproval/setemergencycontactperson"
+            to-login-url="http://test.i.m.daikuan.com/login/index?returnurl=http%3a%2f%2fsnap.test.order.m.daikuan.com%2fonlineapproval%2fbaseinfo%3forderId%3d111497413226778%26childOrderId%3d811497335627254"
+            approval-info-url="/online-approval/index.html"
+            :step="0"
+    >
+    </component-basic-data>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

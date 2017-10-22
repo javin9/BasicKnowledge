@@ -1,0 +1,259 @@
+@import 'sassHelper/mixin';
+@import 'sassHelper/vars';
+#app{
+	min-height:400px;
+}
+.component-info{
+	>section{
+		margin-bottom: 30px;
+		font-size:14px;
+		color:$dark-color;
+
+		h2{
+			color:$dark-color;
+			font-size:24px;
+			font-weight: normal;
+			margin-bottom: 20px;
+		}
+	}
+}
+.mask-layer{
+	width: 420px;
+	height: 42px;
+	display: block;
+	position: absolute;
+	z-index: 9;
+}
+.form-item{
+	margin-bottom: 30px;
+	&.disabled.form-select{
+		.content:after{
+			border-top: 1px solid $disabled-color;
+			border-right: 1px solid $disabled-color;
+		}
+	}
+	&.disabled{
+		color:$disabled-color;
+		*{
+			color:$disabled-color;
+		}
+		.content input.text-no-value,
+		.content .text.text-no-value{
+			color:$disabled-color;
+		}
+		::placeholder{
+			color:$disabled-color !important;
+			opacity: 1;
+		}
+		label{
+			em{
+				background-image: url(images/label-tip-disabled.png);
+			}
+		}
+	}
+	&-error{
+		input,.text-value{
+			color:$main-color;
+		}
+	}
+
+	label{
+		display: inline-block;
+		vertical-align: middle;
+		width: 100px;
+		position: relative;
+		margin-right: 30px;
+		line-height: 40px;
+		text-align: right;
+		font-size:14px;
+		color:#000;
+		i{
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		em{
+			@include size(14px);
+			background:url(./images/label-tip.png) no-repeat center center;
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 5px;
+			position: relative;
+			z-index: 100;
+			cursor:pointer;
+		}
+
+		.hover-tip{
+			@include border;
+			position: absolute;
+			background:#fff url(./images/vintip.jpg) no-repeat center center;
+			border-radius:10px;
+			padding:20px;
+			width: 560px;
+			box-sizing:border-box;
+			height:260px;
+			top:30px;
+			left:-60px;
+			box-shadow: 1px 0 4px rgba(212, 210, 210, .5);
+
+			&:after{
+				content:' ';
+				position: absolute;
+				top:-13px;
+				left:57px;
+				width:18px;
+				height:13px;
+				background:url(./images/arc.png) no-repeat left top;
+			}
+		}
+	}
+
+	.content{
+		display: inline-block;
+		position: relative;
+
+		input,.text{
+			@include border;
+			display: inline-block;
+			width: 420px;
+			box-sizing:border-box;
+			padding:0 11px;
+			background:#fff;
+			font-size:14px;
+
+			&.text-no-value{
+				color:$light-color;
+			}
+		}
+
+		.text{
+			line-height: 40px;
+			@include ellipsis();
+			max-width:420px\9;
+			vertical-align: middle;
+		}
+
+		input{
+			height:40px;
+			line-height: 40px\9;
+		}
+
+		.text{
+			cursor:pointer;
+		}
+
+		i.error{
+			display: inline-block;
+			width: 22px;
+			height: 22px;
+			vertical-align: middle;
+			background:url(./images/error.png) no-repeat center center;
+			margin-left: 10px;
+		}
+
+		i.warning{
+			color:$main-color;
+			margin-left: 20px;
+			display: inline-block;
+			vertical-align: middle;
+
+			&.valid span{
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			&.valid:before{
+				@include size(20px);
+				content:' ';
+				background:url(./images/valid.png) no-repeat left top;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 10px;
+			}
+		}
+	}
+
+	&.form-select .content{
+		&:after{
+			@include arrow(bottom, 6px, 400px, left, #666);
+			pointer-events:none;
+		}
+	}
+}
+
+// 组件：抵押状态
+.component-mortgage{
+	.content > span{
+		display: inline-block;
+		margin-right: 40px;
+		cursor:pointer;
+		position: relative;
+
+		.hover-tip{
+			white-space: nowrap;
+			line-height: 18px;
+			margin-left:10px;
+			font-size:12px;
+			color:$main-color;
+		}
+
+		i{
+			display: inline-block;
+		}
+
+		b{
+			@include size(16px);
+			margin-right: 10px;
+			content:' ';
+			display: inline-block;
+			background-image: url(./images/unselected.png);
+			vertical-align: middle;
+		}
+
+		b.selected{
+			background-image: url(./images/selected.png);
+		}
+
+		&.last em{
+			@include size(16px);
+			margin-left: 10px;
+			content:' ';
+			display: inline-block;
+			background-image: url(./images/tip.png);
+			vertical-align: middle;
+		}
+	}
+}
+
+// 组件： 加载框
+.component-loading{
+	position: fixed;
+	width: 100%;
+	height:100%;
+	left:0;
+	top:0;
+	z-index: 9999;
+
+	span{
+		position: absolute;
+		left:50%;
+		top:50%;
+		z-index: 10000;
+		color:#fff;
+		font-size:18px;
+		background:url(./images/loading.gif) no-repeat left top;
+		padding-left: 80px;
+		line-height: 60px;		
+		margin-left: -85px;
+	}
+
+	&:after{
+		content:' ';
+		display: block;
+		width: 100%;
+		height:100%;
+		background:#000;
+		opacity:$mask-opacity;
+	}
+
+}

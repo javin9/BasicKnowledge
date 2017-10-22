@@ -1,0 +1,396 @@
+i{
+	font-style: normal;
+}
+[data-dpr="1"] .font-btn{
+  font-size: 16px;
+}
+[data-dpr="2"] .font-btn{
+  font-size: 32px;
+}
+[data-dpr="3"] .font-btn{
+  font-size: 48px;
+}
+.font-btn,
+.font-btn:link,
+.font-btn:visited,
+.font-btn:active,
+.font-btn:hover {
+	color: #ffffff !important;
+}
+.form-box ul{
+	background: #fff;
+	padding-left:0.4rem;
+	margin-bottom:0.266667rem;
+}
+.form-box ul li{
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+	border-bottom:1px solid #eee;
+	height:1.466667rem;
+	line-height:1.466667rem;
+}
+.form-box ul li.warning{
+	height:auto;
+	line-height:200%;
+	display:none;
+}
+.form-box ul li:last-child{
+	border-bottom:none;
+}
+.form-box li i{
+	display:block;
+	width:0.48rem;
+	height:0.62rem;
+	background-size: 6.8rem auto !important;
+	background: url(images/icon.png) no-repeat left 0.09rem;
+	position:relative;
+	top:0.48rem;
+}
+.form-box li#socialSecurity i{
+	background-position: left -0.8rem;
+}
+.form-box li#income i{
+	background-position: left -1.5rem;
+}
+.form-box li#accumulationFund i{
+	background-position: left -2.4rem;
+}
+.form-box li#creditRecord i{
+	background-position: left -3.2rem;
+}
+.form-box li#housingSituation i{
+	background-position: left -4.04rem;
+}
+.form-box li#houseState i{
+	background-position: left -4.04rem;
+}
+.form-box li#purchaseTime i{
+	background-position: -1.013333rem -7.946667rem;
+}
+
+.form-box li em{
+	color:#d0d0d0;
+}
+.form-box li span{
+	color:#666;
+	text-align:right;
+	flex: 1;
+	-webkit-flex: 1;
+	-webkit-box-flex: 1;      
+	-moz-box-flex: 1;         
+	-ms-flex: 1; 
+	padding-right:0.906667rem;
+	position:relative;
+	display:block;
+}
+.form-box li span:after{
+	width: 0.253333rem;
+    right: 0.4rem;
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    height: 0.253333rem;
+    border-right: 1px solid #b2b2b2;
+    border-top: 1px solid #b2b2b2;
+    content: " ";
+    margin-top:-0.153333rem;
+}
+.form-box li b{
+	font-weight:normal;
+	padding-left:0.373333rem;
+}
+
+.form-box header{
+	line-height:150%;
+	align-items:center;
+	-webkit-box-align: center;
+	text-align:left;
+	padding:0.4rem;
+	color:#8b8b8b;
+}
+.form-box h3{
+	text-align: center;
+	display: block;
+	line-height:0.973333rem;
+	color:#999;
+}
+.authentication{
+	margin:0 0.266667rem;
+	height:1.973333rem;
+	background:#5fc3e8;
+	border-radius:0.133333rem;
+	color:#fff;
+}
+.authentication dt{
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding:0.373333rem;
+}
+.authentication dt b{
+	font-weight: normal;
+	display: block;
+	flex: 3;
+	-webkit-flex: 3;
+	-webkit-box-flex: 3;      
+	-moz-box-flex: 3;         
+	-ms-flex: 3; 
+}
+.authentication dt i{
+	width:2.226667rem;	
+	display: block;
+	background-size: 6.8rem auto !important;
+	background: url(images/icon.png) no-repeat -4.8rem -1.5rem;
+	padding-left:0.64rem;
+	flex: 1;
+	-webkit-flex: 1;
+	-webkit-box-flex: 1;      
+	-moz-box-flex: 1;         
+	-ms-flex: 1; 
+	box-sizing: border-box;
+}
+.authentication dd{
+	padding:0 0.373333rem;
+}
+
+.submit-form{
+	background:#dbb76c;
+	margin: 0 0.266667rem 0.266667rem 0.266667rem;
+    border-radius: 0.133333rem;
+    height: 1.28rem;
+}
+.submit-form a{
+	display:block;
+	line-height:1.28rem;
+	color:#fff;
+	text-align: center;
+}
+.submit-form.disabled{
+	background:#dcdcdc;
+}
+
+.form-box footer {
+    color: #999;
+    margin:0 0.266667rem 0.733333rem 0.266667rem;
+}
+.form-box footer a{
+	color:#5fc3e8;
+}
+.form-box footer i{
+	display:inline-block;
+	width:0.46rem;
+	height:0.46rem;
+	background-size: 6.8rem auto !important;
+	background: url(images/icon.png) no-repeat -0.63rem -0.6rem;
+	margin-right:0.133333rem;
+	position: relative;
+	top: 0.09rem;
+}
+.form-box footer i.cur{
+	background-position:-0.63rem top;
+}
+
+/*评估弹层*/
+.assessment-box{
+	position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display:none;
+        z-index: 88888;
+}
+.assessment-wrapper{
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-left:-4.333333rem;
+	margin-top:-4.533333rem;
+	width:8.666666rem;
+	height:9.066666rem;
+	border-radius: 0.266667rem;
+	background: #fff;
+	z-index: 99999;
+}
+.assessment-bg{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-color: #000;
+}
+.ass-btn{
+	width:7.6rem;
+	height:1.306667rem;
+	background:#dbb76c;
+	text-align: center;
+	line-height:1.306667rem;
+	border-radius: 0.133333rem;
+	color:#fff;
+	margin:0 auto;
+	font-weight:bold;
+}
+.ass-btn a{
+	display: block;
+    color: #fff;
+}
+.ass-ani-box{
+	height:6.666667rem;
+	position: relative;
+}
+.ass-bg{
+	position:absolute;
+	width: 100%;
+	height:6.666667rem;
+	left:0;
+	top:0;
+	background-size: 6.026667rem auto !important;
+	background:url(images/loading_bg.png) no-repeat center 1.36rem;
+	text-align:center;
+	padding-top:2.826667rem;
+	box-sizing: border-box;
+}
+.ass-bg>span{
+	display:block;
+	color:#a4a4a4;
+}
+.ass-bg>span em{
+	color:#5fc3e8;
+}
+.ass-bg>b{
+	display:block;
+	color:#5fc3e8;
+}
+.ass-bg>div{
+	color:#999;
+}
+[data-dpr="1"] .ass-bg>div{
+  font-size: 15px;
+}
+[data-dpr="2"] .ass-bg>div{
+  font-size: 30px;
+}
+[data-dpr="3"] .ass-bg>div{
+  font-size:45px;
+}
+
+[data-dpr="1"] .ass-bg>b em{
+  font-size: 18px;
+}
+[data-dpr="2"] .ass-bg>b em{
+  font-size: 36px;
+}
+[data-dpr="3"] .ass-bg>b em{
+  font-size: 54px;
+}
+
+[data-dpr="1"] .ass-bg>b{
+  font-size: 50px;
+}
+[data-dpr="2"] .ass-bg>b{
+  font-size: 100px;
+}
+[data-dpr="3"] .ass-bg>b{
+  font-size: 150px;
+}
+
+
+/*易鑫流程*/
+[data-dpr="1"] .font-input{
+  font-size: 14px;
+}
+[data-dpr="2"] .font-input{
+  font-size: 28px;
+}
+[data-dpr="3"] .font-input{
+  font-size: 42px;
+}
+
+
+.credit-input{
+	margin:0.266667rem;
+	background:#fff;
+	height:1.28rem;
+	border-radius: 0.133333rem;
+	border:1px solid #eeeeee;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+	align-items:center;
+	-webkit-box-align: center;
+}
+.credit-input input{
+	height:1.28rem;
+	text-indent:0.4rem;
+	border:none;
+	display:block;
+	flex: 1;
+	-webkit-flex: 1;
+	-webkit-box-flex: 1;      
+	-moz-box-flex: 1;         
+	-ms-flex: 1;  
+}
+.warning{
+	margin:0 0.266667rem 0.266667rem 0.266667rem;
+}
+
+.ass-ani-box>dt{
+	width: 7.6rem;
+	margin:0 auto;
+	text-align: center;
+	padding:1.12rem 0 0.8rem 0;
+}
+.ass-ani-box>dd{
+	width: 7.6rem;
+	margin:0 auto;
+	line-height:150%;
+}
+#noResultLayer .assessment-wrapper{
+	height:7.546667rem;
+}
+#noResultLayer .ass-ani-box{
+	height:5.7rem;
+}
+#tipBox{
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: 100;
+    overflow: hidden;
+    transition: all .5s ease;
+    -webkit-transition: all 1.5s ease;
+    transform-origin: 0 0 0;
+    opacity: 1;
+    transform: scale(1,1);
+}
+
+#tipBox .layout-text {
+    width: 5rem;
+    min-height: 1.40626rem;
+    line-height: 150%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -.70313rem;
+    margin-left: -2.5rem;
+    text-align: center;
+    background-color: rgba(75,75,75,.8);
+    border-radius: .133333rem;
+    color: #fcfcfc;
+    box-sizing: border-box;
+    padding: .5rem .2rem;
+}

@@ -1,0 +1,17 @@
+stages:
+  - build
+
+# 编译
+build:
+  stage: build
+  artifacts: 
+   name: "$CI_BUILD_REF_NAME"
+   expire_in: 2 week
+   paths:
+    - dist/
+  script: 
+   - ln -s ~/.shared_node_modules/node_modules .
+   - npm install
+   - npm run build $BUILD_PARAMS -- --node_modules_absolute_path '/home/gitlab-runner/.shared_node_modules'
+  only:
+    - triggers

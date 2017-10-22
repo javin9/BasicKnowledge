@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script>
+        var localCity={"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":2,"SelectCityName":"北京"};
+        var ipLocationInfo={"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":2,"SelectCityName":"北京"};
+
+        var deviceId = "8f00a536-78ce-4681-ae67-82fe37872cf7";
+        var loanUserId = 0;
+        var APIURL = "http://api.chedai.bitauto.com/";
+        //是否是核销码
+        var isHXM = 'False';
+
+        var car = {
+            masterBrandId: "30",
+            masterBrandName: "日产",
+            serialId: "1679",
+            serialName: "骊威",
+            carId: "115137",
+            carPrice: "9.24",
+            purchaseTaxRate: ""
+        };
+        //城市信息
+        var city = {
+            cityId: "201",
+            cityName: "北京",
+            citySpell: "beijing",
+            regionId: "110100",
+            selectCityLevel: "2",
+            selectCityName: "北京"
+        };
+        //产品
+        var product = {
+            productID: "112471",
+            packageID: "4181",
+            productPromotionId: "0",
+            packageName: "7-9万两证通"
+        };
+
+        //经销商信息
+        var dealer = {
+            
+            dealerId: "",
+            dealerName: "北京4S店平均报价",
+            dealerTel: ""
+        };
+        var channel = "";
+        var source = "969";
+        var companyID = "472";
+        var adviserApi = "http://test.adviserapi.daikuan.com/";
+        var defaultPhoto = 'http://img4.bitautoimg.com/jinrong/newpcweb/css/xinche/images/default-photo.png?v=201702241752';
+
+        var totalComments = '122';
+        var isFromZT = 'False';
+
+        var packageProcess = "http://sq.daikuan.com//OrderApply/Index";
+        var BusinessLine = 550;
+        var ADVISERAPIURL = "http://test.adviserapi.daikuan.com/";
+        var shop = "";
+        //一次性付息
+        var isLumpPayment = 'True';
+        //保证金产品
+        var isDeposit = 'False';
+        var BusinessLine = 550;
+    
+        var CODE_GETTING_URL = '/ValidateCode/GetCode/';
+        var CODE_VALIDATING_URL = '/ValidateCode/CheckCode/';
+        var getCalculationInfoUrl = '/Sem/GetCalculationInfo';
+        var getByIdUrl = '/Sem/GetRepaymentById';
+
+        // 表单部分
+        var AddOrder = 'http://jsd.order.daikuan.com/SwiftLoan/Create';
+        var isLogined = 'true';
+        var isAuthenticated = 'false';
+        var carId = '117269';
+        var carName =  '北京 BJ20 1.5T 手动 舒适型';
+        var idNumber = '130821********7136';
+        var showUserName ='闫*亮';
+        var showMobile='182****5766';
+        var orders = "1234_3555_0"
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div class="sem">
+    <div class="sem-ctn">
+        
+        <article class="detail-wrapper new-detail clrfix" id="Content">
+            <div class="sem-banner" style="background-image: url(http://img1.yixinfinance.com/chedai/be99c9be-eeea-470f-9ea0-9e7e17fe98ef.jpg); height: 240px;"></div>
+            <!-- <img class="sem-banner" src=""> -->
+            <header class="detail-header">
+                <!-- 金融顾问导航end -->
+                <section class="new-car-wrapper">
+                    <div class="car-info clrfix">
+                        <div class="car-info-right clrfix">
+                            <div class="car-img fl">
+                                <img src="//img4.bitautoimg.com/autoalbum/files/20170629/545/0539295459_6.jpg">
+                            </div>
+                            <div class="car-info-detail">
+                                <div class="car-info-top clrfix">
+                                    <div class="block1 clrfix">
+                                        <div class="switching-models">
+                                            <div id="changeCar" class="car-series fl"><font>奔驰GLA级</font></div>
+                                            <div class="select-ctrl fl">
+                                                <div data-id="77302" data-link="" data-disabled="" data-category="2017" data-type="">2017款 GLA 260 4MATIC 运动型</div>
+                                                <ul class="drop-layer" style="display: none;">
+                                                    <li class="triangle-icon"></li>
+                                                    <li class="disabled" data-category="2017" data-id="0" data-disabled="disabled">2017</li>
+                                                    <li class="" data-category="2017" data-id="124769" data-type="2017款">
+                                                        <a href="javascript:void(0);">
+                                                            GLA 200 动感型
+                                                            <span><i>|</i>27.18万</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="" data-category="2017" data-id="124770" data-type="2017款">
+                                                        <a href="/beijing/m124770/p134406/?source=1141&amp;DownPayment=0.3&amp;RepaymentPeriod=12">
+                                                            GLA 200 时尚型
+                                                            <span><i>|</i>29.08万</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="" data-category="2017" data-id="124771" data-type="2017款">
+                                                        <a href="/beijing/m124771/p134406/?source=1141&amp;DownPayment=0.3&amp;RepaymentPeriod=12">
+                                                            GLA 220 4MATIC 时尚型
+                                                            <span><i>|</i>32.18万</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="" data-category="2017" data-id="124772" data-type="2017款">
+                                                        <a href="/beijing/m124772/p134406/?source=1141&amp;DownPayment=0.3&amp;RepaymentPeriod=12">
+                                                            GLA 220 4MATIC 豪华型
+                                                            <span><i>|</i>35.08万</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="" data-category="2017" data-id="124773" data-type="2017款">
+                                                        <a href="/beijing/m124773/p134406/?source=1141&amp;DownPayment=0.3&amp;RepaymentPeriod=12">
+                                                            GLA 260 4MATIC 运动型
+                                                            <span>39.90万</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="disabled" data-category="2016" data-id="0" data-disabled="disabled">2016</li>
+                                                    <li class="" data-category="2016" data-id="117836" data-type="2016款">
+                                                        <a href="/beijing/m117836/p134406/?source=1141&amp;DownPayment=0.3&amp;RepaymentPeriod=12">
+                                                            200 动感型
+                                                            <span>26.98万</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="" data-category="2016" data-id="117837" data-type="2016款">
+                                                        <a href="/beijing/m117837/p134406/?source=1141&amp;DownPayment=0.3&amp;RepaymentPeriod=12">
+                                                            200 时尚型
+                                                            <span>28.98万</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="" data-category="2016" data-id="121333" data-type="2016款">
+                                                        <a href="/beijing/m121333/p134406/?source=1141&amp;DownPayment=0.3&amp;RepaymentPeriod=12">
+                                                            200 蓝调版
+                                                            <span>29.98万</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="" data-category="2016" data-id="117838" data-type="2016款">
+                                                        <a href="/beijing/m117838/p134406/?source=1141&amp;DownPayment=0.3&amp;RepaymentPeriod=12">
+                                                            220 4MATIC 时尚型
+                                                            <span>31.98万</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="" data-category="2016" data-id="117839" data-type="2016款">
+                                                        <a href="/beijing/m117839/p134406/?source=1141&amp;DownPayment=0.3&amp;RepaymentPeriod=12">
+                                                            220 4MATIC 豪华型
+                                                            <span>34.98万</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="" data-category="2016" data-id="117840" data-type="2016款">
+                                                        <a href="/beijing/m117840/p134406/?source=1141&amp;DownPayment=0.3&amp;RepaymentPeriod=12">
+                                                            260 4MATIC 运动型
+                                                            <span>39.80万</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="block2 clrfix">
+                                        <div class="fl quote">
+                                            <div class="select-offer-box clrfix">
+                                                <div class="fl name">北京4S店平均报价</div>
+                                                <div class="fl font">￥368,500</div>
+                                            </div>
+                                        </div>
+                                        <div class="area">
+                                            <div class="sel-city">
+                                                <div class="area-city-box">
+                                                    <span class="area-city-con">北京</span>
+                                                    <i class="downArrow-icon"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="detail-info clrfix">
+                                        <div class="payment" data-bind="visible:!isShowFirstPayment(), attr:{'class': hxmClassName}"><span>首付</span><font class="padL30" data-bind="text:downPaymentCount">--</font><span class="hxm-payment-rate" data-bind="visible:!isShowDownPayment()">(<font data-bind="text:downPaymentRate"></font>)</span></div>
+                                        <div class="payment" data-bind="visible:isShowFirstPayment, attr:{'class': hxmClassName}"><span>首次支付</span><font class="padL60" data-bind="text:firstPaymentCount">--</font><span class="hxm-payment-rate" data-bind="visible:!isShowDownPayment()">(<font data-bind="text:downPaymentRate"></font>)</span></div>
+                                        <div class="monthPay"><span>月供</span><font class="padL30" data-bind="text:monthlyPaymentCount">--</font><font class="old-payment" data-bind="visible:isPromotionExpired,text:oldMonthlyPaymentCount">--</font><font class="limit" data-bind="text:'×'+repaymentPeriod()+'期'">--</font></div>
+                                        <div class="subsidiary" data-bind="attr:{'class': subsidiaryClassName}"><span>查看明细</span></div>
+                                        <div class="cost"><span>分期成本 <font data-bind="text:totalCostCount">--</font></span></div>
+                                        <div class="rest" data-bind="visible:isFinalPaymentAmount">贷款尾款 <font data-bind="text:finalPaymentAmountCount">--</font></div>
+                                        <div class="first-payment" data-bind="visible:isShowFirstPayment">
+                                            首次支付 = 首付
+                                            <font data-bind="text:downPaymentCount">0元</font>
+                                            <span data-bind="visible:isSecurityDeposit">+ 保证金
+                                                <font data-bind="text:securityDepositCount">--</font>
+                                            </span>
+                                            <span data-bind="visible:isLumpPayment">+ 一次性付息
+                                                <font data-bind="text:totalCostCount">--</font>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <!--首付月供保证金start-->
+                                    <div class="down-payment-wrapper">
+                                        <div class="sel-items clrfix" data-bind="visible:isShowDownPayment">
+                                            <h3>首付比例</h3>
+                                            <div id="downPayment"></div>
+                                        </div>
+                                        <div class="sel-items clrfix" data-bind="visible:isSecurityDeposit">
+                                            <h3>保证金</h3>
+                                            <div id="securityDeposit"></div>
+                                        </div>
+                                        <div class="sel-items clrfix">
+                                            <h3>还款期限</h3>
+                                            <div id="repaymentPeriod"></div>
+                                        </div>
+
+                                    </div>
+                                    <!--首付月供保证金end-->
+                                    <!-- 促销start -->
+                                    <div class="clrfix gift-box Pack-Amount">
+                                        <h3>促销</h3>
+                                        <div class="fl gift-box-right">
+                                                    <span class="gift-group li-hui f-14">
+                                                        <span class="tip-box">
+                                                            <label class="label-icon" style="">惠</label>
+                                                            <label class="gift-ctn" style="">下单即享利息7.8折；送价值2…</label>
+                                                        </span>
+                                                            <div class="Pack-Amount-tip tipText">
+                                                                <div class="info">
+                                                                    下单即享车贷超值优惠<br />送价值2000元盗抢保障<br />用户可通过手机拍照的方式，上传贷款资料
+
+                                                                </div>
+                                                                <p class="tar col-red"></p>
+                                                            </div>
+                                                    </span>
+
+
+                                        </div>
+
+                                    </div>
+                                    <!-- 促销end -->
+                                </div>
+                                <div class="tel-info">
+                                    <div id="form" class="order-box">
+                                        <div class="row">
+                                            <label>姓名 </label>
+                                            <div class="input-box">
+                                                <input type="text" name="Name" id="Name" class="checked" placeholder="请输入姓名" maxlength="12" />
+                                            </div>
+                                        </div>
+                                        <div class="yzts">*请输入正确的姓名</div>
+                                        <div class="row">
+                                            <label>身份证 </label>
+                                            <div class="input-box">
+                                                <input type="text" name="CertificateNumber" id="CertificateNumber" class="checked" placeholder="请输入身份证" maxlength="18" />
+                                            </div>
+                                        </div>
+                                        <div class="yzts">*请输入正确的身份证</div> 
+                                        <div class="row">
+                                            <label>手机号</label>
+                                            <div class="input-box">
+                                                <input type="tel" name="Telephone" id="Telephone" class="checked" placeholder="请输入手机号" maxlength="11" />
+                                            </div>
+                                        </div>
+                                        <div class="yzts">*请输入正确的手机号</div>
+                                        <div class="row row-code">
+                                            <label>验证码 </label>
+                                            <div class="input-box">
+                                                <input type="text" name="ValidateCode" id="ValidateCode" class="checked" placeholder="请输入验证码" maxlength="4" />
+                                                <a href="javascript:void(0)" class="code-btn" data-detail="s倒计时" data-seconds="60" id="GetValidateCodeBtn">获取验证码</a>
+                                            </div>
+                                        </div>
+                                        <div class="yzts">*请输入正确的验证码</div>
+                                        <div class="yy-box"><span class="yy-box-tip">收不到短信？</span><i class="yy-box-icon"></i><span id="GetValidateCodeLink" class="yy-box-link">试试语音验证码</span></div>
+                                        <div class="apply-btn">
+                                            <a href="javascript:void(0)" class="btn" id="submit-btn">立即申请</a>
+                                        </div>
+                                        <input id="CarName" name="CarName" type="hidden" value="" />
+                                        <input id="CarId" name="CarId" type="hidden" value="" />
+                                        <input id="CarPrice" name="CarPrice" type="hidden" value="" />
+                                        <input type="hidden" name="CityName" id="CityName" value="" />
+                                        <input id="CityId" name="CityId" type="hidden" value="2401" />
+                                        <input id="Source" name="Source" type="hidden" value="787" />
+                                        <input id="Channel" name="Channel" type="hidden" value="605" />
+                                        <input id="From" name="From" type="hidden" value="newpcweb" />
+                                        <input id="orders" name="order" type="hidden" value="1234_3555_0">
+
+                                        <div class="count">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--金融机构end-->
+                </section>
+            </header>
+        </article>
+        <!--总花费弹层start-->
+        <section class="total-cost-layer hide">
+            <header>明细<!-- <span data-bind="text:'￥'+ totalExpenses()">--</span> --><div class="close-layer"></div></header>
+            <footer>
+                <dl class="clrfix first-child">
+                    <dt class="clrfix" data-bind="visible: !isShowFirstPayment()">
+                        <ul class="first">
+                            <li class="box-01 f-black">首付</li>
+                            <li class="box-02">车价</li>
+                            <li class="box-03">×</li>
+                            <li class="box-04">首付比例</li>
+                        </ul>
+                        <ul>
+                            <li class="box-01 f-red" data-bind="text:'￥'+ downPayment()">--</li>
+                            <li class="box-02" data-bind="text:carPriceFormat">--</li>
+                            <li class="box-03">&nbsp;</li>
+                            <li class="box-04" data-bind="text:downPaymentRate">--</li>
+                        </ul>
+                    </dt>
+                </dl>
+                <dl class="clrfix first-child" data-bind="visible:isShowFirstPayment">
+                    <dt id="DepositAndLump" class="clrfix">
+                        <ul class="first">
+                            <li class="box-01 f-black">首次支付</li>
+                            <li class="box-02">首付</li>
+                            <li class="box-03" data-bind="visible:isSecurityDeposit">+</li>
+                            <li class="box-04" data-bind="visible:isSecurityDeposit">保证金</li>
+                            <li class="box-03" data-bind="visible:isLumpPayment">+</li>
+                            <li class="box-04" data-bind="visible:isLumpPayment">一次性付息</li>
+                        </ul>
+                        <ul>
+                            <li class="box-01 f-red" data-bind="text:'￥'+firstPayment()">--</li>
+                            <li class="box-02" data-bind="text:downPayment">--</li>
+                            <li class="box-03" data-bind="visible:isSecurityDeposit">&nbsp;</li>
+                            <li class="box-04" data-bind="visible:isSecurityDeposit, text:securityDeposit">--</li>
+                            <li class="box-03" data-bind="visible:isLumpPayment">&nbsp;</li>
+                            <li class="box-04" data-bind="visible:isLumpPayment, text:totalCost">--</li>
+                        </ul>
+                    </dt>
+                    <!-- <dd class="clrfix">
+                        <ul class="first">
+                            <li class="box-01 f-black">首付</li>
+                            <li class="box-02">车价</li>
+                            <li class="box-03" class="font-18-gray">×</li>
+                            <li class="box-04">首付比例</li>
+                        </ul>
+                        <ul>
+                            <li class="box-01 f-red" data-bind="text:'￥'+ downPayment()">--</li>
+                            <li class="box-02" data-bind="text:carPriceFormat">--</li>
+                            <li class="box-03">&nbsp;</li>
+                            <li class="box-04" data-bind="text:downPaymentRate">--</li>
+                        </ul>
+                    </dd> -->
+                    <dd class="clrfix" data-bind="visible:isSecurityDeposit">
+                        <ul class="first">
+                            <li class="box-01 f-black">保证金</li>
+                            <li class="box-02">分期额度</li>
+                            <li class="box-03" class="font-18-gray">×</li>
+                            <li class="box-04">保证金比例</li>
+                        </ul>
+                        <ul>
+                            <li class="box-01" data-bind="text:'￥'+securityDeposit()">--</li>
+                            <li class="box-02" data-bind="text:loanAmount">--</li>
+                            <li class="box-03">&nbsp;</li>
+                            <li class="box-04" data-bind="text:securityDepositRate">--</li>
+                        </ul>
+                    </dd>
+                    <!-- <dd class="clrfix" data-bind="visible:isLumpPayment">
+                        <ul class="first">
+                            <li class="box-01 f-black">一次性付息</li>
+                            <li class="box-02">利息</li>
+                            <li class="box-03" data-bind="visible:serviceFeeCout()>0">+</li>
+                            <li class="box-04" data-bind="visible:serviceFeeCout()>0">手续费</li>
+                        </ul>
+                        <ul>
+                            <li class="box-01" data-bind="text:'￥'+totalCost()">--</li>
+                            <li class="box-02" data-bind="text:totalInterest">--</li>
+                            <li class="box-03" data-bind="visible:serviceFeeCout()>0">&nbsp;</li>
+                            <li class="box-04" data-bind="text:serviceFee,visible:serviceFeeCout()>0">--</li>
+                        </ul>
+                    </dd> -->
+                </dl>
+                <dl class="clrfix first-child">
+                    <dt class="clrfix">
+                        <ul class="first clrfix">
+                            <li class="box-01 f-black">分期额度</li>
+                            <li class="box-02">车价</li>
+                            <li class="box-03">-</li>
+                            <li class="box-04">首付</li>
+                        </ul>
+                        <ul class="clrfix">
+                            <li class="box-01 f-red" data-bind="text:'￥'+ loanAmount()">--</li>
+                            <li class="box-02" data-bind="text:carPriceFormat">--</li>
+                            <li class="box-03">&nbsp;</li>
+                            <li class="box-04" data-bind="text:downPayment">--</li>
+                        </ul>
+                        <div data-bind="visible:isFinalPaymentAmount" class="retainage">
+                            分期额度包含尾款 <font data-bind="text:'￥'+ finalPaymentAmount()">--</font> (车价x<font data-bind="text:finalPaymentRate">--</font>)
+                        </div>
+                    </dt>
+                </dl>
+                <dl class="clrfix first-child">
+                    <dt class="clrfix">
+                        <ul class="first">
+                            <li class="box-01 f-black">月供</li>
+                            <li class="box-02" data-bind="text:rateText">月利率</li>
+                            <li class="box-03">&nbsp;</li>
+                            <li class="box-04">&nbsp;</li>
+                        </ul>
+                        <ul>
+                            <li class="box-01 f-red"><font data-bind="text:'￥'+ monthlyPayment()">--</font> <font class="old-payment" data-bind="visible:isPromotionExpired, text:'￥'+ oldMonthlyPayment()">--</font></li>
+                            <li class="box-05"><font data-bind="text:interestRate">--</font> <font class="old-interstRate" data-bind="visible:isPromotionExpired">原费率<i data-bind="text:oldInterestRate">--</i></font></li>
+                            <li class="box-00">&nbsp;</li>
+                            <li class="box-00">&nbsp;</li>
+                        </ul>
+                    </dt>
+                    <dd class="clrfix">
+                        <ul class="first">
+                            <li class="box-01">分期成本</li>
+                            <li class="box-02">利息</li>
+                            <li class="box-03" data-bind="visible:serviceFeeCout()>0">+</li>
+                            <li class="box-04" data-bind="visible:serviceFeeCout()>0">手续费</li>
+                        </ul>
+                        <ul>
+                            <li class="box-01" data-bind="text:'￥'+ totalCost()">--</li>
+                            <li class="box-02" data-bind="text:totalInterest">--</li>
+                            <li class="box-03" data-bind="visible:serviceFeeCout()>0">&nbsp;</li>
+                            <li class="box-04" data-bind="text:serviceFee,visible:serviceFeeCout()>0">--</li>
+                        </ul>
+                    </dd>
+                    <dd class="clrfix" style="display: none">
+                        <ul>
+                            <li class="box-01">税费</li>
+                            <li class="box-05">购置税</li>
+                            <li class="box-06">+</li>
+                            <li class="box-07">上牌费</li>
+                            <li class="box-08">+</li>
+                            <li class="box-09">交强险</li>
+                        </ul>
+                        <ul>
+                            <li class="box-01" data-bind="text:'￥'+ taxation()">--</li>
+                            <li class="box-05" data-bind="text:purchaseTax">--</li>
+                            <li class="box-06">&nbsp;</li>
+                            <li class="box-07">500</li>
+                            <li class="box-08">&nbsp;</li>
+                            <li class="box-09">950/年</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </footer>
+        </section>
+        <!--总花费弹层end-->
+    </div>
+
+    <footer class="sem-footer">
+        <div class="footer-bottom">
+            Copyright © 2015-2017 daikuan.com版权所有&nbsp;&nbsp;北京易鑫信息科技有限公司&nbsp;&nbsp;京ICP备15006372号-2&nbsp;&nbsp;<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020005" target="_blank">京公网安备11010802020005号</a>
+        </div>
+    </footer>
+</div>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

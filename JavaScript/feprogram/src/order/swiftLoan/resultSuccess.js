@@ -1,0 +1,1 @@
+import "./resultSuccess.scss";

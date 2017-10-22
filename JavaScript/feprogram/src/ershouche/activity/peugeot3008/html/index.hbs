@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8"> {{{htmlWebpackPlugin.options.shim}}}
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+<script type="text/javascript">
+    var cityInfo = {
+        cityId: "201",
+        cityName: "天津",
+        citySpell: "tianjin",
+        regionId: "120100",
+        selectCityLevel: "2",
+        selectCityName: "天津市"
+    };
+    var xincheUrl = "http://192.168.145.9:8040/";
+    var ershoucheUrl = "http://test.ershouche.m.daikuan.com/";
+    var RESURL = "http://img1.bitautoimg.com/jinrong/newpcweb/";
+    /*var RESURL = "http://192.168.145.9:8013/Web/";*/
+
+    //易问答 点赞 要的数据
+    var loanUserId = 22;
+    var deviceId = 90;
+    var source = 775;
+    var carinfo=[
+        {name:'1标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'1',downpayment:'121',carinfoso:'carinfo'},
+        {name:'2标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'2',downpayment:'121',carinfoso:'carinfo'},
+        {name:'3标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'3',downpayment:'121',carinfoso:'carinfo'},
+        {name:'4标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'4',downpayment:'121',carinfoso:'carinfo'},
+        {name:'5标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'5',downpayment:'121',carinfoso:'carinfo'},
+        {name:'6标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'6',downpayment:'121',carinfoso:'carinfo'},
+        {name:'7标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'7',downpayment:'121',carinfoso:'carinfo'},
+        {name:'8标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'8',downpayment:'121',carinfoso:'carinfo'},
+        {name:'9标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'9',downpayment:'121',carinfoso:'carinfo'},
+        {name:'10标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'10',downpayment:'121',carinfoso:'carinfo'},
+        {name:'11标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'11',downpayment:'121',carinfoso:'carinfo'},
+        {name:'12标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'12',downpayment:'121',carinfoso:'carinfo'},
+        {name:'13标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'13',downpayment:'121',carinfoso:'carinfo'},
+        {name:'14标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'14',downpayment:'121',carinfoso:'carinfo'},
+        {name:'15标致3008 2013款 1.6thp 自动智尚版本',carprice:'14.30',year:'2014',mile:'2.3',cityname:'天津',cityid:'15',downpayment:'121',carinfoso:'carinfo'},
+
+    ]
+</script>
+<!--<h1 id="test">test</h1>
+<h1 id="off">off</h1>
+<h1 id="on">on</h1>-->
+
+<div class="activitybox">
+    <div class="banner lazy" data-original="../images/banner.html.jpg"></div>
+    <div class="rules lazy" data-original="../images/rules.html.jpg">
+        <div class="w_1200">
+            <span id="rules"></span>
+        </div>
+    </div>
+    <div class="linkbox" id="linkbox">
+        <div class="img_1 lazy" data-original="../images/img_1.html.jpg" id="chongqing">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="1"></a>
+            </div>
+        </div>
+        <div class="img_2 lazy" data-original="../images/img_2.html.jpg" id="chuangchun">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="2"></a>
+            </div>
+        </div>
+        <div class="img_3 lazy" data-original="../images/img_3.html.jpg" id="changsha">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="3"></a>
+            </div>
+        </div>
+        <div class="img_4 lazy" data-original="../images/img_4.html.jpg" id="chengdu">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="4"></a>
+            </div>
+        </div>
+        <div class="img_5 lazy" data-original="../images/img_5.html.jpg" id="dalian">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="5"></a>
+            </div>
+        </div>
+        <div class="img_6 lazy" data-original="../images/img_6.html.jpg" id="hefei">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="6"></a>
+            </div>
+        </div>
+        <div class="img_7 lazy" data-original="../images/img_7.html.jpg" id="nanjing">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="7"></a>
+            </div>
+        </div>
+        <div class="img_8 lazy" data-original="../images/img_8.html.jpg" id="ningbo">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="8"></a>
+            </div>
+        </div>
+        <div class="img_9 lazy" data-original="../images/img_9.html.jpg" id="shijiazhuang">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="9"></a>
+            </div>
+        </div>
+        <div class="img_10 lazy" data-original="../images/img_10.html.jpg" id="suzhou">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="10"></a>
+            </div>
+        </div>
+        <div class="img_11 lazy" data-original="../images/img_11.html.jpg" id="taiyuan">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="11"></a>
+            </div>
+        </div>
+        <div class="img_12 lazy" data-original="../images/img_12.html.jpg" id="wulumuqi">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="12"></a>
+            </div>
+        </div>
+        <div class="img_13 lazy" data-original="../images/img_13.html.jpg" id="tianjing">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="13"></a>
+            </div>
+        </div>
+        <div class="img_14 lazy" data-original="../images/img_14.html.jpg" id="wuxi">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="14"></a>
+            </div>
+        </div>
+        <div class="img_15 lazy" data-original="../images/img_15.html.jpg" id="xian">
+            <div class="w_1200">
+                <a href="#" class="yiche"></a>
+                <a href="javascript:;" class="yixin" data-id="15"></a>
+            </div>
+        </div>
+        <div class="copy">活动最终解释权归易鑫车贷所有 &nbsp; &nbsp; 购车热线：010-80697111</div>
+    </div>
+
+</div>
+<!--弹窗 验证码-->
+<div class="login_info_box hide">
+    <div class="info_txt">
+        <div class="cloes"></div>
+        <h6>--</h6>
+        <div class="txt">提交订单后金融顾问会尽快与您联系，您可重新修改金融方案。</div>
+    </div>
+    <div class="input_box">
+        <ul>
+            <li class="item iphone">
+                <div class="input"><input type="text" name="phone" class="tel inputphone" placeholder="请输入手机号" value=""/></div>
+                <span class="del"></span>
+                <div class="errormsg"></div>
+            </li>
+            <li class="item code">
+                <div class="input"><input type="text" name="code" class="tel inputcode" placeholder="请输入验证码" value=""/></div>
+                <span class="del"></span>
+                <div class="code_btn disable_a">获取验证码</div>
+                <div class="errormsg"></div>
+            </li>
+        </ul>
+        <!--<div class="info">首付期限可选，详情与金融顾问咨询。</div>-->
+        <div class="submit">提交</div>
+    </div>
+</div>
+<!--弹窗 活动规则-->
+<div class="rules_win hide">
+    <div class="rules_win_tit">
+        <div class="cloes"></div>
+        <h6>活动细则：</h6>
+    </div>
+    <div class="conter_scroll">
+        <div class="tit tit_1"></div>
+        <div class="txt">活动期间，凡通过易鑫车贷购买活动车辆的用户，在成交后将以短信方式获得500元京东E卡。</div>
+
+        <div class="tit tit_2"></div>
+        <div class="txt">凡通过易鑫车贷购买活动车辆的用户即送价值2000元盗抢保障，无需再投相关保险，如车辆发生盗抢意外，可按照盗抢险承保范围理赔。</div>
+
+        <div class="tit tit_3"></div>
+        <div class="txt">活动期间，凡通过易鑫车贷购买活动车辆的用户，在成交后将受邀参加提车作业活动。将购车经历分享至主流汽车论坛，满足基本发帖要求即可获得200元京东E卡。此外我们将综合提车作业的浏览量及楼层数，选出前三名用户再赠送300元京东E卡。京东E卡将以短信方式发送。</div>
+
+        <div class="tit tit_4"></div>
+        <div class="txt">通过易鑫车贷购车的用户，邀请好友用易鑫车贷购车成功，两人可各得1000元京东E卡。</div>
+
+        <div class="tit tit_5"></div>
+        <div class="txt">标致3008活动优惠费率。月费率由0.68%降至0.54％，直降21%。</div>
+    </div>
+    <div class="foot"></div>
+</div>
+<div id="maskLayer"></div>
+<div class="left_fixed_box">
+    <div class="top"></div>
+    <div class="con">
+        <div class="over" id="activecity">
+            <a href="#chongqing">重庆</a>
+            <a href="#chuangchun">长春</a>
+            <a href="#changsha">长沙</a>
+            <a href="#chengdu">成都</a>
+            <a href="#dalian">大连</a>
+            <a href="#hefei">合肥</a>
+            <a href="#nanjing">南京</a>
+            <a href="#ningbo">宁波</a>
+            <a href="#shijiazhuang">石家庄</a>
+            <a href="#suzhou">苏州</a>
+            <a href="#taiyuan">太原</a>
+            <a href="#wulumuqi">乌鲁木齐</a>
+            <a href="#tianjing">天津</a>
+            <a href="#wuxi">无锡</a>
+            <a href="#xian">西安</a>
+        </div>
+
+    </div>
+    <div class="bot"></div>
+</div>
+<!--<img class="lazy polling" data-original="http://img1.bitautoimg.com/chedai/63dc5922-9bf9-458e-932a-096726e1efb4.png">
+<div class="sin_model_1_2 lazy polling" data-original="http://img1.bitautoimg.com/chedai/36d1dbfa-3544-4256-b3e7-3f1b34125e31.png">
+-->
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

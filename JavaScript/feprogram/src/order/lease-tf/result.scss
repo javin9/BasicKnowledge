@@ -1,0 +1,298 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+$main: map-get($colors, red);
+$main_bg: map-get($bg, red);
+
+body {
+  background: #f5f5f5;
+}
+
+#HeaderNav,
+.sel-city,
+.login-status{
+  display: none;
+}
+
+.apply-step{
+  margin: 40px 0 10px;
+
+  ul {
+    width: 1040px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  li{
+    float:left;
+    width:250px;
+    margin-left: 8px;
+    font-size:16px;
+    color:#b5b5b5;
+    text-align:center;
+
+    i{
+      display: block;
+      font-style: normal;
+      height:30px;
+      line-height:30px;
+      margin-bottom: 8px;
+      color:#fff;
+      text-align: center;
+      background:url("images/3b.png") no-repeat center center;
+    }
+    &.after-step{
+      color:#97BFFD;
+      i{
+        background:url("images/1b.png") no-repeat center center;
+      }
+    }
+    &.cur-step{
+      color:#6DA5FC;
+      i{
+        background:url("images/2b.png") no-repeat center center;
+      }
+    }
+  }
+}
+
+.payment-con {
+  width: 1200px;
+  overflow: hidden;
+  margin: 0 auto;
+  background: #fff;
+  padding-bottom: 62px;
+}
+
+.payment2{
+  padding: 70px 0 48px 267px;
+  background:none;
+}
+.payment2 .icon{
+  width:100px;
+  height:82px;
+  background: url(images/user_center_icon.png) no-repeat -349px -308px;
+  float:left;
+  margin-right:32px;
+}
+.payment2 h4{
+  font-size:22px;
+  color:#000;
+  font-weight:normal;
+}
+.payment2-right{
+  float:left;
+  font-weight:normal;
+}
+.payment2-right>p{
+  font-size:14px;
+  color:#999;
+  padding-top:5px;
+}
+.payment2-right>p span{
+  color:$main;
+}
+.payment3{
+  text-align: left;
+}
+.payment2-right>div.clrfix{
+  font-size:14px;
+  padding:15px 0 25px 0;
+}
+.payment2-right>div.clrfix i{
+  display:block;
+  float:left;
+  width:143px;
+  height:22px;
+  text-align:center;
+  background:url(images/user_center_icon.png) no-repeat -455px -110px;
+  color:#fff;
+  margin-right:8px;
+}
+.payment2-right>div.clrfix span{
+  float:left;
+  color:#000;
+}
+.payment {
+  background: #f5f5f5;
+  padding: 30px 0 50px;
+}
+#Footer{
+  margin-top:0;
+}
+.payment3 a {
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  background: $main_bg;
+}
+.payment2:after{clear:both;display:block;height:0;visibility:hidden;content:".";}
+.payment4{padding:58px 58px 40px 58px;border:1px solid #eeeeee;width:980px;margin:0 auto;overflow:hidden;}
+.payment41{float:left;}
+.payment41 img{float:left;margin-right:24px;width:64px;height:64px;}
+.payment41-jrgw{height:28px;line-height:28px;font-size:18px;color:#666666;}
+.payment41-wtzx{margin-top:5px;font-size:16px;height:26px;line-height:26px;color:#999999;border-top:1px dashed #ececec;}
+.payment42{float:right;}
+.payment42 .payment42-lxdh{height:24px;line-height:24px;padding-left:24px;font-size:16px;color:$main;text-align:right;background:url(images/payment4.png) no-repeat 0 0;}
+.payment42 p{font-size:14px;color:#999999;height:20px;line-height:20px;}
+.payment42 p span{color:$main;}
+
+.payment2-right{
+  h4 {
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height:22px;
+    color: #666666;
+  }
+
+  .payment3 {
+    margin-top: 30px;
+    overflow: hidden;
+
+    a {
+      float: left;
+      margin-right: 30px;
+
+      &.alt {
+        background: #FFFFFF;
+        border: 1px solid #E3E3E3;
+        color: #666666;
+      }
+    }
+  }
+}
+
+// 帮助中心
+// qianyuan
+// 2017.3.16
+.qa {
+  margin-top: -10px;
+  padding-bottom: 60px;
+  background: #f5f5f5;
+
+  .qa-con {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    min-height: 250px;
+  }
+
+  h3 {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    border-bottom: 1px solid #EEEEEE;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    span {
+      display: inline-block;
+      padding: 13px 18px;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      cursor: pointer;
+
+      &.active {
+        color: $main;
+        border-bottom: 2px solid $main;
+        cursor: default;
+      }
+    }
+  }
+
+  dl {
+    padding: 10px 40px 60px;
+
+    dt {
+      position: relative;
+      padding-left: 24px;
+      font-size: 16px;
+      line-height: 24px;
+      color: #151515;
+      margin-top: 30px;
+
+      &:before {
+        content: "Q";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: $main;
+      }
+    }
+
+    dd {
+      margin-top: 10px;
+      margin-left: 24px;
+      padding: 20px;
+      background: #FAFAFA;
+      border: 1px solid #EEEEEE;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -o-border-radius: 4px;
+      border-radius: 4px;
+      font-size: 14px;
+      line-height: 22px;
+      color: #666666;
+    }
+  }
+
+  .qa-process {
+    margin-top: 50px;
+    height: 80px;
+    background: url(images/process2.png) no-repeat center center;
+  }
+
+  .qa-detail {
+    display: none;
+  }
+
+  .more-btn {
+    position: absolute;
+    top: 13px;
+    right: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 24px;
+    color: #999999;
+
+    &:hover {
+      color: $main;
+    }
+  }
+}
+
+// add to fix
+html {
+  height: 100%;
+}
+body {
+  position: relative;
+  height: 100%;
+  min-height: 600px;
+
+  #Header,
+  #Footer{
+    display: none;
+  }
+
+  .footer-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .apply-step {
+    margin-top: 0px;
+    padding-top: 50px;
+  }
+}

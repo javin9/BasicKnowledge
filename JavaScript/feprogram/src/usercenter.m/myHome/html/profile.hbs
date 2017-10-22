@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var xincheUrl = 'http://xinche.m.daikuan.com';
+        var getAlixOrdersUrl = '/WeiXinCRM/GetAlixOrders'
+        var detailUrl = ''
+        var planUrl = ''
+        var defaultCarImg = 'http://placeholder.it/200x400'
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<input type='hidden' name='__RequestVerificationToken' id='__RequestVerificationToken' data-id='wwNCGeqw-Y2iACtSauK_qVpR2lL0FUIM5nuBDt_FYecdJ5colXD2l4jD0ea785Zb8VZLm3jacUwdIO5DkS0ZOAeVP7Q1' value='wwNCGeqw-Y2iACtSauK_qVpR2lL0FUIM5nuBDt_FYecdJ5colXD2l4jD0ea785Zb8VZLm3jacUwdIO5DkS0ZOAeVP7Q1'>
+    <div id="yxWrapper">
+        <div id='wx_pic' style='margin: 0 auto; display: none;'>
+            <img src='http://img1.bitautoimg.com/jinrong/newmweb/images/pic300.jpg?v=201612291031' alt="易鑫车贷" />
+        </div>
+        
+
+<header class="header-bar">
+    <a href="javascript:" onclick="self.location=document.referrer;"></a>
+    <h1 class="font-nav">个人资料</h1>
+    <div class="header_left font-title" id="userProfilEidt">编辑</div>
+    <div class="header_left font-title" id="userProfilSave">保存</div>
+</header>
+
+
+<section class="userPro_con">
+    <section class="upf_item_box">
+        <div class="hd font-title">头像</div>
+        <div class="ft_box EidtBox">
+            <div class="bd font-title">
+                    <img src="http://img4.bitautoimg.com/jinrong/newpcweb/css/gerenzhongxin/images/car-002.png" class="poto" />
+            </div>
+        </div>
+        <div class="ft_box SaveBox">
+            <div class="bd font-title">
+                    <img src="http://img4.bitautoimg.com/jinrong/newpcweb/css/gerenzhongxin/images/car-002.png" class="poto" />
+            </div>
+        </div>
+    </section>
+    <section class="upf_item_box" id="NickName" data-id="true">
+        <div class="hd font-title">昵称</div>
+        <div class="ft_box EidtBox">
+            <div class="bd font-title">189****4060</div>
+        </div>
+        <div class="ft_box SaveBox">
+            <div class="td"><input type="text" placeholder="请输入您的昵称" value="189****4060" class="upf_input font-title" max="10" /></div>
+        </div>
+    </section>
+
+    <section class="upf_item_box" id="Gender">
+        <div class="hd font-title">性别</div>
+        <div class="ft_box EidtBox">
+            <div class="bd font-title">男</div>
+        </div>
+        <div class="ft_box SaveBox selectBottom" data-aslider-in="occupation|fade|bottom" data-id="男">
+            <div class="td font-title">
+男            </div>
+            <div class="ft"><mark class="tip_r"></mark></div>
+        </div>
+    </section>
+    <section class="upf_item_box" id="Birthday">
+        <div class="hd font-title">出生年月</div>
+        <div class="ft_box EidtBox">
+            <div class="bd font-title">1987年02月12日</div>
+        </div>
+        <div class="ft_box SaveBox" id="BirthdayData">
+            <div class="td font-title">
+1987年02月12日            </div>
+            <div class="ft"><mark class="tip_r"></mark></div>
+        </div>
+    </section>
+    <section class="upf_item_box" id="Constellation">
+        <div class="hd font-title">星座</div>
+        <div class="ft_box EidtBox">
+            <div class="bd font-title">水瓶座</div>
+        </div>
+        <div class="ft_box SaveBox">
+            <div class="td font-title">水瓶座</div>
+            <div class="ft"></div>
+        </div>
+    </section>
+    <section class="upf_item_box" id="CityID">
+        <div class="hd font-title">省份城市</div>
+        <div class="ft_box EidtBox">
+            <div class="bd font-title">北京市</div>
+
+        </div>
+        <div class="ft_box SaveBox" id="selectCityID" data-id="201">
+            <div class="td font-title">
+北京市            </div>
+            <div class="ft"><mark class="tip_r"></mark></div>
+        </div>
+    </section>
+    <section class="upf_item_box upf_item_box_end" id="Address">
+        <div class="hd font-title">现居住地</div>
+        <div class="ft_box EidtBox">
+            <div class="bd font-title"></div>
+        </div>
+    </section>
+    <section class="upf_item_box upf_item_box_textarea">
+        <div class="box_textarea"><textarea id="AddressTxt" class="i_txt" placeholder="请输入您现在所居住地" maxlength="100"></textarea></div>
+    </section>
+</section>
+
+<aside class="sel-control-box" data-aslider="occupation">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">性别</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll">
+            <ul class="slider">
+                    <li class="cur" data-id="男">男</li>
+                    <li data-id="女">女</li>
+            </ul>
+        </div>
+    </div>
+</aside>
+
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

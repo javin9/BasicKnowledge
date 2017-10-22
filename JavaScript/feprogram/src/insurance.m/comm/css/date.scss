@@ -1,0 +1,39 @@
+/*时间插件*/
+.wxb-date-picker { position: fixed; z-index: 99999; width: 100%; height: 100%; top: 0; left: 0; display: none; }
+.wxb-date-picker-overlay { position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; bottom: 0px; right: 0px; width: 10rem; margin: 0px auto; background-color: rgba(0,0,0, 0.5); }
+.wxb-date-picker-dialog { position: absolute; z-index: 1; border-radius: 0.213333rem; height: 5.6rem; background-color: white; padding: 0.533333rem; top: 50%; margin-top: -3.333333rem; width: 6.986667rem; left: 50%; margin-left: -4.026667rem; }
+.wxb-date-picker-hint { height: 0.186667rem; font-size: 13px; color: #8c8c8c; text-align: center; }
+.wxb-date-picker-hint .hint-text{ position: relative; width: auto; background-image: none; top: 0; right: 0; left: 0.133333rem; color: #ff0000; }
+.wxb-date-picker-columns { height: 4.0rem; width: 100%; position: relative; overflow: hidden; }
+.wxb-date-picker-columns:after { content: ''; display: block; clear: both; }
+.wxb-date-picker-column { float: left; height: 100%; text-align: center; position: relative; overflow: hidden; }
+.wxb-date-picker-columns3 .wxb-date-picker-column { width: 33.3%; }
+.wxb-date-picker-columns4 .wxb-date-picker-column { width: 25%; }
+.wxb-date-picker-columns2 .wxb-date-picker-column { width: 50%; }
+.wxb-date-picker-seg-wrapper { height: 100%; position: relative; overflow: hidden; pointer-events: none; }
+.wxb-date-picker-seg { font-size: 16px; white-space: nowrap; height: 1.333333rem; line-height: 1.333333rem; width: 100%; }
+.wxb-date-picker-unit { font-size: 15px; height: 0.4rem; line-height: 0.4rem; position: absolute; right: 0; top: 50%; margin-top: -0.213333rem; }
+.wxb-date-picker-separator-h1, .wxb-date-picker-separator-h2 { position: relative; pointer-events: none; }
+.wxb-date-picker-separator-h1:after,.wxb-date-picker-separator-h2:after{ content: ' '; position: absolute; left: 0; bottom: 0; right: auto; top: auto; height: 1px; width: 100%; background-color: #E9474D; display: block; z-index: 15; }
+.wxb-date-picker-separator-h1 { top: 1.333333rem; }
+.wxb-date-picker-separator-h2 { top: 2.666667rem; }
+.wxb-date-picker-confirm, .wxb-date-picker-cancel { width: 50%; padding: 0.4rem 0.266667rem; text-align: center; color: white; box-sizing: border-box; font-size: 18px; }
+.wxb-date-picker-confirm { float: right; background-color: #E9474D; border-bottom-right-radius: 0.213333rem; }
+.wxb-date-picker-cancel { float: left; color: #333; }
+.date-footer{ position: absolute; width: 100%; left: 0; bottom: 0;border-top: 1px solid #e9474d; }
+/*字体---15px*/
+[data-dpr="1"] .wxb-date-picker-confirm,[data-dpr="1"] .wxb-date-picker-cancel{ font-size: 18px; }
+[data-dpr="2"] .wxb-date-picker-confirm,[data-dpr="2"] .wxb-date-picker-cancel{ font-size: 38px; }
+[data-dpr="3"] .wxb-date-picker-confirm,[data-dpr="3"] .wxb-date-picker-cancel{ font-size: 54px; }
+/*字体---15px*/
+[data-dpr="1"] .wxb-date-picker-confirm,[data-dpr="1"] .wxb-date-picker-cancel,[data-dpr="1"] .wxb-date-picker-unit{ font-size: 15px; }
+[data-dpr="2"] .wxb-date-picker-confirm,[data-dpr="2"] .wxb-date-picker-cancel,[data-dpr="2"] .wxb-date-picker-unit{ font-size: 30px; }
+[data-dpr="3"] .wxb-date-picker-confirm,[data-dpr="3"] .wxb-date-picker-cancel,[data-dpr="3"] .wxb-date-picker-unit{ font-size: 45px; }
+/*字体---17px*/
+[data-dpr="1"] .wxb-date-picker-hint{ font-size: 13px; }
+[data-dpr="2"] .wxb-date-picker-hint{ font-size: 26px; }
+[data-dpr="3"] .wxb-date-picker-hint{ font-size: 39px; }
+/*字体---17px*/
+[data-dpr="1"] .wxb-date-picker-seg { font-size: 16px; }
+[data-dpr="2"] .wxb-date-picker-seg { font-size: 32px; }
+[data-dpr="3"] .wxb-date-picker-seg { font-size: 48px; }

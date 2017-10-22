@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var step = 2;//0：一步都未完成，1：完成填写常住地址，2：完成工作单位，3：完成联系人，20：完成上传身份证，30：完成运营商验证
+        var cityIdOnOrder = 201; //下单时用户填写的城市
+        var coupon_card_info_getting_url = '/snap/getavailablecouponcardinfo';
+        var user_center_url = 'http://www.daikuan.com';
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="main">
+    <component-index
+            basic-info-link="/online-approval/basicData.html"
+            identity-auth-link="/online-approval/uploadid.html"
+            loan-limit="5万"
+            :cardfrom="1138"
+            :city-id="201"
+            :package-id="4545"
+            :step="1"
+            card-interface="/snap/getavailablecouponcardinfo"
+            sp-checking-url=""
+            to-login-url="http://test.i.m.daikuan.com/login/index?returnurl=http%3a%2f%2fsnap.test.order.m.daikuan.com%2fonlineapproval%2fbaseinfo%3forderId%3d111497413226778%26childOrderId%3d811497335627254"
+            user-center-url="http://www.daikuan.com"
+    ></component-index>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

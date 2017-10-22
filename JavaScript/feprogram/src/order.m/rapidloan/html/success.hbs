@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+</head>
+<!--
+source="788"
+channel="667"
+from="123"
+
+focusbannerurl='' 背景图
+
+city-name="北京"
+
+
+
+car-price="28.00"
+car-name="特斯拉 A3 B5"
+interface="/rapidloan/AddOrderInfo"
+checkcode-api="/secretary/CheckCode"
+getcode-api="/secretary/GetCode"
+success-location-url="/rapidloan/RecProductsDisplay"
+v-bind:city-id="1"
+v-bind:car-id="2"
+-->
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="main"
+     source="788"
+     channel="667"
+     isonlineapproval="true"
+     onlineapprovalurl="/onlineapproval/info?orderId=701500486823097&childOrderId=301500479389537"
+     orderdetailurl="http://test.i.m.daikuan.com/myorder/orderdetail?childorderid=301500479389537"
+     getrecproductinfourl="/rapidloan/GetRecProductInfo?orderId=701500486823097&childOrderId=301500479389537"></div>
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

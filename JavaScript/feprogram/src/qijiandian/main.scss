@@ -1,0 +1,167 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+/*reset*/
+html, body, div, h1, h2, h3, h4, h5,
+h6, ul, ol, dl, li, dt, dd, p, blockquote,pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
+ul, li, ol { list-style-type:none; }
+abbr, acronym, fieldset, img{border:0;}
+a:link { text-decoration:none; }
+h1, h2, h3, h4, h5, h6,
+b, em, i, font { font-weight: normal; font-style: normal; }
+
+$padding: (
+  normal: 20px,
+  l: 24px
+);
+$pcfont: (
+  title: 22px,
+  lTitle: 26px,
+
+  red: #e9474d,
+  yellow: #dbb76c
+);
+$pbg :(
+  gray: #f1f1f1,
+  light: #f8f8f8,
+  red: #e9474d,
+  yellow: #dbb76c
+);
+$height: (
+  imgHeight : 360px,
+  shopHeight: 320px
+);
+@mixin pcOpacity($opacity: 1){
+  filter:alpha(opacity=60);    
+  opacity: .6;
+}
+body {
+  background-color: map-get($pbg, gray);
+}
+.v-hidden {
+  overflow: hidden;
+}
+.container {
+  // background-color: map-get($pbg, gray);
+  > header {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: map-get($height, imgHeight);
+
+    > .wrapper {
+      width: 1920px;
+      height: map-get($height, imgHeight);
+      position: absolute;
+      left: 50%;
+      margin-left: -960px;
+      .nivoSlider { 
+        box-shadow: none; 
+        height: map-get($height, imgHeight);
+      }
+      .nivo-controlNav { 
+        padding: 0;
+        top: 328px; 
+        margin: 0;
+      }
+      img {
+        width: 100%;
+        height: map-get($height, imgHeight);
+      }
+    }
+
+    &.shop-index {
+      height: map-get($height, shopHeight);
+      > .wrapper {
+        height: map-get($height, shopHeight);
+        .nivoSlider { 
+          height: map-get($height, shopHeight);
+        }
+        .nivo-controlNav { 
+          padding: 0;
+          top: 288px; 
+          margin: 0;
+        }
+        img {
+          height: map-get($height, shopHeight);
+        }
+      }
+    }
+  }
+  .main {
+    color: map-get($font, black);
+    width: 1200px;
+    margin: 0 auto;
+    .group-item{
+      padding-top: map-get($padding, normal);
+      > header {
+        padding: 16px 0 18px;
+        text-align: center;
+        span {
+          display: inline-block;
+          font-size: map-get($pcfont, title);
+          position: relative;
+          &:before, &:after {
+            content: '';
+            width: 55px;
+            height: auto;
+            border-top: 2px solid #e6e6e6;
+            position: absolute;
+            top: 25px;
+          }
+          &:before {
+            left: -70px;
+          }
+          &:after {
+            right: -70px;
+          }
+
+          i.icon {
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+            background-image: url(../images/shop_icon.png);
+            background-repeat: no-repeat;
+            position: relative;
+            top: 10px;
+            margin-right: 6px;
+            &.icon_qi {
+              background-position: 0 0;
+            }
+            &.icon_hui {
+              background-position: -50px 0;
+            }
+            &.icon_bao {
+              background-position: 0 -50px;
+            }
+            &.icon_fast {
+              background-position: -118px -50px;
+            }
+            &.icon_tehui {
+              background-position: -50px -50px;
+            }
+            &.icon_story {
+              background-position: -118px 0;
+            }
+          }
+        }
+      }
+      > .body {
+        ul {
+          font-size: 0;
+          li {
+            display: inline-block;
+          }
+        }
+
+        // edit by qiany， 2017/2/9
+        // 修复快速选车，输入搜索条件后，不显示（字号被上面的样式设置为0）
+        .sel-car-wrapper ul {
+          font-size: 12px;
+          li {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}  

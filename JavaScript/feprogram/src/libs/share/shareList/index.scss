@@ -1,0 +1,41 @@
+ @import 'sassHelper/mixin';
+.share-modal-list,.share-panel-list{
+  display: flex;
+  padding-bottom: px2rem(60);
+
+  li{
+    flex:1;
+  }
+
+  li a{
+    @include fsize(24);
+    color:#666;
+    width: 100%;
+    text-align: center;
+    background-repeat: no-repeat;
+    padding-top: px2rem(110);
+    background-size: px2rem(100) px2rem(100);
+    background-position: center top;
+    display: block;
+
+    &.wechat{
+      background-image: url(./icons/wechat.png);
+    }
+    &.qq{
+      background-image: url(./icons/qq.png);
+    }
+    &.qzone{
+      background-image: url(./icons/qzone.png);
+    }
+    &.weibo{
+      background-image: url(./icons/weibo.png);
+    }
+    &.qrcode{
+      background-image: url(./icons/qrcode.png);
+    }
+    &.timeline{
+      background-image: url(./icons/timeline.png);
+    }
+  }
+}
+

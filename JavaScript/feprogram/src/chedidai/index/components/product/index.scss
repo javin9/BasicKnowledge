@@ -1,0 +1,169 @@
+@import 'sassHelper/mixin';
+@import 'sassHelper/vars';
+
+.component-product{
+	box-sizing:border-box;
+	height:320px;
+	background:#fff;
+	padding:30px 40px;
+	background:url(./product.jpg) no-repeat right bottom;
+
+	.info{
+		width: 640px;
+		float: left;
+		margin-right: 143px;
+
+		header{
+			background:#F7F7F7 url(./banner.png) no-repeat right top;
+			padding:20px 0 20px;
+			margin-bottom: 40px;
+			text-align: center;
+
+			span{
+				@include borderRight(#ddd, 1, dashed);
+				display: inline-block;
+				line-height: 48px;
+				padding:0 30px;
+
+				&:last-child,&.last{
+					border:0;
+				}
+
+				label{
+					color:$dark-color;
+					font-size:14px;
+					margin-right: 20px;
+				}
+
+				strong{
+					font-size:18px;
+					color:$main-color;
+					font-weight: normal;
+				}
+			}
+		}
+
+		&-content{
+
+		}
+
+		&-item{
+			@include clearfix;
+			position: relative;
+			height:65px;
+			label{
+				font-size:14px;
+				color:#000;
+			}
+			.yx-silder-wrapper{
+				width:580px;
+				position: absolute;
+				left:60px;
+				top:8px;
+
+				li.cur{
+					color:$main-color !important;
+				}
+
+				.noUi-connect,.noUi-base:before,.noUi-base:after{
+					background-color: $main-color !important;
+				}
+			}
+		}
+	}
+
+	.form{
+		width: 307px;
+		overflow: hidden;
+
+		h6{
+			color:$dark-color;
+			font-size:20px;
+			font-weight: normal;
+			margin-bottom: 17px;
+		}
+
+		p.error{
+			color:$main-color;
+			text-align: left;
+			line-height: 1.5;
+			padding:0;
+			margin:0;
+			height:20px;
+			font-size:14px;
+			position: relative;
+			top:-10px;
+		}
+
+		button{
+			font-family:Microsoft Yahei;
+			cursor:pointer;
+			outline:none;
+			background:$main-color;
+			line-height: 42px;
+			width: 240px;
+			color:#fff;
+			font-size:14px;
+			border:0;
+			text-align: center;
+			margin:0 auto;
+			display: block;
+			opacity:0.9;
+		}
+	}
+
+	.form-item{
+		position: relative;
+
+		&.disabled{
+			span{
+				background:#fafafa;
+				color:#ccc;
+				font-size:14px;
+			}
+			a{
+				color:#ccc;
+				top:8px;
+			}
+		}
+		input.errTip{
+			color:$main-color;
+		}
+		input,span{
+			@include border(#D2D2D2);
+			color:$dark-color;
+			padding:0 14px;
+			margin-bottom:14px;
+			box-sizing:border-box;
+			width:100%;
+			display: block;
+		}
+
+		span{
+			line-height: 42px;
+		}
+
+		input{
+			height: 42px;
+			line-height: 42px\9;
+		}
+
+		a{
+			@include borderLeft;
+			position: absolute;
+			right:0;
+			top:8px;
+			line-height: 26px;			
+			color:$main-color;
+			text-align: center;
+			font-size:14px;
+			width: 100px;
+
+			&.disable{
+				background:transparent !important;
+				border-width:0 0 0 1px !important;
+				cursor:pointer;
+			}
+		}
+	}
+}

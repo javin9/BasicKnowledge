@@ -1,0 +1,225 @@
+@import 'sassHelper/vars';
+
+/*@import 'sassHelper/mixin';*/
+
+@import '../css/ershouche';
+.tip_info {
+    @include fsize(26);
+    color: #FF8C39;
+    background: #FFF4EA;
+    line-height: px2rem(68);
+    height: px2rem(68);
+    padding: 0 0 0 px2rem(30);
+    font-weight: 400;
+}
+
+.param-icon {
+    background: url(./images/param2.png) no-repeat left top;
+    background-size: px2rem(50) auto;
+}
+
+.gray {
+    color: #333;
+}
+
+.hide {
+    display: none;
+}
+
+.param-ctn {
+    background-color: map-get($bg, white);
+    h2 {
+        // height: px2rem(80);
+        // line-height: px2rem(80);
+        @include fsize(34);
+        line-height: px2rem(50);
+        @extend .gray;
+        padding: px2rem(40) px2rem(30);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        outline: 0 !important;
+        color: $hei;
+    }
+    dl {
+        font-size: 0;
+        dt {
+            padding: px2rem(30) px2rem(30) px2rem(5);
+            @include fsize(32);
+            @extend .gray;
+            background-color: #f2f2f2;
+            line-height: px2rem(40);
+            >div:last-child {
+                text-align: right;
+                font-size: 0;
+                >span {
+                    font-size: px2rem(26);
+                    display: inline-block;
+                    margin-left: px2rem(28);
+                    padding-left: px2rem(36);
+                    position: relative;
+                    color: #666;
+                    line-height: px2rem(40);
+                    &:before {
+                        content: '';
+                        width: px2rem(26);
+                        height: px2rem(26);
+                        @extend .param-icon;
+                        position: absolute;
+                        top: 50%;
+                        margin-top: px2rem(-14);
+                        left: 0;
+                    }
+                    &.matching:before {
+                        background-position: 0 px2rem(-50);
+                    }
+                    &.default:before {
+                        background-position: 0 px2rem(-159);
+                    }
+                }
+            }
+            &#group_1 {
+                height: auto;
+                line-height: normal;
+                // padding: px2rem(20) px2rem(30);
+                padding-bottom: px2rem(15);
+                p {
+                    @include fsize(26);
+                    color: #666666;
+                    letter-spacing: 0px;
+                    line-height: px2rem(40);
+                    padding-bottom: px2rem(20);
+                }
+                h4 {
+                    font-weight: 400;
+                    color: #333;
+                    letter-spacing: 0px;
+                    line-height: px2rem(40);
+                }
+            }
+        }
+        dd {
+            padding: px2rem(30) 0;
+            margin-left: px2rem(30);
+            margin-right: px2rem(30);
+            font-size: px2rem(32);
+            color: $hei;
+            >div {
+                width: 50%;
+                line-height: px2rem(48);
+                @extend .ellipsis;
+                @include fsize(32);
+                outline: 0 !important;
+                a.calculator {
+                    display: inline-block;
+                    width: px2rem(48);
+                    height: px2rem(48);
+                    margin-right: px2rem(22);
+                    @extend .param-icon;
+                    background-position: 0 px2rem(-100);
+                    position: relative;
+                    top: px2rem(8);
+                }
+            }
+            &:not(:last-child) {
+                border-bottom: 1px solid #eee;
+            }
+            >div:last-child {
+                @extend .gray;
+                text-align: right;
+                outline: 0 !important;
+                >i {
+                    display: block;
+                    width: px2rem(26);
+                    height: px2rem(26);
+                    @extend .param-icon;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: px2rem(-13);
+                    right: px2rem(30);
+                    &.bundled {
+                        background-position: 0 px2rem(-50);
+                    }
+                    &.default {
+                        background-position: 0 px2rem(-159);
+                    }
+                }
+            }
+            &.body-color {
+                height: auto;
+                div:first-child {
+                    width: px2rem(200);
+                    flex: inherit;
+                }
+                div:last-child {
+                    overflow: inherit;
+                    white-space: inherit;
+                    text-overflow: inherit;
+                    line-height: px2rem(46);
+                    font-size: 0;
+                    >span {
+                        font-size: px2rem(30);
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.param-nav {
+    position: relative;
+    .left {
+        width: px2rem(450);
+        background: rgba(61, 60, 73, 0.95);
+        box-shadow: 0 px2rem(2) px2rem(6) 0 rgba(0, 0, 0, 0.50);
+        border-radius: px2rem(8);
+        font-size: 0;
+        position: fixed;
+        bottom: px2rem(140);
+        right: px2rem(160);
+        >div {
+            width: 50%;
+            a {
+                display: block;
+                width: 100%;
+                border-bottom: 1px solid rgba(221, 221, 221, .2);
+                @include fsize(30);
+                color: #fff;
+                line-height: px2rem(36);
+                padding: px2rem(27) 0;
+            }
+            &:nth-child(odd) a {
+                padding-left: px2rem(30);
+            }
+            &:nth-child(even) a {
+                padding-right: px2rem(30);
+            }
+        }
+        &:after {
+            content: '';
+            display: block;
+            width: px2rem(30);
+            height: px2rem(38);
+            @extend .param-icon;
+            background-position: left bottom;
+            position: fixed;
+            bottom: px2rem(145);
+            right: px2rem(134);
+        }
+    }
+    .right {
+        width: px2rem(120);
+        height: px2rem(120);
+        background: url(./images/param_icon.png) no-repeat center center;
+        background-size: px2rem(100) px2rem(100);
+        position: fixed;
+        bottom: px2rem(130);
+        right: px2rem(30);
+    }
+}
+
+.bottom-to-top {
+    bottom: 3.5rem !important;
+    right: .6rem !important;
+}

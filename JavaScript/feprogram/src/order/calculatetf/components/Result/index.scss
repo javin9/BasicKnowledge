@@ -1,0 +1,198 @@
+@import "sassHelper/mixin";
+@import "../../vars";
+
+.result-full{
+	padding:80px 0 80px 120px;
+	color:#000;
+	box-sizing:border-box;
+	height:640px;
+
+	label, em,.Tip, b{
+		font-style:normal;
+		display: inline-block;
+		vertical-align: middle;
+		white-space: normal;
+	}
+
+	> h6{
+		font-size:20px;
+		font-weight: normal;
+		margin-bottom: 40px;
+
+		label{
+			width: 80px;
+		}
+
+		em{
+			color:#E9474D;
+		}
+	}
+
+	.result-line{
+		font-size:16px;
+		line-height: 1;
+		margin-bottom: 13px;
+		white-space: nowrap;
+
+		label{
+			width: 104px;
+		}
+
+		b{
+			color:#999;
+			font-size:14px;
+			margin:0 8px;
+		}
+
+		.Tip{
+			height: 19px;
+		}
+	}
+}
+
+
+.result-loan{
+	box-sizing:border-box;
+	height:720px;
+	padding:60px;
+	background: #FFFFFF;
+	border: 2px solid #DEDEDE;
+	border-top: 0;
+
+	label, em,.Tip, b{
+		font-style:normal;
+		display: inline-block;
+		vertical-align: middle;
+		white-space: normal;
+	}
+
+	.result-header{
+		@include clearfix;
+
+		canvas,
+		.default-chart{
+			float: left;
+			@include size(126px);
+			margin-right: 50px !important;
+			background: url(./default.png) no-repeat left top;
+		}
+
+		.result-info{
+			overflow: hidden;
+			padding-top: 15px;
+
+			h5{
+				color:#333;
+				font-size:18px;
+				font-weight: normal;
+				margin-bottom: 8px;
+
+				span,em{
+					vertical-align: middle;
+					display: inline-block;
+				}
+
+				em{
+					color:$main;
+					margin-left: 20px;
+				}
+			}
+
+			h6{
+				font-size:18px;
+				color:#333;
+				margin-bottom: 3px;
+				font-weight: normal;
+
+				span,em{
+					vertical-align: middle;
+					display: inline-block;
+				}
+
+				em{
+					margin-left: 20px;
+				}
+			}
+
+			p{
+				color:#666;
+				font-size:12px;
+			}
+		}
+	}
+
+	.result-content{
+		padding:28px 0;
+
+		.links-wrapper{
+			margin: 68px 0;
+			text-align: left;
+			position: relative;
+			left: -20px;
+		}
+	}
+
+	.result-line{
+		font-size:14px;
+		line-height: 1.2;
+		color:#666;
+		margin-top: 8px;
+		position: relative;
+		white-space: nowrap;
+
+		&:first-child{
+			margin-bottom: 16px;
+		}
+
+		&.result-title{
+			color:#000;
+			margin-top: 22px;
+		}
+
+		label{
+			width: 138px;
+		}
+
+		i{
+			position: absolute;
+			width: 10px;
+			height:10px;
+			left:-20px;
+			top:4px;
+
+			&.icon-circle-1{
+				background:url(1.png) no-repeat left top;
+			}
+			&.icon-circle-2{
+				background:url(2.png) no-repeat left top;
+			}
+			&.icon-circle-3{
+				background:url(3.png) no-repeat left top;
+			}
+			&.icon-circle-4{
+				background:url(4.png) no-repeat left top;
+			}
+		}
+
+		b{
+			color:#999;
+			font-size:14px;
+			margin:0 8px;
+			font-weight: normal;
+		}
+
+		.Tip{
+			height: 19px;
+		}
+	}
+}
+
+.result-loan .Tip, .result-full .Tip{
+	.Tip-popup{
+		left:-280px;
+
+		&:after{
+			left:272px;
+		}
+	}
+}

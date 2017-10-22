@@ -1,0 +1,106 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+.component-list{
+	width: 280px;
+	background:#FAFAFA;
+	border:1px solid #e5e5e5;
+	box-sizing:border-box;
+	height:522px;
+	float: left;
+	position: relative;
+	overflow-x:visible;
+
+	ul{
+			height:470px;
+
+		li{
+			margin-left:-1px;
+			overflow: hidden;
+
+			&:last-child a{
+				&:after{
+					display: none;
+				}
+			}
+
+			&:first-child a.current{
+				border-top:0;
+			}
+
+			a{
+				display: block;
+				padding:13px 15px 10px 50px;
+				position: relative;
+				font-size:14px;
+				font-weight: normal;
+				height:95px;
+				box-sizing:border-box;
+
+				&:after{
+					content:' ';
+					position: absolute;
+					height:1px;
+					background:#E5E5E5;
+					width: 300px;
+					left:50%;
+					margin-left:-150px;
+					bottom:-1px;
+				}
+
+				h6{
+					font-size:14px;
+					color:#000;
+					line-height: $main-line-height;
+					margin-bottom: 3px;
+					overflow: hidden;
+					text-overflow:ellipsis;
+					white-space: nowrap;
+				}
+
+				p{
+					color:$light-color;
+					line-height: $main-line-height;
+					overflow: hidden;
+					text-overflow:ellipsis;
+					white-space: nowrap;
+
+					&:last-child{
+						color: $normal-color;
+						margin-top: 3px;
+					}
+				}
+
+				&.current{
+					background:#fff;
+					border-bottom:1px solid #e5e5e5;
+					border-top:1px solid #e5e5e5;
+					border-left:3px solid $main-color;
+					padding-left: 47px;
+
+					&:after, &:before{
+						display: none;
+					}
+				}
+
+				&.current .icon{
+					background:$main-color;
+					left:17px;
+				}
+
+				.icon{
+					position: absolute;
+					color:#fff;
+					width: 20px;
+					line-height: 20px;
+					background:#c4c4c4;
+					text-align: center;
+					border-radius:3px;
+					left:20px;
+					top:15px;
+				}
+			}
+
+		}
+	}
+}

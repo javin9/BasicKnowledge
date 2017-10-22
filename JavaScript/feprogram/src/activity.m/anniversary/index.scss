@@ -1,0 +1,87 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+html, body, #yxWrapper {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+body{
+  background:#020a3b;
+}
+.header-bar {
+  display: none;
+}
+.content-wrapper{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.bottom-to-top {
+  display: none !important;
+}
+
+/* always present */
+.fade-transition {
+  transition: all .3s ease;
+
+  ul {
+    transition: all .3s ease .1s;
+  }
+}
+/* .expand-enter defines the starting state for entering */
+/* .expand-leave defines the ending state for leaving */
+.fade-enter, .fade-leave {
+  opacity: 0;
+
+  ul {
+    transform: translate(0, 100%);
+  }
+}
+
+.fade-leave {
+  transition: all .3s ease .1s;
+
+  ul {
+    transition: all .3s ease;
+  }
+}
+
+.landscape-layer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: url(images/car-bg.html.jpg) no-repeat center center;
+  background-size: cover;
+
+  .text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: px2rem(343);
+    height: px2rem(237);
+    transform: translate(-50%, -54%);
+    background: url(images/result-bg.html.png) no-repeat center center;
+    background-size: contain;
+    text-align: center;
+    line-height: px2rem(220);
+    font-size: px2rem(28);
+    color: #ffffff;
+  }
+}
+
+body.landscape {
+  .landscape-layer {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}

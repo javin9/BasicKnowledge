@@ -1,0 +1,43 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+@import "varibles";
+@import "mixin";
+@import "modular/list";
+@import "modular/nav";
+
+[v-cloak] { display: none } 
+
+@include reset-header;
+
+.header-more{
+	&:after{
+		display: none;
+	}
+
+	color:#5fc3e8;
+	line-height: 1.2rem;
+	padding:0 px2rem(20) 0 0;
+}
+
+.baodian-nav{
+	@include nav;
+}
+
+.baodian-list{
+	@include list;
+	min-height:px2rem(200);
+
+	&.loading{
+		background:url('images/loading_gray.gif') no-repeat center center;
+		background-size: 2.14rem 2.14rem;
+	}
+}
+
+.is-app{
+	.header-bar{
+		display: none;
+	}
+	.baodian-list{
+		top: px2rem(80);
+	}
+}

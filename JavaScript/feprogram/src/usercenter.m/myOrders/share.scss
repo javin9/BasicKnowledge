@@ -1,0 +1,130 @@
+.header-bar>span{
+	line-height: 1.2rem;
+	position: relative;
+}
+.header-bar>span>a:after{
+	display:none;
+}
+.header-bar>span>a{
+	position: absolute;
+	right:.4rem;
+	color:#ddb154;
+	white-space: nowrap
+}
+#inOrderToShare dl{
+	padding:.4rem;
+	background:#fff;
+	margin-bottom:.266667rem;
+}
+
+#inOrderToShare dt{
+	color:#000;
+	line-height:150%;
+	margin-bottom:.133333rem;
+	font-weight: bold;
+}
+#inOrderToShare dd header{
+	line-height: 150%;
+	color:#666;
+	margin-bottom:.3rem;
+	word-wrap: break-word; 
+	word-break:break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+#inOrderToShare dd footer{
+	color:#666;
+	position: relative;
+}
+#inOrderToShare dd footer>div{
+    position: absolute;
+    right: 0;
+    line-height: .35rem;
+    bottom: .466667rem;
+    vertical-align: top;
+	/*position: absolute;
+	right:0;
+	line-height: .3rem;*/
+    margin-top: -.175rem;
+	top:50%;
+	transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+#inOrderToShare dd footer>span{
+    display: inline-block;
+    line-height: .35rem;
+}
+#inOrderToShare dd footer>div i {
+    display: inline-block;
+    background: url(images/detail_icon.png) no-repeat -3.58667rem -2.58rem;
+    background-size: 4rem 4rem !important;
+    height: .35rem;
+    width: .5rem;
+    margin-right: .133333rem;
+    vertical-align: top;
+    position: relative;
+}
+#inOrderToShare dd footer>div i:nth-child(3) {
+    margin-left: .466667rem;
+    background-position: -3.586667rem -1.933333rem;
+}
+#inOrderToShare dd footer>div span {
+    display: inline-block;
+    vertical-align: top;
+    line-height: .35rem;
+}
+
+.order-share-default{
+    color:#000;
+    text-align: center;
+    padding:50px 0;
+    line-height:180%;
+}
+.order-share-default a{
+    color:#000;
+    text-decoration: underline;
+
+}
+.default-box {
+    padding: 1.6rem 0;
+    background-color: #fff;
+    text-align: center;
+}
+.default-box .font-ctn{
+    color:#ccc;
+}
+
+.loading{ 
+    text-align: center; 
+    border:0;
+    padding:0.4rem 0;
+}
+.loading img{ 
+    width:1.3333rem; 
+    height: 1.3333rem; 
+    margin:0 auto;
+     position: relative;
+    left: -.1rem;
+}
+.sliderUp-box{
+    width: 100%;
+    text-align: center;
+    padding: 0.266667rem 0;
+    color:#999;
+}
+.sliderUp{
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url(images/pullup.png) no-repeat;
+    background-size: 100%;
+    margin-right: 0.2rem;
+    position: relative;
+    top: 0.08rem;
+}

@@ -1,0 +1,273 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+@import '../css/ershouche';
+
+.city-select {
+  color: #000;
+  padding-left: .4rem;
+  padding-right: .4rem;
+  line-height: 1.17333rem;
+  background: #fff;
+  margin-top: .01333rem;
+  overflow: hidden;
+  border-top: 1px solid #ececec;
+  @extend .f30;
+  .name {
+    float: left;
+    color: #000
+  }
+  .select {
+    float: right;
+    color: #000;
+  }
+  .select i {
+    position: relative;
+    top: -.05333rem;
+    display: inline-block;
+    width: .24rem;
+    height: .24rem;
+    border-top: 1px solid #c8c8c8;
+    border-right: 1px solid #c8c8c8;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-left: .10667rem
+  }
+  .select .sel + i {
+    border-color: #dbb76c
+  }
+}
+.search-list {
+  padding: 0 .33333rem
+}
+
+.search-list dt {
+  line-height: 1;
+  color: #999;
+  padding-top: .53333rem;
+  margin-bottom: .08rem;@extend .f26
+}
+
+.search-list dd {
+  overflow: hidden
+}
+
+.search-list dd .choice {
+  display: block;
+  float: left;
+  width: 25%;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: .93333rem;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-right-width: 0;
+  margin-top: .18667rem;
+  color: #333;@extend .f24;
+}
+
+.search-list dd .choice:nth-child(4n),.search-list dd .choice:nth-last-child(1) {
+  border-right-width: 1px
+}
+
+.search-list dd .choice.active {
+  position: relative;
+  z-index: 10;
+  border-right-width: 1px;
+  border-color: #dbb76c;
+  background: #dbb76c;
+  color: #fff
+}
+
+.search-list dd.monthlypayment span {
+  width: 33.33%
+}
+
+.search-list dd.monthlypayment span:nth-child(4n) {
+  border-right-width: 0
+}
+
+.search-list dd.monthlypayment span:nth-child(3n),.search-list dd.monthlypayment span:nth-last-child(1) {
+  border-right-width: 1px
+}
+
+.search-list dd.brand {
+  padding: .13333rem .33333rem .4rem;
+  margin: .26667rem -.33333rem 0;
+  background: #fff;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+
+.search-list dd.brand .choice {
+  position: relative;
+  box-sizing: border-box;
+  width: 2.13333rem;
+  height: 2.13333rem;
+  border-radius: 4px;
+  border-right-width: 1px;
+  border-color: transparent;
+  overflow: hidden;
+  margin-top: .26667rem;
+  margin-right: .26667rem
+}
+
+.search-list dd.brand .choice:nth-child(4n) {
+  margin-right: 0
+}
+
+.search-list dd.brand .choice .logo {
+  display: block;
+  height: 1.46667rem;
+  text-align: center
+}
+
+.search-list dd.brand .choice .logo img {
+  width:px2rem(72);
+  height:px2rem(72);
+  vertical-align: middle
+}
+.search-list dd.brand .choice .limit img{width:px2rem(42);
+  height:px2rem(42);}
+.search-list dd.brand .choice .logo:after {
+  content: '';
+  width: 0;
+  line-height: 1.46667rem;
+  vertical-align: middle
+}
+
+.search-list dd.brand .choice .name {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: .66667rem;
+  text-align: center;
+  line-height: 1;
+  color: #000;@extend .f26;
+}
+
+.search-list dd.brand .choice.active {
+  background: transparent;
+  border-color: #dbb76c
+}
+
+.search-list dd.brand .choice.active .name {
+  color: #dbb76c
+}
+
+.search-list dd.brand .choice.active:before {
+  content: '';
+  position: absolute;
+  right: -.34667rem;
+  bottom: -.34667rem;
+  width: .69333rem;
+  height: .69333rem;
+  background: #dbb76c;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg)
+}
+
+.search-list dd.brand .choice.active:after {
+  content: '';
+  position: absolute;
+  right: .02667rem;
+  bottom: .13333rem;
+  width: .18667rem;
+  height: .09333rem;
+  border-bottom: 1px solid #fff;
+  border-left: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg)
+}
+
+.car-select {
+  color: #000;
+  padding-left: .4rem;
+  padding-right: .4rem;
+  line-height: 1.17333rem;
+  background: #fff;
+  margin-top: .01333rem;
+  margin-bottom: 1.6rem;
+  overflow: hidden;
+  border-top: 1px solid #ececec;
+  @extend .f30;
+  .name {
+    float: left;
+    color: #000
+  }
+  .select {
+    float: right;
+    color: #c8c8c8
+  }
+  .select i {
+    position: relative;
+    top: -.05333rem;
+    display: inline-block;
+    width: .24rem;
+    height: .24rem;
+    border-top: 1px solid #c8c8c8;
+    border-right: 1px solid #c8c8c8;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-left: .10667rem
+  }
+  .select .sel {
+    color: #dbb76c
+  }
+  .select .sel + i {
+    border-color: #dbb76c
+  }
+}
+
+
+
+#carSelectComponent .carSelect-recommendBrand {
+  display: none
+}
+
+.bottom-btn {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;max-width:10rem;margin-left: -5rem;
+}
+
+.bottom-btn a {
+  display: block;
+  height: 1.33333rem;
+  line-height: 1.33333rem;
+  text-align: center;
+  background: #dbb76c;
+  color: #fff;
+  text-decoration: none;@extend .f30;
+}
+
+.bottom-btn a.reset {
+  width: 0;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0;
+  flex: 1 1 0;
+  background: #333;
+  color: #fff
+}
+
+.bottom-btn a.view {
+  width: 0;
+  -webkit-box-flex: 2;
+  -ms-flex: 2 1 0;
+  flex: 2 1 0;
+  color: #fff!important
+}
+
+
+
+
+
+
+
+

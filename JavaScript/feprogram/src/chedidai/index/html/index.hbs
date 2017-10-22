@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    {{{htmlWebpackPlugin.options.shim}}}
+    <script type="text/javascript">
+        var loginApiUrl = '/Validate/GetCode'
+        var CODE_GETTING_URL = '/Validate/GetCode';
+        var CODE_VALIDATING_URL = '/Validate/CheckCode';
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var RESURL = "http://img1.bitautoimg.com/jinrong/newpcweb/";
+        // var USERCENTERURL = "";
+        var CDNFileURL = 'http://img1.bitautoimg.com/chedai/';
+        var BusinessLine = 552;
+        var hotDealCarURL = "/Mortgage/HotDealCarList";
+        var listURL = '/Mortgage/List';
+        var url_addInfoInStep1 = '/Mortgage/AddMortgageOrder';
+        var getProductDetailURL = '/Mortgage/GetProductDetail';
+        var getGetLoanDetailURL = '/Mortgage/GetLoanDetail';
+        var getGetApplyNumByAppraisal = '/Mortgage/ApplyNumByAppraisal';///Mortgage/ApplyNumByAppraisal
+        var line = 552;
+        var from = '';
+        //城市信息
+        var city = {
+            cityId: "201",
+            cityName: "北京",
+            regionId: "110100",
+            citySpell: "beijing"
+        };
+        var mobile = '18575832500'
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<article>
+    <section class="banner">
+        <div class="slider-wrapper theme-default">
+            <div class="nivoSlider slider">
+                <img src="http://img1.bitautoimg.com/chedai/09cceeea-a69b-44a1-9337-d59b4093f94e.png"/>
+            </div>
+        </div>
+        <div class="evaluate-content"></div>
+    </section>
+
+    <section class="bar"></section>
+
+    <section class="block">
+        <h2>选择易鑫车抵贷 让你放心贷</h2>
+        <div class="product-content"></div>
+    </section>
+
+    <section class="block">
+        <h2>贷款详情</h2>
+        <div class="detail-content">
+            <dl>
+                <dt class="bg-require">车辆要求</dt>
+                <dd>
+                    <ul>
+                        <li>车辆无抵押、无质押</li>
+                        <li>车辆年检正常，无待处理违章信息</li>
+                        <li>所有权完整</li>
+                    </ul>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt class="bg-identity">身份要求</dt>
+                <dd>
+                    <ul>
+                        <li>18-60周岁大陆公民</li>
+                        <li>个人车主、上班族、私营企业主、本地常住居民</li>
+                        <li>良好的还款习惯，充足的银行流水</li>
+                    </ul>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt class="bg-material">所需材料</dt>
+                <dd>
+                    <ul>
+                        <li>身份证、车辆登记证、车辆保单</li>
+                        <li>本地常住证明，征信报告委托书</li>
+                        <li>6个月银行流水</li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </section>
+
+    <section class="block">
+        <h2>贷款流程</h2>
+        <div class="flow-content"></div>
+    </section>
+</article>
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script>
+    var APIURL = "http://api.chedai.bitauto.com/";
+    var xinche_m_url = "http://m.daikuan.com";
+    var BusinessLine = 550;
+    var CODE_GETTING_URL='/Login/GetCode';
+    var CODE_VALIDATING_URL='/Login/CheckCode';
+    //申请流程站点
+    var loanOrderApplyUrl = 'http://sq.m.daikuan.com/';
+    var listImgTel = 'http://img1.bitautoimg.com/jinrong/newmweb/';
+    //车款信息
+    var car = {
+        masterBrandId: "196",
+        masterBrandName: "哈弗",
+        masterBrandLogo: "http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_196_100.png",
+        serialId: "3152",
+        serialName: "哈弗H6",
+        carId: "112890",
+        carPrice: "9.98",
+        purchaseTaxRate: "0.1",
+        carSerialAllSpell: "hafuh6",
+        carSerialShowName: "哈弗H6" //车系（显示）全称
+    };
+    // //城市信息
+    // var city = {
+    //     CityId: "201",
+    //     CityName: "北京",
+    //     RegionId: "110100",
+    //     CitySpell: "beijing",
+    //     SelectCityLevel: "2",
+    //     SelectCityName: "北京",
+    //     cityId: "201",
+    //     cityName: "北京",
+    //     regionId: "110100",
+    //     citySpell: "beijing",
+    //     selectCityLevel: "2",
+    //     selectCityName: "北京"
+    // };
+    //城市信息
+    var city = {
+        CityId: "201",
+        CityName: "北京",
+        RegionId: "110100",
+        CitySpell: "beijing",
+        SelectCityLevel: "2",
+        SelectCityName: "北京",
+        cityId: "201",
+        cityName: "北京",
+        regionId: "110100",
+        citySpell: "beijing",
+        selectCityLevel: "2",
+        selectCityName: "北京"
+    };
+
+
+    //经销商信息
+    var dealer = {
+        dealerId: "",
+        dealerName: "北京4S店平均报价"
+    };
+    var channel = "";
+    var source = "714";
+
+    var successtar = "http://img2.bitautoimg.com/jinrong/newmweb/css/xinche/images/list6.png?v=201610191596";
+    var failstar = "http://img3.bitautoimg.com/jinrong/newmweb/css/xinche/images/list7.png?v=201610191596";
+
+    var adviserApi = "http://test.adviserapi.daikuan.com/";
+    var list3 = "http://img1.bitautoimg.com/jinrong/newmweb/css/xinche/images/list3.png?v=201610191596";
+    var list4 = "http://img4.bitautoimg.com/jinrong/newmweb/css/xinche/images/list4.png?v=201610191596";
+    var list5 = "http://img2.bitautoimg.com/jinrong/newmweb/css/xinche/images/list5.png?v=201610191596";
+    var scrollPhotosCount = "8";
+    var BusinessLine = 550;
+    var ADVISERAPIURL = "http://test.adviserapi.daikuan.com/";
+    var scrollMask = false;
+    var noLoanCostCityIds = '201,1502,302';
+</script>
+<div id="yxWrapper">
+
+
+    <header class="header-bar">
+        <a href="javascript:history.back();" class="nav-back"></a>
+        <h1 class="font-nav">城市大全</h1>
+        <span></span>
+    </header>
+
+    <ul class="city-list">
+        <li name="" id="">
+            <a href="/map/china/">全国</a>
+        </li>
+        <li name="A" id="A">
+            <span>A</span>
+            <a href="/map/alashanmeng/">阿拉善盟</a>
+            <a href="/map/anshan/">鞍山</a>
+            <a href="/map/anqing/">安庆</a>
+            <a href="/map/anyang/">安阳</a>
+            <a href="/map/abazangzuqiangzuzizhizhou/">阿坝</a>
+            <a href="/map/anshun/">安顺</a>
+            <a href="/map/alidiqu/">阿里</a>
+            <a href="/map/ankang/">安康</a>
+            <a href="/map/akesu/">阿克苏</a>
+            <a href="/map/aletai/">阿勒泰</a>
+        </li>
+        <li name="B" id="B">
+            <span>B</span>
+            <a href="/map/beijing/">北京</a>
+            <a href="/map/baoding/">保定</a>
+            <a href="/map/baotou/">包头</a>
+            <a href="/map/bayannaoer/">巴彦淖尔</a>
+            <a href="/map/benxi/">本溪</a>
+            <a href="/map/baishan/">白山</a>
+            <a href="/map/baicheng/">白城</a>
+            <a href="/map/bengbu/">蚌埠</a>
+            <a href="/map/bozhou/">亳州</a>
+            <a href="/map/binzhou/">滨州</a>
+            <a href="/map/beihai/">北海</a>
+            <a href="/map/baise/">百色</a>
+            <a href="/map/bazhong/">巴中</a>
+            <a href="/map/bijie/">毕节</a>
+            <a href="/map/baoshan/">保山</a>
+            <a href="/map/baoji/">宝鸡</a>
+            <a href="/map/baiyin/">白银</a>
+            <a href="/map/boertalamengguzizhizhou/">博尔塔拉</a>
+            <a href="/map/bayinguolengmengguzizhizhou/">巴音郭楞</a>
+        </li>
+        <li name="C" id="C">
+            <span>C</span>
+            <a href="/map/chengde/">承德</a>
+            <a href="/map/cangzhou/">沧州</a>
+            <a href="/map/changzhi/">长治</a>
+            <a href="/map/chifeng/">赤峰</a>
+            <a href="/map/chaoyang/">朝阳</a>
+            <a href="/map/changchun/">长春</a>
+            <a href="/map/changzhou/">常州</a>
+            <a href="/map/chuzhou/">滁州</a>
+            <a href="/map/chizhou/">池州</a>
+            <a href="/map/changsha/">长沙</a>
+            <a href="/map/changde/">常德</a>
+            <a href="/map/chenzhou/">郴州</a>
+            <a href="/map/chaozhou/">潮州</a>
+            <a href="/map/chongzuo/">崇左</a>
+            <a href="/map/chongqing/">重庆</a>
+            <a href="/map/chengdu/">成都</a>
+            <a href="/map/chuxiong/">楚雄</a>
+            <a href="/map/changdu/">昌都</a>
+            <a href="/map/changji/">昌吉</a>
+        </li>
+        <li name="D" id="D">
+            <span>D</span>
+            <a href="/map/datong/">大同</a>
+            <a href="/map/dalian/">大连</a>
+            <a href="/map/dandong/">丹东</a>
+            <a href="/map/daqing/">大庆</a>
+            <a href="/map/daxinganlingdiqu/">大兴安岭</a>
+            <a href="/map/dongying/">东营</a>
+            <a href="/map/dezhou/">德州</a>
+            <a href="/map/dongguan/">东莞</a>
+            <a href="/map/deyang/">德阳</a>
+            <a href="/map/dazhou/">达州</a>
+            <a href="/map/dali/">大理</a>
+            <a href="/map/dehongdaizujingpozuzizhizhou/">德宏</a>
+            <a href="/map/diqingzangzuzizhizhou/">迪庆</a>
+            <a href="/map/dingxi/">定西</a>
+        </li>
+        <li name="E" id="E">
+            <span>E</span>
+            <a href="/map/eerduosi/">鄂尔多斯</a>
+            <a href="/map/ezhou/">鄂州</a>
+            <a href="/map/enshi/">恩施</a>
+        </li>
+        <li name="F" id="F">
+            <span>F</span>
+            <a href="/map/fushun/">抚顺</a>
+            <a href="/map/fuxin/">阜新</a>
+            <a href="/map/fy/">阜阳</a>
+            <a href="/map/fuzhou/">福州</a>
+            <a href="/map/foshan/">佛山</a>
+            <a href="/map/fangchenggang/">防城港</a>
+        </li>
+        <li name="G" id="G">
+            <span>G</span>
+            <a href="/map/ganzhou/">赣州</a>
+            <a href="/map/guangzhou/">广州</a>
+            <a href="/map/guilin/">桂林</a>
+            <a href="/map/guigang/">贵港</a>
+            <a href="/map/guangyuan/">广元</a>
+            <a href="/map/guangan/">广安</a>
+            <a href="/map/ganzizangzuzizhizhou/">甘孜</a>
+            <a href="/map/guiyang/">贵阳</a>
+            <a href="/map/gannanzangzuzizhizhou/">甘南</a>
+            <a href="/map/guoluozangzuzizhizhou/">果洛</a>
+            <a href="/map/guyuan/">固原</a>
+        </li>
+        <li name="H" id="H">
+            <span>H</span>
+            <a href="/map/handan/">邯郸</a>
+            <a href="/map/hengshui/">衡水</a>
+            <a href="/map/huhehaote/">呼和浩特</a>
+            <a href="/map/hulunbeier/">呼伦贝尔</a>
+            <a href="/map/huludao/">葫芦岛</a>
+            <a href="/map/haerbin/">哈尔滨</a>
+            <a href="/map/hegang/">鹤岗</a>
+            <a href="/map/heihe/">黑河</a>
+            <a href="/map/huaian/">淮安</a>
+            <a href="/map/hangzhou/">杭州</a>
+            <a href="/map/huzhou/">湖州</a>
+            <a href="/map/hefei/">合肥</a>
+            <a href="/map/huainan/">淮南</a>
+            <a href="/map/huaibei/">淮北</a>
+            <a href="/map/huangshan/">黄山</a>
+            <a href="/map/heze/">菏泽</a>
+            <a href="/map/hebi/">鹤壁</a>
+            <a href="/map/huangshi/">黄石</a>
+            <a href="/map/huanggang/">黄冈</a>
+            <a href="/map/hengyang/">衡阳</a>
+            <a href="/map/huaihua/">怀化</a>
+            <a href="/map/huizhou/">惠州</a>
+            <a href="/map/heyuan/">河源</a>
+            <a href="/map/hezhou/">贺州</a>
+            <a href="/map/hechi/">河池</a>
+            <a href="/map/haikou/">海口</a>
+            <a href="/map/honghehanizuyizuzizhizhou/">红河</a>
+            <a href="/map/hanzhong/">汉中</a>
+            <a href="/map/haidongdiqu/">海东</a>
+            <a href="/map/haibeizangzuzizhizhou/">海北</a>
+            <a href="/map/huangnanzangzuzizhizhou/">黄南</a>
+            <a href="/map/hainanzangzuzizhizhou/">海南</a>
+            <a href="/map/haiximengguzuzangzuzizhizhou/">海西</a>
+            <a href="/map/hami/">哈密</a>
+            <a href="/map/hetian/">和田</a>
+        </li>
+        <li name="J" id="J">
+            <span>J</span>
+            <a href="/map/jincheng/">晋城</a>
+            <a href="/map/jinzhong/">晋中</a>
+            <a href="/map/jz/">锦州</a>
+            <a href="/map/jilin/">吉林</a>
+            <a href="/map/jixi/">鸡西</a>
+            <a href="/map/jiamusi/">佳木斯</a>
+            <a href="/map/jiaxing/">嘉兴</a>
+            <a href="/map/jinhua/">金华</a>
+            <a href="/map/jingdezhen/">景德镇</a>
+            <a href="/map/jiujiang/">九江</a>
+            <a href="/map/jian/">吉安</a>
+            <a href="/map/jxfuzhou/">抚州</a>
+            <a href="/map/jinan/">济南</a>
+            <a href="/map/jining/">济宁</a>
+            <a href="/map/jiaozuo/">焦作</a>
+            <a href="/map/jingmen/">荆门</a>
+            <a href="/map/jingzhou/">荆州</a>
+            <a href="/map/jiangmen/">江门</a>
+            <a href="/map/jieyang/">揭阳</a>
+            <a href="/map/jiayuguan/">嘉峪关</a>
+            <a href="/map/jc/">金昌</a>
+            <a href="/map/jiuquan/">酒泉</a>
+        </li>
+        <li name="K" id="K">
+            <span>K</span>
+            <a href="/map/kaifeng/">开封</a>
+            <a href="/map/kunming/">昆明</a>
+            <a href="/map/kelamayi/">克拉玛依</a>
+            <a href="/map/kashi/">喀什</a>
+        </li>
+        <li name="L" id="L">
+            <span>L</span>
+            <a href="/map/langfang/">廊坊</a>
+            <a href="/map/linfen/">临汾</a>
+            <a href="/map/lvliang/">吕梁</a>
+            <a href="/map/liaoyang/">辽阳</a>
+            <a href="/map/liaoyuan/">辽源</a>
+            <a href="/map/lianyungang/">连云港</a>
+            <a href="/map/lishui/">丽水</a>
+            <a href="/map/liuanshi/">六安</a>
+            <a href="/map/longyan/">龙岩</a>
+            <a href="/map/laiwu/">莱芜</a>
+            <a href="/map/linyi/">临沂</a>
+            <a href="/map/liaocheng/">聊城</a>
+            <a href="/map/luoyang/">洛阳</a>
+            <a href="/map/luohe/">漯河</a>
+            <a href="/map/loudi/">娄底</a>
+            <a href="/map/liuzhou/">柳州</a>
+            <a href="/map/laibin/">来宾</a>
+            <a href="/map/luzhou/">泸州</a>
+            <a href="/map/leshan/">乐山</a>
+            <a href="/map/liangshanyizuzizhizhou/">凉山</a>
+            <a href="/map/liupanshui/">六盘水</a>
+            <a href="/map/lijiang/">丽江</a>
+            <a href="/map/lincang/">临沧</a>
+            <a href="/map/lasa/">拉萨</a>
+            <a href="/map/linzhidiqu/">林芝</a>
+            <a href="/map/lanzhou/">兰州</a>
+            <a href="/map/longnan/">陇南</a>
+            <a href="/map/linxia/">临夏</a>
+        </li>
+        <li name="M" id="M">
+            <span>M</span>
+            <a href="/map/mudanjiang/">牡丹江</a>
+            <a href="/map/maanshan/">马鞍山</a>
+            <a href="/map/maoming/">茂名</a>
+            <a href="/map/meizhou/">梅州</a>
+            <a href="/map/mianyang/">绵阳</a>
+            <a href="/map/meishan/">眉山</a>
+        </li>
+        <li name="N" id="N">
+            <span>N</span>
+            <a href="/map/nanjing/">南京</a>
+            <a href="/map/nantong/">南通</a>
+            <a href="/map/ningbo/">宁波</a>
+            <a href="/map/nanping/">南平</a>
+            <a href="/map/ningde/">宁德</a>
+            <a href="/map/nanchang/">南昌</a>
+            <a href="/map/nanyang/">南阳</a>
+            <a href="/map/nanning/">南宁</a>
+            <a href="/map/neijiang/">内江</a>
+            <a href="/map/nanchong/">南充</a>
+            <a href="/map/nujianglisuzuzizhizhou/">怒江</a>
+            <a href="/map/naqudiqu/">那曲</a>
+        </li>
+        <li name="P" id="P">
+            <span>P</span>
+            <a href="/map/panjin/">盘锦</a>
+            <a href="/map/putian/">莆田</a>
+            <a href="/map/pingxiang/">萍乡</a>
+            <a href="/map/pingdingshan/">平顶山</a>
+            <a href="/map/puyang/">濮阳</a>
+            <a href="/map/panzhihua/">攀枝花</a>
+            <a href="/map/puer/">普洱</a>
+            <a href="/map/pingliang/">平凉</a>
+        </li>
+        <li name="Q" id="Q">
+            <span>Q</span>
+            <a href="/map/qinhuangdao/">秦皇岛</a>
+            <a href="/map/qiqihaer/">齐齐哈尔</a>
+            <a href="/map/qitaihe/">七台河</a>
+            <a href="/map/quzhou/">衢州</a>
+            <a href="/map/quanzhou/">泉州</a>
+            <a href="/map/qingdao/">青岛</a>
+            <a href="/map/qingyuan/">清远</a>
+            <a href="/map/qinzhou/">钦州</a>
+            <a href="/map/qianxinanbuyizumiaozuzizhizhou/">黔西南</a>
+            <a href="/map/qiandongnanmiaozudongzuzizhizhou/">黔东南</a>
+            <a href="/map/qiannanbuyizumiaozuzizhizhou/">黔南</a>
+            <a href="/map/qujing/">曲靖</a>
+            <a href="/map/qingyang/">庆阳</a>
+        </li>
+        <li name="R" id="R">
+            <span>R</span>
+            <a href="/map/rizhao/">日照</a>
+            <a href="/map/rikaze/">日喀则</a>
+        </li>
+        <li name="S" id="S">
+            <span>S</span>
+            <a href="/map/shijiazhuang/">石家庄</a>
+            <a href="/map/shuozhou/">朔州</a>
+            <a href="/map/shenyang/">沈阳</a>
+            <a href="/map/siping/">四平</a>
+            <a href="/map/songyuan/">松原</a>
+            <a href="/map/shuangyashan/">双鸭山</a>
+            <a href="/map/suihua/">绥化</a>
+            <a href="/map/shanghai/">上海</a>
+            <a href="/map/suzhou/">苏州</a>
+            <a href="/map/suqian/">宿迁</a>
+            <a href="/map/shaoxing/">绍兴</a>
+            <a href="/map/sz/">宿州</a>
+            <a href="/map/sanming/">三明</a>
+            <a href="/map/shangrao/">上饶</a>
+            <a href="/map/sanmenxia/">三门峡</a>
+            <a href="/map/shangqiu/">商丘</a>
+            <a href="/map/shengzhixiaxianjixingzhengquhua/">河南直辖</a>
+            <a href="/map/shiyan/">十堰</a>
+            <a href="/map/suizhou/">随州</a>
+            <a href="/map/shengzhixiaxianjixingzhengquhua/">湖北直辖</a>
+            <a href="/map/shaoyang/">邵阳</a>
+            <a href="/map/shaoguan/">韶关</a>
+            <a href="/map/shenzhen/">深圳</a>
+            <a href="/map/shantou/">汕头</a>
+            <a href="/map/shanwei/">汕尾</a>
+            <a href="/map/sanya/">三亚</a>
+            <a href="/map/sanshashi/">三沙市</a>
+            <a href="/map/shengzhixiaxianjixingzhengquhua/">海南直辖</a>
+            <a href="/map/suining/">遂宁</a>
+            <a href="/map/shannan/">山南</a>
+            <a href="/map/shangluo/">商洛</a>
+            <a href="/map/shizuishan/">石嘴山</a>
+        </li>
+        <li name="T" id="T">
+            <span>T</span>
+            <a href="/map/tianjin/">天津</a>
+            <a href="/map/tangshan/">唐山</a>
+            <a href="/map/taiyuan/">太原</a>
+            <a href="/map/tongliao/">通辽</a>
+            <a href="/map/tieling/">铁岭</a>
+            <a href="/map/tonghua/">通化</a>
+            <a href="/map/taizhou/">泰州</a>
+            <a href="/map/tz/">台州</a>
+            <a href="/map/tongling/">铜陵</a>
+            <a href="/map/taian/">泰安</a>
+            <a href="/map/tongren/">铜仁</a>
+            <a href="/map/tongchuan/">铜川</a>
+            <a href="/map/tianshui/">天水</a>
+            <a href="/map/tulufan/">吐鲁番</a>
+            <a href="/map/tacheng/">塔城</a>
+        </li>
+        <li name="W" id="W">
+            <span>W</span>
+            <a href="/map/wuhai/">乌海</a>
+            <a href="/map/wulanchabu/">乌兰察布</a>
+            <a href="/map/wuxi/">无锡</a>
+            <a href="/map/wenzhou/">温州</a>
+            <a href="/map/wuhu/">芜湖</a>
+            <a href="/map/weifang/">潍坊</a>
+            <a href="/map/weihai/">威海</a>
+            <a href="/map/wuhan/">武汉</a>
+            <a href="/map/wuzhou/">梧州</a>
+            <a href="/map/wenshan/">文山</a>
+            <a href="/map/weinan/">渭南</a>
+            <a href="/map/wuwei/">武威</a>
+            <a href="/map/wuzhong/">吴忠</a>
+            <a href="/map/wulumuqi/">乌鲁木齐</a>
+        </li>
+        <li name="X" id="X">
+            <span>X</span>
+            <a href="/map/xingtai/">邢台</a>
+            <a href="/map/xinzhou/">忻州</a>
+            <a href="/map/xinganmeng/">兴安盟</a>
+            <a href="/map/xilinguolemeng/">锡林郭勒</a>
+            <a href="/map/xuzhou/">徐州</a>
+            <a href="/map/xuancheng/">宣城</a>
+            <a href="/map/xiamen/">厦门</a>
+            <a href="/map/xinyu/">新余</a>
+            <a href="/map/xinxiang/">新乡</a>
+            <a href="/map/xuchang/">许昌</a>
+            <a href="/map/xinyang/">信阳</a>
+            <a href="/map/xiangyangshi/">襄阳</a>
+            <a href="/map/xiaogan/">孝感</a>
+            <a href="/map/xianning/">咸宁</a>
+            <a href="/map/xiangtan/">湘潭</a>
+            <a href="/map/xiangxitujiazumiaozuzizhizhou/">湘西</a>
+            <a href="/map/xishuangbanna/">西双版纳</a>
+            <a href="/map/xian/">西安</a>
+            <a href="/map/xianyang/">咸阳</a>
+            <a href="/map/xining/">西宁</a>
+            <a href="/map/xinjiangkezhou/">新疆克州</a>
+        </li>
+        <li name="Y" id="Y">
+            <span>Y</span>
+            <a href="/map/yangquan/">阳泉</a>
+            <a href="/map/yuncheng/">运城</a>
+            <a href="/map/yingkou/">营口</a>
+            <a href="/map/yanbianchaoxianzuzizhizhou/">延边</a>
+            <a href="/map/yc/">伊春</a>
+            <a href="/map/yancheng/">盐城</a>
+            <a href="/map/yangzhou/">扬州</a>
+            <a href="/map/yingtan/">鹰潭</a>
+            <a href="/map/yichun/">宜春</a>
+            <a href="/map/yantai/">烟台</a>
+            <a href="/map/yichang/">宜昌</a>
+            <a href="/map/yueyang/">岳阳</a>
+            <a href="/map/yiyang/">益阳</a>
+            <a href="/map/yongzhou/">永州</a>
+            <a href="/map/yangjiang/">阳江</a>
+            <a href="/map/yunfu/">云浮</a>
+            <a href="/map/yulin/">玉林</a>
+            <a href="/map/yibin/">宜宾</a>
+            <a href="/map/yaan/">雅安</a>
+            <a href="/map/yuxi/">玉溪</a>
+            <a href="/map/yanan/">延安</a>
+            <a href="/map/yl/">榆林</a>
+            <a href="/map/yushuzangzuzizhizhou/">玉树</a>
+            <a href="/map/yinchuan/">银川</a>
+            <a href="/map/yilihasakezizhizhou/">伊犁</a>
+        </li>
+        <li name="Z" id="Z">
+            <span>Z</span>
+            <a href="/map/zhangjiakou/">张家口</a>
+            <a href="/map/zhenjiang/">镇江</a>
+            <a href="/map/zhoushan/">舟山</a>
+            <a href="/map/zhangzhou/">漳州</a>
+            <a href="/map/zibo/">淄博</a>
+            <a href="/map/zaozhuang/">枣庄</a>
+            <a href="/map/zhengzhou/">郑州</a>
+            <a href="/map/zhoukou/">周口</a>
+            <a href="/map/zhumadian/">驻马店</a>
+            <a href="/map/zhuzhou/">株洲</a>
+            <a href="/map/zhangjiajie/">张家界</a>
+            <a href="/map/zhuhai/">珠海</a>
+            <a href="/map/zhanjiang/">湛江</a>
+            <a href="/map/zhaoqing/">肇庆</a>
+            <a href="/map/zhongshan/">中山</a>
+            <a href="/map/zigong/">自贡</a>
+            <a href="/map/ziyang/">资阳</a>
+            <a href="/map/zunyi/">遵义</a>
+            <a href="/map/zhaotong/">昭通</a>
+            <a href="/map/zhangye/">张掖</a>
+            <a href="/map/zhongwei/">中卫</a>
+            <a href="/map/zizhiquzhixiaxianjixingzhengquhua/">新疆直辖</a>
+        </li>
+    </ul>
+    <div class="city-nav-list">
+
+        <a href="#A">A</a>
+        <a href="#B">B</a>
+        <a href="#C">C</a>
+        <a href="#D">D</a>
+        <a href="#E">E</a>
+        <a href="#F">F</a>
+        <a href="#G">G</a>
+        <a href="#H">H</a>
+        <a href="#J">J</a>
+        <a href="#K">K</a>
+        <a href="#L">L</a>
+        <a href="#M">M</a>
+        <a href="#N">N</a>
+        <a href="#P">P</a>
+        <a href="#Q">Q</a>
+        <a href="#R">R</a>
+        <a href="#S">S</a>
+        <a href="#T">T</a>
+        <a href="#W">W</a>
+        <a href="#X">X</a>
+        <a href="#Y">Y</a>
+        <a href="#Z">Z</a>
+    </div>
+    <div class="path-nav">
+        <a href="/beijing">首页</a>
+        >
+        <a href="http://shine.m.daikuan.com:8072/map/">城市地图</a>
+    </div>
+
+
+</div>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

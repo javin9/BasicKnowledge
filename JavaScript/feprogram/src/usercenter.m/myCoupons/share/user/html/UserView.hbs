@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <style>
+
+    </style>
+    <script>
+  var api_url='http://192.168.151.36:8008';
+var CODE_GETTING_URL=api_url+'/Login/GetCode';
+var CODE_VALIDATING_URL=api_url+'/Login/CheckCode';
+
+var Sign="df979545bab55094a0b91e033d7c3822bc07a5882cecbdc80edf932d1a9d983a882539746e0fd2e826323c135bbab4e8";
+var ShareUrl='http://www.baidu.com';
+var CouponWayName='京东E卡';
+var CouponWayValue='2000元';
+var IsPopup='true';
+var PopupMsg='老用户领取完了';
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="app">
+  <!-- header -->
+<div action="GET-HEADER" data-text="易鑫车贷送您车贷礼包"></div>
+
+<div class="over-box">
+    <div class="over-box-tip">您好，老朋友!</div>
+    <div class="over-box-img"></div>
+    <div class="over-box-text-user">本活动仅支持新用户领券，邀请未下单好友，当TA成功放款提车，您和TA分别可得1000元京东E卡</div>
+    <a class="over-box-btn">邀请好友</a>
+
+
+<!-- 活动规则 -->
+<div action="GET-RULES" data-class="rules-black"></div>
+</div>
+  
+</div>
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

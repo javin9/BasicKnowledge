@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>易鑫车贷调查问卷</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script>
+    //设备
+    var DeviceID=  "8f00a536-78ce-4681-ae67-82fe37872cf7";
+    //终端
+    var Termainal = "Termainnal" ;
+    //城市
+    var CityName = "Beijing" ;
+    //昵称
+    var NickName = "NickName";
+    //电话
+    var Telephone = "12345678234" ;
+</script>
+
+<header class="header-bar">
+    <a href="javascript:history.go(-1);"></a>
+    <h1 class="font-nav">易鑫车贷调查问卷</h1>
+    <span class="font-title"></span>
+</header>
+
+<div id="yxWrapper">
+
+    <article class="hellowords">感谢你抽出<span class="cred">3</span>分钟时间参与此次调研，本问卷实行匿名制，数据只用于统计分析，请您放心填写，题目选项无对错之分，请您按自己的实际情况填写，<span class="cred">您将有机会抽取易鑫车贷免费赠送的精美礼品</span>。</article>
+    
+    <!-- 1 -->
+    <section class="quesitem" data-ques="1" data-type="radio" data-require="yes" id="q1" data-field="CarBuyPlan">
+        <header class="quesitem_hd">Q1:您的购车计划是？<span class="require">*</span></header>
+        <section class="quesitem_bd">
+            <ul class="quesitem_list">
+                <li data-id="A">A、已经锁定车型，正在试车阶段，准备购车</li>
+                <li data-id="B">B、正在筛选品牌，看车体验阶段</li>
+                <li data-id="C">C、不确定购买什么车，但有购车计划</li>
+                <li data-id="D">D、暂无计划，随便看看</li>
+            </ul>
+        </section>
+    </section>
+
+    <!-- 2 -->
+    <section class="quesitem" data-ques="2" data-type="radio" data-require="yes" id="q2" data-field="CarBuyPrice">
+        <header class="quesitem_hd">Q2:如果买车，您意向购车的价格是？<span class="require">*</span></header>
+        <section class="quesitem_bd">
+            <ul class="quesitem_list">
+                <li data-id="A">A、8万以下</li>
+                <li data-id="B">B、8-12万</li>
+                <li data-id="C">C、12-20万</li>
+                <li data-id="D">D、20万以上</li>
+            </ul>
+        </section>
+    </section>
+
+    <!-- 3 -->
+    <section class="quesitem" data-ques="3" data-type="radio" data-require="yes" id="q3" data-field="CarBuyDownPayment">
+        <header class="quesitem_hd">Q3:如果买车，您意向购车的首付是？<span class="require">*</span></header>
+        <section class="quesitem_bd">
+            <ul class="quesitem_list">
+                <li data-id="A">A、首付3万以下</li>
+                <li data-id="B">B、首付3-5万</li>
+                <li data-id="C">C、首付5-10万</li>
+                <li data-id="D">D、首付10万以上</li>
+            </ul>
+        </section>
+    </section>
+
+    <!-- 4 -->
+    <section class="quesitem" data-ques="4" data-type="radio" data-require="yes" id="q4" data-field="CarBuyFilter">
+        <header class="quesitem_hd">Q4:您更倾向按照什么筛选条件选车？<span class="require">*</span></header>
+        <section class="quesitem_bd">
+            <ul class="quesitem_list">
+                <li data-id="A">A、按照贷款成本选车</li>
+                <li data-id="B">B、按照买车预算选车</li>
+                <li data-id="C">C、按照品牌车型选车</li>
+                <li data-id="D">D、按照首付百分比选车</li>
+                <li data-other="ipt" data-id="E" id="q4Txt">E、其他筛选条件
+                    <textarea name="" id="" cols="30" rows="10" data-maxlength="200" placeholder="例如：月供、车价等"></textarea>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+    <!-- 5 -->
+    <section class="quesitem" data-ques="5" data-type="radio" data-require="yes" id="q5" data-field="CarBuyModeCarBuyCondition">
+        <header class="quesitem_hd">Q5:您倾向使用哪种方式选择车贷和贷款方案？<span class="require">*</span></header>
+        <section class="quesitem_bd">
+            <ul class="quesitem_list">
+                <li data-id="A">A、通过“搜索”功能
+                    <img src="../images/way1.html.jpg" alt="">
+                </li>
+                <li data-id="B">B、通过“品牌选车”功能
+                    <img src="../images/way2.html.jpg" alt="">
+                </li>
+                <li data-id="C">C、通过“按预算”功能
+                    <img src="../images/way3.html.jpg" alt="">
+                </li>
+                <li data-id="D">D、通过“小鑫帮您贷”功能
+                    <img src="../images/way4.html.jpg" alt="">
+                </li>
+                <li data-other="ipt" data-id="E" id="q5Txt">E、其他筛选功能
+                    <textarea name="" id="" cols="30" rows="10" data-maxlength="200" placeholder="例如：按预算贷车、限时抢购等"></textarea>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+    <!-- 6 -->
+    <section class="quesitem" data-ques="6" data-type="radio" data-require="yes" id="q6" data-field="CarBuyCondition">
+        <header class="quesitem_hd">Q6:如果您贷款购车，最主要关注哪些信息？<span class="require">*</span></header>
+        <section class="quesitem_bd">
+            <ul class="quesitem_list">
+                <li data-id="A">A、申请贷款的条件</li>
+                <li data-id="B">B、贷款成本</li>
+                <li data-id="C">C、审批放款时间</li>
+                <li data-id="D">D、优惠信息</li>
+                <li data-id="E">E、用户评价</li>
+                <li data-other="ipt" data-id="F" id="q6Txt">F、其他
+                    <textarea name="" id="" cols="30" rows="10" data-maxlength="200" placeholder="例如：申请人数、首付比例、月供金额等"></textarea>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+    <!-- 7 -->
+    <section class="quesitem" data-ques="7" data-type="text" data-require="no" id="q7" data-field="Suggest">
+        <header class="quesitem_hd" id="q7Txt">Q7:您对网站或App有什么疑问、意见或建议？</header>
+        <section class="quesitem_bd">
+            <textarea name="" id="" cols="30" rows="10" data-maxlength="500" placeholder="例如：新车贷款首页加载慢等" class="q7_textarea"></textarea>
+        </section>
+    </section>
+
+    <section class="quesitem quescontact" data-ques="8" data-type="text" data-require="no" id="q8" data-field="ContractWay">
+        <header class="quesitem_hd">联系方式</header>
+        <input type="text" placeholder="手机号/QQ号/邮箱">
+    </section>
+
+    <article class="afterwords">
+        留下联系方式，提交成功后，您将有机会抽取易鑫车贷免费赠送的精美礼品。
+    </article>
+
+    <section class="quesbtn">
+        <div id="submitBtn" class="submit_btn">提交问卷</div>
+    </section>
+</div>
+
+<!--整屏蒙层start-->
+  <div id="maskLayer"></div>
+<!--整屏蒙层end-->
+<div class="bottom-to-top">
+    <img src='http://img3.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=201610191560' />
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

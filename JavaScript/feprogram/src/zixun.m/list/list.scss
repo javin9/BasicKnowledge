@@ -1,0 +1,172 @@
+@import '../main.scss';
+.list {
+  .list-tap {
+    background: #fff;
+  }
+  .swiper-wrapper {
+    width: 101%;
+    padding-left: px2rem(40);
+    padding-right: px2rem(35);
+    border-bottom: 1px solid map-get($color, gray);
+    .swiper-slide {
+      display: inline-block;
+      width: auto!important;
+      margin-right: px2rem(50);
+      padding:px2rem(22) 0 px2rem(28);
+      // @include fsize(32);
+      font-size: px2rem(32);
+      font-weight: bold;
+      color: #686868;
+      line-height: px2rem(50);
+      text-align: center;
+      &:last-child{
+        margin-right: 0 !important;
+      }
+      &.cur {
+        color: map-get($color, red);
+        border-bottom: px2rem(4) solid map-get($color, red);
+      }
+    }
+  }
+
+  .groups {
+    display: block;
+    background: #fff;
+    padding: px2rem(40) px2rem(30) 0;
+
+    .group {
+      background: #fff;
+      border-bottom: 1px solid map-get($color, gray);
+      padding-bottom: px2rem(40);
+    }
+    h3 {
+      @include fsize(30);
+      line-height: px2rem(46);
+      color: #394043;
+      font-weight: bold;
+      max-height: px2rem(92);
+    }
+
+    .footer {
+      font-size: 0;
+      margin-top: px2rem(20);
+      > span {
+        display: inline-block;
+        @include fsize(24);
+        color: #9C9FA1;
+        line-height: px2rem(36);
+        &.label {
+          padding: 0 px2rem(10);
+          border: 1px solid #F8582E;
+          border-radius: 2px;
+          margin-right: px2rem(14);
+          &.red {
+            color: #F8582E;
+            border-color: #F8582E;
+          }
+
+          &.blue {
+            color: #648EF1;
+            border-color: #648EF1;
+          }
+
+          &.green {
+            color: #1FC18D;
+            border-color: #1FC18D;
+          }
+
+          &.gray {
+            color: #9C9FA1;
+            border-color: #9C9FA1;
+          }
+        }
+      }
+    }
+    &.first {
+      padding-bottom: px2rem(40);
+      margin-bottom: px2rem(20);
+      h3 {
+          @include fsize(34);
+          line-height: px2rem(52);
+          max-height: px2rem(104);
+        > span {
+          display: inline-block;
+          padding: px2rem(7) px2rem(12);
+          @include fsize(24);
+          background-color: map-get($color, red);
+          color: #fff;
+          letter-spacing: 0;
+          line-height: px2rem(36);
+          border-radius: 2px;
+          font-weight: normal;
+          margin-right: px2rem(20);
+          position: relative;
+          bottom: px2rem(4);
+          &:after {
+            content: '';
+            width: px2rem(12);
+            height: px2rem(14);
+            background: url(../images/triangle.png) no-repeat;
+            background-size: px2rem(10) auto;
+            position: absolute;
+            top: 50%;
+            right: px2rem(-11);
+            margin-top: px2rem(-7);
+          }
+        }
+      }
+
+      .body {
+        margin: px2rem(20) 0 px2rem(30);
+        @include fsize(32);
+        line-height: px2rem(48);
+        color: #686868;
+      }
+
+      .time {
+        @include fsize(22);
+        line-height: px2rem(32);
+        color: #9C9FA1;
+      }
+    }
+  }
+
+  // 分页
+  .pagenation {
+    background: #fff;
+    padding: px2rem(50) 0 px2rem(60);
+    font-size: 0;
+    text-align: center;
+    .label {
+      display: inline-block;
+    }
+    > a {
+      @include fsize(26);
+      line-height: px2rem(36);
+      padding: px2rem(16) px2rem(66);
+      border-radius: px2rem(5);
+      border: 1px solid map-get($color, gray);
+      color: #686868!important;
+      &:link, &:active, &:visited, &:hover, &:focus{
+        color: #686868!important;
+      }
+      &.disabled {
+        color: #9C9FA1!important;
+        background-color: #f5f5f5;
+        cursor: default;
+        &:link, &:active, &:visited, &:hover, &:focus{
+          color: #9C9FA1!important;
+        }
+      }
+    }
+    > span {
+      @include fsize(24);
+      line-height: px2rem(32);
+      margin: 0 px2rem(20);
+      color: #686868;
+      .index {
+        color: #000;
+      }
+    }
+  }
+}

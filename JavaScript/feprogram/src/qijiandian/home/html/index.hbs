@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script type="text/javascript">
+  var localcityid = 201;
+  var companyid = 7;
+  var isshowallbrand = true;
+  var APIURL = 'http://api.chedai.bitauto.com/';
+  var localcityid = '201';
+  var source = '918';
+  var companyid = '7';
+  var localcityspell = 'beijing';
+  var isshowallbrand = '';//  是否全品牌   true 或 false
+
+</script>
+<div class="container">
+  <!-- 头部活动内容start -->
+  <div class="active-box clrfix">
+    <aside class="left fl clrfix">
+      <img class="fl" src="http://img1.bitautoimg.com/chedai/2ba35e34-da6e-42db-a566-c3f8a7417de2.png">
+      <span class="fl ut-s">神州买卖车-金融官方旗舰店</span>
+    </aside>
+    <aside class="right fl">
+      <a href="javascript:void(0);" class="clrfix">
+        <img class="fl" src="http://img1.bitautoimg.com/chedai/ac717737-9f11-43bb-9c10-bc7894f72a8f.png">
+        <h3 class="ut-s">东风日产轩逸</h3>
+        <p class="ut-s">首付2.02万起，2年期0利率</p>
+      </a>
+      <a href="javascript:void(0);" class="clrfix" style="margin-right: 0">
+        <img class="fl" src="http://img1.bitautoimg.com/chedai/ac717737-9f11-43bb-9c10-bc7894f72a8f.png">
+        <h3 class="ut-s">东风日产轩逸</h3>
+        <p class="ut-s">首付2.02万起，2年期0利率</p>
+      </a>
+    </aside>
+  </div>
+  <!-- 头部活动内容end -->
+
+  <!-- 头部导航start -->
+  <nav>
+    <div>
+      <a href="javascript:void(0);">首页</a>
+      <span id="hoverCar" class="all-box">全部车型</span>
+    </div>
+  </nav>
+  <!-- 头部导航end -->
+  
+  <!-- 头部轮播图start -->
+  <header>
+    <div class="wrapper" id="sliderBox">
+      <div class="slider-wrapper theme-default">
+        <div class="nivoSlider slider">
+          <a href="javascript:void(0);"><img data-src="http://img1.bitautoimg.com/chedai/f71bed88-e106-4d72-a11c-63975a0a13ec.jpg" /></a>
+          <a href="javascript:void(0);"><img data-src="http://img1.bitautoimg.com/chedai/df7178dd-87ce-4705-a9c3-6ce9f3644699.png" /></a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- 头部轮播图end -->
+
+  <div class="main clrfix">
+    <aside class="left fl">
+      <!-- 快速选车start -->
+      <section class="group-item">
+        <header>
+          <span><i class="icon icon_fast"></i>快速选车</span>
+        </header>
+        <article class="body fast">
+          <div class="search-box">
+            <input id="searchCar" type="text" name="" placeholder="请输入心仪品牌或车型">
+          </div> 
+          <!-- 手风琴 -->
+          <div id="accordion"></div>
+          <div id="accLoad" class="load-box">
+            <div class="acc-loading"></div>
+          </div>
+        </article>
+      </section>  
+    <!-- 快速选车end -->
+
+    <!-- 特惠活动start -->
+      <section class="group-item">
+        <header>
+          <span><i class="icon icon_tehui"></i>特惠活动</span>
+        </header>
+        <article class="body tehui">
+          <a href="javascript:void(0);" class="tehui-item">
+            <img src="http://img1.bitautoimg.com/chedai/18bd5a5e-fa74-4886-b0aa-11f824e255b9.png">
+            <div>送价值高达2000元盗抢保障</div>
+          </a>
+          <a href="javascript:void(0);" class="tehui-item">
+            <img src="http://img1.bitautoimg.com/chedai/18bd5a5e-fa74-4886-b0aa-11f824e255b9.png">
+            <div>送价值高达2000元盗抢保障</div>
+          </a>
+        </article>
+      </section>   
+    <!-- 特惠活动end -->
+    </aside>
+    <aside class="right fr">
+    <!-- 热门车型start -->
+      <section class="group-item hot-item">
+        <header>
+          <span><i class="icon icon_bao"></i>热门车型</span>
+        </header>
+        <article class="body hot" id="hotCars">
+            <div class="loading">
+                <div class="load-img"></div>
+                正在努力加载中...
+            </div>
+          <ul class="hot-car-list">
+          </ul>
+        </article>
+
+      </section>  
+    <!-- 热门车型end -->
+
+    <!-- 品牌故事start -->
+      <section class="group-item">
+        <header>
+          <span><i class="icon icon_story"></i>品牌故事</span>
+        </header>
+        <article class="body story">
+          <!-- 品牌故事内容start(根据实际输出) -->
+          <img src="http://img1.bitautoimg.com/chedai/d99a8ec8-eabe-40f5-9b57-e21a74789695.gif">
+          <!-- 品牌故事内容end -->
+        </article>
+      </section>  
+    <!-- 品牌故事end -->
+    </aside>
+  </div>
+
+  <!-- 暂不支持弹窗start -->
+  <div id="nocityPop" class="popup-box">
+    <h3>上汽通用旗舰店暂不支持北京</h3>
+    <p>是否切换其他城市?</p>
+    <div>
+      <a id="changeCity" href="javascript:void(0);" class="btn city-btn">切换城市</a>
+      <a href="javascript:void(0);" class="btn back-btn">返回列表</a>
+    </div>
+    <input type="hidden" id="isShowPop" value=""/>
+  </div>
+  <!-- 暂不支持弹窗end -->
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+<script type="text/javascript" src='http://api.map.baidu.com/api?v=1.4'></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

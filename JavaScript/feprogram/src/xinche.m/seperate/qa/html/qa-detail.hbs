@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="yxWrapper">
+    <header class="header-bar">
+        <a href="javascript:history.go(-1);" class="nav-back"></a>
+        <h3 class="font-nav">帮助中心</h3>
+        <div id="tools-nav"></div>
+        <div id="navTips" class="nav-tips hide">
+            <a href="###"><i></i>首页</a>
+            <a href="###"><i></i>我的申请</a>
+        </div>
+    </header>
+
+    <dl class="qa-detail">
+        <dt>易鑫车贷靠谱吗？</dt>
+        <dd>易鑫车贷是由腾讯、京东、百度、易车四家上市公司共同投资超过60亿的互联网汽车金融平台，提供优质低价的自营金融产品，同时汇聚了各大汽车金融机构的融资方案，为您提供全程1对1免费服务。</dd>
+    </dl>
+
+    <dl class="qa-detail">
+        <dt>在易鑫车贷如何提交贷款意向？</dt>
+        <dd>
+            <ul class="loan-process">
+                <li><span class="icon icon-1"></span>1. 选择心仪车型</li>
+                <li><span class="icon icon-2"></span>2. 选择中意的金融产品</li>
+                <li><span class="icon icon-3"></span>3. 查看产品详情，申请订单</li>
+                <li><span class="icon icon-4"></span>4. 查看申请订单、状态</li>
+            </ul>
+        </dd>
+    </dl>
+</div>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

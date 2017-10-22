@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript" src="../../js/lib/jquery-2.1.1.js"></script>
+    <script type="text/javascript">
+    /*
+                                 searchEngineShowReg: /\.(so|sogou|google|youdao|sm)(\.[a-z0-9\-]+){1,2}\//ig,
+                                 searchEngineHideReg: /\.(baidu)(\.[a-z0-9\-]+){1,2}\//ig,//搜索引擎隐藏
+                                     */
+    var reg = new RegExp("\\.(so|sogou|google|youdao|sm)(\\.[a-z0-9\\-]+){1,2}\\/", "ig");
+    console.log(reg);
+    var Seo = (function() {
+        var reffer = document.referrer;
+        var Seo = function(opts) {
+            this.opts = {
+                so: false,
+                sogou: false,
+                google: false,
+                youdao: false,
+                sm: false,
+                baidu: false
+            };
+            this.opts = $.extend({}, this.opts, opts);
+            this.reg = null;
+            this.fnOpts = {
+                trueFn: null,
+                falseFn: null
+            };
+        }
+        Seo.prototype = {
+            init: function(fnOpts) {
+                this.fnOpts = $.extend({}, this.fnOpts, fnOpts);
+                this.searchEngineHideReg();
+                this.dosomething(fn);
+            },
+            searchEngineHideReg: function() {
+                var that = this,
+                    opts = that.opts;
+                var arr = [];
+                for (var item in that.opts) {
+                    if (opts[item]) {
+                        arr.push(item);
+                    }
+                }
+                var searchEngineString = !!arr.length ? arr.join('|') : '';
+                that.reg = new RegExp("\\.(" + searchEngineString + ")(\\.[a-z0-9\\-]+){1,2}\\/", "ig");
+                console.log(that.reg);
+            },
+            dosomething: function(fn) {
+            	var that=this;
+                if (!!that.reg && that.reg.test(reffer)) {
+                    typeof that.fnOpts.trueFn === "function" && that.fnOpts.trueFn.call(that, reffer);
+                } else {
+                    typeof that.fnOpts.falseFn === "function" && that.fnOpts.falseFn.call(that, reffer);
+                }
+            }
+        }
+        return Seo;
+    })();
+
+    var seo = new Seo({ baidu: true });
+    seo.init(function() {
+
+    });
+    </script>
+</body>
+
+</html>

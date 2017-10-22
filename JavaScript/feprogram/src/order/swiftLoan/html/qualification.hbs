@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script type="text/javascript">
+        var footerBusiFlag = "1";
+        var footerFunFlag = "0";
+        var citySpell = 'beijing';
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var RESURL = "http://img1.bitautoimg.com/jinrong/newpcweb/";
+        var USERCENTERURL = "http://i.daikuan.com/";
+        var BusinessLine = 550;
+        var defaultQualification = {"Career":73,"Income":108,"Insurance":1,"Funds":1,"Credit":72,"HouseState":80};
+        var AddQuaUrl = "/SwiftLoan/AddQualification";
+        var applySuccessUrl = '/SwiftLoan/ResultSuccess';
+        var payUrl = '/Payment/Pay';
+        var jtlj="http://img4.bitautoimg.com/jinrong/newpcweb//css/xinche/images/sqdk11.png?v=201612281814";
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div class="layx">
+    <div class="layx-con" style="position: relative;">
+        <div class="layx2">
+            <div class="layx21">购车人信息<div>您的信息将只作为贷款审核使用，不会以任何形式泄露给其他人员或机构<i></i></div></div>
+            <div class="layx22">
+                <div style="
+                    position: absolute;
+                    text-align: left;
+                    font-size: 14px;
+                    color: #9a9a9a;
+                    margin-top: -26px;
+                    left: 814px;
+                ">亲，已经帮您推荐了一款适合的金融产品哦！
+                </div>
+                <div class="layx22-left" style="">
+                    <div class="layx22-left1">身份信息</div>
+                    <div class="layx22-left3">
+                        <div class="layx22-left3-smyz">实名验证通过</div>
+                        <div class="layx22-left3-zsxm2">真实姓名<span>尚斌杰</span></div>
+                        <div class="layx22-left3-sfzh2">身份证号<span>211421***********1</span></div>
+                    </div>
+                    <div class="layx22-left1" style="margin-top:40px;border-top:1px solid #eee;">补充信息</div>
+                    <div class="layx22-left4" style="display:none;">
+                        <div class="layx22-left4-xykh">信用卡号<input type="text" value="本人近期使用的信用卡" /><a href="javascript:;">更换卡</a></div>
+                        <div class="layx22-left2-cwxx" style="margin-left:165px;display:none;">信用卡号码格式错误，请核实</div>
+                    </div>
+                    <div class="layx22-left5">
+                        <div class="layx22-left5-zy">
+                            职业
+                            <a href="javascript:;" data-id="73">公务员/事业单位</a>
+                            <a href="javascript:;" data-id="74">企业主</a>
+                            <a href="javascript:;" data-id="75">个体户</a>
+                            <a href="javascript:;" data-id="76">上班族</a>
+                            <a href="javascript:;" data-id="77">自由职业者</a>
+                        </div>
+                        <div class="layx22-left5-shsr">
+                            税后收入
+                            <a href="javascript:;" data-id="66"  >3000元以下</a>
+                            <a href="javascript:;" data-id="67"  >3000-5000元</a>
+                            <a href="javascript:;" data-id="68"  >5000-8000元</a>
+                            <a href="javascript:;" data-id="69"  >8000-12000元</a>
+                            <a href="javascript:;" data-id="108"   style="margin-top:10px;margin-left:78px;"     >12000-20000元</a>
+                            <a href="javascript:;" data-id="109"    style="margin-top:10px;"    >20000元以上</a>
+                        </div>
+                        <div class="layx22-left5-sbzm">
+                            社保证明
+                            <a href="javascript:;" data-id="1">有社保证明</a><a href="javascript:;" data-id="0">无社保证明</a>
+                        </div>
+                        <div class="layx22-left5-gjj">
+                            公积金
+                            <a href="javascript:;" data-id="1">有公积金</a><a href="javascript:;" data-id="0">无公积金</a>
+                        </div>
+                        <div class="layx22-left5-xyjl">
+                            信用记录
+                            <a href="javascript:;" data-id="71">信用良好</a>
+                            <a href="javascript:;" data-id="72">少数逾期</a>
+                            <a href="javascript:;" data-id="70">多次逾期</a>
+                            <a href="javascript:;" data-id="256">无信用记录</a>
+                        </div>
+                        <div class="layx22-left5-zfzt">
+                            住房状态
+                            <a href="javascript:;" data-id="79">自有全款</a>
+                            <a href="javascript:;" data-id="80">自有贷款</a>
+                            <a href="javascript:;" data-id="81">租赁</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="layx22-right">
+                    <div class="layx22-right1">
+                        <div class="layx22-right1-ck">
+                            <img src="http://img1.bitautoimg.com/autoalbum/files/20160725/925/0436539251_1.jpg" />
+                            <p style="margin-top:0;font-size:16px;height:18px;line-height:18px;" title="一汽奥迪 A3 Sportback 35TFSI 进取型">一汽奥迪 A3 Sportback 35TFSI 进取型</p>
+                        </div>
+                        <div class="layx22-right1-dkfa"><img src="http://img1.bitautoimg.com/chedai/b0214fb4-836f-4393-8545-2c987c435e65.jpg" />贷款方案：易鑫包商联合贷</div>
+                    </div>
+                    <div class="layx22-right2">
+                        <div class="layx22-right2-gcje">
+                            <div class="layx22-right2-gcje1">购车金额计算</div>
+                            <div class="layx22-right2-gcje2">报价：<span>18.49万</span></div>
+                        </div>
+                        <div class="layx22-right2-sf">
+                            <div class="layx22-right2-sf1">首付 30%</div>
+                            <div class="layx22-right2-sf2">5.55万</div>
+                        </div>
+                    </div>
+                    <div class="layx22-right3">
+                        <div class="layx22-right3-dked">
+                            <div class="layx22-right3-dked1">贷款额度：</div>
+                            <div class="layx22-right3-dked2">12.94万</div>
+                        </div>
+                        <div class="layx22-right3-yg">
+                            <div class="layx22-right3-yg1">月供：</div>
+                            <div class="layx22-right3-yg2">4361.01元(36 期)
+                            </div>
+                        </div>
+                        <div class="layx22-right3-zcb">
+                            <div class="layx22-right3-zcb1">总成本：</div>
+                            <div class="layx22-right3-zcb2">2.76万</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="layx3-con" style="background:#7a7a7a;margin-top:30px;">
+        <div class="layx3" style="margin:0 auto 0 auto;text-align:right;padding-right:50px;width:580px;">
+            <form action="/SwiftLoan/ResultFail" id="formQ" method="post">                <input name="Career" type="hidden" value="" />
+                <input name="Income" type="hidden" value="" />
+                <input name="Credit" type="hidden" value="" />
+                <input name="HouseState" type="hidden" value="" />
+                <input name="Funds" type="hidden" value="" />
+                <input name="Insurance" type="hidden" value="" />
+                <input name="MaritalStatus" type="hidden" value="0" />
+                <input name="Education" type="hidden" value="0" />
+                <input name="CertificateNumber" type="hidden" value="211421198404150831" />
+                <input name="OrderID" type="hidden" value="201483495604391" />
+                <input name="BuyCarCityID" type="hidden" value="201" />
+                <span id="provision" style="display:none;">
+                <input type="checkbox" checked />
+                我已详细阅读并同意
+                <a href="/home/InformationUseAuthorization" target="_blank">《信息使用授权书》</a>
+                </span>
+                <a href="javascript:;" class="hqdk">获取贷款</a>
+            </form>        </div>
+    </div>
+</div>
+<div class="ghkwin" style="display:none;">
+    <div class="ghkwin1">更换卡</div>
+    <div class="layx22-left4-xykh" style="margin-top:37px;padding-left:120px;">信用卡号<input type="text" value="本人近期使用的信用卡" /></div>
+    <div class="layx22-left2-cwxx" style="margin-left:205px;">信用卡号码格式错误，请核实</div>
+    <div class="ghkwin2">
+        <div>已添加过的信用卡</div>
+        <div>
+            <a href="javascript:;" class="on" style="margin-top:0;">招商银行信用卡 | *** **** **** 6725</a>
+            <a href="javascript:;">交通银行信用卡 | *** **** **** 1134</a>
+        </div>
+    </div>
+    <div class="ghkwin3"><a href="javascript:;">确定</a><a href="javascript:;" style="width:158px;height:48px;line-height:48px;border:1px solid #dddddd;background:#f8f8f8;color:#666666;margin-left:10px;">取消</a></div>
+    <a href="javascript:;" class="ghkwin-gb"></a>
+</div>
+<div class="wfspwin" style="display:none;">
+    <div class="wfspwin1">暂时无法立刻审批</div>
+    <div class="wfspwin2">您提供的资料有限，评估结果会在24小时内以短信的形式通知您！稍后请关注个人中心-我的订单，查看评估结果。可继续支付订金，快速获得审批额度！</div>
+    <div class="wfspwin3"><a href="javascript:;">继续</a></div>
+</div>
+<div class="spedwin" style="display:none;">
+    <div class="sped" style=""><canvas id="canvas-preview"></canvas></div>
+    <div class="spedz" style="">
+        <div class="spedz1" id="spedz1">正在评估您的基本信息</div>
+        <div class="spedz2" id="spedz2"></div>
+        <div class="spedz3">预审批额度</div>
+    </div>
+    <div class="spedwin-jx"><a href="javascript:;">继续</a></div>
+</div>
+
+
+
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

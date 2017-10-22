@@ -1,0 +1,96 @@
+<div id="chattingWrap">
+    <div id="chattingInner">
+        {{#if tf}}
+        <div id="tf-intro" class="hide">
+            <article id="aboutus" class="aboutus">
+                <div class="text">{{{tfintro}}}</div>
+            </article>
+            <article id="aboutus-window" class="aboutus-window hide">
+                <div class="content">
+                    <div class="image"></div>
+                </div>
+                <a href="javascript:void(0)" class="close-btn">关闭</a>
+            </article>
+            {{#if c2c}}
+            <article id="c2c" class="c2c">
+                不想填资料？<a href="javascript:void(0)">直接电话咨询</a>
+            </article>
+            {{/if}}
+        </div>
+        {{/if}}
+        <!-- continue -->
+        {{#if activity}}
+        <article id="Chatting_z" class="dialog_serv uf hide">
+            <i class="icon icon_serv mt"></i>
+            <div class="message uf_f1">
+                <div class="txt">
+                    {{#if activityPic}}
+                        <div class="imagewrap"><img src="{{activityPic}}" alt="" /></div>
+                    {{/if}}
+                    {{#if activityContent}}
+                        <div class="textwrap">{{activityContent}}</div>
+                    {{/if}}
+                </div>
+            </div>
+        </article>
+        {{/if}}
+        <div id="Chatting_0" class="hide">
+            <article class="dialog_serv uf">
+                <i class="icon icon_serv mt"></i>
+                <div class="message uf_f1">
+                    <div class="txt">{{guideContent}}终于等到您，您心仪的车是哪款？您准备在哪儿购买呢？</div>
+                </div>
+            </article>
+            {{#if tf}}
+            {{else}}
+                {{#if c2c}}
+                <article id="c2c" class="c2c">
+                    不想填资料？<a href="javascript:void(0)">直接电话咨询</a>
+                </article>
+                {{/if}}
+            {{/if}}
+        </div>
+        <article id="Chatting_1" class="dialog_cust uf hide">
+            <div class="message uf_f1">
+                <div class="txt">
+                    <div class="img_car">
+                        <img src="" id="dataLogo">
+                    </div>
+                    <div class="text_car">
+                        <p id="dataCar" class="car"></p>
+                        <p class="city">购车城市：<span id="dataCity"></span></p>
+                    </div>
+                </div>
+            </div>
+            <i class="icon icon_cust mt"></i>
+        </article>
+
+        <article id="Chatting_2" class="dialog_serv uf hide">
+            <i class="icon icon_serv mt"></i>
+            <div class="message uf_f1">
+                <div class="txt">补充以下信息，我们会为您匹配最适合的金融产品</div>
+            </div>
+        </article>
+    </div>
+</div>
+
+<!-- 车&城市 -->
+{{> panel/carcity.hbs}}
+
+<!-- 职业 -->
+{{> panel/career.hbs}}
+
+<!-- 信用 -->
+{{> panel/credit.hbs}}
+
+<!-- 住房 -->
+{{> panel/housestate.hbs}}
+
+<!-- 社保 -->
+{{> panel/insurance.hbs}}
+
+<!-- 月收入 -->
+{{> panel/income.hbs}}
+
+<!-- 百分比动画 -->
+{{> panel/circle.hbs}}

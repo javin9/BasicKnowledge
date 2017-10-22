@@ -1,0 +1,712 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+$mainColor: map-get($colors, red);
+$mainColorBg: map-get($colors, red);
+$leaseColor: #FF223A;
+
+body{
+  background: #f2f2f2 !important;
+
+  &.bg-white {
+    background: #ffffff !important;
+  }
+}
+
+a,
+a:active { text-decoration: none; }
+
+.search-list {
+  background: #fff;
+  padding: px2rem(18) px2rem(40) px2rem(40) px2rem(40);
+  overflow:hidden;
+
+  dt {
+    @include fsize(26);
+    line-height: 1;
+    color: #333;
+    padding-top: px2rem(40);
+    margin-bottom: px2rem(6);
+  }
+
+  dd {
+    overflow: hidden;
+
+    .choice {
+      display: block;
+      float: left;
+      width: 31.343%;
+      box-sizing: border-box;
+      text-align: center;
+      line-height: px2rem(68);
+      background: #F5F5F5;
+      border-color: #F5F5F5;
+      border-style: solid;
+      border-width: 1px;
+      margin-top: px2rem(22);
+      margin-right: 2.985%;
+      border-radius: px2rem(5);
+      @include fsize(24);
+      color: #666;
+      text-decoration: none;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+
+      &.active {
+        position: relative;
+        z-index: 10;
+        border-color:$mainColor;
+        background:#fff;
+        color: $mainColor !important;
+      }
+    }
+
+    &.monthlypayment span {
+      width:px2rem(200);
+      &:nth-child(3n),
+      &:nth-last-child(1) {
+        border-right-width: 1px;
+      }
+    }
+
+    &.brand {
+      padding: px2rem(10) px2rem(25) px2rem(30);
+      margin: px2rem(20) px2rem(-25) 0;
+      background: #FFFFFF;
+      justify-content: space-between;
+
+      .choice {
+        position: relative;
+        box-sizing: border-box;
+        width: px2rem(160);
+        height: px2rem(160);
+        border: 0px;
+        border-radius:px2rem(4);
+        overflow: hidden;
+        margin-top: px2rem(20);
+        margin-right: px2rem(20);
+        background: #FFFFFF;
+
+        &:nth-child(4n) {
+          margin-right: 0;
+        }
+
+        .logo {
+          display: block;
+          height: px2rem(110);
+          text-align: center;
+
+          img {
+            max-width: px2rem(106);
+            max-height: px2rem(72);
+            vertical-align: middle;
+          }
+
+          &:after {
+            content: '';
+            width: 0;
+            line-height: px2rem(110);
+            vertical-align: middle;
+          }
+        }
+
+        .name {
+          position: absolute;
+          left:px2rem(1);
+          bottom: 0;
+          width: 100%;
+          height: px2rem(50);
+          text-align: center;
+          @include fsize(26);
+          line-height: 1;
+          color:#686868;
+        }
+
+        &.active {
+          background: transparent;
+          box-shadow: inset $mainColor 0 0 0 1px;
+
+          .name {
+            color:$mainColor;
+          }
+
+          &:before {
+            content: '';
+            position: absolute;
+            right:px2rem(0);
+            bottom:px2rem(0);
+            width:px2rem(30);
+            height:px2rem(30);
+            background: url("./images/choose-mark.png") right bottom no-repeat;
+            background-size: 100% auto;
+            z-index: 1;
+          }
+
+          /*&:after {
+            content: '';
+            position: absolute;
+            right: px2rem(2);
+            bottom: px2rem(10);
+            width: px2rem(14);
+            height: px2rem(7);
+            border-bottom: 1px solid #FFFFFF;
+            border-left: 1px solid #FFFFFF;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+          }*/
+        }
+      }
+    }
+  }
+}
+
+.car-select {
+  @include fsize(30);
+  color: #000000;
+  padding-left: px2rem(30);
+  padding-right: px2rem(30);
+  line-height: px2rem(88);
+  background: #FFFFFF;
+  margin-top: px2rem(1);
+  margin-bottom: px2rem(120);
+  overflow: hidden;
+  border-top: 1px solid #ececec;
+
+  .name {
+    float: left;
+    color: #333;
+  }
+
+  .select {
+    @include fsize(26);
+    float: right;
+    color: #999;
+
+    i {
+      position: relative;
+      top: px2rem(-0);
+      display: inline-block;
+      width: px2rem(18);
+      height: px2rem(18);
+      border-top: 1px solid #c8c8c8;
+      border-right: 1px solid #c8c8c8;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      margin-left: px2rem(8);
+    }
+
+    .sel {
+      color:#686868;
+
+      &+i {
+        border-color:#686868;
+      }
+    }
+  }
+}
+
+#carSelectComponent .carSelect-recommendBrand {
+  display: none;
+}
+
+.bottom-btn {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  max-width: px2rem(750);
+
+  a {
+    display: block;
+    height: px2rem(100);
+
+    line-height: px2rem(100);
+    text-align: center;
+    background:$mainColorBg;
+    color: #FFFFFF;
+    text-decoration: none;
+
+    &.reset {
+      width: 0;
+      flex: 1 1 0;
+      background:#FFF7F7;
+      color: #333;@include fsize(28);
+    }
+
+    &.view {
+      width: 0;
+      flex: 2 1 0;
+      color: #FFFFFF !important;@include fsize(32);
+    }
+  }
+}
+
+/* --------------
+    list
+   -------------- */
+html, body {
+}
+
+#yxWrapper {
+  position: relative;
+}
+/*#yxWrapper .loading-gray{
+  background: url(../../common.m/images/loading_white.gif) no-repeat center center;
+  background-size: px2rem(160) px2rem(160);
+  height:px2rem(200);
+}*/
+.budget-carlist {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+
+  .carlist {
+    padding: 0 px2rem(30);
+    background: #FFFFFF;
+
+    .car {
+      padding: px2rem(30) 0;
+      border-bottom: 1px solid #e5e5e5;
+      overflow: hidden;
+
+      .image {
+        float: left;
+        width: px2rem(210);
+        height: px2rem(140);
+        overflow: hidden;
+
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .text {
+        margin-left: px2rem(240);
+
+        dl {
+          display: -webkit-box;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          line-height: 1.5;
+
+          .name {
+            //font-weight: bold;
+            @include fsize(34);
+            color: #394043;
+            margin-bottom: px2rem(10);
+          }
+
+          .info {
+            @include fsize(24);
+            color: #FF8C39;
+            margin-bottom: px2rem(10);
+          }
+
+          .price {
+            @include fsize(24);
+            color: #9C9FA1;
+            margin-bottom: px2rem(10);
+
+            em {
+              color: #686868
+            }
+          }
+
+          .daikuan {
+            @include fsize(24);
+            line-height: px2rem(36);
+            color: #9C9FA1;
+            overflow: hidden;
+            margin-right: px2rem(-30);
+
+            span {
+              float: left;
+              margin-right: px2rem(30);
+            }
+
+            em {
+              @include fsize(34);
+              color: $mainColor;
+            }
+          }
+        }
+      }
+    }
+
+    // 没有更多了
+    .no-more {
+      margin: 0 px2rem(-30);
+      padding: px2rem(20) 0;
+      background: #f2f2f2;
+      text-align: center;
+      color: #999;
+    }
+  }
+}
+
+#car-loading {
+  display:none;
+}
+
+// 没有产品了
+.default-box{
+  margin-top: 0.266667rem;
+  padding: 1.066667rem 0;
+  transform: inherit!important;
+}
+.default-box .default-img{
+  width: px2rem(210);
+  height: px2rem(210);
+  margin: 0 auto;
+  background: url(images/default.png) no-repeat;
+  background-size: 100%;
+}
+
+.default-box .default-title{
+  padding: px2rem(10) 0 0;
+  @include fsize(28);
+  line-height: 1.5;
+  color: #394043;
+  text-align: center;
+
+  a {
+    color: #5A67AE;
+    padding: 0 0.25em;
+  }
+}
+.default-box .default-text{
+  font-size: 0.346667rem;
+  color: #d0d0d0;
+  text-align: center;
+}
+
+// 筛选栏
+.search-bar {
+  position: relative;
+  z-index: 20;
+  height: px2rem(80);
+  background: #FFFFFF;
+  display: -webkit-box;
+  display: flex;
+  border-bottom: 1px solid #eeeeee;
+  box-sizing: content-box;
+
+  &>div {
+    width: 0;
+    flex: 1 0 0;
+    -webkit-box-flex: 1;
+
+    &:nth-last-child(n+2):before {
+      content: '';
+      float: right;
+      right: 0;
+      height: px2rem(40);
+      margin-top: px2rem(20);
+      border-right: 1px solid #EEEEEE;
+    }
+  }
+}
+
+.dropdown {
+  .trigger {
+    position: relative;
+    display: block;
+    @include fsize(26);
+    height: px2rem(80);
+    line-height: px2rem(80);
+    color: #666666;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      max-width: 4em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: middle;
+      position: relative;
+      top: px2rem(-2);
+    }
+
+    .arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left:px2rem(10) solid transparent;
+      border-right:px2rem(10) solid transparent;
+      border-bottom:0;
+      border-top:px2rem(10) solid #bebebe;
+      margin-left:px2rem(10);
+      position: relative;
+      top: -0.03rem;
+      vertical-align: middle;
+
+    }
+
+    .sup {
+      display: none;
+      position: absolute;
+      top: px2rem(4);
+      right: px2rem(30);
+      width: 1.2em;
+      height: 1.2em;
+      text-align: center;
+      line-height: 1.2;
+      @include fsize(22);
+      border-radius: 100%;
+      background: $mainColorBg;
+      color: #FFFFFF;
+    }
+
+    &.selected {
+      color:$mainColor;
+    }
+  }
+
+  .down-wrapper {
+    position: absolute;
+    top: px2rem(80);
+    left: 50%;
+    width: 100%;
+    max-width: px2rem(750);
+    transform: translate(-50%, 0);
+    height: 0;
+    margin-top: 1px;
+    overflow: hidden;
+
+    .down-content {
+      position: relative;
+      z-index: 2;
+      background: #f2f2f2;
+      overflow: hidden;
+    }
+
+    .choice-list {
+      .choice {
+        display: block;
+        padding: 0 px2rem(30) 0 px2rem(90);
+        background-color: #fff;
+        @include fsize(28);
+        line-height: px2rem(88);
+        color: #000000;
+        border-bottom: 1px solid #EEEEEE;
+
+        &:nth-last-child(1) {
+          border-bottom: 0;
+        }
+
+        &.active {
+          color:$mainColor;
+          position: relative;
+          &:after{
+            content: '';
+            width:px2rem(12);
+            height:px2rem(20);
+            transform:rotate(45deg);
+            border-right: solid px2rem(3) $mainColor;
+            border-bottom: solid px2rem(3) $mainColor;
+            position: absolute;
+            top: px2rem(32);left:px2rem(40);
+          }
+        }
+      }
+    }
+
+    &.opened {
+      display: block;
+    }
+  }
+
+  &.active {
+    .trigger {
+      color:$mainColor;
+
+      .arrow {
+        border-right:px2rem(10) solid transparent;
+        border-left:px2rem(10) solid transparent;
+        border-bottom:px2rem(10) solid $mainColor;
+        border-top:0;
+      }
+    }
+  }
+}
+
+#maskLayer {
+  z-index: 993 !important;
+  background: transparent;
+  opacity: 1;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+  }
+}
+.search-bar {
+  position: relative;
+  z-index: 994;
+  max-width: px2rem(750);
+}
+
+body #carSelectComponent {
+  z-index: 995;
+}
+
+
+.sliderUp-box{
+  display: none;
+  width: 100%;
+  text-align: center;
+  padding: 0.266667rem 0;
+  color: #999;
+
+  .sliderUp {
+    width: 0.48rem;
+    height: 0.48rem;
+    display: inline-block;
+    background: url(images/pullup.png) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    top: 0.106667rem;
+    margin-right: 0.133333rem;
+  }
+}
+
+// 固定头
+.header-bar {
+  z-index: 9999;
+}
+
+.search-bar {
+  left: 0;
+  width: 100%;
+}
+
+.search-bar-fixed {
+  .search-bar {
+    position: fixed;
+    top: 0;
+    z-index: 9998;
+    margin-top: -2px;
+    padding-top: 2px;
+  }
+  .budget-carlist {
+    padding-top: px2rem(80);
+  }
+}
+
+.appShow {
+  .search-bar-fixed {
+    .search-bar {
+      top: px2rem(108);
+    }
+  }
+}
+
+body.no-header {
+  #header-bar {
+    display: none;
+  }
+}
+
+.dropdown .down-wrapper .down-content{background: #fff!important;}
+#appDown>div{
+  z-index:10000 !important;
+}
+
+#carMasterBrandId {
+  margin-left: px2rem(-25);
+  margin-right: px2rem(-25);
+  margin-top: px2rem(-2);
+
+  .choice {
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    width: 16.666%;
+    height: px2rem(130);
+    margin-right: 4.166%;
+    margin-top: px2rem(20);
+    text-align: center;
+    border: 1px solid transparent;
+    background: transparent;
+    color: #394043;
+
+    &:nth-child(5n) {
+      margin-right: 0;
+    }
+
+    &.active {
+      border-color: $mainColor;
+      color: $mainColor !important;
+    }
+
+    &:nth-child(1) {
+      padding-top: px2rem(80);
+      background: url(images/all-normal@2x.png) no-repeat center top / px2rem(70) px2rem(70);
+
+      img {
+        display: none;
+      }
+
+      &.active {
+        background-image: url(images/all-red@2x.png);
+      }
+    }
+
+    img {
+      display: block;
+      width: px2rem(70);
+      height: px2rem(70);
+      margin: 0 auto px2rem(10)
+    }
+
+    span {
+      position: absolute;
+      top: 75%;
+      left: 0;
+      width: 100%;
+      @include fsize(26);
+      line-height: 1.1;
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+
+// iphone5
+@media screen and (max-width: 640px) {
+  #carMasterBrandId .choice span {
+    @include fsize(22);
+  }
+
+  .dropdown .trigger {
+    @include fsize(24);
+  }
+
+  .dropdown .down-wrapper .choice-list .choice {
+    @include fsize(26);
+  }
+
+  .budget-carlist .carlist .car .text dl .name,
+  .budget-carlist .carlist .car .text dl .daikuan em {
+    @include fsize(32);
+  }
+}

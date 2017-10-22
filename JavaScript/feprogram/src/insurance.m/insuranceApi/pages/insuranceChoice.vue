@@ -1,0 +1,2881 @@
+<template>
+    <div class="form_box detail_box">
+        <header class="top_title">
+            <a href="javascript:void(0);" class="return"  onClick="javascript:window.history.go(-1);">
+                <img src="../../comm/images/icon/fanhui.png" alt="Alternate Text" />
+            </a>
+            <a href="javascript:void(0);" class="center fontSize_17">投保方案</a>
+            <a href="javascript:void(0);" class="right blue1 fontSize_14" @click="showInsuranceChoose">险种攻略</a>
+        </header>
+        <ul class="fromList checkApp carInfoMian clearfix" :class="showCarInfo?showClass:hideClass">
+            <li class="carInfo">
+                <a href="javascript:void(0);">
+                    <div class="">
+                        <span class="triggers top active" v-text="LicensePlateCode"></span>
+                        <span class="triggers bottom" v-text="BrandModel"></span>
+                    </div>
+                    <b class="left_tit"><i class="imgBox"><img src="../../comm/images/icon/car.png" alt="Alternate Text" /></i></b>
+                </a>
+            </li>
+        </ul>
+        <div class="insure_price_box">
+            <div class="price_main_box clearfix">
+                <h3 class="fontSize_15">投保方案<a href="javascript:void(0);" class="edit_insure_btn fontSize_15" @click="editInsuranceBtn">修改<img src="../../comm/images/icon/right-conventional.png" alt="Alternate Text" /></a></h3>
+                <h4 class="fontSize_13">
+                    <img src="../../comm/images/icon/prompt-blue.png" alt="Alternate Text" /><span>95%以上车主的选择</span>
+                </h4>
+                <div class="clearfix" style="display: block;">
+                    <table>
+                        <tr class="tr-date" :class="[shy_class?showClass:hideClass]">
+                            <td class="fontSize_13">商业险起保日期</td>
+                            <td class="fontSize_13" v-text="shy_date"></td>
+                        </tr>
+                        <tr class="chesun" :class="[chesun_class?showClass:hideClass]">
+                            <td class="fontSize_13">车辆损失险</td>
+                            <td class="fontSize_13" v-text="chesun_val">3424</td>
+                        </tr>
+                        <tr class="sanzh " :class="[sanzhe_class?showClass:hideClass]">
+                            <td class="fontSize_13">第三者责任险(<span v-text="sanzhe_attr">50万</span>)</td>
+                            <td class="fontSize_13" data-bind="text: sanzhe_val" v-text="sanzhe_val">3424</td>
+                        </tr>
+                        <tr class="daoq" :class="[daoq_class?showClass:hideClass]">
+                            <td class="fontSize_13">全车盗抢险</td>
+                            <td class="fontSize_13" v-text="daoq_val">3424</td>
+                        </tr>
+                        <tr class="siji" :class="[siji_class?showClass:hideClass]">
+                            <td class="fontSize_13">司机责任险(<span v-text="siji_attr">1万</span>)</td>
+                            <td class="fontSize_13" v-text="siji_val">3424</td>
+                        </tr>
+                        <tr class="chengke" :class="[chengke_class?showClass:hideClass]">
+                            <td class="fontSize_13">乘客责任险(<span v-text="chengke_attr">1万</span>)</td>
+                            <td class="fontSize_13" v-text="chengke_val">3424</td>
+                        </tr>
+                        <tr class="boli" :class="[boli_class?showClass:hideClass]">
+                            <td class="fontSize_13">玻璃单独破碎险(<span v-text="boli_attr">国产玻璃</span>)</td>
+                            <td class="fontSize_13" v-text="boli_val">3424</td>
+                        </tr>
+                        <tr class="huahen" :class="[huahen_class?showClass:hideClass]">
+                            <td class="fontSize_13">车身划痕险(<span v-text="huahen_attr">2000</span>)</td>
+                            <td class="fontSize_13" v-text="huahen_val">3424</td>
+                        </tr>
+                        <tr class="ziran" :class="[ziran_class?showClass:hideClass]">
+                            <td class="fontSize_13">自燃损失险</td>
+                            <td class="fontSize_13" data-bind="text: ziran_val" v-text="ziran_val">3424</td>
+                        </tr>
+                        <tr class="sheshui" :class="[sheshui_class?showClass:hideClass]">
+                            <td class="fontSize_13">发动机涉水险</td>
+                            <td class="fontSize_13" v-text="sheshui_val">3424</td>
+                        </tr>
+                        <tr class="zhuanxiu" :class="[zhuanxiu_class?showClass:hideClass]">
+                            <td class="fontSize_13">指定专修险</td>
+                            <td class="fontSize_13" v-text="zhuanxiu_val">3424</td>
+                        </tr>
+                        <tr class="wufa" :class="[wufa_class?showClass:hideClass]">
+                            <td class="fontSize_13">车损无法找到第三方</td>
+                            <td class="fontSize_13" v-text="wufa_val">3424</td>
+                        </tr>
+                        <tr class="buji_box" :class="[buji_class?showClass:hideClass]">
+                            <td class="fontSize_13" style="line-height: 0.5rem;">
+                                不计免赔<br />
+                            </td>
+                            <td class="fontSize_13" v-text="buji_val"></td>
+                        </tr>
+                        <tr class="tr-date" :class="[jiaoq_class?showClass:hideClass]">
+                            <td class="fontSize_13">交强险起保日期</td>
+                            <td class="fontSize_13" v-text="jq_date"></td>
+                        </tr>
+                        <tr :class="[jiaoq_class?showClass:hideClass]">
+                            <td class="fontSize_13" class="jiaoq">交强险</td>
+                            <td class="fontSize_13" v-text="jiaoq_val"></td>
+                        </tr>
+                        <tr :class="[chch_class?showClass:hideClass]">
+                            <td class="fontSize_13" class="jiaoq">车船税</td>
+                            <td class="fontSize_13" v-text="chch_val"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="giftBox" :class="[showGift1?showClass:hideClass]">
+                <h3 class="fontSize_15">投保礼</h3>
+                <p class="fontSize_13 integral">赠：<span v-text="discount_val"></span>(自动兑换<span v-for="info in discountArr"><em v-text="info.Value" :code='info.Key'></em></span>)</p>
+                <!-- @*<div class="mainBox clearfix">
+                    <p class="fontSize_13">可兑换:</p>
+                    <ul data-bind="foreach: discountArr">
+                        <li>
+                            <div class="sex-ctn radio-box checked">
+                                <div name="chesunradio" class="radio-normal"></div>
+                            </div>
+                            <span class="fontSize_13" data-bind="attr: { code: Key }, text: Value"></span>
+                        </li>
+                    </ul>
+                </div>*@ -->
+            </div>
+            <div class="price_num_box tab_tit">
+                <div class="actualPayment fontSize_13" @click="showInsurancePrice">
+                    ￥<span class="fontSize_13" v-text="actualPayment_val"></span><i class="icon i13"></i>
+                </div>
+                <div class="gift_box  fontSize_13" style="display:none" :class="[showGift?showClass:hideClass]">
+                    <i class="icon i37"></i><em v-text="discount_val"></em>
+                </div>
+                <div class="gift_box  fontSize_13" style="display:none" v-for="info in discountArr" :class="[showGift1?showClass:hideClass]" >
+                    <i class="icon i37"></i><em v-text="info.Value" :code='info.Key'></em>
+                </div>
+                <div>
+                    <a href="javascript:void(0);" class="sub_btn  fontSize_13" @click="onSubmit($event)">确认</a>
+                </div>
+            </div>
+            <div class="parice_mark_main" style="display: none;">
+                <div class="mark" @click="hideInsurancePrice"></div>
+                <div class="main">
+                    <h3 class="fontSize_15">保费合计</h3>
+                    <div class="table_main">
+                        <table>
+                            <tr class="shy_main" :class="[shy_class?showClass:hideClass]">
+                                <td class="left fontSize_13">商业险</td>
+                                <td class="center fontSize_13">投保</td>
+                                <td class="right fontSize_13">￥<span v-text="shy_val"></span></td>
+                            </tr>
+                            <tr class="jq_main" :class="[jiaoq_class?showClass:hideClass]">
+                                <td class="left fontSize_13">交强险</td>
+                                <td class="center fontSize_13">投保</td>
+                                <td class="right fontSize_13">￥<span v-text="jiaoq_val"></span></td>
+                            </tr>
+                            <tr class="chch_main" :class="[chch_class?showClass:hideClass]">
+                                <td class="left fontSize_13">车船税</td>
+                                <td class="center fontSize_13">缴纳</td>
+                                <td class="right fontSize_13">￥<span v-text="chch_val"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form_box adjustment_insure" style="display: none;">
+        <!-- @if (!isFromApp) -->
+        <!-- { -->
+            <header class="top_title">
+                <a href="javascript:void(0);" name="page" class="close"><img src="../../comm/images/icon/guanbi.png" alt="" @click="closeEditInsuranceBox"></a>
+                <a href="javascript:void(0);" class="center fontSize_17">调整险种</a>
+            </header>
+        <!-- } -->
+        <div class="adjustment_insure_main">
+            <div class="insurance_type_box">
+                <table class="insurance_type shy_date_table" style="margin-bottom: 0;">
+                    <tbody>
+                        <tr class="shy">
+                            <td class="insurance_type_name fontSize_15">
+                                <div class="sex-ctn radio-box checked">
+                                    <div name="chesunradio" class="radio-normal" :class="[shy_class?checkedClass:'']" @click="editFun($event)"></div>
+                                </div>
+                                <em>商业险</em>
+                            </td>
+                            <td class="insurance_type_price choose_date_box fontSize_15" colspan="3" style="text-decoration: initial;" :class="[showDate?showClass:hideClass]">
+                                <i class="imgBox">
+                                    <img src="../../comm/images/icon/date.png" alt="Alternate Text" />
+                                </i><b class="fontSize_13">起保日期</b>
+                                <input type="text" placeholder="请选择起保日期" class="input_text fontSize_13 init" id="shy_date" v-model="shy_date" readonly="readonly" @click="chooseShYDate" />
+                            </td>
+                            <td class="tr_mark"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="insurance_type insurance_list shyInsuranceList" style="margin-bottom: 0;">
+                    <tbody id="adjustment_insure_box">
+                        <tr v-for='(index,key) in showInsuranceList' :class="[key.id,key.falseClass?'false':'']"><!--  :class="[key.id,key.show?'show':'hide']" v-if="key.id,key.show" -->
+                            <td class="insurance_type_name fontSize_15">
+                                <div class="sex-ctn radio-box">
+                                    <div class="radio-normal"  :class="key.isChoose" @click="editFun($event)"></div>
+                                </div>
+                                <em v-text="key.name"></em>
+                            </td>
+                            <td class="insurance_type_coverage fontSize_15">
+                                <div :id="key.baoe.baoEId" class="type_select" :class="key.baoe.class" v-text="key.baoe.baoeVal" :val_num="sanzhe_attr_val.baoeAttr" @click='insuranceSelectEvent'></div>
+                            </td>
+                            <td class="insurance_type_price  fontSize_15" v-text="key.price">￥679</td>
+                            <td class="tr_mark"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="insurance_type">
+                    <tbody>
+                        <tr class="buji">
+                            <td class="insurance_type_name  fontSize_15">
+                                <div class="sex-ctn radio-box">
+                                    <div name="" class="radio-normal" :class="[buji_class?checkedClass:'']" @click="editFun($event)"></div>
+                                </div>
+                                <em>不计免赔</em>
+                            </td>
+                            <td class="insurance_type_coverage  fontSize_15">
+                                <div></div>
+                            </td>
+                            <td class="insurance_type_price  fontSize_15" v-text="buji_val">￥679</td>
+                            <td class="tr_mark"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="buji_main clearfix" id="buji_main">
+                    <a class="chesun_buji buji_btn no_checked fontSize_14" href="javascript:void(0);" :class="[chesun_buji_class?checkedClass:'']" @click="editFun($event)">车损</a>
+                    <a class="sanzhe_buji buji_btn no_checked fontSize_14" href="javascript:void(0);" :class="[sanzhe_buji_class?checkedClass:'']" @click="editFun($event)">三者</a>
+                    <a class="daoq_buji buji_btn no_checked fontSize_14" href="javascript:void(0);" :class="[daoq_buji_class?checkedClass:'']" @click="editFun($event)">盗抢</a>
+                    <a class="siji_buji buji_btn no_checked fontSize_14" href="javascript:void(0);" :class="[siji_buji_class?checkedClass:'']" @click="editFun($event)">司机</a>
+                    <a class="chengke_buji buji_btn no_checked fontSize_14" href="javascript:void(0);" :class="[chengke_buji_class?checkedClass:'']" @click="editFun($event)">乘客</a>
+                    <a class="huahen_buji buji_btn no_checked fontSize_14" href="javascript:void(0);" :class="[huahen_buji_class?checkedClass:'']" @click="editFun($event)">划痕</a>
+                    <a class="ziran_buji buji_btn no_checked fontSize_14" href="javascript:void(0);"  :class="[ziran_buji_class?checkedClass:'']" @click="editFun($event)">自燃</a>
+                    <a class="sheshui_buji buji_btn no_checked fontSize_14" href="javascript:void(0);" :class="[sheshui_buji_class?checkedClass:'']" @click="editFun($event)">涉水</a>
+                </div>
+                <table class="insurance_type insurance_list insuranceNoChecked" :class="chooseMore?showClass:hideClass"><!-- :class="chooseMore?showClass:hideClass" -->
+                    <tbody id="adjustment_insure_box1">
+                        <tr v-for='(index,key) in hideInsuranceList' :class="[key.id,key.falseClass?'false':'']"><!--  :class="[key.id,key.show?'show':'hide']" v-if="key.id,key.show" -->
+                            <td class="insurance_type_name fontSize_15">
+                                <div class="sex-ctn radio-box">
+                                    <div class="radio-normal"  :class="key.isChoose" @click="editFun($event)"></div>
+                                </div>
+                                <em v-text="key.name"></em>
+                            </td>
+                            <td class="insurance_type_coverage fontSize_15">
+                                <div :id="key.baoe.baoEId" class="type_select" :class="key.baoe.class" v-text="key.baoe.baoeVal" :val_num="sanzhe_attr_val.baoeAttr" @click='insuranceSelectEvent'></div>
+                            </td>
+                            <td class="insurance_type_price fontSize_15" v-text="key.price">￥679</td>
+                            <td class="tr_mark"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="insurance_type chooseMoreBox mar_bot_20">
+                    <tbody>
+                        <tr class="chooseMore">
+                            <td class="insurance_type_name fontSize_15">
+                                <div class="sex-ctn radio-box">
+                                    <div name="" class="moreBtn" :class="chooseMore?'':checkedClass" @click="editFun($event)"></div>
+                                </div>
+                                <em>选择更多险种</em>
+                            </td>
+                            <td class="insurance_type_coverage fontSize_15">
+                                <div></div>
+                            </td>
+                            <td class="insurance_type_price fontSize_15" data-bind=""></td>
+                            <td class="tr_mark"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="insurance_type">
+                    <tbody>
+                        <tr class="jiaoq">
+                            <td class="insurance_type_name fontSize_15">
+                                <div class="sex-ctn radio-box">
+                                    <div name="" class="radio-normal" :class="[jiaoq_class?checkedClass:'']"></div>
+                                </div>
+                                <em>交强险</em>
+                            </td>
+                            <td class="insurance_type_price choose_date_box fontSize_15" colspan="3" style="text-decoration: initial; display: none;" :class="[showDate?showClass:hideClass]">
+                                <i class="imgBox">
+                                    <img src="../../comm/images/icon/date.png" alt="Alternate Text" />
+                                </i><b class="fontSize_13">起保日期</b>
+                                <input type="text" placeholder="请选择起保日期" class="input_text fontSize_13" id="jq_date" v-model="jq_date" readonly="readonly" @click="chooseJQDate"  />
+                            </td>
+                            <td class="tr_mark"></td>
+                        </tr>
+                        <tr class="jiaoq">
+                            <td class="insurance_type_name fontSize_15">
+                                <div class="sex-ctn radio-box">
+                                    <div name="" class="radio-normal" :class="[jiaoq_class?checkedClass:'']" style="visibility: hidden"></div>
+                                </div>
+                                <em>交强险+车船税</em>
+                            </td>
+                            <td class="insurance_type_price fontSize_15" colspan="3"><span>￥</span><span v-text="jiaoq_val"></span><span>+￥</span><span v-text="chch_val"></span></td>
+                            <td class="tr_mark"></td>
+                        </tr>
+                        <tr class="chechuan">
+                            <td class="insurance_type_name" colspan="4">
+                                <div class="sex-ctn radio-box">
+                                    <div name="" class="radio-normal checked" style="visibility: hidden;"></div>
+                                </div>
+                                <span class="fontSize_13" style="color: #999;">按国家规定：车船税需与交强险同时购买</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="submit_btn_box edit_box">
+            <a href="javascript:void(0);" class="submit_btn goRecommend fontSize_14" @click="goRecommend">返回推荐</a>
+            <a href="javascript:void(0);" class="submit_btn save fontSize_14" @click="saveEditInsurance">保存方案</a>
+        </div>
+        <input type="hidden" name="changDate" value="" />
+    </div>
+    <div class="alert_box code_alert ">
+        <div class="alert_mark"></div>
+        <div class="alert_info">
+            <div class="alert_title fontSize_15" style="display: block; font-weight: 700;">验证码</div>
+            <div class="alert_info_box">
+                <div class="info_main">
+                    <div class="code_inp_box">
+                        <input type="text" name="code" maxlength="4" placeholder="请输入验证码" v-model="verifyCode" class="input_text"  />
+                    </div>
+                    <img id="validateCodePic" style="" src="../../comm/images/icon/Back-Arrow-wight.png" />
+                </div>
+            </div>
+            <div class="bottom">
+                <a href="javascript:void(0)" name="verifyCode" class="btn btn_save" @click="CodeInsurance">确认</a>
+                <a href="javascript:void(0)" name="verifyCode" class="btn edit_btn btn_no">取消</a>
+            </div>
+        </div>
+    </div>
+    <div class="typeChoose" :class="showTypeChoose?showClass:hideClass">
+        <header class="top_title" :removeClick = "removeClick">
+            <a href="javascript:void(0);" name="page" class="close" @click="showInsuranceChoose">
+                <img src="../../comm/images/icon/guanbi.png" alt="Alternate Text" /></a>
+            <a href="javascript:void(0);" class="center fontSize_14">险种如何选</a>
+            <a href="javascript:void(0)" class="right"></a>
+        </header>
+        <index></index>
+    </div>
+</template>
+<script>
+import ifvisible from '../../comm/script/ifvisible.js';
+import '../../comm/script/date.js';
+import '../../comm/script/scrollselect.js';
+import index from '../../index/pages/InsuranceTypeChoose.vue';
+/*APP判断*/
+export default {
+  data () {
+    return {
+        fromValue:(comm.getUrlParam('yxms') && comm.getUrlParam('yxms') != 'null' && comm.getUrlParam('yxms') != null) ? comm.getUrlParam('yxms') : '',
+        showClass:'show',
+        hideClass:'hide',
+        checkedClass:'checked',
+        removeClick:true,
+        showTypeChoose:false,//是否显示险种如何选
+        showCarInfo:false,//是否显示车辆信息
+        ShortEName:comm.getUrlParam('ShortEName'),
+        LicensePlateCode:'',
+        BrandModel:'',
+        showDate:'',//是否显示日期选择
+        shy_class:'',//
+        shy_date:new Date(new Date().getTime() + 24 * 60 * 60 * 1000).pattern('yyyy-MM-dd'),
+        shy_val:0,
+        chesun_class:true,
+        chesun_attr:'',
+        chesun_val:0,
+        sanzhe_class:true,
+        sanzhe_attr:'',
+        sanzhe_attr_val:'',
+        sanzhe_val:0,
+        daoq_class:false,
+        daoq_attr:'',
+        daoq_val:0,
+        siji_class:true,
+        siji_attr:'',
+        siji_attr_val:'',
+        siji_val:0,
+        chengke_class:true,
+        chengke_attr:'',
+        chengke_attr_val:'',
+        chengke_val:0,
+        boli_class:false,
+        boli_attr:'',
+        boli_attr_val:'',
+        boli_val:0,
+        huahen_class:false,
+        huahen_attr:'',
+        huahen_attr_val:'',
+        huahen_val:0,
+        ziran_class:false,
+        ziran_val:0,
+        sheshui_class:false,
+        sheshui_val:0,
+        zhuanxiu_class:false,
+        zhuanxiu_val:0,
+        wufa_class:false,
+        wufa_val:0,
+        buji_class:true,
+        buji_val:0,
+        chesun_buji_class:true,
+        sanzhe_buji_class:true,
+        daoq_buji_class:false,
+        siji_buji_class:true,
+        chengke_buji_class:true,
+        huahen_buji_class:false,
+        ziran_buji_class:false,
+        jiaoq_class:'',
+        jq_date:new Date(new Date().getTime() + 24 * 60 * 60 * 1000).pattern('yyyy-MM-dd'),
+        jiaoq_val:0,
+        chch_val:0,
+        chch_class:true,
+        showGift1:'',
+        discount_val:'',
+        actualPayment_val:'',
+        showGift:'',
+        verifyCode:'',
+        boliType:2,//设置玻璃可选默认值
+        telMain:comm.companyTel(comm.getUrlParam('ShortEName')),
+        init_date:new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
+        SHY_date : new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
+        JQ_date:new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
+        init_date_YMD:new Date(new Date().getTime() + 24 * 60 * 60 * 1000).pattern('yyyy-MM-dd'),
+        SHY_date_YMD:new Date(new Date().getTime() + 24 * 60 * 60 * 1000).pattern('yyyy-MM-dd'),
+        JQ_date_YMD:new Date(new Date().getTime() + 24 * 60 * 60 * 1000).pattern('yyyy-MM-dd'),
+        seatsNum: (comm.getCookie('seatsNum') != '' && comm.getCookie('seatsNum') && comm.getCookie('seatsNum') != 'undefined' && comm.getCookie('seatsNum') != undefined && comm.getCookie('seatsNum') != null && comm.getCookie('seatsNum') != 'null') ? (Number(comm.getCookie('seatsNum')) - 1) : '',
+        recommendObj:false,
+        insurancePrice:false,
+        changeDate:false,
+        returnChange:false,
+        isRecommend:true,
+        oldShyObj:false,
+        orderId:comm.getUrlParam('orderId'),
+        insuranList:[],
+        showInsuranceList:[],
+        hideInsuranceList:[],
+        chooseMore:false,
+        discountArr:[],//投保礼
+        chesun_false:false,
+        sanzhe_false:false,
+        siji_false:false,
+        chengke_false:false,
+        chengke_false:false,
+        daoq_false:false,
+        boli_false:false,
+        huahen_false:false,
+        sheshui_false:false,
+        ziran_false:false,
+        zhuanxiu_false:false,
+        wufa_false:false,
+        shy_false:false,
+        jiaoq_false:false
+    }
+  },
+  components: {
+    index
+  },
+  methods:{
+    init:function(){
+        var $that = this;
+        this.initInsuranceList();
+        this.chooseDate(this.SHY_date,this.JQ_date);
+        this.getUserInfo();
+        this.DetectPageStatus(600);
+    },
+    showInsuranceChoose:function(){// 显示险种如何选
+        if(!this.showTypeChoose) $('.form_box.detail_box').hide();
+        if(this.showTypeChoose) $('.form_box.detail_box').show();
+        this.showTypeChoose = !this.showTypeChoose;
+    },
+    initInsuranceList:function(){
+        var $that = this;
+        $that.insuranList = [
+            {
+                id:'chesun',
+                name:'车损',
+                show:$that.chesun_class,
+                isChoose:$that.chesun_class?'checked':'',
+                falseClass:$that.chesun_false,
+                baoe:{
+                    baoEId:'',
+                    baoeAttr:'',
+                    baoeVal:$that.chesun_attr,
+                    click:'',
+                    class:''
+                },
+                price:$that.chesun_val,
+                // click:editFun($event)
+            },
+            {
+                id:'sanzhe',
+                name:'三者',
+                show:$that.sanzhe_class,
+                isChoose:$that.sanzhe_class?'checked':'',
+                falseClass:$that.sanzhe_false,
+                baoe:{
+                    baoEId:'sanzhediv',
+                    baoeAttr:$that.sanzhe_attr_val,
+                    baoeVal:$that.sanzhe_attr,
+                    click:$that.selectSanzhe,
+                    class:'chose'
+                },
+                price:$that.sanzhe_val
+            },
+            {
+                id:'daoq',
+                name:'盗抢',
+                show:$that.daoq_class,
+                isChoose:$that.daoq_class?'checked':'',
+                falseClass:$that.daoq_false,
+                baoe:{
+                    baoEId:'',
+                    baoeAttr:'',
+                    baoeVal:$that.daoq_attr,
+                    click:'',
+                    class:''
+                },
+                price:$that.daoq_val
+            },
+            {
+                id:'siji',
+                name:'司机',
+                show:$that.siji_class,
+                isChoose:$that.siji_class?'checked':'',
+                falseClass:$that.siji_false,
+                baoe:{
+                    baoEId:'sijidiv',
+                    baoeAttr:$that.siji_attr_val,
+                    baoeVal:$that.siji_attr,
+                    click:$that.selectSiji,
+                    class:'chose'
+                },
+                price:$that.siji_val
+            },
+            {
+                id:'chengke',
+                name:'乘客',
+                show:$that.chengke_class,
+                isChoose:$that.chengke_class?'checked':'',
+                falseClass:$that.chengke_false,
+                baoe:{
+                    baoEId:'chengkediv',
+                    baoeAttr:$that.chengke_attr_val,
+                    baoeVal:$that.chengke_attr,
+                    click:$that.selectChebgke,
+                    class:'chose'
+                },
+                price:$that.chengke_val
+            },
+            {
+                id:'boli',
+                name:'玻璃',
+                show:$that.boli_class,
+                isChoose:$that.boli_class?'checked':'',
+                falseClass:$that.boli_false,
+                baoe:{
+                    baoEId:'bolidiv',
+                    baoeAttr:$that.boli_attr_val,
+                    baoeVal:$that.boli_attr,
+                    click:$that.selectBoli($that.boliType),
+                    class:'chose'
+                },
+                price:$that.boli_val
+            },
+            {
+                id:'huahen',
+                name:'划痕',
+                show:$that.huahen_class,
+                isChoose:$that.huahen_class?'checked':'',
+                falseClass:$that.huahen_false,
+                baoe:{
+                    baoEId:'huahendiv',
+                    baoeAttr:$that.huahen_attr_val,
+                    baoeVal:$that.huahen_attr,
+                    click:$that.selectHuahen,
+                    class:'chose'
+                },
+                price:$that.huahen_val
+            },
+            {
+                id:'ziran',
+                name:'自燃',
+                show:$that.ziran_checkbox_class,
+                isChoose:$that.ziran_checkbox_class?'checked':'',
+                falseClass:$that.ziran_false,
+                baoe:{
+                    baoEId:'',
+                    baoeAttr:'',
+                    baoeVal:$that.ziran_attr,
+                    click:'',
+                    class:''
+                },
+                price:$that.ziran_val
+            },
+            {
+                id:'sheshui',
+                name:'涉水',
+                show:$that.sheshui_checkbox_class,
+                isChoose:$that.sheshui_checkbox_class?'checked':'',
+                falseClass:$that.sheshui_false,
+                baoe:{
+                    baoEId:'',
+                    baoeAttr:'',
+                    baoeVal:'',
+                    click:'',
+                    class:''
+                },
+                price:$that.sheshui_val
+            },
+            {
+                id:'zhuanxiu',
+                name:'指定专修',
+                show:$that.zhuanxiu_class,
+                isChoose:$that.zhuanxiu_class?'checked':'',
+                falseClass:$that.zhuanxiu_false,
+                baoe:{
+                    baoEId:'',
+                    baoeAttr:'',
+                    baoeVal:'',
+                    click:'',
+                    class:''
+                },
+                price:$that.zhuanxiu_val
+            },
+            {
+                id:'wufa',
+                name:'无法找到第三方',
+                show:$that.wufa_class,
+                isChoose:$that.wufa_class?'checked':'',
+                falseClass:$that.wufa_false,
+                baoe:{
+                    baoEId:'',
+                    baoeAttr:'',
+                    baoeVal:'',
+                    click:'',
+                    class:''
+                },
+                price:$that.wufa_val
+            },
+        ];
+        // $that.refreshInsuranceList();
+        return $that.insuranList;
+    },
+    refreshInsuranceList:function(){//刷新数组
+        var $that = this;
+        var newData = $that.initInsuranceList();
+        var showData = $that.showInsuranceList;
+        var hideData = $that.hideInsuranceList;
+        $that.insuranList = [];
+        $that.showInsuranceList = [];
+        $that.hideInsuranceList = [];
+        for(var i = 0; i < newData.length;i++){
+            $that.insuranList.push(newData[i]);
+        }
+        for(var m = 0; m < showData.length;m++){
+            for(var j = 0 ; j<newData.length;j++){
+                if(showData[m].name == newData[j].name){
+                    showData[m] = newData[j];
+                    $that.showInsuranceList.push(showData[m]);
+                }
+            }
+        }
+        for(var n = 0; n < hideData.length;n++){
+            for(var k = 0 ; k<newData.length;k++){
+                if(hideData[n].name == newData[k].name){
+                    hideData[n] = newData[k];
+                    $that.hideInsuranceList.push(hideData[n]);
+                }
+            }
+        }
+    },
+    getUserInfo: function() { //获取用户信息
+        var $that = this;
+        $that.InsureFlowCode = comm.getUrlParam('InsureFlowCode');
+        var _data = {
+            orderId: $that.orderId,
+            ShortEName: $that.ShortEName
+        };
+        Store.GetInsuranceBasicInfo(_data).then(function (res) {
+            if(res.Message == 2) {
+                comm.showAlert(res.Data );
+                // $that.recommended();
+                $that.isFirst = true;
+                $that.recommendedInit();
+                $that.refreshInsuranceList();
+                $that.setChooseInsurance();
+                return false;}
+            $that.CityId = res.Data.VehicleCityId; //城市ID
+            $that.CityName = res.Data.CityName.Trim(); //城市名称
+            $that.SessionId = res.Data.SessionId;
+            $that.InsuranceOrderId = comm.getUrlParam('orderId'); //险种订单ID
+            $that.LicensePlateCode = res.Data.LicenseNumber;
+            $that.BrandModel = res.Data.VehicleModelName.split(' ')[0];
+            $that.OwnerPhone = res.Data.Phone;//手机号
+            if(res.Data.LicenseNumber.indexOf("*")!=-1){
+                $that.newCar = true;
+                $that.showDate = true;
+            }
+            if (res.Data.Seats) {
+                $that.seatsNum = res.Data.Seats - 1; //座位数-司机
+            }
+            if(comm.getUrlParam('showCar') == '1' && comm.getUrlParam('showCar') != 'null'){
+                $('.InsuranceProgress-box').css('margon-bottom',0);
+                $that.showCarInfo = true;
+            }else{
+                $that.showCarInfo = false;
+            }
+            res.Data.PackageType == 1 ? $that.isRecommend = true : $that.isRecommend = false;
+            // ChildStatus =30100 或40100 有报价，其他值为无报价
+            if(res.Data.ChildStatus == 30100  || res.Data.ChildStatus == 40100){
+                $that.getReturnInfo();
+            }else{
+                $that.recommended();
+                $that.isFirst = true;
+            }
+            $that.wechatShare();//微信分享
+        });
+    },
+    getReturnInfo:function(){
+        var $that = this;
+        function showInReturn(res) {
+            if(comm.getCookie('recommendObj') == 'true' && comm.getCookie('recommendObj')){
+                $that.recommendObj = $that.changeInsuranceObj();
+                $that.recommendRes = res;
+                $that.returnChange = 'recommend';
+                $that.isRecommend = true;
+                // $('.pop_tit').html("<b style='font-weight:700;'>95%</b>以上车主的选择 <b class='fontSize_10 recommend'>省心</b>");
+                $('.price_main_box h4').show();
+                $('.adjustment_insure .submit_btn_box').removeClass('goRecom');
+            }else{
+                $that.recommendObj = false;
+                $that.recommendRes = '';
+                $that.isRecommend = false;
+                // $('.pop_tit').html('以下为您自主选择方案');
+                $('.price_main_box h4').hide();
+                $('.adjustment_insure .submit_btn_box').addClass('goRecom');
+            }
+            $('.form_box.detail_box').show();
+            // $that.showReutrnInsurance(res);
+            $that.showInsurance(res);
+            $('.form_box.detail_box .sub_btn').removeClass('error');
+            $that.InsureFlowCode = comm.getUrlParam('InsureFlowCode');
+        }
+        var _data = {
+                orderId:$that.orderId,
+                ShortEName: $that.ShortEName
+            };
+        Store.GetInsuranceFeesResult(_data).then(function (res) {
+            if (res) {
+                if (res.Message == '0') {
+                    $that.returnChange = true;
+                    $that.insurancePrice = res;
+                    if (res.Data.Data.BizBeginDate && res.Data.Data.ForceBeginDate) {
+                        $that.shy_date = res.Data.Data.BizBeginDate.split(' ')[0]; //商业险起保日期
+                        $that.jq_date = res.Data.Data.ForceBeginDate.split(' ')[0]; //交强险起保日期
+                    } else if (res.Data.Data.BizBeginDate) {
+                        $that.shy_date = res.Data.Data.BizBeginDate.split(' ')[0]; //商业险起保日期
+                    } else if (res.Data.Data.ForceBeginDate) {
+                        $that.jq_date = res.Data.Data.ForceBeginDate.split(' ')[0]; //交强险起保日期
+                    }
+                    showInReturn(res);
+                } else if (res.Message == '2') {
+                    $('.adjustment_insure.form_box').show();
+                    $('.form_box.detail_box').hide();
+                    $that.getStartDate(res.Data.LicenseNumber);
+                }
+            } else {
+                $('.adjustment_insure.form_box').show();
+                $('.form_box.detail_box').hide();
+            }
+        });
+    },
+    getStartDate:function(Number){
+        var $that = this;
+        Store.GetInsuranceStartDate({LicenseNumber:Number}).then(function (res) {
+            if(res.Result){
+                if(res.Data.SY_StartData != '' && res.Data.SY_StartData != 'null'){
+                    $that.SHY_date = new Date(res.Data.SY_StartData);
+                }
+                if(res.Data.JQ_StartData != '' && res.Data.JQ_StartData !='null'){
+                    $that.JQ_date = new Date(res.Data.JQ_StartData);
+                }
+                $that.SHY_date_YMD = res.Data.SY_StartData;
+                $that.JQ_date_YMD = res.Data.JQ_StartData;
+                $that .shy_date = $that.SHY_date_YMD;
+                $that .jq_date = $that.JQ_date_YMD;
+                $that.chooseDate($that.SHY_date,$that.JQ_date);//初始化时间插件
+            }
+            $that.recommended();
+            $that.isFirst = true;
+        });
+    },
+    wechatShare:function(){
+        if (this.ShortEName == "AXATP") {
+            var host = window.location.host;
+            var myprotocol = window.location.protocol;
+            var config = {};
+            config.SkipUrl = myprotocol + "//" + host + '/InsureApi/UserBasicInfo?ShortEName=' + this.ShortEName;// 分享的网页链接
+            if (this.fromValue) {
+                config.SkipUrl += "&yxms=" + this.fromValue;
+            }
+            config.Title = "好司机，省到底，我是安盛天平车险，在chexian.com等你！";
+            config.Detail = "安盛天平，风险更低，价格更低！";
+            config.ImageUrl = APIURL + "/images/insurance/pic300.jpg";// 图片
+            comm.customWXShare(config);
+        } else {
+            comm.setWXShare();//微信分享
+        }
+    },
+    showInsurancePrice:function(e){
+        var dom = e.currentTarget;
+        if ($(dom).hasClass('down')) {
+            $(dom).removeClass('down');
+            $(dom).find('.icon').removeClass('i12').addClass('i13');
+            $('.parice_mark_main').hide();
+        } else {
+            $(dom).addClass('down');
+            $(dom).find('.icon').removeClass('i13').addClass('i12');
+            $('.parice_mark_main').show();
+        }
+    },
+    hideInsurancePrice:function(e){
+        var dom = e.currentTarget;
+        $(dom).removeClass('down');
+        $(dom).find('icon').removeClass('i12').addClass('i13');
+        $('.parice_mark_main').hide();
+    },
+    closeEditInsuranceBox:function(){//关闭调整险种
+        var $that = this;
+        if($that.insurancePrice){
+            $that.showInsurance($that.insurancePrice);
+        }
+        $('.form_box.adjustment_insure').hide();
+        $('.detail_box.form_box').show();
+    },
+    saveEditInsurance:function(){//点击调整险种的保存
+        var $that = this;
+        var editObj = {
+            callback: function (res) {
+                $that.insurancePrice = false;
+                if (res) {
+                    if (res.Message == '0') {
+                        $that.insurancePrice =res;
+                        $('.form_box.adjustment_insure').hide();
+                        $('.form_box.detail_box').show();
+                        $('.form_box.detail_box .sub_btn').removeClass('error');
+                        $that.showInsurance(res);
+                        $that,changeDate = false;
+                        mqq.ui.setTitleButtons({
+                            left:{
+                                title:'返回',
+                                callback:function(){
+                                    mqq.ui.popBack();
+                                }
+                            },
+                            right: { title: ' ' }
+                        });
+                        $that.savePriceInfo();
+                    } else if (res.Message == '2') {
+                        $that.insurancePrice = false;
+                        $('.form_box.detail_box .sub_btn').addClass('error');
+                        if (res.Data.ErrorDetail) {
+                            if (comm.containsChar(res.Data.ErrorDetail, '重复投保'))
+                                // showTwoBtnAlert('', res.Data.ErrorDetail, '确认', '去修改', $that.cancel, $that.choiceInsurance);
+                                comm.showAlert(res.Data.ErrorDetail,{text:'去修改',btnCallBack: $that.choiceInsurance});
+                            else
+                                comm.showAlert(res.Data.ErrorDetail);
+                        } else if (res.Data.ErrorMessage) {
+                            if (comm.containsChar(res.Data.ErrorMessage, '重复投保'))
+                                // showTwoBtnAlert('', res.Data.ErrorMessage, '确认', '去修改', $that.cancel, $that.choiceInsurance);
+                                comm.showAlert(res.Data.ErrorDetail,{text:'去修改',btnCallBack: $that.choiceInsurance});
+                            else
+                             comm.showAlert(res.Data.ErrorMessage);
+                        } else {
+                            comm.showAlert('请求失败，请重新提交！');
+                        }
+                    }
+                } else {
+                    comm.showAlert('请求失败，请重新提交！')
+                }
+            }
+        };
+        if($that.shy_class || $that.jiaoq_class){  //是否投保了商业险或者交强险
+            if($that.shy_class){ //如果投保了商业险，那么判断商业险是否有起保日期
+                if($that.shy_date == '' || $that.shy_date == '0001-01-01'){
+                    if($that.showDate()){
+                        comm.showAlert('请选择商业险的生效时间');
+                        return false;
+                    }else{
+                        $that.shy_date = $that.SHY_date_YMD;
+                    }
+                }
+            }
+            if($that.jiaoq_class){ //如果投保了交强险，那么判断交强险是否有起保日期
+                if($that.jq_date == '' || $that.jq_date == '0001-01-01'){
+                    if($that.showDate){
+                        comm.showAlert('请选择交强险的生效时间');
+                        return false;
+                    }else{
+                        $that.jq_date = $that.JQ_date_YMD;
+                    }
+                }
+            }
+            if($that.insurancePrice){ //如果有已报价的结果，判断是否修改，未修改不请求接口
+                $that.newObj = $that.changeInsuranceObj();//获取已修改的险种数据
+                var change = $that.isChangeInsure($that.oldObj,$that.newObj);//与之前报价的险种数据作比较 true--表示修改了险种 false---表示未修改险种
+                if($that.recommendObj){//判断是否存在推荐套餐的报价
+                    var change1 = $that.isChangeInsure($that.recommendObj,$that.newObj);//与推荐套餐报价的险种数据作比较 true--表示修改了险种    false---表示未修改险种
+                    if(change1){//是否是推荐套餐
+                        $that.isRecommend = false;
+                        $that.changeResult(change,editObj);//与之前报价的险种数据作比较
+                    }else{//推荐套餐
+                        $that.isRecommend = true;
+                        // $('.pop_tit').html("<b style='font-weight:700;'>95%</b>以上车主的选择 <b class='fontSize_10 recommend'>省心</b>");
+                        $('.price_main_box h4').show();
+                        $('.adjustment_insure .submit_btn_box').removeClass('goRecom');
+                        // if($that.returnChange){
+                        //  $that.showReutrnInsurance($that.recommendRes)
+                        // }else{
+                        //  $that.showInsurance($that.recommendRes);
+                        // }
+                        $that.showInsurance($that.recommendRes);
+                        $('.form_box.adjustment_insure').hide();
+                        $('.form_box.detail_box').show();
+                    }
+                }else{//不存在推荐套餐，那么与之前报价的险种数据作比较
+                    $that.changeResult(change,editObj);
+                }
+            }else{//没有报价数据
+                $that.isRecommend = false;
+                $('.price_main_box h4').hide();
+                $('.adjustment_insure .submit_btn_box').addClass('goRecom');
+                $that.enditInsuranceAjax(editObj, true);
+            }
+        }else{
+            showAlert('请选择险种进行投保！');
+        }
+    },
+    changeResult:function(change,editObj){//修改险种之后的操作
+        var $that = this;
+        $that.isRecommend = false;
+        // $('.pop_tit').html('以下为您自主选择方案');
+        $('.price_main_box h4').hide();
+        $('.adjustment_insure .submit_btn_box').addClass('goRecom');
+        if (change) {
+            $that.enditInsuranceAjax(editObj, true);
+        }else {//没有任何操作，显示保费计算结果页
+            $('.form_box.adjustment_insure').hide();
+            $('.form_box.detail_box').show();
+            $that.showInsurance($that.insurancePrice);
+            mqq.ui.setTitleButtons({
+                left:{
+                    title:'返回',
+                    callback:function(){
+                        mqq.ui.popBack();
+                    }
+                },
+                right: { title: ' ' }
+            });
+        }
+    },
+    changeQuotes: function (obj,postdata, showload) {//调用后台修改报价接口
+        var $that = this;
+        var ajaxTimeoutTest =Store.GetEachInsuranceQuotesInfo(postdata).then(function (res) {
+            var changeData = false;
+            $that.insurancePrice = false;
+            if (res.Message == '0') {
+                if (showload) {
+                    comm.hideGifLoading1();
+                }
+                if($that.returnChange == 'recommend'){
+                    $that.returnChange = 'recommend';
+                }else{
+                    $that.returnChange = false;
+                }
+                $that.insurancePrice = res;
+                $that.InsureFlowCode = res.Data.InsureFlowCode ? res.Data.InsureFlowCode : '';//众安询价ID
+                if (res.Data.Data.BizBeginDate && res.Data.Data.ForceBeginDate) {
+                    if ($that.shy_date != res.Data.Data.BizBeginDate.split(' ')[0] || $that.jq_date != res.Data.Data.ForceBeginDate.split(' ')[0]) {
+                    changeData = true;
+                    }
+                } else {
+                    changeData = true;
+                }
+                if (res.Data.Data.BizBeginDate) {
+                    $that.shy_date = res.Data.Data.BizBeginDate.split(' ')[0];//商业险起保日期
+                } else {
+                    $that.jq_date = res.Data.Data.ForceBeginDate.split(' ')[0];//交强险起保日期
+                }
+                obj.callback(res);
+                //报价成功
+                if ($that.isFirst) {
+                    $that.isFirst = false;
+                    $that.savePriceInfo();
+                }
+            } else {
+                if (showload) {
+                    comm.hideGifLoading1();
+                }
+                obj.callback(res);
+            }
+        });
+    },
+    enditInsuranceAjax: function (obj, showload) { //修改险种
+        var $that = this;
+        if (showload) {
+            comm.showGifLoading1('重新计算中...');
+        }
+        $that.changeQuotes(obj,$that.changeInsuranceObj(), showload);//调用修改报价接口
+    },
+    CodeInsurance:function(){
+        var $that = this;
+        $that.recommended();
+        $that.hideCodeBox();
+    },
+    chooseDate: function (shy_beginDate, jq_beginDate) {//日期选择控件
+          var $that = this;
+          $('.cellHeight_div').remove();
+          $('.wxb-date-picker').remove();
+          shy_beginDate != '0001-01-01'? $that.shy_beginDate = $that.init_date: $that.shy_beginDate;
+          jq_beginDate != '0001-01-01'? $that.jq_beginDate = $that.init_date: $that.shy_beginDate;
+          // 商业险的起保日期
+    },
+    chooseShYDate:function(){
+        var $that = this;
+        $('#shy_date').DatePicker({
+              date: new Date().daysShift(1),
+              minDate: $that.shy_beginDate,//new Date((new Date().getTime()) + 24 * 60 * 60 * 1000)
+              maxDate: new Date((new Date($that.shy_beginDate).getTime()) + 24 * 60 * 60 * 1000 * 90),
+              showHour: false,
+              moduleTitle: '起保日期',
+              onSelectDate: function (aDate) {
+                var newDate = aDate.pattern('yyyy-MM-dd');
+                if (newDate != $that.shy_date) {
+                    $that.changeDate =true;
+                    $('.adjustment_insure.form_box .top_title .return').addClass('change');
+                    $('.adjustment_insure.form_box .submit_btn').addClass('change');
+                    if($('#shy_date').hasClass('init')){ //如果是第一次修改商业险日期则联动交强险
+                        $that.jq_date = newDate;
+                        $('#shy_date').removeClass('init');
+                    }
+                    $that.shy_date  = newDate;
+                }
+              }
+          });
+    },
+    chooseJQDate:function(){
+        var $that = this;
+        $('#jq_date').DatePicker({
+              date: new Date().daysShift(1),
+              minDate: $that.jq_beginDate,//new Date((new Date().getTime()) + 24 * 60 * 60 * 1000)
+              maxDate: new Date((new Date($that.jq_beginDate).getTime()) + 24 * 60 * 60 * 1000 * 90),
+              showHour: false,
+              moduleTitle: '起保日期',
+              onSelectDate: function (aDate) {
+                  if (aDate.pattern('yyyy-MM-dd') != $that.jq_date) {
+                    $that.changeDate =true;
+                    $('.adjustment_insure.form_box .top_title .return').addClass('change');
+                    $('.adjustment_insure.form_box .submit_btn').addClass('change');
+                  }
+                  $that.jq_date(aDate.pattern('yyyy-MM-dd'));
+              }
+          });
+    },
+    DetectPageStatus:function(time){//检测用户是否在操作页面  time-空闲多长时间
+        var $that = this;
+        ifvisible.ifvisible.setIdleDuration(time);
+        ifvisible.ifvisible.on('statusChanged', function(e){
+            if(e.status == 'idle'){
+                //发送短信  参数 ---- mobile：手机号   smsType:发送类型  companyName：中文保险公司名
+                if($that.insurancePrice){
+                    var data={
+                            'mobile':$that.OwnerPhone,//手机号
+                            'smsType':3,//发送类型
+                            'companyName':comm.getCompanyName($that.ShortEName),//发送类型
+                            'orderId':$that.ShortEName == 'YGBX' ? $that.orderId : '',
+                            from:$that.fromValue
+                        };
+                    Store.SendMessage(data).then(function (res) {console.log(res)});
+                }
+            }
+        });
+    },
+    recommendedInit:function(){//推荐套餐初始化
+          var $that = this;
+          // 车损+三者20万+车上人员1万+玻璃+不计免赔（车损、三者、车上人员）
+          $that.shy_class = true;
+          $that.chesun_class = true;
+          $that.chesun_buji_class = true;
+          $that.sanzhe_class = true;
+          $that.sanzhe_attr = '50万';
+          $that.sanzhe_attr_val = 500000;
+          $that.sanzhe_buji_class = true;
+          $that.daoq_class = false;
+          $that.daoq_buji_class = false;
+          $that.daoq_attr = '';
+          $that.siji_class = true;
+          $that.siji_attr = '1万*座';
+          $that.siji_attr_val = 10000;
+          $that.siji_buji_class = true;
+          $that.chengke_class = true;
+          $that.chengke_attr = '1万*' + $that.seatsNum + '座';
+          $that.chengke_attr_val= 10000;
+          $that.chengke_buji_class = true;
+          $that.boli_class = false;
+          $that.boli_attr = '不投保';
+          $that.boli_attr_val = 0;
+          $that.huahen_class = false;
+          $that.huahen_attr = '不投保';
+          $that.huahen_attr_val = 0;
+          $that.huahen_buji_class = false;
+          $that.ziran_class = false ;
+          $that.ziran_checkbox_class = false;
+          $that.ziran_buji_class = false;
+          $that.sheshui_class = false;
+          $that.sheshui_checkbox_class = false;
+          $that.sheshui_buji_class = false;
+          $that.zhuanxiu_class = false;
+          $that.wufa_class = false;
+          $that.shy_class = true;
+          $that.jiaoq_class = true;
+          $that.buji_class = true;
+          $('.chesun_buji').removeClass('no_checked');
+          $('.sanzhe_buji').removeClass('no_checked');
+          $('.siji_buji').removeClass('no_checked');
+          $('.chengke_buji').removeClass('no_checked');
+    },
+    showIn: function (res) {//显示保费结果页
+        var $that = insuranceChoice;
+        $('.form_box.detail_box').show();
+        $that.showInsurance(res);
+        $('.form_box.detail_box .sub_btn').removeClass('error');
+        $('.form_box.insurancec_choose_date .submit_btn').removeClass('error');
+    },
+    recommended: function (show) {//默认调用推荐套餐、或修改日期后 -- 回调
+        var $that = this;
+        // 初始化默认值
+        $('.form_box.adjustment_insure').hide();
+        $('.detail_box.form_box').show();
+          $that.recommendedInit();
+          var opt = {
+            date: true,
+            callback: function (res, showEditBox) {
+                $that.recommendObj = false;
+                $that.insurancePrice = false;
+                $that.returnChange = false;
+                if (res) {
+                    if (res.Message == '0') {
+                        $that.changeDate = false;
+                        $that.isRecommend = true;
+                        $that.insurancePrice = res;//存储报价信息
+                        comm.etCookie('chesun_baoe', ((res.Data.Data.LossVehicleInsuranceAmounts && res.Data.Data.LossVehicleInsuranceAmounts != '0') ? (res.Data.Data.LossVehicleInsuranceAmounts == '1' ? '' : res.Data.Data.LossVehicleInsuranceAmounts) : ''));//车损保额
+                        comm.setCookie('daoq_baoe', ((res.Data.Data.PilferInsuranceAmounts && res.Data.Data.PilferInsuranceAmounts != '0') ? (res.Data.Data.PilferInsuranceAmounts == '1' ? '' : res.Data.Data.PilferInsuranceAmounts) : ''));//盗抢保额
+                        comm.setCookie('ziran_baoe', ((res.Data.Data.BurnInsuranceAmounts && res.Data.Data.BurnInsuranceAmounts != '0') ? (res.Data.Data.BurnInsuranceAmounts == '1' ? '' : res.Data.Data.BurnInsuranceAmounts) : ''));//自燃保额
+                        // 是否显示提示弹窗
+                        if (showEditBox) {
+                            if (res.Data.Data.BizBeginDate && res.Data.Data.ForceBeginDate) {
+                                comm.showAlert('根据您上年保单的保险期限，为了避免重复投保，已为您调整了保单的起保日期,调整之后的商业险起保日期:' + $that.shy_date + '；' + '交强险起保日期:' + $that.jq_date + '。');
+                                $that.serverBizBeginDate = new Date(res.Data.Data.BizBeginDate);
+                                $that.serverForceBeginDate = new Date(res.Data.Data.ForceBeginDate);
+                                $that.chooseDate($that.serverBizBeginDate, $that.ForceBeginDate); //选择日期
+                            } else if (res.Data.Data.BizBeginDate) {
+                                comm.showAlert('根据您上年保单的保险期限，为了避免重复投保，已为您调整了保单的起保日期,调整之后的商业险起保日期:' + $that.shy_date + '。');
+                                $that.serverBizBeginDate = new Date(res.Data.Data.BizBeginDate);
+                                $that.chooseDate($that.serverBizBeginDate, $that.JQ_date); //选择日期
+                            } else if (res.Data.Data.ForceBeginDate) {
+                                comm.showAlert('根据您上年保单的保险期限，为了避免重复投保，已为您调整了保单的起保日期,调整之后的交强险起保日期:' + $that.jq_date + '。');
+                                $that.serverForceBeginDate = new Date(res.Data.Data.ForceBeginDate);
+                                $that.chooseDate($that.SHY_date, $that.ForceBeginDate); //选择日期
+                            }
+                            $that.showIn(res);
+                            $that.recommendObj = $that.changeInsuranceObj(); //存储推荐套餐
+                            $that.recommendRes = res; //存储推荐套餐
+                            $('.alert_box').hide().find('.bottom').removeClass('change');
+                        } else {
+                            if (res.Data.Data.BizBeginDate && res.Data.Data.ForceBeginDate) {
+                                $that.shy_date = res.Data.Data.BizBeginDate.split(' ')[0];//商业险起保日期
+                                $that.jq_date = res.Data.Data.ForceBeginDate.split(' ')[0];//交强险起保日期
+                            } else if (res.Data.Data.BizBeginDate) {
+                                $that.shy_date = res.Data.Data.BizBeginDate.split(' ')[0];//商业险起保日期
+                            } else if (res.Data.Data.ForceBeginDate) {
+                                $that.shy_date = res.Data.Data.ForceBeginDate.split(' ')[0];//交强险起保日期
+                            }
+                            if ($that.shy_date || $that.jq_date) {
+                                $that.showIn(res);
+                                $that.recommendObj = $that.changeInsuranceObj(); //存储推荐套餐
+                                $that.recommendRes = res; //存储推荐套餐
+                                $('.alert_box').hide().find('.bottom').removeClass('change');
+                                $('.form_box.adjustment_insure').hide();
+                            } else {
+                                $that.recommendObj = false; //存储推荐套餐
+                                $that.showErrorTel($that.ShortEName,'请求失败!');
+                            }
+                        }
+                        //报价成功
+                        if ($that.isFirst) {
+                            $that.isFirst = false;
+                            $that.savePriceInfo();
+                        }
+                    }else if (res.Message == '1') {//续保请求失败!
+                        $that.showErrorTel($that.ShortEName,'续保请求失败!');
+                        $that.recommendObj = false; //存储推荐套餐
+                    } else if (res.Message == '2') {//失败
+                        $that.recommendObj = false; //存储推荐套餐
+                        $that.showDate = true;
+                        if (res.Data.IsIdVerifi=='1') {//大地图形验证码
+                            $that.responseCode = res.Data.ResponseCode;
+                            var responseMessage = res.Data.ResponseMessage;
+                            $that.showCodeBox();
+                            $('#validateCodePic').attr('src', 'data:image/png;base64,' + responseMessage);
+                            return false;
+                        }
+                        $('.form_box.detail_box .sub_btn').addClass('error');
+                        if (res.IsRedirect == '1') {
+                            $that.chesun_attr = res.Data.Data.LossVehicleInsuranceAmounts;
+                            $that.daoq_attr = res.Data.Data.PilferInsuranceAmounts;
+                            $that.ziran_attr = res.Data.Data.BurnInsuranceAmounts;
+                            comm.setCookie('chesun_baoe', ((res.Data.Data.LossVehicleInsuranceAmounts && res.Data.Data.LossVehicleInsuranceAmounts != '0') ? (res.Data.Data.LossVehicleInsuranceAmounts == '1' ? '' : res.Data.Data.LossVehicleInsuranceAmounts) : ''));//车损保额
+                            comm.setCookie('daoq_baoe', ((res.Data.Data.PilferInsuranceAmounts && res.Data.Data.PilferInsuranceAmounts != '0') ? (res.Data.Data.PilferInsuranceAmounts == '1' ? '' : res.Data.Data.PilferInsuranceAmounts) : ''));//盗抢保额
+                            comm.setCookie('ziran_baoe', ((res.Data.Data.BurnInsuranceAmounts && res.Data.Data.BurnInsuranceAmounts != '0') ? (res.Data.Data.BurnInsuranceAmounts == '1' ? '' : res.Data.Data.BurnInsuranceAmounts) : ''));//自燃保额
+                            $('.adjustment_insure.form_box').show('fast', function () {
+                                if (comm.containsChar(res.Data.ErrorDetail, '重复投保')){
+                                    comm.showAlert(res.Data.ErrorDetail,{text:'去修改',btnCallBack: $that.choiceInsurance});
+                                }else{
+                                    $that.showErrorTel($that.ShortEName,res.Data.ErrorDetail);
+                                }
+                            });
+                        } else {
+                            if (res.Data.ErrorDetail) {
+                                if (comm.containsChar(res.Data.ErrorDetail, '重复投保')){
+                                    comm.showAlert(res.Data.ErrorDetail,{text:'去修改',btnCallBack: $that.choiceInsurance});
+                                }else{
+                                    $that.showErrorTel($that.ShortEName,res.Data.ErrorDetail);
+                                }
+                            } else if (res.Data.ErrorMessage) {
+                                if (comm.containsChar(res.Data.ErrorMessage, '重复投保')){
+                                    comm.showAlert(res.Data.ErrorDetail,{text:'去修改',btnCallBack: $that.choiceInsurance});
+                                }else{
+                                    $that.showErrorTel($that.ShortEName,res.Data.ErrorMessage);
+                                }
+                            } else {
+                                $that.showErrorTel($that.ShortEName,'请求失败!');
+                            }
+                        }
+                    }
+                } else {
+                    $that.showErrorTel($that.ShortEName,'请求失败!');
+                }
+                $that.refreshInsuranceList();//刷新列表
+                $that.setChooseInsurance();
+            }
+          };
+          $that.RecommendPackage(opt, true);
+    },
+    RecommendPackage: function(obj, showload) { //obj--其他值和回调处理   showload -- (true/false) true--没有修改日期/false--修改日期
+        var $that = this;
+        var data = {
+            ShortEName: $that.ShortEName,//保险公司标识
+            orderId: $that.orderId,//订单ID
+            BizBeginDate: $that.shy_date,//商业险的起保日期
+            ForceBeginDate: $that.jq_date,//交强险的起保日期
+            isChangeFees: true//是否是费改地区
+        };
+        if (showload) {
+            comm.showGifLoading1('保费计算中...');
+        } else {
+            comm.showLoadingDiv();
+        }
+        if (comm.myGetCookie('validateCode') != null && comm.myGetCookie('validateCode') != undefined && comm.myGetCookie('validateCode') != 'null' && comm.myGetCookie('validateCode') != '') { //图形验证码
+            var validateCode = eval('(' + comm.myGetCookie('validateCode') + ')');
+            data.checkCode = validateCode.validateCode;
+            data.checkCodeRandom = validateCode.random;
+        }
+        if ($that.ShortEName == 'BOCI') {//中银传参是否修改日期
+            if (!showload) { //是否修改起保日期
+                data.checkCode = 1;
+            }
+        } else {
+            if ($that.responseCode) { //图形验证码（大地checkCodeRandom传用户输入的验证码）
+                data.checkCode = $that.responseCode,
+                data.checkCodeRandom = $that.verifyCode
+            }
+        }
+        Store.GetInsurancePriceByOrderId(data).then(function (res) {
+            $that.boliType = res.Data.DisplayInletGlassType;
+            if (res.Message == '0') {
+                comm.setCookie('chesun_baoe', ((res.Data.Data.LossVehicleInsuranceAmounts && res.Data.Data.LossVehicleInsuranceAmounts != '0') ? (res.Data.Data.LossVehicleInsuranceAmounts == '1' ? '': res.Data.Data.LossVehicleInsuranceAmounts) : '')); //车损保额
+                comm.setCookie('daoq_baoe', ((res.Data.Data.PilferInsuranceAmounts && res.Data.Data.PilferInsuranceAmounts != '0') ? (res.Data.Data.PilferInsuranceAmounts == '1' ? '': res.Data.Data.PilferInsuranceAmounts) : '')); //盗抢保额
+                comm.setCookie('ziran_baoe', ((res.Data.Data.BurnInsuranceAmounts && res.Data.Data.BurnInsuranceAmounts != '0') ? (res.Data.Data.BurnInsuranceAmounts == '1' ? '': res.Data.Data.BurnInsuranceAmounts) : '')); //自燃保额
+                $that.SessionId = res.Data.SessionId;
+                $that.isRecommend = true;
+            }
+            if (res.Message == '0') {
+                var changeData = false;
+                $that.InsureFlowCode = res.Data.InsureFlowCode ? res.Data.InsureFlowCode: ''; //众安询价ID
+                if (res.Data.Data.BizBeginDate && res.Data.Data.ForceBeginDate) {
+                    if ($that.shy_date != res.Data.Data.BizBeginDate.split(' ')[0] || $that.jq_date != res.Data.Data.ForceBeginDate.split(' ')[0]) {
+                        changeData = true;
+                    }
+                } else {
+                    changeData = true;
+                }
+                if (res.Data.Data.BizBeginDate) {
+                    $that.shy_date = res.Data.Data.BizBeginDate.split(' ')[0]; //商业险起保日期
+                }
+                if (res.Data.Data.ForceBeginDate) {
+                    $that.jq_date = res.Data.Data.ForceBeginDate.split(' ')[0]; //交强险起保日期
+                }
+                if (showload) {
+                    comm.hideGifLoading1();
+                } else {
+                    $('#loadingdiv').hide();
+                }
+                obj.callback(res, changeData);
+                $that.recommendObj = $that.changeInsuranceObj(); //存储推荐套餐
+                $that.recommendRes = res; //存储推荐套餐
+            } else {
+                if (showload) {
+                    comm.hideGifLoading1();
+                } else {
+                    $('#loadingdiv').hide();
+                }
+                obj.callback(res, changeData);
+                $that.recommendObj = false;
+            }
+        });
+    },
+    changeInsuranceObj: function () { //修改后的险种信息
+        var $that = this;
+        if ($that.chesun_class || $that.sanzhe_class || $that.daoq_class || $that.siji_class || $that.chengke_class || $that.boli_class || $that.huahen_class || $that.ziran_checkbox_class || $that.sheshui_checkbox_class || $that.zhuanxiu_class || $that.wufa_class) {
+            $that.shy_class = true;
+        } else {
+            $that.shy_class = false;
+        }
+        var obj = {
+            VehicleDamageInsurance: $that.chesun_class ? ($that.chesun_attr ? $that.chesun_attr : ((comm.getCookie('chesun_baoe') != '' && comm.getCookie('chesun_baoe') != '0' && comm.getCookie('chesun_baoe') != null && comm.getCookie('chesun_baoe') ) ? comm.getCookie('chesun_baoe') : 1)) : 0,//车损
+            VehiclePilferInsurance: $that.daoq_class ? ($that.daoq_attr ? $that.daoq_attr : ((comm.getCookie('daoq_baoe') != '' && comm.getCookie('daoq_baoe') != '0' && comm.getCookie('daoq_baoe') != null && comm.getCookie('daoq_baoe')) ? comm.getCookie('daoq_baoe') : 1)) : 0,//盗抢
+            BurnLossInsurance: $that.ziran_checkbox_class ? (($that.ziran_attr) ? $that.ziran_attr : ((comm.getCookie('ziran_baoe') != '' && comm.getCookie('ziran_baoe') != '0' && comm.getCookie('ziran_baoe') != null && comm.getCookie('ziran_baoe')) ? comm.getCookie('ziran_baoe') : 1)) : 0,//自燃
+            IsInletGlass: $that.boli_class ? $that.boli_attr_val : 0,//0：不投保 1:国产玻璃  2：进口玻璃
+            GlassBrokenInsurance: $that.boli_class ? 1 : 0,//是否投保玻璃险
+            ThirdLiabilityInsurance: $that.sanzhe_class ? $that.sanzhe_attr_val : 0,//第三方责任险
+            PassengerLiabilityInsurance: $that.chengke_class ? $that.chengke_attr_val : 0,//乘客
+            DriverLiabilityInsurance: $that.siji_class ? $that.siji_attr_val : 0,//司机
+            ScratchesInsurance: $that.huahen_class ? $that.huahen_attr_val : 0,//划痕险
+            AppointFactoryInsurance: $that.zhuanxiu_class ? 1 : 0,//指定专修厂险
+            ThirdSpecialInsurance: $that.wufa_class ? 1 : 0,//无法找到第三方险
+            engineWading: $that.sheshui_checkbox_class ? 1 : 0,//发动机涉水险
+            IsInsureForce: $that.jiaoq_class ? 1 : 0,//是否投保交强险
+            NonDeductibleMergerInsurance: $that.buji_class ? 1 : 0,//是否投不计免赔
+            NonDeductibleDamageInsurance: $that.chesun_buji_class ? 1 : 0,//不计免赔（车损）
+            NonDeductibleThreeInsurance: $that.sanzhe_buji_class ? 1 : 0,//不计免赔（三者险）
+            NonDeductibleVehiclePilferInsurance: $that.daoq_buji_class ? 1 : 0,//不计免赔（机动车盗抢险）
+            NonDeductibleDriverInsurance: $that.siji_buji_class ? 1 : 0,//不计免赔险（车上人员责任险（司机））
+            NonDeductiblePassengerInsurance: $that.chengke_buji_class ? 1 : 0,//不计免赔险（车上人员责任险（乘客））
+            NonDeductibleBurnLossInsurance: $that.ziran_buji_class ? 1 : 0,//不计免赔（自燃）
+            NonDeductibleWadingInsurance: $that.sheshui_buji_class ? 1 : 0,//不计免赔（涉水）
+            NonDeductibleCarNickInsurance: $that.huahen_buji_class ? 1 : 0,//不计免赔（划痕）
+            IsBizFlag: $that.shy_class ? 1 : 0,//是否投保商业险
+            BizBeginDate: $that.shy_class ? $that.shy_date : '', //商业险的起保日期
+            ForceBeginDate: $that.jiaoq_class ? $that.jq_date : '', //交强险的起保日期
+            ShortEName: $that.ShortEName,//保险公司表示
+            SessionId: $that.SessionId,
+            From: $that.fromValue,
+            InsureFlowCode: $that.InsureFlowCode ? $that.InsureFlowCode: comm.getUrlParam('InsureFlowCode') ,
+            InsuranceOrderId: $that.InsuranceOrderId,
+            isChangeFees: true
+        };
+        if ($that.changeDate) {
+            obj.IsChangeInsureDate = 1;
+        } else {
+            obj.IsChangeInsureDate = 0;
+        }
+        return obj;
+    },
+    showInsurance: function(res) { //展示保费信息和设置险种保额和保费
+        var $that = this;
+        $('.adjustment_insure_main tr').find('.insurance_type_coverage').removeClass('lineThrough');
+        $('.adjustment_insure_main tr').find('.type_select').removeClass('lineThrough');
+        $('.adjustment_insure_main tr').find('.insurance_type_price').removeClass('lineThrough');
+        if (res.Data.Data.BizBeginDate) {
+            $that.shy_date = res.Data.Data.BizBeginDate.split(' ')[0]; //商业险起保日期
+        } else {
+            $that.shy_date = '';
+        }
+        if (res.Data.Data.ForceBeginDate) {
+            $that.jq_date = res.Data.Data.ForceBeginDate.split(' ')[0]; //交强险起保日期
+        } else {
+            $that.jq_date = '';
+        }
+        if (res.Data.Data.IsBizInsurance && res.Data.Data.IsBizInsurance == '-1') { //是否投保商业险
+            // $('.adjustment_insure_main .insurance_type:first tr').addClass('false');
+            $that.shy_false = true;
+            $('.choose_date.shy input').attr('disabled', 'disabled');
+            $that.shy_class = false;
+            $that.shy_val = '0.00'; //商业险的总保费
+            $('.shy_main td').eq(1).text('不投保');
+        } else if (res.Data.Data.IsBizInsurance && res.Data.Data.IsBizInsurance == '1') { //是否投保商业险
+            // $('.adjustment_insure_main .insurance_type:first tr').removeClass('false');
+            $that.shy_false = false;
+            $('.choose_date.shy input').removeAttr('disabled');
+            $that.shy_class = true;
+            $that.shy_val = (res.Data.Data.BizTotalPremium / 100).toFixed(2); //商业险的总保费
+            $('.shy_main td').eq(1).text('投保');
+        } else {
+            $('.choose_date.shy input').attr('disabled', 'disabled');
+            // $('.adjustment_insure_main .insurance_type:first tr').removeClass('false');
+            $that.shy_false = false;
+            $that.shy_class = false;
+            $that.shy_val = '0.00'; //商业险的总保费
+            $('.shy_main td').eq(1).text('不投保');
+        }
+        // 车损 保额
+        if (res.Data.Data.LossVehicleInsurancePremiums && Number(res.Data.Data.LossVehicleInsurancePremiums) == '-1.00' && Number(res.Data.Data.LossVehicleInsurancePremiums) == '-1') {
+            $that.chesun_class = false;
+            $that.chesun_attr = ''; //车损保额
+            $that.chesun_val = '0.00'; //车损
+            $('.adjustment_insure_main tr.chesun').addClass('false');
+            $that.chesun_false = true;
+        } else if (res.Data.Data.LossVehicleInsurancePremiums && Number(res.Data.Data.LossVehicleInsurancePremiums) != '0' && Number(res.Data.Data.LossVehicleInsurancePremiums) > 0) {
+            // $('.adjustment_insure_main tr.chesun').removeClass('false');
+            $that.chesun_false = false;
+            $that.chesun_class = true;
+            if ($that.ShortEName == 'AXATP') {
+                $that.chesun_attr = comm.getCookie('chesun_baoe'); //车损保额
+            } else {
+                $that.chesun_attr = ((res.Data.Data.LossVehicleInsuranceAmounts == '1' || res.Data.Data.LossVehicleInsuranceAmounts == '1.00') ? '': res.Data.Data.LossVehicleInsuranceAmounts); //车损保额
+            }
+            $that.chesun_val = (res.Data.Data.LossVehicleInsurancePremiums / 100).toFixed(2); //车损保费
+        } else {
+            // $('.adjustment_insure_main tr.chesun').removeClass('false');
+            $that.chesun_false = false;
+            $that.chesun_class = false;
+            $that.chesun_attr = ''; //车损保额
+            $that.chesun_val = '0.00'; //车损
+        }
+        // 三者
+        if (res.Data.Data.ThirdDutyAmounts && Number(res.Data.Data.ThirdDutyAmounts) == '-1.00' && Number(res.Data.Data.ThirdDutyAmounts) == '-1') {
+            $that.sanzhe_class = false;
+            $that.sanzhe_attr_val = 0;
+            $that.sanzhe_attr = '不投保';
+            $that.sanzhe_val = '0.00'; //三者
+            // $('.adjustment_insure_main tr.saznhe').addClass('false');
+            $that.sanzhe_false = true;
+        } else if (res.Data.Data.ThirdDutyAmounts && Number(res.Data.Data.ThirdDutyAmounts) != '0' && Number(res.Data.Data.ThirdDutyAmounts) > 0) {
+            $that.sanzhe_class = true;
+            $that.sanzhe_attr_val = res.Data.Data.ThirdDutyAmounts;
+            $that.sanzhe_attr = res.Data.Data.ThirdDutyAmounts / 10000 + '万'; //三者保额
+            $that.sanzhe_val = (res.Data.Data.ThirdDutyPremiums / 100).toFixed(2); //三者
+            // $('.adjustment_insure_main tr.saznhe').removeClass('false');
+            $that.sanzhe_false = true;
+        } else {
+            // $('.adjustment_insure_main tr.saznhe').removeClass('false');
+            $that.sanzhe_false = true;
+            $that.sanzhe_class = false;
+            $that.sanzhe_attr_val = 0;
+            $that.sanzhe_attr = '不投保';
+            $that.sanzhe_val = '0.00'; //三者
+        }
+        // 盗抢
+        if (res.Data.Data.PilferPremiums && Number(res.Data.Data.PilferPremiums) == '-1') {
+            $that.daoq_class = false;
+            $that.daoq_attr = ''; //盗抢保额
+            $that.daoq_val = '0.00'; //盗抢 保费
+            $('.adjustment_insure_main tr.daoq').addClass('false');
+            $that.daoq_false = true;
+        } else if (res.Data.Data.PilferPremiums && Number(res.Data.Data.PilferPremiums) != '0' && Number(res.Data.Data.PilferPremiums) > 0) {
+            // $('.adjustment_insure_main tr.daoq').removeClass('false');
+            $that.daoq_false = false;
+            $that.daoq_class = true;
+            if ($that.ShortEName == 'AXATP') {
+                $that.daoq_attr = comm.getCookie('daoq_baoe'); //盗抢保额
+            } else {
+                $that.daoq_attr = (res.Data.Data.PilferInsuranceAmounts == '1' ? '': res.Data.Data.PilferInsuranceAmounts); //盗抢保额
+            }
+            $that.daoq_val = (res.Data.Data.PilferPremiums / 100).toFixed(2); //盗抢 保费
+        } else {
+            // $('.adjustment_insure_main tr.daoq').removeClass('false');
+            $that.daoq_false = false;
+            $that.daoq_class = false;
+            $that.daoq_attr = ''; //盗抢保额
+            $that.daoq_val = '0.00'; //盗抢 保费
+        }
+        // 司机
+        if (res.Data.Data.DriverDutyAmounts && Number(res.Data.Data.DriverDutyAmounts) == '-1') {
+            $that.siji_class = false;
+            $that.siji_attr_val = 0;
+            $that.siji_attr = '不投保';
+            $that.siji_val = '0.00'; //司机
+            // $('.adjustment_insure_main tr.siji').addClass('false');
+            $that.siji_false = true;
+        } else if (res.Data.Data.DriverDutyAmounts && Number(res.Data.Data.DriverDutyAmounts) != 0 && Number(res.Data.Data.DriverDutyAmounts) > 0) {
+            // $('.adjustment_insure_main tr.siji').removeClass('false');
+            $that.siji_false = false;
+            $that.siji_class = true;
+            $that.siji_attr_val = res.Data.Data.DriverDutyAmounts;
+            $that.siji_attr = res.Data.Data.DriverDutyAmounts / 10000 + '万*座'; //司机保额
+            $that.siji_val = (res.Data.Data.DriverDutyPremiums / 100).toFixed(2); //司机
+        } else {
+            // $('.adjustment_insure_main tr.siji').removeClass('false');
+            $that.siji_false = false;
+            $that.siji_class = false;
+            $that.siji_attr_val = 0;
+            $that.siji_attr = '不投保';
+            $that.siji_val = '0.00'; //司机
+        }
+        // 乘客
+        if (res.Data.Data.PassengerDutyAmounts && Number(res.Data.Data.PassengerDutyAmounts) == '-1') {
+            // $('.adjustment_insure_main tr.chengke').addClass('false');
+            $that.chengke_false = true;
+            $that.chengke_class = false;
+            $that.chengke_attr_val = 0;
+            $that.chengke_attr = '不投保';
+            $that.chengke_val = '0.00'; //乘客
+        } else if (res.Data.Data.PassengerDutyAmounts && Number(res.Data.Data.PassengerDutyAmounts) != '0' && Number(res.Data.Data.PassengerDutyAmounts) > '0') {
+            // $('.adjustment_insure_main tr.chengke').removeClass('false');
+            $that.chengke_false = false;
+            $that.chengke_class = true;
+            $that.chengke_attr_val = res.Data.Data.PassengerDutyAmounts;
+            $that.chengke_attr = res.Data.Data.PassengerDutyAmounts / 10000 + '万*' + $that.seatsNum + '座'; //乘客保额
+            $that.chengke_val = (res.Data.Data.PassengerDutyPremiums / 100).toFixed(2); //乘客
+        } else {
+            // $('.adjustment_insure_main tr.chengke').removeClass('false');
+            $that.chengke_false = false;
+            $that.chengke_class = false;
+            $that.chengke_attr_val = 0;
+            $that.chengke_attr = '不投保';
+            $that.chengke_val = '0.00'; //乘客
+        }
+        // 玻璃
+        if (res.Data.Data.IsInletGlass && res.Data.Data.IsInletGlass == '-1') {
+            $that.boli_class = false;
+            $that.boli_attr_val = 0;
+            $that.boli_attr = '不投保';
+            $that.boli_val = '0.00'; //玻璃
+            // $('.adjustment_insure_main tr.boli').addClass('false');
+            $that.boli_false = true;
+        } else if (res.Data.Data.IsInletGlass && res.Data.Data.IsInletGlass != '0' && res.Data.Data.IsInletGlass > 0) {
+            // $('.adjustment_insure_main tr.boli').removeClass('false');
+            $that.boli_false = false;
+            $that.boli_class = true;
+            $that.boli_attr_val = res.Data.Data.IsInletGlass;
+            if (res.Data.Data.IsInletGlass == '1') {
+                $that.boli_attr = '国产玻璃';
+            } else if (res.Data.Data.IsInletGlass == '2') {
+                $that.boli_attr = '进口玻璃';
+            }
+            $that.boli_val = (res.Data.Data.GlassBrokenPremiums / 100).toFixed(2); //玻璃
+        } else {
+            // $('.adjustment_insure_main tr.boli').removeClass('false');
+            $that.boli_false = false;
+            $that.boli_class = false;
+            $that.boli_attr_val = 0;
+            $that.boli_attr = '不投保';
+            $that.boli_val = '0.00'; //玻璃
+        }
+
+        // 划痕险
+        if (res.Data.Data.NickAmounts && Number(res.Data.Data.NickAmounts) == '-1') {
+            $('.adjustment_insure_main tr.huahen').addClass('false');
+            $that.huahen_false = true;
+            $that.huahen_class  = false;
+            $that.huahen_attr  = '不投保'; //划痕保额
+            $that.huahen_attr_val  = 0;
+            $that.huahen_val  = '0.00'; //划痕保费
+        } else if (res.Data.Data.NickAmounts && Number(res.Data.Data.NickAmounts) != '0' && Number(res.Data.Data.NickAmounts) > 0) {
+            // $('.adjustment_insure_main tr.huahen').removeClass('false');
+            $that.huahen_false = false;
+            $that.huahen_class = true;
+            var attr = res.Data.Data.NickAmounts / 10000;
+            if (attr < 1) {
+                $that.huahen_attr = res.Data.Data.NickAmounts / 1000 + '千'; //划痕保额
+            } else {
+                $that.huahen_attr = attr + '万'; //划痕保额
+            }
+            $that.huahen_attr_val = res.Data.Data.NickAmounts;
+            $that.huahen_val = (res.Data.Data.NickPremiums / 100).toFixed(2); //划痕保费
+        } else {
+            // $('.adjustment_insure_main tr.huahen').removeClass('false');
+            $that.huahen_false = false;
+            $that.huahen_class = false;
+            $that.huahen_attr = '不投保'; //划痕保额
+            $that.huahen_attr_val = 0;
+            $that.huahen_val = '0.00'; //划痕保费
+        }
+        if (res.Data.Data.BurnPremiums && Number(res.Data.Data.BurnPremiums) == '-1') {
+            $('.adjustment_insure_main tr.ziran').addClass('false');
+            $that.ziran_false = true;
+            $that.ziran_class = false;
+            $that.ziran_checkbox_class = false;
+            $that.ziran_val = '0.00'; //自燃 保费
+            $that.ziran_attr = ''; //自燃保额
+        } else if (res.Data.Data.BurnPremiums && Number(res.Data.Data.BurnPremiums) != '0' && Number(res.Data.Data.BurnPremiums) > '0') {
+            // $('.adjustment_insure_main tr.ziran').removeClass('false');
+            $that.ziran_false = false;
+            $that.ziran_class = true;
+            $that.ziran_checkbox_class = true;
+            $that.ziran_val = (res.Data.Data.BurnPremiums / 100).toFixed(2); //自燃 保费
+            if ($that.ShortEName == 'AXATP') {
+                $that.ziran_attr = comm.getCookie('ziran_baoe'); //自燃保额
+            } else {
+                $that.ziran_attr = (res.Data.Data.BurnInsuranceAmounts == '1' ? '': res.Data.Data.BurnInsuranceAmounts); //自燃保额
+            }
+        } else {
+            // $('.adjustment_insure_main tr.ziran').removeClass('false');
+            $that.ziran_false = false;
+            $that.ziran_class = false;
+            $that.ziran_checkbox_class = false;
+            $that.ziran_val = '0.00'; //自燃 保费
+            $that.ziran_attr = ''; //自燃保额
+        }
+        if (res.Data.Data.WadingPremiums && Number(res.Data.Data.WadingPremiums) == '-1') {
+            // $('.adjustment_insure_main tr.sheshui').addClass('false');
+            $that.sheshui_false = true;
+            $that.sheshui_class = false;
+            $that.sheshui_checkbox_class = false;
+            $that.sheshui_val = '0.00'; //涉水保费
+        } else if (res.Data.Data.WadingPremiums && Number(res.Data.Data.WadingPremiums) != '0' && Number(res.Data.Data.WadingPremiums) > 0) {
+            // $('.adjustment_insure_main tr.sheshui').removeClass('false');
+            $that.ziran_false =false;
+            $that.sheshui_checkbox_class = true;
+            $that.sheshui_class = true;
+            $that.sheshui_val = (res.Data.Data.WadingPremiums / 100).toFixed(2); //涉水保费
+        } else {
+            // $('.adjustment_insure_main tr.sheshui').removeClass('false');
+            $that.ziran_false =false;
+            $that.sheshui_class = false;
+            $that.sheshui_checkbox_class = false;
+            $that.sheshui_val = '0.00'; //涉水保费
+        }
+        // 专修
+        if (res.Data.Data.AppointFactoryPremiums && Number(res.Data.Data.AppointFactoryPremiums) == '-1') { //zhuanxiu_val
+            // $('.adjustment_insure_main tr.zhuanxiu').addClass('false');
+            $that.zhuanxiu_false = true;
+            $that.zhuanxiu_class = false;
+            $that.zhuanxiu_val = '0.00'; //专修保费
+        } else if (res.Data.Data.AppointFactoryPremiums && Number(res.Data.Data.AppointFactoryPremiums) != '0' && Number(res.Data.Data.AppointFactoryPremiums) > '0') { //zhuanxiu_val
+            // $('.adjustment_insure_main tr.zhuanxiu').removeClass('false');
+            $that.zhuanxiu_false = false;
+            $that.zhuanxiu_class = true;
+            $that.zhuanxiu_val = (res.Data.Data.AppointFactoryPremiums / 100).toFixed(2); //专修保费
+        } else {
+            // $('.adjustment_insure_main tr.zhuanxiu').removeClass('false');
+            $that.zhuanxiu_false = false;
+            $that.zhuanxiu_class = false;
+            $that.zhuanxiu_val = '0.00'; //专修保费
+        }
+
+        // 无法找到第三方
+        if (res.Data.Data.VehicleUnableFindPremiums && Number(res.Data.Data.VehicleUnableFindPremiums) == '-1') { //
+            // $('.adjustment_insure_main tr.wufa').addClass('false');
+            $that.wufa_false = true;
+            $that.wufa_class = false;
+            $that.wufa_val = '0.00'; //无法找到第三方
+        } else if (res.Data.Data.VehicleUnableFindPremiums && Number(res.Data.Data.VehicleUnableFindPremiums) != '0' && Number(res.Data.Data.VehicleUnableFindPremiums) > 0) { //
+            // $('.adjustment_insure_main tr.wufa').removeClass('false');
+            $that.wufa_false = false;
+            $that.wufa_class = true;
+            $that.wufa_val = (res.Data.Data.VehicleUnableFindPremiums / 100).toFixed(2); //无法找到第三方
+        } else {
+            // $('.adjustment_insure_main tr.wufa').removeClass('false');
+            $that.wufa_false = false;
+            $that.wufa_class = false;
+            $that.wufa_val = '0.00'; //无法找到第三方
+        }
+
+        var bu_arr = '';
+        // 车损（不计免赔）保费
+        if (res.Data.Data.IsSelLossVehicleNonDeductible && Number(res.Data.Data.IsSelLossVehicleNonDeductible) == '-1') {
+            $that.chesun_buji_class = false;
+            $that.chesun_buji_val = '0.00'; //车损不计免赔
+            $('.chesun_buji.buji_btn').addClass('no_checked');
+        } else if (res.Data.Data.IsSelLossVehicleNonDeductible && Number(res.Data.Data.IsSelLossVehicleNonDeductible) == '1') {
+            $('.chesun_buji.buji_btn').removeClass('no_checked');
+            $that.chesun_buji_class = true;
+            $that.chesun_buji_val = (res.Data.Data.LossVehicleNonDeductiblePremiums / 100).toFixed(2); //车损不计免赔
+            $('.chesun_buji.buji_btn').removeClass('no_checked');
+            bu_arr += '车损、';
+        } else {
+            $that.chesun_buji_class = false;
+            $that.chesun_buji_val = '0.00'; //车损不计免赔
+            if ($that.chesun_class) {
+                $('.chesun_buji.buji_btn').removeClass('no_checked');
+            }else{
+                $('.chesun_buji.buji_btn').addClass('no_checked');
+            }
+        }
+
+        // 三者（不计免赔）保费
+        if (res.Data.Data.IsSelThirdDutyNonDeductible && Number(res.Data.Data.IsSelThirdDutyNonDeductible) == '-1') {
+            $that.sanzhe_buji_class = false;
+            $that.sanzhe_buji_val = '0.00';
+            $('.sanzhe_buji.buji_btn').addClass('no_checked');
+        } else if (res.Data.Data.IsSelThirdDutyNonDeductible && Number(res.Data.Data.IsSelThirdDutyNonDeductible) == '1') {
+            $('.sanzhe_buji.buji_btn').removeClass('no_checked');
+            $that.sanzhe_buji_class = true;
+            $that.sanzhe_buji_val = (res.Data.Data.ThirdDutyNonDeductiblePremiums / 100).toFixed(2); // 三者（不计免赔）保费
+            $('.sanzhe_buji.buji_btn').removeClass('no_checked');
+            bu_arr += '三者、';
+        } else {
+            $that.sanzhe_buji_class = false;
+            $that.sanzhe_buji_val = '0.00';
+            if ($that.sanzhe_class) {
+                $('.sanzhe_buji.buji_btn').removeClass('no_checked');
+            }else{
+                $('.sanzhe_buji.buji_btn').addClass('no_checked');
+            }
+        }
+        // 盗抢（不计免赔）保费
+        if (res.Data.Data.IsSelPilferNonDeductible && Number(res.Data.Data.IsSelPilferNonDeductible) == '-1') {
+            $that.daoq_buji_class = false;
+            $that.daoq_buji_val = '0.00'; //盗抢
+            $('.daoq_buji.buji_btn').addClass('no_checked');
+        } else if (res.Data.Data.IsSelPilferNonDeductible && Number(res.Data.Data.IsSelPilferNonDeductible) == '1') {
+            $('.daoq_buji.buji_btn').removeClass('no_checked');
+            $that.daoq_buji_class = true;
+            $that.daoq_buji_val = (res.Data.Data.PilferNonDeductiblePremiums / 100).toFixed(2); //盗抢（不计免赔）保费
+            $('.daoq_buji.buji_btn').removeClass('no_checked');
+            bu_arr += '盗抢、';
+        } else {
+            $that.daoq_buji_class = false;
+            $that.daoq_buji_val = '0.00'; //盗抢
+            if ($that.daoq_class) {
+                $('.daoq_buji.buji_btn').removeClass('no_checked');
+            }else{
+                $('.daoq_buji.buji_btn').addClass('no_checked');
+            }
+        }
+        // 司机（不计免赔）保费
+        if (res.Data.Data.IsSelDriverNonDeductible && Number(res.Data.Data.IsSelDriverNonDeductible) == '-1') {
+            $that.siji_buji_class = false;
+            $that.siji_buji_val = '0.00'; //司机不计免赔
+            $('.siji_buji.buji_btn').addClass('no_checked');
+        } else if (res.Data.Data.IsSelDriverNonDeductible && Number(res.Data.Data.IsSelDriverNonDeductible) == '1') {
+            $('.siji_buji.buji_btn').removeClass('no_checked');
+            $that.siji_buji_class = true;
+            $that.siji_buji_val = (res.Data.Data.DriverNonDeductiblePremiums / 100).toFixed(2); //司机不计免赔
+            $('.siji_buji.buji_btn').removeClass('no_checked');
+            bu_arr += '司机、';
+        } else {
+            $that.siji_buji_class = false;
+            $that.siji_buji_val ='0.00'; //司机不计免赔
+            if ($that.siji_class) {
+                $('.siji_buji.buji_btn').removeClass('no_checked');
+            }else{
+                $('.siji_buji.buji_btn').addClass('no_checked');
+            }
+        }
+        // 乘客（不计免赔）保费
+        if (res.Data.Data.IsSelPassengerNonDeductible && Number(res.Data.Data.IsSelPassengerNonDeductible) == '-1') {
+            $that.chengke_buji_class = false;
+            $that.chengke_buji_val = '0.00'; //乘客不计免赔
+            $('.chengke_buji.buji_btn').addClass('no_checked');
+        } else if (res.Data.Data.IsSelPassengerNonDeductible && Number(res.Data.Data.IsSelPassengerNonDeductible) == '1') {
+            $('.chengke_buji.buji_btn').removeClass('no_checked');
+            $that.chengke_buji_class = true;
+            $that.chengke_buji_val = (res.Data.Data.PassengerNonDeductiblePremiums / 100).toFixed(2); //乘客不计免赔
+            $('.chengke_buji.buji_btn').removeClass('no_checked');
+            bu_arr += '乘客、';
+        } else {
+            $that.chengke_buji_class = false;
+            $that.chengke_buji_val = '0.00'; //乘客不计免赔
+            if ($that.chengke_class) {
+                $('.chengke_buji.buji_btn').removeClass('no_checked');
+            }else{
+                $('.chengke_buji.buji_btn').addClass('no_checked');
+            }
+        }
+        // 自燃（不计免赔）保费
+        if (res.Data.Data.IsSelBurnNonDeductible && Number(res.Data.Data.IsSelBurnNonDeductible) == '-1') {
+            $that.ziran_buji_class = false;
+            $that.ziran_buji_val = '0.00'; //自燃不计免赔
+            $('.ziran_buji.buji_btn').addClass('no_checked');
+        } else if (res.Data.Data.IsSelBurnNonDeductible && Number(res.Data.Data.IsSelBurnNonDeductible) == '1') {
+            $('.ziran_buji.buji_btn').removeClass('no_checked');
+            $that.ziran_buji_class = true;
+            $that.ziran_buji_val = (res.Data.Data.BurnNonDeductiblePremiums / 100).toFixed(2); //自燃不计免赔
+            $('.ziran_buji.buji_btn').removeClass('no_checked');
+            bu_arr += '自燃、';
+        } else {
+            $that.ziran_buji_class = false;
+            $that.ziran_buji_val = '0.00'; //自燃不计免赔
+            if ($that.ziran_checkbox_class) {
+                $('.ziran_buji.buji_btn').removeClass('no_checked');
+            }else{
+                $('.ziran_buji.buji_btn').addClass('no_checked');
+            }
+        }
+        // 划痕（不计免赔）保费
+        if (res.Data.Data.IsSelNickNonDeductible && Number(res.Data.Data.IsSelNickNonDeductible) == '-1') {
+            $that.huahen_buji_class = false;
+            $that.huahen_buji_val = '0.00'; //划痕不计免赔
+            $('.huahen_buji.buji_btn').addClass('no_checked');
+        } else if (res.Data.Data.IsSelNickNonDeductible && Number(res.Data.Data.IsSelNickNonDeductible) == '1') {
+            $('.huahen_buji.buji_btn').removeClass('no_checked');
+            $that.huahen_buji_class = true;
+            $that.huahen_buji_val = (res.Data.Data.NickNonDeductiblePremiums / 100).toFixed(2); //划痕不计免赔
+            $('.huahen_buji.buji_btn').removeClass('no_checked');
+            bu_arr += '划痕、';
+        } else {
+            $that.huahen_buji_class = false;
+            $that.huahen_buji_val = '0.00'; //划痕不计免赔
+            if ($that.huahen_class) {
+                $('.huahen_buji.buji_btn').removeClass('no_checked');
+            }else{
+                $('.huahen_buji.buji_btn').addClass('no_checked');
+            }
+        }
+        // 涉水（不计免赔）保费
+        if (res.Data.Data.IsSelWadingNonDeductible && Number(res.Data.Data.IsSelWadingNonDeductible) == '-1') {
+            $that.sheshui_buji_class = false;
+            $that.sheshui_buji_val = '0.00'; //涉水不计免赔
+            $('.sheshui_buji.buji_btn').addClass('no_checked');
+        } else if (res.Data.Data.IsSelWadingNonDeductible && Number(res.Data.Data.IsSelWadingNonDeductible) == '1') {
+            $('.sheshui_buji.buji_btn').removeClass('no_checked');
+            $that.sheshui_buji_class = true;
+            $that.sheshui_buji_val = (res.Data.Data.WadingNonDeductiblePremiums / 100).toFixed(2); //涉水不计免赔
+            $('.sheshui_buji.buji_btn').removeClass('no_checked');
+            bu_arr += '涉水、';
+        } else {
+            $that.sheshui_buji_class = false;
+            $that.sheshui_buji_val = '0.00'; //涉水不计免赔
+            if ($that.sheshui_checkbox_class) {
+                $('.sheshui_buji.buji_btn').removeClass('no_checked');
+            }else{
+                $('.sheshui_buji.buji_btn').addClass('no_checked');
+            }
+        }
+        if ($that.chesun_buji_class || $that.sanzhe_buji_class || $that.daoq_buji_class || $that.siji_buji_class || $that.chengke_buji_class || $that.ziran_buji_class || $that.sheshui_buji_class) {
+            $that.buji_class = true;
+            $that.buji_val = (res.Data.Data.TotalNonDeductiblePremiums / 100).toFixed(2); //不计免赔
+        } else {
+            $that.buji_class = false;
+            $that.buji_val = '0.00'; //不计免赔
+        }
+        $('.price_main_box .buji_box td').first().html('不计免赔<br/><span>(' + bu_arr.substring(0, bu_arr.length - 1) + ')</span>');
+        // 交强险
+        if (res.Data.Data.IsForceInsurance && res.Data.Data.IsForceInsurance == '-1') {
+            // $('.adjustment_insure_main tr.jiaoq').addClass('false');
+            $that.jiaoq_false = true;
+            $('.choose_date.jq input').attr('disabled', 'disabled');
+            $that.jiaoq_class = false;
+            $that.chch_class = false;
+            $that.jiaoq_val = '0.00'; //交强
+            $that.chch_val = '0.00' //车船
+            $('.jq_main td').eq(1).text('不投保');
+            $('.chch_main td').eq(1).text('不缴纳');
+        } else if (res.Data.Data.IsForceInsurance && res.Data.Data.IsForceInsurance == '1') {
+            // $('.adjustment_insure_main tr.jiaoq').removeClass('false');
+            $that.jiaoq_false = false;
+            $('.choose_date.jq input').removeAttr('disabled');
+            $that.jiaoq_class = true;
+            $that.chch_class = true;
+            $that.jiaoq_val = (res.Data.Data.ForcePremium / 100).toFixed(2); //交强
+            $that.chch_val = (res.Data.Data.VehicleTaxPremium / 100).toFixed(2) //车船
+            $('.jq_main td').eq(1).text('投保');
+            $('.chch_main td').eq(1).text('缴纳');
+        } else {
+            // $('.adjustment_insure_main tr.jiaoq').removeClass('false');
+            $that.jiaoq_false = false;
+            $('.choose_date.jq input').attr('disabled', 'disabled');
+            $that.jiaoq_class = false;
+            $that.chch_class = false;
+            $that.jiaoq_val = '0.00'; //交强
+            $that.chch_val = '0.00'; //车船
+            $('.jq_main td').eq(1).text('不投保');
+            $('.chch_main td').eq(1).text('不缴纳');
+        }
+        $that.InsureFlowCode = res.Data.InsureFlowCode ? res.Data.InsureFlowCode: ''; //众安询价ID
+        $that.actualPayment_val = (res.Data.Data.BizPremium / 100).toFixed(2); //实际缴纳保费
+        $that.Standard_val = (res.Data.Data.BizStandardPremium / 100).toFixed(2); //应该缴纳保费
+        if ($that.ShortEName == 'YGBX' || $that.ShortEName == 'CPIC' || $that.ShortEName == 'PICC') {
+            var bizTotalPremium = Number($that.jiaoq_val) + Number($that.shy_val);
+        } else {
+            var bizTotalPremium = $that.shy_val;
+        }
+        // 是否显示投保礼
+        if(res.Data.InsuredGiftData && res.Data.InsuredGiftData != null && res.Data.InsuredGiftData != 'null'){
+            $that.showGift = true;
+            $that.discount_val = res.Data.InsuredGiftData.GiftValue;
+            $that.discount_Code = res.Data.InsuredGiftData.Provider;//礼品提供者
+            $that.discount_type = res.Data.InsuredGiftData.GiftTypeRemark;//礼品提供者
+            if(res.Data.InsuredGiftData.IsSelfGrant){//true 是展示积分形式，false老样式
+                $that.showGift1 = true;
+                $that.showGift = false;
+                $that.discountArr = [];
+                var giftArr = res.Data.InsuredGiftData.GiftTypeOptions;
+                for(var i = 0; i< giftArr.length;i++){
+                    $that.discountArr.push(giftArr[i])
+                }
+                // $that.discountArr = res.Data.InsuredGiftData.GiftTypeOptions;
+                $('.giftBox li').eq(0).find('.radio-normal').addClass('checked');
+                $('.giftBox li').eq(0).siblings('li').find('.radio-normal').removeClass('checked');
+            }else{
+                $that.showGift1 = false;
+                $that.showGift = true;
+            }
+        }else{
+            $that.showGift = false;
+            $that.showGift1 = false;
+        }
+        if ($that.ShortEName == 'CCIC') {
+            comm.setCookie('QuotationId', res.Data.QuotationId); //大地报价ID
+        }
+        $that.refreshInsuranceList();//刷新列表
+        $that.setChooseInsurance();
+    },
+    setChooseInsurance:function(){
+        var $that = this;
+        $that.showInsuranceList = [];
+        $that.hideInsuranceList = [];
+        for(var i = 0; i < $that.insuranList.length;i++){
+            if($that.insuranList[i].show || $that.insuranList[i].name == '车损'  || $that.insuranList[i].name == '三者' || $that.insuranList[i].name == '司机'  || $that.insuranList[i].name == '乘客'  ){
+                $that.showInsuranceList.push($that.insuranList[i])
+            }else{
+                $that.hideInsuranceList.push($that.insuranList[i])
+            }
+        }
+    },
+    selectSanzhe:function(){//险种选择下拉事件
+        var $that = this;
+        $that.sanzhe = new scroll_select({ //初始化三者的保额下拉事件
+            Trigger: $('#sanzhediv'),
+            objLen: 2,
+            obj: {
+                val: ['不投保', '5万', '10万', '15万', '20万', '30万', '50万', '100万', '150万', '200万'],
+                attr: [0, 50000, 100000, 150000, 200000, 300000, 500000, 1000000, 1500000, 2000000]
+            },
+            CallBack: function(obj, dom) {
+                if (obj.attr == '0') {
+                    $that.sanzhe_class = false;
+                    $that.sanzhe_buji_class = false;
+                    $('.sanzhe_buji.buji_btn').addClass('no_checked');
+                    $('.adjustment_insure_main tr.sanzhe').find('.insurance_type_coverage').addClass('lineThrough');
+                    $('.adjustment_insure_main tr.sanzhe').find('.type_select').addClass('lineThrough');
+                    $('.adjustment_insure_main tr.sanzhe').find('.insurance_type_price').addClass('lineThrough');
+                } else {
+                    $that.sanzhe_class = true;
+                    $that.sanzhe_buji_class = true;
+                    if (!$that.buji_class) {
+                        that.buji_class = true;
+                    }
+                    $('.sanzhe_buji.buji_btn').removeClass('no_checked');
+                    $('.adjustment_insure_main tr.sanzhe').find('.insurance_type_coverage').removeClass('lineThrough');
+                    $('.adjustment_insure_main tr.sanzhe').find('.type_select').removeClass('lineThrough');
+                    $('.adjustment_insure_main tr.sanzhe').find('.insurance_type_price').removeClass('lineThrough');
+                }
+                if ($that.sanzhe_val != obj.val) {
+                    $('.insure_price_box .tab_tit .custom').addClass('active').siblings('div').removeClass('active');
+                    $('.adjustment_insure.form_box .top_title .return').addClass('change');
+                    $('.adjustment_insure .edit_box .submit_btn').addClass('change');
+                    $('.adjustment_insure_main tr.sanzhe').find('.insurance_type_price').addClass('lineThrough');
+                }
+                $that.sanzhe_attr = obj.val;
+                $that.sanzhe_attr_val = obj.attr;
+                $that.refreshInsuranceList();//刷新列表
+            }
+        });
+    },
+    selectSiji:function(){
+        var $that = this;
+        $that.sijiChoose = new scroll_select({ //初始化司机的保额下拉事件
+            Trigger: $('#sijidiv'),
+            objLen: 2,
+            obj: {
+                val: ['不投保', '1万*座', '2万*座', '3万*座', '5万*座', '10万*座', '30万*座'],
+                attr: [0, 10000, 20000, 30000, 50000, 100000, 300000]
+            },
+            CallBack: function(obj, dom) {
+                if (obj.attr == '0') {
+                    $that.siji_class = false;
+                    $that.siji_buji_class = false;
+                    $('.siji_buji.buji_btn').addClass('no_checked');
+                    $('.adjustment_insure_main tr.siji').find('.insurance_type_coverage').addClass('lineThrough');
+                    $('.adjustment_insure_main tr.siji').find('.type_select').addClass('lineThrough');
+                    $('.adjustment_insure_main tr.siji').find('.insurance_type_price').addClass('lineThrough');
+                } else {
+                    $that.siji_class = true;
+                    $that.siji_buji_class = true;
+                    if (!$that.buji_class) {
+                        $that.buji_class = true;
+                    }
+                    $('.siji_buji.buji_btn').removeClass('no_checked');
+                    $('.adjustment_insure_main tr.siji').find('.insurance_type_coverage').removeClass('lineThrough');
+                    $('.adjustment_insure_main tr.siji').find('.type_select').removeClass('lineThrough');
+                    $('.adjustment_insure_main tr.siji').find('.insurance_type_price').removeClass('lineThrough');
+                }
+                if ($that.siji_val != obj.val) {
+                    $('.insure_price_box .tab_tit .custom').addClass('active').siblings('div').removeClass('active');
+                    $('.adjustment_insure.form_box .top_title .return').addClass('change');
+                    $('.adjustment_insure .edit_box .submit_btn').addClass('change');
+                    $('.adjustment_insure_main tr.siji').find('.insurance_type_price').addClass('lineThrough');
+                }
+                $that.siji_attr = obj.val;
+                $that.siji_attr_val = obj.attr;
+                $that.refreshInsuranceList();//刷新列表
+            }
+        });
+    },
+    selectChebgke:function(){
+        var $that = this;
+        $that.chengkeChoose = new scroll_select({ //初始化乘客的保额下拉事件
+            Trigger: $('#chengkediv'),
+            objLen: 2,
+            obj: {
+                val: ['不投保', '1万*' + $that.seatsNum + '座', '2万*' + $that.seatsNum + '座', '3万*' + $that.seatsNum + '座', '5万*' + $that.seatsNum + '座', '10万*' + $that.seatsNum + '座', '30万*' + $that.seatsNum + '座'],
+                attr: [0, 10000, 20000, 30000, 50000, 100000, 300000]
+            },
+            CallBack: function(obj, dom) {
+                if (obj.attr == '0') {
+                    $that .chengke_class = false;
+                    $that .chengke_buji_class = false;
+                    $('.chengke_buji.buji_btn').addClass('no_checked');
+                    $('.adjustment_insure_main tr.chengke').find('.insurance_type_coverage').addClass('lineThrough');
+                    $('.adjustment_insure_main tr.chengke').find('.type_select').addClass('lineThrough');
+                    $('.adjustment_insure_main tr.chengke').find('.insurance_type_price').addClass('lineThrough');
+                } else {
+                    $that .chengke_class = true;
+                    $that .chengke_buji_class = true;
+                    if (!$that .buji_class) {
+                        $that .buji_class = true;
+                    }
+                    $('.chengke_buji.buji_btn').removeClass('no_checked');
+                    $('.adjustment_insure_main tr.chengke').find('.insurance_type_coverage').removeClass('lineThrough');
+                    $('.adjustment_insure_main tr.chengke').find('.type_select').removeClass('lineThrough');
+                    $('.adjustment_insure_main tr.chengke').find('.insurance_type_price').removeClass('lineThrough');
+                }
+                if ($that .chengke_val != obj.val) {
+                    $('.insure_price_box .tab_tit .custom').addClass('active').siblings('div').removeClass('active');
+                    $('.adjustment_insure.form_box .top_title .return').addClass('change');
+                    $('.adjustment_insure .edit_box .submit_btn').addClass('change');
+                    $('.adjustment_insure_main tr.chengke').find('.insurance_type_price').addClass('lineThrough');
+                }
+                $that .chengke_attr_val = obj.attr;
+                $that .chengke_attr = obj.val;
+                $that.refreshInsuranceList();//刷新列表
+            }
+        });
+    },
+    selectHuahen:function(){
+        var $that = this;
+        $that.chooseHuahen = new scroll_select({ //初始化划痕的保额下拉事件
+            Trigger: $('#huahendiv'),
+            objLen: 2,
+            obj: {
+                val: ['不投保', '2千', '5千', '1万', '2万'],
+                attr: [0, 2000, 5000, 10000, 20000]
+            },
+            CallBack: function(obj, dom) {
+                if (obj.attr == '0') {
+                    $that.huahen_class = false;
+                    $that.huahen_buji_class = false;
+                    $('.huahen_buji.buji_btn').addClass('no_checked');
+                    $('.adjustment_insure_main tr.huahen').find('.insurance_type_coverage').addClass('lineThrough');
+                    $('.adjustment_insure_main tr.huahen').find('.type_select').addClass('lineThrough');
+                    $('.adjustment_insure_main tr.huahen').find('.insurance_type_price').addClass('lineThrough');
+                } else {
+                    $that.huahen_class = true;
+                    $that.huahen_buji_class = true;
+                    if (!$that.buji_class) {
+                        $that.buji_class = true;
+                    }
+                    $('.huahen_buji.buji_btn').removeClass('no_checked');
+                    $('.adjustment_insure_main tr.huahen').find('.insurance_type_coverage').removeClass('lineThrough');
+                    $('.adjustment_insure_main tr.huahen').find('.type_select').removeClass('lineThrough');
+                    $('.adjustment_insure_main tr.huahen').find('.insurance_type_price').removeClass('lineThrough');
+                }
+                if ($that.huahen_val != obj.val) {
+                    $('.insure_price_box .tab_tit .custom').addClass('active').siblings('div').removeClass('active');
+                    $('.adjustment_insure.form_box .top_title .return').addClass('change');
+                    $('.adjustment_insure .edit_box .submit_btn').addClass('change');
+                    $('.adjustment_insure_main tr.huahen').find('.insurance_type_price').addClass('lineThrough');
+                }
+                $that.huahen_attr = obj.val;
+                $that.huahen_attr_val = obj.attr;
+                $that.refreshInsuranceList();//刷新列表
+            }
+        });
+    },
+    selectBoli:function(type){//设置玻璃下拉事件
+        var $that = this;
+        var CallBackFun = function(obj, dom){
+            if (obj.attr == '0') {
+                $that.boli_class = false;
+                $('.adjustment_insure_main tr.boli').find('.insurance_type_coverage').addClass('lineThrough');
+                $('.adjustment_insure_main tr.boli').find('.type_select').addClass('lineThrough');
+                $('.adjustment_insure_main tr.boli').find('.insurance_type_price').addClass('lineThrough');
+            } else {
+                $that.boli_class = true;
+                $('.adjustment_insure_main tr.boli').find('.insurance_type_coverage').removeClass('lineThrough');
+                $('.adjustment_insure_main tr.boli').find('.type_select').removeClass('lineThrough');
+                $('.adjustment_insure_main tr.boli').find('.insurance_type_price').removeClass('lineThrough');
+            }
+            if ($that.boli_val != obj.val) {
+                $('.insure_price_box .tab_tit .custom').addClass('active').siblings('div').removeClass('active');
+                $('.adjustment_insure.form_box .top_title .return').addClass('change');
+                $('.adjustment_insure .edit_box .submit_btn').addClass('change');
+                $('.adjustment_insure_main tr.boli').find('.insurance_type_price').addClass('lineThrough');
+            }
+            $that.boli_attr = obj.val;
+            $that.boli_attr_val = obj.attr;
+            $that.refreshInsuranceList();//刷新列表
+        };
+        if(type == '0'){
+            $that.boliChoose = new scroll_select({ //初始化玻璃的保额下拉事件
+                Trigger: $('#bolidiv'),
+                objLen: 2,
+                obj: {
+                    val: ['不投保', '国产玻璃'],
+                    attr: [0, 1]
+                },
+                CallBack: function(obj, dom) {
+                    CallBackFun(obj, dom)
+                }
+            });
+        }else if(type == '1'){
+            $that.boliChoose = new scroll_select({ //初始化玻璃的保额下拉事件
+                Trigger: $('#bolidiv'),
+                objLen: 2,
+                obj: {
+                    val: ['不投保', '进口玻璃'],
+                    attr: [0, 2]
+                },
+                CallBack: function(obj, dom) {
+                    CallBackFun(obj, dom)
+                }
+            });
+        }else if(type == '2'){
+            $that.boliChoose = new scroll_select({ //初始化玻璃的保额下拉事件
+                Trigger: $('#bolidiv'),
+                objLen: 2,
+                obj: {
+                    val: ['不投保', '进口玻璃', '国产玻璃'],
+                    attr: [0, 2, 1]
+                },
+                CallBack: function(obj, dom) {
+                    CallBackFun(obj, dom)
+                }
+            });
+        }else{
+            $that.boliChoose = new scroll_select({ //初始化玻璃的保额下拉事件
+                Trigger: $('#bolidiv'),
+                objLen: 2,
+                obj: {
+                    val: ['不投保', '国产玻璃', '进口玻璃'],
+                    attr: [0, 1, 2]
+                },
+                CallBack: function(obj, dom) {
+                    CallBackFun(obj, dom)
+                }
+            });
+        }
+    },
+    insuranceSelectEvent:function(){
+        var $that = this;
+        $that.selectSanzhe();
+        $that.selectSiji();
+        $that.selectChebgke();
+        $that.selectHuahen();
+        $that.selectBoli($that.boliType);
+    },
+    goRecommend:function(){
+        var $that = this;
+        $('.form_box.adjustment_insure').hide();
+        $('.form_box.detail_box').show();
+        $that.isRecommend = true;
+        if($that.recommendObj){
+            // if($that.returnChange){
+            //  $that.showReutrnInsurance($that.recommendRes)
+            // }else{
+            //  $that.showInsurance($that.recommendRes);
+            // }
+            $that.showInsurance($that.recommendRes);
+            $that.savePriceInfo();
+        }else{
+            $that.isFirst = true;
+            $that.recommended();
+        }
+        mqq.ui.setTitleButtons({
+            left:{
+                title:'返回',
+                callback:function(){
+                    mqq.ui.popBack();
+                }
+            },
+            right: { title: ' ' }
+        });
+        $('.sub_btn').removeClass('error');
+        $('.adjustment_insure .submit_btn_box').removeClass('goRecom');
+        $('.pop_tit').html("<b style='font-weight:700;'>95%</b>以上车主的选择 <b class='fontSize_10 recommend'>省心</b>");
+    },
+    showErrorTel:function(name,text){
+        var $that = this;
+        // showAlert(text+'<br/>您还可以联系保险公司：<a class="fontColor_blue" href="tel:'+$that.telMain.tel+'">'+$that.telMain.main+'</a>');
+        comm.showEditAlert({'text':text+'<br/>您还可以联系保险公司：<a class="fontColor_blue" href="tel:'+$that.telMain.tel+'">'+$that.telMain.main+'</a>',btnCancelText:'再试试',cancelCallback:function(){
+            // $('.edit_insure_btn').trigger('click');
+            $(".alert_box.error_box").hide();
+            $that.editInsuranceBtn();
+        },btnOkText:'确定',okCallback:function(){
+            $(".alert_box.error_box").hide();
+        }})
+        // $('.edit_insure_btn').hide();
+        $('.form_box.detail_box .sub_btn').addClass('error telError');
+    },
+    savePriceInfo: function () {
+        //第一次报价后保存到数据库
+        var obj = this.getInfoObj();
+        //提交数据
+        Store.SaveOrUpdateInsuranceFeesInfo(_data).then(function (res) {
+            $('#loadingdiv').hide();
+        });
+    },
+    showCodeBox: function () {//显示验证码弹窗
+        $('.alert_box.code_alert').show();
+    },
+    hideCodeBox: function () {//隐藏验证码弹窗
+        $('.alert_box.code_alert').hide();
+    },
+    cancel: function () {//关闭提示框
+        closeAlert();
+        this.showDate(true);
+    },
+    getInfoObj: function () {//保存险种信息
+        var $that = this;
+        if ($that.chesun_class || $that.sanzhe_class || $that.daoq_class || $that.siji_class || $that.chengke_class || $that.boli_class || $that.huahen_class || $that.ziran_checkbox_class || $that.sheshui_checkbox_class || $that.zhuanxiu_class || $that.wufa_class) {
+            $that.shy_class = true;
+        } else {
+            $that.shy_class = false;
+        }
+        var postdata = {
+            LossVehicleInsuranceAmounts: $that.chesun_attr ? $that.chesun_attr : (comm.getCookie('chesun_baoe') != '' ? comm.getCookie('chesun_baoe') : 1),//车辆损失险保额
+            BurnInsuranceAmounts: $that.ziran_attr ? $that.ziran_attr : (comm.getCookie('ziran_baoe') != '' ? comm.getCookie('ziran_baoe') : 1),//自燃险保额*
+            PilferInsuranceAmounts: $that.daoq_attr ? $that.daoq_attr : (comm.getCookie('daoq_baoe') != '' ? comm.getCookie('daoq_baoe') : 1),//盗抢险险保额
+            LossVehicleInsurancePremiums: ConvertLongNum($that.chesun_val),//车辆损失险保费*
+            ThirdDutyPremiums: ConvertLongNum($that.sanzhe_val),//第三者责任险保费*
+            ThirdDutyAmounts: $that.sanzhe_attr_val,//第三者责任险保额*
+            PilferPremiums: ConvertLongNum($that.daoq_val),//盗抢险保费*
+            DriverDutyAmounts: $that.siji_attr_val,//司机责任险保额*
+            PassengerDutyAmounts: $that.chengke_attr_val,//乘客责任险保额
+            DriverDutyPremiums: ConvertLongNum($that.siji_val),//司机责任险保费
+            PassengerDutyPremiums: ConvertLongNum($that.chengke_val),//乘客责任险保费
+            DriverPassengerTotalAmounts: (Number($that.siji_attr_val) + Number($that.chengke_attr_val)),//司机乘客总保额
+            DriverPassengerTotalPremiums: (ConvertLongNum($that.siji_val) + ConvertLongNum($that.chengke_val)),//司机乘客总保费
+            IsInletGlass: $that.boli_attr_val,//1:国产玻璃  2：进口玻璃*
+            GlassBrokenPremiums: ConvertLongNum($that.boli_val),//玻璃险保费
+            NickAmounts: $that.huahen_attr_val,//划痕险保额
+            NickPremiums: ConvertLongNum($that.huahen_val),//划痕险保费
+            WadingPremiums: ConvertLongNum($that.sheshui_val),//涉水保费
+            AppointFactoryPremiums: ConvertLongNum($that.zhuanxiu_val),//指定专修厂保费
+            BurnPremiums: ConvertLongNum($that.ziran_val),//自燃险保费
+            VehicleUnableFindPremiums: ConvertLongNum($that.wufa_val),//无法找到第三方特约险保费
+            NonDeductibleMergerPremiums: ConvertLongNum($that.buji_val),//不计免赔险（合并）
+            LossVehicleNonDeductiblePremiums: ConvertLongNum($that.chesun_buji_val),//车损（不计免赔）保费*
+            ThirdDutyNonDeductiblePremiums: ConvertLongNum($that.sanzhe_buji_val),//三者（不计免赔）保费*
+            PilferNonDeductiblePremiums: ConvertLongNum($that.daoq_buji_val),//盗抢（不计免赔）保费*
+            DriverNonDeductiblePremiums: ConvertLongNum($that.siji_buji_val),//车上人员责任险（司机）保费*
+            PassengerNonDeductiblePremiums: ConvertLongNum($that.chengke_buji_val),//车上人员责任险（乘客）保费*
+            BurnNonDeductiblePremiums: ConvertLongNum($that.ziran_buji_val),//自燃（不计免赔）保费*
+            NickNonDeductiblePremiums: ConvertLongNum($that.huahen_buji_val),//划痕（不计免赔）保费*
+            WadingNonDeductiblePremiums: ConvertLongNum($that.sheshui_buji_val),//涉水（不计免赔）保费*
+            IsSelLossVehicleNonDeductible: $that.chesun_buji_class ? 1 : 0,//是否勾选车损（不计免赔） 1：是  0：否*
+            IsSelThirdDutyNonDeductible: $that.sanzhe_buji_class ? 1 : 0,//是否勾选三者（不计免赔）*
+            IsSelPilferNonDeductible: $that.daoq_buji_class ? 1 : 0,//是否勾选盗抢（不计免赔）*
+            IsSelBurnNonDeductible: $that.ziran_buji_class ? 1 : 0,//是否勾选自燃（不计免赔）*
+            IsSelNickNonDeductible: $that.huahen_buji_class ? 1 : 0,//是否勾选划痕（不计免赔）*
+            IsSelWadingNonDeductible: $that.sheshui_buji_class ? 1 : 0,//是否勾选涉水（不计免赔）*
+            IsSelDriverNonDeductible: $that.siji_buji_class ? 1 : 0,//是否勾选司机（不计免赔）*
+            IsSelPassengerNonDeductible: $that.chengke_buji_class ? 1 : 0,//是否勾选乘客（不计免赔）*
+            BizBeginDate: $that.shy_date,//商业险保险起期*
+            ForceBeginDate: $that.jq_date,//交强险保险起期*
+
+            IsBizInsurance: $that.shy_class ? 1 : 0,//是否投保商业险*
+            IsForceInsurance: $that.jiaoq_class ? 1 : 0,//是否投保交强险*
+            VehicleTaxPremium: ConvertLongNum($that.chch_val),//车船税*
+            ForceTotalPremium: (ConvertLongNum($that.jiaoq_val) + ConvertLongNum($that.chch_val)),//交强险总保费(交强险+车船税)*
+            ForcePremium: ConvertLongNum($that.jiaoq_val),//交强险保费*
+            BizTotalPremium: ConvertLongNum($that.shy_val),//商业险总保费（包含不计免赔）*
+            StandardPremium: ConvertLongNum($that.Standard_val),//应缴总保费
+            TotalPremium: ConvertLongNum($that.Standard_val),//实际保费
+            BizPremium: ConvertLongNum($that.actualPayment_val),//实际支付总保费
+            PackageType: $that.isRecommend ? 1 : 2,//报价套餐
+            BizStandardPremium: ConvertLongNum($that.Standard_val),////实际保费
+            InsureFlowCode: $that.InsureFlowCode,//众安寻价ID
+            ShortEName: $that.ShortEName,//保险公司标识
+            SessionId: $that.SessionId,
+            From: $that.fromValue,
+            InsuranceOrderId: $that.InsuranceOrderId,
+            GiftValue:($that.showGift ||$that.showGift1)?Number(comm.getNum($that.discount_val)):'',//投保礼积分值
+            GiftType:$that.showGift1?$('.giftBox li .radio-normal.checked').parent().next().attr('code'):0,//兑换类型
+            GiftProvider: ($that.showGift ||$that.showGift1)?$that.discount_Code:'',
+            GiftTypeRemark: ($that.showGift||$that.showGift1)?$that.discount_type:''
+        };
+        return postdata;
+    },
+    editInsuranceBtn:function () {
+        var $that = this;
+        //设置QQ返回事件
+        mqq.ui.setTitleButtons({
+            left: {
+                title: '返回',
+                callback: function() {
+                    $('.form_box.adjustment_insure').show();
+                    $('.detail_box.form_box').hide();
+                    $that.oldObj = $that.changeInsuranceObj();
+                    mqq.ui.setTitleButtons({
+                        left: {
+                            title: '返回',
+                            callback: function() {
+                                mqq.ui.popBack();
+                            }
+                        },
+                        right: {
+                            title: ' '
+                        }
+                    });
+                }
+            },
+            right: {
+                title: ' '
+            }
+        });
+        $('.shyInsuranceList tr,.insuranceNoChecked tr').removeClass('lineThrough');
+        $('.form_box.adjustment_insure').show();
+        $('.detail_box.form_box').hide();
+        $that.oldObj = $that.changeInsuranceObj();
+        if($that.recommendObj){
+            var change1 = $that.isChangeInsure($that.recommendObj,$that.oldObj);
+            if(change1){
+                // $('.pop_tit').html('以下为您自主选择方案');
+                $('.price_main_box h4').hide();
+                $('.adjustment_insure .submit_btn_box').addClass('goRecom');
+            }else{
+                $('.price_main_box h4').show();
+                // $('.pop_tit').html("<b style='font-weight:700;'>95%</b>以上车主的选择 <b class='fontSize_10 recommend'>省心</b>");
+                $('.adjustment_insure .submit_btn_box').removeClass('goRecom');
+            }
+        }else{
+            $('.adjustment_insure .submit_btn_box').addClass('goRecom');
+        }
+    },
+    editInsurance: function(dom, tr_parents, choose) { //调整险种
+        var $that = this;
+        var $this = dom;
+        console.log(tr_parents)
+        if(tr_parents.hasClass('shy')){
+            if (choose) {
+                var shyObj = $that.oldShyObj ? $that.oldShyObj : $that.recommendObj;
+                if($that.oldShyObj){
+                    $that.shy_class = shyObj.VehicleDamageInsurance == 0 ? false:true;
+                    $that.chesun_class = shyObj.VehicleDamageInsurance == 0 ? false:true;//车损
+                    $that.sanzhe_class = shyObj.ThirdLiabilityInsurance == 0 ? false:true;//三者
+                    $that.sanzhe_attr = shyObj.ThirdLiabilityInsurance == 0 ? '不投保': Number(shyObj.ThirdLiabilityInsurance)/10000+'万';
+                    $that.sanzhe_attr_val = shyObj.ThirdLiabilityInsurance == 0 ? 0: shyObj.ThirdLiabilityInsurance;
+                    $that.boli_class = shyObj.IsInletGlass == 0 ? false:true;//玻璃
+                    $that.boli_attr = shyObj.IsInletGlass == 0 ? '不投保':(shyObj.IsInletGlass==1?'国产玻璃':'进口玻璃');
+                    $that.boli_attr_val = shyObj.IsInletGlass;
+                    $that.daoq_class = shyObj.VehiclePilferInsurance == 0 ? false:true;
+                    $that.siji_class = shyObj.DriverLiabilityInsurance == 0 ? false:true;//司机
+                    $that.siji_attr = shyObj.DriverLiabilityInsurance == 0 ? '不投保' : Number(shyObj.DriverLiabilityInsurance)/10000+'万*座';
+                    $that.siji_attr_val = shyObj.DriverLiabilityInsurance == 0 ? 0: shyObj.DriverLiabilityInsurance;
+                    $that.chengke_class = shyObj.PassengerLiabilityInsurance == 0 ? false:true;//乘客
+                    $that.chengke_attr = shyObj.PassengerLiabilityInsurance == 0 ? '不投保' : Number(shyObj.PassengerLiabilityInsurance)/10000+'万*' + $that.seatsNum + '座';
+                    $that.chengke_attr_val = shyObj.PassengerLiabilityInsurance == 0 ? 0: shyObj.PassengerLiabilityInsurance;
+                    $that.huahen_class = shyObj.ScratchesInsurance == 0 ? false:true;//划痕
+                    if(shyObj.ScratchesInsurance == 0){
+                        $that.huahen_attr = '不投保' ;
+                        $that.huahen_attr_val = 0;
+                    }else{
+                        var attr = shyObj.ScratchesInsurance / 10000;
+                        if (attr < 1) {
+                            $that.huahen_attr = shyObj.ScratchesInsurance / 1000 + '千'; //划痕保额
+                        } else {
+                            $that.huahen_attr = attr + '万'; //划痕保额
+                        }
+                        $that.huahen_attr_val = shyObj.ScratchesInsurance;
+                    }
+                    $that.ziran_checkbox_class = shyObj.BurnLossInsurance == 0 ? false:true;//自燃
+                    $that.sheshui_checkbox_class = shyObj.engineWading == 0 ? false:true;//涉水
+                    $that.zhuanxiu_class = shyObj.AppointFactoryInsurance == 0 ? false:true;//专修
+                    $that.wufa_class = shyObj.ThirdSpecialInsurance == 0 ? false:true;//无法找到第三方
+                    $that.chesun_buji_class = shyObj.NonDeductibleDamageInsurance == 0 ? false:true;//车损不计免赔
+                    $that.sanzhe_buji_class = shyObj.NonDeductibleThreeInsurance == 0 ? false:true;//三者不计免赔
+                    $that.daoq_buji_class = shyObj.NonDeductibleVehiclePilferInsurance == 0 ? false:true;//盗抢不计免赔
+                    $that.siji_buji_class = shyObj.NonDeductibleDriverInsurance == 0 ? false:true;//司机不计免赔
+                    $that.chengke_buji_class = shyObj.NonDeductiblePassengerInsurance == 0 ? false:true;//乘客不计免赔
+                    $that.huahen_buji_class = shyObj.NonDeductibleCarNickInsurance == 0 ? false:true;//划痕不计免赔
+                    $that.ziran_buji_class = shyObj.NonDeductibleBurnLossInsurance == 0 ? false:true;//自燃不计免赔
+                    $that.sheshui_buji_class = shyObj.NonDeductibleWadingInsurance == 0 ? false:true;//涉水不计免赔
+                    $that.buji_class = shyObj.NonDeductibleMergerInsurance == 0 ? false:true;
+                }else{
+                    $that.shy_class = true;
+                    $that.chesun_class = true;
+                    $that.chesun_buji_class = true;
+                    $that.sanzhe_class = true;
+                    $that.sanzhe_attr = '50万';
+                    $that.sanzhe_attr_val = 500000;
+                    $that.sanzhe_buji_class = true;
+                    $that.daoq_class = false;
+                    $that.daoq_buji_class = false;
+                    $that.daoq_attr = '';
+                    $that.siji_class = true;
+                    $that.siji_attr = '1万*座';
+                    $that.siji_attr_val = 10000;
+                    $that.siji_buji_class = true;
+                    $that.chengke_class = true;
+                    $that.chengke_attr = '1万*' + $that.seatsNum + '座';
+                    $that.chengke_attr_val = 10000;
+                    $that.chengke_buji_class = true;
+                    $that.boli_class = false;
+                    $that.boli_attr = '不投保';
+                    $that.boli_attr_val = 0;
+                    $that.huahen_class = false;
+                    $that.huahen_attr = '不投保';
+                    $that.huahen_attr_val = 0;
+                    $that.huahen_buji_class = false;
+                    $that.ziran_class = false;
+                    $that.ziran_checkbox_class = false;
+                    $that.ziran_buji_class = false;
+                    $that.sheshui_class = false;
+                    $that.sheshui_checkbox_class = false;
+                    $that.sheshui_buji_class = false;
+                    $that.zhuanxiu_class = false;
+                    $that.wufa_class = false;
+                    $that.shy_class = true;
+                    $that.buji_class = true;
+                    $('.chesun_buji').removeClass('no_checked');
+                    $('.sanzhe_buji').removeClass('no_checked');
+                    $('.siji_buji').removeClass('no_checked');
+                    $('.chengke_buji').removeClass('no_checked');
+                }
+            }else{
+                $that.shy_class = false;
+                $that.chesun_class = false;
+                $that.sanzhe_class = false;
+                $that.sanzhe_attr = '不投保';
+                $that.sanzhe_attr_val = 0;
+                $that.boli_class = false;
+                $that.boli_attr = '不投保';
+                $that.boli_attr_val = 0;
+                $that.daoq_class = false;
+                $that.siji_class = false;
+                $that.siji_attr = '不投保';
+                $that.siji_attr_val = 0;
+                $that.chengke_class = false;
+                $that.chengke_attr = '不投保';
+                $that.chengke_attr_val = 0;
+                $that.huahen_class = false;
+                $that.huahen_attr = '不投保';
+                $that.huahen_attr_val = 0;
+                $that.ziran_checkbox_class = false;
+                $that.sheshui_checkbox_class = false;
+                $that.zhuanxiu_class = false;
+                $that.wufa_class = false;
+                $that.chesun_buji_class = false;
+                $that.sanzhe_buji_class = false;
+                $that.daoq_buji_class = false;
+                $that.siji_buji_class = false;
+                $that.chengke_buji_class = false;
+                $that.huahen_buji_class = false;
+                $that.ziran_buji_class = false;
+                $that.sheshui_buji_class = false;
+                $that.buji_class = false;
+                $('.shyInsuranceList tr').addClass('lineThrough');
+            }
+        }else if (tr_parents.hasClass('chesun')) { //车损
+                $that.chesun_class = choose;
+                if (choose) {
+                    $('tr.chesun .insurance_type_coverage div').show();
+                    $('.chesun_buji.buji_btn').removeClass('no_checked');
+                    $that.chesun_buji_class = true;
+                    $that.ziran_checkbox_class = false; //不投自燃险
+                    $that.huahen_class = false; //不投划痕险
+                    $that.sheshui_checkbox_class = false; //不投涉水险
+                    $that.wufa_class = false; //不投无法找到第三方
+                    $that.ziran_buji_class = false; //不投自燃不计免赔
+                    $that.huahen_buji_class = false; //不投划痕不计免赔
+                    $that.sheshui_buji_class = false; //不投涉水不计免赔
+                    $that.zhuanxiu_class = false; //不投涉水不计免赔
+                    $that.boli_false = false;
+                    $that.ziran_false = false;
+                    $that.huahen_false = false;
+                    $that.sheshui_false = false;
+                    $that.wufa_false = false;
+                    $that.zhuanxiu_false = false;
+                    // $('.adjustment_insure_main tr.boli').removeClass('false'); //玻璃险种取消置灰
+                    // $('.adjustment_insure_main tr.ziran').removeClass('false'); //自燃险种取消置灰
+                    // $('.adjustment_insure_main tr.huahen ').removeClass('false'); //划痕险种取消置灰
+                    // $('.adjustment_insure_main tr.sheshui ').removeClass('false'); //涉水险种取消置灰
+                    // $('.adjustment_insure_main tr.wufa ').removeClass('false'); //无法找到第三方险种取消置灰
+                    // $('.adjustment_insure_main tr.zhuanxiu ').removeClass('false'); //无法找到第三方险种取消置灰
+                    $('tr.ziran .insurance_type_coverage div').show();
+                } else {
+                    $that.chesun_buji_class = false;
+                    $('.chesun_buji.buji_btn').addClass('no_checked');
+                    $('tr.chesun .insurance_type_coverage div').hide();
+                    // 险种约束
+                    $that.boli_class = false; //不投玻璃险
+                    $that.ziran_checkbox_class = false; //不投自燃险
+                    $that.huahen_class = false; //不投划痕险
+                    $that.sheshui_checkbox_class = false; //不投涉水险
+                    $that.wufa_class = false; //不投无法找到第三方
+                    $that.ziran_buji_class = false; //不投自燃不计免赔
+                    $that.huahen_buji_class = false; //不投划痕不计免赔
+                    $that.sheshui_buji_class = false; //不投涉水不计免赔
+                    $that.zhuanxiu_class = false; //不投涉水不计免赔
+
+                    console.log(('.adjustment_insure_main tr.boli'))
+                    $('.ziran_buji.buji_btn').addClass('no_checked'); //设置自燃不计免赔为不可选
+                    $('.huahen_buji.buji_btn').addClass('no_checked'); //设置划痕不计免赔为不可选
+                    $('.sheshui_buji.buji_btn').addClass('no_checked'); //设置涉水不计免赔为不可选
+                    // $('.adjustment_insure_main tr.boli').addClass('false'); //玻璃险种置灰
+                    // $('.adjustment_insure_main tr.ziran').addClass('false'); //自燃险种置灰
+                    // $('.adjustment_insure_main tr.huahen ').addClass('false'); //划痕险种置灰
+                    // $('.adjustment_insure_main tr.sheshui ').addClass('false'); //涉水险种置灰
+                    // $('.adjustment_insure_main tr.wufa ').addClass('false'); //无法找到第三方险种置灰
+                    // $('.adjustment_insure_main tr.zhuanxiu ').addClass('false'); //无法找到第三方险种置灰
+                    $that.boli_false = true;
+                    $that.ziran_false = true;
+                    $that.huahen_false = true;
+                    $that.sheshui_false = true;
+                    $that.wufa_false = true;
+                    $that.zhuanxiu_false = true;
+                    $('tr.ziran .insurance_type_coverage div').hide();
+                }
+            // }
+        } else if (tr_parents.hasClass('chesun_buji')) { //车损不计免赔
+            if ($that.chesun_class) {
+                $that.chesun_buji_class = choose;
+            } else {
+                $that.chesun_buji_class = false;
+            }
+        } else if (tr_parents.hasClass('sanzhe')) { //三者
+            $that.sanzhe_class = choose;
+            $('.sanzhe_buji.buji_btn').removeClass('no_checked');
+            if (!choose) {
+                $('.sanzhe_buji.buji_btn').addClass('no_checked');
+                $that.sanzhe_buji_class = false;
+                $that.sanzhe_attr_val = 0;
+                $that.sanzhe_attr = '不投保';
+            } else {
+                $that.sanzhe_buji_class = true;
+                if ($that.sanzhe_attr_val == '0') {
+                    $that.sanzhe_attr_val = 500000;
+                    $that.sanzhe_attr = '50万';
+                }
+            }
+        } else if (tr_parents.hasClass('sanzhe_buji')) { //三者不计免赔
+            if ($that.sanzhe_class) {
+                $that.sanzhe_buji_class = choose;
+            } else {
+                $that.sanzhe_buji_class = false;
+            };
+        } else if (tr_parents.hasClass('daoq')) { //盗抢
+            $that.daoq_class = choose;
+            $('.daoq_buji.buji_btn').removeClass('no_checked');
+            if (!choose) {
+                $('.daoq_buji.buji_btn').addClass('no_checked');
+                $that.daoq_buji_class = false;
+                $('tr.daoq .insurance_type_coverage div').hide();
+            } else {
+                $that.daoq_buji_class = true;
+                $('tr.daoq .insurance_type_coverage div').show();
+            }
+        } else if (tr_parents.hasClass('daoq_buji')) { //盗抢不计免赔
+            if ($that.daoq_class) {
+                $that.daoq_buji_class = choose
+            } else {
+                $that.daoq_buji_class = false
+            };
+        } else if (tr_parents.hasClass('siji')) { //司机
+            $that.siji_class = choose;
+            $('.siji_buji.buji_btn').removeClass('no_checked');
+            if (!choose) {
+                $that.siji_buji_class = false;
+                $('.siji_buji.buji_btn').addClass('no_checked');
+                $that.siji_attr_val = 0;
+                $that.siji_attr = '不投保';
+            } else {
+                $that.siji_buji_class = true;
+                if ($that.siji_attr_val == 0) {
+                    $that.siji_attr = '1万*座';
+                    $that.siji_attr_val = '10000';
+                }
+            }
+        } else if (tr_parents.hasClass('siji_buji')) { //司机不计免赔
+            if ($that.siji_class) {
+                $that.siji_buji_class = choose;
+            } else {
+                $that.siji_buji_class = false;
+            };
+        } else if (tr_parents.hasClass('chengke')) { //乘客
+            $that.chengke_class = choose;
+            $('.chengke_buji.buji_btn').removeClass('no_checked');
+            if (!choose) {
+                $('.chengke_buji.buji_btn').addClass('no_checked');
+                $that.chengke_buji_class = false;
+                $that.chengke_attr_val = 0;
+                $that.chengke_attr = '不投保';
+            } else {
+                $that.chengke_buji_class = true;
+                if ($that.chengke_attr_val == 0) {
+                    $that.chengke_attr = '1万*' + $that.seatsNum + '座';
+                    $that.chengke_attr_val = 10000;
+                }
+            }
+        } else if (tr_parents.hasClass('chengke_buji')) { //司机不计免赔
+            if ($that.chengke_class) {
+                $that.chengke_buji_class = choose;
+            } else {
+                $that.chengke_buji_class = false;
+            };
+        } else if (tr_parents.hasClass('boli')) { //玻璃
+            $that.boli_class = choose;
+            if(!choose){
+                $that.boli_attr_val = 0;
+                $that.boli_attr = '不投保';
+            }else{
+                if ($that.boli_attr_val == 0) {
+                    if($that.boliType){
+                        if($that.boliType == '0'){
+                            $that.boli_attr = '国产玻璃';
+                            $that.boli_attr_val = 1;
+                        }else{
+                            $that.boli_attr = '进口玻璃';
+                            $that.boli_attr_val = 2;
+                        }
+                    }else{
+                        $that.boli_attr = '国产玻璃';
+                        $that.boli_attr_val = 1;
+                    }
+                }
+            }
+        } else if (tr_parents.hasClass('huahen')) { //划痕
+            $that.huahen_class = choose;
+            $('.huahen_buji.buji_btn').removeClass('no_checked');
+            if (!choose) {
+                $that.huahen_buji_class = false;
+                $('.huahen_buji.buji_btn').addClass('no_checked');
+                $that.huahen_attr_val = 0;
+                $that.huahen_attr = '不投保';
+            } else {
+                $that.huahen_buji_class = true;
+                if ($that.huahen_attr_val == 0) {
+                    $that.huahen_attr = '2千';
+                    $that.huahen_attr_val = 2000;
+                }
+            }
+        } else if (tr_parents.hasClass('huahen_buji')) { //划痕不计免赔
+            if ($that.huahen_class) {
+                $that.huahen_buji_class = choose;
+            } else {
+                $that.huahen_buji_class = false;
+            };
+        } else if (tr_parents.hasClass('zhuanxiu')) { //专修
+            $that.zhuanxiu_class = choose;
+        } else if (tr_parents.hasClass('ziran')) { //自燃
+            $('.ziran_buji.buji_btn').removeClass('no_checked');
+            $that.ziran_checkbox_class = choose;
+            $that.ziran_buji_class = true;
+            if (!choose) {
+                $that.ziran_buji_class = false;
+                $('.ziran_buji.buji_btn').addClass('no_checked');
+            }
+        } else if (tr_parents.hasClass('ziran_buji')) { //自燃不计免赔
+            if ($that.ziran_checkbox_class) {
+                $that.ziran_buji_class = choose;
+            } else {
+                $that.ziran_buji_class = false;
+            }
+        } else if (tr_parents.hasClass('sheshui')) { //涉水
+            if (!choose) {
+                $that.sheshui_checkbox_class = false;
+                $that.sheshui_buji_class = false;
+                $('.sheshui_buji.buji_btn').addClass('no_checked');
+            } else {
+                $that.sheshui_checkbox_class = choose;
+                $that.sheshui_buji_class = true;
+                $('.sheshui_buji.buji_btn').removeClass('no_checked');
+                if (!choose) {
+                    $that.sheshui_buji_class = false;
+                    $('.sheshui_buji.buji_btn').addClass('no_checked');
+                }
+            }
+        } else if (tr_parents.hasClass('sheshui_buji')) { //涉水不计免赔
+            if ($that.sheshui_checkbox_class) {
+                $that.sheshui_buji_class = choose;
+            } else {
+                $that.sheshui_buji_class = false;
+            }
+        } else if (tr_parents.hasClass('wufa')) { //无法找到第三方
+            if($that.chesun_class){
+                $that.wufa_class = choose;
+            }else{
+                $that.wufa_class = false;
+            }
+        } else if (tr_parents.hasClass('jiaoq')) { //交强
+            $that.jiaoq_class = choose;
+            if (choose) {
+                $('.choose_date.jq input').removeAttr('disabled');
+            } else {
+                $('.choose_date.jq input').attr('disabled', 'disabled');
+            }
+        } else if (tr_parents.hasClass('buji')) {
+            $that.buji_class = choose;
+            if (!choose) {
+                $that.chesun_buji_class = false;
+                $that.sanzhe_buji_class = false;
+                $that.daoq_buji_class = false;
+                $that.siji_buji_class = false;
+                $that.chengke_buji_class = false;
+                $that.huahen_buji_class = false;
+                $that.ziran_buji_class = false;
+                $that.sheshui_buji_class = false;
+            }
+        }
+        if ($that.chesun_buji_class || $that.sanzhe_buji_class || $that.daoq_buji_class || $that.siji_buji_class || $that.chengke_buji_class || $that.huahen_buji_class || $that.ziran_buji_class || $that.sheshui_buji_class) {
+            $that.buji_class = true;
+        } else {
+            $that.buji_class = false;
+        }
+        if ($that.chesun_class || $that.sanzhe_class || $that.daoq_class || $that.siji_class || $that.chengke_class || $that.boli_class || $that.huahen_class || $that.ziran_checkbox_class || $that.sheshui_checkbox_class || $that.zhuanxiu_class || $that.wufa_class) {
+            $that.shy_class = true;
+        } else {
+            $that.shy_class = false;
+        }
+        $that.refreshInsuranceList();//刷新列表
+    },
+    editFun:function(e){
+        var dom =  e.length ? $(e) : $(e.currentTarget);
+        var $that = this;
+        if(dom.hasClass('moreBtn')){
+            $that.chooseMore = !$that.chooseMore;
+            return false;
+        }
+        $('.adjustment_insure.form_box .top_title .return').addClass('change');
+        $('.adjustment_insure .edit_box .submit_btn').addClass('change');
+        var choose = false;
+        if (dom.hasClass('buji_btn')) {
+            var tr_parents = dom;
+            var $this = dom;
+        } else {
+            var tr_parents = dom.parents('tr');
+            var $this = dom.find('.radio-normal');
+        }
+        if (dom.hasClass('checked')) {
+            choose = false;
+            if ($this.hasClass('radio-normal')) {
+                tr_parents.find('.insurance_type_coverage').addClass('lineThrough');
+                tr_parents.find('.type_select').addClass('lineThrough');
+                tr_parents.find('.insurance_type_price').addClass('lineThrough');
+                if (tr_parents.hasClass('jiaoq')) {
+                    tr_parents.next().find('.insurance_type_coverage').addClass('lineThrough');
+                    tr_parents.next().find('.insurance_type_price').addClass('lineThrough');
+                    tr_parents.next().find('.type_select').addClass('lineThrough');
+                }
+            }
+            if(tr_parents.hasClass('shy')){
+                $that.oldShyObj = $that.changeInsuranceObj();
+            }
+        } else {
+            choose = true;
+            if ($this.hasClass('radio-normal')) {
+                tr_parents.find('.insurance_type_coverage').removeClass('lineThrough');
+                tr_parents.find('.type_select').removeClass('lineThrough');
+                tr_parents.find('.insurance_type_price').removeClass('lineThrough');
+                if (tr_parents.hasClass('jiaoq')) {
+                    tr_parents.next().find('.insurance_type_coverage').removeClass('lineThrough');
+                    tr_parents.next().find('.type_select').removeClass('lineThrough');
+                    tr_parents.next().find('.insurance_type_price').removeClass('lineThrough');
+                }
+            }
+        }
+        $that.editInsurance($this, tr_parents, choose);
+        $that.newObj = $that.changeInsuranceObj();
+        var change = $that.isChangeInsure($that.recommendObj,$that.newObj);
+        if(change){
+            $('.adjustment_insure .submit_btn_box').addClass('goRecom');
+        }else{
+            $('.adjustment_insure .submit_btn_box').removeClass('goRecom');
+        }
+    },
+    isChangeInsure:function(oldObj,newObj){//是否修改险种
+        var result = false;
+        var $that = this;
+        $.each(newObj,function(i, n){
+            $.each(oldObj,function(x, m){
+                if(i == x){
+                    if(n != m){
+                        result = true;
+                        if(i == 'BizBeginDate' || i == 'ForceBeginDate'){
+                            if(n != '' && m != ''){
+                                $that.changeDate = true;
+                            }
+                        }
+                        return false;
+                    }
+                }
+            });
+        });
+        return result;
+    },
+    saveInfo: function (opt) { //保存险种信息接口
+        var $that = this;
+        var obj = {
+            date: false,
+            callback: function () {
+                comm.showLoadingDiv();
+                var obj = $that.getInfoObj();
+                //提交数据
+                Store.SaveOrUpdateInsuranceFeesInfo(obj).then(function (res) {
+                    $('#loadingdiv').hide();
+                    opt.callback(res);
+                });
+            }
+        };
+        if ($that.ShortEName == 'YGBX' || $that.ShortEName == 'AIC' || $that.ShortEName == 'CPIC' || $that.ShortEName == 'CLIC') {
+            $that.enditInsuranceAjax(obj, false);//确认支付需要重新报价
+        } else {
+            obj.callback();
+        }
+    },
+    onSubmit:function(e){
+        var dom = $(e.currentTarget);
+        var $that = this;
+        var sub_obj = {//确认支付回调
+            callback: function (res) {
+                if (res.Message == '0') {
+                    var url = '/InsuranceParity/OrderSubmit?ShortEName=' + $that.ShortEName + '&orderId=' + $that.orderId + '&return=0&twoPage=' + comm.getUrlParam('twoPage') + '&InsureFlowCode=' + $that.InsureFlowCode + comm.getSubUrl();
+                    $that.newObj = $that.changeInsuranceObj();
+                    var change1 = $that.isChangeInsure($that.recommendObj,$that.newObj);
+                    if(change1){
+                        comm.setCookie('recommendObj',false);
+                    }else{
+                        comm.setCookie('recommendObj',true)
+                    }
+                    comm.qqOpenUrl(url);
+                } else {
+                    showAlert(res.Data);
+                }
+            }
+        };
+        if (!$(this).hasClass('error') && $that.insurancePrice) {
+          comm.showLoadingDiv();
+          $that.saveInfo(sub_obj);
+        } else if($(this).hasClass('telError')){
+          $that.showErrorTel($that.ShortEName,'报价失败！');
+        }else{
+            comm.showAlert('报价失败，请您修改险种重新报价！')
+        }
+    },
+  },
+  created:function(){
+    
+  },
+  ready:function(){
+    APIURL = Store.insuranceAPI;
+    this.ShortEName = comm.getUrlParam('ShortEName');
+    this.init();
+  }
+}
+function $toJsonString(obj) {
+        var isArray = obj instanceof Array;
+        var r = [];
+        for (var i in obj) {
+            var value = obj[i];
+            if (typeof value == 'string') {
+                value = '"' + value + '"';
+            } else if (value != null && typeof value == 'object') {
+                value = $toJsonString(value);
+            }
+            r.push((isArray ? '' : i + ':') + value);
+        }
+        if (isArray) {
+            return '[' + r.join(',') + ']';
+        } else {
+            return '{' + r.join(',') + '}';
+        }
+    }
+    // 截取两位
+function ConvertLongNum(Num){
+    return Number((Number(Num)*100).toFixed(0));
+};
+// 字符转数字去逗号
+function strToNum(Num) {
+    if (Num == null)
+        return "0";
+    return Number(Num.replace(/,/ig,'')).toFixed(2);
+};
+
+</script>

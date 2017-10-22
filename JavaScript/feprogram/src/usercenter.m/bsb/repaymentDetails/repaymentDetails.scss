@@ -1,0 +1,58 @@
+@import "../common/css/mixin.scss";
+
+.rpm_box {
+
+	.status {
+		padding-right: px2rem(40);
+		padding-left: px2rem(10);
+	}
+
+	.total {
+		margin-top: px2rem(30);
+		padding-bottom: px2rem(20);
+		padding-left: px2rem(10);
+
+		b {
+			@include fsize(60);
+		}
+	}
+
+	.date {
+		padding-left: px2rem(10);
+	}
+
+	.list, .listtop {
+		padding: px2rem(3) px2rem(30) px2rem(3) 0;
+		line-height: px2rem(46);
+
+		div {			
+			text-align: right;
+		}
+
+		div:first-child {
+			width: px2rem(126);
+		}		
+	}
+
+	.listtop {
+		@include fsize(30);
+	}
+
+	.fine {
+		margin-top: px2rem(30);
+		padding-top: px2rem(30);
+		padding-right: px2rem(30);
+		@include fsize(30);
+		border-top: 1px solid #e5e5e5;
+	}
+
+	.rest {
+		padding-right: px2rem(30);
+		@include fsize(30);
+	}
+
+}
+
+.rpm_msg {
+	padding: px2rem(10) px2rem(30) ;
+}

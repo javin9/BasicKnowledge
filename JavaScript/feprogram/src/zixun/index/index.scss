@@ -1,0 +1,194 @@
+@import '../main.scss';
+.index * {
+  box-sizing: border-box;
+}
+.index {
+  @extend .whole;
+  padding: 20px 0 40px;
+  .yxzx-left {
+    width: 920px;
+    margin-right: 20px;
+
+    header {
+      padding: 20px;
+      background: #FAFAFA;
+      border: 1px solid #FAFAFA;
+      >a {
+        font-size: 20px;
+        color: #394043;
+        line-height: 30px;
+        .label {
+            display: inline-block;
+            color: #fff;
+            letter-spacing: 0;
+            font-size: 16px;
+            line-height: 24px;
+            padding: 8px 10px;
+            border-radius: 2px;
+            margin-right: 21px;
+            background-color: map-get($color, red);
+            position: relative;
+            bottom: 2px;
+            &:after {
+              content: '';
+              width: 11px;
+              height: 14px;
+              background: url(../images/triangle.png) no-repeat;
+              position: absolute;
+              top: 50%;
+              right: -11px;
+              margin-top: -7px;
+            }
+        }
+        &:hover {
+          color: #E9474D;
+        }
+      }
+
+      .info {
+        padding-top: 10px;
+        font-size: 0;
+        > span {
+          display: inline-block;
+          font-size: 12px;
+          color: #9C9FA1;
+          line-height: 22px;
+          margin-right: 20px;
+
+          // &.label {
+          //   color: map-get($color, red);
+          //   letter-spacing: 0;
+          //   line-height: 20px;
+          //   padding: 0 6px;
+          //   border: 1px solid map-get($color, red);
+          //   border-radius: 2px;
+          // }
+        }
+      }
+
+      .container {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #666;
+        line-height: 22px;
+        @extend .wrap;
+        @extend .clamp2;
+      }
+    }
+
+    .groups-item {
+      padding-top: 50px;
+      dt {
+        position: relative;
+        border-bottom: 1px solid map-get($color, gray);
+        .tap {
+          display: inline-block;
+          padding: 0 10px;
+          padding-bottom: 10px;
+          font-size: 22px;
+          color: #000;
+          line-height: 34px;
+          border-bottom: 1px solid map-get($color, red);
+        }
+        .item-more {
+          display: inline-block;
+          font-size: 14px;
+          color: #666;
+          line-height: 22px;
+          position: absolute;
+          bottom:10px;
+          right: 0;
+          i {
+            display: inline-block;
+            width: 6px;
+            height: 10px;
+            margin-left: 10px;
+            background: url(../images/arrow.png) no-repeat left top;
+          }
+          &:hover {
+            color: map-get($color, red);
+            i {
+              background-position: left bottom;
+            }
+          }
+        }
+      }
+
+      .first {
+        font-size: 0;
+        padding: 20px;
+        padding-left: 0;
+        border-bottom: 1px solid map-get($color, gray);
+        &-header {
+          font-size: 20px;
+          color: #394043;
+          line-height: 30px;
+          // padding-left: 67px;
+          position: relative;
+          @extend .single-wrap;
+          // background: url(../images/new.png) no-repeat left -33px;
+
+          &:hover {
+            color: map-get($color, red);
+            // &.red {
+            // background-position: left 7px;
+            // background: url(../images/new.png) no-repeat left 6px;
+            // }
+          }
+        }
+
+        &-body {
+          // padding-left: 67px;
+
+          .first-info {
+            font-size: 12px;
+            color: #9C9FA1;
+            line-height: 18px;
+            padding-top: 10px;
+            > span {
+              margin-right: 20px;
+            }
+          }
+
+          .first-container {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+            line-height: 22px;
+  
+            @extend .wrap;
+            @extend .clamp2;
+          }
+        }
+      }
+
+      .normal {
+        padding: 20px 20px 20px 14px;
+        border-bottom: 1px solid map-get($color, gray);
+        position: relative;
+        &:before {
+          @extend .dot;
+        } 
+
+        &-title {
+          width: 758px;
+          font-size: 20px;
+          color: #394043;
+          line-height: 30px;
+          @extend .single-wrap;
+
+          &:hover {
+            color: map-get($color, red);
+          }
+        }
+        &-time {
+          font-size: 12px;
+          color: #9C9FA1;
+          line-height: 22px;
+          margin-top: 5px;
+        }
+      }
+      
+    }
+  }
+}

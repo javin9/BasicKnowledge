@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var uid = 11;
+        var mobile = '18575832500';
+        var authUrl = '/secretary/SwitchAccount';
+        var recognitionUrl = '/';
+        var isShowCGBAlter=true;
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<header class="header-bar no-after">
+    <a href="javascript:void(0);"></a>
+    <h1 class="font-nav">购车人信息</h1>
+    <span></span>
+</header>
+<section class="product-name">
+    <div><img src="http://placehold.it/300x300"/></div>
+    <h3>产品名称</h3>
+</section>
+<section class="form-box">
+    <header>您的信息仅作贷款审核使用，不会以任何形式泄露给其他人员或机构</header>
+    <ul>
+        <li class="name-form"><input class="font-input" type="text" placeholder="真实姓名"/></li>
+        <li class="warning">姓名格式错误，请核实</li>
+        <li class="id-form"><input type="text" class="font-input" placeholder="18位身份证号码" /></li>
+        <li class="warning">身份证号格式错误，请核实</li>
+       
+        <!-- 赠险 -->
+        <li class="sec_insurance font_24">
+            <i class=""></i><span>勾选可免费领取</span><b class="authorization03">100万意外险</b>，出行更多保障
+        </li>
+        
+        <li class="submit-form"><a href="javascript:void(0);" class="font-btn">提交</a></li>
+    </ul>
+
+
+    <footer>
+        <form action="/Qualification/OrderApply" id="formQ">
+            <input type="hidden" name="CarId" value="1">
+        </form>
+        <i class="cur"></i><span>我已详细阅读并同意</span><b class="service-pro">《信息使用授权书》</b>
+    </footer>
+</section>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+$color : (
+  red : #E9474D,
+  gray : #E5E5E5,
+);
+
+.whole {
+  width: 1200px;
+  margin: 0 auto;
+}
+.single-wrap {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wrap {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: box;
+  display: -webkit-box;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+}
+.clamp2 {
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+}
+.clamp3 {
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+}
+
+.dot {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: url(../images/oval.png) no-repeat;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.yxzx-right {
+  width: 260px;
+
+  // 帮您贷款
+  .help {
+    display: block;
+    padding: 30px 35px 20px;
+    border: 1px solid map-get($color, gray);
+    text-align: center;
+    h3 {
+      font-size: 22px;
+      font-weight: bold;
+      color: #575C65;
+      line-height: 24px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #575C65;
+      line-height: 21px;
+      font {
+        color: map-get($color, red);
+      }
+    }
+
+    .btn {
+      width: 120px;
+      padding: 9px 20px 10px;
+      font-size: 16px;
+      line-height: normal;
+      color: #fff;
+      margin: 20px auto 30px;
+      background: map-get($color, red);
+    }
+
+    footer {
+      font-size: 14px;
+      color: #999;
+      line-height: 22px;
+    }
+
+    // &:hover {
+    //   .btn {
+    //     background: #d13f45;
+    //   }
+    // }
+  }
+
+  // 免费咨询
+  .free-advice {
+    margin-top: 20px;
+    border: 1px solid map-get($color, gray);
+    header {
+      padding: 9px 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #666;
+      background: #F8F8F8;
+      border-bottom: 1px solid map-get($color, gray);
+    }
+    .body {
+      padding: 20px 20px 10px;
+      p {
+        font-size: 14px;
+        color: #333;
+        line-height: 22px;
+      }
+
+      .user-box {
+        margin-top: 20px;
+        .user-tel-box .user-tel input {
+          font-size: 14px;
+        }
+        .user-tel-box .user-btn {
+          font-size: 14px;
+          color: #fff;
+          letter-spacing: 0;
+          line-height: 21px;
+        }
+      }
+    }
+  }
+
+  // 二手车C2B
+  .ershoucheC2B {
+    padding: 28px 20px 37px;
+    margin-top: 20px;
+    border: 1px solid map-get($color, gray);
+    text-align: center;
+    header {
+      font-size: 20px;
+      color: #000;
+      line-height: 24px;
+      padding-bottom: 25px;
+    }
+
+    .body {
+      padding-bottom: 40px;
+      dd {
+        width: 33.3%;
+        position: relative;
+        .c2b-icon {
+          width: 32px;
+          height: 32px;
+          background: url(../images/icon.png) no-repeat;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          margin-left: -16px;
+          &.icon01 {
+            background-position: left top;
+          }
+          &.icon02 {
+            background-position:  0 -60px;
+          }
+          &.icon03 {
+            background-position:  left bottom;
+          }
+
+        }
+        p{
+          padding-top: 40px;
+          font-size: 14px;
+          color: #666;
+          line-height: 22px;
+        }
+      }
+    }
+
+    .btn {
+      display: block;
+      padding: 9px 0;
+      font-size: 14px;
+      line-height: 22px;
+      color: map-get($color, red);
+      border: 1px solid map-get($color, red);
+      border-radius: 3px;
+    }
+  }
+
+  // 热门资讯
+  .hot-yxzx {
+    margin-top: 20px;
+    border: 1px solid map-get($color, gray);
+    header {
+      padding: 9px 0 9px 10px;
+      background: #F8F8F8;
+      font-size: 16px;
+      font-weight: bold;
+      color: #666;
+      border-bottom: 1px solid map-get($color, gray);
+    }
+    dl {
+      padding: 10px 0;
+    }
+    dd {
+      margin: 0 10px;
+      padding: 10px 0 10px 14px;
+      border-top: 1px dashed map-get($color, gray);
+      font-size: 14px;
+      line-height: 22px;
+      position: relative;
+      > a {
+        display: block;
+        width: 100%;
+        @extend .single-wrap;
+        color: #686868;
+        &:hover {
+          color: map-get($color, red);
+        }
+      }
+      &:first-child {
+        border-top: 0;
+      }
+      &:before {
+        @extend .dot;
+      }
+    }
+  }
+}

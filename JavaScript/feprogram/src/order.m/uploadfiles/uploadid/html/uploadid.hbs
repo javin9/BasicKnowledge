@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var username = '*于涛';
+        var idPhotos = {
+            front: 'http://placehold.it/900x500',
+            back: ''
+        };
+        var helpText = {
+            require: '有效期内正反面复印件',
+            replace: '临时身份证'
+        };
+        var submitUrl = '';
+        var snap_uploading_url = "/snap/upload";
+        var docSnapInfos = {"IsOldSnap":true,"IsUnconfirmed":true,"IsEditingEnabled":true,"DocTypeInfo":{"DocType":"A1","DocTypeName":"身份证","DocDescription":"上传正反面，信息加密传输","Replacement":"临时身份证","Requirement":"上传有效期内正反面","IsEnabled":true,"IsIdCardDocType":true},"SnapInfos":[]};
+        var to_login_url = "http://i.m.daikuan.com/login/index?returnurl=http%3a%2f%2fsq.m.daikuan.com%2fsnap%2fidcard%3forderId%3d151490692390338%26childOrderId%3d861490650333781%26docType%3dA1";
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="main">
+    <uploadid v-bind:user-name="userName" v-bind:id-photos="idPhotos" v-bind:help-text="helpText" v-bind:submit-url="submitUrl" v-bind:file-ready="fileReady" v-bind:editable="editable"></uploadid>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

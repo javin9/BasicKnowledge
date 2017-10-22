@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script>
+  var preloadimagesArr = [
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/1.html.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/2.html.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/4.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/5.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/7.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/8.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/3.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/10.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/11.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/12.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/13.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/14.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/15.html.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/16.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/17.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/18.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/19.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/21.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/22.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/9.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/23.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/24.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/25.png',
+   'http://192.168.145.9:8011/jinrong/assets/activity.m/activityNationalDay/images/bg.jpg',
+   ];
+</script>
+
+<div id="yxWrapper">
+	<div id="loading">
+		<img src="../images/loading.html.gif"/>
+	</div>
+	<div id="content" class="hide">
+		<script>
+			//加载图片
+			function preloadimages(arr) {
+		        var length = arr.length;
+		        var count = 1;
+		        var n = 100 / length;
+		        var newimages = [];
+		        for (var i = 0; i < arr.length; i++) {
+		            newimages[i] = new Image();
+		            newimages[i].src = arr[i];
+		            newimages[i].onload = function () {
+		                ++count;
+		                if (count > length) {
+		                    // setTimeout(function () {
+		                    	document.getElementById('loading').className="hide";
+		                    	document.getElementById('content').className="";
+		                    // }, 1000);
+		                    // setTimeout(function () {
+		                    //     loadeds(); 
+		                    // }, 1500);
+		                }
+		                // $(".loading-tiao div").width((count - 1) * n + "%");
+		            }
+		        }
+			}
+			preloadimages(preloadimagesArr);
+		</script>
+	
+		<section class="lighting-wrapper">
+			<img src="../images/1.html.png"/>
+			<img src="../images/2.html.png"/>
+		</section>
+		<section class="diamond-wrapper">
+		</section>
+		<!--首页start-->
+		<section class="level-index index">	
+			<div class="title-wrapper"></div>
+			<div class="car-wrapper"></div>
+		</section>
+		<!--首页end-->
+		<!--性别选择start-->
+		<section class="level-sex sexSelect hide">	
+			<dl>
+				<dt>请选择您的性别</dt>
+				<dd>PLEASE CHOOSE YOUR GENDER</dd>
+			</dl>
+			<div id="sexSelect">
+				<span></span>
+				<span></span>
+			</div>
+		</section>
+		<!--性别选择end-->
+		<!--第一关start-->
+		<section class="level-1 hide" id="level1">	
+			<header class="level-title">第一关</header>
+			<dl class="level-intr">
+				<dt>考眼力</dt>
+				<dd>请快速判断出车钥匙是藏在<br/>下面那辆车中？</dd>
+			</dl>
+			<div class="count-down hide">3</div>
+			<div class="car-key level1Game fadeInDownUp"></div>
+			<div class="icon-sprite key-arrow showHide level1Game"></div>
+			<footer>
+				<ul>
+					<li class="left-car carTransition"></li>
+					<li class="center-car carTransition"></li>
+					<li class="right-car carTransition"></li>
+				</ul>
+				<span class="icon-sprite"></span>
+				<span class="icon-sprite"></span>
+				<span class="icon-sprite"></span>
+			</footer>
+			<div class="level-1-result level1Result hide">Yes!</div>
+		</section>
+		<!--第一关end-->
+		<!--第二关start-->
+		<section class="level-2 hide" id="level2">	
+			<header class="level-title">第二关</header>
+			<dl class="level-intr">
+				<dt>考拍照</dt>
+				<dd>当你有了车，摆拍耍帅是很有必要的！<br/>现在就来看看你的拍照技术吧！</dd>
+			</dl>
+			<div class="photo-frame">
+				<img src="../images/15.html.png"/>
+				<div class="people rdmPos9"></div>
+				<div class="icon-sprite level-2-score level2Result hide">0分</div>
+				<div class="icon-sprite yixin-logo level2Result hide"></div>
+			</div>
+		</section>
+		<!--第二关end-->
+		<!--第三关start-->
+		<section class="level-3 level hide" id="level3">
+			<header class="level-title">第三关</header>
+			<dl class="level-intr">
+				<dt>测逼格</dt>
+				<dd>不开车的时候终于可以喝酒呢！<br/>你会选择以下哪种酒？</dd>
+			</dl>
+			<div class="level-3-con">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>	
+		</section>
+		<!--第三关end-->
+
+		<section class="button" id="btn">
+			开始挑战
+		</section>
+	</div>
+</div>
+
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

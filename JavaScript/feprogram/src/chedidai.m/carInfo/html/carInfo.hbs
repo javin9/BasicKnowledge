@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <link rel="apple-touch-icon-precomposed" href='http://img1.bitautoimg.com/jinrong/newmweb/images/size4_w114_h114.png?v=201610191598' />
+
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+
+    <title>基本信息</title>
+    <script type="text/javascript">
+        var CODE_GETTING_URL = '/Validate/GetCode';
+        var CODE_VALIDATING_URL = '/Validate/CheckCode';
+        var USERCENTERURL = 'http://test.i.m.daikuan.com/';
+        var APIURL = 'http://192.168.15.153:8081/';
+        var RESURL = 'http://192.168.145.9:8011/MWeb/';
+        var CDNFileURL = 'http://t.image.bitautoimg.com/chedai/';
+        var BusinessLine = 552;
+        var localCity = {
+            CityId: '201',
+            CityName: '北京',
+            CitySpell: 'beijing',
+            RegionId: '110100'
+        };
+        var paras = { 'carId': '12036', 'carYear': '2011', 'source': '718' };
+    </script>
+
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="yxWrapper">
+    <div id='wx_pic' style='margin:0 auto;display:none;'>
+        <img src='http://192.168.145.9:8011/MWeb/images/pic300.jpg?v=201605171437' />
+    </div>
+    <input name="__RequestVerificationToken" type="hidden" value="8-NI5y57rWJJ6UzcFj0QWGqud3JtFfi4xnZcXzW4RfWJcWM-tYS1bTWestKjhSRCy14L0uoBpYK_RjNdHQdPA9h8Tb6ACnThQYqM09cU2T01" />
+
+    <article class="list font-24">
+        <!-- 头部导航开始 -->
+        <header class="header-bar">
+            <a href="javascript:history.back();"></a>
+            <h1 class="font-nav">车辆信息</h1>
+            <span></span>
+        </header>
+        <script src="http://192.168.145.9:8013/jinrong/assets/headType.m/headTypeCookies.js?v=201605171437"></script>
+        <!-- 头部导航结束 -->
+        <!-- 表单开始 -->
+        <div class="form box_sizing">
+            <div class="input-items box_sizing uf uf-ic" id="selCity">
+                <span class="items-name font-30 dis-block">上牌城市</span>
+                <span class="uf-f1 ut-r mag10RL ut-s font-30 dis-block" data-cityid="201" >北京</span>
+                <input type="hidden" data-cityid="201" value="北京" placeholder="请选择">
+                <i class="right"></i>
+            </div>
+            <div class="input-items box_sizing uf uf-ic" id="selDate">
+                <span class="items-name font-30 dis-block">上牌时间</span>
+                <span class="uf-f1 ut-r mag10RL ut-s font-30 dis-block" data-cityid="201" data-year="2012" data-month="1">2012年1月</span>
+                <input type="hidden" placeholder="请选择" value="2012年1月" data-year="2012" data-month="1">
+                <i class="right"></i>
+            </div>
+            <div class="input-items box_sizing uf uf-ic" id="mileage">
+                <span class="items-name font-30">行驶里程</span>
+                <input class="uf-f1 ut-r font-30 dis-block" value="9" type="text" maxlength="5">
+                <span class="f-gray font-30 form-txt ut-r dis-block">万公里</span>
+            </div>
+
+            <div id="btn_submit" class="btn btn-submit bg-yellow ut-c font-30 f-white">提交</div>
+        </div>
+        <!-- 表单结束 -->
+    </article>
+
+    <div id="maskLayer"></div>
+    <div class="bottom-to-top"><img src='http://192.168.145.9:8011/MWeb/images/scroll-to-top-icon.png?v=201605171437' /></div>
+</div>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

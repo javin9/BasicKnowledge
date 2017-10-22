@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var xincheUrl = 'http://xinche.m.daikuan.com';
+        var getAlixOrdersUrl = '/WeiXinCRM/GetAlixOrders'
+        var detailUrl = ''
+        var planUrl = ''
+        var defaultCarImg = 'http://placeholder.it/200x400'
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<article class="list">
+    <header class="header-bar">
+        <a href="javascript:history.go(-1);"></a>
+        <h1 class="font-nav">完善资质</h1>
+        <span></span>
+    </header>
+
+    <div class="top-tip">
+        填写正确的资质信息，为您精确匹配金融方案
+    </div>
+
+    <!-- 我的资质开始 -->
+    <div class="tap-ctn tap-ctn3" data-id="3">
+        <div id="quality" class="quality">
+            <div>
+                <div class="qua-groups group1">
+                    <div class="qua-header font-26">职业身份</div>
+                    <div class="qua-body">
+                        <a href="javascript:;" class="cur" data-id="0" rel="PackageOccupationTypes">全部</a>
+                    </div>
+                </div>
+                <div class="qua-groups group2">
+                    <div class="qua-header font-26">信用记录</div>
+                    <div class="qua-body">
+                        <a href="javascript:;" class="cur" data-id="0" rel="PackageCreditRecordTypes">全部</a>
+                    </div>
+                </div>
+                <div class="qua-groups group3">
+                    <div class="qua-header font-26">住房记录</div>
+                    <div class="qua-body">
+                        <a href="javascript:;" class="cur" data-id="0" rel="PackageHouseTypes">全部</a>
+                    </div>
+                </div>
+                <div class="qua-groups group4">
+                    <div class="qua-header font-26">社保</div>
+                    <div class="qua-body">
+                        <a href="javascript:;" class="cur" data-id="0" rel="PackageSocialInsuranceTypes">全部</a>
+                        <a href="javascript:;" class="cur" data-id="1" rel="InsuranceSource">有社保</a>
+                        <a href="javascript:;" class="cur" data-id="0" rel="InsuranceSource">无社保</a>
+                    </div>
+                </div>
+                <div class="qua-groups group5">
+                    <div class="qua-header font-26">公积金</div>
+                    <div class="qua-body">
+                        <a href="javascript:;" class="cur" data-id="1" rel="FundsSource">有公积金</a>
+                        <a href="javascript:;" class="cur" data-id="0" rel="FundsSource">无公积金</a>
+                    </div>
+                </div>
+                <div style="height:4rem;"></div>
+            </div>
+        </div>
+        <div class="qua-btn font-30 uf">
+            <div id="ensure" class="ensure ut-c uf-f1">确定</div>
+        </div>
+    </div>
+    <!-- 我的资质结束 -->
+
+</article>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

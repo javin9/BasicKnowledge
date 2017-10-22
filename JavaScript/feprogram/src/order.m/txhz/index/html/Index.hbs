@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <style>
+    </style>
+    <script>
+        var api_url = 'http://shine.m.daikuan.com:8064/';
+         //城市信息
+        var city = {"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":0,"SelectCityName":null,"LocateResultType":2};
+
+        //获取列表
+        var GetPriListUrl =api_url+ "/Privilege/GetPriList/"; //无参数
+        var GetSupportGroupCitiesUrl = 'http://shine.m.daikuan.com:8064/Privilege/GetSupportGroupCities/';
+        var orderAction="http://tencent.test.order.m.daikuan.com/tencent/index";
+        //城市是否支持该套餐检验
+        var CheckPriUrl = api_url+"/Privilege/CheckPri/"; //参数：int packageId,int carId,int cityId
+        //返回值 {Data:true,Message:"",Result:true,RowCount:0}  
+        // Result 是否正确返回，Data：是否支持城市
+
+    </script>
+
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+    <div id="app">
+        <!-- header 
+        <div action="GET-HEADER" data-text="易鑫车贷"></div>-->
+        <div class="index-img"></div>
+        <div id="list"></div>
+
+        <div class="index-text">
+            <h4>一年后可选方案<a>&nbsp;(三选一)</a></h4>
+            <ul>
+                <li>分期买车：按月支付尾款，3年付清</li>
+                <li>更换新车：换辆新车，再租一年</li>
+                <li>不想再开：退还车辆，结束租车</li>
+            </ul>
+            <h4>其他花费</h4>
+            <ul>
+                <li>月租已包含购置税、一年车险等费用</li>
+                <li>需缴纳10%保证金，1年后可退<br />( 医生、律师、教师、公务员免收 )</li>
+            </ul>
+        </div>
+
+        <div class="product-detail" id="product-detail">
+            <nav class="bookmark">
+                <div class="mark active"><span>产品详情</span></div>
+                <div class="mark"><span>申请流程</span></div>
+                <div class="mark"><span>常见问题</span></div>
+            </nav>
+
+            <div class="conwrap">
+                <!-- 产品详情 -->
+                <div class="con p-detail">
+                    <img src="../images/intro1.html.jpg" alt="" />
+                    <img src="../images/intro2.html.jpg" alt="" />
+                </div>
+                <!-- 产品详情 end -->
+
+                <div class="con process">
+                    <h3 class="sec-tit">申请流程</h3>
+                    <ol>
+                        <li><span>1</span>选中爱车，在线下单</li>
+                        <li><span>2</span>客服致电，快速审核</li>
+                        <li><span>3</span>店内签约，新车开走</li>
+                        <li><span>4</span>到期可换可买，灵活选择</li>
+                    </ol>
+                </div>
+
+                <!-- 常见问题 -->
+                <div class="con p-question">
+                    <h3 class="sec-tit">常见问题</h3>
+                    <dl>
+                        <dt>什么是易鑫•开走吧？</dt>
+                        <dd>“易鑫•开走吧”产品是指您仅需支付裸车价的10%首付，无须考虑购置税和保险，无须考虑牌照问题，即可把车开走，每月交很少的租金，既可以用车一年，一年后您可以决定把车买走，或者重新签订合同换新车。</dd>
+                        <dt>一般多久可以开上车？</dt>
+                        <dd>您在线申请我们的产品，一小时内您即可收到是否通过审批的通知以及短信核销码，您考虑好之后即可到店签约支付首付，即可上牌开走新车。</dd>
+                        <dt>“易鑫•开走吧”价格是不是比贷款买车或者租车更合适？</dt>
+                        <dd>贷款买车一般需要30% 的首付以及要 缴纳车辆购置税、保险、抵押费用。而我们“易鑫•开走吧”产品只需10%的首付即可把车开走。某某租车的品牌很大，价格对比我们“易鑫•开走吧”产品，价格是我们的3倍左右。</dd>
+                    </dl>
+                </div>
+                <!-- 常见问题 end -->
+            </div>
+        </div>
+
+        <div class="index-btn">
+            <div id="city_btn" class="btn-left">选择城市</div>
+            {{!--<div class="btn-right">立即申请</div>--}}
+             <div id="commit_btn" class="btn-right no">立即申请</div>
+        </div>
+    </div>
+
+
+
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

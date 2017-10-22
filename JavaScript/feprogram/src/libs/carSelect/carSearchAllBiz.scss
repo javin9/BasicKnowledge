@@ -1,0 +1,112 @@
+@import 'sassHelper/mixin';
+.triangle-down {
+	width: 0;
+    height: 0;
+    border-left: px2rem(6) solid transparent;
+    border-right: px2rem(6) solid transparent;
+    border-top: px2rem(6) solid #666666;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.padding-bottom-10 {
+	padding-bottom:px2rem(10);
+}
+.triangle-up {
+    border-bottom: px2rem(6) solid #666666;
+    border-top:none;
+}
+/*搜索*/
+#carSearchAllBiz-container {
+    position: fixed;
+    z-index: 9991;
+    top: 0px;
+    left: 50%;
+    margin-left: -5rem;
+    .ershouche-hot{
+    	display:none;
+    }
+    .carSearch-hot-block{
+		background:#F5F5F5;
+		color:#333;
+    }
+}
+#carSearchAllBiz-container .wrapper{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background-color: #f2f2ef;
+}
+.select-business{
+	position:absolute;
+	left:0;
+	line-height:px2rem(60);
+	display: block;
+	width:px2rem(120);
+	text-align:center;
+	color:#7F7F7F;
+}
+#carSearchAllBiz-container .carSearch-search-content {
+    position: absolute;
+    right:px2rem(124);
+    left:px2rem(30);
+    padding-left:px2rem(100);
+    box-sizing: border-box;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background:#fff;
+    border: 1px solid #E2E2E2;
+    height: px2rem(64);
+    border-radius:px2rem(5);
+}
+#carSearch-container .scroller{
+    position: absolute;
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+}
+.carSearchAllBiz-close{
+   	height: 0.8rem;
+   line-height: 0.8rem;
+   text-align: center;
+   position: absolute;
+   right:px2rem(30);
+   top: 0;
+   bottom: 0;
+   margin: auto;
+   color: #666666;
+}
+.select-business-list{
+	display:none;
+	position: absolute;
+	left:px2rem(26);
+	top:px2rem(56);
+	z-index:9;
+	height:px2rem(210);
+	width:px2rem(194);
+	background:url(images/popup_group.png) no-repeat left top;
+	background-size: px2rem(194) px2rem(210);
+	box-sizing: border-box;
+	padding-top:px2rem(30);
+	li{
+		line-height:px2rem(87);
+		text-align: center;
+		@include fsize(30);
+	}
+}

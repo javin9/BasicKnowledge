@@ -1,0 +1,131 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+@mixin form-element($icon){
+	::-webkit-input-placeholder {color:$placeholder-color;}
+  :placeholder {color:$placeholder-color;}
+	@include fsize(30);
+  color:$dark-color;
+  display: flex;
+  height: px2rem(110);
+  line-height: px2rem(110);
+  padding:0 px2rem(30);
+  background:#fff;
+
+  &.border{
+    @include borderBottom();
+  }
+
+  &.error{
+    position: relative;
+    &:after{
+      width:px2rem(50);
+      height:100%;
+      content:' ';
+      background: url(./icons/error.png) no-repeat center center;
+      background-size: contain;
+      background-size: px2rem(44);
+    }
+
+    input{
+      color:$main-color;
+    }
+  }
+
+
+  input{
+    text-align: right;
+    margin-right: px2rem(10);
+    border:0;
+  }
+
+  .holder{
+    color:$placeholder-color;
+  }
+
+  >label{
+    span{
+      vertical-align: middle;
+    }
+
+    &:before{
+      content:' ';
+      display: inline-block;
+      background-image: url(./icons/#{$icon}.png);
+      background-repeat: no-repeat;
+      width: px2rem(30);
+      height:px2rem(30);
+      background-size: contain;
+      vertical-align: middle;
+      margin-right: px2rem(20);
+      background-position: center center;
+    }
+  }
+
+  >div{
+    flex:1;
+    text-align: right;
+  }
+}
+
+@mixin form-checkbox{
+	>div >span{
+	  display: inline-block;
+    margin-left: px2rem(60);
+
+    i{
+      display: inline-block;
+      vertical-align: middle;
+      font-style:normal;
+      color:$normal-color;
+    }
+
+    &:before{
+      @include size(px2rem(44));
+      vertical-align: middle;
+      content:' ';
+      display: inline-block;
+      background:url(./icons/unsel.png) no-repeat center center;
+      background-size:contain;
+      margin-right: px2rem(20);
+    }
+
+    &.current:before{
+      background-image: url(./icons/sel.png);
+    }
+	}
+}
+
+@mixin form-select{
+  >div{
+    position: relative;
+    padding-right: px2rem(25);
+  }
+  >div:after{
+    @include arrow(right, px2rem(14));
+    content:' ';
+  }
+}
+
+@mixin modal{
+  width:px2rem(620);
+  box-sizing:border-box;
+  position: absolute;
+  left:50%;
+  top:50%;
+  border-radius:px2rem(12);
+  background: #fff;
+  text-align: center;
+  transform:translateX(-50%) translateY(-50%);
+  z-index: 10000;
+
+  .close{
+    @include size(px2rem(46));
+    content:' ';
+    background: url(./icons/close.png) no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    right:0;
+    top:px2rem(-60);
+  }
+}

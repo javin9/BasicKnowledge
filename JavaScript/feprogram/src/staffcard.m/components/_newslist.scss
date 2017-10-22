@@ -1,0 +1,65 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+.component-newslist {
+	padding-left: px2rem(30);
+	padding-right: px2rem(30);
+
+	&-title {
+		margin-bottom: px2rem(14);
+		@include fsize(36);
+		color: #394043;
+	}
+
+	&-list {
+
+		&-item {
+			margin-bottom: px2rem(14);
+			box-shadow: 0 0 10px #e8e8e8;
+			border-radius: 10px;
+			background-color: #fff;
+			> a {
+				display: block;
+				position:relative;
+				padding: px2rem(12) 0 px2rem(12) px2rem(36);
+				> div {
+					position:relative;
+					width: px2rem(600);
+				}
+				> em {
+					width: px2rem(60);
+					@include arrow(right, 16px, 50px, right, grey);
+				}
+			}
+			h3 {
+				@include fsize(32);
+				color: #444;
+				line-height: map-get($line, xl);
+			}
+			p {
+				margin-bottom: px2rem(10);
+				@include fsize(26);
+				color: #b4b4b4;
+				line-height: map-get($line, l);
+			}
+		}
+	}
+	&-tip {
+		padding: px2rem(20);
+		@include fsize(24);
+		color: $lighter-color;
+		text-align: center;
+	}
+	&-empty {
+		width: 100%;
+		height: px2rem(42);
+		margin: px2rem(236) auto 0;
+		padding-top: px2rem(216);
+		@include fsize(30);
+		color: #394043;
+		line-height: 1.4;
+		text-align: center;
+		background: transparent url(images/empty.png) center 0 no-repeat;
+		background-size: px2rem(292) px2rem(216);
+	}
+}

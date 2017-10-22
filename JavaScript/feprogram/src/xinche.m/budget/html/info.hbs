@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<script>
+    var usercenterUrl = ''
+    //申请流程站点
+    var loanOrderApplyUrl = 'http://test.order.m.daikuan.com/';
+    var listImgTel = 'http://192.168.15.153:8013/mweb/';
+    //车款信息
+    var car = {
+        masterBrandId: "9",
+        masterBrandName: "奥迪",
+        masterBrandLogo: "http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_9_100.png",
+        serialId: "2573",
+        serialName: "A6L",
+        carId: "118151",
+        carPrice: "43.00",
+        purchaseTaxRate: "0.1",
+        carSerialAllSpell: "xinaodia6l",
+        carSerialShowName: "奥迪A6L" //车系（显示）全称
+    };
+    //城市信息
+    var city = {
+        CityId: "201",
+        CityName: "北京",
+        RegionId: "110100",
+        CitySpell: "beijing",
+        SelectCityLevel: "2",
+        SelectCityName: "北京",
+        cityId: "201",
+        cityName: "北京",
+        regionId: "110100",
+        citySpell: "beijing",
+        selectCityLevel: "2",
+        selectCityName: "北京"
+    };
+    //经销商信息
+    var dealer = {
+        dealerId: "",
+        dealerName: "北京4S店平均报价",
+        dealerTel: ""
+    };
+    var channel = "";
+    var source = "";
+
+    var successtar = "http://192.168.15.153:8013/mweb/css/xinche/images/list6.png?v=201701191528";
+    var failstar = "http://192.168.15.153:8013/mweb/css/xinche/images/list7.png?v=201701191528";
+
+    var adviserApi = "http://test.adviserapi.daikuan.com/";
+    var list3 = "http://192.168.15.153:8013/mweb/css/xinche/images/list3.png?v=201701191528";
+    var list4 = "http://192.168.15.153:8013/mweb/css/xinche/images/list4.png?v=201701191528";
+    var list5 = "http://192.168.15.153:8013/mweb/css/xinche/images/list5.png?v=201701191528";
+    var scrollPhotosCount = "0";
+    var curUserId = "0";
+
+    var scrollMask = false;
+    //隐藏贷款成本的城市IDs
+    var noLoanCostCityIds = '201,1502,302';
+
+    var CODE_GETTING_URL = '/api/Login/GetCode';
+    var CODE_VALIDATING_URL = '/api/Login/CheckCode';
+    
+    var APIURL = 'http://testapi.chedai.bitauto.com/';
+    var addLeadsUrl = '/Product/AddLeads'
+</script>
+
+<div id="yxWrapper">
+
+<div id="info">
+        
+    <header class="header-bar">
+        <a href="javascript:void(0);" v-on:click="goBack" class="nav-back"></a>
+        <div id="searchcar" class="search-car" v-on:click="searchCar">
+            <span class="icon-search ut-s">请输入品牌或车型</span>
+        </div>
+        <div id="selectCity" class="city-box" data-cityid="201" v-on:click="changeCity">
+            <div id="localText" class="ut-s city-name">北京</div>
+        </div>
+        <div id="tools-nav"></div>
+        <div id="navTips" class="nav-tips hide">
+            <a href="#"><i></i>首页</a>
+            <a href="#"><i></i>我的申请</a>
+        </div>
+    </header>
+
+    <!-- 车辆信息 -->
+    <section class="block-group car-det">
+        <div class="det-top uf">
+            <a href="javascript:void(0);">
+                <!-- 没有图片 -->
+                <img src="../../../common.m/images/no_car.html.jpg">
+                <div class="img-num">630张</div>
+            </a>
+            <div class="uf-f1">
+                <div v-on:click="changeCar" class="car-name">奔驰B级 2016款 B2001.6T双离合 1.8T豪华版</div>
+                <div class="car-price">北京4S店平均报价：<span id="baojia" class="border-b">￥195,000</span></div>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="det-bottom uf">
+            <div class="uf-f1 uf">
+                <span class="uf-f4">油耗：<font>6.5/100km</font></span>
+                <span class="uf-f3">排量：<font>1.8T</font></span>
+            </div>
+            <div class="canshu">参数配置</div>
+        </a>
+    </section>
+
+    <section class="user-info">
+        <mobile-verify mobile="18575832500" v-bind:get-authcode-error-callback="getAuthcodeErrorCallback" v-bind:disabled="isSubmiting" v-on:submit="submit" v-bind:authcode-length="4"></mobile-verify>
+        <p class="tips">验证后将为您自动注册并登录，以便了解贷款进度</p>
+    </section>
+
+    <car-selector v-bind:only-search="carSearchView" search-placeholder="真正0首付， 为您鑫动" search-default-link="/test" v-on:callback="selectCarCallback" v-bind:level="carLevel"></car-selector>
+</div>
+
+</div>
+<div id="maskLayer"></div>
+<div class="bottom-to-top">
+    <img src='http://img2.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=201701231140' />
+</div>
+
+
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

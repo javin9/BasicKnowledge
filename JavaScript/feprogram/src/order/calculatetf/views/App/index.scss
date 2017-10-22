@@ -1,0 +1,61 @@
+@import 'sassHelper/mixin';
+
+.root-header {
+	width: 100%;
+	background: #F5F5F6;
+	> span {
+		display: block;
+		width: 1200px;
+		height: 100px;
+		margin: 0 auto;
+		background: url(logo.png) no-repeat left center;
+	}
+}
+
+.panel-wrapper{
+	@include clearfix;
+	width: 1200px;
+	margin:0 auto;
+
+	.panel{
+		width: 600px;
+		box-sizing:border-box;
+		float: left;
+
+		&.panel-info h3{
+			background:url(icon_info.png) no-repeat left center;
+		}
+		&.panel-result h3{
+			// background: #E9474D url(icon_res.png) no-repeat left center;
+			background-color: #E9474D;
+			color: #fff;
+		}
+
+		&.panel-result .content{
+			background:#F8F8F8;
+		}
+
+		h3{
+			font-weight: normal;
+			color:#000;
+			font-size:16px;
+			line-height: 50px;
+			height:50px;
+			text-indent: 25px;
+
+			em{
+				font-style:normal;
+				font-size:14px;
+			}
+		}
+
+		.content{
+			width: 100%;
+		}
+	}
+}
+#Header,
+#Footer,
+.footer-bottom {
+	display: none;
+}

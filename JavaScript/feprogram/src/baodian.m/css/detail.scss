@@ -1,0 +1,111 @@
+@import 'sassHelper/mixin';
+@import "varibles";
+@import "mixin";
+
+// ref: https://bugs.webkit.org/show_bug.cgi?id=FontBoosting
+body, body * {
+    max-height: 1000000px;
+}
+
+@include reset-header;
+
+article{
+	background:#fff;
+	padding:px2rem(30) px2rem(20);
+	line-height:$line-height;
+
+	h1{
+		@include fsize(48);
+		color:$font-dark;
+	}
+
+	h6{
+		@include fsize();
+		color:$font-light;
+		margin:px2rem(30) 0;
+	}
+
+	iframe{
+		width: 100%;
+		height:px2rem(560);
+		height:498/640*100vw;
+	}	
+
+	embed,img,iframe{
+		max-width:100%;
+	}
+
+	.des{
+		@include clearfix;
+		margin:px2rem(20) 0 px2rem(30);
+		color:$font-light;
+
+		span{
+			@include fsize();
+		}
+
+		span:first-child{
+			float: left;
+		}
+
+		span:last-child{
+			float: right;
+		}
+	}
+
+	.content{
+		@include fsize(30);
+		color:$font-dark;
+
+		p{
+			overflow: hidden;
+		}
+
+		img{
+			max-width:100%;
+		}
+	}
+}
+
+aside{
+	margin-top: px2rem(20);
+	background:#fff;
+	line-height:$line-height;
+
+	a{
+		display: block;
+
+		&:first-child{
+			border-bottom:1px solid $border-light;
+		}
+
+		&:last-child{
+			border-bottom:0;
+		}
+	}
+
+	dl{
+		@include clearfix;
+		padding:px2rem(20) px2rem(24);
+	}
+	
+	dt{
+		@include fsize(30);
+		color:$font-light;
+		margin-right: px2rem(20);
+		float: left;
+	}
+
+	dd{
+		overflow: hidden;
+
+		h6{
+			@include fsize(30);
+			color:$font-dark;
+		}
+
+		p{
+			color:$font-light;
+		}
+	}
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <link rel="apple-touch-icon-precomposed" href='http://img1.bitautoimg.com/jinrong/newmweb/images/size4_w114_h114.png?v=201610191598' />
+
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+
+    <title>立即申请</title>
+    <script type="text/javascript">
+        var CODE_GETTING_URL = '/Validate/GetCode';
+        var CODE_VALIDATING_URL = '/Validate/CheckCode';
+        var USERCENTERURL = 'http://i.m.daikuan.com';
+        var APIURL = 'http://api.chedai.bitauto.com/';
+        var RESURL = 'http://img1.bitautoimg.com/jinrong/newmweb/';
+        var CDNFileURL = 'http://img1.bitautoimg.com/chedai/';
+        var BusinessLine = 552;
+        var url_addInfoInStep1 = '/Mortgage/AddMortgageOrder';
+        var userMobile = '13581843832';
+
+    </script>
+
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="yxWrapper">
+    <div id='wx_pic' style='margin:0 auto;display:none;'>
+        <img src='http://img2.bitautoimg.com/jinrong/newmweb/images/pic300.jpg?v=201702061000' />
+    </div>
+    <input name="__RequestVerificationToken" type="hidden" value="kwtKkM6RdjRkwjdwGh2sxBAdwI_RrFr3ecxMNge3ZQitNCP3I-3DBIBzVFNXJz3_Tkid6sC7X5-kvPbEeYYYWWk3fRQhXa82-TOfUheXl-I1" />
+
+
+
+    <header class="header-bar">
+        <a id="backA" href="javascript:void(0)"></a>
+        <h1 class="font-nav">立即申请</h1>
+        <span class="font-title"></span>
+    </header>
+    <script src="http://img1.bitautoimg.com/jinrong/assets/headType.m/headTypeCookies.js?v=201702061000"></script>
+    <section id="registerMain">
+        <ul class="form_reg">
+            <li class="ipt_item uf uf_ac">
+                <label>姓名</label>
+                <input name="Name" id="name" type="text" class="uf_f1" placeholder="请输入姓名" value="尚斌杰">
+            </li>
+
+            <li class="ipt_item uf uf_ac">
+                <label>手机号</label>
+                <input name="Mobile" id="mobile" type="tel" maxlength="11" class="uf_f1" placeholder="请输入手机号" value="13581843832">
+            </li>
+
+            <li class="ipt_item uf uf_ac hide">
+                <label>验证码</label>
+                <input name="Code" id="ValidateCode" type="tel" maxlength="6" class="uf_f1" placeholder="请输入验证码">
+                <a href="javascript:void(0);" id="GetValidateCode" class="btn_vali c_blue">获取验证码</a>
+            </li>
+
+            <li class="vali_txt" id="valiTxt"></li>
+
+        </ul>
+
+        <div class="u_wrap">
+            <a href="javascript:void(0);" id="submit" class="btn_main">提交</a>
+        </div>
+
+        <article class="msg_reg">
+            声明：本司非常重视对用户隐私权的保护，用户姓名手机号等个人资料为用户重要隐私，本站承诺不会将个人资料用作它途，仅用于申请抵押贷款，不会以任何形式泄露给其他人员或机构。
+        </article>
+    </section>
+
+
+    <div id="maskLayer"></div>
+    <div class="bottom-to-top"><img src='http://img3.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=201702061000' /></div>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

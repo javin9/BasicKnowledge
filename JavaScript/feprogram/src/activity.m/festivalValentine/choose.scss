@@ -1,0 +1,79 @@
+@import './css/mixin';
+@import './css/common.scss';
+@import './css/main.scss';
+
+body {
+	background-color: #EF3B78;
+}
+
+#valentineMain {
+
+	width: 100%;
+	height: 100%;
+	background:transparent url('./images/basement-choose.jpg') left px2rem(90) no-repeat;
+	background-size: cover;
+
+	.main {
+
+		.main_wrap {
+
+			padding-top: px2rem(30);
+
+			.btn_choose {
+				display: block;
+				height: px2rem(394);
+				margin: 0 auto px2rem(30);
+				background-size: 100% auto!important;
+
+				&.btn_partner {
+					width: px2rem(692);
+					background:transparent url('./images/btn-1.png') left top no-repeat;
+
+					&:active {
+						background-position: 0 px2rem(-395);
+					}
+				}
+
+				&.btn_single {
+					width: px2rem(669);
+					background:transparent url('./images/btn-2.png') left top no-repeat;
+					
+					&:active {
+						background-position: 0 px2rem(-380);
+					}
+				}
+			}
+		}
+	}
+
+	.tip {
+		// margin-top: px2rem(60);
+		// margin-top: px2rem(-30);
+		text-align: center;
+		color: #fff;
+		@include fsize(28);
+
+		&.fix {
+			position: absolute;
+			left: 0;
+			bottom: px2rem(170);
+			width: 100%;
+		}
+	}
+
+	.note {
+		width: px2rem(448);
+		height: px2rem(55);
+		// margin: px2rem(98) auto 0;
+		margin: px2rem(10) auto;
+		background:transparent url('./images/note.png') left top no-repeat;
+		background-size: 100% auto!important;
+
+		&.fix {
+			position: absolute;
+			bottom: px2rem(42);
+			left: px2rem(151);
+		}
+	}
+
+}

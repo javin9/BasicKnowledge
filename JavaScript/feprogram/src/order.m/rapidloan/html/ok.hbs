@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <script type="text/javascript">
+        var City = { "CityId": 201, "RegionId": 110100, "CityName": "北京", "CitySpell": "beijing", "SelectCityLevel": 2, "SelectCityName": "北京市", "LocateResultType": 0 };
+        var CODE_GETTING_URL = "/rapidloan/GetCode";
+        var CODE_VALIDATING_URL = "/rapidloan/CheckCode";
+        var RecProductsUrl = '/rapidloan/RecProductsDisplay';
+        var ADD_ORDER_INFO = '/rapidloan/AddOrderInfo'
+    </script>
+
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+    <div id="yxWrapper">
+        <header class="header-bar">
+                <a href="javascript:void(0);" onclick="window.history.go(-1);return false;"></a>
+            <h1 class="font-nav">提交成功</h1>
+            <span></span>
+        </header>
+        <div class="ok-icon"></div>
+        <div class="ok-tip">恭喜您已提交成功</div>
+    </div>
+
+
+                <script src="{{htmlWebpackPlugin.options.common}}"></script>
+                {{{htmlWebpackPlugin.options.footer}}}
+                <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

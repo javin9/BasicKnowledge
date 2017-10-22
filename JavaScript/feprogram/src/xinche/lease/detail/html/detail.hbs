@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script>
+        var localCity={"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":2,"SelectCityName":"北京"};
+        var ipLocationInfo={"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":2,"SelectCityName":"北京"};
+
+        var deviceId = "8f00a536-78ce-4681-ae67-82fe37872cf7";
+        var loanUserId = 0;
+        var APIURL = "http://api.chedai.bitauto.com/";
+
+        var car = {
+            masterBrandId: "30",
+            masterBrandName: "日产",
+            serialId: "1679",
+            serialName: "骊威",
+            carId: "115137",
+            carPrice: "9.24",
+            purchaseTaxRate: ""
+        };
+        //城市信息
+        var city = {
+            cityId: "201",
+            cityName: "北京",
+            citySpell: "beijing",
+            regionId: "110100",
+            selectCityLevel: "2",
+            selectCityName: "北京"
+        };
+        //产品
+        var product = {
+            productID: "109974",
+            packageID: "4377",
+            productPromotionId: "0"
+        };
+        //经销商信息
+        var dealer = {
+
+            dealerId: "",
+            dealerName: "北京4S店平均报价",
+            dealerTel: ""
+        };
+        var channel = "";
+        var source = "969";
+        var companyID = "339";
+        var adviserApi = "http://adviserapi.daikuan.com/";
+
+        var defaultPhoto = 'http://img4.bitautoimg.com/jinrong/newpcweb/css/xinche/images/default-photo.png?v=201702241752';
+
+        var totalComments = '122';
+        var isFromZT = 'False';
+
+        // var loanOrderApplyUrl = "http://sq.daikuan.com//CarRentalApply/Index";
+        var loanOrderApplyUrl = "http://test.order.daikuan.com/CarRentalApply/Index";
+        var GetRecentOrders = '';
+        var BusinessLine = 550;
+        var ADVISERAPIURL = "http://test.adviserapi.daikuan.com/";
+        var shop = "";
+        //一次性付息
+        var isLumpPayment = 'False';
+        //保证金产品
+        var isDeposit = 'False';
+
+    </script>
+</head>
+<body>
+
+<!-- {{{htmlWebpackPlugin.options.header}}} -->
+<header id="Header">
+    <div class="header-top">
+        <div class="hd-top-con">
+            <p>服务电话: 4000-169-169（9:00-21:00）</p>
+            <ul>
+                <li>欢迎来到易鑫车贷</li>
+                <li id="loginLi" data-trackerid="x001denglu"></li>
+                <li><a href="http://sq.daikuan.com//rapidloan" target="_blank" data-trackerid="x001jisudaikuan">极速贷款</a></li>
+                <li class="xc-hd-mark"></li>
+                <li class="xc-phone"><a href="http://www.daikuan.com/app"><i></i>App<div class="qr-code-mweb"></div><span></span></a></li>
+                <li class="xc-hd-mark hd-mark-special"></li>
+                <li class="xc-pub">
+                    <i></i>公众号
+                    <div class="qr-code-weixin qrCodeWeixin">
+                        <img src="http://img1.bitautoimg.com/chedai/86ea5e95-6fc6-45cc-87e3-7bc4796e6026.jpg" />
+                    </div>
+                    <span></span>
+                </li>
+                <li class="xc-hd-mark hd-mark-special"></li>
+                <li class="xc-about"><a href="http://www.daikuan.com/home/About?cityspell=beijing#who">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="yixin-logo"><a href="http://www.daikuan.com" data-trackerid="x001logo"></a></div>
+        <div class="sel-city"><div class="sel-city-box" data-trackerid="x001chengshi"><span class="city-con">北京</span><i class="downArrow-icon"></i></div></div>
+        <nav id="HeaderNav">
+            <ul>
+                <li id="xinche_index"><a href="/" data-trackerid="x001xinche">新车贷款</a><span><i>超低月供</i><b></b></span></li>
+                <li id="zuche_index" class="current"><a href="/lease/" data-trackerid="x001zuche">开走吧</a><span><i>首付1成</i><b></b></span></li>
+                <li id="ershouche_index"><a href="http://test.ershouche.daikuan.com/" data-trackerid="x001ershouche">二手车贷款</a><span><i>优质车源</i><b></b></span></li>
+                <li id="baoxian_index"><a href="http://test.baoxian.daikuan.com" data-trackerid="x001baoxian">汽车保险</a><span><i>优惠更多</i><b></b></span></li>
+                <li id="chezhudai_index"><a href="http://test.chedidai.daikuan.com/" data-trackerid="x001chedidai">车抵贷</a><span><i>高效服务</i><b></b></span></li>
+                <li id="qijiandian_index"><a href="http://test.shop.daikuan.com" data-trackerid="x001shop">旗舰店</a></li>
+                <li id="xinyongka_index"><a href="http://test.xinyongka.daikuan.com" data-trackerid="x001xinyongka">车主信用卡</a></li>
+                <li id="tiyandian_index"><a href="http://dev.xinche.pc.daikuan.com//ExperienceStore/" target="_blank">易鑫体验店</a></li>
+            </ul>
+        </nav>
+        <div class="login-status">
+            <a href="http://i.daikuan.com" target="_blank" data-trackerid="x001wodeshenqing">我的申请</a><i></i>
+        </div>
+    </div>
+</header>
+
+<div class="detail-wrapper clrfix" id="Content">
+
+    <nav class="path-nav">
+        <div class="breadcrumb">
+            <a href="/">首页</a>
+            <i> &gt; </i>
+            <a href="/beijing/suvgainianche-3453/m121181?source=">车型列表页</a>
+            <i> &gt; </i>
+            <span>POLO 2016款 1.4L 自动风 尚版</span>
+        </div>
+    </nav>
+
+    <section class="car-infomation">
+        <div class="photo-wrap">
+            <!-- 车型图片缩略图start -->
+            <div class="carphoto">
+                <div class="scroll-photos">
+                    <ul id="SPhotosList" >
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160skswm.jpg" >
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160skswq.jpg" >
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sjlyz.jpg">
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sksx4.jpg" >
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160skswm.jpg" >
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160skswq.jpg" >
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sjlyz.jpg">
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sksx4.jpg" >
+                        </li>
+
+                    </ul>
+                    <ul id="SPhotosBtn" style="width: 1456px;">
+                        <li class="current">
+                            <img src="http://img5.taoche.cn/1b/02160skswm.jpg">
+                            <em></em>
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160skswq.jpg">
+                            <em></em>
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sjlyz.jpg">
+                            <em></em>
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sksx4.jpg">
+                            <em></em>
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sksxk.jpg">
+                            <em></em>
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sksya.jpg">
+                            <em></em>
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sksyk.jpg">
+                            <em></em>
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sksys.jpg">
+                            <em></em>
+                        </li>
+
+                    </ul>
+                    <div class="photos-prev-btn nohover" style="z-index: 2">
+                        <a href="javascript:void(0);"><span>向左</span></a>
+                    </div>
+                    <div class="photos-next-btn" style="z-index: 2">
+                        <a href="javascript:void(0);"><span>向右</span></a>
+                    </div>
+                    <div class="scroll-photos-info" style="z-index: 2;">
+                        共有 16 张图片
+                    </div>
+                    <a href="javascript:void(0);" class="photos-focus-prev" style="z-index: 2; display: none;">
+                        <i></i><em>上一张</em>
+                    </a>
+                    <a href="javascript:void(0);" class="photos-focus-next" style="z-index: 2; display: inline;">
+                        <i></i><em>下一张</em>
+                    </a>
+                </div>
+
+            </div>
+            <!-- 车型图片缩略图end -->
+        </div>
+        <div class="text-wrap">
+            <h3>大众 朗逸 2013款 经典款 1.6L 手自一体</h3>
+            <div class="price">厂商指导价<em>12.49万</em></div>
+            <dl class="detail">
+                <dt>先开一年<em>（首年花费）</em></dt>
+                <dd>
+                    <p>
+                        <span class="phrase"><span>首次支付</span><strong>5.29万</strong></span>
+                        <span class="phrase"><span>月租</span><strong>5210元</strong></span>
+                        <span class="phrase"><span>期限</span><strong>24期</strong></span>
+                    </p>
+                    <ul>
+                        <li>月租已包含购置税、一年车险等费用</li>
+                        <li>支付需缴纳10%保证金，一年后可退可抵（医生、律师、教师、公务员免收保证金）</li>
+                    </ul>
+                </dd>
+            </dl>
+            <div class="city">
+                <span class="tit">购车城市</span>
+                <span class="sel-city2">
+                    <span class="sel-city-box2" data-trackerid="x001chengshi">
+                        <span class="city-con">北京</span>
+                        <i class="downArrow-icon"></i>
+                    </span>
+                    <span class="log">暂不支持该城市，可选择临近城市提车</span>
+                </span>
+            </div>
+            <dl class="after">
+                <dt>一年后可选方案<em>（二选一）</em></dt>
+                <dd><em>分期买车</em>3654元X36期</dd>
+                <dd><em>换辆新车</em>相同方案，再开一年</dd>
+            </dl>
+            <div class="btnwrap">
+                <a href="javascript:void(0)" class="apply-btn disabled">暂不支持该城市</a>
+                <a href="javascript:void(0)" class="apply-btn">立即开走</a>
+                <a href="javascript:void(0)" class="advice-btn"><em>4008-169-169</em> 转 <em>1250/2340</em></a>
+            </div>
+        </div>
+    </section>
+    <section class="details-con" id="details-con">
+        <!--吸顶部分start-->
+        <section class="product-intro" id="ceilingBox">
+            <div class="product-intro-title">
+                <a class="cur first-child" data-name="loanDetails" href="javascript:void(0)">产品详情</a>
+                <a data-name="userEvaluate" href="javascript:void(0)">最近成交 <span>(122)</span></a>
+                <a data-name="commonProblem" href="javascript:void(0)">常见问题</a>
+            </div>
+
+            <!--正常-->
+            <div class="btn-wrap">
+                <span class="tag">首次支付<em>1.25万</em></span>
+                <span class="tag">月租<em>999元X12期</em></span>
+                <a class="apply-btn" href="javascript:void(0);">立即开走</a>
+            </div>
+        </section>
+        <!--吸顶部分end-->
+        <!--详情左侧部分start-->
+        <section class="details-left-box">
+            <!--贷款详情start-->
+            <div id="loanDetails">
+                <p><img src="http://img1.bitautoimg.com/chedai/c6a001a0-f025-4d01-a911-b15b9936586e.jpg" /><img src="http://img1.bitautoimg.com/chedai/761619a6-0079-4bd5-8ed1-c4793ed36e76.png" /><img src="http://img1.bitautoimg.com/chedai/19ba35e1-de62-4146-bf70-471ac50e2684.jpg" /><img src="http://img1.bitautoimg.com/chedai/7c7b3ab9-348f-47b4-99a2-d49f521a9bec.png" /><img src="http://img1.bitautoimg.com/chedai/b53d0584-16eb-4957-ac65-32cd0ee9eb6f.png" /><img src="http://img1.bitautoimg.com/chedai/87c591e4-a6ed-4c61-a447-ed6002266499.jpg" /></p>
+            </div>
+            <!--贷款详情end-->
+            <!--申请流程start-->
+            <div id="loanProcess">
+                <h3><span>申请流程</span></h3>
+                <div class="process">
+                    <ol>
+                        <li>选中爱车<br />在线下单</li>
+                        <li>客服致电<br />快速审核</li>
+                        <li>店内签约<br />新车开走</li>
+                        <li>到期可换可买<br />灵活选择</li>
+                    </ol>
+                </div>
+            </div>
+            <!--申请流程end-->
+            <!-- 用户评价start -->
+            <div id="userEvaluate">
+                <h3><span>最近成交</span></h3>
+                <div id="pagedCommentDiv">
+                    <table>
+                        <tr>
+                            <th>购车人</th>
+                            <th>所在城市</th>
+                            <th>选择车型</th>
+                            <th>成交时间</th>
+                        </tr>
+                        <tr>
+                            <td>138****3244</td>
+                            <td>北京</td>
+                            <td>大众 朗逸 2013款 1.6L 自动 风尚型</td>
+                            <td>2017-01-06</td>
+                        </tr>
+                        <tr>
+                            <td>138****3244</td>
+                            <td>北京</td>
+                            <td>大众 朗逸 2013款 1.6L 自动 风尚型</td>
+                            <td>2017-01-06</td>
+                        </tr>
+                        <tr>
+                            <td>138****3244</td>
+                            <td>北京</td>
+                            <td>大众 朗逸 2013款 1.6L 自动 风尚型</td>
+                            <td>2017-01-06</td>
+                        </tr>
+                        <tr>
+                            <td>138****3244</td>
+                            <td>北京</td>
+                            <td>大众 朗逸 2013款 1.6L 自动 风尚型</td>
+                            <td>2017-01-06</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="listPagination" class="list_pagination"></div>
+            </div>
+            <!-- 用户评价end -->
+            <!--易问答start-->
+            <div id="commonProblem">
+                <h3><span>常见问题</span></h3>
+                <dl class="qa-list">
+                    <dt>易鑫车贷靠谱吗？</dt>
+                    <dd>易鑫车贷是由腾讯、京东、百度、易车四家上市公司共同投资超过60亿的互联网汽车金融平台，提供优质低价的自营金融产品，同时汇聚了各大汽车金融机构的融资方案，为您提供全程1对1免费服务。</dd>
+                    <dt>易鑫车贷靠谱吗？</dt>
+                    <dd>易鑫车贷是由腾讯、京东、百度、易车四家上市公司共同投资超过60亿的互联网汽车金融平台，提供优质低价的自营金融产品，同时汇聚了各大汽车金融机构的融资方案，为您提供全程1对1免费服务。</dd>
+                    <dt>易鑫车贷靠谱吗？</dt>
+                    <dd>易鑫车贷是由腾讯、京东、百度、易车四家上市公司共同投资超过60亿的互联网汽车金融平台，提供优质低价的自营金融产品，同时汇聚了各大汽车金融机构的融资方案，为您提供全程1对1免费服务。</dd>
+                </dl>
+            </div>
+            <!--易问答end-->
+
+            <!--广告位start-->
+            <!--广告位end-->
+        </section>
+        <!--详情左侧部分end-->
+    </section>
+</div>
+
+<!-- 立即申请表单start -->
+<form action="http://sq.daikuan.com/" method="post" id="orderInfoForm">
+
+    <input type="hidden" name="PageTitle" value="">
+    <input type="hidden" name="SourceUrl" value="">
+    <input type="hidden" name="SourceType" value="">
+    <input name="Orders" type="hidden" value="">
+    <input name="CarId" type="hidden" value="">
+    <input name="CityId" type="hidden" value="">
+    <input name="CarPrice" type="hidden" value="">
+    <input name="Source" type="hidden" value="">
+    <input name="Channel" type="hidden" value="605">
+    <input name="DealerId" type="hidden" value="">
+    <input name="DealerName" type="hidden" value="">
+    <input name="Line" type="hidden" value="">
+    <input name="DealerTelphone" type="hidden">
+    <input name="SourceDicName" type="hidden" value="">
+    <input name="From" type="hidden" value="">
+
+    <input name="DownPayment" type="hidden" value="">
+    <input name="LoanAmount" type="hidden" value="">
+    <input name="AdviserId" type="hidden" value="">
+    <input name="Shop" type="hidden" value="">
+    <input name="OrderType" type="hidden" value="1">
+</form>
+<!-- 立即申请表单end -->
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

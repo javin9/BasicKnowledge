@@ -1,0 +1,27 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+.component-nav{
+	> span{
+		font-size:14px;
+		color:$dark-color;
+
+		strong{
+			color:$main-color;
+			font-weight: normal;
+		}
+
+    a {
+      display: inline-block;
+      color:$main-color;
+      border: 1px solid $main-color;
+      border-radius: 2px;
+      padding: 5px 10px;
+      margin-left: 6px;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0;
+    }
+	}
+
+}

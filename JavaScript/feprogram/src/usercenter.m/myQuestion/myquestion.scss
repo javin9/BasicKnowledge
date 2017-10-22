@@ -1,0 +1,113 @@
+@import 'sassHelper/mixin';
+
+$c0: #000;
+$c6: #666;
+$cf: #fff;
+
+body {
+	background-color: $cf;
+}
+
+.ques_list {
+
+	.ques_item {
+		padding: px2rem(40) px2rem(30);
+		border-bottom: 1px solid #ececec;
+
+		h3 {
+			@include fsize(30);
+			color: $c0;
+			line-height: 1.5;
+			padding-left: px2rem(50);
+			background: #fff url(./images/detail18.png) 0 px2rem(8) no-repeat;
+			background-size: px2rem(30) px2rem(30);
+		}
+
+		p {
+			margin-top: px2rem(20);
+			margin-bottom: px2rem(20);
+			padding-left: px2rem(50);
+			color: $c6;
+			line-height: 1.54;
+			@include fsize(26);
+			background: #fff url(./images/detail19.png) 0 px2rem(6) no-repeat;
+			background-size: px2rem(30) px2rem(30);
+		}
+
+		aside {
+			padding-left: px2rem(34);
+			color: $c6;
+			line-height: 1.5;
+			@include fsize(24);
+
+			span {
+				margin-right: px2rem(16);
+				margin-left: px2rem(16);
+			}
+
+			b {
+				font-weight: normal;
+			}
+		}
+	}
+
+	.ques_loading {
+		display: none;
+		padding-bottom: px2rem(40);
+
+		img {
+		    display: block;
+		    margin: 0 auto;
+		    width: px2rem(160);
+		    height: px2rem(160);
+		}
+
+		&.first {
+		    position: fixed;
+		    left: 50%;
+		    top: 50%;
+		    margin-left: px2rem(-80);
+		}
+	}
+
+	.ques_tipbox {
+	    display: none;
+	    width: 100%;
+	    text-align: center;
+	    padding-top: px2rem(20);
+	    padding-bottom: px2rem(30);
+	    color: #c4c4c4;
+	}
+
+	.ques_nocont {
+		display: none;
+		padding-top: px2rem(230);
+
+		img {
+			display: block;
+			margin: 0 auto;
+			width: px2rem(244);
+			height: px2rem(220);
+		}
+	}
+}
+
+[data-dpr="1"] .ques_list .ques_item h3 {
+	background-position: 0 3px;
+}
+[data-dpr="2"] .ques_list .ques_item h3 {
+	background-position: 0 8px;
+}
+[data-dpr="3"] .ques_list .ques_item h3 {
+	background-position: 0 10px;
+}
+
+[data-dpr="1"] .ques_list .ques_item p {
+	background-position: 0 0px;
+}
+[data-dpr="2"] .ques_list .ques_item p {
+	background-position: 0 6px;
+}
+[data-dpr="3"] .ques_list .ques_item p {
+	background-position: 0 6px;
+}

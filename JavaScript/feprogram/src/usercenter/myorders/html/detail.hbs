@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script>
+    var locationCityId = 201;
+        var xinche='http://www.daikuan.com';
+        var citySpell = 'beijing';
+        var USERCENTERURL='https://i.daikuan.com';
+        var APIURL = "//webapi.daikuan.com/";
+        var RESURL = "//img1.yixinfinance.com/jinrong/newpcweb/";
+        var CODE_GETTING_URL='/Login/GetCode';
+        var CODE_VALIDATING_URL='/Login/CheckCode';
+        var domainQueue = ["img1.bitautoimg.com","img2.bitautoimg.com","img3.bitautoimg.com","img4.bitautoimg.com"];
+        var BusinessLine = 550;
+
+       var curOrderInfo =
+       {
+           stateId: "140",
+           stateName: "系统审核通过",
+           childOrderId: "551462190448960",
+           orderId: "611462190488551"
+       };
+        //贷款顾问id
+        var adviserId = "0";
+        var childOrderId = "551462190448960";
+        var adviserUrl = 'https://adviserapi.daikuan.com//getadviser/';
+
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<section class="pagewrap clrfix">
+
+    <div class="page_bread">
+        <a href="/">个人中心首页</a> &gt; 订单详情
+    </div>
+
+    <div class="page_detail">
+
+        <h1 class="page_title">订单详情</h1>
+
+        <!-- 订单概况 start -->
+        <div class="deta_item">
+            <header class="deta_item_head">
+                <h2>订单概况</h2>
+            </header>
+            <section class="deta_item_body">
+                <div class="data_step">
+                    <ul class="deta_step_list">
+
+
+                    </ul>
+                </div>
+                <div class="deta_p">
+                    <span>订单编号：551462190448960</span>
+                    <span>当前状态：提交成功</span>
+                    <a  href="/MyComment/UserComment?childOrderId=551462190448960" class="btn_light"><span style="padding:10px;">评价</span></a>                    
+                        <a href="javascript:void(0);" class="btn_light show_shareorder_QRCode"><span style="padding:10px;">来晒单</span></a>
+                </div>
+                <div class="deta_well deta_welldark">
+                    <ul>
+                        <li>下&nbsp;单&nbsp;人：<span>卢秋</span></li>
+                        <li>购车城市：<span>无锡市</span></li>
+                    </ul>
+                </div>
+                <div class="deta_pay clrfix">
+                                    </div>
+            </section>
+        </div>
+        <!-- 订单概况 end -->
+        <!-- 购车金额 start -->
+        <div class="deta_item">
+            <header class="deta_item_head">
+                <h2>购车金额计算</h2>
+                <aside class="sidetxt">参考报价：<span class="highlight">44.22万</span></aside>
+            </header>
+            <section class="deta_item_body">
+                <div class="deta_well">
+                    <ul class="style_depart">
+                            <li class="fz16">
+                                首付30%
+                                <span>13.27万</span>
+                            </li>
+                    </ul>
+                </div>
+                    <div class="deta_well" style="border-top: 1px solid #eee;">
+                        <ul class="style_depart">
+                            <li>贷款额度：<span>30.95万</span></li>
+                            <li>总成本：<span>4.49万</span></li>
+                            <li>月&nbsp;&nbsp;&nbsp;供：<span>9845.09元（36 期）</span></li>
+                        </ul>
+                    </div>
+            </section>
+        </div>
+        <!-- 购车金额 end -->
+        <!-- 商品信息 start -->
+        <div class="deta_item">
+            <header class="deta_item_head">
+                <h2>商品信息</h2>
+            </header>
+            <section class="deta_item_body">
+                <div class="deta_prod">
+                    <img src="//img4.bitautoimg.com/autoalbum/files/20141029/897/0518288975_1.jpg" alt="" class="deta_prod_img" />
+                    <dl class="detail">
+                        <dt>宝马 X3 xDrive20i X设计套装</dt>
+                        <dd>参考报价：<span class="highlight">44.22万</span></dd>
+                        <dd>金融产品：<span>汽车分期 招商银行</span></dd>
+                    </dl>
+                </div>
+            </section>
+        </div>
+
+        <!-- 商品信息 end -->        
+        <!-- 金融顾问 start -->
+        <div class="deta_item" id="adviser_div">
+            <header class="deta_item_head">
+                <h2>金融顾问</h2>
+            </header>
+            <section class="deta_item_body">
+                <div class="financial_box" id="financialData"></div>
+            </section>
+        </div>
+        <!-- 金融顾问 end -->
+        <!-- 订单详细跟踪 start -->
+        <div class="deta_item">
+            <header class="deta_item_head">
+                <h2>订单详细跟踪</h2>
+            </header>
+            <section class="deta_item_body">
+                <div class="deta_flow">
+                    <div class="deta_flow_header">
+                        <ul class="flow_th">
+                            <li class="w10"></li>
+                            <li class="w11">处理时间</li>
+                            <li class="w12">订单处理详情</li>
+                            <li class="w13">操作人</li>
+                        </ul>
+                    </div>
+                    <div class="deta_flow_body" id="detaFlowBody">
+                            <ul class='flow_td'>
+                                <li class="w10"></li>
+                                <li class="w11">暂无</li>
+                                <li class="w12">暂无</li>
+                                <li class="w13">暂无</li>
+                            </ul>
+                    </div>
+                    <div class="deta_flow_footer">
+                        <a href="javascript:void(0);" class="bluelink" id="btnShowFlow">查看更多</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- 订单详细跟踪 end -->
+
+    </div>
+</section>
+
+
+<!-- pop start -->
+<section class="page_pop" id="popRefund">
+    <div class="masklayer"></div>
+    <article class="pop_area pop_refund">
+        <a href="javascript:void(0);" class="pop_x"></a>
+        <header class="pop_header">
+            <img data-bind="attr:{'src': carImageUrl, 'alt': carName}" src="" alt="" />
+            <div class="detail">
+                <h1 data-bind="text:carName"></h1>
+                <p>参考报价：<span class="highlight" data-bind="text:carPrice"></span></p>
+                <!-- <p>订金：<span class="highlight" data-bind="text:orderAmount">¥199.00</span></p> -->
+            </div>
+        </header>
+        <section class="pop_body clrfix">
+            <ul class="form clrfix">
+                <li class="clrfix">
+                    <span class="first-child"><img data-bind="attr:{'src': companyLogoUrl, 'alt': companyName}" src="" alt="" class="form_img" /></span>
+                    <span data-bind="text:packageCompanyName"></span>
+                </li>
+                <li class="clrfix">
+                    <span class="first-child">退款金额</span>
+                    <span><span class="highlight" data-bind="text:orderAmount"></span></span>
+                </li>
+                <li class="clrfix" style="position:relative">
+                    <span class="first-child">退款原因</span>
+                    <span class="first-child" id="refundRemark-lab" style="position:absolute;left:0;top:48px;display:none;">退款说明</span>
+                    <span class="select">
+                        <div class="select-ctrl">
+                            <div id="refundReason" data-id="-1" data-link="" data-disabled="" data-type=""><span>请选择</span></div>
+                            <ul class="drop-layer" style="display: none;">
+                                <li class="triangle-icon"></li>
+                                <li data-id="1" data-link="" data-disabled="" data-type="" data-text="贷款额度不够" class="">贷款额度不够</li>
+                                <li class="" data-category="" data-id="2" data-link="" data-disabled="" data-type="">贷款利率过高</li>
+                                <li class="" data-category="" data-id="3" data-link="" data-disabled="" data-type="">购车首付不够</li>
+                                <li class="cur" data-category="" data-id="4" data-link="" data-disabled="" data-type="">我想买其他车</li>
+                                <li class="" data-category="" data-id="5" data-link="" data-disabled="" data-type="">我不想买了</li>
+                                <li class="" data-category="" data-id="0" data-link="" data-disabled="" data-type="">其他</li>
+                            </ul>
+                        </div>
+                        <div class="remind1">请选择退款原因</div>
+                        
+                         <textarea name="refundRemark" id="refundRemark" cols="" rows="" class="textarea"></textarea>
+                        
+                       
+                        <div class="remind2">请填写退款说明</div>
+                    </span>
+                </li>
+            </ul>
+        </section>
+        <footer class="pop_footer">
+            <a href="javascript:void(0);" class="btn_large btn_dark" id="btnRefundOk"><span>确定</span></a>
+            <a href="javascript:void(0);" class="btn_large btn_gray" id="btnRefundCancle"><span>取消</span></a>
+        </footer>
+    </article>
+</section>
+<!-- pop end -->
+
+<!--礼包弹层start-->
+<section id="popGifts" class="pop-up-layer">
+    <header><div class="close-layer"></div></header>
+    <dl>
+        <dt>恭喜您贷款成功，您已获得：</dt>
+        <dd></dd>
+    </dl>
+    <a class="confirm-btn" href="javascript:void(0);">完成领取</a><br />
+    稍后会有客服联系您
+</section>
+<!--礼包弹层end-->
+
+<!-- 二维码弹层 -->
+<div class="QRCode_box clrfix box-sizing hide">
+    <aside class="fl QRCode">
+        <img src="//img3.yixinfinance.com/jinrong/newpcweb/css/gerenzhongxin/images/qrcode.png?v=2017050612011">
+    </aside>
+    <aside class="fl share_r">
+        <div class="close closeEvent"></div>
+        <div class="QRCode_title">手机扫码来晒单 赢取缤纷好礼</div>
+        <div class="clrfix">
+            <div class="fl scanning"></div>
+            <div class="fl share_txt">
+                <div>开启扫描工具</div>
+                <div>扫一扫立即秀车</div>
+            </div>
+        </div>
+    </aside>
+</div>
+    
+<script>
+    var footerBusiFlag = "1";
+    var footerFunFlag = "0";
+</script>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

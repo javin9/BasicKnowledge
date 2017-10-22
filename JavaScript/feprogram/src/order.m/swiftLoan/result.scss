@@ -1,0 +1,68 @@
+@import 'sassHelper/mixin';
+
+body{
+    background:#fff;
+}
+.rank-text, .res_wrap, .xqmore .checkChose, .xqmore ul li>div div {
+    box-sizing: border-box;
+}
+.congratulation, .footer-font, .pei-text, .res_wrap {
+    text-align: center;
+}
+.res_wrap {
+    width: 100%;
+    margin-top:px2rem(230);
+    padding: 0 px2rem(30);
+}
+
+
+.tick_ok {
+    width: px2rem(144);
+    height: px2rem(144);
+    margin: 0 auto;
+    background: url(images/icon-ok.png) no-repeat #fff;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+.txt_h {
+     @include fsize(28);
+    color: #000;
+    margin-top:px2rem(48);
+}
+.txt_p {
+     @include fsize(24);
+    color: #666;
+    margin-top: px2rem(20);
+}
+.footer_n {
+    background: #fff;
+    margin: 0;
+    padding: 0 0 px2rem(74);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer_n .foot-contact {
+    @include fsize(24);
+    color: #999;
+    text-align: center;
+    padding-top: px2rem(68);
+}
+.footer_n .foot-contact p {
+    border-top: 1px solid #ececec;
+    display: inline;
+    padding: px2rem(36) 0 0;
+}
+.footer_n .foot-copyright {
+    @include fsize(24);
+    color: #999;
+    text-align: center;
+    margin-top:px2rem(12);
+}
+.footer_n .foot-contact a {
+    color: #999;
+    font-weight: 700;
+    @include fsize(26);
+}

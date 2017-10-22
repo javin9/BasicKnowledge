@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script>
+    var APIURL = "http://api.chedai.bitauto.com/";
+
+    var getLeaseInfoUrl = '/Home/GetBudgetInfo';
+    var getBudgetInfoCountUrl = '/Home/GetBudgetInfoCount';
+    var ADVISERAPIURL = "http://test.adviserapi.daikuan.com/";
+    var BusinessLine = 550;
+
+    var leaseListUrl = '/beijing/budget';
+    var Source = '941' || '690'; //来源
+    var Channel = '' || '667'; //渠道
+
+    var xinche_m_url = "http://m.daikuan.com";
+    var BusinessLine = 550;
+    var noAppDown = "1018,1019,1020,1021";
+    // var Source = '690' || '690'; //来源
+    // var Channel = '667' || '667'; //渠道
+    //城市信息
+    var city = {
+        cityId: "201",
+        cityName: "北京",
+        citySpell: "beijing"
+    };
+</script>
+
+<div id="yxWrapper">
+
+    <div id='wx_pic' style='margin: 0 auto; display: none;'>
+        <img src='http://img1.bitautoimg.com/jinrong/newmweb/images/pic300.jpg?v=201701231140' alt="易鑫车贷" />
+    </div>
+    <header class="header-bar" id="header-bar">
+        <!-- <a href="javascript:history.go(-1);"></a> -->
+        <a href="javascript:void(0)" class="back-btn"></a>
+        <h1 class="font-nav">按预算贷车列表</h1>
+        <!-- <h1 class="font-nav">按预算贷车</h1> -->
+        <span></span>
+    </header>
+    <script src="http://img3.bitautoimg.com/jinrong/assets/headType.m/headTypeCookies.js?v=201701231140"></script>
+
+    <div class="search-bar" id="search-bar">
+        <div class="dropdown">
+            <div class="trigger"><span>不限品牌</span><i class="arrow"></i></div>
+            <div class="down-wrapper">
+                <div class="down-content">
+                    <dl class="search-list">
+                        <dd id="carMasterBrandId">
+                            <a data="-1" class="choice active" select-show="不限品牌">
+                                <span>不限</span>
+                            </a>
+                            <a data="b30" class="choice">
+                                <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                                <span class="bname">日产</span>
+                            </a>
+                            <a data="b30" class="choice">
+                                <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                                <span class="bname">日产</span>
+                            </a>
+                            <a data="b30" class="choice">
+                                <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                                <span class="bname">日产</span>
+                            </a>
+                            <a data="b30" class="choice">
+                                <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                                <span class="bname">日产</span>
+                            </a>
+                            <a data="b30" class="choice">
+                                <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                                <span class="bname">日产</span>
+                            </a>
+                            <a data="b30" class="choice">
+                                <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                                <span class="bname">日产</span>
+                            </a>
+                            <a data="b30" class="choice">
+                                <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                                <span class="bname">日产</span>
+                            </a>
+                            <a data="b30" class="choice">
+                                <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                                <span class="bname">日产</span>
+                            </a>
+                            <a data="b30" class="choice">
+                                <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_30_55.png">
+                                <span class="bname">日产</span>
+                            </a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <div class="trigger"><span>不限车价</span><i class="arrow"></i></div>
+            <div class="down-wrapper">
+                <div class="down-content">
+                    <dl class="search-list">
+                        <dd id="carPrice">
+                            <a data="-1" class="choice active">不限车价</a>
+                            <a data="c0" class="choice">5万以下</a>
+                            <a data="c1" class="choice">5-10万</a>
+                            <a data="c2" class="choice">10-15万</a>
+                            <a data="c3" class="choice">15万以上</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <div class="trigger"><span>不限首付</span><i class="arrow"></i></div>
+            <div class="down-wrapper">
+                <div class="down-content">
+                    <dl class="search-list">
+                        <dd id="downPayment">
+                            <a data="-1" class="choice active">不限首付</a>
+                            <a data="d0" class="choice">0首付</a>
+                            <a data="d1" class="choice">1万以下</a>
+                            <a data="d2" class="choice">1-2万</a>
+                            <a data="d3" class="choice">2万以上</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <div class="trigger"><span>默认排序</span><i class="arrow"></i></div>
+            <div class="down-wrapper">
+                <div class="down-content">
+                    <div class="choice-list" id="sort">
+                        <a data="-1" class="choice active" select-show="热销推荐">热销推荐</a>
+                        <a data="x0" class="choice" select-show="月租最低">月租最低</a>
+                        <a data="x1" class="choice" select-show="人气最高">人气最高</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="budget-carlist ">
+        <ul class="carlist" id="carlist">
+            <li class="car" data-Total="500">
+                <a href="/beijing/hafuh6/m121084?source=690&amp;DownPayment=0.5&amp;RepaymentPeriod=12">
+                    <div class="image">
+                        <img src="http://img3.bitautoimg.com/autoalbum/files/20150608/029/0622000295_6.jpg" alt="哈弗H6" />
+                    </div>
+                    <div class="text">
+                        <dl>
+                            <dt class="name">哈弗H6</dt>
+                            <dd class="info">新车含购置税、保险</dd>
+                            <dd class="price">参考价：<em class="num">8.48-14.18<span class="unit">万</span></em></dd>
+                            <dd class="daikuan">
+                                <span>首次支出：<em>0元</em></span>
+                                <span>月租：<em>1288元</em></span>
+                            </dd>
+                        </dl>
+                    </div>
+                </a>
+            </li>
+            <li class="car" data-Total="500">
+                <a href="/beijing/hafuh6/m121084?source=690&amp;DownPayment=0.5&amp;RepaymentPeriod=12">
+                    <div class="image">
+                        <img src="http://img3.bitautoimg.com/autoalbum/files/20150608/029/0622000295_6.jpg" alt="哈弗H6" />
+                    </div>
+                    <div class="text">
+                        <dl>
+                            <dt class="name">哈弗H6</dt>
+                            <dd class="info">新车含购置税、保险</dd>
+                            <dd class="price">参考价：<em class="num">8.48-14.18<span class="unit">万</span></em></dd>
+                            <dd class="daikuan">
+                                <span>首次支出：<em>0元</em></span>
+                                <span>月租：<em>1288元</em></span>
+                            </dd>
+                        </dl>
+                    </div>
+                </a>
+            </li>
+            <li class="car" data-Total="500">
+                <a href="/beijing/hafuh6/m121084?source=690&amp;DownPayment=0.5&amp;RepaymentPeriod=12">
+                    <div class="image">
+                        <img src="http://img3.bitautoimg.com/autoalbum/files/20150608/029/0622000295_6.jpg" alt="哈弗H6" />
+                    </div>
+                    <div class="text">
+                        <dl>
+                            <dt class="name">哈弗H6</dt>
+                            <dd class="info">新车含购置税、保险</dd>
+                            <dd class="price">参考价：<em>14.18</em></dd>
+                            <dd class="daikuan">
+                                <span>首次支出：<em>0元</em></span>
+                                <span>月租：<em>1288元</em></span>
+                            </dd>
+                        </dl>
+                    </div>
+                </a>
+            </li>
+            <li class="car" data-Total="500">
+                <a href="/beijing/hafuh6/m121084?source=690&amp;DownPayment=0.5&amp;RepaymentPeriod=12">
+                    <div class="image">
+                        <img src="http://img3.bitautoimg.com/autoalbum/files/20150608/029/0622000295_6.jpg" alt="哈弗H6" />
+                    </div>
+                    <div class="text">
+                        <dl>
+                            <dt class="name">哈弗H6</dt>
+                            <dd class="info">新车含购置税、保险</dd>
+                            <dd class="price">参考价：<em>14.18</em></dd>
+                            <dd class="daikuan">
+                                <span>首次支出：<em>0元</em></span>
+                                <span>月租：<em>1288元</em></span>
+                            </dd>
+                        </dl>
+                    </div>
+                </a>
+            </li>
+            <li class="car" data-Total="500">
+                <a href="/beijing/hafuh6/m121084?source=690&amp;DownPayment=0.5&amp;RepaymentPeriod=12">
+                    <div class="image">
+                        <img src="http://img3.bitautoimg.com/autoalbum/files/20150608/029/0622000295_6.jpg" alt="哈弗H6" />
+                    </div>
+                    <div class="text">
+                        <dl>
+                            <dt class="name">哈弗H6</dt>
+                            <dd class="info">新车含购置税、保险</dd>
+                            <dd class="price">参考价：<em>14.18</em></dd>
+                            <dd class="daikuan">
+                                <span>首次支出：<em>0元</em></span>
+                                <span>月租：<em>1288元</em></span>
+                            </dd>
+                        </dl>
+                    </div>
+                </a>
+            </li>
+            <li class="car" data-Total="500">
+                <a href="/beijing/hafuh6/m121084?source=690&amp;DownPayment=0.5&amp;RepaymentPeriod=12">
+                    <div class="image">
+                        <img src="http://img3.bitautoimg.com/autoalbum/files/20150608/029/0622000295_6.jpg" alt="哈弗H6" />
+                    </div>
+                    <div class="text">
+                        <dl>
+                            <dt class="name">哈弗H6</dt>
+                            <dd class="info">新车含购置税、保险</dd>
+                            <dd class="price">参考价：<em>14.18</em></dd>
+                            <dd class="daikuan">
+                                <span>首次支出：<em>0元</em></span>
+                                <span>月租：<em>1288元</em></span>
+                            </dd>
+                        </dl>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <div class="sliderUp-box" id="slideup-box"><i class="sliderUp"></i>向上滑动刷新</div>
+        <div class="loading-gray" id="car-loading"></div>
+        <div class="default-box">
+            <div class="default-img"></div>
+            <div class="default-title">
+                此条件下没有车源，建议切换条件或直接拨打<br />
+                热线电话<a href="tel:4000169169">4000-169-169</a>咨询
+            </div>
+        </div>
+    </div>
+
+    <!-- appdownload / vue 组件 -->
+    <app-down></app-down>
+
+
+    <div id="maskLayer"></div>
+    <div class="bottom-to-top">
+        <img src='http://img2.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=201701231140' />
+    </div>
+</div>
+{{{htmlWebpackPlugin.options.footer}}}
+
+<app-down></app-down>
+
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

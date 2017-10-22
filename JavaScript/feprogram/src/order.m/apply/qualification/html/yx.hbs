@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var defaultQualification = 11;
+        var applyResultUrl = '/';
+        var applySuccessUrl = '/';
+        var payUrl = '/';
+        var jtlj="";
+        var isShowCGBAlter=true;
+
+        var jtlj="";
+        var result_getting_url = "/";
+        var pay_url = "/";
+        var queryResultUrl = "/";
+        var apply_success_url = "/";
+        var apply_fail_url = "/";
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<header class="header-bar no-after">
+    <a href="javascript:void(0);"></a>
+    <h1 class="font-nav">资质信息</h1>
+    <span></span>
+</header>
+<section class="form-box">
+    <header>您已通过实名认证，选填以下资料，可获得在线预审批额度</header>
+    <ul>
+    <li class="font-title select-con credit-item" id="credit"><b>信用卡号</b><input type="text" class="font-input" placeholder="请填写近期使用的信用卡" /></li>   
+    </ul>
+    <div class="warning">信用卡号格式错误，请核实</div>
+    <div class="submit-form">
+        <a href="javascript:void(0);" class="font-btn">获取预审批额度</a>
+    </div>
+    <p class="skip-wrapper">
+        <a href="" class="skip">跳过此步<span><i></i></span></a>
+    </p>
+</section>
+
+<section class="assessment-box" id="quotaLayer">
+    <div class="assessment-bg"></div>
+    <div class="assessment-wrapper">
+        <div class="ass-ani-box">
+            
+            <div class="ass-ani">
+                <div class="circle_process">
+                    <canvas id="canvas-preview" ></canvas>
+                </div>
+            </div>
+            <div class="ass-bg">
+                <span class="font-label">正在评估您的<em>基本信息</em></span>
+                <b id="priceChange">--<em>万</em></b>
+                <div>审批额度</div>
+            </div>
+        </div>
+        <div class="ass-btn font-nav">评估中</div>
+
+    </div>    
+</section>
+<section class="assessment-box" id="noResultLayer">
+    <div class="assessment-bg"></div>
+    <div class="assessment-wrapper">
+        <dl class="ass-ani-box">
+            <dt class="font-nav">暂时无法立刻审批</dt>
+            <dd class="font-title">您提供的资料有限，评估结果会在 24 小时内以短信的形式通知您！稍后请关注个人中心-我的订单，查看评估结果</dd>
+        </dl>
+        <div class="ass-btn font-nav">继续</div>
+    </div>
+</section>
+<section class="hiddenval" style="display:none;">
+    <input id="UserId" type="hidden" value="">
+    <input id="OrderID" type="hidden" value="">
+    <input id="ProductIds" type="hidden" value="">
+    <input id="CityId" type="hidden" value="">
+    <input id="CarId" type="hidden" value="">
+    <input id="CarPrice" type="hidden" value="">
+    <input name="InsuranceCompanyName" type="hidden" value='' />
+    <input name="IsSelectedInsurance" type="hidden" value="false" />
+</section>
+<div id="tipBox"><div class="layout-text font-title">获取额度中...</div></div>
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

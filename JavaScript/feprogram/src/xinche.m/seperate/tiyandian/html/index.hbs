@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="main" v-bind:city-id="2401" city-name="上海" joinus-href="###"></div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script type="text/javascript" src='http://api.map.baidu.com/api?v=2.0&ak=o1uOc1CSQIzYBs9fwdNFi7MRNQKo9cAA'></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

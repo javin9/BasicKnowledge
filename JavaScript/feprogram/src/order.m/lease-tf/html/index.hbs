@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script>
+        var CODE_GETTING_URL='/Login/GetCode';
+        var CODE_VALIDATING_URL='/Login/CheckCode';
+        var city = {
+            CityId: "201",
+            CityName: "北京",
+            RegionId: "110100",
+            CitySpell: "beijing",
+            SelectCityLevel: "2",
+            SelectCityName: "北京",
+            cityId: "201",
+            cityName: "北京",
+            regionId: "110100",
+            citySpell: "beijing",
+            selectCityLevel: "2",
+            selectCityName: "北京"
+        }
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<app 
+	api="/test/submit"
+	banner="//placehold.it/750x400"
+	city-name="北京"
+    from="12"
+    channel="11"
+    source="12"
+    interface-validate="/test/validate"
+    interface-city="/api/Common/GetGroupingCityList/"
+    interface-brand="/base/car/GetCarSelectorCarMasterBrandList"
+    interface-series="/base/car/GetCarSelectorCarSerialList"
+    interface-car="/base/car/GetCarSelectorCarList"
+	v-bind:city-id="1"
+></app>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

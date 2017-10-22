@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    {{{htmlWebpackPlugin.options.shim}}}
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+     <script src="http://img2.bitautoimg.com/jinrong/newpcweb/scripts/libs/echarts.js?v=201606141477"></script>
+    <script type="text/javascript">
+   //车款信息
+    var car = {
+        masterBrandId: "7",
+        masterBrandName: "丰田",
+        serialId: "2848",
+        serialName: "皇冠",
+        carId: "9890",
+        carPrice: "42.78",
+        purchaseTaxRate: "3.65641025641026"
+    };
+    //城市信息
+    var city = cityInfo = {
+        cityId: "201",
+        cityName: "北京",
+        citySpell: "beijing",
+        regionId: "110100",
+        selectCityLevel: "0",
+        selectCityName: ""
+    };
+    //产品
+    var product = {
+      productID: "127974",
+            packageID: "3978",
+            productPromotionId: "0"
+    };
+    var source = "775";
+    var totalComments = "0";
+    var v_ucarId = "s23384";
+    var v_carId = "9890";
+    var ucarPrice = "20";
+    var channel = "605";
+    var line = "551";
+    var SoldOrUnSold = "1";
+    var xincheUrl = "http://m.daikuan.com/";
+    var ershoucheUrl = "http://ershouche.huidu.daikuan.com/";
+    var adviserId = "0";
+      var companyID = "472";
+     var adviserApi = "http://test.adviserapi.daikuan.com/";
+
+</script>
+    <div id="app">
+        <nav class="path-nav">
+            <a href="/" class="active">首页</a>
+            <i> &gt; </i>
+            <a class="">北京个人二手车</a>
+            <i> &gt; </i>
+            <a class="">北京大众二手车</a>
+            <i> &gt; </i>
+            <a class="">北京二手迈腾</a>
+            <i> &gt; </i>
+            <a class="path-a">大众迈腾 2013款 1.8TSI 双离合 豪华版</a>
+        </nav>
+        <!-- 金融顾问导航start -->
+        <div class="adviser-nav-box">
+            <div class="adviser-nav">
+                <ul class="clrfix">
+                    <li class="adviser-logo"></li>
+                    <li class="adviser-groups adviser-group01 ut-c">
+                        <font data-bind="text:tip">银牌顾问：贷款成功率高，可针对不同用户的不同需求做出评估指导</font>
+                        <span class="adviser-photo" data-bind="style:{'background-image':photo}" style="background-image: url(&quot;http://image.bitautoimg.com/jinrong/2016/11/08/9423a206-439e-42a2-a4e9-e21ef31181b3.png&quot;);"></span>
+                        <span class="adviser-name adviser-level skillLevel_2" data-bind="text:(name>6?name.substr(0,6)+'…':name),attr:{'class' : 'adviser-name adviser-level skillLevel_' + skillLevelId}">甘燕</span>
+                        <span class="loan-adviser-tip" style="bottom: 58px; display: none; opacity: 1;">银牌顾问：贷款成功率高，可针对不同用户的不同需求做出评估指导</span>
+                        <!-- <span class=""></span> -->
+                    </li>
+                    <li class="adviser-groups ut-c">
+                        <div class="f-16 f-blod f-red">2年</div>
+                        <div class="f-12 f-gray3">从业经验</div>
+                    </li>
+                    <li class="adviser-groups ut-c">
+                        <div class="f-16 f-blod f-red">1237</div>
+                        <div class="f-12 f-gray3">贷款服务人数</div>
+                    </li>
+                    <li class="adviser-groups ut-c">
+                        <div class="f-16 f-blod f-red">93%</div>
+                        <div class="f-12 f-gray3">好评率</div>
+                    </li>
+                    <li class="adviser-groups ad-tell f-16 ut-c">
+                        <span class="f-red f-blod">4008155609</span><span class="f-gray6">&nbsp;转&nbsp;</span><span class="f-red f-blod">1402</span>
+                    </li>
+                    <li class="f-14 more-adviser">更多贷款顾问&gt;&gt;</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 头部车型套餐start -->
+        <section class="detail-head clrfix">
+            <!-- 车型图片缩略图start -->
+            <div class="carphoto">
+                <div class="scroll-photos">
+                    <ul id="SPhotosList" >
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160skswm.jpg" >
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160skswq.jpg" >
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sjlyz.jpg">
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sksx4.jpg" >
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160skswm.jpg" >
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160skswq.jpg" >
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sjlyz.jpg">
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sksx4.jpg" >
+                        </li>
+
+                    </ul>
+                    <ul id="SPhotosBtn" style="width: 1456px;">
+                        <li class="current">
+                            <img src="http://img5.taoche.cn/1b/02160skswm.jpg">
+                            <em></em>
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160skswq.jpg">
+                            <em></em>
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sjlyz.jpg">
+                            <em></em>
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sksx4.jpg">
+                            <em></em>
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sksxk.jpg">
+                            <em></em>
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sksya.jpg">
+                            <em></em>
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sksyk.jpg">
+                            <em></em>
+                        </li>
+                        <li>
+                            <img src="http://img5.taoche.cn/1b/02160sksys.jpg">
+                            <em></em>
+                        </li>
+
+                    </ul>
+                    <div class="photos-prev-btn  nohover" style="z-index: 2">
+                        <a href="javascript:;"><span>向左</span></a>
+                    </div>
+                    <div class="photos-next-btn" style="z-index: 2">
+                        <a href="javascript:;"><span>向右</span></a>
+                    </div>
+                    <div class="scroll-photos-info" style="z-index: 2;">
+                        共有 16 张图片
+                    </div>
+                    <a href="javascript:;" class="photos-focus-prev" style="z-index: 2; display: none;">
+                        <i></i><em>上一张</em>
+                    </a>
+                    <a href="javascript:;" class="photos-focus-next" style="z-index: 2; display: inline;">
+                        <i></i><em>下一张</em>
+                    </a>
+                </div>
+
+            </div>
+            <!-- 车型图片缩略图end -->
+            <!-- 车型套餐筛选start -->
+            <div class="detail_head_info_box">
+                <div class="head-center-title">
+                       <a class="page-share bdsharebuttonbox btn_org share" href="#" data-cmd="more">分享</a>
+                    <span class="carName">大众迈腾 2013款 1.8TSI 双离合 豪华版</span>
+                </div>
+                <div class="head-center-price">
+                    <div class="top">二手车报价：<span class="price">￥2000,900</span><span class="new_price">新车价（含税）<del>￥206,100</del> 省5.14万</span>                        </div>
+                    <a class="jinzhengu" id="jinzhengu">
+                        <span class="img"><img src="http://img2.bitautoimg.com/jinrong/newpcweb/css/ershouche/images/jingzhengu_logo.png?v=201608091966"></span>
+                        <span class="price">估价：<font>￥213,000</font></span>
+                        <span class="info">查看估价详情 月均用车成本 ></span>
+                    </a>
+                    <div class="preferential">
+                        <span class="tit">优惠信息：</span>
+                        <span class="info">送盗抢保障，可融保险；赠送398礼包；在线支付1元抵1000元</span>
+                        <div class="Pack-Amount-tip tipText" style="display:none; opacity: 1;">
+                                    <div class="info">
+                                       礼礼礼礼礼礼礼礼礼礼礼礼礼礼礼礼礼；礼22222<br />
+                                       付付付付付付付付付付付付付付付付付付付<br />
+                                       惠惠惠惠惠惠惠惠惠惠惠惠惠惠惠惠惠惠
+                                
+                                       
+                                        
+                                    </div>
+                                    <p class="tar col-red"></p>
+                                </div>
+                    </div>
+                </div>
+                <!--一证贷(易鑫金融)-->
+                <div class="detail_car_top">
+                    <dl class="detail_car_top_dl">
+                        <dt class="title_info"><span class="packName">易鑫金融-一证通</span><span class="FeaturesTag"></span></dt>
+                        <dd class="common_box">
+                            <div class="common_box_info">
+                                <div class="type">
+                                    申请信息：<span><font class="level-two">一般</font></span>
+                                    <div class="type-tip" style="display: none;">
+                                        <div class="info">
+                                            <p>1、身份证</p>
+                                            <p>2、驾驶证</p>
+                                            <p>3、收入证明</p>
+                                            <p>4、房产证</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="line_icon">1-2天审批</div>
+                                <div class="card_icon">身份证明和收入证明</div>
+                            </div>
+                            <div class="tip_bottom">方案优势</div>
+                            <div class="product-icons">
+                                <span class="icons">极速审批</span>
+                                <span class="icons">资料简便</span>
+                                <span class="icons">超长还款期</span>
+                            </div>
+                        </dd>
+                    </dl>
+                    <div class="price_confluence">
+                        <div class="confluence_echart">
+                            <h6>总花费￥<span id="total_price">126,453</span></h6>
+                            <div class="myChartsDiv">
+                             <div id="myChart" style="width:90px;height:90px;" width="90" height="90"></div>
+                             </div>
+                            <span class="price-detailed">明细</span>
+                        </div>
+                        <ul class="echear">
+                            <li><i class="sf"></i><span class="tit">首付</span><span id="downPaymentChart" class="price"></span></li>
+                            <li><i class="dk"></i><span class="tit">贷款额度</span><span id="loanAmountChart" class="price"></span></li>
+                            <li id="weikuan" class="loan"><span class="tit">贷款尾款</span><span id="weikuanChart" class="price"></span></li>
+                            <li><i class="cb"></i><span class="tit">贷款成本</span><span id="borrowingCostsChart" class="price"></span></li>
+                        </ul>
+                        <div class="down_payment_wrapper">
+                         
+                                <div class="sel-items clrfix">
+                                    <h3>首付</h3>
+                                    <div class="yx-silder-wrapper">
+                                        <div id="index_shoufu"></div>
+                                    </div>
+                                    <span id="index_shoufu_text" class="sel-prices"></span>
+                                </div>
+                                <div class="sel-items clrfix">
+                                    <h3>月供</h3>
+                                    <div class="yx-silder-wrapper">
+                                        <div id="index_yuegong"></div>
+                                    </div>
+                                    <span id="index_yuegong_text" class="sel-prices"></span>
+                                </div>
+                     
+                        </div>
+                        <div class="btn_box">
+                            <a href="javascript:;" id="postRquest" class="btn_red">立即申请</a>
+                            <a href="javascript:;" id="moreJinrong" class="btn_red_line">对比全部9款金融方案</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <form action="http://sq.daikuan.com/OrderApply/Index" method="post" id="orderInfoForm">
+
+                <input type="hidden" name="PageTitle" value="">
+                <input type="hidden" name="SourceUrl" value="">
+                <input type="hidden" name="SourceType" value="">
+
+
+                <input name="Orders" type="hidden" value="3239_80364_0">
+                <input name="CarId" type="hidden" value="">
+                <input name="CityId" type="hidden" value="">
+                <input name="CarPrice" type="hidden" value="">
+                <input name="Source" type="hidden" value="">
+                <input name="Channel" type="hidden" value="">
+                <input name="DealerId" type="hidden" value="">
+                <input name="DealerName" type="hidden" value="">
+                <input name="Line" type="hidden" value="">
+                <input name="DealerTelphone" type="hidden">
+                <input name="SourceDicName" type="hidden" value="">
+                <input name="From" type="hidden" value="">
+
+                <input name="DownPayment" type="hidden" value="">
+                <input name="LoanAmount" type="hidden" value="">
+                <input name="AdviserId" type="hidden" value="">
+
+
+            </form>
+
+            <!-- 车型套餐筛选end -->
+            <!-- /*先拿钱 再看车*/start -->
+            <div class="right-wrapper">
+                <dl class="money_first_car_last">
+                    <dt class="car_last_dt">先拿钱 再看车</dt>
+                    <dd class="car_last_dd">
+                        <div class="icon_01">手续简单</div>
+                        <div class="icon_02">秒出额度</div>
+                        <div class="icon_03">顾问陪同</div>
+                        <div class="btn_box">
+                            <a href="#"  class="btn_red_line">立即申请</a>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </section>
+        <!-- 悬浮导航 -->
+        <section class="nav-fixed">
+            <div class="nav-content">
+                <ul>
+                    <li class="nav-loan cur">贷款须知</li>
+                    <li class="nav-file">车辆档案</li>
+                    <li class="nav-userEvaluate">用户评价(10)</li>
+                    <li class="nav-adviser">易问答</li>
+                </ul>
+                <div class="nav-right">
+                    <div class="nav-word">
+                        <div class="nav_carname">天津-威志V2 2012款 CROSS津-威志V2 2012款 CROSS 1.3L</div>
+                        <div class="nav_price">首付: <span class="col_red"><span id="tip_sf">12,345,678</span>元</span>&nbsp;|</div>
+                        <div class="nav_pricey">月供: <span class="col_red"><span id="tip_yg">123,456</span>元</span></div> &nbsp;
+                    </div>
+                    <div id="postRquest1" class="nav-btn">立即申请</div>
+                </div>
+            </div>
+        </section>
+        <div class="wrap_width">
+            <!--产品特点-->
+            <div class="loan_img">
+                <img src="http://img1.bitautoimg.com/chedai/0a662930-d333-48a6-9ff8-a3867b05b9f6.jpg"><img src="http://img1.bitautoimg.com/chedai/b49d5dbc-f4bd-44da-ad35-36910122d154.jpg">
+                <img
+                    src="http://img1.bitautoimg.com/chedai/30655712-a131-4b42-a03a-0a65f0f70070.jpg"><img src="http://img1.bitautoimg.com/chedai/41123a9e-1c9c-4c16-8c3c-204a68df7a1e.jpg"><img src="http://img1.bitautoimg.com/chedai/338743d5-2318-4147-b149-744a2cc34b41.jpg">
+                    <img
+                        src="http://img1.bitautoimg.com/chedai/e0916f1e-7711-41a0-b49e-b632decf3238.jpg"><img src="http://img1.bitautoimg.com/chedai/ad091f2e-7607-4fd3-a625-dadfe69db920.jpg">
+            </div>
+            <!--申请条件-->
+            <section class="loan-content">
+                <div id="loanDetails">
+                    <div class="combo"></div>
+                    <div class="combo" style="display:none;">
+                        <div class="combo-title">套餐说明</div>
+                        <div class="combo-table">
+                        </div>
+                    </div>
+                    <div class="apply-condition">
+                        <div class="apply-condition-title">申请条件</div>
+                        <div class="apply-condition-content">
+                            <ol>
+                                <li>信用记录良好或偶尔逾期</li>
+                            </ol>
+
+                        </div>
+                    </div>
+                    <div class="need-material">
+                        <div class="need-material-title">所需材料</div>
+                        <div class="need-material-content">
+                            <ol>
+                                <li>身份证</li>
+                            </ol>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!--贷款流程-->
+            <div class="loan_process">
+                <div class="title">贷款流程</div>
+                <div class="conter"><img src="../../images/loan_process.html.jpg"></div>
+            </div>
+            <!--/*车辆档案*/-->
+            <section class="car-record">
+                <div class="car-record-title">车辆档案</div>
+                <div class="car-record-content">
+                    <div class="car-record-word">
+                        <div class="car_img"></div>
+                        <div class="car-record-name">车辆档案</div>
+                        <ul class="car_record_ul">
+                            <li class="itme"><i class="icon_place"></i><span class="txt three">所在地</span><span class="input">天津</span></li>
+                            <li class="itme"><i class="icon_gears"></i><span class="txt three">变速箱</span><span class="input">半自动</span></li>
+                            <li class="itme">
+                                <i class="icon_otime"></i><span class="txt">上牌时间</span><span class="input">
+                                        <span>
+                                            2013-05-08
+                                        </span>
+
+                                </span>
+                            </li>
+                            <li class="itme"><i class="icon_maintain"></i><span class="txt">保养情况</span><span class="input">
+
+                        无定期保养
+                        </span></li>
+                            <li class="itme"><i class="icon_distance"></i><span class="txt two">里程</span><span class="input">2万公里</span></li>
+                            <li class="itme"><i class="icon_displacement"></i><span class="txt">汽车排量</span><span class="input">1.0</span></li>
+                            <li class="itme"><i class="icon_green"></i><span class="txt">环保标准</span><span class="input">欧5</span></li>
+                            <li class="itme"><i class="icon_ptime"></i><span class="txt">发布时间</span><span class="input">2016-09-09</span></li>
+                            <li class="itme"><i class="icon_type"></i><span class="txt">车辆类型</span><span class="input">非营运</span></li>
+                        </ul>
+                        <div class="car_chapter"></div>
+                    </div>
+                </div>
+            </section>
+            <!--我们承诺-->
+            <section class="promise">
+                <div class="promise-title">我们承诺</div>
+                <div class="promise-content">车源保证</div>
+                <img src="../../images/car-ensure.html.jpg">
+            </section>
+
+            <!--卖家描述-->
+            <section class="describe">
+                <div class="describe-title">卖家描述</div>
+                <div class="describe-content1">
+                    可贷款 申请快 利率低<br>看车网发现二手好车，大量优质有效车源，车况靠谱，价格透明<br><br>1张身份证，秒速贷款。<br><br>车辆概况：<br>【可分期 申请快 利率低】此车车况极好，全车原漆，
+                    经检测该车车况良好无事故，无水淹，无火烧，车辆的内饰整洁、无破损，发动机、变速器工况良好，动力充沛，油耗低，安全刹车及车内电子设备一切正常。<br><br><br>值得信赖的专业二手车顾问<br>[ 贷款
+                    ] 月息低至6厘8，只需身份证，超低门槛，秒速贷款。<br>[ 车况 ] 208项售前检测，绝无事故车，泡水、火烧车。<br>[ 服务 ] 免费过户，包办手续，有质保。<br><br>我是白户，可以申请车贷么？<br>想买个便宜车，贷款怎么办？<br>中意的车龄长达八年怎么办？<br>我资质非常好，想多多贷款？<br>没关系，只要您符合条件，只需一张身份证，其他的我们来做。<br><br>不满意？没关系，登陆[
+                    看车网 ] ！更多优质车源供您挑选！<br>或致电看车网，根据您的需求，为您推荐最好最适合的车辆<br><br>在看车网，买车从未如此简单，专业买车顾问全程1对1服务，交易透明，不赚差价<br><br>看车网向您承诺：<br>选车：大量优质车源，根据您的需求，推荐最好最适合的车辆。<br>车况：208项售前检测，专业评估师把关，呈现真实车况。<br>车价：专业买车顾问全程1对1服务，交易透明，不赚差价。<br>过户：免费过户，包办手续。<br>质保：为8年及15万公里以内的车辆提供超低价格的1年或2万公里保修服务。<br>贷款：可分期付款，只需身份证，即可申请，超低月供,
+                    超低月息。<br><br>更多选择，尽在看看车。<br><br>v855446#57d12d242500003a00c9627b
+                </div>
+            </section>
+            <!--车辆图片-->
+            <section class="car-image">
+                <div class="car-image-title">车辆图片</div>
+                <ul class="car_ul">
+                    <li><img src="http://img5.taoche.cn/1b/02160smmz5.jpg"></li>
+                    <li><img src="http://img5.taoche.cn/1b/02160sny02.jpg"></li>
+                    <li><img src="http://img5.taoche.cn/1b/02160sny0k.jpg"></li>
+                    <li><img src="http://img5.taoche.cn/1b/02160smmzr.jpg"></li>
+                    <li><img src="http://img5.taoche.cn/1b/02160smmzv.jpg"></li>
+                    <li><img src="http://img5.taoche.cn/1b/02160smmzz.jpg"></li>
+                </ul>
+
+            </section>
+
+            <!-- 用户评价start -->
+            <div class="userEvaluate">
+                <header class="detail_title"><span class="span">用户评价</span> </header>
+                <div id="userEvaluate" class="test">
+                    <header class="clrfix">
+                        <div class="f-14 f-gray6 user-score">
+                            <div><span class="fen">4.8</span>/5分</div>
+                            <div class="pad10T">来自真实贷款用户的<span>530</span>条评价</div>
+                        </div>
+                        <div class="eva-staring f-14 f-gray3">
+                            <div class="staring">反馈速度：<span class="staring-ctn"><em style="width: 94%"></em></span><span class="f-red3 f-18">4.7</span>
+                                <font
+                                    class="f-12">分</font>
+                            </div>
+                            <div class="staring">审批速度：<span class="staring-ctn"><em style="width: 92%"></em></span><span class="f-red3 f-18">4.6</span>
+                                <font
+                                    class="f-12">分</font>
+                            </div>
+                            <div class="staring">机构服务：<span class="staring-ctn"><em style="width: 94%"></em></span><span class="f-red3 f-18">4.7</span>
+                                <font
+                                    class="f-12">分</font>
+                            </div>
+                        </div>
+
+
+                        <div class="evaluation-header-tag">
+                            <label class="font-24">资料简便&nbsp;&nbsp;200</label>
+                            <label class="font-24">审核快&nbsp;&nbsp;174</label>
+                            <label class="font-24">额度高&nbsp;&nbsp;84</label>
+                            <label class="font-24">放款快&nbsp;&nbsp;82</label>
+                            <label class="font-24">月供少&nbsp;&nbsp;69</label>
+                            <label class="font-24">首付低&nbsp;&nbsp;64</label>
+                            <label class="font-24">还款期限长&nbsp;&nbsp;54</label>
+                        </div>
+                    </header>
+
+                    <div class="pagedCommentDiv" id="pagedCommentDiv">
+                        <div class="default-box ut-c">
+                            <div class="f-redf f-18">暂无评价</div>
+                            <div class="f-14 f-gray9">贷款申请成功后，即可进行评价</div>
+                        </div>
+                    </div>
+                    <div id="listPagination" class="list_pagination" style="display: none;"><a href="javascript:void(0);" class="prev unclick">上一页</a><a href="javascript:void(0);" class="num active">1</a><a href="javascript:void(0);" class="next unclick">下一页</a></div>
+                </div>
+            </div>
+            <!--易问答 start-->
+            <div class="adviser wrap_width">
+                <header class="detail_title"><span class="span">易问答</span> </header>
+                <div class="adviser-card">
+                    <div class="portrait">
+                        <img src="http://img1.bitautoimg.com/chedai/1fea11aa-8108-45fe-ad29-7e76642e3c8c.jpg">
+                    </div>
+                    <div class="text">
+                        <div class="adviser-name">
+                            <span class="name">Cathy姐</span>
+                            <span class="sep">|</span>
+                            <span class="tit">易鑫车贷高级服务顾问</span>
+                        </div>
+                        <div class="intro">外企汽车金融公司4年从业经验，专业解决车贷难题</div>
+                        <div class="tags">
+                            <span>美女顾问</span>
+                            <span>白骨精</span>
+                            <span>知心姐姐</span>
+                        </div>
+                        <div class="btnwrap">
+                            <a href="javascript:void(0)" class="ask-btn">点我提问</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="adviser_con">
+                    <div class="adviser_con_title">
+                        <div class="his">TA的最新问答</div>
+                        <div class="qa">提问<span class="col_red">10</span>条 | 回复<span class="col_red">10</span>条</div>
+                        <a href="#" class="more">查看更多</a>
+                    </div>
+                    <div class="qa-section">
+                        <dl class="qa-list">
+                            <dt class="question">
+                                <span class="portrait">
+                                                <img src="http://img1.bitautoimg.com/jinrong/newpcweb/css/gerenzhongxin/images/car-001.png" alt="">
+                                            </span>
+                                <span class="text">
+                                                <span class="qname">美丽夕阳</span>
+                                <span class="qtit">买二手车最看中什么？
+</span>
+                                </span>
+                            </dt>
+                            <dd class="answer">
+                                <span class="portrait">
+                                                <img src="http://img1.bitautoimg.com/chedai/3356c1ab-9bf6-4a5d-923e-6aa56dac00b9.jpg" alt="">
+                                            </span>
+                                <span class="text">
+                                                性价比高以及商家信誉度，易鑫车贷是易车、腾讯、京东、百度共同投资超过60亿的中国领先互联网汽车金融平台，二手车平...<span
+                                    class="time">3天前</span>
+                                </span>
+                            </dd>
+                            <dt class="question">
+                                <span class="portrait">
+                                                <img src="http://img1.bitautoimg.com/jinrong/newpcweb/css/gerenzhongxin/images/car-002.png" alt="">
+                                            </span>
+                                <span class="text">
+                                                <span class="qname">133****8491</span>
+                                <span class="qtit">自己检查二手车，都应该关注哪些点？
+</span>
+                                </span>
+                            </dt>
+                            <dd class="answer">
+                                <span class="portrait">
+                                                <img src="http://img1.bitautoimg.com/chedai/3356c1ab-9bf6-4a5d-923e-6aa56dac00b9.jpg" alt="">
+                                            </span>
+                                <span class="text">
+                                                1、测试水温，风扇是否正常2、高速是否跑偏，四轮定位是否需要做，轮胎是否需要换3、主动安全配置是否正常4、车身异...<span
+                                    class="time">3天前</span>
+                                </span>
+                            </dd>
+                            <dt class="question">
+                                <span class="portrait">
+                                                <img src="http://img1.bitautoimg.com/jinrong/newpcweb/css/gerenzhongxin/images/car-003.png" alt="">
+                                            </span>
+                                <span class="text">
+                                                <span class="qname">阿六</span>
+                                <span class="qtit">买二手车贷款，银行都对车辆都有哪些限制？</span>
+                                </span>
+                            </dt>
+                            <dd class="answer">
+                                <span class="portrait">
+                                                <img src="http://img1.bitautoimg.com/chedai/3356c1ab-9bf6-4a5d-923e-6aa56dac00b9.jpg" alt="">
+                                            </span>
+                                <span class="text">
+                                                金融机构一般要求车龄5年以内，行驶里程在10万公里以内，成交价在8万元以上，符合以上几点即可办理。需要注意的是：...<span
+                                    class="time">3天前</span>
+                                </span>
+                            </dd>
+                        </dl>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 推荐车型-->
+            <div class="recommend_car">
+                <div class="tabs recommend_title_ul"> <a href="#" class="active">推荐车型</a> <a href="#">最新成交</a></div>
+                <div class="swiper-container recommend_deal">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <ul class="recommend_ul">
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <div class="car_img">
+                                            <span class="all_mark"></span>
+                                            <div class="car_mask">
+                                                <div></div><span class="car-des">去看看</span></div>
+                                            <img src="http://img1.bitautoimg.com/chedai/19c68fa1-d62f-4f55-b061-e2329e840cf0.jpg"></div>
+                                        <div class="txt_info">
+                                            <div class="name">汉兰达 2.7L 自动 两驱 探索版 7座</div>
+                                            <div class="loan">首付 <em>11.30万</em> 月供 <em>3911元</em></div>
+                                            <div class="save"><span>省13.09万</span></div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper-slide">
+                            <ul class="deal_ul">
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <div class="car_img">
+                                            <span class="deal_img"></span>
+                                            <div class="car_mask">
+                                                <div></div><span class="car-des">去看看</span></div>
+                                            <img src="http://img1.bitautoimg.com/chedai/19c68fa1-d62f-4f55-b061-e2329e840cf0.jpg">
+                                        </div>
+                                        <div class="txt_info">
+                                            <div class="name">汉兰达 2.7L 自动 两驱 探索版 7座</div>
+                                            <div class="loan">首付 <em>11.30万</em> 月供 <em>3911元</em></div>
+                                            <div class="save"><span>省13.09万</span></div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--总花费弹层start-->
+    <section class="total-cost-layer">
+        <header>总花费：<span data-bind="text:'￥'+ totalExpenses()">￥443,331</span>
+            <div class="close-layer"></div>
+        </header>
+        <footer>
+            <dl class="clrfix first-child">
+                <dt class="clrfix" data-bind="visible:!isSecurityDeposit()">
+                    <ul>
+                        <li class="box-01 font-20-black">首付</li>
+                        <li class="box-02 font-18-gray">车价</li>
+                        <li class="box-03 font-18-gray">×</li>
+                        <li class="box-04 font-18-gray">首付比例</li>
+                    </ul>
+                    <ul>
+                        <li class="box-01 font-20-red" data-bind="text:'￥'+ downPayment()">￥113,940</li>
+                        <li class="box-02 font-18-black" data-bind="text:carPriceFormat">379,800</li>
+                        <li class="box-03">&nbsp;</li>
+                        <li class="box-04 font-18-black" data-bind="text:downPaymentRate">30%</li>
+                    </ul>
+                </dt>
+            </dl>
+            <dl class="clrfix first-child" data-bind="visible:isSecurityDeposit" style="display: none;">
+                <dt class="clrfix">
+                    <ul>
+                        <li class="box-01 font-20-black">首次支付</li>
+                        <li class="box-02 font-18-gray">首付</li>
+                        <li class="box-03 font-18-gray">+</li>
+                        <li class="box-04 font-18-gray">保证金(可抵月供)</li>
+                    </ul>
+                    <ul>
+                        <li class="box-01 font-20-red" data-bind="text:firstPayment">113,940</li>
+                        <li class="box-02 font-18-black" data-bind="text:downPayment">113,940</li>
+                        <li class="box-03">&nbsp;</li>
+                        <li class="box-04 font-18-black" data-bind="text:securityDeposit">0</li>
+                    </ul>
+                </dt>
+                <dd class="left-20-ul clrfix">
+                    <ul>
+                        <li class="box-01">首付</li>
+                        <li class="box-02">车价</li>
+                        <li class="box-03">×</li>
+                        <li class="box-04">首付比例</li>
+                    </ul>
+                    <ul>
+                        <li class="box-01" data-bind="text:'￥'+ downPayment()">￥113,940</li>
+                        <li class="box-02" data-bind="text:carPriceFormat">379,800</li>
+                        <li class="box-03">&nbsp;</li>
+                        <li class="box-04" data-bind="text:downPaymentRate">30%</li>
+                    </ul>
+                </dd>
+                <dd class="left-20-ul clrfix">
+                    <ul>
+                        <li class="box-01">保证金</li>
+                        <li class="box-02">车价</li>
+                        <li class="box-03">×</li>
+                        <li class="box-04">保证金比例</li>
+                    </ul>
+                    <ul>
+                        <li class="box-01" data-bind="text:securityDeposit">0</li>
+                        <li class="box-02" data-bind="text:carPriceFormat">379,800</li>
+                        <li class="box-03">&nbsp;</li>
+                        <li class="box-04" data-bind="text:securityDepositRate">0%</li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl class="clrfix first-child">
+                <dt class="clrfix">
+                    <ul>
+                        <li class="box-01 font-20-black">贷款额度</li>
+                        <li class="box-02 font-18-gray">车价</li>
+                        <li class="box-03 font-18-gray">-</li>
+                        <li class="box-04 font-18-gray">首付</li>
+                    </ul>
+                    <ul>
+                        <li class="box-01 font-20-red" data-bind="text:'￥'+ loanAmount()">￥265,860</li>
+                        <li class="box-02 font-18-black" data-bind="text:carPriceFormat">379,800</li>
+                        <li class="box-03">&nbsp;</li>
+                        <li class="box-04 font-18-black" data-bind="text:downPayment">113,940</li>
+                    </ul>
+                </dt>
+                <dd data-bind="visible:isFinalPaymentAmount" class="left-20-ul clrfix" style="display: none;">
+                    <ul>
+                        <li class="box-01">贷款尾款</li>
+                        <li class="box-02">车价</li>
+                        <li class="box-03">×</li>
+                        <li class="box-04">尾款比例</li>
+                    </ul>
+                    <ul>
+                        <li class="box-01" data-bind="text:'￥'+ finalPaymentAmount()">￥0</li>
+                        <li class="box-02" data-bind="text:carPriceFormat">379,800</li>
+                        <li class="box-03">&nbsp;</li>
+                        <li class="box-04" data-bind="text:finalPaymentRate">0%</li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl class="clrfix first-child">
+                <dt class="clrfix">
+                    <ul>
+                        <li class="box-01 font-20-black">月供</li>
+                        <li class="box-02 font-18-gray" data-bind="text:rateText">月利率</li>
+                        <li class="box-03">&nbsp;</li>
+                        <li class="box-04">&nbsp;</li>
+                    </ul>
+                    <ul>
+                        <li class="box-01 font-20-red" data-bind="text:'￥'+ monthlyPayment()">￥8,208</li>
+                        <li class="box-02 font-18-black" data-bind="text:interestRate">0.58%</li>
+                        <li class="box-03">&nbsp;</li>
+                        <li class="box-04">&nbsp;</li>
+                    </ul>
+                </dt>
+                <dd class="clrfix">
+                    <ul>
+                        <li class="box-01 font-18-gray">贷款成本</li>
+                        <li class="box-02 font-18-gray">利息</li>
+                        <li class="box-03 font-18-gray" data-bind="visible:serviceFee()>0" style="display: none;">+</li>
+                        <li class="box-04 font-18-gray" data-bind="visible:serviceFee()>0" style="display: none;">手续费</li>
+                    </ul>
+                    <ul>
+                        <li class="box-01 font-18-gray" data-bind="text:'￥'+ totalCost()">￥29,620</li>
+                        <li class="box-02 font-18-gray" data-bind="text:totalInterest">29,620</li>
+                        <li class="box-03" data-bind="visible:serviceFee()>0" style="display: none;">&nbsp;</li>
+                        <li class="box-04 font-18-gray" data-bind="text:serviceFee,visible:serviceFee()>0" style="display: none;">0</li>
+                    </ul>
+                </dd>
+                <dd class="clrfix">
+                    <ul>
+                        <li class="box-01 font-18-gray">税费</li>
+                        <li class="box-05 font-18-gray">购置税</li>
+                        <li class="box-06 font-18-gray">+</li>
+                        <li class="box-07 font-18-gray">上牌费</li>
+                        <li class="box-08 font-18-gray">+</li>
+                        <li class="box-09 font-18-gray">交强险</li>
+                    </ul>
+                    <ul>
+                        <li class="box-01 font-18-gray" data-bind="text:'￥'+ taxation()">￥33,912</li>
+                        <li class="box-05 font-18-gray" data-bind="text:purchaseTax">32,462</li>
+                        <li class="box-06">&nbsp;</li>
+                        <li class="box-07 font-18-gray">500</li>
+                        <li class="box-08">&nbsp;</li>
+                        <li class="box-09 font-18-gray">950/年</li>
+                    </ul>
+                </dd>
+            </dl>
+        </footer>
+    </section>
+
+    <!--选择金融产品-->
+    <div class="window_pop">
+        <div class="window_bg"></div>
+        <div class="win_pop_box">
+            <div class="win_header">
+                <div class="h6 font_18">选择金融产品</div>
+                <span class="close"><i>关闭</i></span>
+            </div>
+            <div class="win_title"><span class="fr">报价：<font class="col_red">2.59万</font></span><span class="h6 font_18">福美来 2006款 GLX 1.6手动舒适型</span></div>
+            <div class="win_body">
+                <ul class="win_list" id="windowList">
+                    <li class="itme" data-id="4381">
+                        <div class="easy_content"><span class="unfold"><i class="tip_bottom"></i>展开</span>
+                            <div class="title_info"><span class="packName">易鑫金融-一证通</span><span class="FeaturesTag"></span></div>
+                            <div class="common_box">
+                                <div class="type">
+                                    申请信息：<span><font class="level-two">一般</font></span>
+                                    <div class="type-tip" style="display: none;">
+                                        <div class="info">
+                                            <p>1、身份证</p>
+                                            <p>2、驾驶证</p>
+                                            <p>3、收入证明</p>
+                                            <p>4、房产证</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="line_icon">1-2天审批</div>
+                                <div class="card_icon" data-company-id="89">身份证明和收入证明</div>
+                            </div>
+                            <div class="info_box"><span class="payment DownPaymentRate">首付30%：<font class="col_red">7770元</font></span>
+                                <span class="payment RepaymentPeriod" data-repaymentperiod="36">月供36期：<font class="col_red">627元</font></span>
+                            </div>
+                        </div>
+                        <div class="details_content hide">
+
+                            <div class="title_info"><span class="packName">易鑫金融-一证通</span></div>
+                            <div class="common_box">
+                                <div class="type">
+                                    申请信息：<span><font class="level-two">一般</font></span>
+                                    <div class="type-tip" style="display: none;">
+                                        <div class="info">
+                                            <p>1、身份证</p>
+                                            <p>2、驾驶证</p>
+                                            <p>3、收入证明</p>
+                                            <p>4、房产证</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="line_icon">1-2天审批</div>
+                                <div class="card_icon" data-company-id="89">身份证明和收入证明</div>
+                                <a href="#" class="win_btn_org">查看详情</a>
+                            </div>
+                            <div class="yxSlider_box">放圆大饼</div>
+                            <div class="product_box_so">
+                                <dl class="dl_list">
+                                    <dt class="tit_dt">贷款额度<span>(车价-首付)</span></dt>
+                                    <dd class="info_dd">￥72,535</dd>
+                                </dl>
+                                <dl class="dl_list">
+                                    <dt class="tit_dt">贷款尾款<span>（车价*20%）</span></dt>
+                                    <dd class="info_dd">￥72,535</dd>
+                                </dl>
+                                <dl class="dl_list">
+                                    <dt class="tit_dt">贷款成本<span>（利息+手续费）</span></dt>
+                                    <dd class="info_dd">￥72,535</dd>
+                                </dl>
+
+
+                            </div>
+                            <div class="unfold_box"><span class="unfold"><i class="tip_bottom"></i>收起</span></div>
+                        </div>
+                    </li>
+                    <li class="itme">
+                        <div class="easy_content hide"><span class="unfold"><i class="tip_bottom"></i>展开</span>
+                            <div class="title_info"><span class="packName">易鑫金融-一证通</span><span class="FeaturesTag"></span></div>
+                            <div class="common_box">
+                                <div class="type">
+                                    申请信息：<span><font class="level-two">一般</font></span>
+                                    <div class="type-tip" style="display: none;">
+                                        <div class="info">
+                                            <p>1、身份证</p>
+                                            <p>2、驾驶证</p>
+                                            <p>3、收入证明</p>
+                                            <p>4、房产证</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="line_icon">1-2天审批</div>
+                                <div class="card_icon" data-company-id="89">身份证明和收入证明</div>
+                            </div>
+                            <div class="info_box"><span class="payment DownPaymentRate">首付30%：<font class="col_red">7770元</font></span>
+                                <span class="payment RepaymentPeriod" data-repaymentperiod="36">月供36期：<font class="col_red">627元</font></span>
+                            </div>
+                        </div>
+                        <div class="details_content">
+
+                            <div class="title_info"><span class="packName">易鑫金融-一证通</span></div>
+                            <div class="common_box">
+                                <div class="type">
+                                    申请信息：<span><font class="level-two">一般</font></span>
+                                    <div class="type-tip" style="display: none;">
+                                        <div class="info">
+                                            <p>1、身份证</p>
+                                            <p>2、驾驶证</p>
+                                            <p>3、收入证明</p>
+                                            <p>4、房产证</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="line_icon">1-2天审批</div>
+                                <div class="card_icon" data-company-id="89">身份证明和收入证明</div>
+                                <a href="#" class="win_btn_org">查看详情</a>
+                            </div>
+                            <div class="yxSlider_box">放圆大饼</div>
+                            <div class="product_box_so">
+                                <dl class="dl_list">
+                                    <dt class="tit_dt">贷款额度<span>(车价-首付)</span></dt>
+                                    <dd class="info_dd">￥72,535</dd>
+                                </dl>
+                                <dl class="dl_list">
+                                    <dt class="tit_dt">贷款尾款<span>（车价*20%）</span></dt>
+                                    <dd class="info_dd">￥72,535</dd>
+                                </dl>
+                                <dl class="dl_list">
+                                    <dt class="tit_dt">贷款成本<span>（利息+手续费）</span></dt>
+                                    <dd class="info_dd">￥72,535</dd>
+                                </dl>
+
+
+                            </div>
+                            <div class="unfold_box"><span class="unfold"><i class="tip_bottom"></i>收起</span></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="maskLayer" style="display:;"></div>
+    <!-- 精真估弹层start -->
+    <section class="jingzhengu-layer">
+        <header><img src="http://img3.bitautoimg.com/jinrong/newpcweb/css/ershouche/images/jingzhengu_logo.jpg?v=201608091966"><div class="close-layer"></div></header>
+        <div><iframe src="http://www.jingzhengu.com/yixin-s107023-r2007-05-30-m1500000000-c201.html" scrolling="auto" frameborder="0"></iframe></div>
+    </section>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

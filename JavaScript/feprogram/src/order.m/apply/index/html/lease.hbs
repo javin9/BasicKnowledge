@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var CODE_GETTING_URL = '/CarRentalApply/GetCode';
+        var CODE_VALIDATING_URL = '/CarRentalApply/CheckCode';
+        var signinUrl = '/CarRentalApply/SignIn';    // 个人登录表单
+        var applySuccessUrl = '/CarRentalApply/Success'; // 公司、个人订单提交成功
+        var payUrl = '/Payment/Pay';
+        var authUrl = '//api.chedai.bitauto.com/api/YxRiskOnline/RealNameAuthenticate'; // 姓名、身份证号认证
+        var userName = '';
+        var mobile = '13269031795';
+        var identityNumber = '';
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<input name="__RequestVerificationToken" type="hidden" value="NZTJfo0PEaiq_ziiu9ngnfL8WwotzICBD8xc2XAsxfRsyOykozcMOxAB9hhLKHNn2KZoyzINCq3OSP-12A4GLLHICqc1">
+<div id="yxWrapper">
+    <img src="//img1.bitautoimg.com/jinrong/newmweb/images/size4_w114_h114.png?v=201701231430" style="display: none;"/>
+
+
+
+
+    <header class="header-bar">
+        <a href="javascript:history.go(-1);"></a>
+        <h3 class="font-nav">提交订单</h3>
+        <span></span>
+    </header>
+    <div class="productname">
+        <span class="logo"><img src="http://img1.bitautoimg.com/chedai/9e1bdfb2-7b85-4d2c-a917-96d593b274fe.jpg" alt="" /></span>易鑫金融随心租
+    </div>
+
+    <div class="tabbtn">
+        <a href="javascript:void(0);" class="active">个人用户</a>
+        <a href="javascript:void(0);">企业用户</a>
+    </div>
+
+    <div class="tabcons">
+        <!-- 个人用户 -->
+        <div class="tabcon">
+            <div id="step1" style="display:;">
+                <!-- <div class="tip">您的信息仅作贷款审核使用，不会以任何形式泄露给其他人员或机构。订单提交后，会有专属顾问致电，联系您完成租车</div> -->
+                <div class="formwrap">
+                    <form action="#" id="personForm1">
+                        <div class="row">
+                            <label>手机号</label>
+                            <div class="inputwrap phone">
+                                <input type="tel" name="mobile" id="Mobile" placeholder="请输入手机号" maxlength="11" autofocus />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label>验证码</label>
+                            <div class="inputwrap code">
+                                <input type="tel" name="code" id="ValidateCode" placeholder="请输入验证码" maxlength="6" />
+                            </div>
+                            <a href="javascript:void(0)" class="btn" data-detail="s倒计时" data-seconds="60" id="GetValidateCodeBtn">获取验证码</a>
+                        </div>
+
+                        <input type="hidden" name="line" value="550" />
+
+                        <div class="btnwrap">
+                            <a href="javascript:void(0)" class="btn submit-btn">下一步</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="step1" style="display:none;">
+                <!-- <div class="tip">您的信息仅作贷款审核使用，不会以任何形式泄露给其他人员或机构。订单提交后，会有专属顾问致电，联系您完成租车</div> -->
+                <div class="formwrap">
+                    <form action="#" id="">
+                        <div class="row">
+                            <label>手机号</label>
+                            <div class="inputwrap phone">
+                                <input type="tel" name="mobile" id="Mobile" placeholder="请输入手机号" maxlength="11" autofocus />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label>验证码</label>
+                            <div class="inputwrap code">
+                                <input type="tel" name="code" id="ValidateCode" placeholder="请输入验证码" maxlength="6" />
+                            </div>
+                            <a href="javascript:void(0)" class="btn" data-detail="s倒计时" data-seconds="60" id="GetValidateCodeBtn">获取验证码</a>
+                        </div>
+
+                        <input type="hidden" name="line" value="550" />
+
+                        <div class="btnwrap">
+                            <a href="javascript:void(0)" class="btn submit-btn">下一步</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="step2" style="display:none;">
+                <div class="tip">补充以下信息，以便我们确认您的资质，审批通过后，将会有贷款顾问致电，联系您完成租车</div>
+                <div class="formwrap">
+                    <form action="#" id="personForm2">
+                        <div class="row">
+                            <div class="inputwrap">
+                                <input type="text" name="personName" id="personName" placeholder="请输入您的真实姓名" maxlength="8" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="inputwrap">
+                                <input type="text" name="personID" id="personID" placeholder="请输入您的身份证号" maxlength="18" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="inputwrap">
+                                <input type="number" name="imgCode" id="imgCode" placeholder="请输入图片校验码" maxlength="4" />
+                                <div id="changeImgCode" class="img-code"><img src="../images/GetImageValidateCode.html.jpg"><label></label></div>
+                            </div>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="inputwrap">
+                                <input type="tel" name="driveID" id="driveID" placeholder="您的驾驶证档案编号" maxlength="12" />
+                            </div>
+                        </div> -->
+
+                        <div class="btnwrap">
+                            <a href="javascript:void(0)" class="btn submit-btn">提交订单</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- 企业用户 -->
+        <div class="tabcon"  style="display:none;">
+            <div class="tip">您的信息仅作贷款审核使用，不会以任何形式泄露给其他人员或机构。订单提交后，会有专属顾问联系并指导您完成租车</div>
+            <div class="formwrap">
+                <form action="#" id="companyForm">
+                    <div class="row">
+                        <div class="inputwrap">
+                            <input type="text" name="ComName" id="ComName" placeholder="请输入企业名称" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="inputwrap">
+                            <input type="text" name="ComCName" id="ComCName" placeholder="请输入联系人姓名" maxlength="8" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="inputwrap phone">
+                            <input type="tel" name="ComMobile" id="ComMobile" placeholder="请输入手机号" maxlength="11" />
+                        </div>
+                        <a href="javascript:void(0)" class="btn" data-detail="s倒计时" data-seconds="60" id="ComGetValidateCodeBtn">获取验证码</a>
+                    </div>
+
+                    <div class="row">
+                        <div class="inputwrap">
+                            <input type="tel" name="" id="ComValidateCode" placeholder="请输入验证码" maxlength="6" />
+                        </div>
+                    </div>
+
+                    <div class="btnwrap">
+                        <a href="javascript:void(0)" class="btn submit-btn">提交订单</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="confirm">
+        <div class="cover"></div>
+        <div class="window">
+            <div class="content">
+                <h3>您是否阅读并同意：</h3>
+                <p><a href="javascript:void(0)" id="InfoUsing">《信息使用授权书》</a>及<a href="javascript:void(0)" id="PersonalCredit">《个人征信授权书》</a></p>
+            </div>
+            <div class="btnwrap">
+                <a href="javascript:void(0)" class="cancel-btn">我再想想</a>
+                <a href="javascript:void(0)" class="next-btn">同意并继续</a>
+            </div>
+        </div>
+    </div>
+
+    <form action="/CarRentalApply/Create" id="formQ" method="post">
+        <input id="CarId" name="CarId" type="hidden" value="109958" />
+        <input id="CarPrice" name="CarPrice" type="hidden" value="12.49" />
+        <input id="CityId" name="CityId" type="hidden" value="201" />
+        <input id="Orders" name="Orders" type="hidden" value="4345_126438_0" />
+        <input id="Source" name="Source" type="hidden" value="906" />
+        <input id="Channel" name="Channel" type="hidden" value="667" />
+        <input id="SourceDicName" name="SourceDicName" type="hidden" value="" />
+        <input id="From" name="From" type="hidden" value="" />
+        <input id="AdviserId" name="AdviserId" type="hidden" value="330" />
+        <input id="DrivingLicenceNumber" name="DrivingLicenceNumber" type="hidden" value="" />
+        <input id="IdentityNumber" name="IdentityNumber" type="hidden" value="" />
+        <input id="CompanyName" name="CompanyName" type="hidden" value="" />
+        <input id="Name" name="Name" type="hidden" value="" />
+        <input id="Telephone" name="Telephone" type="hidden" value="" />
+        <input id="code" name="code" type="hidden" value="" />
+        <input id="line" name="line" type="hidden" value="550" />
+    </form>
+</div>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

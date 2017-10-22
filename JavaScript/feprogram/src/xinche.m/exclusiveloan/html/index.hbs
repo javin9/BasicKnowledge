@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="format-detection" content="telephone=no"/>
+  </head>
+
+  <body>
+
+    {{{htmlWebpackPlugin.options.header}}}
+    <script>
+      var APIURL = "http://api.chedai.bitauto.com/";
+      var channel = 667;
+      var source = 12;
+    </script>
+
+    <div id="yxWrapper">
+      <div class="index">
+        <!-- 导航开始 -->
+        <header class="header-bar">
+          <a href="javascript:void(0);" v-on:click="goBack" class="nav-back"></a>
+          <h3 class="font-nav">专属贷款</h3>
+          <span></span>
+        </header>
+        <!-- 导航结束 -->
+        <div class="exclusive-header">
+            <img src="http://img1.yixinfinance.com/jinrong/oldmweb/images/exclusiveloan/banner-403.png?v=201603181878">
+        </div>
+
+        <div class="ctn-bg">
+          <div class="title-ctn">攀爬巅峰人生第一步</div>
+          <div class="main box">
+            <div class="categoryImg bgEvent">
+                    <img src="http://img1.yixinfinance.com/chedai/6eb9ab74-c4bf-4ac4-a2ad-4ef6feb6e958.png          ">
+            </div>
+            <div class="category">
+              <ul>
+                <li><i></i><span>初入职场，钱少人忙，求效率</span></li>
+                <li><i></i><span>追求生活品质，看好未来的自己</span></li>
+                <li><i></i><span>喜爱便捷出行，渴望自由自在</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="ctn ctn-bg">
+          <div class="title-ctn">你的专属贷款</div>
+          <div class="main">
+            <div class="content">职场小鲜肉积蓄有限，高薪在望，不仅追求工作进步还渴求生活精彩。该款产品把还贷的压力分散，超低月供、还款额固定，对初入职场的你再适合不过。并且租期结束后若不想要该辆车，还能省心换新车。
+            </div>
+          </div>
+          <div class="box mr10">
+            <div class="fit pb10">         
+              <div class="categoryIcon"><img src="http://img1.yixinfinance.com/jinrong/oldmweb/images/exclusiveloan/icon1.png?v=201603181878"></div>
+              <div class="category1">
+                <div>易鑫车贷平台自营</div>
+                <em>方便快捷 省心省钱</em>
+              </div>
+            </div>
+            <div class="fit pb10">
+              <div class="categoryIcon"><img src="http://img1.yixinfinance.com/jinrong/oldmweb/images/exclusiveloan/icon3.png?v=201603181878"></div>
+              <div class="category1">
+                <div>还贷压力小</div>
+                <em>0首付 超低月供</em>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="ctn ctn-bg">
+      <div class="title-ctn">帮你选车</div>
+      <div class="main">
+            <div class="main-title-2">
+                <span><em>73</em><span><em>%</em>的</span>职场鲜肉，会购买<em>4-16</em><em>万元</em>之间的车</span>
+            </div>
+        <div class="main-title">
+          <!-- <label>建议购车价</label> --><span>(数据来自身价测量仪)</span>
+        </div>
+        <div class="main-box">
+          <div id="recommend" class="swiper-container swiper-container-horizontal">
+                    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1380px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" style="width: 345px;">
+                           <div class="recommend-box box">
+                            <div class="category2">
+                            <img src="http://img3.bitautoimg.com/autoalbum/files/20160919/160/0459121605_3.jpg" class="recommendImg"></div>
+                           <div class="category2">
+                           <div class="title">起亚KX3</div>
+                           <div class="deputy-title"><em>2015款 1.6L 自动 两驱 DLX</em></div>
+                           <div class="recommend-ctn"><label>车价：</label><em>14.08</em><em>万</em></div>
+                           <div class="recommend-ctn"><label>月供：</label><em>3911元</em><em>起</em></div>
+
+                              
+                               <div class="choice-btn"><a href="http://m.daikuan.com/beijing/m113775/p136043">就它了</a></div>
+                           </div>
+                           </div>
+                           </div>
+                           <div class="swiper-slide" data-swiper-slide-index="0" style="width: 345px;">
+                           <div class="recommend-box box">
+                            <div class="category2">
+                            <img src="http://img3.bitautoimg.com/autoalbum/files/20160725/131/0442511315_3.jpg" class="recommendImg"></div>
+                           <div class="category2">
+                           <div class="title">众泰T600</div>
+                           <div class="deputy-title"><em>2015款 1.5T 手动 尊贵型</em></div>
+                           <div class="recommend-ctn"><label>车价：</label><em>9.88</em><em>万</em></div>
+                           <div class="recommend-ctn"><label>月供：</label><em>2744元</em><em>起</em></div>
+
+                              
+                               <div class="choice-btn"><a href="http://m.daikuan.com/beijing/m115876/p136043">就它了</a></div>
+                           </div>
+                           </div>
+                           </div>  
+                           <div class="swiper-slide" data-swiper-slide-index="1" style="width: 345px;">
+                           <div class="recommend-box box">
+                            <div class="category2">
+                            <img src="http://img1.bitautoimg.com/autoalbum/files/20160311/301/0517213012_3.jpg" class="recommendImg"></div>
+                           <div class="category2">
+                           <div class="title">大众POLO</div>
+                           <div class="deputy-title"><em>2015款 1.6L 自动 30周年纪念版</em></div>
+                           <div class="recommend-ctn"><label>车价：</label><em>11.89</em><em>万</em></div>
+                           <div class="recommend-ctn"><label>月供：</label><em>3303元</em><em>起</em></div>
+
+                              
+                               <div class="choice-btn"><a href="http://m.daikuan.com/beijing/m112230/p136043">就它了</a></div>
+                           </div>
+                           </div>
+                           </div>  
+                           <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="2" style="width: 345px;">
+                           <div class="recommend-box box">
+                            <div class="category2">
+                            <img src="http://img3.bitautoimg.com/autoalbum/files/20160919/160/0459121605_3.jpg" class="recommendImg"></div>
+                           <div class="category2">
+                           <div class="title">起亚KX3</div>
+                           <div class="deputy-title"><em>2015款 1.6L 自动 两驱 DLX</em></div>
+                           <div class="recommend-ctn"><label>车价：</label><em>14.08</em><em>万</em></div>
+                           <div class="recommend-ctn"><label>月供：</label><em>3911元</em><em>起</em></div>
+
+                              
+                               <div class="choice-btn"><a href="http://m.daikuan.com/beijing/m113775/p136043">就它了</a></div>
+                           </div>
+                           </div>
+                           </div>  
+                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-active" data-swiper-slide-index="0" style="width: 345px;">
+                           <div class="recommend-box box">
+                            <div class="category2">
+                            <img src="http://img3.bitautoimg.com/autoalbum/files/20160725/131/0442511315_3.jpg" class="recommendImg"></div>
+                           <div class="category2">
+                           <div class="title">众泰T600</div>
+                           <div class="deputy-title"><em>2015款 1.5T 手动 尊贵型</em></div>
+                           <div class="recommend-ctn"><label>车价：</label><em>9.88</em><em>万</em></div>
+                           <div class="recommend-ctn"><label>月供：</label><em>2744元</em><em>起</em></div>
+
+                              
+                               <div class="choice-btn"><a href="http://m.daikuan.com/beijing/m115876/p136043">就它了</a></div>
+                           </div>
+                           </div>
+                           </div></div>
+                  <div id="recommendPagination" class="swiper-pagination red" style="bottom:0px;"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="self-box">
+        <div id="selectCar" class="self-btn">自己选车</div>
+      </div>
+    </div>
+
+
+      </div>
+    </div>
+
+    <car-selector v-bind:level="2" v-on:callback="selectCarCallback"></car-selector>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+  </body>
+</html>

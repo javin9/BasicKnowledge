@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script>
+    var APIURL = "http://api.chedai.bitauto.com/";
+
+    var getBudgetInfoUrl = '/Home/GetBudgetInfo';
+    var getBudgetInfoCountUrl = '/Home/GetBudgetInfoCount';
+    var ADVISERAPIURL = "http://test.adviserapi.daikuan.com/";
+    var BusinessLine = 550;
+
+    var BudgetUrl = '/beijing/budget';
+    var Source = '941' || '690'; //来源
+    var Channel = '' || '667'; //渠道
+
+    var xinche_m_url = "http://m.daikuan.com";
+    var BusinessLine = 550;
+    var noAppDown = "1018,1019,1020,1021";
+    // var Source = '690' || '690'; //来源
+    // var Channel = '667' || '667'; //渠道
+    //城市信息
+    var city = {
+        cityId: "201",
+        cityName: "北京",
+        citySpell: "beijing"
+    };
+</script>
+
+<div id="yxWrapper">
+
+
+
+
+<header class="header-bar fixed" id="header-bar">
+    <a href="javascript:void(0)" class="back-btn"></a>
+    <h3 class="font-nav">按预算贷车</h3>
+    <span></span>
+</header>
+<script src="http://img1.yixinfinance.com/jinrong/assets/headtype.m/headtypecookies.js?v=201706141000"></script>
+
+<div class="search-bar" id="search-bar">
+    <div>
+        <div class="dropdown">
+                        <div class="trigger">
+                            <span>默认排序</span><i class="arrow"></i>
+                        </div>
+                    <div class="down-wrapper">
+                        <div class="down-content">
+                            <div class="choice-list" id="sort">
+                                        <!-- 因为a标签 选中状态没了~ 下方其他内容 同样问题 -->
+                                        <span data="x0" class="choice active">
+                                            <a href="/beijing/budget/d1x0/?source=941">
+                                                默认排序
+                                            </a>
+                                        </span>
+                                        <span data="x1" class="choice" select-show="价格">
+                                            <a href="/beijing/budget/d1x1/?source=941" class="up">价格</a>
+                                        </span>
+                            </div>
+                        </div>
+                        <div class="down-bg"></div>
+                    </div>
+
+        </div>
+    </div>
+    <div>
+        <div class="dropdown">
+                    <div class="trigger"><span>不限车价</span><i class="arrow"></i></div>
+
+
+            <div class="down-wrapper">
+                <div class="down-content">
+                    <div class="choice-list" id="carPrice">
+                                        <span data="-1" class="choice active">
+                                            <a href="/beijing/budget/d1/?source=941">不限</a>
+                                        </span>
+                                        <span data="c0" class="choice">
+                                            <a href="/beijing/budget/c0d1/?source=941">3万以下</a>
+                                        </span>
+                                        <span data="c1" class="choice">
+                                            <a href="/beijing/budget/c1d1/?source=941">3-5万</a>
+                                        </span>
+                                        <span data="c2" class="choice">
+                                            <a href="/beijing/budget/c2d1/?source=941">5-8万</a>
+                                        </span>
+                                        <span data="c3" class="choice">
+                                            <a href="/beijing/budget/c3d1/?source=941">8-10万</a>
+                                        </span>
+                                        <span data="c4" class="choice">
+                                            <a href="/beijing/budget/c4d1/?source=941">10-15万</a>
+                                        </span>
+                                        <span data="c5" class="choice">
+                                            <a href="/beijing/budget/c5d1/?source=941">15-20万</a>
+                                        </span>
+                                        <span data="c6" class="choice">
+                                            <a href="/beijing/budget/c6d1/?source=941">20-30万</a>
+                                        </span>
+                                        <span data="c7" class="choice">
+                                            <a href="/beijing/budget/c7d1/?source=941">30-45万</a>
+                                        </span>
+                                        <span data="c8" class="choice">
+                                            <a href="/beijing/budget/c8d1/?source=941">45万以上</a>
+                                        </span>
+
+                    </div>
+                </div>
+                <div class="down-bg"></div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="dropdown" id="car-select">
+                    <div class="trigger">
+                        <span>全部品牌</span><i class="arrow"></i>
+                    </div>
+
+
+        </div>
+    </div>
+    <div>
+        <div class="dropdown" id="more-filter">
+                    <div class="trigger no-update selected">
+                        <span>更多筛选</span><i class="arrow"></i>
+                        <em class="sup" style="display: inline">1</em>
+                    </div>
+
+
+
+            <div class="down-wrapper">
+                <div class="down-content">
+                    <dl class="search-list">
+                        <dt>首付（万）</dt>
+                        <dd id="downPayment">
+                                            <span data="-1" class="choice" data-type="default">
+                                                <a href="/beijing/budget//?source=941">不限</a>
+                                            </span>
+                                            <span data="d0" class="choice" data-type="">
+                                                <a href="/beijing/budget/d0/?source=941">0首付</a>
+                                            </span>
+                                            <span data="d1" class="choice active" data-type="">
+                                                <a href="/beijing/budget/d1/?source=941">
+                                                    3万以下
+                                                </a>
+                                            </span>
+                                            <span data="d2" class="choice" data-type="">
+                                                <a href="/beijing/budget/d2/?source=941">3-5万</a>
+                                            </span>
+                                            <span data="d3" class="choice" data-type="">
+                                                <a href="/beijing/budget/d3/?source=941">5-8万</a>
+                                            </span>
+                                            <span data="d4" class="choice" data-type="">
+                                                <a href="/beijing/budget/d4/?source=941">8-10万</a>
+                                            </span>
+                                            <span data="d5" class="choice" data-type="">
+                                                <a href="/beijing/budget/d5/?source=941">10-15万</a>
+                                            </span>
+                                            <span data="d6" class="choice" data-type="">
+                                                <a href="/beijing/budget/d6/?source=941">15-20万</a>
+                                            </span>
+                                            <span data="d7" class="choice" data-type="">
+                                                <a href="/beijing/budget/d7/?source=941">20-25万</a>
+                                            </span>
+                                            <span data="d8" class="choice" data-type="">
+                                                <a href="/beijing/budget/d8/?source=941">25-30万</a>
+                                            </span>
+                                            <span data="d9" class="choice" data-type="">
+                                                <a href="/beijing/budget/d9/?source=941">30万以上</a>
+                                            </span>
+                        </dd>
+                        <dt>月供范围（元）</dt>
+                        <dd class="monthlypayment" id="monthlyPayment">
+                                            <span data="-1" class="choice active" data-type="default">
+                                                <a href="/beijing/budget/d1/?source=941">
+                                                    不限
+                                                </a>
+                                            </span>
+                                            <span data="m0" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1m0/?source=941">1000元以下</a>
+                                            </span>
+                                            <span data="m1" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1m1/?source=941">1000-3000元</a>
+                                            </span>
+                                            <span data="m2" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1m2/?source=941">3000-5000元</a>
+                                            </span>
+                                            <span data="m3" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1m3/?source=941">5000-8000元</a>
+                                            </span>
+                                            <span data="m4" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1m4/?source=941">8000-10000元</a>
+                                            </span>
+                                            <span data="m5" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1m5/?source=941">10000元以上</a>
+                                            </span>
+                        </dd>
+                        <dt>期限</dt>
+                        <dd id="repaymentPeriod">
+                                            <span data="-1" class="choice active" data-type="default">
+                                                <a href="/beijing/budget/d1/?source=941">
+                                                    不限
+                                                </a>
+                                            </span>
+                                            <span data="p0" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1p0/?source=941">12期</a>
+                                            </span>
+                                            <span data="p1" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1p1/?source=941">24期</a>
+                                            </span>
+                                            <span data="p2" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1p2/?source=941">36期</a>
+                                            </span>
+                                            <span data="p3" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1p3/?source=941">48期</a>
+                                            </span>
+                                            <span data="p4" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1p4/?source=941">60期</a>
+                                            </span>
+                        </dd>
+                        <dt>级别</dt>
+                        <dd id="carSerialLevel">
+                                            <span data="-1" class="choice active" data-type="default">
+                                                <a href="/beijing/budget/d1/?source=941">
+                                                    不限
+                                                </a>
+                                            </span>
+                                            <span data="l0" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l0/?source=941">微型车</a>
+                                            </span>
+                                            <span data="l1" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l1/?source=941">小型车</a>
+                                            </span>
+                                            <span data="l2" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l2/?source=941">紧凑型车</a>
+                                            </span>
+                                            <span data="l3" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l3/?source=941">中型车</a>
+                                            </span>
+                                            <span data="l4" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l4/?source=941">中大型车</a>
+                                            </span>
+                                            <span data="l5" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l5/?source=941">豪华车</a>
+                                            </span>
+                                            <span data="l6" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l6/?source=941">MPV</a>
+                                            </span>
+                                            <span data="l7" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l7/?source=941">全部SUV</a>
+                                            </span>
+                                            <span data="l8" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l8/?source=941">小型SUV</a>
+                                            </span>
+                                            <span data="l9" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l9/?source=941">紧凑型SUV</a>
+                                            </span>
+                                            <span data="l10" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l10/?source=941">中型SUV</a>
+                                            </span>
+                                            <span data="l11" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l11/?source=941">中大型SUV</a>
+                                            </span>
+                                            <span data="l12" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l12/?source=941">大型SUV</a>
+                                            </span>
+                                            <span data="l13" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l13/?source=941">跑车</a>
+                                            </span>
+                                            <span data="l14" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l14/?source=941">面包车</a>
+                                            </span>
+                                            <span data="l15" class="choice" data-type="">
+                                                <a href="/beijing/budget/d1l15/?source=941">皮卡</a>
+                                            </span>
+                        </dd>
+                    </dl>
+                    <div class="bottom-btn">
+                        <a href="#" class="reset" id="reset-btn">重置</a>
+                        <a href="#" class="view" id="view-btn">查看<span id="count">230</span>条车源</a>
+                        <div class="down-bg"></div>
+
+                    </div>
+                </div>
+                <div class="down-bg"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="budget-carlist">
+        <ul class="carlist" id="carlist">
+            
+
+        <li class="car" data-Total="800">
+            <a href="/pre/beijing/hafuh6/m123298/?source=941&amp;DownPayment=0.4&amp;RepaymentPeriod=60">
+                <div class="image">
+                    <img src="http://img3.bitautoimg.com/autoalbum/files/20150608/029/0622000295_6.jpg" alt="哈弗H6" />
+                </div>
+                <div class="text">
+                    <dl>
+                        <dt class="name">哈弗H6</dt>
+                        <dd class="info">
+                            排量 1.5T 2.0T/油耗 7.2-8.7L
+                        </dd>
+                            <dd class="price">参考价：<em class="num">6.03-14.48<span class="unit">万</span></em></dd>
+                    </dl>
+                </div>
+            </a>
+        </li>
+        <li class="car" data-Total="800">
+            <a href="/pre/beijing/baojun730/m122644/?source=941&amp;DownPayment=0.5&amp;RepaymentPeriod=12">
+                <div class="image">
+                    <img src="http://img1.bitautoimg.com/autoalbum/files/20150914/592/0140225920_6.jpg" alt="宝骏730" />
+                </div>
+                <div class="text">
+                    <dl>
+                        <dt class="name">宝骏730</dt>
+                        <dd class="info">
+                            排量 1.5L 1.5T 1.8L/油耗 6.9-7.6L
+                        </dd>
+                            <dd class="price">参考价：<em class="num">5.88-9.88<span class="unit">万</span></em></dd>
+                    </dl>
+                </div>
+            </a>
+        </li>
+        <li class="car" data-Total="800">
+            <a href="/pre/beijing/baojun560/m122526/?source=941&amp;DownPayment=0.4&amp;RepaymentPeriod=60">
+                <div class="image">
+                    <img src="http://img4.bitautoimg.com/autoalbum/files/20160725/584/1059495840_6.jpg" alt="宝骏560" />
+                </div>
+                <div class="text">
+                    <dl>
+                        <dt class="name">宝骏560</dt>
+                        <dd class="info">
+                            排量 1.5L 1.5T 1.8L/油耗 6.8-7.5L
+                        </dd>
+                            <dd class="price">参考价：<em class="num">6.58-10.18<span class="unit">万</span></em></dd>
+                    </dl>
+                </div>
+            </a>
+        </li>
+        <li class="car" data-Total="800">
+            <a href="/pre/beijing/lufengx7/m123225/?source=941&amp;DownPayment=0.2&amp;RepaymentPeriod=60">
+                <div class="image">
+                    <img src="http://img3.bitautoimg.com/autoalbum/files/20160725/244/1138462447_6.jpg" alt="陆风X7" />
+                </div>
+                <div class="text">
+                    <dl>
+                        <dt class="name">陆风X7</dt>
+                        <dd class="info">
+                            排量 2.0T/油耗 10.4-10.4L
+                        </dd>
+                            <dd class="price">参考价：<em class="num">11.48-13.28<span class="unit">万</span></em></dd>
+                    </dl>
+                </div>
+            </a>
+        </li>
+        <li class="car" data-Total="800">
+            <a href="/pre/beijing/zhongtait600/m123197/?source=941&amp;DownPayment=0.4&amp;RepaymentPeriod=60">
+                <div class="image">
+                    <img src="http://img3.bitautoimg.com/autoalbum/files/20160725/131/0442511315_6.jpg" alt="众泰T600" />
+                </div>
+                <div class="text">
+                    <dl>
+                        <dt class="name">众泰T600</dt>
+                        <dd class="info">
+                            排量 1.5T 2.0T/油耗 7.9-9.2L
+                        </dd>
+                            <dd class="price">参考价：<em class="num">7.48-14.5<span class="unit">万</span></em></dd>
+                    </dl>
+                </div>
+            </a>
+        </li>
+        <li class="car" data-Total="800">
+            <a href="/pre/beijing/wulinghongguangs/m121340/?source=941&amp;DownPayment=0.5&amp;RepaymentPeriod=12">
+                <div class="image">
+                    <img src="http://img3.bitautoimg.com/autoalbum/files/20140312/032/0204500329_6.jpg" alt="五菱宏光S" />
+                </div>
+                <div class="text">
+                    <dl>
+                        <dt class="name">五菱宏光S</dt>
+                        <dd class="info">
+                            排量 1.2L 1.5L/油耗 6.6-7.8L
+                        </dd>
+                            <dd class="price">参考价：<em class="num">3.78-7.85<span class="unit">万</span></em></dd>
+                    </dl>
+                </div>
+            </a>
+        </li>
+        <li class="car" data-Total="800">
+            <a href="/pre/beijing/changancs75/m123036/?source=941&amp;DownPayment=0.4&amp;RepaymentPeriod=60">
+                <div class="image">
+                    <img src="http://img1.bitautoimg.com/autoalbum/files/20160721/478/0431144782_6.jpg" alt="长安CS75" />
+                </div>
+                <div class="text">
+                    <dl>
+                        <dt class="name">长安CS75</dt>
+                        <dd class="info">
+                            排量 1.5T 1.8T 2.0L/油耗 8.1-8.8L
+                        </dd>
+                            <dd class="price">参考价：<em class="num">6.98-14.26<span class="unit">万</span></em></dd>
+                    </dl>
+                </div>
+            </a>
+        </li>
+        <li class="car" data-Total="800">
+            <a href="/pre/beijing/bentian2xw/m122665/?source=941&amp;DownPayment=0.2&amp;RepaymentPeriod=60">
+                <div class="image">
+                    <img src="http://img1.bitautoimg.com/autoalbum/files/20141016/755/0945107556_6.jpg" alt="XR-V" />
+                </div>
+                <div class="text">
+                    <dl>
+                        <dt class="name">XR-V</dt>
+                        <dd class="info">
+                            排量 1.5L 1.8L/油耗 5.9-6.9L
+                        </dd>
+                            <dd class="price">参考价：<em class="num">11.58-15.26<span class="unit">万</span></em></dd>
+                    </dl>
+                </div>
+            </a>
+        </li>
+        <li class="car" data-Total="800">
+            <a href="/pre/beijing/chuanqigs4/m121817/?source=941&amp;DownPayment=0.3&amp;RepaymentPeriod=60">
+                <div class="image">
+                    <img src="http://img4.bitautoimg.com/autoalbum/files/20150906/445/0517594450_6.jpg" alt="传祺GS4" />
+                </div>
+                <div class="text">
+                    <dl>
+                        <dt class="name">传祺GS4</dt>
+                        <dd class="info">
+                            排量 1.3T 1.5T/油耗 6.3-7.6L
+                        </dd>
+                            <dd class="price">参考价：<em class="num">8.48-14.68<span class="unit">万</span></em></dd>
+                    </dl>
+                </div>
+            </a>
+        </li>
+        <li class="car" data-Total="800">
+            <a href="/pre/beijing/jilinl3/m122920/?source=941&amp;DownPayment=0.3&amp;RepaymentPeriod=60">
+                <div class="image">
+                    <img src="http://img1.bitautoimg.com/autoalbum/files/20160413/294/1101202942_6.jpg" alt="吉利博越" />
+                </div>
+                <div class="text">
+                    <dl>
+                        <dt class="name">吉利博越</dt>
+                        <dd class="info">
+                            排量 1.8L 1.8T 2.0L/油耗 7-8.2L
+                        </dd>
+                            <dd class="price">参考价：<em class="num">9.88-15.78<span class="unit">万</span></em></dd>
+                    </dl>
+                </div>
+            </a>
+        </li>
+
+        </ul>
+        <div class="sliderUp-box" id="slideup-box"><i class="sliderUp"></i>向上滑动刷新</div>
+        <div class="loading-gray" id="car-loading"></div>
+        <div class="default-box hide">
+            <div class="default-img"></div>
+            <div class="default-title">抱歉哦！没有找到匹配的车型~</div>
+            <!-- <div class="default-text">请调整搜索条件</div> -->
+            <div id="userTel" class="tel-channel"></div>
+        </div>
+    </div>
+
+<!-- appdownload / vue 组件 -->
+<app-down></app-down>
+
+<car-selector v-bind:level="1" v-bind:show-all-brand="true"  v-bind:show-search="false" v-bind:show-recommend-brand="false" v-on:callback="selectCarCallback"></car-selector>
+
+
+
+
+    <div id="maskLayer"></div>
+    <div class="bottom-to-top">
+        <img src='http://img2.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=201701231140' />
+    </div>
+</div>
+{{{htmlWebpackPlugin.options.footer}}}
+
+<app-down></app-down>
+
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

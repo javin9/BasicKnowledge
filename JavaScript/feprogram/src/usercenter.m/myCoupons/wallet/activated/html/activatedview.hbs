@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <style>
+
+    </style>
+    <script>
+
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="app">
+ <!-- header -->
+<header class="header-bar">
+<a id="gobackHistoryList" onclick="window.history.go(-1); return false;"></a>
+<h1 class="font-nav">我的钱包</h1>
+<span></span>
+</header>
+
+
+<div class="wallet-tab ub">
+    <div class="use ub-f1">可使用(3)</div>
+    <div class="activated ub-f1  on">未激活(3)</div>
+    <div class="failure ub-f1">已失效(1)</div>
+</div>
+
+<!-- 没有数据 -->
+<div action="render_no_product" isYao="1"  id="no-product"></div>
+</div>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

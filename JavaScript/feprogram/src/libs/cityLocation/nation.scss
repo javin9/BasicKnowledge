@@ -1,0 +1,123 @@
+/*#maskLayer{display: block!important;}*/
+$red:#E9474D;
+$grey3:#333;
+$grey6:#666;
+.nation{display:block;
+    position: fixed;
+    width: 654px;
+    left:50%;
+    top:50%;
+    margin-left: -288px;
+    margin-top: -120px;
+    background: #fff;
+    border: 1px solid #ededef;
+    z-index: 88889;
+    *{font-weight: 400;font-size:12px;}
+    .title_info{color:#333;font-size: 14px;line-height: 22px;padding:20px 0 16px 12px;span{font-size: 14px;padding-left:6px;}
+        .col_grey{color: #9C9FA1;}
+        .col_red{color:$red;font-size: 14px; text-decoration: underline;cursor:pointer;}
+    }
+    .sel-city-menuCon{
+        position: relative;
+        .icon-close{
+            display: block;
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            width: 11px;
+            height: 11px;
+            cursor: pointer;
+            background: url(./images/close.png) no-repeat left top;
+        }
+        .sel-city-nav{
+            height: 30px;
+            padding: 0 10px 0;
+            border-bottom:1px solid #eee;
+            span {
+                position: relative;
+                bottom:-1px;
+                float: left;
+                display: inline;
+                height: 28px;
+                margin-right: 15px;
+                padding:0 26px;
+                line-height: 22px;
+                white-space: nowrap;
+                cursor: pointer;
+                color:$grey3;
+                &.active {
+                    border-bottom:2px solid $red;
+                    color: $red;
+                    position: relative;
+                }
+            }
+        }
+        dd {
+            display: block;
+            line-height: 24px;
+            margin-left: 20px;
+            _margin-left: 0;
+        }
+        .hot-city{
+            dt{
+                display:none;
+            }
+            dl{
+                padding:10px 20px;
+                display:block;
+                height:1%;
+            }
+            dd{
+                margin-left: 0;
+            }
+        }
+        .other-city {
+            padding:10px 0;
+            dt {
+                float: left;
+                display: block;
+                width: 30px;
+                height: 22px;
+                text-align:center;
+                color: $red;
+                line-height: 22px;
+                white-space: nowrap;
+            }
+        }
+        ul{
+            height: 1%;
+            margin: 0;
+            padding: 0;
+            margin-left: 10px;
+            li {
+                float: left;
+                width: 12.2%!important;
+                height: 22px;
+                margin-bottom: 3px;
+                text-align: left;
+                line-height: 22px;
+                overflow: hidden;
+                _width:12.2%;
+                white-space:nowrap;
+                text-overflow:ellipsis;
+                a {
+                    color:$grey6;
+                    font-size: 12px;
+                    padding:0 5px;
+                    display:block;
+                    float:left;
+                    max-width:95%;
+                    white-space:nowrap;
+                    text-overflow:ellipsis;
+                    overflow: hidden;
+                    &:hover{
+                        text-decoration: none;
+                        background:$red;
+                        color:#fff;
+                    }
+                }
+            }
+        }
+    }
+}
+

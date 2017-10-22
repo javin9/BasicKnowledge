@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <link rel="apple-touch-icon-precomposed" href='http://img1.bitautoimg.com/jinrong/newmweb/images/size4_w114_h114.png?v=201610191598' />
+
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script>
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var xinche_m_url = "http://m.daikuan.com";
+        var BusinessLine = 550;
+    </script>
+    <title>【北京五菱宏光 2014款 1.2L 基本型】贷款-易鑫车贷</title>
+    <meta name="keywords" content="五菱宏光 2014款 1.2L 基本型汽车贷款，五菱宏光 2014款 1.2L 基本型一证贷贷款" />
+    <meta name="description" content="五菱宏光 2014款 1.2L 基本型一证贷购车，五菱宏光汽车贷款尽在易鑫车贷（daikuan.com）。" />
+
+    <script type="text/javascript">
+     
+        var RESURL = "http://img1.bitautoimg.com/jinrong/newmweb/";
+        var oldshopWebAddress = "http://mzt.chedai.bitauto.com/";
+        var staticResourceUrl = "http://img1.bitautoimg.com/jinrong/newmweb/";
+        //车款信息
+        var car = {
+            masterBrandId: "48", //品牌ID
+            masterBrandName: "五菱", //品牌名称
+            masterBrandLogo: "http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_48_100.png", //品牌logoUrl
+            serialId: "2750", //车系ID
+            serialName: "五菱宏光",//车系名称
+            serialSpell: "hongguang", //车型全拼
+            carId: "112425", //车ID
+            carPrice: "4.38", //车价
+            purchaseTaxRate: "", //购置税
+            carSerialShowName: "五菱宏光" //车系（显示）全称
+        };
+        //是否是核销码
+        var isHXM = 'False';
+        //是否是贴息产品-贴息产品当做普通产品展示
+        var isTieXi = 'False';
+        var isDeposit = 'True';
+
+
+        //城市信息
+        // var city = {
+        //     CityId: "201",
+        //     CityName: "北京",
+        //     RegionId: "110100",
+        //     CitySpell: "beijing",
+        //     SelectCityLevel: "2",
+        //     SelectCityName: "北京",
+        //     cityId: "201",
+        //     cityName: "北京",
+        //     regionId: "110100",
+        //     citySpell: "beijing",
+        //     selectCityLevel: "2",
+        //     selectCityName: "北京"
+        // };
+        var city = {
+          CityId: "201",
+          CityName: "阿拉善盟",
+          RegionId: "152900",
+          CitySpell: "alashanmeng",
+          SelectCityLevel: "2",
+          SelectCityName: "阿拉善盟",
+          cityId: "201",
+          cityName: "阿拉善盟",
+          regionId: "152900",
+          citySpell: "alashanmeng",
+          selectCityLevel: "2",
+          selectCityName: "阿拉善盟"
+        };
+        //产品
+        var product = {
+            productID: "112471",
+            packageID: "4178",
+            productPromotionId: "0",
+            packageName: "7-9万两证通"
+        };
+
+
+
+        //经销商信息
+        var dealer = {
+            dealerId: "0",
+            dealerName: "厂家指导价"
+        };
+        var channel = "";
+        var source = "690";
+        var companyID = "472";
+        var adviserApi = "http://test.adviserapi.daikuan.com/";
+
+        var starYellow = "http://img3.bitautoimg.com/jinrong/newmweb/css/xinche/images/list6.png?v=201610191598";
+        var starGray = "http://img4.bitautoimg.com/jinrong/newmweb/css/xinche/images/list7.png?v=201610191598";
+
+        var isForCity = 'True';//是否支持该城市
+        var hasCityFitCar = 'True';//是否有城市支持该车款
+        var isPromotionExpired = 'False';//促销是否已过期
+        var isPackageExpired = 'False';//套餐是否已过期
+        var orderApplyUrl = "http://sq.m.daikuan.com/OrderApplyYx/Index";
+        var baseRoutes = "";
+
+        var deviceId = "20dc6f22-6de9-4982-b48c-aa1df5b35767";
+        var loanUserId = 0;
+
+        var noLoanCostCityIds = '201,1502,302';
+        var isLumpPayment = 'True';
+         //是否是核销码
+        var isHXM = 'False';
+        var isTieXi = "False"
+        var shop = "易鑫金融旗舰店";
+
+    
+
+    </script>
+
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="yxWrapper">
+
+    <!--页头开始-->
+    <header class="header-bar" style="">
+        <a href="javacript:void(0)" class="backGoPage"></a>
+        <h3 class="font-nav">产品详情</h3>
+<!--         <div id="selectCity" class="">
+            <div class="relative-position-only height-percent-100">
+                <div class="location-icon-img absolute-position-only vertical-middle"></div>
+                <div class="location-icon-text width-percent-100 float-left font-size-26 text-overflow-ellipsis">
+                    <div id="localText" class="absolute-position-only vertical-middle margin-left-10 text-overflow-ellipsis" style="line-height: 110%">北京</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div> -->
+        <div id="selectCity" class="city-box">
+            <div id="localText" class="ut-s city-name">北京</div>
+        </div>
+        <div id="tools-nav"></div>
+        <div id="navTips" class="nav-tips hide">
+            <a href="#"><i></i>首页</a>
+            <a href="#"><i></i>我的申请</a>
+            <a href="javascript:void(0)" id="shareNavTip"><i></i>分享</a>
+        </div>
+    </header>
+
+    <!--页头结束-->
+
+    <div id="viewsWrapper">
+        <!-- 分享 -->
+        <share :options="shareOptions" qrcode-title="二维码描述标题" title="分享描述标题" :show.sync="showShareCtl" view="share"></share>
+
+
+        <car-selector v-on:callback="selectCarCallback" v-bind:level="3" v-bind:interface-car="interfaceCar" v-bind:city-id="cityId"></car-selector>
+        
+        <!-- 促销开始 -->
+        <section class="discount display-flex">
+          <div class="label">促销</div>
+          <div class="discount-box flex1 display-flex">
+              <span class="time flex3">还剩：30天6时2分</span>
+              <span class="count flex1">剩余18辆</span>
+          </div>  
+        </section>
+        <!-- 促销结束 -->
+        <!--套餐信息开始-->
+        <section class="package-wrapper display-flex">
+            <div><img src="http://img1.bitautoimg.com/chedai/9e1bdfb2-7b85-4d2c-a917-96d593b274fe.jpg" /></div>
+            <article class="flex1">
+                <h1>一证贷 (易鑫金融)</h1>
+
+                <div class="package-wrapper-info display-flex">
+                    <div>
+                        <span class="score font-red">4.8</span><span>分／558条评价</span>
+                        <span>1400579人申请</span>
+                    </div>
+                    <div class="flex1"><span>申请信息：</span><span class="condition f-green">宽松</span></div>
+                </div>
+            </article>
+        </section>
+
+        <!--套餐信息结束-->
+        <!--车款切换开始-->
+
+
+
+        <section class="car-wrapper margin-top20 display-flex" id="carWrapper">
+            <img src="http://img1.bitautoimg.com/autoalbum/files/20140828/241/1100322413_2.jpg" />
+            <div class="flex1">
+                <div class="car-name"><span>奔驰B级 2016款 B2001.6T 双离合 1.8T豪华版</span><i class="icon-bg"></i></div>
+
+                <div class="car-price"><span>厂家指导价：</span><span class="car-money no-border">￥43,800</span></div>
+                <dl id="carPriceLayer" class="">
+                    <dt class="font-title">经销商报价<i class="icon-bg"></i></dt>
+                    <dd id="carPriceLayerCon">
+                        <ul>
+                        </ul>
+                    </dd>
+                </dl>
+
+            </div>
+        </section>
+
+        <!--车款切换结束-->
+
+        <!-- 首付&月供开始 -->
+        <section id="loanCond" class="loan-condition">
+            <div class="loan-box">
+                <div class="cond">
+                    <div>
+                        <span>首付 </span>
+                        <span v-show="!isLumpPayment" class="font-red"><span v-text="downPaymentCount">--</span><font v-text="'('+ downPaymentRate +')'">(--)</font></span>
+                        <span v-show="isLumpPayment" class="font-red"><span v-text="firstPayment">--</span></span>
+                    </div>
+                    <div>
+                        <span>月供 </span>
+                        <span class="font-red"><span v-text="monthlyPaymentCount">5210元</span><font class="old-payment" v-show="isPromotionExpired" v-text="oldMonthlyPaymentCount"></font><font v-text="'×'+ repaymentPeriod +'期'">×36期</font></span>
+                    </div>
+                </div>
+                <div class="weikuan">贷款尾款 <span><span v-text="finalPaymentAmountCount"></span>(<span v-text="finalPaymentRate"></span>)</span></div>
+            </div>
+        </section>
+        <!-- 首付&月供结束 -->
+
+        <!-- 在线核销码首付&月供开始 -->
+        <section id="verifiCode" class="loan-condition hide">
+            <div class="loan-box cur">
+                <div class="cond display-flex">
+                    <div class="flex1">
+                        <span>首付 </span>
+                        <span class="font-red">5.26万<font>(30%)</font></span>
+                    </div>
+                    <div class="flex1">
+                        <span>月供 </span>
+                        <span class="font-red">5210元<font>×36期</font></span>
+                    </div>
+                </div>
+            </div>
+             <div class="loan-box">
+                <div class="cond display-flex">
+                    <div class="flex1">
+                        <span>首付 </span>
+                        <span class="font-red">5.26万<font>(30%)</font></span>
+                    </div>
+                    <div class="flex1">
+                        <span>月供 </span>
+                        <span class="font-red">5210元<font>×36期</font></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 在线核销码首付&月供结束 -->
+
+        <!-- 首付&月供弹层开始 -->
+        <section id="loanCondPopup" class="detail-popup detail-slider">
+            <div>
+                <div class="close-popup"></div>
+                <div>
+                    <dl>
+                        <dt class="display-flex">
+                            <div class="flex1">
+                                <h3>首付</h3>
+
+                                <p v-show="!isLumpPayment" class="red" v-text="downPaymentCount">--</p>
+                                <p v-show="isLumpPayment" class="red" v-text="firstPayment">--</p>
+                            </div>
+                            <div class="flex1">
+                                <h3>月供</h3>
+                                <p class="red" v-text="monthlyPaymentCount">4890元</p>
+                                <div class="old-payment" v-show="isPromotionExpired" v-text="oldMonthlyPaymentCount">6589元</div>
+                            </div>
+                            <div class="flex1">
+                                <h3>贷款额度</h3>
+                                <p v-text="loanAmountCount">13.34</p>
+                                <div v-if="finalPaymentAmountNum>0">含尾款<span v-text="finalPaymentAmountCount"></span></div>
+                            </div>
+                            <div class="flex1" v-show="isShowLoanCost">
+                                <h3>贷款成本</h3>
+                                <p v-text="totalCostCount">1.08万</p>
+                            </div>
+                        </dt>
+                        <dd v-show="isLumpPayment">首次支付=首付<font v-text="downPaymentCount">0元</font>+一次性付息<font v-text="totalCostCount">7100元</font></dd>
+                    </dl>
+                    <!-- 首付 -->
+                    <div class="slide-box">
+                        <h2>首付</h2>
+                        <div class="yx-silder-wrapper">
+                          <div id="downPayment"></div>
+                        </div>
+                    </div>
+                    <!-- 期限 -->
+                    <div class="slide-box">
+                        <h2>期限</h2>
+                        <div class="yx-silder-wrapper">
+                          <div id="repaymentPeriod"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn applyBtnEvent">立即申请</div>
+            </div>       
+        </section>
+        <!-- 首付&月供弹层结束 -->
+        <!--贷款计算信息开始-->
+
+
+
+        <section class="price-wrapper display-flex" id="priceWrapper">
+            <div class="doughnut-chart">
+                <div><canvas id="myChart" width="170" height="170"></canvas></div>
+                <div class="price-detailed"><span><i class="detail-icon"></i><i>明细</i><i class="arrow"></i></span></div>
+            </div>
+            <ul id="priceBox" class="flex1 font-24 hide">
+                <!-- @if (process.ToLower().Contains("yxhxm"))
+                {
+                    <li><i class="bg-shoufu"></i>首付（<font v-text="downPaymentRate">50%</font>）<span class="font-ctn"><font v-text="'￥'+ downPayment">--</font></span></li>
+                }
+                else
+                {
+                    <li v-show="!isLumpPayment"><i class="bg-shoufu"></i>首付<span class="font-ctn"><font v-text="'￥'+ downPayment">--</font></span></li>
+                } -->
+                <li v-show="isLumpPayment"><i class="bg-shoufu"></i>首次支付<span class="font-ctn"><font v-text="'￥'+ firstPayment">--</font></span></li>
+                <li v-show="isLumpPayment" class="light-gray"><i></i>首付<span class="font-ctn light-gray" v-text="'￥'+ downPayment">--</span></li>
+                <li v-show="isLumpPayment" class="light-gray"><i></i>一次性付息<span class="font-ctn light-gray" v-text="'￥'+ totalCost">--</span></li>
+
+                <li><i class="bg-edu"></i>分期额度<span class="font-ctn" v-text="'￥'+ loanAmount">--</span></li>
+                <li v-show="isShowLoanCost"><i class="bg-cost"></i>分期成本<span class="font-ctn" v-text="'￥'+ totalCost">--</span></li>
+            </ul>
+
+        </section>
+
+        <!-- 在线核销码图片开始 -->
+        <section class="verifi-img">
+            <img src="http://img1.bitautoimg.com/chedai/06e5bb6b-4937-4bfb-ba24-e3d1b817defd.png">
+        </section>
+        <!-- 在线核销码图片结束 -->
+
+
+        <!--价格明细弹层start -->
+        <section id="priceListLayer" class="detail-popup">
+            <div>
+                <div class="close-popup layer-close-btn"></div>
+                <dl>
+                    <dd class="display-flex">
+                        <div class="left flex1" v-show="!isLumpPayment">首付<span>(车价×<font v-text="downPaymentRate">20%</font>)</span></div>
+                        <div class="right flex1" v-show="!isLumpPayment"><label><i>省</i><font>￥3400</font></label> <font v-text="'￥'+ downPayment"></font></div>
+                        <div class="left flex3" v-show="isLumpPayment">首付<span>(首付<font  v-text="downPayment + '元'">0元</font> + 一次性付息<font v-text="totalCost">1.5万</font>)</span></div>
+                        <div class="right flex1" v-show="isLumpPayment"><!-- <label><i>省</i><font>￥3400</font></label>  --><font v-text="'￥'+ firstPayment">--</font></div>
+                    </dd>
+                    <dd class="display-flex">
+                        <div class="left flex2">贷款额度<span>(车价 - 首付)</span></div>
+                        <div class="right flex1 red weikuan"><span v-text="'￥'+loanAmount" class="first">￥12,640</span> <span class="last" v-if="finalPaymentAmountNum>0">含尾款<font v-text="'￥' + finalPaymentAmount">￥7800</font></span></div>
+                    </dd>
+                    <dd>
+                        <div class="display-flex">
+                            <div class="left flex3">月供<span>(<font>月费率</font><font v-text="interestRate">--</font>)</span></div>
+                            <div class="right flex1 red" v-text="'￥'+ monthlyPayment">--</div>
+                        </div>
+                        <div class="display-flex  old-rate" v-show="isPromotionExpired">
+                            <div class="left flex3">月供<span>(原费率<font v-text="oldInterestRate">0.85%</font>)</span></div>
+                            <div class="right flex1"><span v-text="'￥'+oldMonthlyPayment">￥59,000</span></div>
+                        </div>
+                    </dd>
+                    <dd class="display-flex" v-show="isShowLoanCost">
+                        <div class="left flex4">贷款成本<span>(利息<font v-text="totalInterest">--</font><font v-if="serviceFee!=0">+手续费</font><font v-if="serviceFee!=0" v-text="'￥'+serviceFee">--</font>)</span></div>
+                        <div class="right flex1" v-text="'￥'+ totalCost">--</div>
+                    </dd>
+                </dl>
+                <div class="btn applyBtnEvent">立即申请</div>
+            </div>
+        </section>
+        <!--价格明细弹层end -->
+       
+
+        <!--贷款计算信息结束-->
+
+        <!-- 贷款活动信息开始 -->
+        <section class="activity">
+
+            <div class="subtitle display-flex">
+                <label>专享</label>
+                <div class="flex1">首付直减2000元，凭授信码到店，易鑫金融承诺100%放款</div>
+            </div>
+
+            <div id="info" class="activity-info display-flex">
+                <dl class="flex1">
+                    <dd class="ut-s"><span class="label hui">惠</span>首次下单减免购置税、赠送2800元交强险首次下单减免购置税、赠送2800元交强险</dd>
+                    <dd class="ut-s"><span class="label fu">付</span>在线支付一元押金抵1000元</dd>
+                    <dd class="ut-s"><span class="label li">礼</span>申请即送398礼包</dd>
+                </dl>
+                <i class="new-icon arrow-right"></i>
+            </div>
+
+            <div id="typical" class="typical display-flex">
+                <dl class="flex1">
+                    <dt><i class="detail-icon"></i>1-3天审批; 身份证明和收入证明等</dt>
+                    <dd>
+                        <span><i class="detail-icon"></i>极速审批</span>
+                        <span><i class="detail-icon"></i>资料简便</span>
+                        <span><i class="detail-icon"></i>超低月供</span>
+                        <span><i class="detail-icon"></i>低首付</span>
+                        <span><i class="detail-icon"></i>超低月供</span>
+                    </dd>
+                </dl>
+                <i class="new-icon arrow-right"></i>
+            </div>
+
+            <a class="card-link" href="javascript:void(0)"><em></em><span>下单后分享可得价值1000元京东E卡</span></a>
+
+            <!-- 促销信息弹层开始 -->
+            <div id="infoUp" class="info-popup massage-pop">
+                <div class="popup-box">
+                    <div class="header">促销信息</div>
+                    <div>
+                        <dl>
+                            <!-- <dt>促销信息</dt> -->
+                            <dd class="display-flex">
+                                <label class="label hui">惠</label>
+                                <div class="flex1">首次下单减免购置税、赠送2800元交强险，在线支付一元押金抵1200元</div>
+                            </dd>
+                            <dd class="display-flex">
+                                <label class="label fu">付</label>
+                                <div class="flex1">在线支付一元押金抵1000元</div>
+                            </dd>
+                            <dd class="display-flex">
+                                <label class="label li">礼</label>
+                                <div class="flex1">申请即送398礼包</div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="popup-btn">确定</div>
+            </div>
+            <!-- 促销信息弹层结束 -->
+
+            <!-- 产品特点弹层开始 -->
+            <div id="typicalUp" class="info-popup typical-pop">
+                <div class="popup-box">
+                    <div class="header">产品特点</div>
+                    <div id="typicalScroll">
+                        <div>
+                            <dl>
+                                <!-- <dt>产品特点</dt> -->
+                                <dd class="display-flex">
+                                    <label class="label review"></label>
+                                    <div class="flex1">1-3天审批</div>
+                                </dd>
+                                <dd class="display-flex">
+                                    <label class="label type"></label>
+                                    <div class="flex1">免担保</div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-btn">确定</div>
+            </div>
+            <!-- 产品特点弹层结束 -->
+        </section>
+        <!-- 贷款活动信息结束 -->
+
+        <!--旗舰店连接开始-->
+
+
+
+        <section class="flagship-store-wrapper margin-top20" data-link="http://shop.m.daikuan.com/ptzy?source=690" id="flagshipStoreWrapper">
+            <label class="detail-icon"></label><span>易鑫集团旗舰店</span><i class="new-icon arrow-right"></i>
+        </section>
+
+        <!--旗舰店连接结束-->
+        <section class="details-con-wrapper margin-top20" id="detailsConWrapper">
+            <ul class="toggle-tag display-flex">
+                <li class="cur flex1">分期详情</li>
+                <li class="flex1" id="toggleTag2">用户评价<span></span></li>
+                <li class="flex1">易问答</li>
+                <li class="flex1">车主晒单</li>
+            </ul>
+            <!--产品详细开始 包括贷款顾问-->
+
+
+
+            <div class="loan-details">
+                <div class="PcDetail"><p>
+                    <img src="http://img4.bitautoimg.com/jinrong/newmweb/images/transparent.gif?v=201610191598" data-echo="http://img1.bitautoimg.com/chedai/3450a63c-7216-43cc-a084-fef01c678096.jpg" /><img src="http://img4.bitautoimg.com/jinrong/newmweb/images/transparent.gif?v=201610191598" data-echo="http://img1.bitautoimg.com/chedai/30b5da1c-30f3-48a4-8192-97d29e4f4f40.jpg" /><img src="http://img4.bitautoimg.com/jinrong/newmweb/images/transparent.gif?v=201610191598" data-echo="http://img1.bitautoimg.com/chedai/2cda8ed6-e952-43dd-a5e6-57474d4c8146.jpg" /><img src="http://img4.bitautoimg.com/jinrong/newmweb/images/transparent.gif?v=201610191598" data-echo="http://img1.bitautoimg.com/chedai/e953bce6-6a56-4c86-a2ec-37f586a55a7e.jpg" /><img src="http://img4.bitautoimg.com/jinrong/newmweb/images/transparent.gif?v=201610191598" data-echo="http://img1.bitautoimg.com/chedai/95902ab0-0015-40ad-837d-8ba5447d3102.jpg" /><img src="http://img4.bitautoimg.com/jinrong/newmweb/images/transparent.gif?v=201610191598" data-echo="http://img1.bitautoimg.com/chedai/e403c5d1-2ccd-4d3b-8468-e1103cc6642f.jpg" /><img src="http://img4.bitautoimg.com/jinrong/newmweb/images/transparent.gif?v=201610191598" data-echo="http://img1.bitautoimg.com/chedai/e952ac03-c8df-4c06-8960-562f55af2d91.jpg" /><img src="http://img4.bitautoimg.com/jinrong/newmweb/images/transparent.gif?v=201610191598" data-echo="http://img1.bitautoimg.com/chedai/9378b775-0020-452c-a747-369d61849e28.jpg" /><img src="http://img4.bitautoimg.com/jinrong/newmweb/images/transparent.gif?v=201610191598" data-echo="http://img1.bitautoimg.com/chedai/e9d5e79e-6d24-46a9-af3a-de2eab03e3e0.jpg" /><img src="http://img4.bitautoimg.com/jinrong/newmweb/images/transparent.gif?v=201610191598" data-echo="http://img1.bitautoimg.com/chedai/277629f0-dc4c-4003-a600-128b91abcc8d.jpg" /></p>
+                </div>
+
+                {{!--<div class="adviser-wrapper adviser-status">
+                    <div class="font-title">贷款顾问<span class="font-24">全程陪同，贷款无忧</span></div>
+                    <div v-if="loanAdviserCount>3" id="adviserMore" class="font-ctn">查看更多 <i class="icon-bg"></i></div>
+                </div>
+                <ul class="adviser-list adviser-status">
+                    <li v-for="adviser in loanAdviserShows">
+                        <div class="gotoAdviser" v-bind:data="adviser.Id" v-html="'<img src=' +adviser.photo+ '>'"></div>
+                        <div class="gotoAdviser" v-bind:data="adviser.Id">
+                            <p class="font-ctn"><span v-text="adviser.name">贷款顾问</span><i v-bind:class="['adviser-level',adviser.skillLevelClass]"></i></p>
+                            <p class="font-22" v-text="adviser.serveNumber"></p>
+                        </div>
+                        <a v-bind:href="'tel:'+adviser.cN400+','+ adviser.exTen"></a>
+                    </li>
+                </ul>--}}
+            </div>
+
+            <!-- 贷款顾问弹层start -->
+            <dl id="adviserLayer" class="hide">
+                <dt class="font-title">贷款顾问<i class="icon-bg"></i></dt>
+                <dd id="adviserLayerCon">
+                    <ul>
+                        <li v-for="adviser in loanAdviserOrders">
+                            <div class="gotoAdviser" v-bind:data="adviser.Id" v-html="'<img src=' +adviser.photo+ '>'"></div>
+                            <div class="gotoAdviser" v-bind:data="adviser.Id">
+                                <p class="font-ctn"><span v-text="adviser.name"></span><i v-bind:class="['adviser-level',adviser.skillLevelClass]"></i></p>
+                                <p class="font-22" v-text="adviser.serveNumber"></p>
+                            </div>
+                            <a v-bind:href="'tel:'+adviser.cN400+','+ adviser.exTen"></a>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+            <!-- 贷款顾问弹层end -->
+            <!--产品详细结束-->
+            <!-- 用户评价start -->
+
+
+
+            <div class="user-evaluation hide">
+                <header class="evaluation-header">
+        <span class="grade-star">
+            <div style="width:96.00%"></div>
+        </span>
+                    <span class="font-title font-red font-bold">4.8</span><span>/<span class="font-22">5分</span></span>
+
+                    <div class="display-flex font-24">
+                        <div class="flex1">反馈速度 <span class="font-red">4.7分</span></div>
+                        <div class="flex1">机构服务 <span class="font-red">4.7分</span></div>
+                        <div class="flex1">审批速度 <span class="font-red">4.6分</span></div>
+                    </div>
+
+
+                    <div class="evaluation-header-tag">
+                        <label class="font-24">资料简便 210</label>
+                        <label class="font-24">审核快 188</label>
+                        <label class="font-24">额度高 92</label>
+                        <label class="font-24">放款快 88</label>
+                        <label class="font-24">月供少 74</label>
+                        <label class="font-24">首付低 68</label>
+                        <label class="font-24">还款期限长 56</label>
+                    </div>
+
+                </header>
+                <!--加载 -->
+                <div class="loading">
+                    <img src="http://img2.bitautoimg.com/jinrong/newmweb//images/loading_white.gif?v=201610191598" /><br />数据加载中
+                </div>
+                <ul id="evaluationList" class="margin-top20 hide">
+                    <li v-for="evaluation in evaluationQuotes">
+                        <header>
+                            <span v-text="evaluation.nickName" class="font-28 font-bold"></span>
+                <span class="grade-star">
+                    <div v-bind:style="{ width: evaluation.serviceScore}"></div>
+                </span>
+                        </header>
+                        <label v-for="tag in evaluation.tags" v-text="tag" class="font-24"></label>
+                        <div v-text="evaluation.content" class="font-ctn"></div>
+                        <footer v-text="evaluation.updateTime +'　'+evaluation.carAllName" class="font-24"></footer>
+                    </li>
+                </ul>
+
+                <!-- 缺省页 -->
+                <div class="default-box hide">
+                    <div class="font-28">暂无评价</div>
+                    <div class="font-ctn">贷款申请成功后，即可进行评价～</div>
+                </div>
+
+                <div class="sliderUp-box font-ctn hide"></div>
+            </div>
+            <!-- 用户评价end -->
+            <!-- 易问答start -->
+
+
+
+
+            <!-- 易问答start -->
+            <div class="eQ-con eQEvent hide">
+                <dl>
+                    <dt class="expert font-24">
+                        <img src="http://img1.bitautoimg.com/chedai/1fea11aa-8108-45fe-ad29-7e76642e3c8c.jpg">
+                        <b class="font-ctn">Cathy姐</b>易鑫车贷高级服务顾问
+                    <div>外企汽车金融公司4年从业经验，专业解决车贷难题</div>
+                    <div>
+                    </div>
+                    <a href="/ExpertQuestion/Index?businessLine=550&expertId=1" class="ask-btn font-26">点我提问</a>
+                    </dt>
+                    <dd class="eQ-list">
+                        <ul class="eQ-list-con font-24">
+                            <!-- 循环单元start -->
+                            <li data-id="7">
+                                <dl>
+                    <dt>
+                        <img src="http://img1.bitautoimg.com/jinrong/newmweb/css/usercenter/images/car-008.png?v=201610191598">
+                        <b class="font-28">不想付首付可以么？</b>用户:134****9137
+                    </dt>
+                    <dd>
+                        <img src="http://img1.bitautoimg.com/chedai/1fea11aa-8108-45fe-ad29-7e76642e3c8c.jpg">
+                        <div class="font-ctn">您可以使用银行等金融机构提供的信用贷款产品，可以做到不用一次支付大额的首付哦。</div>
+                        <span>3天前</span><i class="pariseEvent">赞(<span>2382</span>)</i>
+                    </dd>
+                </dl>
+                </li>
+                <li data-id="3">
+                    <dl>
+                        <dt>
+                            <img src="http://img3.bitautoimg.com/jinrong/newmweb/css/usercenter/images/car-004.png?v=201610191598">
+                            <b class="font-28">我信用卡有几次忘还款了，还能申请车贷么？</b>用户:137****9137
+                        </dt>
+                        <dd>
+                            <img src="http://img1.bitautoimg.com/chedai/1fea11aa-8108-45fe-ad29-7e76642e3c8c.jpg">
+                            <div class="font-ctn">亲，那要看您忘还款的具体次数和具体金额了，如果比较严重的话，可能会导致车贷的首付比提高，还款期限降低等。如果特别严重的话，可能短期内就无法获得车贷了。养成良好的还款习惯很重要哦！</div>
+                            <span>3天前</span><i class="pariseEvent">赞(<span>275</span>)</i>
+                        </dd>
+                    </dl>
+                </li>
+                <li data-id="2">
+                    <dl>
+                        <dt>
+                            <img src="http://img4.bitautoimg.com/jinrong/newmweb/css/usercenter/images/car-003.png?v=201610191598">
+                            <b class="font-28">办车贷需要准备哪些东西？</b>用户:135****6134
+                        </dt>
+                        <dd>
+                            <img src="http://img1.bitautoimg.com/chedai/1fea11aa-8108-45fe-ad29-7e76642e3c8c.jpg">
+                            <div class="font-ctn">客官好，各家金融机构的要求是不一样的，比较常见的有身份证，户口本，银行流水，驾照等，有的还会要求提供房产，结婚证，居住证明等等，具体要求肯定还是要看具体金融机构和金融产品的要求啦。</div>
+                            <span>3天前</span><i class="pariseEvent">赞(<span>265</span>)</i>
+                        </dd>
+                    </dl>
+                </li>
+                <!-- 循环单元end -->
+                </ul>
+                </dd>
+                </dl>
+            </div>
+            <!-- 易问答end -->
+            <!-- //常见问题
+            <div class="faq hide">
+                <ul>
+                    <li v-for="faq in commonQuestions">
+                        <div class="problem">
+                            <i class="icon-bg"></i>
+                            <h4 v-text="faq.question" class="font-ctn"></h4>
+                            <div v-text="faq.askName + ' '+ faq.askTime" class="font-24"></div>
+                        </div>
+                        <div class="answer">
+                            <i class="icon-bg"></i>
+                            <span v-text="faq.answer" class="font-ctn"></span>
+                            <div v-text="faq.answerName + ' ' + faq.answerTime" class="font-24"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+                    <!-- 易问答end -->
+            <!-- 车主晒单start -->
+            <section id="inOrderToShare" class="hide">
+                <!-- 缺省页 -->
+                <div class="order-share-default font-24 hide">
+                    <a href="http://h5.ycapp.yiche.com/yixin/index?appsource=yixin">立即晒单</a>，成为首位晒单者<br />
+                    <a href="http://baodian.m.daikuan.com/beijing/Listpage#7">更多车款晒单(-)</a>
+                </div>
+
+                <!--加载 -->
+                <div class="loading">
+                    <img src="http://img2.bitautoimg.com/jinrong/newmweb//images/loading_white.gif?v=201610191598" /><br />数据加载中
+                </div>
+
+                <div class="order-share-list hide">
+                    <dl v-for="inOrderToShare in inOrderToShareArr" v-bind:data-url="inOrderToShare.url">
+                        <dt>
+                            <img v-bind:src="inOrderToShare.userAvatar" /><span class="font-24"><b class="font-32" v-text="inOrderToShare.nickName">李先生</b><span v-text="inOrderToShare.createdOn">2016-06-13</span></span>
+                        <div class="font-24"><i></i><span v-text="inOrderToShare.browserCount">0</span><i></i><span v-text="inOrderToShare.agreeCount">0</span></div>
+                        </dt>
+                        <dd>
+                            <div class="font-title" v-text="inOrderToShare.title">80后准爸爸贷款购车：省时省钱</div>
+                            <ul class="display-flex" v-bind:class="'display-flex ' + inOrderToShare.imageLiClassName">
+                                <li class="flex1"  v-for="listImage in inOrderToShare.listImage" v-bind:style="{backgroundImage:'url('+listImage.ImageUrl+')'}"></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="sliderUp-box font-ctn hide"></div>
+            </section>
+            <!-- 车主晒单end -->
+        </section>
+    </div>
+    <!--车贷资讯start-->
+    <section class="loan-news">
+        <dl>
+            <dt><span>车贷资讯</span><a href="#">查看更多</a></dt>
+            <dd>
+                <ul>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                    <li><a href="#">贷款购车要走哪些流程？看完这篇攻略，小…贷款购车要走哪些流程？看完这篇攻略，小…，小…？</a></li>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                </ul>
+            </dd>
+        </dl>
+    </section>
+    <!--车贷资讯end-->
+    <!-- 面包屑导航 -->
+    <section class="breadcrumb">
+        <a href="#">首页</a>
+        <span>&gt;</span>
+        <a href="#">奥迪</a>
+        <span>&gt;</span>
+        <a href="#">奥迪A4L</a>
+        <span>&gt;</span>
+        <a href="#">2017款 经典版 1.5T 手动 两驱 超值型</a>
+        <span>&gt;</span>
+        <a href="#">鑫动融 (易鑫金融)</a>
+    </section>
+
+    <!--底通-->
+    <section class="escdk13">
+        <div class="escdk131 font-ctn">腾讯、京东、百度、易车旗下的互联网汽车金融平台</div>
+        <div class="escdk132">
+            <div><span>触屏版</span></div>
+            <div>
+                <a href="http://www.daikuan.com/?from=newmweb">电脑版</a>
+            </div>
+
+            <div>
+                <a href="http://m.daikuan.com/home/about#!/">关于我们</a>
+            </div>
+            <div>
+                <a href="http://m.daikuan.com/Feedback/">意见反馈</a>
+            </div>
+        </div>
+        <div class="escdk133">服务电话：4000-169-169 (9:00-21:00)</div>
+    </section>
+
+    <div class="apply-fill"></div>
+
+    <section class="display-flex apply-wrapper">
+        <div class="flex2 adviser-status hide">
+            <i></i>
+            <div class="flexr-box">
+                <div class="test">
+                <span class="flex1-text">免费咨询</span>
+                <span class="flex1-titme">服务时间 9:00-21:00</span>
+                </div>
+                
+            </div>
+            
+         
+        </div>
+
+        <a class="flex3 applyBtnEvent" href="javascript:void(0);">
+            立即申请
+        </a>
+    </section>
+
+    <!-- 立即申请表单start -->
+
+
+    <form action="http://sq.m.daikuan.com/OrderApply/Index" method="post" id="orderInfoForm">
+
+        <input type="hidden" name="PageTitle" value="">
+        <input type="hidden" name="SourceUrl" value="">
+        <input type="hidden" name="SourceType" value="">
+        <input name="Orders" type="hidden" value="">
+        <input name="CarId" type="hidden" value="">
+        <input name="CityId" type="hidden" value="">
+        <input name="CarPrice" type="hidden" value="">
+        <input name="Source" type="hidden" value="">
+        <input name="Channel" type="hidden" value="667">
+        <input name="DealerId" type="hidden" value="">
+        <input name="DealerName" type="hidden" value="">
+        <input name="Line" type="hidden" value="">
+        <input name="DealerTelphone" type="hidden">
+        <input name="SourceDicName" type="hidden" value="">
+        <input name="From" type="hidden" value="">
+        <input name="FromNew" type="hidden" value="">
+
+        <input name="DownPayment" type="hidden" value="">
+        <input name="LoanAmount" type="hidden" value="">
+        <input name="AdviserId" type="hidden" value="">
+        <input name="ABTestkey" type="hidden" value="">
+    </form>
+
+    <!-- 立即申请表单end -->
+
+
+
+    <div id="maskLayer"></div>
+    <div class="bottom-to-top">
+        <img src='http://img1.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=201610191598' />
+    </div>
+</div>
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

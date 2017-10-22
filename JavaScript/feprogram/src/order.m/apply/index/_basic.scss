@@ -1,0 +1,157 @@
+/*表单部分*/
+[data-dpr="1"] .font-btn{
+  font-size: 16px;
+}
+[data-dpr="2"] .font-btn{
+  font-size: 32px;
+}
+[data-dpr="3"] .font-btn{
+  font-size: 48px;
+}
+
+[data-dpr="1"] .font-input{
+  font-size: 14px;
+}
+[data-dpr="2"] .font-input{
+  font-size: 28px;
+}
+[data-dpr="3"] .font-input{
+  font-size: 42px;
+}
+$main: #E9474D;
+.form-box{
+	padding:0 0.266667rem;
+	margin-bottom:0.266667rem;
+}
+.form-box header{
+	line-height:150%;
+	align-items:center;
+	-webkit-box-align: center;
+	text-align:left;
+	padding:0.4rem 0.133333rem;
+	color:#8b8b8b;
+}
+.form-box ul li{
+	margin-bottom:0.266667rem;
+	border-radius:0.133333rem;
+	height:1.28rem;
+}
+.form-box ul li.warning{
+	height:auto;
+	line-height:200%;
+	color: #e15436;
+}
+.name-form,
+.id-form{
+	border:1px solid #eeeeee;
+	background:#fff;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+	align-items:center;
+	-webkit-box-align: center;
+}
+.name-form input,
+.id-form input{
+	height:1.28rem;
+	text-indent:0.4rem;
+	border:none;
+	display:block;
+	flex: 1;
+	-webkit-flex: 1;
+	-webkit-box-flex: 1;      
+	-moz-box-flex: 1;         
+	-ms-flex: 1;  
+}
+.name-form a{
+	text-align:center;
+	height:1.28rem;
+	border-left: 1px solid #eee;
+	color:#666;
+	line-height:180%;
+	display:block;
+	width:2.1333333rem;
+	padding-top:0.186667rem;
+	box-sizing: border-box;
+	position: relative;
+}
+.name-form a input#upload{
+	position:absolute;
+	left:0;
+	top:0;
+	height:1.28rem;
+	width:2.1333333rem;
+	opacity: 0;
+	-webkit-opacity: 0;
+}
+.name-form a i{
+	display:block;
+	margin:0 auto;
+	width:0.64rem;
+	height:0.56rem;
+	background-size: 6.8rem auto !important;
+	background: url(images/icon.png) no-repeat -3rem top;
+	
+}
+.submit-form{
+	background:$main;
+}
+.submit-form a{
+	display:block;
+	line-height:1.28rem;
+	color:#fff;
+	text-align: center;
+}
+.submit-form.disabled{
+	background:#dcdcdc;
+}
+.form-box footer{ color:#999; padding-left: 0.4rem;}
+.form-box footer a,
+.form-box footer b { color:#5fc3e8; font-weight: normal; }
+.form-box footer i{
+	display:inline-block;
+	width:0.46rem;
+	height:0.46rem;
+	background-size: 6.8rem auto !important;
+	background: url(images/icon.png) no-repeat -0.63rem -0.6rem;
+	margin-right:0.133333rem;
+	position: relative;
+	top: 0.09rem;
+}
+.form-box footer i.cur{
+	background-position:-0.63rem top;
+}
+
+
+/*赠险*/
+.sec_insurance { display: -webkit-box; display: -webkit-flex; display: flex; position:relative; -webkit-align-items: center; align-items: center; -webkit-box-align: center;
+	margin-bottom: 0.26667rem; padding: 0 0 0 0.32rem; background-color: #fff; }
+.sec_insurance b { color: #5fc3e8; font-weight: normal; }
+.sec_insurance i { display: inline-block; width: 0.613333rem; height: 0.613333rem; background: url(images/icon.png) -0.546667rem -4.973333rem no-repeat; -webkit-background-size: 6.8rem 8.613333rem; background-size: 6.8rem 8.613333rem; vertical-align: middle; }
+.sec_insurance i.cur { background-position: -0.546667rem -4.28rem; }
+[data-dpr="1"] .font_24 { font-size: 12px; }
+[data-dpr="2"] .font_24 { font-size: 24px; }
+[data-dpr="3"] .font_24 { font-size: 36px; }
+
+
+ /*服务条款*/
+#servicePsionBox{ padding: 2.4rem 0.533333rem; }
+#servicePsionBox .layout-text{ border-radius: 0.213333rem; }
+#servicePsionBox .layout-title{ height: 1.466667rem; line-height:1.466667rem; background-color: #fff; border-radius:0.213333rem 0.213333rem 0 0; }
+#servicePsionBox .layout-con { padding-top: 0; }
+#servicePsionBox .layout-con p { margin-bottom: 0.133333rem; line-height: 200%; text-indent: 0; }
+#servicePsionBox .layout-con .list-p { margin-top:0; counter-reset: step; }
+#servicePsionBox .layout-con .list-p li { position: relative; padding-left: 1em; }
+#servicePsionBox .layout-con .list-p li:before { content: counter(step)'.'; counter-increment: step; position: absolute; left: 0; }
+#servicePsionBox .layout-close{ left: auto; right: 0.4rem; top: -0.333333rem; bottom: auto; width: 0.693333rem; height: 0.693333rem; background-position: -0.653333rem -5.853333rem; }
+
+[data-dpr="1"] #servicePsionBox .font-title { font-size: 16px; }
+[data-dpr="2"] #servicePsionBox .font-title { font-size: 32px; }
+[data-dpr="3"] #servicePsionBox .font-title { font-size: 48px; }
+[data-dpr="1"] #servicePsionBox .layout-con p { font-size: 13px; }
+[data-dpr="2"] #servicePsionBox .layout-con p { font-size: 26px; }
+[data-dpr="3"] #servicePsionBox .layout-con p { font-size: 39px; }
+
+.c_red { color: #e9474d; }

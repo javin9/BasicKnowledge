@@ -1,0 +1,132 @@
+#tools-nav {
+  /* width: px2rem(34);
+  height: px2rem(26);
+  background: url(images/tools.png) no-repeat 0 0;
+  background-position: left px2rem(-100);
+  background-size:px2rem(100) auto;
+  margin: px2rem(3) px2rem(30) 0 px2rem(26); */
+  display: inline-block;
+  position: relative;
+  width: px2rem(100);
+  height: px2rem(90);
+  background: transparent;
+
+  &:after {
+    content: ' ';
+    width: px2rem(36);
+    height: px2rem(3);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 0 px2rem(3) #78787C, 0 px2rem(-13) 0 0 #78787C, 0 px2rem(13) 0 0 #78787C;
+  }
+}
+
+.nav-tips {
+  /* box-sizing: border-box;
+  width: px2rem(200);
+  height: px2rem(274);
+  background: url(images/nav_tips.png) no-repeat left top;
+  background-size: px2rem(200) auto;
+  position: absolute;
+  right: px2rem(5);
+  top: px2rem(60);
+  z-index: 2;
+  padding-top: px2rem(18); */
+  box-sizing: border-box;
+  background: rgba(61,60,73,0.95);
+  position: absolute;
+  right: px2rem(8);
+  top: px2rem(84);
+  z-index: 9999;  // 加高层级
+  border-radius: px2rem(8);
+  box-shadow: px2rem(2) px2rem(2) px2rem(8) 0 rgba(0,0,0,0.3);
+
+  // 遮罩层
+  /* &:before {
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 10000;
+  } */
+
+  // 三角箭头
+  &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    z-index: 10001;
+    top: px2rem(-14);
+    right: px2rem(24);
+    border-left: px2rem(18) solid transparent;
+    border-right: px2rem(18) solid transparent;
+    border-bottom: px2rem(14) solid rgba(61,60,73,0.95);
+  }
+
+  a {
+    position: relative;
+    z-index: 10001;
+    display: block;
+    text-decoration: none;
+    @include fsize(28);
+    color: #fff;
+    line-height: px2rem(42);
+    padding: px2rem(20) px2rem(24);
+    border-bottom: 1px solid rgba(221,221,221,0.2);
+    background: transparent;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active{
+      color: #fff;
+    }
+
+    i {
+      display: inline-block;
+      width: px2rem(26);
+      height: px2rem(26);
+      margin-right: px2rem(15);
+      position: relative;
+      top: px2rem(2);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% 100%;
+    }
+
+    &:first-child {
+      position: relative;
+      padding-top: px2rem(22);
+    }
+    &:last-child {
+      padding-bottom: px2rem(22);
+      border-bottom: 0;
+    }
+    &:after {
+      display: none;
+    }
+
+    &:nth-child(1) {
+      i {
+        background-image: url(images/home.png);
+      }
+    }
+    &:nth-child(2) {
+      i {
+        background-image: url(images/order.png);
+      }
+    }
+    &:nth-child(3) {
+      i {
+        background-image: url(images/share.png);
+      }
+    }
+  }
+}

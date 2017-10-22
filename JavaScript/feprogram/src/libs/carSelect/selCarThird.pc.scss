@@ -1,0 +1,136 @@
+#CarSelCon {
+  background-color: #fff;
+  border-color: #000;
+  border-style: solid;
+  border-width: 1px 1px 5px;
+  display: none;
+  height: 242px;
+  left: -1px;
+  position: absolute;
+  top: 24px;
+  width: 210px;
+  z-index: 2200;
+}
+#CarSelCon #carCrumbs {
+  border-bottom: 1px solid #e7e7e7;
+  height: 28px;
+  line-height: 27px;
+  padding-left: 10px;
+}
+#CarSelCon #carCrumbs li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow:visible;
+}
+#CarSelCon #carCrumbs li.cur {
+  border-bottom: 1px solid #c00;
+  min-height: 0;
+  padding-bottom: 0;
+}
+#CarSelCon #carCrumbs li a {
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  top: 0;
+  position:relative;
+}
+#CarBrandCon {
+  clear: both;
+  display: none;
+  height: 208px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+#CarBrandCon > div {
+  float: left;
+  max-height: 208px;
+}
+.brandLetter {
+  border-right: 1px solid #e7e7e7;
+  padding: 0 16px;
+  width: 16px;
+}
+.brandLetter li {
+  cursor: default;
+  height: 16px;
+  line-height: 16px;
+  margin: 0;
+  min-height: 0;
+  padding: 0;
+  text-align: center;
+  width: 16px;
+  overflow:visible;font-size:12px; color:#000;
+}
+.brandList {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 160px;
+}
+#CarSelCon dl {
+  display: block;
+  height: auto;
+  margin: 0 5px;
+}
+#CarSelCon dd {
+  border: 0 none;
+  cursor: default;
+  display: block;
+  overflow: hidden;
+  padding-left: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 23px;
+  line-height: 23px;
+  position: relative;
+  width: 100%;font-size:12px; color:#000;
+}
+#CarSerailCon, #CarCon {
+  clear: both;
+  display: none;
+  max-height: 212px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-top: 5px;
+  box-sizing: border-box;
+}
+#CarSelCon #CarSelLoadingCon {
+  padding-top: 50px;
+  text-align: center;
+}
+#CarSelCon dl {
+  display: block;
+  height: auto;
+  margin: 0 5px;
+  width:210px;
+  float:left;
+  vertical-align:middle;
+}
+#CarSelCon dt {
+  color: #000;
+  font-family: "Microsoft Yahei";
+  font-size: 12px;
+  font-weight: bold;
+}
+#CarSelCon dd:hover, #CarSelCon dd.cur {
+  background-color: #333;
+  color: #fff;
+}
+.brandLetter li.cur, .brandLetter li:hover {
+  background: #c00;
+  color: #fff;
+}
+.letters_down {
+  background: url("images/tools_selectcar_ico_arrow.gif") no-repeat 4px -93px;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+}
+.letters_up {
+  background: url("images/tools_selectcar_ico_arrow.gif") no-repeat 4px -119px;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+}

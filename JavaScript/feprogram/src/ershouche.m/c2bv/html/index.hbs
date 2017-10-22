@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var InterfaceUrl = {
+            GetCode: 'loan/getcode',
+            CheckAndThread: '/loan/getloan'
+        };
+        var cityInfo= {
+            cityId: "201",
+            cityName: "北京",
+            citySpell: "beijing",
+            regionId: "0",
+
+        }
+        var mobile='13269031795'
+        var xincheUrl = "http://test.xinche.m.daikuan.com/";
+        var ershoucheUrl = "http://test.ershouche.m.daikuan.com/";
+        var source=88888
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<header class="header-bar">
+    <a href="javascript:history.back();" class="nav-back"></a>
+    <h1 class="font-nav">车贷额度</h1>
+    <span></span>
+</header>
+<div id="main"></div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

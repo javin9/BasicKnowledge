@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script type="text/javascript">
+        var citySpell = '';
+        var APIURL = "http://testapi.chedai.bitauto.com/";
+        var RESURL = "http://192.168.145.9:8011/Web/";
+        var USERCENTERURL = "http://test.i.daikuan.com";
+        var BusinessLine = 550;
+
+    </script>
+</head>
+<body>
+ {{{htmlWebpackPlugin.options.header}}}
+ <div class="apply-step">
+     <ul>
+         <li class="after-step"><i>1</i>选择车型和金融产品</li>
+         <li class="after-step"><i>2</i>在线提交申请信息</li>
+         <li class="cur-step"><i>3</i>一小时审批，获取短信授信码</li>
+         <li><i>4</i>放款提车</li>
+     </ul>
+ </div>
+ <div class="payment">
+     <div class="payment-con">
+
+         <div class="payment2">
+             <div class="icon"></div>
+             <div class="payment2-right">
+                 <h4>一小时内反馈审批结果</h4>
+                 <p>审批通过后将发送给您<span>短信授信码</span>，届时贷款顾问会联系您到店<br />凭短信授信码可直接到店办理租车</p>
+                 <div class="payment3">
+                     <a data-id="">查看订单</a>
+                     <a href="http://daikuan.com/card/index.html?from=260" target="_blank" class="alt">领取1年免费洗车</a>
+                 </div>
+             </div>
+         </div>
+
+
+     </div>
+ </div>
+ {{{htmlWebpackPlugin.options.footer}}}
+ <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var isActivityInProgress ="http://www.baidu.com"
+        var listData = [
+            {
+                type: 'shiming',
+                title: '实名认证',
+                intro: '用于确定您的真实身份',
+                state: '通过',
+                href: '#'
+            },
+            {
+                type: 'shenfenzheng',
+                title: '身份证',
+                intro: '身份证在有效期内，拍摄正反面',
+                state: '待审核',
+                href: '../uploadid/uploadid.html'
+            },
+            {
+                type: 'liushui',
+                title: '银行流水',
+                intro: '近6个月银行流水账单',
+                state: '未上传',
+                href: '../uploadfile/uploadfile.html'
+            },
+            {
+                type: 'cailiao',
+                title: '补充材料',
+                intro: '非必填',
+                state: '',
+                href: '../morefiles/morefiles.html'
+            }
+        ];
+        var idCard_url = '/snap/idcard';
+        var another_url = '/snap/another';
+        var options_url = '/snap/options';
+        var required_doc_item_infos_url = '/snap/getrequireddociteminfos';
+        var user_center_url = 'http://i.huidu.m.daikuan.com';
+        var xin_che_url = 'http://m.daikuan.com';
+        var coupon_card_info_getting_url = '/snap/getavailablecouponcardinfo';
+        var packageId = 4114;
+        var cityId = 502;
+        var activity_url = "http://m.daikuan.com";
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="main">
+    <myfiles :list-data="listData" :user-count="userCount" :is-uploaded-id-card-doc-type="isUploadedIdCardDocType"></myfiles>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

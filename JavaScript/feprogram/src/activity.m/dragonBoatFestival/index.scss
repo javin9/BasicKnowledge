@@ -1,0 +1,74 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+html, body, #yxWrapper {
+  height: 100%;
+  min-height:px2rem(1000);
+  position: relative;
+}
+body{
+  background:#fff;
+  // min-height:px2rem(1310);
+}
+.header-bar {
+  display: none;
+}
+.content-wrapper{
+  position: absolute;
+  // width:px2rem(750);
+  // min-height:px2rem(1219);
+  left: 0;
+  // top: px2rem(90);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin-top: 1px;
+  background: url("images/title.png") no-repeat 50% 7.0% / 56.667% auto,
+            url("images/logo.png") no-repeat 0 0 / 73.2% auto,
+            url("images/top_bamboo.png") no-repeat 0 0 / 100% auto,
+            url("images/005.png") no-repeat 110% 21% / 23.6% auto,
+            url("images/006.png") no-repeat -12% 50% / 69.7% auto,
+            url("images/dragon_boat.png") no-repeat center bottom / 100% auto,
+            url("images/bg.jpg") no-repeat center bottom / 100% auto,
+            white;
+
+  &.no-title {
+    background: url("images/logo.png") no-repeat 0 0 / 73.2% auto,
+              url("images/top_bamboo.png") no-repeat 0 0 / 100% auto,
+              url("images/005.png") no-repeat 110% 21% / 23.6% auto,
+              url("images/006.png") no-repeat -12% 50% / 69.7% auto,
+              url("images/dragon_boat.png") no-repeat center bottom / 100% auto,
+              url("images/bg.jpg") no-repeat center bottom / 100% auto,
+              white;
+  }
+}
+
+.bottom-to-top {
+  display: none !important;
+}
+
+/* always present */
+.fade-transition {
+  transition: all .3s ease;
+
+  ul {
+    transition: all .3s ease .1s;
+  }
+}
+/* .expand-enter defines the starting state for entering */
+/* .expand-leave defines the ending state for leaving */
+.fade-enter, .fade-leave {
+  opacity: 0;
+
+  ul {
+    transform: translate(0, 100%);
+  }
+}
+
+.fade-leave {
+  transition: all .3s ease .1s;
+
+  ul {
+    transition: all .3s ease;
+  }
+}

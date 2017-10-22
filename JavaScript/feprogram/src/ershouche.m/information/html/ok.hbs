@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+
+</head>
+<script>
+    //车款信息
+    var car = {
+        masterBrandId: "9", //品牌ID
+        masterBrandName: "奥迪", //品牌名称
+        masterBrandLogo: "http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_9_100.png", //品牌logoUrl
+        serialId: "2593", //车系ID
+        serialName: "A4L",//车系名称
+        serialSpell: "quanxinaodia4l", //车型全拼
+        carId: "116516", //车ID
+        carPrice: "24.65", //车价
+        purchaseTaxRate: "" //购置税
+    };
+    //城市信息
+    var city = {
+        CityId: "201",
+        CityName: "北京",
+        RegionId: "110100",
+        CitySpell: "beijing",
+        SelectCityLevel: "2",
+        SelectCityName: "北京",
+        cityId: "201",
+        cityName: "北京",
+        regionId: "110100",
+        citySpell: "beijing",
+        selectCityLevel: "2",
+        selectCityName: "北京"
+    };
+    var cityInfo = {
+        cityId: "201",
+        cityName: "北京",
+        citySpell: "beijing",
+        regionId: "110100",
+        selectCityLevel: "0",
+        selectCityName: ""
+    }
+    var ershoucheUrl = "http://test.ershouche.m.daikuan.com/";
+    var xincheUrl = "http://test.xinche.daikuan.com/";
+    var channel=99999
+</script>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="yxWrapper">
+    <div id="app">
+        <!--头部-->
+        <header class="header-bar">
+            <a href="javascript:history.back();" class="nav-back"></a>
+            <h1 class="font-nav">提交成功</h1>
+            <span></span>
+        </header>
+        <!--the car info-->
+        <div class="conter">
+            <div class="success">
+                <i class="icon_ok"></i>
+                <p class="txt">请您留意顾问来电！</p>
+                <a href="##" class="btn_red_line">返回首页</a>
+            </div>
+            <div class="listbox" id="listbox"></div>
+        </div>
+    </div>
+</div>
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

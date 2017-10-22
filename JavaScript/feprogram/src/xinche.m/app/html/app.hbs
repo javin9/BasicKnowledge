@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="yxWrapper">
+
+<div id="app" class="app-bg">
+  	<a href="yxcarloan://www.daikuan.com" id="loadAppButton" class="hide"></a>
+  <div class="app-title">易鑫车贷</div>
+  <div class="app-text">仅需上传身份证，1分钟极速审批</div>
+ 
+  <div class="app-btn">
+    <a href="https://itunes.apple.com/app/apple-store/id1123437789?pt=118014524&ct=yixin&mt=8">下载畅想0息购车</a>
+     <div class="app-cp">daikuan.com版权所有©2015-2017</div>
+  </div>
+</div>
+
+</div>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

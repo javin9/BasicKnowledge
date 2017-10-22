@@ -1,0 +1,713 @@
+@charset "utf-8";
+
+.title-box{
+    margin-top:0px;
+    font-size:0.25rem;
+}
+
+.gujia_box{
+    font-size: 14px;
+}
+.gujia_box input, textarea{
+    font-size: 13px;
+}
+
+.alert {
+    background: url(./images/ico_popup_alert.gif) no-repeat left center;
+    color: #c00;
+    margin: 0 0 0 5px;
+    padding: 3px 0 2px 19px;
+    font-size:12px;
+    display: none;
+}
+
+/*估价工具*/
+.tool_page {
+    text-align: center;
+    margin-bottom: 120px;
+}
+.tool_box {
+    height: 137px;
+    width: 926px;
+    position: relative;
+    margin: 50px auto 0 auto;
+    overflow: hidden;
+}
+.tool_box .line {
+    width: 100%;
+    height: 1px;
+    line-height: 1px;
+    font-size: 0;
+    overflow: hidden;
+    background: #e9e9e9;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    z-index: 0;
+}
+.tool_box ul {
+        width: 1200px;
+        z-index: 1;
+        position: relative;
+}
+.tool_box ul li {
+    width: 100px;
+    text-align: center;
+    color: #666666;
+    float: left;
+    margin-right:200px;
+    margin-left: -15px;
+}
+.tool_box ul li .icon_box {
+    width: 72px;
+    height: 50px;
+    background: #fff !important;
+    margin: 0 auto;
+}
+.tool_box ul li .icon_box span {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+.tool_box ul li .icon_box span.xzcx {
+    background: url(./images/tool_icon.png) 0 0px no-repeat;
+}
+.tool_box ul li .icon_box span.xzcx_light {
+    background: url(./images/tool_icon.png) 0 -50px no-repeat;
+}
+.tool_box ul li .icon_box span.spsj {
+    background: url(./images/tool_icon.png) -50px 0px no-repeat;
+}
+.tool_box ul li .icon_box span.spsj_light {
+    background: url(./images/tool_icon.png) -50px -50px no-repeat;
+}
+.tool_box ul li .icon_box span.xslc {
+    padding: 0;
+    background: url(./images/tool_icon.png) -100px 0px no-repeat;
+}
+.tool_box ul li .icon_box span.xslc_light {
+    background: url(./images/tool_icon.png) -100px -50px no-repeat;
+}
+.tool_box ul li .icon_box span.dyzt {
+    background: url(./images/tool_icon.png) -150px 0px no-repeat;
+}
+.tool_box ul li .icon_box span.dyzt_light {
+    background: url(./images/tool_icon.png) -150px -50px no-repeat;
+}
+.tool_box ul li p {
+    padding-top: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    font-family: "微软雅黑";
+}
+
+.tool_bott {
+    padding-bottom: 39px; /*overflow:hidden*/
+}
+.tool_bott .btn_box {
+    padding-top: 30px;
+    height: 36px;
+    line-height: 36px;
+    margin:0 auto;
+    text-align:center;
+    position:relative;
+}
+.tool_bott .btn_box a.last{
+    display:block;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    background: #fff;
+    border:1px solid #fc654d;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fc654d;
+    position:absolute;
+    left:50%;
+    margin-left:20px;
+}
+.tool_bott .xzcx {
+    width: 669px;
+    height: 200px;
+    margin: 0 auto;
+    text-align: left;
+    background: url(./images/chexing_img.png) no-repeat center 20px;
+}
+.tool_bott .xzcx .xiala_box {
+    width: 443px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    position: relative;
+    top: 147px;
+    background: #fff;
+    border:1px solid #c7c7c7;
+}
+.tool_bott .xzcx .xiala_box a.xiala_link {
+    display: block;
+    width: 443px;
+    height: 40px;
+    background: url(./images/xiala_jt.png) 265px 16px no-repeat;
+    color: #999;
+    text-align: left;
+    text-indent: 10px;
+    text-decoration: none;
+}
+.tool_bott .xzcx .xiala_box .current {
+    color: #333;
+}
+
+
+.btn_box span.button_94_34 {
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    display:block;
+    margin-left: -160px;
+    background:#fc654d;
+    cursor: pointer;
+    font-size:18px;
+    position: absolute;
+    left:50%;
+}
+.btn_box span.button_94_34.button_orange a:link, 
+.btn_box span.button_94_34.button_orange a:visited{
+    width:140px;
+}
+
+.btn_box span.button_94_35{
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    display:block;
+
+    background:#fc654d;
+    cursor: pointer;
+    font-size:18px;
+    margin:0 auto;
+}
+.btn_box span.button_94_34 a,
+.btn_box span.button_94_35 a{
+    color:#fff;
+    display:block;
+}
+.btn_box span.button_94_34:hover,
+.btn_box span.button_94_35:hover{
+    background:#f2614a;
+}
+.last {
+    float: left;
+    font-size: 14px;
+}
+/*上牌时间*/
+.spsj {
+    width: 670px;
+    height: 200px;
+    margin: 0 auto;
+}
+.spsj .l_box {
+    width: 325px;
+    height: 155px;
+    float: left;
+    background:url(./images/spsj_left.jpg) no-repeat center 30px;
+}
+.spsj .select_box {
+    position: relative;
+    top: 155px;
+    height: 40px;
+}
+.spsj .select_box span.label {
+    height: 40px;
+    width: 93px;
+    float: left;
+    text-align: right;
+    line-height: 40px;
+    color: #666;
+    display: block;
+    font-size: 14px;
+}
+.spsj .select_box .com_sele {
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #c7c7c7;
+    color: #999;
+    position: relative;
+    background: #fff;
+    float: left;
+    text-align: left;
+
+}
+.spsj .select_box .com_sele a.jt {
+    display: block;
+    width: 205px;
+    height: 40px;
+    line-height:40px;
+    text-indent: 10px;
+    font-size:12px;
+    color:#000;
+    background: url(./images/xiala_jt.png) no-repeat  183px 17px;
+}
+.spsj .select_box .com_sele .sel-city-wrapper{
+    float:left;
+}
+
+.SelCityEvent a.jt {
+    width: 198px;
+}
+
+.spsj .select_box .com_sele a{
+    color: #999;
+}
+.spsj .select_box .com_sele .sel-city-menuCon a{
+    color: #333;
+}
+.spsj .select_box .com_sele .sel-city-menuCon a:hover{
+    color:#fff;
+}
+.spsj .select_box .area {
+    width:205px;
+}
+
+.spsj .r_box {
+    width: 325px;
+    height: 155px;
+    float: right;
+    background:url(./images/spsj_right.jpg) no-repeat center 40px;
+}
+.spsj .select_box .time_year {
+    width: 205px;
+}
+
+
+.xslc {
+    padding-left: 10px;
+    overflow: hidden;
+}
+.xslc ul {
+    margin: 0 auto;
+    text-align: center;
+    width: 924px;
+    clear: both;
+}
+.xslc ul li {
+    width: 140px;
+    height: 140px;
+    text-align: center;
+    border: 1px solid #ccc;
+    float: left;
+    margin-right: 10px;
+    border: 2px solid #fff;
+    display: inline-block;
+    color:#2d354f;
+    font-size: 14px;
+}
+.xslc ul li div {
+    border: 1px solid #ccc;
+    width: 138px;
+    height: 43px;
+    line-height: 32px;
+    padding-top: 95px;
+    background: url(./images/licheng_img.jpg) no-repeat;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.xslc ul li.current {
+    border: 2px solid #07519A;
+}
+.xslc ul li.current div {
+    border: 1px solid #07519A;
+}
+.xslc ul li .lc1 {
+    background-position: 0 0;
+}
+.xslc ul li .lc2 {
+    background-position: 0 -139px;
+}
+.xslc ul li .lc3 {
+    background-position: 0 -278px;
+}
+.xslc ul li .lc4 {
+    background-position: 0 -417px;
+}
+.xslc ul li .lc5 {
+    background-position: 0 -556px;
+}
+.xslc ul li .lc6 {
+    background-position: 0 -695px;
+}
+
+.dyzt{}
+.daikuan_pg .dyzt ul li {
+    display: inline-block;
+    border: 2px solid #fff;
+    margin: 0 3px;
+}
+.daikuan_pg .dyzt ul li div {
+    border: 1px solid #e9e9e9;
+    width: 157px;
+    height: 47px;
+    cursor: pointer;
+    padding-top: 110px;
+    line-height: 47px;
+    background: url(./images/diya_icon.jpg) no-repeat;
+    display: inline-block;
+    font-size: 14px;
+}
+.daikuan_pg .dyzt ul li div.ydy {
+    background-position: 0 0;
+}
+.daikuan_pg .dyzt ul li div.wdy {
+    background-position: 0 -162px;
+}
+.daikuan_pg .dyzt ul li.current {
+    border: 2px solid #07519A;
+}
+.daikuan_pg .dyzt ul li.current div {
+    border: 1px solid #07519A;
+}
+.daikuan_pg{
+    display:none;
+}
+/*估价结果*/
+.gujia_box {
+    padding-top: 60px;
+    width: 404px;
+    margin: 0 auto;
+}
+.gujia_box .t_box {
+    width: 334px;
+    height: 147px;
+    margin: 0 auto;
+    padding-top: 117px;
+    box-sizing: border-box;
+    background: url(./images/gujiajieguo_bg.png) no-repeat;
+    color: #fff;
+}
+.gujia_box .t_box .tit2 {
+    color:#191919;
+    height: 28px;
+    line-height: 28px;
+    font-size: 16px;
+}
+.gujia_box .t_box p {
+    height: 28px;
+    line-height: 28px;
+    font-size: 22px;
+    color:#fff2ad;
+    display: inline;
+}
+.button_gray a:link, .button_gray a:visited{
+    display:block;
+    width: 192px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    color: #fc654d;
+    background:#fff;
+    text-align: center;
+    border:1px solid #fc654d;
+    box-sizing: border-box;
+}
+.button_orange a:link, .button_orange a:visited{
+    display:block;
+    width: 192px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    color: #fff;
+    background: #fc654d;
+    text-align: center;
+}
+.button_orange a:hover{
+    background:#f2614a;
+}
+.disabled a:link, .disabled a:visited{
+    background:#c9c9c9;
+}
+.disabled a:hover{
+    background:#c9c9c9;
+}
+.gujia_box .btn_box {
+    width: 404px;
+    margin: 20px auto 30px auto;
+    padding: 0;
+}
+
+.gujia_box .btn_box .button_150_34 {
+    display: block;
+}
+
+.f-list li label {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    color: #666;
+    text-align: right;
+    width: 74px;
+}
+.f-list input, textarea {
+    height: 25px;
+    height: 20px \0;
+    line-height: 100%;
+    line-height: 25px \9;
+    font-size: 12px;
+    border: 1px solid #b8b8b8;
+    padding-bottom: 5px \0;
+    padding-left: 5px;
+    color: #999;
+    vertical-align: middle;
+}
+.f-list select{
+    line-height: 100%;
+    font-size: 12px;
+    border: 1px solid #b8b8b8;
+    height:25px;
+    padding-left: 5px;
+    color: #999;
+    vertical-align: middle;
+    position: relative;
+    top:2px;
+}
+.f-w200{
+    width:200px;
+}
+.f-list li {
+    min-height: 30px;
+    padding-bottom: 16px;
+    overflow: hidden;
+}
+.radio-box input{border:none;}
+.gujia_box .btn_box .fl{
+    float: left;
+}
+.gujia_box .btn_box .fr {
+    float: right;
+}
+.gujia_box .form_box {
+    text-align: left;
+    padding-bottom: 50px;
+    clear:both;
+}
+.gujia_box .form_box .tit {
+    font-size: 16px;
+    text-align: center;
+    height: 46px;
+    line-height: 56px;
+    color: #191919;
+}
+.gujia_box .form_box .tit span {
+    font-size:22px;
+    color: #ee4d4d;
+}
+.gujia_box .form_box ul.f-list {
+    width: 440px;
+    margin:10px auto;
+    position: relative;
+    left: 52px;
+}
+.gujia_box .form_box .button_208_34 {
+    width: 208px;
+    height: 34px;
+    line-height: 34px;
+    display: block;
+    font-size: 14px;
+    
+    margin: 15px 0 0 112px;
+}
+
+/*汽车抵押贷款提示成功*/
+.succ_box{}
+.succ_box .succ_icon {
+    width: 150px;
+    height: 170px;
+    margin: 20px auto 0 auto;
+    background: url(./images/succ_icon.png) 0 0 no-repeat;
+}
+.succ_box h6 {
+
+    padding-bottom: 10px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 24px;
+    color: #333;
+}
+.succ_box p {
+    height: 30px;
+    line-height: 30px;
+    color: #999;
+    font-size: 14px;
+
+}
+.succ_box p span.red {
+    color: #c00;
+    font-weight: bold;
+    margin: 0 5px;
+}
+.succ_box p a {
+    color: #666;
+}
+.pb50 {
+    padding-bottom: 50px;
+}
+
+
+/*车型选择弹层*/
+.xiala_box {
+    
+}
+
+.f-item{
+    height:38px;
+    width:443px;
+    margin:50px auto;
+    background: url(./images/xiala_jt.png) 278px 15px no-repeat;
+}
+
+ .f-item dl {
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+	height: 38px;
+    width:278px;
+	vertical-align: middle;
+    float: left;
+}
+
+ .f-item>dl>dd {
+	position: relative;
+	display: block;
+	float: left;
+	margin-right: 6px;
+	height: 38px;
+	line-height: 38px;
+	border: 0px solid #ccc;
+    
+	*z-index: 3100
+}
+
+
+ .f-item dd:hover>a {
+	background: url(./images/tools_selectcar_ico_arrow.gif) no-repeat right -90px
+}
+
+ .f-item dd>ul {
+	display: none;
+	position: absolute;
+	top: 24px;
+	left: -1px;
+	max-height: 190px;
+	background-color: #fff;
+	border: 1px solid #000;
+	border-bottom-width: 5px;
+	z-index: 2200;
+	overflow: auto
+}
+
+ .f-item dd>ul li {
+	margin: 0;
+	padding: 0 5px;
+	width: auto;
+	height: 28px;
+	line-height: 28px;
+	border-top: 1px solid #ebebeb;
+	cursor: pointer;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	z-index: 2300
+}
+
+ .f-item dd>ul li:hover, .f-item dd>ul li.cur {
+	color: #c00;
+	background-color: #f2f2f2
+}
+
+
+ #CarsA{
+    display: block;
+    width:425px;
+    font-size:12px;
+	top:0;
+	height: 40px;
+	padding: 0 0px 0 10px;
+    color: #2d354f;
+	text-decoration:none;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    background: url(./images/xiala_jt.png) no-repeat right 15px;
+}
+
+#CarsA .CarDetail{
+    display: block;
+    float: left;
+    width: 300px;
+    height: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.CarPrice {
+    display:block;
+    width: 50px;
+    float:right;
+    text-align: right;
+    margin-right: 20px;
+}
+
+#CarSelCon{
+    width: 297px;
+}
+
+.brandList{
+    width: 245px;
+}
+
+#CarSelCon{
+    top:36px;
+}
+
+.brandList, #CarSerailCon, #CarCon{
+    text-align: left;
+}
+
+
+
+
+#inputValidate{
+    width:76px;
+}
+#getValidateCode {
+    width: 120px;
+    height: 28px;
+    background-color: #2E80BD;
+    color: white;
+    cursor: pointer;
+    border:none;
+}
+
+.r_box .alert{
+    position: relative;
+    text-align: left;
+    display: none;
+    top: 162px;
+    left: -25px;
+}
+
+.CityLayer{
+    width: 268px;
+    margin-top: 1px;
+    left: -70px;  
+
+}

@@ -1,0 +1,158 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+/*base*/
+body{
+  @include font-family(font-hei);
+  background: map-get($bg, #f2f2f2);
+}
+article, section, aside, dl, dd, font, label, span, i, blockquote {
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6, b, em, i {
+    font-weight: normal;
+    font-style: normal;
+}
+
+.ub { 
+  position: relative;
+  display: -webkit-box!important; 
+  display: box!important; 
+}
+.ub-con { 
+  position: absolute; 
+  width: 100%; 
+}
+.ub-f1, .ub-f2, .ub-f3, .ub-f4 { 
+  position: relative; 
+}
+.ub-ac { 
+  -webkit-box-align: center; 
+  box-align: center; 
+}
+.ub-ae { 
+  -webkit-box-align: end; 
+  box-align: end; 
+}
+.ub-pc { 
+  -webkit-box-pack: center; 
+  box-pack: center;
+   }
+.ub-pe { 
+  -webkit-box-pack: end; 
+  box-pack: end;
+}
+.ub-pj { 
+  -webkit-box-pack: justify; 
+  box-pack: justify; 
+}
+.ub-ver { 
+  -webkit-box-orient: vertical; 
+  box-orient: vertical; 
+}
+.ub-f1 { 
+  -webkit-box-flex: 1; 
+  box-flex: 1; 
+}
+.ub-f2 { 
+  -webkit-box-flex: 2; 
+  box-flex: 2; 
+}
+.ub-f3 { 
+  -webkit-box-flex: 3; 
+  box-flex: 3; 
+}
+.ub-f4 { 
+  -webkit-box-flex: 4; 
+  box-flex: 4; 
+}
+.ub-img { 
+  -webkit-background-size: contain; 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+.ut-s { 
+  text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap; 
+ }
+.box_sizing { 
+  box-sizing: border-box;
+   -webkit-box-sizing: border-box; 
+ }
+.ellipsis{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.slider-top {
+  animation: sliderUp .3s 1 forwards;
+}
+@keyframes sliderUp{
+  from {padding-top: px2rem(108);}
+  to {padding-top: 0;}
+}
+.header-bar {
+
+  h1 {
+    margin-left: 1.4rem;
+  }
+  .header_right {
+    width: px2rem(225);
+    display: block;
+    line-height: px2rem(90);
+    position: relative;
+    text-align: right;
+    padding-right: px2rem(30);
+    @include fsize(26);
+    .location_icon {
+      display: inline-block;
+      width: px2rem(38);
+      height: px2rem(38);
+      background-image: url(images/shop_chanel.png);
+      background-repeat: no-repeat;
+      background-size: px2rem(100) auto;
+      background-position: px2rem(-65) px2rem(-48);
+      vertical-align: middle;
+      position: relative;
+    }
+    
+    .localText {
+      vertical-align: middle;
+    }
+  }
+}
+
+///swiperTopBanner banner/
+.swiperTopBanner{
+  height:px2rem(230);
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    display: block;
+  }
+  .swiper-pagination-bullets {
+    text-align: right;
+    padding-right: px2rem(30);
+  }
+  .swiper-pagination span {
+    width: px2rem(14);
+    height: px2rem(14);
+    display: inline-block;
+    border-radius: 50%;
+    opacity: 1;
+    &.swiper-pagination-bullet {
+      border: 1px solid rgba(153,153,153,0.5);
+      background: #ffffff;
+      margin: 0 px2rem(5);
+    }
+    &.swiper-pagination-bullet-active {
+      border: 1px solid #dbb76c;
+      background: #dbb76c;
+    }
+  }
+}

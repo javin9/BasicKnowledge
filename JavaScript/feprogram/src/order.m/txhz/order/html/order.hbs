@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <style>
+    </style>
+    <script>
+        var MyOrder = {
+            OrderApplyUrl: 'http://www.baidu.com',
+            OrderDetailUrl: "/MyOrder/OrderDetail?carLoanType=3&childOrderId="
+        };
+        var orderUrl='http://192.168.148.146:8008';
+    </script>
+
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+    <div id="app">
+        <!-- header -->
+        <div action="GET-HEADER" data-text="易鑫车贷"></div>
+
+        <div class="order-tip">您有最近申请的订单，点击查看申请进度</div>
+        <div id="orderData">
+          
+        </div>
+  
+
+
+        <a class="ok-btn">重新申请</a>
+    </div>
+
+
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

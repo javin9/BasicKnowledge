@@ -1,0 +1,95 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+
+
+.rules-white{
+    width:px2rem(690);
+    height: 100%;
+    margin-left: px2rem(5);
+    margin-top: px2rem(40);
+ 
+    .rules-title{
+          margin-bottom: px2rem(40);
+          margin-left: px2rem(40);
+      .gang-l{
+         width:px2rem(150);
+        height: 0px;
+         border: 1px solid #FBE74C;
+          display: inline-block;
+          margin-left: px2rem(89);
+      }
+        .gang-r{
+         width:px2rem(150);
+         height: 0px;
+         border: 1px solid #FBE74C;
+         display: inline-block;
+         margin-left: px2rem(29);
+      }
+      .font{
+      @include fsize(28);
+      color: #FFFFFF;
+      margin-left: px2rem(29);
+      position: relative;
+      top:px2rem(5);
+       
+      }
+    }
+    p{
+         margin-left: px2rem(50);
+         margin-top: px2rem(10);
+      @include fsize(26);
+      color: #FFFFFF;
+          margin-bottom: px2rem(15);
+    }
+    .fw-b{
+  font-weight: bold;
+    @include fsize(28);
+        margin-bottom: 0;
+}
+}
+
+.rules-black{
+    width:px2rem(670);
+    height: 100%;
+    margin-left: px2rem(20);
+    // margin-top: px2rem(40);
+    padding-top: px2rem(100);
+    .rules-title{
+          margin-bottom: px2rem(40);
+          margin-left: px2rem(20);
+      .gang-l{
+         width:px2rem(150);
+          height: 0px;
+         border: 1px solid #686868;
+          display: inline-block;
+          margin-left: px2rem(89);
+      }
+        .gang-r{
+         width:px2rem(150);
+            height: 0px;
+         border: 1px solid #686868;
+         display: inline-block;
+         margin-left: px2rem(29);
+      }
+      .font{
+      @include fsize(28);
+      color: #686868;
+      margin-left: px2rem(29);
+      position: relative;
+      top:px2rem(5);
+       
+      }
+    }
+    p{
+         margin-left: px2rem(50);
+         margin-top: px2rem(15);
+      @include fsize(26);
+      color: #686868;
+    }
+    .fw-b{
+font-weight: bold;
+    @include fsize(28);
+        margin-bottom: 0;
+}
+}

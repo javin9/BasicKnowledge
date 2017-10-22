@@ -1,0 +1,33 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+body{
+  background:#fff;
+}
+.header-title{
+  @include fsize(36);
+  color: #000;
+  padding:px2rem(20) 0;
+  text-align:center;
+  background:#f5f5f5;
+}
+.mask{
+  z-index:8887 !important;
+}
+.arrow-right{
+  position:relative;
+  &:after {
+    content: ' ';
+    display: block;
+    background: url(images/arrow_icon.png) no-repeat left top;
+    background-size: px2rem(24) auto;
+    height:px2rem(24);
+    width:px2rem(24);
+    position:absolute;
+    right:0;
+    top:50%;
+    transform: translate3d(0,-50%,0);
+  }
+}
+.placeholder{
+  color:#c4c4c4;
+}

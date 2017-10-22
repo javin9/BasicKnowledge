@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script>
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var source = '539';//source=
+        var styleUrl = 'http://img1.yixinfinance.com/chedai/';
+        var recProListUrl = '/CreditCard/GetRecPackageList';//recProListUrl?rightsAndInterests=-1&level=-1&pageIndex=1&pageSize = 6&companyId = -1 列表页数据接口
+        var detailUrl = '/CreditCard/Detail';//url=detailUrl+"?id="id+"&source="+source
+
+        var companyId = "-1";//银行
+        var rightAndInterest = "521";//用途
+        var cardLevel = "-1";//等级
+        var city = {
+            cityId: '201',
+            cityName: '北京',
+            citySpell: 'beijing'
+        };
+
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="yxWrapper">
+    <header class="header-bar">
+        <a href="javacript:void(0)" onclick="window.history.back();return false;"></a>
+        <h1 class="font-nav">广发易车联名卡申请</h1>
+        <span></span>
+    </header>
+    <script src="http://192.168.145.9:8013/jinrong/assets/headtype.m/headtypecookies.js?v=201701191610"></script>
+    <!--联系信息-->
+    <article class="doCardContactInfo apply_page" id="applyPage">
+        <article class="apply_con_info">
+            非常感谢您申请“<span class="col_blue" id="CardName">广发易车联名卡-金卡</span>”，请填写以下信息，以便银行对您的信用进行初步审核，初审通过后银行工作人员将在2-3个工作日内与您联系提供办卡服务。
+        </article>
+        <article class="doCard_con">
+            <ul class="doCard_from">
+                <li class="item" id="UserName">
+                    <div class="hd font-title"><i class="icon"></i>姓名</div>
+                    <div class="ft_box">
+                        <input type="text" name="" id="UserNameInput" placeholder="请输入姓名" />
+                    </div>
+                </li>
+                <li class="item" id="Age" data-aslider-in="occupation|fade|bottom">
+                    <div class="hd font-title"><i class="icon"></i>年龄</div>
+                    <div class="ft_box">
+                        <div class="td font-title">
+                            <span class="choose">请选择</span>
+                        </div>
+                        <div class="ft"><mark class="tip_r"></mark></div>
+                    </div>
+                    <aside class="sel-control-box" data-aslider="occupation">
+                        <div class="asilder_wrapper">
+                            <div class="sel-ctrl-fun-btn">
+                                <div class="sel-ctrl-close font-nav">取消</div>
+                                <div class="sel-ctrl-title font-nav">年龄</div>
+                                <div class="sel-ctrl-complete font-nav">确定</div>
+                            </div>
+                            <div class="scroll-wrapper">
+                                <div class="scroll">
+                                    <ul class="slider">
+                                        <li data-id="18-25" class="cur">18-25</li>
+                                        <li data-id="25-35">25-35</li>
+                                        <li data-id="35-45">35-45</li>
+                                        <li data-id="45以上">45以上</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </li>
+                <li class="item" id="Telphone">
+                    <div class="hd font-title"><i class="icon"></i>手机号码</div>
+                    <div class="ft_box">
+                        <input type="number" name="" id="TelphoneInput" placeholder="请输入手机号码" maxlength="11" oninput="if(value.length > 2) value = value.slice(0, 11)" />
+                    </div>
+                </li>
+
+                <li class="item" id="OfficePhone">
+                    <div class="hd font-title"><i class="icon"></i>单位电话</div>
+                    <div class="ft_box">
+                        <input type="text" name="" id="OfficePhoneInput" placeholder="格式：区号-座机号" maxlength="13" oninput="if(value.length > 2) value = value.slice(0, 13)" />
+                    </div>
+                </li>
+                <li class="item" id="ValidateCode">
+                    <div class="hd font-title"><i class="icon"></i>验证码</div>
+                    <div class="ft_box">
+                        <input type="number" name="" id="code" placeholder="请输入验证码" />
+                    </div>
+                    <div class="ft_box" id="GetCode">获取验证码</div>
+                </li>
+                <li class="item" id="CityId">
+                    <div class="hd font-title"><i class="icon"></i>所在城市</div>
+                    <div class="ft_box">
+                        <div class="td font-title">
+                            <span class="choose">请选择</span>
+                        </div>
+                        <div class="ft"><mark class="tip_r"></mark></div>
+                    </div>
+                </li>
+
+            </ul>
+
+            <div class="apply_remind">部分信用卡只支持部分城市发卡，若城市选项里无您所在城市，建议您选择其他银行办卡。</div>
+            <div class="btn_org font-32" id="ContactInfo">提交申请 </div>
+
+        </article>
+    </article>
+    <input type="hidden" name="Channel" id="Channel" value="86">
+    <input type="hidden" name="From" id="From" value="">
+    <input type="hidden" name="Source" id="Source" value="540">
+    <input type="hidden" name="ProductID" id="ProductID" value="19">
+
+</div>
+
+
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

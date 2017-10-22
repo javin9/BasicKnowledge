@@ -1,0 +1,16 @@
+// icon selector
+@mixin icon($type, $width: auto, $height:auto, $size:contain, $left:center, $right:center){
+	background-repeat:no-repeat;
+	width:$width;
+	height:$height;
+	// background-size: $size;
+	background-position: center center;
+
+	@if $type == show{
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAANCAQAAAAHrFboAAABEklEQVR4AW2QA0wtUACGz7OHZ9s28tS8bNucso1ZX2OzcvOy62XbxmzUxdn1N/w4PkIfHpFMK7scsKLQdO4L0/CASsaI4gWnFekK38hglTwuGU91Yp04Tst0VeoVypnhp/7UTP7zVPoYNlllmUCZ/zFHkGYqxdRzUTO1hVsKvUcbvrK7QTthapuosOeFhE3uSveMWU17mR68BKc5wllTXmNTaOBIx9uyqxCsWMFaU27wUrovTGva5yzgqbafWEQ+gXDG+M0Z/jCDm+z+soqP5hAe0gPqHyWIeY6Zwl2VTpHAClb6n3eWDIaxEXrwhmYauCWM4QNdtOPIVYW/iCUVLOPFKWEaTmFPNevss0kj/vL3JSdDN47h+pM/9AAAAABJRU5ErkJggg==);
+	} @else if $type == like {
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAQAAACR313BAAAAlUlEQVR4AX3LJVREQRTG8Q+3fnBJFLQnHBI9vIhX6IUEHfljHafhvdBwGiwb16WtCzrz7sxc+53Rd1DNGXFWZQ5WOKaBkBm78dNMHXEzX7Ao0c+bCSd4pEJiidv/WM4Dg7nuktSPc6dia/iyjF95+M8SDsdufMCClakiRKedx/iQ7LzOnht/4FiYEiZJ0pED4/EyLUlpRkdt5p8EwGwAAAAASUVORK5CYII=);
+	} @else if $type == liked {
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAqUlEQVR4AZ3NJVBEUQBG4YtbH1wKrj3hkOjhRbxCLyToQ6TjNLwXGuuucZf1tnLWDbv3n/men3niu9mnh9rxgATOhMwITnGLHoRlwhkE0Y8uJGTiJxwVrhdg+W+4CT1aCvfHeP9P2AwdliqePSP9gw9R+/CfPzlBUFQG/4kL32m4VY2vcCgd800bwhhTidfhEUwlPseFauyBJhXzrgFbSGGkFEjwY0cUlgHGL5wqxh1oDQAAAABJRU5ErkJggg==);
+	}
+}

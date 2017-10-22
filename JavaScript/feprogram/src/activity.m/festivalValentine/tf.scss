@@ -1,0 +1,43 @@
+@import './css/mixin';
+@import './css/common.scss';
+@import './css/dialog.scss';
+@import './css/main.scss';
+@import './css/form.scss';
+@import './css/result.scss';
+@import './css/other.scss';
+@import './css/panel.scss';
+@import './css/valentine.scss';
+
+#carCityDiv{
+	min-height: 0;
+}
+
+.title-top-desc{
+	background:#fff;
+	line-height:150%;
+	padding:px2rem(15);
+	@include fsize(26);
+
+	i{
+		color: #E9474D;
+		font-style:normal;
+	}
+}
+
+#result .pro-groups{
+	margin-top: 0;
+	border-top:px2rem(1px) solid #eee;
+}
+
+#SecretaryMain > section{
+	display: none;
+}
+
+#showAlertBox{
+	z-index: 20000;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    // -webkit-text-fill-color: #fff !important;
+}

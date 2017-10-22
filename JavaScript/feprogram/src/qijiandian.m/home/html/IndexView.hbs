@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script type="text/javascript">
+  var companyid =3;
+  var source = 699;
+  var localcityid = 201;
+  var localcityspell = 'beijing';
+</script>
+<div id="app">
+  <header class="header-bar">
+      <a href="javascript:void(0);" v-on:click="goBack" class="nav-back"></a>
+      <h1 class="font-nav">东风日产</h1>
+      <div class="header_right ellipsis" id="selectCity" data-cityid="201" data-cityspell="heijing" v-on:click="changeCity">
+          <span class="location_icon"></span>
+          <span id="localText" class="localText">北京</span>
+      </div>
+  </header>
+
+  <div class="">
+    <!-- 轮播图start -->
+    <div class="swiper-container swiperTopBanner" id="swiperTopBanner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="http://img1.bitautoimg.com/chedai/e35a0595-1a2d-4e7f-b958-0c62e302ce1c.jpg" alt="e35a0595-1a2d-4e7f-b958-0c62e302ce1c.jpg"></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- 轮播图end-->
+
+    <!-- 快速选车start -->
+    <section class="module_group">
+      <header class="ub">
+        <h3 class="ub-f1">快速选车</h3>
+        <div id="IndexSelCar" class="mod_side ub-f1" v-on:click="selectAllCar">更多品牌</div>
+      </header>
+      <article>
+        <div id="hotcarSwiper" class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" data-bsid="13" data-bsname="现代" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_13_55.png" v-on:click="changeCar">
+              <a href="javascript:void(0);">
+                <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_13_55.png">
+                <p>现代</p>
+              </a>
+            </div>
+        
+            <div class="swiper-slide" data-bsid="32" data-bsname="海马" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_32_55.png" v-on:click="changeCar">
+              <a href="javascript:void(0);">
+                <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_32_55.png">
+                <p>海马</p>
+              </a>
+            </div>
+        
+            <div class="swiper-slide" data-bsid="36" data-bsname="陆风" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_36_55.png" v-on:click="changeCar">
+              <a href="javascript:void(0);">
+                <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_36_55.png">
+                <p>陆风</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <!-- 快速选车end -->
+
+    <section class="mod_com mod_hotcar" id="modHotcar">
+        <nav class="mod_tit">
+            <ul class="ub mod_tab" id="hotcar_tri">
+                <li class="cur" v-on:click="changeTab">热门车型</li>
+                <li class="" v-on:click="changeTab">贷款须知</li>
+            </ul>
+        </nav>
+        <section class="mod_cont" id="hotcar_cont">
+            <!-- 热门车型cont -->
+            <article class="cur">
+              <!-- <hot-car></hot-car> -->
+                <ul class="hotcar_list" style="">
+                    <li v-for="hotCar in hotCarLists">
+                        <a href="" :href = "hotCar.detailUrl" >
+                            <img alt="" src="" :src="hotCar.CarSerialImgUrl" :alt="hotCar.CarSerialImgUrl">
+                            <section>
+                                <h4 class="ut-s"><span v-text="hotCar.CarShowName"></span></h4>
+                                <p>报价<span class="baojia" v-text="hotCar.CarReferPriceText"></span></p>
+                                <p class="ub">
+                                    <span class="ub-f1">首付 <b v-text="hotCar.DownPaymentText"></b></span>
+                                    <span class="ub-f1">月供 <b v-text="hotCar.MonthlyPaymentText"></b></span>
+                                </p>
+                            </section>
+                            <div class="tag" v-html="hotCar.MultiLabelHtml"></div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="to_end" id="hotcarToend">没有更多了~</div>
+
+                <!-- loading -->
+                <article id="loadingHotcar" class="loading">
+                    <img src="../../../common.m/images/loading_gray.html.gif" alt="">
+                </article>
+                <!-- / loading -->
+
+            </article>
+            <!-- / 热门车型cont -->
+            <!-- 品牌详情cont -->
+            <article class="">
+                <span>
+                  <!-- 贷款须知的内容start -->
+                  
+                  <!-- 贷款须知的内容end -->
+                </span>
+            </article>
+            <!-- / 品牌详情cont -->
+
+        </section>
+    </section>
+
+    <!-- 底部按钮 -->
+    <section class="btn_bot" id="IndexSelMoreCar" v-on:click="selectAllCar">
+        <a href="javascript:void(0)">查看更多品牌 &gt;&gt;</a>
+    </section>
+    <!-- / 底部按钮 -->
+  </div>
+  <!-- 弹层 -->
+  <div class="poplayer" id="nocityPop">
+      <div class="masklayer"></div>
+      <div class="popwrap">
+          <header></header>
+          <section class="tx-c">
+              <p><span>东风日产</span>旗舰店暂不支持<span>北京</span>服务</p>
+              <p>是否切换其他城市？</p>
+          </section>
+          <footer class="ub">
+              <a href="javascript:void(0)" class="ub-f1 box_sizing" id="changeCity" v-on:click="changeCity">切换城市</a>
+              <a href='javascript:void(0);' class="ub-f1 box_sizing">返回旗舰店列表</a>
+          </footer>
+      </div>
+      <input type="hidden" id="isShowPop" value=""/>
+  </div>
+  <!-- / 弹层 -->
+  <!-- app下载 -->
+  <down></down>
+</div>
+<div class="bottom-to-top">
+    <img src='http://img4.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=2016091322417' />
+</div>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

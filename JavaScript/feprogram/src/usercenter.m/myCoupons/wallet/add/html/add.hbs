@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <style>
+
+    </style>
+    <script>
+          var api_url = 'http://192.168.148.133:8008';
+          var returnUrl='/wallet/index/IndexView.html'
+    </script>
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+
+    <div id="app">
+<!-- header -->
+<div action="GET-HEADER" data-text="兑换卡券"></div>
+
+<div class="add-card-view">
+    <span>兑换码</span>
+    <input type="text" id="card-input" placeholder="请输入兑换码" />
+</div>
+
+<div class="add-btn">兑换卡券</div>
+</div>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

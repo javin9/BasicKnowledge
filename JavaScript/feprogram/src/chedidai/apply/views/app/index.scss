@@ -1,0 +1,41 @@
+@import 'sassHelper/mixin';
+@import 'sassHelper/vars';
+
+body{
+	background: $background-color;
+}
+
+input::-ms-clear { display: none; } 
+
+::placeholder{
+	color:$light-color !important;
+	opacity: 1;
+}
+
+.main{
+	width: 1200px;
+	margin:20px auto 50px;
+}
+
+#HeaderNav,#Header .login-status,#Header .sel-city{
+	display: none;
+}
+
+.progress{
+	position: absolute;
+	width:520px;
+	height:43px;
+	right:0;
+	top:50%;
+	margin-top: -21px;	
+	background-repeat: no-repeat ;
+	background-position: left top;
+
+	[data-step=form] &{
+		background-image: url(./bar1.png);
+	}
+
+	[data-step=report] &{
+		background-image: url(./bar2.png);
+	}
+}

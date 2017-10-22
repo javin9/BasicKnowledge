@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<header class="header-bar">
+    <a href="javascript:void(0)" class="font-title"></a>
+    <h1 class="font-nav">支付结果</h1>
+    <span class="font-title"></span>
+</header>
+<section class="result-fail-box">
+    <i></i>
+    <h2 class="font-h2">您提供的资质有限，暂时无法评估您的额度</h2>
+    <h3>服务顾问会在2小时内联系您，请保持手机畅通</h3>
+    <a class="font-h2 orders-btn" href="#" id="goOrder">查看订单</a><a class="font-h2" href="#" id="goHome">返回首页</a>
+</section>
+
+<!-- 免费洗车-新增 -->
+<section class="result-washcar uf uf_ac">
+    <i class="i-washcar"></i>1年免费洗车，还等什么？<a href="http://xinyongka.m.daikuan.com/CreditCard/Detail?productId=19" class="link">立即领取吧</a>
+</section>
+
+<a href="">
+    <section class="adviser-box">
+        <div class="adviser-portrait"><img src="@adviser.Photo" /></div>
+        <div class="adviser-info">
+            <span class="font-title">名称</span><i class="skillLevel_level1"></i>
+            <div>已帮 22 人贷款　22 %好评</div>
+        </div>
+        <div class="adviser-tel"></div>
+    </section>
+</a>
+
+<section class="weixin-box">
+    <div class="weixin-img"><img src="http://placehold.it/400x400"></div>
+    <div class="font-title">
+    关注微信公众号，订单状态随时跟进<br/>
+    搜索微信公众号：yxchedai <!-- <a href="javascript:void(0);">复制号码</a> -->
+    </div>
+</section>
+
+<div class="pm_detail">
+    <section class="pm_bg pm_w">
+        <div class="dkdetail pm_bg">
+            <dl class="size28 uline">
+                <dd class="uf uf_ac">
+                    <div class="uf_f1">保证金</div>
+                    <div class="dk_r">22</div>
+                </dd>
+                <dd class="uf uf_ac">
+                    <div class="uf_f1">月租*租期</div>
+                    <div class="dk_r">40期</div>
+                </dd>
+                <dd class="uf uf_ac">
+                    <div class="uf_f1">订单编号</div>
+                    <div class="dk_r">311</div>
+                </dd>
+            </dl>
+
+        </div>
+    </section>
+</div>
+
+<div class="pm_detail">
+    <section class="pm_bg pm_w">
+        <!-- 贷款明细 -->
+        <div class="dkdetail pm_bg">
+            <dl class="size28 uline">
+                <dd class="uf uf_ac">
+                    <div class="uf_f1">首付1</div>
+                    <div class="dk_r">1</div>
+                </dd>
+                <dd class="uf uf_ac">
+                    <div class="uf_f1">贷款总额</div>
+                    <div class="dk_r">1</div>
+                </dd>
+                <dd class="uf uf_ac">
+                    <div class="uf_f1">月供*期限</div>
+                    <div class="dk_r">22期</div>
+                </dd>
+                <dd class="uf uf_ac">
+                    <div class="uf_f1">贷款成本</div>
+                    <div class="dk_r">22</div>
+                </dd>
+                <dd class="uf uf_ac">
+                    <div class="uf_f1">订单编号</div>
+                    <div class="dk_r">22</div>
+                </dd>
+            </dl>
+        </div>
+    </section>
+</div>
+
+<section class="add-box">
+    <a href="@banner.Url"><img src="http://placehold.it/600x200" alt="" data-id="1"></a>
+</section>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

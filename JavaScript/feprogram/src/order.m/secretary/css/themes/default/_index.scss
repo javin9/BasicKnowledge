@@ -1,0 +1,580 @@
+.theme-default {
+  $main: #e9474d;
+  $sub: #46ADF3;
+
+  $font: #686868;
+  $font-dark: #333333;
+  $font-light: #999999;
+
+  $border-color: #e5e5e5;
+
+  $bg-color: #f5f5f5;
+
+  /* main */
+  & {
+    background: white;
+    color: $font;
+  }
+
+  .header-bar {
+    color: $font;
+
+    &.tf {
+      h1 {
+        &:before {
+          background: #C4C4C4;
+        }
+      }
+    }
+  }
+
+  #firstContainer {
+    background: $bg-color;
+  }
+  #chattingWrap {
+  //   background: $bg-color;
+  }
+
+  /* dialog */
+  article[class^="dialog_"] .img_car {
+    background: white;
+  }
+  .dialog_serv .message .txt {
+    background: white;
+    color: $font-dark;
+  }
+  .dialog_cust .message .txt {
+    background: $sub;
+    color: white;
+  }
+  .c2c {
+    color: $font-light;
+
+    a {
+      color: $sub;
+    }
+  }
+  .aboutus {
+    background: white;
+    color: #888888;
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1);
+
+    em {
+      color: $font;
+    }
+
+    &:after {
+      border-top-color: $font-light;
+      border-right-color: $font-light;
+    }
+  }
+  .aboutus-window {
+    background: white;
+
+    .close-btn {
+      background: rgba(0,0,0,0.6);
+      color: #FFFFFF;
+    }
+  }
+
+  /* main */
+  .choose_bot {
+    background: white;
+  }
+  a.btn_main,
+  a.btn_main:active {
+    background: $main;
+    color: white;
+  }
+  a.btn_disabled,
+  button.btn_disabled,
+  button.disable {
+    background: #cecece !important;
+    color: white !important;
+  }
+  a.disable {
+    background: white !important;
+    color: #b2b2b2 !important;
+  }
+
+  .topguide {
+    background: $bg-color;
+    color: $font;
+  }
+  .form_modu input {
+    color: $font-dark;
+  }
+  .form_modu input[disabled],
+  .form_modu input:disabled {
+    color: $font-dark;
+  }
+  .form_modu li.form_modu_head {
+    border-top-color: $border-color;
+    color: $font-dark;
+  }
+  .form_modu li.form_modu_head em {
+    color: #C4C4C4;
+  }
+  .choose_bot .form_modu li.form_modu_head:nth-child(1) {
+    border-bottom-color: $border-color;
+    .progress {
+      color: #2C2C2C;
+      em {
+        color: $main;
+      }
+    }
+  }
+  .form_modu li.selcon:after {
+    border-top-color: $font-light;
+    border-right-color: $font-light;
+  }
+  .form_modu li.form_modu_body {
+    border-top-color: $border-color;
+  }
+  .form_modu li.choose_area a {
+    background: $bg-color;
+    color: $font;
+  }
+  .form_modu li.choose_area a.cur {
+    background: white;
+    color: $main!important;
+    -webkit-box-shadow: inset 0 0 0 1px $main;
+    box-shadow: inset 0 0 0 1px $main;
+  }
+  .form_modu li.choose_area > span {
+    color: $font-dark;
+  }
+  .form_modu .select-con span:after {
+    border-top-color: $font-light;
+    border-right-color: $font-light;
+  }
+  .bdb {
+    border-top-color: $border-color;
+  }
+  .form_modu li.progress-bar {
+    background: $border-color;
+    div {
+      background: $main;
+    }
+  }
+
+  .circle-item .cg-wrap {
+    background: $sub;
+  }
+  .circle-item .circle-left {
+    background: #d0d0d0;
+  }
+  .circle-item .circle-right {
+    background: #d0d0d0;
+  }
+  .circle-item .circle-mask {
+    background: white;
+    color: $sub;
+  }
+
+  .result_wrap .desc {
+    color: #a4a4a4;
+  }
+  .result_wrap .mark i {
+    border-color: $font-light;
+    color: $font-light;
+  }
+  .result_wrap .pay {
+    color: $font;
+  }
+  .result_wrap .char {
+    color: $font-light;
+  }
+  .res_chara {
+    background: #fafafa;
+  }
+
+  .icon {
+   // background-color: white;
+  }
+
+  .title-desc {
+    background-color: white;
+  }
+  .title-desc-div-text,
+  .title-desc-div-characteristic,
+  .title-desc-div-interest {
+    color: black;
+    span {
+      color: $main;
+    }
+  }
+
+  // 订单页
+  .list-ctn {
+    background-color: #f2f2f2;
+  }
+  .content-box {
+    background-color: #f2f2f2;
+  }
+
+  .title-top-desc {
+    background: white;
+    i {
+      color: $main;
+    }
+  }
+
+  .res_module {
+    background: white;
+
+    .pro-groups {
+      -webkit-box-shadow: 0 px2rem(4) px2rem(10) px2rem(4) rgba(89, 131, 181, 0.12);
+      box-shadow: 0 px2rem(4) px2rem(10) px2rem(4) rgba(89, 131, 181, 0.12);
+    }
+  }
+
+  .pro-groups {
+    background: white;
+
+    .adviser,
+    .tijiao {
+      -webkit-box-shadow: inset 0 0 0 1px $main;
+      box-shadow: inset 0 0 0 1px $main;
+    }
+
+    .adviser {
+      color: $font;
+    }
+
+    .tijiao {
+      color: $main;
+    }
+
+    .pro-info {
+      background: white;
+      color: $font-dark;
+
+      .title_box {
+      }
+
+      .subtitle {
+        color: #e15436;
+      }
+
+      .apply_price {
+        .level_one {
+          color: #e15436;
+        }
+        /*严格*/
+        .level_two {
+          color: #5fc3e8;
+        }
+        /*一般*/
+        .level_three {
+          color: #32ad67;
+        }
+        /*宽松*/
+
+        .em {
+          color: $main;
+        }
+      }
+
+      .apply_evaluation {
+        .em {
+          color: #EC5330;
+        }
+      }
+
+      .apply_tag {
+        .tag_one {
+          border-color: #008AF0;
+          color: #008AF0;
+        }
+        .tag_two {
+          border-color: #06C1AE;
+          color: #06C1AE;
+        }
+      }
+
+      .img_info {
+        border-top-color: #ececec;
+
+        li {
+          .icon {
+            color: white;
+          }
+        }
+      }
+    }
+
+    .lease-info {
+      h3, h4 {
+        color: $font-dark;
+      }
+      .info .tit {
+        color: $font-light;
+      }
+      .info .value {
+        color: #FF223A;
+      }
+      .after-lease {
+        border-top-color: $border-color;
+
+        li {
+          color: $font-dark;
+
+          &:before {
+            background: #e4e4e4;
+          }
+        }
+      }
+    }
+  }
+
+  .recommend-wrapper.choosable .pro-groups {
+    &:before {
+      border-color: $font-light;
+    }
+    &.active {
+      &:before {
+        border: 0;
+        background-color: $main;
+      }
+    }
+  }
+
+
+  .corner {
+    color: #2fbd9d;
+  }
+  .dealer-quotes {
+    background: white;
+  }
+  .dealer-quotes header {
+    border-bottom-color: #ececec;
+    color: $font-dark;
+  }
+  .dealer {
+    border-bottom-color: #ececec;
+  }
+  .dealer-price {
+    color: $font;
+  }
+  #dealeContent a.cur .dealer-name,
+  #dealeContent a.cur .dealer-price {
+    color: #dbb76c !important;
+  }
+
+  .default-box .default-img {
+    background-color: white;
+  }
+  .default-box .default-title {
+    color: #9a9a9a;
+  }
+  .default-box .default-text {
+    color: #d0d0d0;
+  }
+  .adviser-box {
+    background: white;
+  }
+  .adv-header {
+    border-bottom-color: #ececec;
+    color: $font-dark;
+  }
+  .adviser-box .adv-close {
+    background-color: white;
+  }
+  .adv-header {
+    border-bottom-color: #ececec;
+    color: $font-dark;
+  }
+  .adviser-groups {
+    border-bottom-color: #edebe6;
+  }
+  .adv-body-top {
+    color: black;
+  }
+  .adv-body-bottom {
+    color: $font-light;
+  }
+
+  .list .noUi-base:before {
+    background-color: #dbb76c;
+  }
+  .list .noUi-base:after {
+    background-color: #eeeeee;
+  }
+  .list .noUi-value {
+    color: $font;
+  }
+  .list .noUi-value.cur {
+    color: #dbb76c !important;
+  }
+  .btn-div p {
+    color: $font;
+  }
+  .btn-fanhui, .btn-fanhui:active {
+    background-color: white;
+    border-color: $font;
+    color: $font-dark;
+  }
+  .btn-chakan, .btn-chakan:active {
+    background-color: white;
+    border-color: $main;
+    color: $main;
+  }
+
+  /* form */
+  .form-wrapper-inner {
+    background: white;
+
+    input {
+      background: white !important;
+      color: $font-dark;
+    }
+
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder,
+    input:-moz-placeholder,
+    textarea:-moz-placeholder {
+      color: $font-light;
+    }
+
+    .get_code_btn_wrapper {
+      border-left-color: $border-color;
+
+      a {
+        background: white;
+        -webkit-box-shadow: inset 0 0 0 1px $main;
+        box-shadow: inset 0 0 0 1px $main;
+        color: $main;
+
+        &.disable,
+        &.disabled {
+          -webkit-box-shadow: inset 0 0 0 1px #D6D6D6;
+          box-shadow: inset 0 0 0 1px #D6D6D6;
+          color: #D6D6D6;
+        }
+      }
+    }
+
+    .edit-tel {
+      color: $font;
+    }
+
+    .authenticated-tip {
+      color: #35B88B;
+    }
+  }
+
+  /* other */
+  .other-wrapper {
+    > p {
+      color: $font-light;
+    }
+  }
+
+  /* panel */
+  .panel {
+    .wrapper {
+      background: white;
+
+      .topguide {
+        border-bottom-color: $border-color;
+      }
+
+      #skip-certificate {
+        color: $font;
+
+        &:after {
+          border-top-color: $font;
+          border-right-color: $font;
+        }
+      }
+    }
+
+    &.visible {
+      .cover {
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  /* result */
+  .success-top {
+    background: white;
+    border-bottom-color: $border-color;
+
+    h3 {
+      color: $font-dark;
+    }
+
+    p {
+      color: $font;
+    }
+
+    .btn-chakan,
+    .btn-chakan:active {
+      -webkit-box-shadow: inset 0 0 0 1px $main;
+      box-shadow: inset 0 0 0 1px $main;
+      color: $main;
+    }
+
+    .btn-fanhui,
+    .btn-fanhui:active {
+      -webkit-box-shadow: inset 0 0 0 1px #c4c4c4;
+      box-shadow: inset 0 0 0 1px #c4c4c4;
+      color: $font;
+    }
+  }
+
+  .success-progress {
+    border-bottom-color: $border-color;
+
+    h3 {
+      color: $font-dark;
+    }
+
+    ul {
+      color: $font;
+
+      li:after {
+        border-left-color: #E6E6E6;
+      }
+    }
+  }
+
+  .qa-list {
+    background: white;
+
+    dt {
+      color: $font-dark;
+      border-bottom-color: $border-color;
+
+      .more {
+        color: $font;
+
+        &:after {
+          -webkit-box-shadow: inset $font-light -1px -1px 0 0;
+          box-shadow: inset $font-light -1px -1px 0 0;
+        }
+      }
+    }
+
+    dd {
+      a {
+        border-bottom-color: $border-color;
+        color: $font;
+
+        &:after {
+          -webkit-box-shadow: inset $font-light -1px -1px 0 0;
+          box-shadow: inset $font-light -1px -1px 0 0;
+        }
+
+        em {
+          color: $main;
+          -webkit-box-shadow: inset $main 0 0 0 1px;
+          box-shadow: inset $main 0 0 0 1px;
+        }
+      }
+    }
+  }
+}

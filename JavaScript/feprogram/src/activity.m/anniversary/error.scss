@@ -1,0 +1,63 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+html, body, #yxWrapper {
+  height: 100%;
+  min-height:px2rem(1000);
+  position: relative;
+  overflow: hidden;
+}
+
+body {
+  background: url(images/bg.html.jpg) no-repeat center bottom;
+  background-size: cover;
+}
+
+.logo {
+  position: absolute;
+  top: px2rem(30);
+  left: px2rem(30);
+  width: px2rem(214);
+  height: px2rem(43);
+  background: url(images/logo.html.png) no-repeat center center;
+  background-size: cover;
+}
+
+.title {
+  position: absolute;
+  top: px2rem(150);
+  left: 50%;
+  z-index: 10;
+  width: px2rem(567);
+  height: px2rem(173);
+  background: url(images/title.html.png) no-repeat center center;
+  background-size: cover;
+  transform: translate(-50%, 0);
+}
+
+.content{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  width: px2rem(610);
+  height: px2rem(420);
+  padding: 0;
+  background: url(images/result-bg.html.png) no-repeat center center;
+  background-size: contain;
+  font-size: px2rem(44);
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: px2rem(2) px2rem(2) 0 rgba(6,54,172,0.47);
+
+  span {
+    position: absolute;
+    left: px2rem(30);
+    right: px2rem(30);
+    top: 48%;
+    transform: translate(0, -50%);
+  }
+}

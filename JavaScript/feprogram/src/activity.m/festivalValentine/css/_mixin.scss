@@ -1,0 +1,18 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+@function px2rem($px, $base: 75) {
+  @return (strip-units($px) / $base) * 1rem;
+}
+
+@mixin fsize($size:24){
+	[data-dpr="1"] & {
+	  font-size: #{strip-units($size)/2}px;
+	}
+	[data-dpr="2"] & {
+	  font-size: #{strip-units($size)}px;
+	}
+	[data-dpr="3"] & {
+	  font-size: #{strip-units($size)/2*3}px;
+	}
+}

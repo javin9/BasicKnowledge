@@ -1,0 +1,250 @@
+#firstContainer {
+     position: absolute;
+     width: 100%;
+     max-width:px2rem(750);
+     height: 100%;
+     padding-top: px2rem(90);
+     border-top: 1px solid transparent;
+     left: 50%;
+     top: 50%;
+     -webkit-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+     overflow: hidden;
+
+     #chattingWrap {
+          position: absolute;
+          left: 0;
+          top: px2rem(90);
+          right: 0;
+          bottom: px2rem(506);
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+
+          &.lower {
+               bottom: px2rem(428);
+          }
+     }
+     #chattingInner {
+          // position: relative;
+     }
+}
+
+#SecretaryMain.app {
+     #firstContainer {
+          padding-top: 0;
+          border-top: 0;
+
+          #chattingWrap {
+               top: 0;
+          }
+     }
+}
+
+article[class^="dialog_"] {
+     position: relative;
+     margin-top: px2rem(30);
+     margin-bottom: px2rem(30);
+     width: px2rem(594);
+     //overflow: hidden;
+
+     .message  {
+          box-sizing: border-box;
+          width: px2rem(594);
+
+          .txt {
+               max-width: px2rem(500);
+               padding: px2rem(30);
+               @include fsize(32);
+               line-height: px2rem(48);
+               overflow: hidden;
+          }
+     }
+
+     .icon {
+          display: block;
+          width: px2rem(80);
+          height: px2rem(80);
+          border-radius: 100%;
+          //overflow: hidden;
+     }
+
+     .img_car {
+          float: left;
+          width: px2rem(140);
+          height: px2rem(94);
+          overflow: hidden;
+
+          img {
+               display: block;
+               width: 100%;
+               height: 100%;
+          }
+     }
+
+     .text_car {
+          margin-left: px2rem(160);
+          // width: px2rem(280);
+
+          .car {
+               white-space: nowrap;
+               overflow: hidden;
+               text-overflow: ellipsis;
+          }
+
+          .city {
+               margin-top: px2rem(4);
+               @include fsize(28);
+               line-height: px2rem(42);
+          }
+     }
+}
+
+.dialog_serv {
+     margin-left: px2rem(30);
+
+     .icon {
+          // float: left;
+          margin-right: px2rem(14);
+          background: url(#{$img-base}/company-logo.png) no-repeat center center;
+          background-size: contain;
+     }
+
+     .message .txt {
+          float: left;
+          border-radius: 0 px2rem(14) px2rem(14) px2rem(14);
+     }
+}
+
+.dialog_cust {
+     margin-left: px2rem(126);
+
+     .icon {
+          // float: right;
+          margin-left: px2rem(14);
+          background: url(#{$img-base}/user-img.png) no-repeat center center;
+          background-size: contain;
+     }
+
+     .message .txt {
+          float: right;
+          border-radius: px2rem(14) 0 px2rem(14) px2rem(14);
+     }
+}
+
+#Chatting_z {
+     .message .txt {
+          width: px2rem(500);
+          padding: 0;
+
+          .imagewrap {
+               img {
+                    display: block;
+                    width: 100%;
+               }
+          }
+
+          .textwrap {
+               padding: px2rem(20) px2rem(30);
+          }
+     }
+}
+
+.c2c {
+     display: none;
+     margin-bottom: px2rem(40);
+
+     @include fsize(26);
+     line-height: px2rem(38);
+
+     a {
+          margin-left: px2rem(8);
+          padding-left: px2rem(36);
+          background: url(#{$img-base}/telphone.png) no-repeat left center;
+          background-size: px2rem(36) auto;
+     }
+}
+
+.aboutus {
+     box-sizing: content-box;
+     position: relative;
+     margin: px2rem(30);
+     padding: px2rem(30) px2rem(70) px2rem(30) px2rem(30);
+     -webkit-border-radius: px2rem(12);
+     border-radius: px2rem(12);
+     @include fsize(28);
+     line-height: px2rem(42);
+
+     .text {
+          height: px2rem(84);
+          overflow: hidden;
+          text-overflow: ellipsis;
+     }
+
+     em {
+          font-style: normal;
+     }
+
+     &:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: px2rem(30);
+          width: px2rem(15);
+          height: px2rem(15);
+          border-top-width: 1px;
+          border-top-style: solid;
+          border-right-width: 1px;
+          border-right-style: solid;
+          transform: translate(-50%, -50%) rotate(45deg);
+     }
+}
+
+.aboutus-window {
+     position: fixed;
+     left: 50%;
+     top: 0;
+     z-index: 9999;
+     width: 100%;
+     max-width:px2rem(750);
+     height: 100%;
+     -webkit-transform: translate(-50%, 0);
+     transform: translate(-50%, 0);
+
+     .content {
+          display: block;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          overflow-x: hidden;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+
+          .image {
+               display: block;
+               width: 100%;
+               max-width:px2rem(750);
+               height: px2rem(3981);
+               background: url(#{$img-base}/aboutus.jpg) no-repeat center center;
+               background-size: 100% 100%;
+          }
+     }
+
+     .close-btn {
+          position: absolute;
+          top: px2rem(30);
+          right: px2rem(30);
+          z-index: 10;
+          width: px2rem(120);
+          height: px2rem(54);
+          @include fsize(26);
+          line-height: px2rem(54);
+          text-align: center;
+          -webkit-border-radius: px2rem(54);
+          border-radius: px2rem(54);
+     }
+}
+
+article[class^="dialog_"].animated,
+.choose_bot.animated {
+     animation-duration: 0.3s;
+}

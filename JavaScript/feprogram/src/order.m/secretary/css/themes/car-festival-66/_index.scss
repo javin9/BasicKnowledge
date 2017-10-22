@@ -1,0 +1,92 @@
+.theme-car-festival-66 {
+  #firstContainer {
+    background: url(./themes/car-festival-66/images/bg.jpg) no-repeat center bottom;
+    background-size: px2rem(750) auto;
+
+    .activity-link {
+      display:none;
+      content: '';
+      position: absolute;
+      top: px2rem(90);
+      right: px2rem(40);
+      z-index: 100;
+      width: px2rem(102);
+      height: px2rem(125);
+      background: url(./themes/car-festival-66/images/logo-66.png) no-repeat center top;
+      background-size: 100% 100%;
+    }
+
+    .c2c {
+      color: white;
+    }
+  }
+  &.app #firstContainer .activity-link {
+    top: 0;
+  }
+
+  .dialog_serv {
+    .icon_serv {
+      background-image: url(./themes/car-festival-66/images/icon-serv.png);
+    }
+    .message .txt {
+      max-width: px2rem(440);
+      box-shadow: inset rgba(81,114,255,0.6) 0 0 px2rem(21) px2rem(2),
+                rgba(84,39,201,0.29) 0 0 px2rem(6) px2rem(11);
+      border-radius: 0 px2rem(20) px2rem(20) px2rem(20);
+      line-height: px2rem(38);
+    }
+  }
+
+  #Chatting_z {
+    .message .txt {
+      width: px2rem(440);
+    }
+  }
+
+  .dialog_cust {
+    .icon_cust {
+      background-image: url(./themes/car-festival-66/images/icon-customer.png);
+    }
+    .message .txt {
+      max-width: px2rem(440);
+      box-shadow: inset rgba(255,119,50,0.6) 0 0 px2rem(21) px2rem(2),
+              rgba(84,39,201,0.29) 0 0 px2rem(6) px2rem(11);
+      border-radius: px2rem(20) 0 px2rem(20) px2rem(20);
+      background: linear-gradient(to right, #ff7e3a 0%, #f95034 100%);
+      line-height: px2rem(38);
+    }
+  }
+
+  article[class^="dialog_"] {
+    .img_car {
+      position: relative;
+      width: px2rem(106);
+      border-radius: px2rem(5);
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 92%;
+        height: auto;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+    }
+    .text_car {
+      margin-left: px2rem(120);
+    }
+  }
+
+  // 结果页,页头没返回按钮
+  &.result {
+    header.header-bar {
+      padding-right: 0;
+
+      a.back-btn {
+        display: none !important;
+      }
+    }
+  }
+}

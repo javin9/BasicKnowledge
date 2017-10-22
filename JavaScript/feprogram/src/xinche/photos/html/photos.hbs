@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+
+    <script>
+        var localCity={"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":2,"SelectCityName":"北京"};
+        var ipLocationInfo={"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":2,"SelectCityName":"北京"};
+
+        var deviceId = "8f00a536-78ce-4681-ae67-82fe37872cf7";
+        var loanUserId = 0;
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var carId = '112233';
+    </script>
+</head>
+<body>
+
+{{{htmlWebpackPlugin.options.header}}}
+
+<div class="breadcrumb">
+    <div class="center-wrapper">
+        <h1 class="logo"><a href="#">易鑫车贷</a></h1>
+    </div>
+</div>
+
+<div class="photos-wrapper" id="photo-container">
+    <div class="center-wrapper">
+        <div class="slider-wrapper">
+            <div class="swiper-container" id="main-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for="image in images">
+                        <img v-bind:data-src="image.Url" alt="" class="swiper-lazy" />
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                </div>
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>  <!-- end of main-swiper -->
+
+            <div class="thumbnail-wrapper">
+                <div class="swiper-container" id="thumbnail-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" v-for="thumbnail in thumbnails">
+                            <img v-bind:data-src="thumbnail.Url" alt="" class="swiper-lazy" />
+                        </div>
+                    </div>
+                    <!-- 如果需要导航按钮 -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>  <!-- end of main-swiper -->
+            </div>
+
+        </div>  <!-- end of slider-wrapper -->
+
+        <div class="photo-mark">
+            <ul>
+                <li class="mark" v-for="mark in marks">
+                    <div class="name" v-text="mark.name"></div>
+                    <div class="number" v-text="mark.number"></div>
+                </li>
+            </ul>
+        </div>  <!-- end of photo-mark -->
+    </div>  <!-- end of center-wrapper -->
+</div>
+
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

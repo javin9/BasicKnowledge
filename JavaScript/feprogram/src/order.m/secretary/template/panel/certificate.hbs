@@ -1,0 +1,36 @@
+{{#if isTf2}}
+    {{!- 投放2，不输出弹层 -}}
+{{else}}
+    <div id="certificate" class="panel">
+        <div class="wrapper form-wrapper-inner">
+            <div class="topguide">
+                您已成功提交订单，补充以下实名认证信息，以加快审批速度，提高通过几率
+            </div>
+            <ul class="form_modu">
+                <li class="form_modu_head uf uf_ac">
+                    <b class="name">姓名</b>
+                    <span class="uf_f1"><input type="text" name="RealName" id="RealName" placeholder="请输入您的真实姓名"></span>
+                </li>
+                <li id="RealNameValidata" class="warning">请输入真实的姓名</li>
+                <li class="form_modu_head uf uf_ac">
+                    <b class="idnumber">身份证</b>
+                    <span class="uf_f1"><input type="number" name="CertificateNumber" id="CertificateNumber" placeholder="请输入您的身份证号码" maxlength="18" /></span>
+                </li>
+                <li id="CertificateNumberValidata" class="warning">身份证号错误</li>
+
+                <li id="imgCodeBox" class="form_modu_head uf uf_ac hide">
+                    <b class="tupian">图片校验码</b>
+                    <span class="uf_f1"><input type="text" name="imgCode" id="imgCode" placeholder="请输入图片校验码" maxlength="4" /></span>
+                    <div id="changeImgCode" class="img-code"><img src="../../images/GetImageValidateCode.html.jpg"></div>
+                </li>
+                <li id="imgCodeValidata" class="warning">请输入正确的图片校验码</li>
+
+                <li class="form_modu_head btn-wrapper">
+                    <a href="javascript:void(0);" id="certificate-submit" class="btn_main">实名认证</a>
+                    <a href="javascript:void(0)" id="skip-certificate">跳过此步</a>
+                </li>
+            </ul>
+        </div>
+        <div class="cover"></div>
+    </div>
+{{/if}}

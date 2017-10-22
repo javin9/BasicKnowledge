@@ -1,0 +1,37 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+@import '../css/ershouche';
+.mt20{ margin-top: px2rem(20)}
+
+.header-bar{max-width: 10.08rem;margin-left: -5.02rem;z-index: 100; position: fixed;top: 0;left:50%;@extend .ub; background: #fff;border-top:solid 1px #eee; width: 101%;}
+#app{max-width: 10.08rem;margin:0 auto;}
+.Car_files_conter{padding-top:1.3rem;}
+.Car_files_ul{padding: 0 px2rem(30); display: block; background: #fff;}
+.Car_files_ul .itme{ padding: px2rem(32) 0;@extend .ub;@extend .f30; border-bottom: solid 1px #eee;}
+.Car_files_ul .icon_txt{@extend.ub-f1;@extend .col_grey6; }
+.Car_files_ul i{margin-top:px2rem(-6); width:px2rem(31);background-position-x:0;margin-right: px2rem(6);
+	height:px2rem(38); background-repeat: no-repeat;  background-size:px2rem(31) px2rem(38); display: inline-block;  vertical-align: middle; }
+.Car_files_ul .txt{@extend .col_grey6;text-align: right; color: #000;}
+
+.Car_files_ul i.icon_place{background-image: url('../images/icon/detail_01.png');}
+.Car_files_ul i.icon_otime{background-image: url('../images/icon/detail_02.png');}
+.Car_files_ul i.icon_distance{background-image: url('../images/icon/detail_03.png');}
+.Car_files_ul i.icon_green{background-image: url('../images/icon/detail_04.png');}
+.Car_files_ul i.icon_type{background-image: url('../images/icon/detail_05.png');}
+.Car_files_ul i.icon_gears{background-image: url('../images/icon/detail_06.png');}
+.Car_files_ul i.icon_maintain{background-image: url('../images/icon/detail_07.png');}
+.Car_files_ul i.icon_displacement{background-image: url('../images/icon/detail_08.png');}
+.Car_files_ul i.icon_ptime{background-image: url('../images/icon/detail_09.png');}
+
+.car_banner{ @extend .mt20; width: 100%; height: px2rem(260); overflow:hidden}
+.car_banner img{ width: 100%;}
+.seller_described{@extend .mt20; background: #fff;}
+.seller_described header{@extend .f30; padding: px2rem(20) px2rem(30); color:#000; border-bottom: solid 1px #eee;}
+.seller_described .conterInfo{padding: px2rem(20) px2rem(30); color:#666;@extend .f24;line-height: 150%;}
+.nothing{    padding: .4rem 0;
+	background: #f2f2f2;
+	text-align: center;
+	color: #a4a4a4;}
+
+
+

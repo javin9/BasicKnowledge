@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <script type="text/javascript">
+        var localCity = { "CityId": 201, "RegionId": 110100, "CityName": "北京", "CitySpell": "beijing", "SelectCityLevel": 2, "SelectCityName": "北京市", "LocateResultType": 0 };
+        var ipLocationInfo = { "CityId": 201, "RegionId": 110100, "CityName": "北京", "CitySpell": "beijing", "SelectCityLevel": 2, "SelectCityName": "北京市", "LocateResultType": 0 };
+        var CODE_GETTING_URL = "/rapidloan/GetCode";
+        var CODE_VALIDATING_URL = "/rapidloan/CheckCode";
+        var RecProductsUrl = '/rapidloan/RecProductsDisplay';
+        var MWebSite = "http://test.m.daikuan.com/www/";
+        var QualUrl = 'rapidloan/AddQualification';
+    </script>
+
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+
+    <div id="yxWrapper">
+           <header class="header-bar">
+               <a href="javascript:void(0);" onclick="window.history.go(-1);return false;"></a>
+            <h1 class="font-nav">贷款购车</h1>
+            <span></span>
+        </header>
+        <div class="order-tip">您已成功下单，小鑫为您挑选了一款适合的产品</div>
+        <div class="pro-groups">
+            <a class="adviser" href="javascript:void(0)" data-href="tel:4008155609,1551" data-companyid="250">
+                <div class="uf uf-ic">
+                    <div class="name uf uf-ic"><img class="ad-photo" src="http://image.bitautoimg.com/jinrong/2016/08/08/61236b91-094a-4d6a-9498-79139a1bc312.png"><span>刘永吉</span></div>
+                    <div class="ad-tel"></div>
+                </div>
+            </a>
+            <a href="#" class="pro-info">
+                <div class="img_box"><img src="//img1.bitautoimg.com/chedai/ad5a3f1e-e368-4214-935f-a2039462fac8.jpg"></div>
+                <div class="item_right_box">
+                    <div class="dl title_box uf uf-ic">
+                        <div class="dt font-title tit uf-f1 ut-s"><span data-bind="text:PackageName">易鑫上行联合贷</span>(<span data-bind="text:CompanyName">上海银行</span>)</div>
+                        <div
+                            class="dd"> </div>
+                </div>
+                <div class="dl apply_price">
+                    <div class="dt">申请信息：<span class="font-28 level_two">一般</span></div>
+                    <div class="dd price">                  </div>
+                </div>
+                <div class="dl apply_evaluation">
+                    <div class="dt"> <span data-bind="html:CommentHtml"><span class="font-title col_rede font_no_blod">5.0</span>分／<span class="evaluation"><span>1</span>条评价</span>
+                        </span>
+                        <span class="apply"><span data-bind="text:ApplyCount">6354</span>人申请</span>
+                    </div>
+                    <div class="dd"></span>
+                    </div>
+                </div>
+                <div class="dl apply_tag">
+                    <div class="dt"> <span class="font-22 tag_blue">最快两小时审批</span> <span class="font-22 tag_red">材料低至2证</span></div>
+                </div>
+                <ul class="img_info"> </ul>
+              
+        </div>
+        </a>
+    </div>
+    <div id="rapidLoan">
+            
+        <div class="rapidLoan-tip">补全信息,贷款时间平均缩短7天,信息将被严格保密!</div>
+            <div class="container">
+                <form action="/rapidloan/AddOrderInfo" id="order-form">
+                    <div class="inputwrap phone">
+                        <label  class="w120">真实姓名</label>
+                        <input type="text" name="userName" id="userName" placeholder="请输入您的真实姓名" >
+                    </div>
+                    <div id="zsxm" class="errormsg"></div>
+                    <div class="inputwrap">
+                        <label  class="w120">身份证号 </label>
+                        <input type="text" name="CertificateNumber" id="CertificateNumber" placeholder="请输入您的身份证号" maxlength="18">
+                    </div>
+                      <div id="xfz"  class="errormsg"></div>
+                          <div class="yanzhen"></div>
+                    <div>
+                        <a href="javascript:void(0)" class="btn" id="submit-btn">提交</a>
+                    </div>
+                  
+                </form>
+            </div>
+        </div>
+    </div>
+<div class="order-text">您的信息仅作贷款审核使用，不会以任何形式泄露给其他人员或机构</div>
+
+
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+.component-pagination{
+	position: absolute;
+	bottom:0;
+	left:0;
+	width: 100%;
+	box-sizing:border-box;
+	padding:10px 20px;
+
+	&-left{
+		float: left;
+
+		a{
+			display: inline-block;
+			width: 10px;
+			height:16px;
+			background-repeat: no-repeat;
+			background-position: left top;
+		}
+	}
+
+	&-right{
+		float: right;
+		color:$light-color;
+
+		strong{
+			font-weight: normal;
+			color:$dark-color;
+		}
+	}
+
+	&-prev{
+		background-image: url(l.png);
+		margin-right: 6px;
+
+		&.disabled{
+			background-image: url(l_disabled.png);
+		}
+	}
+
+	&-next{
+		background-image: url(r.png);
+
+		&.disabled{
+			background-image: url(r_disabled.png);
+		}
+	}
+	
+}

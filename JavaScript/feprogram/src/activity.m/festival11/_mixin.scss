@@ -1,0 +1,40 @@
+@import 'sassHelper/mixin';
+
+@mixin font($size){
+	@include fsize(map-get($mfont,$size));
+}
+
+@mixin border-radius{
+	border-radius:px2rem(10);
+	overflow: hidden;
+}
+
+@mixin margin-gap{
+	margin-bottom: px2rem(20);
+}
+
+@mixin border($position){
+	border-#{$position}: 1px solid #e3e3e4;
+}
+
+@mixin each-stack($num, $filename:''){
+	@if $num > 2{
+		a{
+			background-position: center px2rem(75);
+		}
+	}@else{
+		a{
+			background-position: px2rem(155) px2rem(60);
+		}
+	}
+	@while $num > 0 {
+		@include from-first($num){
+			a {
+				background-image: url(./images/#{$filename}#{$num}.png);
+				background-repeat: no-repeat;
+				background-size:map-get($pic-size, #{$filename}#{$num});
+			}
+		}
+	  $num: $num - 1;
+	}
+}

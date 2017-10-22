@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <style>
+
+    </style>
+    <script>
+      
+    </script>
+
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}} 
+    <div id="app">
+
+        <!-- header -->
+        <div action="GET-HEADER" data-text="我的钱包"></div>
+
+        <div class="wallet-tab ub">
+            <div class="use ub-f1 on">可使用(3)</div>
+            <div class="activation ub-f1">未激活(3)</div>
+            <div class="failure ub-f1">已失效(1)</div>
+        </div>
+
+        <div class="use-card-list">
+            <div class="card">
+                <div class="left">
+                    <div class="left-money"><span class="fh">¥</span> <span class="m">1000</span></div>
+                    <div class="left-text">京东E卡</div>
+                    <div class="left-date">有效期至 2020-01-01</div>
+                </div>
+                <div class="right">
+                    <div class="right-card">
+                        <div>
+                            <span class="card-name">卡号：</span><span class="card-number">4556  6776  7777  8888</span>
+                        </div>
+                        <div>
+                            <span class="card-name">密码：</span><span class="card-number">123456</span>
+                        </div>
+                    </div>
+                    <div class="right-text">
+                        打开 京东App/网站-我的-京东E卡-绑定新卡 成功后可用
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="left">
+                    <div class="use-text-name">易鑫免息</div>
+                    <div class="left-date mt46">有效期至 2020-01-01</div>
+                </div>
+                <div class="right">
+                    <div class="right-card">
+                        <div class="mianxi">
+                            <span>免息码：6D54987E04C</span>
+                        </div>
+                        <div class="card-lingqu-text">
+                            提交材料前向顾问展示免息码，获得免息优惠
+                        </div>
+                    </div>
+                    <div class="right-text mt6">
+                        向顾问展示免息码即可使用
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="left">
+                    <div class="use-text-name">易鑫免息</div>
+                    <div class="left-date mt46">有效期至 2020-01-01</div>
+                </div>
+                <div class="right">
+                    <div class="right-card">
+                        <div class="card-lingqu">
+                            <span>立即领取赠险特权>></span>
+                        </div>
+                        <div class="card-lingqu-text">
+                            上海银行Blablabla上海银行Blablabla上海银行Blablabla
+                        </div>
+                    </div>
+                    <div class="right-text mt6">
+                        点击即可领取
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 没有数据 -->
+        <div action="render_no_product" isYao="1" id="no-product" class="hide"></div>
+    </div>
+
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

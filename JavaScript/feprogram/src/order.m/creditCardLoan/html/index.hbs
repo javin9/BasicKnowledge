@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>直通模式</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script>
+    var IsNeedValidateCode = 'False';
+    var APIURL = "http://api.chedai.bitauto.com/";
+
+    var localCity={"CityId":201,"RegionId":110100,"CityName":"北京","CitySpell":"beijing","SelectCityLevel":2,"SelectCityName":"北京","LocateResultType":0};
+</script>
+<div id="yxWrapper">
+    <header class="header-bar">
+        <a href="javascript:history.go(-1);"></a>
+        <h1 class="font-nav">直通模式</h1>
+        <span class="font-title"></span>
+    </header>
+
+    <form id="form" action="/CreditCardLoan/Create" method="post" class="checkApp">
+
+        <input name="CarPrice" type="hidden" data-bind="value: CarPrice" />
+        <input name="CompanyID" type="hidden" data-bind="value: CompanyID" />
+        <input name="Source" type="hidden" value="702" />
+        <input name="Channel" type="hidden" value="667" />
+
+        <div class="divStep">
+            <p class="creditcard">
+                您好，感谢您使用贷款直通模式。我们将尽快的帮您选择您所需要的金融产品。
+            </p>
+            <div class="xqmore mt_10 remove-margin-bottom">
+                <ul>
+                    <li class="nobg noborder">
+                        <div>
+                            <span>
+                                <input id="CreditCardNumber" name="CreditCardNumber" type="number" placeholder="任选一个信用卡号输入" class="srwenz pdr-15">
+                            </span><i class="i1"></i>信用卡号
+                        </div>
+                    </li>
+                    <li class="xqtis" id="liCreditCardNumber">请输入信用卡号</li>
+
+                    <li class="sel-car">
+                        <div id="SelCarTrigger"><span>请选择</span><i class="i2"></i>意向车型</div>
+                        <div id="divCarPrice" class="divCarPrice" style="display:none;"></div>
+                    </li>
+                    <li class="xqtis" id="liCar">请选择车型车款</li>
+                    <input type="hidden" id="CarId" name="CarId" data-bind="value: CarId" />
+
+                    <li><div id="IntentTimeTrigger" class="triggerEvent" data-inputid="IntentTime"  data-aslider-in="intentTimeCtn|fade|bottom" data-id="-1"><span>请选择</span><i class="i3"></i>购车时间</div></li>
+                    <li class="xqtis" id="liTime">请选择购车时间</li>
+                    <input type="hidden" id="IntentTime" name="BuyCarLimit" />
+
+                    <li><div id="RatioTrigger" class="triggerEvent" data-inputid="Ratio" data-aslider-in="ratioCtn|fade|bottom"><span class="active" data-bind="html: CarRatio, attr:{'data-id': CarRatioValue}">请选择</span><i class="i4"></i>首付比例</div></li>
+                    <li class="xqtis" id="liRatio">请选择首付比例</li>
+                    <input type="hidden" id="Ratio" name="DownPaymentRate" data-bind="value: CarRatioValue" />
+
+                    <li><div id="PeriodTrigger" class="triggerEvent" data-inputid="Period" data-aslider-in="periodCtn|fade|bottom"><span data-id="-1">请选择</span><i class="i5"></i>贷款期限</div></li>
+                    <li class="xqtis" id="liPeriod">请选择贷款期限</li>
+                    <input type="hidden" id="Period" name="RepaymentPeriod" />
+
+
+                    <li><div id="IntentTimeOfPhoneTrigger" class="triggerEvent"  data-inputid="IntentTimeOfPhone" data-aslider-in="isntentTimeOfPhoneCtn|fade|bottom"><span data-id="-1" class="active" data-bind="text: CreditCardIntentTimeOfPhone, attr:{'data-id': CreditCardIntentTimeOfPhoneValue}">请选择</span><i class="i6"></i>意向接电话时间</div></li>
+                    <li class="xqtis" id="liIntentTimeOfPhone">请选择意向接电话时间</li>
+                    <input type="hidden" id="IntentTimeOfPhone" name="IntentTimeOfPhone" data-bind="value: CreditCardIntentTimeOfPhoneValue" />
+                </ul>
+            </div>
+            <div class="wrapBtn">
+                <a href="javascript:void(0);" class="btn-one btn-orange" id="step1">下一步</a>
+            </div>
+
+        </div>
+
+        <div class="divStep" style="display:none;">
+            <div id="creditcard" style="display:none;" class="card-info">
+
+                <div class="creditcard creditcard-border">
+                    根据您的信用卡，以下是您的持卡银行信息：
+                </div>
+
+                <div class="ctt box box-c box-card">
+                    <div class="logo">
+                        <img src="" />
+                    </div>
+                    <div class="des">
+                        <div class="title1">招商银行</div>
+                        <div class="title2">6767</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="xqmore mt_10 remove-margin-bottom">
+                <ul>
+                    <li><div id="CardPeriodTrigger" data-aslider-in="cardPeriodCtn|fade|bottom" data-inputid="CardPeriod" class="triggerEvent"><span>请选择</span><i class="i7"></i>持卡年限</div></li>
+                    <li class="xqtis" id="liCardPeriod">请选择持卡年限</li>
+                    <input type="hidden" id="CardPeriod" name="CardYearLimit" />
+
+                    <li><div id="CardTypeTrigger" data-aslider-in="cardTypeCtn|fade|bottom" data-inputid="CardType" class="triggerEvent"><span>请选择</span><i class="i8"></i>持卡类型</div></li>
+                    <li class="xqtis" id="liCardType">请选择持卡类型</li>
+                    <input type="hidden" id="CardType" name="CardType" />
+
+                    <li><div id="IsHaveCarOwnerCardTrigger"  data-aslider-in="isHaveCarOwnerCardCtn|fade|bottom" data-inputid="IsHaveCarOwnerCard" class="triggerEvent"><span class="active">否</span><i class="i9"></i>是否有车主卡</div></li>
+                    <li class="xqtis" id="liIsHaveCarOwnerCard">请选择车主卡</li>
+                    <input type="hidden" id="IsHaveCarOwnerCard" name="IsHaveCarOwnerCard" value="0" />
+                </ul>
+            </div>
+
+            <div class="wrapBtn">
+                <a href="javascript:void(0)" class="btn-one btn-orange" id="step2">下一步</a>
+            </div>
+        </div>
+
+        <div class="divStep" style="display:none;">
+            <p class="creditcard">
+                您好，感谢您使用贷款直通模式。我们将尽快的帮您选择您所需要的金融产品。
+            </p>
+            <div class="xqmore mt_10 remove-margin-bottom">
+                <ul>
+                    <li class="nobg">
+                        <div>
+                            <span>
+                                <input id="Name" name="Name" type="text" placeholder="请输入" class="srwenz pdr-15">
+                            </span><i class="i10"></i>姓名
+                        </div>
+                    </li>
+                    <li class="xqtis">请输入姓名</li>
+                    <li class="nobg">
+                        <div>
+                            <span>
+                                <input id="Telphone" name="Telphone" type="number" placeholder="请输入" class="srwenz pdr-15">
+                            </span><i class="i11"></i>手机号
+                        </div>
+                    </li>
+                    <li id="liTelphone" class="xqtis">请输入正确的手机号</li>
+
+
+                    <li class="nobg">
+                        <div class="validate-code">
+                            <span>
+                                <input id="ValidateCode" name="ValidateCode" type="text" placeholder="请输入" class="srwenz pdr-15">
+                            </span><i class="i12"></i>验证码<label id="GetValidateCodeBtn">获取短信验证码</label>
+                        </div>
+                    </li>
+                    <li class="xqtis">请输入正确的验证码</li>
+
+
+
+                    <li><div id="GenderTrigger" class="triggerEvent" data-aslider-in="sexCon|fade|bottom" data-inputid="Gender"><span class="active">请选择</span><i class="i13"></i>性别</div></li>
+                    <li class="xqtis" id="liGender">请选择性别</li>
+                    <input type="hidden" id="Gender" name="Gender" />
+
+
+
+                    <li><div><span class="active" id="CityTrigger" data-bind="text: CityName, attr:{'data-id': CityId}"></span><i class="i14"></i>购车城市</div></li>
+                    <li class="xqtis" id="liCity">请选择购车城市</li>
+                    <input type="hidden" id="CityId" name="CityId" data-bind="value: CityId" />
+                </ul>
+            </div>
+            <div class="wrapBtn">
+                <a href="javascript:void(0)" class="btn-one btn-orange" id="step3">下一步</a>
+            </div>
+        </div>
+
+    </form>
+    <!--整屏蒙层start-->
+    <div id="maskLayer"></div>
+    <!--整屏蒙层end-->
+
+    <!-- 新车购车时间 start -->
+    <aside class="sel-control-box" data-aslider="intentTimeCtn">
+        <div class="asilder_wrapper">
+            <div class="sel-ctrl-fun-btn">
+                <div class="sel-ctrl-close font-nav">取消</div>
+                <div class="sel-ctrl-title font-nav">购车时间</div>
+                <div class="sel-ctrl-complete font-nav">确定</div>
+            </div>
+            <div class="scroll-wrapper">
+                <div class="scroll">
+                    <ul class="slider">
+                        <li data-id="176" class="cur">一周内</li>
+                        <li data-id="177">两周内</li>
+                        <li data-id="178">1个月内</li>
+                        <li data-id="179">3个月内</li>
+                        <li data-id="180">3个月以上</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- 新车购车时间 end -->
+
+    <!-- 新车首付比例 start -->
+    <aside class="sel-control-box" data-aslider="ratioCtn">
+        <div class="asilder_wrapper">
+            <div class="sel-ctrl-fun-btn">
+                <div class="sel-ctrl-close font-nav">取消</div>
+                <div class="sel-ctrl-title font-nav">首付比例</div>
+                <div class="sel-ctrl-complete font-nav">确定</div>
+            </div>
+            <div class="scroll-wrapper">
+                <div class="scroll">
+                    <ul class="slider">
+                        <li data-id="0.3" class="cur">30%</li>
+                        <li data-id="0.4">40%</li>
+                        <li data-id="0.5">50%</li>
+                        <li data-id="0.6">60%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- 新车首付比例 end -->
+    <!-- 新车贷款期限 start -->
+    <aside class="sel-control-box" data-aslider="periodCtn">
+        <div class="asilder_wrapper">
+            <div class="sel-ctrl-fun-btn">
+                <div class="sel-ctrl-close font-nav">取消</div>
+                <div class="sel-ctrl-title font-nav">贷款期限</div>
+                <div class="sel-ctrl-complete font-nav">确定</div>
+            </div>
+            <div class="scroll-wrapper">
+                <div class="scroll">
+                    <ul class="slider">
+                        <li data-id="12" class="cur">12期</li>
+                        <li data-id="24">24期</li>
+                        <li data-id="36">36期</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- 新车贷款期限 end -->
+    <!-- 意向接电话时间  start -->
+    <aside class="sel-control-box" data-aslider="isntentTimeOfPhoneCtn">
+        <div class="asilder_wrapper">
+            <div class="sel-ctrl-fun-btn">
+                <div class="sel-ctrl-close font-nav">取消</div>
+                <div class="sel-ctrl-title font-nav">意向接电话时间</div>
+                <div class="sel-ctrl-complete font-nav">确定</div>
+            </div>
+            <div class="scroll-wrapper">
+                <div class="scroll">
+                    <ul class="slider">
+                        <li data-id="345" class="cur">任意时间</li>
+                        <li data-id="346">9点-12点</li>
+                        <li data-id="347">13点-18点</li>
+                        <li data-id="348">18点-21点</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- 意向接电话时间  end -->
+    <!-- 持卡年限 start -->
+    <aside class="sel-control-box" data-aslider="cardPeriodCtn">
+        <div class="asilder_wrapper">
+            <div class="sel-ctrl-fun-btn">
+                <div class="sel-ctrl-close font-nav">取消</div>
+                <div class="sel-ctrl-title font-nav">持卡年限</div>
+                <div class="sel-ctrl-complete font-nav">确定</div>
+            </div>
+            <div class="scroll-wrapper">
+                <div class="scroll">
+                    <ul class="slider">
+                        <li data-id="357" class="cur">1年内</li>
+                        <li data-id="358">1-3年</li>
+                        <li data-id="359">3年以上</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- 持卡年限 end -->
+    <!-- 持卡类型 start -->
+    <aside class="sel-control-box" data-aslider="cardTypeCtn">
+        <div class="asilder_wrapper">
+            <div class="sel-ctrl-fun-btn">
+                <div class="sel-ctrl-close font-nav">取消</div>
+                <div class="sel-ctrl-title font-nav">持卡类型</div>
+                <div class="sel-ctrl-complete font-nav">确定</div>
+            </div>
+            <div class="scroll-wrapper">
+                <div class="scroll">
+                    <ul class="slider">
+                        <li data-id="360" class="cur">普卡</li>
+                        <li data-id="361">金卡</li>
+                        <li data-id="362">白金卡</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- 持卡类型 end -->
+    <!-- 是否有车主卡 start -->
+    <aside class="sel-control-box" data-aslider="isHaveCarOwnerCardCtn">
+        <div class="asilder_wrapper">
+            <div class="sel-ctrl-fun-btn">
+                <div class="sel-ctrl-close font-nav">取消</div>
+                <div class="sel-ctrl-title font-nav">是否有车主卡</div>
+                <div class="sel-ctrl-complete font-nav">确定</div>
+            </div>
+            <div class="scroll-wrapper">
+                <div class="scroll">
+                    <ul class="slider">
+                        <li data-id="1" class="cur">是</li>
+                        <li data-id="0">否</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- 是否有车主卡 end -->
+    <!-- 性别 start -->
+    <aside class="sel-control-box" data-aslider="sexCon">
+        <div class="asilder_wrapper">
+            <div class="sel-ctrl-fun-btn">
+                <div class="sel-ctrl-close font-nav">取消</div>
+                <div class="sel-ctrl-title font-nav">性别</div>
+                <div class="sel-ctrl-complete font-nav">确定</div>
+            </div>
+            <div class="scroll-wrapper">
+                <div class="scroll">
+                    <ul class="slider">
+                        <li data-id="男" class="cur">男</li>
+                        <li data-id="女">女</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- 性别 end -->
+
+
+</div>
+
+
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

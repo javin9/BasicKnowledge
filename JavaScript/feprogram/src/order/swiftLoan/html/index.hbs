@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script type="text/javascript">
+        //添加成功后跳转资质页，需要带orderid
+        var footerBusiFlag = "1";
+        var footerFunFlag = "0";
+        var localCity = ipLocationInfo = { "CityId": 2401, "RegionId": 310100, "CityName": "上海", "CitySpell": "shanghai", "SelectCityLevel": 0, "SelectCityName": null, "LocateResultType": 1 };
+        var CODE_GETTING_URL = "/SwiftLoan/GetCode";
+        var CODE_VALIDATING_URL = "/SwiftLoan/CheckCode";
+        var RecProductsUrl = '/SwiftLoan/RecProductsDisplay';
+        var MWebSite = "http://www.daikuan.com/www/";
+        var VOICE_CODE_GETTING_URL = ''
+        var AddOrder = 'http://jsd.order.daikuan.com/SwiftLoan/Create';
+        var isLogined = 'true';
+        var isAuthenticated = 'false';
+        var carId = '117269';
+        var carName =  '北京 BJ20 1.5T 手动 舒适型';
+        var idNumber = '130821********7136';
+        var showUserName ='闫*亮';
+        var showMobile='182****5766';
+
+    </script>
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+    <div class="index" style="background-image:url(http://192.168.145.9:8011/jinrong/assets/order/swiftloan/images/new/bg1000.e10184.jpg)">
+        <div class="logo-box clrfix">
+            <a href="#" class="logo fl"></a>
+            <div class="logo-txt fl">易鑫车贷是腾讯、京东、百度、易车共同投资超过65亿的互联网汽车金融平台为您提供全面的线上汽车金融产品和服务</div>
+        </div>
+        <div id="form" class="order-box">
+            <div class="row new-row">
+                <label class="label">城　市</label>
+                <div id="selectCity" class="selected cityselect">请选择城市</div>
+                <input type="hidden" name="CityName" id="CityName" value="" />
+                <input id="CityId" name="CityId" type="hidden" value="2401" />
+            </div>
+            <div class="yzts">请选择城市</div>
+            <div class="row new-row">
+                <label class="label">车　型</label>
+                <div id="selectCar" class="selected carselect">请选择车型</div>
+                <input id="CarName" name="CarName" type="hidden" value="" />
+                <input id="CarId" name="CarId" type="hidden" value="" />
+                <input id="CarPrice" name="CarPrice" type="hidden" value="" />
+            </div>
+            <div class="yzts">请选择车型</div>
+            <div class="row">
+                <label>姓　名 </label>
+                <input type="text" name="Name" id="Name" class="checked" placeholder="请输入姓名" maxlength="12" />
+            </div>
+            <div class="yzts">请输入正确的姓名</div>
+            <div class="row">
+                <label>身份证 </label>
+                <input type="text" name="CertificateNumber" id="CertificateNumber" class="checked" placeholder="请输入身份证" maxlength="18" />
+            </div>
+            <div class="yzts">请输入正确的身份证</div> 
+            <div class="row">
+                <label>手机号</label>
+                <input type="tel" name="Telephone" id="Telephone" class="checked" placeholder="请输入手机号" maxlength="11" />
+                <a href="javascript:void(0)" class="code-btn" data-detail="s倒计时" data-seconds="60" id="GetValidateCodeBtn">获取验证码</a>
+            </div>
+            <div class="yzts">请输入正确的手机号</div>
+            <div class="row">
+                <label>验证码 </label>
+                <input type="text" name="ValidateCode" id="ValidateCode" class="checked" placeholder="请输入验证码" maxlength="4" />
+            </div>
+            <div class="yzts">请输入正确的验证码</div>
+            <div class="yy-box"><span class="yy-box-tip">收不到短信？</span><i class="yy-box-icon"></i><span id="GetValidateCodeLink" class="yy-box-link">试试语音验证码</span></div>
+            <div class="apply-btn">
+                <a href="javascript:void(0)" class="btn" id="submit-btn">立即申请</a>
+            </div>
+            <input id="Source" name="Source" type="hidden" value="787" />
+            <input id="Channel" name="Channel" type="hidden" value="605" />
+            <input id="From" name="From" type="hidden" value="newpcweb" />
+
+            <div class="count">
+
+            </div>
+        </div>
+
+        <div class="company-logo"></div>
+
+        <div class="footer">Copyright © 2015-2017 daikuan.com版权所有　北京易鑫信息科技有限公司　京ICP备15006372号-2　京公网安备11010802020005号</div>
+    </div>
+
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=o1uOc1CSQIzYBs9fwdNFi7MRNQKo9cAA"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

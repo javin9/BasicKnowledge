@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var jtlj="";
+        var addQualificationUrl = "/";
+        var paymentUrl = "/";
+        var isNeedPay = true;
+        var queryResultUrl = "/";
+        var resultUrl = "/";
+        var productId = 312
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+
+<header class="header-bar">
+    <a href="javascript:void(0);"></a>
+    <h1 class="font-nav">购车人信息</h1>
+    <span></span>
+</header>
+<section class="form-box">
+    <header>您的信息仅作贷款审核使用，不会以任何形式泄露给其他人员或机构</header>
+    <dl class="authentication">
+        <dt><b class="font-title">真实名称</b><i>已实名验证</i></dt>
+        <dd class="font-title">3700000</dd>
+    </dl>
+    <h3>完善资质信息</h3>
+    <ul>
+        <li id="UserName" class="font-title"><i></i><b>姓名</b><span><input class="font-input" value="名字" type="text" placeholder="请输入真实姓名" /></span></li>
+        <li class="warning">姓名格式错误，请核实</li>
+        
+        <li id="HouseState" class="font-title select-con" data-aslider-in="houseState|fade|bottom"><i></i><b>住房状况</b><span><em>请选择</em></span></li>
+        <li class="warning">请选择住房状况</li>
+
+        <li id="PurchaseTime" class="font-title select-con" data-aslider-in="purchaseTime|fade|bottom"><i></i><b>购车时间</b><span><em>请选择</em></span></li>
+        <li class="warning">请选择购车时间</li>
+    </ul>
+
+    <!-- 赠险 -->
+    <div class="sec_insurance font_24" style="height: 1.466667rem;">
+        <i class=""></i><span>勾选可免费领取</span><b class="authorization03">100万意外险</b>，出行更多保障
+    </div>
+
+    <div class="submit-form cur">
+    <form action="" id="formQ">
+        <input name="ProductIds" type="hidden" value="" />
+        <input name="OrderID" type="hidden" value="" />
+        <input name="ProductIds" type="hidden" value="" />
+        <input name="OrderID" type="hidden" value="" />
+        <input name="CarId" type="hidden" value="" />
+        <input name="CityId" type="hidden" value="" />
+        <input name="Source" type="hidden" value="" />
+        <input name="CarPrice" type="hidden" value="" />
+        <input name="Orders" type="hidden" value="" />
+        <input name="Source" type="hidden" value="" />
+        <input name="Channel" type="hidden" value="" />
+        <input id="hidHouseState" name="HouseState" type="hidden" value="" />
+        <input id="hidPurchaseTime" name="PurchaseTime" type="hidden" value=""/>
+        <input name="InsuranceCompanyName" type="hidden" value='' />
+        <input name="IsSelectedInsurance" type="hidden" value="false" />
+    </form>
+    <a href="javascript:void(0);" class="font-btn cur">下一步</a>
+
+    </div>
+    <footer><i></i><span>我已授权</span><a href="javascript:void(0);" class="authorization02">《信息使用授权书》</a></footer>
+</section>
+
+<!-- 住房状态 -->
+<aside class="sel-control-box" data-aslider="houseState">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">住房状态</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                    <li data-id="0">选项</li>
+                    <li data-id="1">选项1</li>
+                    <li data-id="2">选项2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+
+<!-- 信用记录 -->
+<aside class="sel-control-box" data-aslider="purchaseTime">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">购车时间</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                    <li data-id="0">选项</li>
+                    <li data-id="1">选项1</li>
+                    <li data-id="2">选项2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<blockquote class="loadmask">
+    <div class="load"></div>
+</blockquote>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

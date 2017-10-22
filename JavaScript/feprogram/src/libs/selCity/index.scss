@@ -1,0 +1,130 @@
+$red:#E9474D;
+$grey3:#333;
+$grey6:#666;
+
+span.sel-city-wrapper{
+    position:relative;
+    font-size:12px;
+    overflow:visible !important;
+    font:12px "microsoft yahei",san-serif;
+    width:100%;
+}
+.city-loading{
+    width:420px;
+    height:166px;
+    background:url(images/loading.gif) center center no-repeat;
+}
+.sel-city-menu{
+    display:none;
+    position:absolute;
+    width:420px;
+    left:-1px;
+    background:#fff;
+    border:1px solid #ededef;
+    z-index: 120;
+}
+.sel-city-menu .sel-city-menuCon{
+    position:relative;
+}
+.sel-city-menu .sel-city-menuCon .icon-close{
+    display: block;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 11px;
+    height: 11px;
+    cursor: pointer;
+    background: url(images/close.png) no-repeat left top;
+}
+.sel-city-nav{
+    height: 30px;
+    padding: 15px 10px 0;
+    border-bottom:1px solid #eee;
+}
+.sel-city-nav span.active {
+    border-bottom:2px solid $red;
+    color: $red;
+    position: relative;
+}
+.sel-city-nav span {
+    position: relative;
+    bottom:-1px;
+    float: left;
+    display: inline;
+    height: 28px;
+    margin-right: 15px;
+    padding: 0 5px;
+    line-height: 22px;
+    white-space: nowrap;
+    cursor: pointer;
+    color:$grey3;
+}
+.sel-city-menu .hot-city dt{
+    display:none;
+}
+.sel-city-menu .hot-city dl{
+    padding:10px 20px;
+    display:block;
+    height:1%;
+}
+.sel-city-menu .other-city dt {
+    float: left;
+    display: block;
+    width: 30px;
+    height: 22px;
+    text-align:center;
+    color: $red;
+    line-height: 22px;
+    white-space: nowrap;
+}
+.sel-city-menu .other-city {
+    padding:10px 0;
+}
+.sel-city-menu dd {
+    display: block;
+    line-height: 24px;
+    margin-left: 20px;
+    _margin-left: 0;
+}
+.sel-city-menu .hot-city dd{
+   margin-left: 0;
+}
+.sel-city-menu ul{
+    height: 1%;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+}
+.sel-city-menu ul li {
+    float: left;
+    width: 20%!important;
+    height: 22px;
+    margin-bottom: 3px;
+    text-align: left;
+    line-height: 22px;
+    overflow: hidden;
+    _width: 19.9%;
+    white-space:nowrap; 
+    text-overflow:ellipsis; 
+}
+.sel-city-menu li a {
+    color: $grey6;
+    font-size: 12px;
+    padding:0 5px; 
+    display:block;
+    float:left;
+    max-width:95%;
+    white-space:nowrap; 
+    text-overflow:ellipsis; 
+    overflow: hidden;  
+}
+.sel-city-menu li a:hover{
+    text-decoration: none;
+    background:$red;
+    color:#fff;
+}
+
+.invalid-city{
+    font-size:14px;
+    padding: 20px 10px;
+}

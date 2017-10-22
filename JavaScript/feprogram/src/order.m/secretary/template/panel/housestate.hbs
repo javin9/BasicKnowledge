@@ -1,0 +1,18 @@
+<!-- 住房 -->
+<div id="HouseStateDiv" class="choose_bot" style="display: none">
+    <ul class="form_modu">
+        <li class="form_modu_head uf uf_ac">
+            <b>您的住房状态是怎么样的呢？</b>
+            <!-- update -->
+            <span class="progress"><em>4</em>/6</span>
+            <!-- update end -->
+        </li>
+        <li class="progress-bar"><div style="width:66.667%"></div></li>
+        <li class="form_modu_body choose_area">
+            {{#each data.houseStates}}
+            <a id="{{id}}" href="javascript:void(0);">{{name}}</a>
+            {{/each}}
+        </li>
+    </ul>
+    <input type="hidden" name="HouseState" id="HouseState" />
+</div>

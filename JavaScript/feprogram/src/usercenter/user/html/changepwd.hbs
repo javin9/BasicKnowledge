@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script type="text/javascript">
+        var citySpell = 'beijing';
+        var APIURL = "http://testapi.chedai.bitauto.com/";
+        var RESURL = "http://192.168.145.9:8011/Web/";
+        var USERCENTERURL = "http://test.i.daikuan.com";
+        var BusinessLine = 550;
+        var authUrl = 'http://testapi.chedai.bitauto.com/api/YxRiskOnline/RealNameAuthenticate';
+        var mobile = '13269031795';
+        var uid = 2712400;
+        var product = 111363;
+        var xincheUrl = 'http://test.xinche.daikuan.com';
+        var BusinessLine = 550;
+        var CODE_GETTING_URL='/Login/GetCode';
+        var CODE_VALIDATING_URL='/Login/CheckCode';
+    </script>
+</head>
+<body>
+ {{{htmlWebpackPlugin.options.header}}}
+
+<div class="bg_col">
+    <article class="user_warp">
+        
+<script>
+    var arrImg = ['http://192.168.154.243:8011/Web/css/gerenzhongxin/images/car-001.png?v=',
+      'http://192.168.154.243:8011/Web/css/gerenzhongxin/images/car-002.png?v=',
+          'http://192.168.154.243:8011/Web/css/gerenzhongxin/images/car-003.png?v=',
+          'http://192.168.154.243:8011/Web/css/gerenzhongxin/images/car-004.png?v=',
+          'http://192.168.154.243:8011/Web/css/gerenzhongxin/images/car-005.png?v=',
+          'http://192.168.154.243:8011/Web/css/gerenzhongxin/images/car-006.png?v=',
+          'http://192.168.154.243:8011/Web/css/gerenzhongxin/images/car-007.png?v=',
+          'http://192.168.154.243:8011/Web/css/gerenzhongxin/images/car-008.png?v='];    
+</script>
+
+
+<article class="user_nav_box" id="userLeft">
+    
+    <div class="user_photo_box">
+        <div class="user_photo">
+            <img src="http://192.168.154.243:8011/Web/css/gerenzhongxin/images/user_photo_bg.png?v=" class="user_photo_bg" />
+            <span class="bg_txt">点我换一个</span>
+                <img src="http://192.168.154.243:8011/Web/css/gerenzhongxin/images/photo.jpg?v=" class="photo" />
+        </div>
+        <div class="user_name">152****9638</div>
+    </div>
+    <article class="user_icon_art">
+            <a class="user_icon l add_info" href="/User/ViewUserProfile">
+                <i class="i_1" onclick=""></i>
+                <span class="text">
+                    <i class="tip_top"></i>完善您的个人资料
+                </span>
+            </a>
+                    <section class="user_icon c">
+                <i class="i_2"></i>
+                <span class="text"><i class="tip_top"></i>完善您的信用信息</span>
+            </section>
+                    <a class="user_icon r add_info" href="/User/ViewCertificateInfo">
+                <i class="i_3"></i>
+                <span class="text"><i class="tip_top"></i>完善您的认证信息</span>
+            </a>
+
+    </article>
+    <nav class="user_nav">
+        <ul class="user_ul">
+            <li class=""><a href="/">我的订单<i class="tip_r"></i></a></li>
+            <li class=""><a href="/User/ViewUserProfile">个人资料<i class="tip_r"></i></a></li>
+            <li class=""><a href="/User/ViewQualification">信用信息<i class="tip_r"></i></a></li>
+            <li class=""><a href="/User/ViewCertificateInfo">实名认证<i class="tip_r"></i></a></li>
+            <li class=""><a href="/MyComment/ServedAdviserList">我的顾问<i class="tip_r"></i></a></li>
+            <li class="cur"><a href="/User/ViewChangePwd">修改密码<i class="tip_r"></i></a></li>
+            <li class=""><a href="/MyComment">我的评价<i class="tip_r"></i></a></li>
+                    <li class=" show_shareorder_QRCode"><a href="javascript:void(0);">晒单记录<label class="shareOrder_label">show</label><i class="tip_r"></i></a></li>
+                    </ul>
+    </nav>
+
+    <!-- 二维码弹层 -->
+    <div class="QRCode_box clrfix box-sizing hide">
+        <aside class="fl QRCode">
+            <img src="http://192.168.154.243:8011/Web/css/gerenzhongxin/images/qrcode.png?v=">
+        </aside>
+        <aside class="fl share_r">
+            <div class="close closeEvent"></div>
+            <div class="QRCode_title">手机扫码来晒单 赢取缤纷好礼</div>
+            <div class="clrfix">
+                <div class="fl scanning"></div>
+                <div class="fl share_txt">
+                    <div>开启扫描工具</div>
+                    <div>扫一扫立即秀车</div>
+                </div>
+            </div>
+        </aside>
+    </div>   
+</article>
+
+        <article class="user_con" id="userRight">
+            <div class="title_box">
+                <h2 class="h2">修改密码</h2>
+            </div>
+
+            <section class="user_from_box">
+                <!-- 验证手机号开始 -->
+                <div class="tab_input_box" id="checkTelphone">
+                    <div class="tips">修改密码需要先手机验证</div>
+                    <ul class="user_from">
+                        <li class="item">
+                            <div class="txt">手机号</div>
+                            <div class="info">
+                                <span class="info-txt">15812536575</span>
+                                <input type="hidden" name="mobile" id="mobile" value="15812536575">
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="txt">验证码</div>
+                            <div class="info">
+                                <span class="input_line">
+                                    <input type="text" name="" id="ValidateCode" class="" maxlength="4" placeholder="请输入验证码">
+                                    <div class="btn" id="GetValidateCode">获取验证码</div>
+                                </span>
+                                <span class="alert"><i></i>请输入正确的验证码 </span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="user_btn_box">
+                        <a href="javascript:;" class="btn_org" id="checkTelText">验证</a>
+                    </div>
+                </div>
+                <!-- 验证手机号结束 -->
+                <div class="tab_input_box user_from_box_cer hide" id="ChangePwdInput">
+                    <ul class="user_from">
+                        <li class="item" id="LiUserNewPWD">
+                            <div class="txt">新密码</div>
+                            <div class="info">
+                                <span class="input">
+                                    <input type="password" name="name" class="input_line" value="" id="UserNewPWD" placeholder="请输入新密码" />
+
+                                </span>
+                                <span class="alert"><i></i>您输入的密码格式错误！</span>
+                                <span class="tip_f12">密码不能为纯数字，8-20位 </span>
+                            </div>
+                        </li>
+
+                        <li class="item" id="LiUserNewPWDT">
+                            <div class="txt">确认新密码</div>
+                            <div class="info">
+                                <span class="input"><input type="password" name="name" class="input_line" value="" id="UserNewPWDT" placeholder="请确认新密码" /></span>
+                                <span class="alert"><i></i>您两次输入的密码不一致</span>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <div class="user_btn_box">
+                        <a href="javascript:;" class="btn_org" id="ChangePwdText">确认修改</a>
+                    </div>
+                </div>
+                <div class="tab_text_box user_from_box_cer_t" id="ChangePwdTextBox">
+                    <div class="u_f_b_cer_t"><i class="ok"></i><a class="user_pwd_text_b_span" href="/User/Logout?currenturl=http%3A%2F%2Flocal.i.daikuan.com%2Flogin%2Findex">修改密码成功！<br /><span class="user_pwd_text_b_f12">返回登录页面</span></a></div>
+                </div>
+            </section>
+        </article>
+    </article>
+</div>
+<input type='hidden' name='__RequestVerificationToken' id='__RequestVerificationToken' data-id='dJntwwSpI76EOSlH2GlU8HBj2xDiRZn9hrGgP75McYlqCZECnSfxaWRNlhvFdxiKqQajKPKEVMEEQUYKjBo11a5h1sg1' value='dJntwwSpI76EOSlH2GlU8HBj2xDiRZn9hrGgP75McYlqCZECnSfxaWRNlhvFdxiKqQajKPKEVMEEQUYKjBo11a5h1sg1'>
+
+
+
+ {{{htmlWebpackPlugin.options.footer}}}
+ <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

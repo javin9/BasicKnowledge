@@ -1,0 +1,97 @@
+header#Header { position: fixed; z-index: 9; width: 100%; /*overflow: hidden; */}
+.header-bottom { position: absolute; z-index: 99; left: 50%; margin-left: -600px; background-color: transparent; }
+.yixin-logo{margin-top:15px;}
+.yixin-logo:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: -20px;
+	top: 1px;
+	z-index: 100;
+	width: 230px;
+	height: 98px;
+	background-color: #fff;
+	border-radius: 0 0 12px 12px;
+	opacity: .7;
+}
+.yixin-logo a { position: relative; z-index: 101; }
+header#Header .sel-city { display: none; margin-left: 22px; }
+.sel-city-box { background-color: #fff; }
+#HeaderNav, .login-status { display: none; }
+#Footer { margin-top: 0; }
+#Footer.fixed { position: fixed; bottom: 0; }
+
+.section {
+	.section_wrap { width: 63%; height: 100%; max-width: 1200px; margin: 0 auto; position: relative; overflow: hidden;
+
+		.section_cont { position: absolute; width: 100%; height: 662px; top: 50%; margin-top: -380px; background-size: 100% auto!important; }
+
+		.section_img {
+			position: absolute; top: 0; display: block; width: 100%; opacity: 0;
+		}
+	}
+
+}
+
+.section1 { 
+	background: url(./images/appdown-bg-1.jpg) center top no-repeat; background-size: cover!important;
+
+	.section_cont {
+		background: transparent url(./images/appdown-txt-1.png) center center no-repeat;
+		}
+
+	.section_img {
+		display: block; width: 100%;
+	}
+}
+.section2 {
+	background: url(./images/appdown-bg-2.jpg) center bottom no-repeat; background-size: contain!important;
+
+	.section_cont { background: transparent url(./images/appdown-txt-2.png) center center no-repeat; }
+}
+.section3 {
+	background: url(./images/appdown-bg-3.jpg) center top no-repeat; background-size: cover!important;
+
+	.section_cont { background: transparent url(./images/appdown-txt-3.png) center center no-repeat; }
+}
+.section4 {
+	background: url(./images/appdown-bg-4.jpg) center bottom no-repeat; background-size: contain!important;
+
+	.section_cont { background: transparent url(./images/appdown-txt-4.png) center center no-repeat; }
+}
+.section5 { 
+	background: url(./images/appdown-bg-5.jpg) center top no-repeat; background-size: cover!important;
+	
+	.section_cont { background: transparent url(./images/appdown-txt-5.png) center center no-repeat; }
+}
+
+.section6 { 
+	background: url(./images/appdown-bg-6.jpg) center bottom no-repeat; background-size: contain!important; }
+.section6 .section_cont { background: transparent url(./images/appdown-txt-6.png) center center no-repeat; }
+
+.section7 { 
+	background: url(./images/appdown-bg-7.jpg) center top no-repeat; background-size: cover!important;
+
+	.section_wrap {
+		
+		.section_cont { background: transparent url(./images/appdown-txt-7.png) center center no-repeat; }
+	}
+}
+
+.section8 { 
+	.section_cont { background: url(./images/appdown-bg-8.jpg) center top no-repeat; background-size: cover!important; }
+}
+
+#sidemenu {
+	margin: 0; padding: 0; position: fixed; right: 128px; top: 50%; margin-top: -170px; list-style-type: none; z-index: 70;
+	
+	li {
+		margin: 16px 0; font-size: 0;
+
+		a { display: block; width: 12px; height: 12px; background-color: transparent; border: 2px solid #dbdbdb; text-decoration: none; border-radius: 100%; }
+
+		&.active a { background-color: #e9474d; border-color: #e9474d; }
+
+		&:first-child.active a { background-color: #fff; border-color: #fff; }
+	}
+}

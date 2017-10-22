@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script>
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var xinche_m_url = "http://m.huidu.daikuan.com";
+        var BusinessLine = 550;
+        var noAppDown = "1018,1019,1020,1021";
+        var cityName = 'beijing';
+        var Source = '906';
+        var getLeaseUrl = '/Lease/GetCarList';
+        var GetCouponInfoUrl = '/Lease/GetCouponInfoUrl';
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="yxWrapper">
+    <img src="../../images/logo.html.png" style="display:none" id="shareLogo" />
+    <header class="header-bar header-bar-has-logo header-bar-hide-back">
+        <a href="/"></a>
+        <h3></h3>
+        <div id="tools-nav"></div>
+        <div id="navTips" class="nav-tips hide">
+            <a href="#"><i></i>首页</a>
+            <a href="#"><i></i>我的申请</a>
+            <a href="javascript:void(0)" id="shareNavTip"><i></i>分享</a>
+        </div>
+    </header>
+    <script src="http://img3.bitautoimg.com/jinrong/assetshuidu/headType.m/headTypeCookies.js?v=201701221852"></script>
+
+    <section class="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../images/banner.html.jpg" alt="" /></div>
+                <div class="swiper-slide"><img src="../images/banner.html.jpg" alt="" /></div>
+                <div class="swiper-slide"><img src="../images/banner.html.jpg" alt="" /></div>
+                <div class="swiper-slide"><img src="../images/banner.html.jpg" alt="" /></div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="intro">
+        <ul>
+            <li>首付仅需10%</li>
+            <li>一年后可买可换</li>
+            <li>在线审批快速贷</li>
+            <li>低月供无压力</li>
+        </ul>
+    </section>
+
+    <!-- B2C品牌区 -->
+    <section id="b2cBlock" class="b2c-block font-size-24">
+        <div class="brand-box odd uf">
+            <div class="uf-f1">
+                <a href="/lease/beijing/b8/?source=906&amp;channel=667" class="selCarEvent" data-bsid="b8" data-bsname="大众" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_8_100.png">
+                    <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_8_100.png">
+                    <p class="ut-s">大众</p>
+                </a>
+            </div>
+            <div class="uf-f1">
+                <a href="/lease/beijing/b28/?source=906&amp;channel=667" class="selCarEvent" data-bsid="b28" data-bsname="起亚" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_28_100.png">
+                    <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_28_100.png">
+                    <p class="ut-s">起亚</p>
+                </a>
+            </div>
+            <div class="uf-f1">
+                <a href="/lease/beijing/b156/?source=906&amp;channel=667" class="selCarEvent" data-bsid="b156" data-bsname="启辰" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_156_100.png">
+                    <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_156_100.png">
+                    <p class="ut-s">启辰</p>
+                </a>
+            </div>
+            <div class="uf-f1">
+                <a href="/lease/beijing/b30/?source=906&amp;channel=667" class="selCarEvent" data-bsid="b30" data-bsname="日产" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_30_100.png">
+                    <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_30_100.png">
+                    <p class="ut-s">日产</p>
+                </a>
+            </div>
+            <div class="uf-f1">
+                <a href="/lease/beijing/b10/?source=906&amp;channel=667" class="selCarEvent" data-bsid="b10" data-bsname="斯柯达" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_10_100.png">
+                    <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_10_100.png">
+                    <p class="ut-s">斯柯达</p>
+                </a>
+            </div>
+        </div>
+        <div class="brand-box even uf">
+            <div class="uf-f1">
+                <a href="/lease/beijing/b17/?source=906&amp;channel=667" class="selCarEvent" data-bsid="b17" data-bsname="福特" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_17_100.png">
+                    <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_17_100.png">
+                    <p class="ut-s">福特</p>
+                </a>
+            </div>
+            <div class="uf-f1">
+                <a href="/lease/beijing/b7/?source=906&amp;channel=667" class="selCarEvent" data-bsid="b7" data-bsname="丰田" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_7_100.png">
+                    <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_7_100.png">
+                    <p class="ut-s">丰田</p>
+                </a>
+            </div>
+            <div class="uf-f1">
+                <a href="/lease/beijing/b26/?source=906&amp;channel=667" class="selCarEvent" data-bsid="b26" data-bsname="本田" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_26_100.png">
+                    <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_26_100.png">
+                    <p class="ut-s">本田</p>
+                </a>
+            </div>
+            <div class="uf-f1">
+                <a href="/lease/beijing/b49/?source=906&amp;channel=667" class="selCarEvent" data-bsid="b49" data-bsname="雪佛兰" data-imgsrc="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_49_100.png">
+                    <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_49_100.png">
+                    <p class="ut-s">雪佛兰</p>
+                </a>
+            </div>
+            <div class="uf-f1">
+                <a href="/lease/beijing/b25/?source=906&amp;channel=667" class="selCarEvent allCars" data-bsid="b25" data-bsname="更多">
+                    <p class="ut-s">更多</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 预算选择区 -->
+        <div class="budget-box">
+            <div class="uf">
+                <span>车价</span>
+                <a class="first" href="/@city.CitySpell/budget?cMin=0&cMax=5&source=941">5万以下</a>
+                <a class="uf-f1" href="/@city.CitySpell/budget?cMin=5&cMax=10&source=941">5-10万</a>
+                <a class="uf-f1" href="/@city.CitySpell/budget?cMin=10&cMax=15&source=941">10-15万</a>
+                <a class="uf-f1" href="/@city.CitySpell/budget?cMin=15&cMax=&source=941">15万以上</a>
+            </div>
+            <div class="uf">
+                <span>首付</span>
+                <a class="first" href="/@city.CitySpell/budget?dMin=0&dMax=0&source=941">0首付</a>
+                <a class="uf-f1" href="/@city.CitySpell/budget?dMin=0&dMax=1&source=941">1万以下</a>
+                <a class="uf-f1" href="/@city.CitySpell/budget?dMin=1&dMax=2&source=941">1-2万</a>
+                <a class="uf-f1" href="/@city.CitySpell/budget?dMin=2&dMax=&source=941">2万以上</a>
+            </div>
+        </div>
+
+        <!-- 更多筛选 -->
+        <div class="more-select font-size-30">
+            <a href="../list/list.html">全部车源</a>
+        </div>
+    </section>
+
+    <section class="lease-list">
+        <dl>
+            <dt>一万首付区</dt>
+            <dd><a href="#"><img src="../images/car.html.jpg" alt="" /></a></dd>
+            <dd><a href="#"><img src="../images/car.html.jpg" alt="" /></a></dd>
+
+            <dt>两万首付区</dt>
+            <dd><a href="#"><img src="../images/car.html.jpg" alt="" /></a></dd>
+            <dd><a href="#"><img src="../images/car.html.jpg" alt="" /></a></dd>
+
+            <dt>三万以上首付区</dt>
+            <dd><a href="#"><img src="../images/car.html.jpg" alt="" /></a></dd>
+            <dd><a href="#"><img src="../images/car.html.jpg" alt="" /></a></dd>
+        </dl>
+    </section>
+
+    <section class="process">
+        <h3 class="sec-tit">申请流程</h3>
+        <ol>
+            <li><span>1</span>选中爱车，在线下单</li>
+            <li><span>2</span>客服致电，快速审核</li>
+            <li><span>3</span>店内签约，新车开走</li>
+            <li><span>4</span>到期可换可买，灵活选择</li>
+        </ol>
+    </section>
+
+    <section class="question-section">
+        <h3 class="sec-tit">常见问题</h3>
+        <dl>
+            <dt>什么是易鑫•开走吧？</dt>
+            <dd>“易鑫•开走吧”产品是指您仅需支付裸车价的10%首付，无须考虑购置税和保险，无须考虑牌照问题，即可把车开走，每月交很少的租金，既可以用车一年，一年后您可以决定把车买走，或者重新签订合同换新车。</dd>
+            <dt>一般多久可以开上车？</dt>
+            <dd>您在线申请我们的产品，一小时内您即可收到是否通过审批的通知以及短信核销码，您考虑好之后即可到店签约支付首付，即可上牌开走新车。</dd>
+            <dt>“易鑫•开走吧”价格是不是比贷款买车或者租车更合适？</dt>
+            <dd>贷款买车一般需要30% 的首付以及要 缴纳车辆购置税、保险、抵押费用。而我们“易鑫•开走吧”产品只需10%的首付即可把车开走。某某租车的品牌很大，价格对比我们“易鑫•开走吧”产品，价格是我们的3倍左右。</dd>
+        </dl>
+        <div class="ask">
+            <a href="#">我要提问</a>
+        </div>
+    </section>
+
+    <!-- 分享 -->
+    <div id="shareBox">
+        <share :options="shareOptions" qrcode-title="二维码描述标题" title="分享描述标题" :show.sync="showShareCtl" view="share"></share>
+    </div>
+
+</div>
+
+<navbar link="/" text="帮您贷款"></navbar>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

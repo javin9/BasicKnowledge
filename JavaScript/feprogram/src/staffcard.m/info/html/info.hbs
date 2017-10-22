@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>员工信息页</title>
+    <meta name="format-detection" content="telephone=no"/>
+
+    <script type="text/javascript">
+    var EmployeeNumber = "80000";
+    var UserName = "小乖乖";
+
+    var dev = true;
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+    <div id="yxWrapper">
+    
+        <!--页头开始-->
+        <header class="header-bar">
+            <a href="javascript:history.go(-1)" class=""></a>
+            <!-- <span></span> -->
+            <h3 class="font-nav">我在易鑫</h3>
+            <span></span>
+        </header>
+
+        <section class="topinfo">
+            <div class="name"><b v-text="employeeName"></b></div>
+            <p class="num">工号：<span v-text="emplyeeNum"></span></p>
+        </section>
+
+        <Newslist></Newslist>
+    </div>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

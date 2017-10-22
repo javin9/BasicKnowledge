@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <style>
+
+    </style>
+    <script>
+        // var api_url = 'http://192.168.148.133:8008';
+        var api_url = ''
+        var CODE_GETTING_URL = api_url + '/Login/GetCode';
+        var CODE_VALIDATING_URL = api_url + '/Login/CheckCode';
+        var MyCouponCard = {
+            CanUserCount: 1,/*可使用*/
+            UnAvtiveCount: 1,/*未激活*/
+            OverdueCount: 1,/*已失效*/
+            TelphoneFormat: "182 1069 5766",/*格式化手机号*/
+            Telphone: "18210695766"/*手机号*/,
+            ShowInviteLink: '0',
+            OrderUrl: 'www.daikuan.com',
+            InviteLinkUrl: 'www.daikuan.com',
+            HasCanUserdReceivesJDCard: 'false',
+            ExchangeCard:'/myCoupons/wallet/add/add.html'
+        };
+    </script>
+
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+    <div id="app">
+        <!-- header -->
+        <div action="GET-HEADER" data-text="我的卡卷"></div>
+
+        <div class="wallet-tab ub">
+            <div class="use ub-f1 on">可使用(<span>3</span>)</div>
+            <div class="activation ub-f1">未激活(<span>3</span>)</div>
+            <div class="failure ub-f1">已失效(<span>3</span>)</div>
+        </div>
+        <div class="wallet-tip">为保护您的隐私，需验证您的身份后才可查看</div>
+        <div id="form_modu">
+            <ul class="form_modu">
+                <li class="form_modu_head uf">
+                    <input type="hidden" id="Telphone" />
+                    <b>手机号</b><span><input readonly="readonly" type="tel" value="18210695766" name="Telphone" id="TelphoneText" ></span>
+                </li>
+                <li class="form_modu_head  uf">
+                    <b>验证码</b><span><input type="tel" name="CheckCode" id="CheckCode" placeholder="请输入验证码" oninput="if(value.length>6)value=value.slice(0,4)"><a id="getCodeBtn">获取验证码</a></span>
+                </li>
+            </ul>
+            <footer>
+                <a id="submitBtn" href="javascript:void(0);" class="btn_main">验证身份</a>
+            </footer>
+        </div>
+        <div id="mian">
+
+        </div>
+        <div class="add-car hide">
+            <div>+ 兑换卡券</div>
+        </div>
+        <div action="GET-NO-PRODUCT" isYao="1" id="no-product" class="hide"></div>
+    </div>
+
+
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+require("./ok.scss");
+$(function () {
+
+})

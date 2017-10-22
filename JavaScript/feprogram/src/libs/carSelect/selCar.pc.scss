@@ -1,0 +1,265 @@
+/*全局定义*/
+/*body {margin:0; padding:0; font:12px "microsoft yahei",san-serif;text-align:center;}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,input{padding:0; margin:0;}   
+ul,li{list-style:None;}
+table,td,tr,th{}
+img{border:0;margin:0px;}
+h1,h2,h3,h4,h5,h6 {font-weight:normal;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+*/
+/*选车控件定义*/
+.sel-car-wrapper{
+	position:relative;
+    font-size:12px;
+    font:12px "microsoft yahei",san-serif;
+}
+.sel-car-wrapper .empty-search{
+	position:absolute;
+	right:10px;
+	top:0;
+	width: 11px;
+    height: 11px;
+    background: url(./images/close.png) no-repeat left top;
+	cursor: pointer;
+	text-align:center;
+    top:50%;
+    margin-top:-6px;
+    display:none;
+}
+.sel-car-menu{
+	position:absolute; 
+	left:0;
+	background:#fff;
+	border:1px solid #ccc;
+	display:none;
+	z-index: 99;
+	width:450px;
+	text-align: left;	
+}
+.sel-car-loading{
+    width:32px;
+    height:32px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-16px;
+    margin-top:-16px;
+    background:url(./images/loading.gif) no-repeat left top;
+}
+.sel-car-menu .sel-car-menu-left{
+	position:relative;
+}
+.sel-car-menu .menu-fail{
+	height:30px;
+}
+.sel-car-menu .sel-car-menu-left li{
+	cursor: pointer;
+	height:28px;
+	line-height:28px;
+	padding-left:12px;
+}
+.sel-car-menu .sel-car-menu-left li.fail-tip{
+	font-size:14px;
+	color:#aaa;
+	height:30px;
+	line-height:30px;
+}
+
+.sel-car-menu .sel-car-menu-right{
+	display:none;
+	position:absolute;
+	right:0;
+	top:0;
+	width:210px;
+	border-left:1px solid #ccc;
+	height:290px;
+	background:#fff;
+}
+.menu-right-title{
+	line-height:27px;
+	border-bottom:1px solid #e7e7e7;
+	padding-left:8px;
+	color:#999;
+}
+.menu-right-title.hover{
+    cursor: pointer;
+}
+.menu-right-con{
+	height:260px;
+	overflow-y:scroll;
+}
+.menu-right-con dt{
+	line-height:30px;
+	font-weight:600;
+	font-size:14px;
+	padding-left:23px;
+}
+.menu-right-con dd{
+	padding:5px 0 5px 10px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.menu-right-con dd.hover,
+.sel-car-menu .sel-car-menu-left li.hover{
+    background: #f5f5f5;
+    color:#3269b4;
+}
+.menu-right-con dd img{
+	vertical-align: middle;
+	margin-right:5px;
+    width: 60px;
+    height: 40px;
+}
+.no-models{
+    padding:5px 10px;
+    font-size:14px;
+    color:#a1a1a1;
+}
+/**/
+.sel-car-brands,
+.sel-car-type{
+    height: 360px;
+    position: absolute;
+    width: 240px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bebebe;
+    z-index:99;
+    background-color: #fff;
+    text-align: left;
+    display:none;
+
+}
+
+.sel-car-type{
+	left: 239px;
+    width:210px;
+}
+.brand_letters {
+    width: 16px;
+    float: left;
+
+    padding: 4px;
+}
+.brand_letters span a:link, .brand_letters span a:visited {
+    text-decoration: none;
+    color: #3269b4;
+}
+.brand_letters span a {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: #999;
+    display: block;
+}
+.brand_letters span a:hover{
+	color:#fff;
+	background:#3269b4;
+}
+.brand_name_bg {
+    width: 212px;
+    float: left;
+    height: 360px;
+    overflow-y: hidden;
+    border-left:1px solid #eee;
+}
+.brand_name {
+    height: 360px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.brand_name dl,
+.sel-car-type dl{
+    float: left;
+    border-bottom: 1px solid #e7e7e7;
+    margin: 4px 0 0 0;
+    padding: 0 0 4px 0;
+    font-size: 12px;
+    width:209px;
+    
+}
+.brand_name dl dd, 
+.sel-car-type dl dd{
+    float: none;
+    padding-left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: inherit;
+    overflow: hidden;
+}
+.brand_name dl dd a,
+.sel-car-type dl dd a{
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    display: block;
+    padding: 5px 0 5px 15px;
+    margin-right: 0;
+}
+.brand_name dl dd a, 
+.brand_name dl dd a:link,
+.sel-car-type dl dd a, 
+.sel-car-type dl dd a:link{
+	text-decoration: none;
+    color: #333;
+}
+.brand_name dl dd a.current, 
+.brand_name dl dd a:hover,
+.brand_name dl dd a.current:link,
+.sel-car-type dl dd a.current, 
+.sel-car-type dl dd a:hover,
+.sel-car-type dl dd a.current:link{    
+	text-decoration: none;
+    color: #3269b4;
+    background: #f5f5f5;
+}
+.brand_name dl dd a img, 
+.sel-car-type dl dd a img {
+    margin: 0 5px;
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+
+.sel-car-type h6 {
+    height: 29px;
+    line-height: 29px;
+    overflow: hidden;
+    border-bottom: 1px solid #e7e7e7;
+    background-color: #fdfdfd;
+    color: #999;
+    font-size: 12px;
+    padding-left: 8px;
+}
+.models_detail_bg {
+    height: 330px;
+}
+
+.models_detail {
+    width: 209px;
+    height: 330px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.sel-car-type dl dt {
+    float: none;
+    color: #333;
+    font-weight: bold;
+    line-height: 24px;
+    padding-left: 3px;
+    font-size: 15px;
+}
+
+.sel-car-type dl dd a {
+    height: 40px;
+    line-height: 40px;
+}
+.models_detail dl dd a img {
+    width: 60px;
+    height: 40px;
+}
+.sel-car-menu .sel-car-menu-left li.sel-car-brand.hover{
+    background:#f5f5f5 url(./images/right_arrow.png) no-repeat 223px 8px;
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script type="text/javascript">
+        var CODE_GETTING_URL = '/Validate/GetCode';
+        var CODE_VALIDATING_URL = '/Validate/CheckCode';
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var RESURL = "http://img1.bitautoimg.com/jinrong/newpcweb/";
+        var USERCENTERURL = "http://i.daikuan.com";
+        var CDNFileURL = 'http://img1.bitautoimg.com/chedai/';
+        var BusinessLine = 552;
+        var headerBusiFlag = "4";
+        var headerFunFlag = "0";
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<article class="bt_page">
+
+    <!--第一步开始选择车型-->
+    <div class="daikuan_pg" style="display:block;">
+        <div class="tool_page">
+
+            <div class="tool_box">
+                <div class="line"></div>
+                <ul>
+                    <li>
+                        <div class="icon_box"><span class="xzcx_light"></span></div>
+                        <p>选择车型</p>
+                    </li>
+                    <li>
+                        <div class="icon_box"><span class="spsj"></span></div>
+                        <p>上牌时间</p>
+                    </li>
+                    <li>
+                        <div class="icon_box"><span class="xslc"></span></div>
+                        <p>行驶里程</p>
+                    </li>
+                    <li>
+                        <div class="icon_box"><span class="dyzt"></span></div>
+                        <p>抵押状态</p>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="tool_bott">
+                <div class="xzcx">
+                    <div class="xiala_box">
+                        <dl>
+                            <dd class="item-dd-wide">
+                                <a href="javascript:void(0);" id="CarsA" data-bind="attr : {'data-id' : CarId}">
+                                    <span class="CarDetail" data-bind="text : CarsFullVal, attr:{'title': CarsFullVal}"></span>
+                                    <span class="CarPrice" data-bind="text : CarPriceVal"></span>
+                                </a>
+                            </dd>
+                        </dl>
+                        <span class="alert">请选择品牌/车型</span>
+                    </div>
+                </div>
+                <div class="btn_box">
+                    <span class="button_orange button_94_35 "><a id="xzcx_next" href="javascript:void(0);" class="next">下一步</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--第二步开始上牌时间-->
+    <div class="daikuan_pg">
+
+        <div class="tool_page">
+
+            <div class="tool_box">
+                <div class="line"></div>
+                <ul>
+                    <li>
+                        <div class="icon_box"><span class="xzcx_light"></span></div>
+                        <p>选择车型</p>
+                    </li>
+                    <li>
+                        <div class="icon_box"><span class="spsj_light"></span></div>
+                        <p>上牌时间</p>
+                    </li>
+                    <li>
+                        <div class="icon_box"><span class="xslc"></span></div>
+                        <p>行驶里程</p>
+                    </li>
+                    <li>
+                        <div class="icon_box"><span class="dyzt"></span></div>
+                        <p>抵押状态</p>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="tool_bott">
+                <div class="spsj">
+                    <div class="l_box">
+                        <div class="select_box">
+                            <span class="label">上牌城市&nbsp;</span>
+                            <div class="com_sele area SelCityEvent">
+                                <a class="jt" data-bind="attr:{'data-id':CityId}, text:CityName"></a>
+
+                                <span class="alert">请选择城市</span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="r_box">
+                        <div class="select_box">
+                            <span class="label">上牌时间&nbsp;</span>
+                            <div class="com_sele time_year">
+                                <a href="javascript:void(0);" class="jt YearA" data-bind="attr : {'data-year' : LicenseYearVal,'data-month' : LicenseMonthVal}">请选择</a>
+
+                            </div>
+                        </div>
+                        <span class="alert">请选择时间</span>
+                    </div>
+                </div>
+                <div class="btn_box">
+                    <span class="button_orange button_94_34"><a id="spsj_next" href="javascript:void(0);" class="next">下一步</a></span>
+                    <a href="javascript:void(0);" class="last">上一步</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--第二步结束-->
+
+
+
+    <!--第三步开始行驶里程-->
+    <div class="daikuan_pg">
+
+        <div class="tool_page">
+
+            <div class="tool_box">
+                <div class="line"></div>
+                <ul>
+                    <li>
+                        <div class="icon_box"><span class="xzcx_light"></span></div>
+                        <p>选择车型</p>
+                    </li>
+                    <li>
+                        <div class="icon_box"><span class="spsj_light"></span></div>
+                        <p>上牌时间</p>
+                    </li>
+                    <li>
+                        <div class="icon_box"><span class="xslc_light"></span></div>
+                        <p>行驶里程</p>
+                    </li>
+                    <li>
+                        <div class="icon_box"><span class="dyzt"></span></div>
+                        <p>抵押状态</p>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="tool_bott">
+                <div class="xslc">
+                    <a href="javascript:void(0);" class="MileA" data-bind="attr : {'data-id' : MileageVal}"></a>
+                    <ul>
+                        <li data-id="1"><div class="lc1">2万公里以下</div></li>
+                        <li data-id="2"><div class="lc2">2-4万公里</div></li>
+                        <li data-id="4" class="current"><div class="lc3">4-6万公里</div></li>
+                        <li data-id="6"><div class="lc4">6-8万公里</div></li>
+                        <li data-id="8"><div class="lc5">8-10万公里</div></li>
+                        <li data-id="10"><div class="lc6">10万公里以上</div></li>
+                    </ul>
+                </div>
+                <div class="btn_box">
+                    <span class="button_orange button_94_34"><a href="javascript:void(0);" class="next">下一步</a></span>
+                    <a href="javascript:void(0);" class="last">上一步</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--第三步结束-->
+
+    <!--第四步开始抵押状态-->
+    <div class="daikuan_pg">
+
+        <div class="tool_page">
+
+            <div class="tool_box">
+                <div class="line"></div>
+                <ul>
+                    <li>
+                        <div class="icon_box"><span class="xzcx_light"></span></div>
+                        <p>选择车型</p>
+                    </li>
+                    <li>
+                        <div class="icon_box"><span class="spsj_light"></span></div>
+                        <p>上牌时间</p>
+                    </li>
+                    <li>
+                        <div class="icon_box"><span class="xslc_light"></span></div>
+                        <p>行驶里程</p>
+                    </li>
+                    <li>
+                        <div class="icon_box"><span class="dyzt_light"></span></div>
+                        <p>抵押状态</p>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="tool_bott">
+                <div class="dyzt">
+                    <a href="javascript:void(0);" class="" data-bind="attr : {'data-id' : MortgageStatusVal}"></a>
+                    <ul>
+                        <li data-id="1"><div class="ydy">已抵押</div></li>
+                        <li data-id="0" class="current"><div class="wdy">无抵押</div></li>
+                    </ul>
+                </div>
+                <div class="btn_box">
+                    <span class="button_orange button_94_34"><a id="to_pinggu" href="javascript:void(0);" class="next">下一步</a></span>
+                    <a href="javascript:void(0);" class="last">上一步</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--第四步结束-->
+
+    <!--第五步开始--评估结果-->
+    <div class="daikuan_pg">
+
+        <div class="tool_page">
+            <div class="gujia_box">
+                <div class="t_box">
+                    <span class="tit2">您爱车的当前身价为</span>
+                    <p id="B2CPirc">0万</p>
+                </div>
+                <div class="btn_box">
+                    <span class="button_gray button_150_34 fl"><a href="/">返回车抵贷首页</a></span>
+                    <span class="button_orange button_150_34 fr"><a href="javascript:void(0);" class="again">重新测试</a></span>
+                </div>
+                <div class="form_box">
+                    <div class="tit">抵押可获取贷款&nbsp;<span id="LoanAmount">0万</span></div>
+                    <ul class="f-list">
+                        <li>
+                            <label>姓名：</label>
+                            <input id="inputName" name="" type="text" value="" class="f-w200" data-bind="value: UserName,  attr:{'title': UserName}">
+                            <span id="alertName" class="alert">请输入姓名</span>
+                        </li>
+                        <li>
+                            <label>手机：</label>
+                            <input id="inputMobile" name="" type="text" value="手机号" class="f-w200" data-bind="value: Mobile, attr:{'title': Mobile}">
+                            <span id="alertMobile" class="alert">请输入手机号</span>
+                        </li>
+                        <li>
+                            <label>验证码：</label>
+                            <input id="inputValidate" data-bind="value: ValidateVal" name="" type="text" value="" class="f-w200">
+                            <input id="getValidateCode" name="" type="button" value="获取短信验证码" class="">
+                            <span id="alertValidate" class="alert">请输入验证码</span>
+                        </li>
+                        <li>
+                            <label>年龄：</label>
+                            <input id="UserAge" name="" type="text" value="年龄" class="f-w200" data-bind="value: UserAge, valueUpdate : 'afterkeyup'"> 周岁
+                            <span id="alertAge" class="alert">请输入年龄</span>
+
+                        </li>
+                        <li>
+                            <label>性别：</label>
+                            <span class="radio-box"><input name="selSex" type="radio" value="男" checked="checked" data-bind="attr : {'title' : Gender}">先生</span>
+                            <span class="radio-box"><input name="selSex" type="radio" value="女" >女士</span>
+                        </li>
+                        <li>
+                            <label>信用：</label>
+                            <a href="javascript:void(0);" class="FundA" data-bind="attr : {'data-id' : CreditStatus}"></a>
+                            <select name="credit" class="f-w200" id="credit">
+                                <option value="71" style="color: #999999">信用良好</option>
+                                <option value="72" style="color: #999999">少数逾期</option>
+                                <option value="70" style="color: #999999">多次逾期</option>
+                                <option value="256" style="color: #999999">无信用记录</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>期限：</label>
+                            <a href="javascript:void(0);" class="PeriodA" data-bind="attr : {'data-id' : LoanPeriodVal}"></a>
+                            <select name="PeriodA" class="f-w200" id="period">
+                                <option value="1" style="color: #999999">1个月</option>
+                                <option value="3" style="color: #999999" selected="selected">3个月</option>
+                                <option value="6" style="color: #999999">6个月</option>
+                                <option value="12" style="color: #999999">1年</option>
+                                <option value="24" style="color: #999999">2年</option>
+                                <option value="36" style="color: #999999">3年</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <span class="button_orange button_208_34"><a id="postData" href="javascript:void(0);" class="tj">提交获取贷款</a></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--第五步结束-->
+
+
+
+    <!--第6步开始--最终结果-->
+    <div class="daikuan_pg" >
+
+        <div class="tool_page">
+            <div class="succ_box pb50">
+                <div class="succ_icon"></div>
+                <h6>恭喜您，申请提交成功！</h6>
+                <p>稍后会有易车合作金融机构给您致电，请保持电话畅通。<span class="red timer">10</span>秒后自动返回车贷首页</p>
+                <p>您还可以：<a href="http://www.daikuan.com"><span>买新车</span></a> | <a href="/"><span id="back_to_home">返回首页</span></a></p>
+            </div>
+
+        </div>
+    </div>
+    <!--第6步结束-->
+</article>
+<script src="http://192.168.145.9:8013/jinrong/assets/dll/jquery.datetimepicker.dll.js"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

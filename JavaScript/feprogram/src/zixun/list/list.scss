@@ -1,0 +1,107 @@
+@import '../main.scss';
+.list * {
+  box-sizing: border-box;
+}
+.list {
+  @extend .whole;
+  padding-top: 20px;
+  .yxzx-left {
+    width: 920px;
+    margin-right: 20px;
+
+    > header {
+      border-bottom: 1px solid map-get($color, gray);
+      font-size: 0;
+      font-size: 14px;
+      line-height: 22px;
+      > a {
+        display: inline-block;
+        padding: 9px 10px 10px;
+        color: #394043;
+        &.cur {
+          padding-bottom: 9px;
+          color: map-get($color, red);
+          border-bottom: 2px solid map-get($color, red);
+        }
+      }
+    }
+    // 导航
+    .path-nav {
+      margin-top: 14px;
+      font-size: 12px;
+      height: 18px;
+      line-height: 18px;
+      a:hover {
+        color: map-get($color, red);
+      }
+    }
+    // 列表页内容
+    .container {
+      dl {
+        padding-top: 10px;
+        font-size: 0;
+        dd {
+          padding: 20px 0 30px;
+          border-bottom: 1px solid map-get($color, gray);
+          > a {
+            font-size: 20px;
+            color: #394043;
+            line-height: 30px;
+            &:hover {
+              color: map-get($color, red);
+            }
+          }
+
+          > p {
+            padding: 10px 0 20px;
+            font-size: 12px;
+            color: #9C9FA1;
+            line-height: 18px;
+          }
+
+          > div {
+            font-size: 14px;
+            color: #686868;
+            line-height: 22px;
+            @extend .wrap;
+            @extend .clamp2;
+          }
+          &.new {
+            a {
+              // padding-left: 67px;
+              // background: url(../images/new.png) no-repeat left 5px;
+              font{
+                color: map-get($color, red);
+              }
+            }
+          }
+        }
+      }
+      // 分页器
+      .pagenation {
+        padding-top: 50px;
+        font-size: 0;
+        text-align: center;
+        > a {
+          display: inline-block;
+          width: 30px;
+          padding: 3px 0;
+          font-size: 14px;
+          color: #666;
+          line-height: 22px;
+          text-align: center;
+          border: 1px solid #EEEEEE;
+          border-radius: 2px;
+          margin-left: 12px;
+          &.cur {
+            color: map-get($color, red);
+            border: 1px solid map-get($color, red);
+          }
+          &.prev, &.next {
+            width: 64px;
+          }
+        }
+      }
+    }
+  }
+}

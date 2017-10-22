@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+      <link rel="stylesheet" type="text/css" href="http://img3.bitautoimg.com/jinrong/newmweb/css/xinche/Product/list.css?v=201610121127">
+        <script type="text/javascript">
+            var APIURL = 'http://api.chedai.bitauto.com/';
+            var CheDaiURL = 'http://xinche.m.daikuan.com/';
+            var localcityid = '';
+            var source = '921';
+            var companyid = '78';
+            var shopcompanyid = '10';
+        </script>
+
+      <script type="text/javascript">
+
+        //申请流程站点
+    
+        var listImgTel = 'http://localhost:20000/src/';
+        //车款信息
+        var car = {
+            masterBrandId: "157",
+            masterBrandName: "宝骏",
+            masterBrandLogo: "http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_157_55.png",
+            serialId: "4447",
+            serialName: "宝骏560",
+            carId: "118495",
+            carPrice: "7.38",
+            purchaseTaxRate: "0.1",
+            carSerialAllSpell: "baojun560"
+        };
+        //城市信息
+        var city = {
+            CityId: "201",
+            CityName: "北京",
+            RegionId: "110100",
+            CitySpell: "beijing",
+            SelectCityLevel: "2",
+            SelectCityName: "北京",
+            cityId: "201",
+            cityName: "北京",
+            regionId: "110100",
+            citySpell: "beijing",
+            selectCityLevel: "2",
+            selectCityName: "北京"
+        };
+
+        //经销商信息
+        var dealer = {
+            dealerId: "",
+            dealerName: "北京4S店平均报价"
+        };
+        var channel = "";
+        var source = "";
+
+        var successtar = "http://localhost:20000/src/css/xinche/images/list6.png?v=2016030201";
+        var failstar = "http://localhost:20000/src/css/xinche/images/list7.png?v=2016030201";
+
+        var adviserApi = "http://test.adviserapi.daikuan.com/";
+        var list3 = "http://localhost:20000/src/css/xinche/images/list3.png?v=2016030201";
+        var list4 = "http://localhost:20000/src/css/xinche/images/list4.png?v=2016030201";
+        var list5 = "http://localhost:20000/src/css/xinche/images/list5.png?v=2016030201";
+        var scrollPhotosCount = "8";
+
+        var scrollMask = false;
+
+        var noLoanCostCityIds = '201,1502,302';
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+    <div id="yxWrapper">
+        <div id='wx_pic' style='margin:0 auto;display:none;'>
+            <img src='http://localhost:20000/src/MWeb/images/pic300.jpg?v=2016030201' />
+        </div>
+<article class="list">
+        <header class="header-bar">
+            <a href="javacript:void(0)" class="backGoPage"></a>
+            <h3 class="font-nav" style="margin-left: 1.4rem;">产品列表</h3>
+            <div id="selectCity" class="">
+                <div class="relative-position-only height-percent-100">
+                    <div class="location-icon-img absolute-position-only vertical-middle"></div>
+                    <div class="location-icon-text width-percent-100 float-left font-size-26 text-overflow-ellipsis">
+                        <div id="localText" class="absolute-position-only vertical-middle margin-left-10 text-overflow-ellipsis" style="line-height: 110%">北京</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </header>
+
+
+    <!-- 图片轮播开始 -->
+    <div class="swiperBox">
+        <div class="swiper-container swiper-style" id="swiper">
+            <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="http://img3.bitautoimg.com/autoalbum/files/20150709/104/13295510499101_4148526_3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="http://img1.bitautoimg.com/autoalbum/files/20150709/476/13300147635061_4148528_3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="http://img4.bitautoimg.com/autoalbum/files/20150709/756/13301175690383_4148531_3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="http://img3.bitautoimg.com/autoalbum/files/20150709/829/13302482967044_4148534_3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="http://img3.bitautoimg.com/autoalbum/files/20150709/320/13305332025119_4148542_3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="http://img4.bitautoimg.com/autoalbum/files/20150709/546/13305654644233_4148543_3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="http://img1.bitautoimg.com/autoalbum/files/20150709/800/13310080070739_4148544_3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="http://img1.bitautoimg.com/autoalbum/files/20150709/792/13294679244661_4148524_3.jpg" />
+                        </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination" style="display: none;"></div>
+            <div class="fy"></div>
+        </div>
+    </div>
+
+    <!-- 图片轮播结束 -->
+
+    <blockquote class="list-info">
+        <!-- 选车开始 -->
+        <section class="selCar">
+            <h1 id="selCar" class="car-name font-30 ut-s">宝骏560 2016款 1.8L 手动 舒适型</h1>
+            <div class="uf uf-ic car-information font-26">
+                <div class="uf-f1 car-company">北京4S店平均报价：</div>
+                <div class="car-price ut-r ">￥73800)</div>
+                            </div>
+                        </section>
+                        <!-- 选车结束 -->
+                        <!-- 首付月供开始 -->
+                        <section class="selBox">
+                            <div class="sel-items">
+                                <h2 class="font-26">首付</h2>
+                                <div id="shoufu"></div>
+                            </div>
+                            <div class="sel-items">
+                                <h2 class="font-26">期限</h2>
+                                <div id="yuegong"></div>
+                            </div>
+                        </section>
+                        <!-- 首付月供结束 -->
+                        <!-- 详细信息开始 -->
+                        <section class="info-box">
+                            <div>
+                                <div class="uf uf-ic font-26">
+                                    <div class="uf-f2 font_blod">首付 <span class="font-24 col_grey6 font_no_blod">(车价 × <span data-bind="text:downPaymentPercentText">20</span>%)</span></div>
+                                    <div class="uf-f1 ut-r col_rede">￥<span data-bind="text:downPayment">--</span></div>
+                                </div>
+                                <div class="uf uf-ic font-26">
+                                    <div class="uf-f2 font_blod">分期额度 <span class="font-24 col_grey6 font_no_blod">(车价 - 首付)</span></div>
+                                    <div class="uf-f1 ut-r col_rede">￥<span data-bind="text:loanVolumn">--</span></div>
+                                </div>
+                                <div class="uf uf-ic font-26">
+                                    <div class="uf-f2 font_blod">月供 <span class="font-24 col_grey6 font_no_blod">(根据市场平均费率计算)</span></div>
+                                    <div class="uf-f1 ut-r col_rede">￥<span data-bind="text:suggestMonthlyPayment">--</span></div>
+                                </div>
+                            </div>
+                            <footer class="font-24 col_grey6 uf uf-ic">
+                                <div class="uf-f6">
+                                    税费 (购置税<span data-bind="text:purchaseTaxText">7,789</span>+上牌费500+交强险950/年)
+                                </div>
+                                <div class="uf-f1 ut-r">￥<span data-bind="text:taxes">--</span></div>
+                            </footer>
+                        </section>
+                        <!-- 详细信息结束 -->
+                        <!-- 列表筛选开始 -->
+                        <section class="list-header">
+                            <div class="uf uf-ic header">
+                                <div class="tap uf-f1 ut-c hotEvent active" data-id="MR"><span>综合排序</span></div>
+                                <div class="tap uf-f1 ut-c hotEvent" data-id="ZCB" data-bind="visible:isShowLoanCost"><span>分期成本最低</span></div>
+                                <div class="tap uf-f1 ut-c hotEvent" data-id="YG"><span>月供最低</span></div>
+                                <div class="tap uf-f1 ut-c hotEvent" data-id="RQ"><span>人气最旺</span></div>
+                            </div>
+                        </section>
+                        <!-- 列表筛选结束 -->
+                        <!-- 列表内容开始 -->
+                        <section id="list" class="list-ctn">
+                            <div class="login-box">
+                                <div class="login-img"></div>
+                            </div>
+                            <div class="default-box hide">
+                                <div class="default-img"></div>
+                                <div class="default-title">抱歉，没有匹配的金融产品</div>
+                                <div class="default-text">建议您调整首付比例、还款期限或减少筛选条件</div>
+                            </div>
+
+                            <article class="content-box hide" data-bind="foreach:{data:productsView}">
+                                <div class="pro-groups">
+
+                                    <a href="javascript:void(0);" class="pro-info" data-bind="attr:{'href':detailUrl}">
+                                        <div class="img_box">
+                                            <img src="" data-bind="attr:{'src':CompanyLogoUrl}">
+                                        </div>
+                                        <div class="item_right_box">
+                                            <div class="dl title_box uf uf-ic">
+                                                <div class="dt font-title tit uf-f1 ut-s">
+                                                    <span data-bind="text:PackageName">111招商银行</span>(<span data-bind="text:CompanyName">汽车分期</span>)
+                                                </div>
+                                                <div class="dd"> </div>
+                                            </div>
+                                            <!-- 副标题 -->
+                                            <div class="dl subtitle" data-bind="attr:{'class':IsSubtitleKlass}, text:SubHeading">5成首付，1小时速批</div>
+
+                                            <div class="dl apply_price">
+                                                <div class="dt"><span data-bind="text:CommonRequirementName">申请信息</span>：<span class="font-28 level_one" data-bind="attr:{'class':CommonRequirementKlass}, text:CommonRequirement">宽松</span></div>
+                                                <div class="dd price font-ctn"><span data-bind="text:MonthlyPaymentPrefix"></span><span class="col_rede font-34" data-bind="text:MonthlyPaymentText">3243</span><span data-bind="text:MonthlyPaymentUnit"></span>/月</div>
+                                            </div>
+                                            <div class="dl apply_evaluation">
+                                                <div class="dt">
+                                                    <span data-bind="html:CommentHtml"></span>
+                                                    <!--<span class="apply"><span data-bind="text:ApplyCount">4833</span>人申请</span>-->
+                                                </div>
+                                                <div class="dd">
+                                                    <span class="col_grey9"><span data-bind="text:TotalCostPrefix">贷款成本</span><span data-bind="text:TotalCostText">1.20万</span></span>
+                                                </div>
+                                            </div>
+                                            <div class="dl apply_tag">
+                                                <div class="dt" data-bind="html:PackageFeatureHrml"><span class="font-22 tag_blue">在线秒批</span><span class="font-22 tag_red">仅身份证</span></div>
+                                            </div>
+                                            <ul class="img_info" data-bind="attr:{'class':ImgInfoKlass}">
+                                                <li class="uf uf-ic ut-s" data-bind="attr:{'class':MultiLabelKlass}"><i class="icon icon-hui"></i><span class="uf-f1 ut-s" data-bind="text:MultiLabel">首次下单减免购置税、赠送2800元交强险、首次下单送礼品</span></li>
+                                                <li class="uf uf-ic ut-s" data-bind="attr:{'class':PackageGiftValueKlass}"><i class="icon icon-li"></i><span class="uf-f1 ut-s">申请即送<span data-bind="text:PackageGiftValueAmount">398</span>礼包</span></li>
+                                                <li class="uf uf-ic ut-s" data-bind="attr:{'class':FuLabelKalss}"><i class="icon icon-fu"></i><span class="uf-f1 ut-s" data-bind="text:PaySimpleInfo"></span></li>
+                                            </ul>
+                                            <div class="top-tag" data-bind="attr:{'class':IsTopKlass}">置顶</div>
+                                        </div>
+                                        <div class="corner" data-bind="attr:{'class':RecommendTextKlass}, text:RecommendText"></div>
+                                    </a>
+                                </div>
+                            </article>
+                        </section>
+                        <!-- 列表内容结束 -->
+                    </blockquote>
+                </article>
+                <!-- 汽车报价开始 -->
+                <!-- 汽车报价结束 -->
+                <!-- 贷款顾问开始 -->
+                <blockquote id="adviserBox" class="adviser-box hide">
+                    <div class="adv-header">贷款顾问</div>
+                    <div class="win_box_max">
+                        <div data-bind="foreach:loanAdviserOrders">
+                            <div class="adviser-groups win_left_pad uf uf-ic">
+                                <div data-bind="attr:{'data':Id}" name="gotoAdviser" class="adv-img"><img data-bind="attr:{'src':photo}" /></div>
+                                <div data-bind="attr:{'data':Id}" name="gotoAdviser" class="adv-body uf-f1">
+                                    <div class="adv-body-top font-26"><span data-bind="text:name">贷款顾问</span><i data-bind="attr:{'class':skillLevelClass}"></i></div>
+                                    <div class="adv-body-bottom font-22" data-bind="text:serveNumber"></div>
+                                </div>
+                                <a class="adv-tel" data-bind="attr:{'href':'tel:'+cN400+','+exTen}"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="javascript:;" class="adv-close"></a>
+                </blockquote>
+                <!-- 贷款顾问结束 -->
+
+
+                <section id="appDown" class="hide">
+                    <a href="yxcarloan://www.daikuan.com" id="loadAppButton" class="hide"></a>
+
+                    <div class="appdown_area uf uf_ac">
+                        <a href="" id="" class="appdown_close"><span class="hide">x</span></a>
+                        <span src="" alt="" class="appdown_logo"></span>
+                        <div class="appdown_txt uf_f1">
+                            <p class="font-size-26 font-color-ffffff">APP审批贷款速度更快</p>
+                            <p class="font-size-24 font-color-999999">登录即可领取3万额度</p>
+                        </div>
+                        <a href="/app/down" class="appdown_btn font-size-32 font-color-ffffff">下载领取</a>
+                    </div>
+                </section>
+
+        
+        </div>
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

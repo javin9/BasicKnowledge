@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <script type="text/javascript">
+        var GetSimpleCalcUrl = '/cartree/GetSimpleCalc';
+        var car = {
+            masterBrandId: "8", //品牌ID
+            masterBrandName: "大众", //品牌名称
+            masterBrandLogo: "http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_8_55.png", //品牌logoUrl
+            serialId: "2370", //车系ID
+            serialName: "朗逸",//车系名称
+            serialSpell: "langyi", //车型全拼
+            carId: "109958", //车ID
+            carPrice: "12.49", //车价
+            purchaseTaxRate: "", //购置税
+            carSerialShowName: "朗逸" //车系（显示）全称
+        };
+        var downpayment = 0.3;
+        var periods = 12;
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="yxWrapper">
+    <!--页头开始-->
+    <header class="header-bar">
+        <a href="javascript:history.go(-1)"></a>
+        <h3 class="font-nav">奥迪A4L</h3>
+        <a href="#" class="home-link">首页</a>
+    </header>
+    <!--页头结束-->
+
+    <div class="main-content">
+        <!-- 车型详情 -->
+        <section class="serial-intro">
+            <div class="image">
+                <img src="http://img4.bitautoimg.com/autoalbum/files/20161114/280/0339252804_1.jpg" alt="" />
+            </div>
+            <div class="text">
+                <div class="title">奥迪A4L</div>
+                <dl>
+                    <dt>参考价</dt>
+                    <dd class="price">18.49-29.67万</dd>
+                </dl>
+                <dl>
+                    <dt class="clear">油耗</dt>
+                    <dd>5.9L-9.1L</dd>
+                    <dt>排量</dt>
+                    <dd>1.8T/2.0T/3.0T</dd>
+                </dl>
+            </div>
+        </section>
+
+        <section class="filter-tab" id="filter-tab-page">
+            <a href="javascript:void(0)"><span>首付 <em key="downpayment">30%</em></span></a>
+            <a href="javascript:void(0)"><span>还款 <em key="periods">12期</em></span></a>
+        </section>
+        <section class="filter-wrapper" id="filter-wrapper">
+            <header class="header-bar">
+                <a href="javascript:void(0)" id="filter-wrapper-close"></a>
+                <h3 class="font-nav">奥迪A4L</h3>
+                <span></span>
+            </header>
+            <div class="filter-tab">
+                <a href="javascript:void(0)"><span>首付 <em key="downpayment">30%</em></span></a>
+                <a href="javascript:void(0)"><span>还款 <em key="periods">12期</em></span></a>
+            </div>
+            <div class="filter-tabcons">
+                <ul>
+                    <li><a href="javascript:void(0)" data="downpayment:0">0%</a></li>
+                    <li><a href="javascript:void(0)" data="downpayment:0.1">10%</a></li>
+                    <li><a href="javascript:void(0)" data="downpayment:0.2">20%</a></li>
+                    <li><a href="javascript:void(0)" data="downpayment:0.3" class="active">30%</a></li>
+                    <li><a href="javascript:void(0)" data="downpayment:0.4">40%</a></li>
+                    <li><a href="javascript:void(0)" data="downpayment:0.5">50%</a></li>
+                    <li><a href="javascript:void(0)" data="downpayment:0.6">60%</a></li>
+                    <li><a href="javascript:void(0)" data="downpayment:0.7">70%</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript:void(0)" data="periods:12" class="active">12期</a></li>
+                    <li><a href="javascript:void(0)" data="periods:18">18期</a></li>
+                    <li><a href="javascript:void(0)" data="periods:24">24期</a></li>
+                    <li><a href="javascript:void(0)" data="periods:36">36期</a></li>
+                    <li><a href="javascript:void(0)" data="periods:48">48期</a></li>
+                    <li><a href="javascript:void(0)" data="periods:60">60期</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 年份 -->
+        <section class="years">
+            <a href="javascript:void(0)" class="all active">全部在售</a>
+            <a href="javascript:void(0)">2017款</a>
+            <a href="javascript:void(0)">2016款</a>
+        </section>
+        <section class="car-wrapper">
+            <!-- 2017 -->
+            <ul>
+                <li data-id="116516">
+                    <a href="#">
+                        <h3>
+                            <span class="name">2017款 TFSI技术型</span>
+                            <span class="price">21.53万</span>
+                        </h3>
+                        <div class="info">
+                            <dl>
+                                <dt>首付</dt>
+                                <dd><em class="downpayment">3.50万</em></dd>
+                                <dt>月供</dt>
+                                <dd><em class="monthly-payment">3963元</em><i>起</i>X<span class="periods">36</span>期</dd>
+                            </dl>
+                        </div>
+                    </a>
+                </li>
+                <li data-id="117720">
+                    <a href="#">
+                        <h3>
+                            <span class="name">2017款 TFSI技术型</span>
+                            <span class="price">21.53万</span>
+                        </h3>
+                        <div class="info">
+                            <dl>
+                                <dt>首付</dt>
+                                <dd><em class="downpayment">3.50万</em></dd>
+                                <dt>月供</dt>
+                                <dd><em class="monthly-payment">3963元</em><i>起</i>X<span class="periods">36</span>期</dd>
+                            </dl>
+                        </div>
+                    </a>
+                </li>
+                <li data-id="116517">
+                    <a href="#">
+                        <h3>
+                            <span class="name">2017款 TFSI技术型</span>
+                            <span class="price">21.53万</span>
+                        </h3>
+                        <div class="info">
+                            <dl>
+                                <dt>首付</dt>
+                                <dd><em class="downpayment">3.50万</em></dd>
+                                <dt>月供</dt>
+                                <dd><em class="monthly-payment">3963元</em><i>起</i>X<span class="periods">36</span>期</dd>
+                            </dl>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- 2016 -->
+            <ul>
+                <li data-id="116516">
+                    <a href="#">
+                        <h3>
+                            <span class="name">2016款 TFSI技术型</span>
+                            <span class="price">21.53万</span>
+                        </h3>
+                        <div class="info">
+                            <dl>
+                                <dt>首付</dt>
+                                <dd><em class="downpayment">3.50万</em></dd>
+                                <dt>月供</dt>
+                                <dd><em class="monthly-payment">3963元</em><i>起</i>X<span class="periods">36</span>期</dd>
+                            </dl>
+                        </div>
+                    </a>
+                </li>
+                <li data-id="116516">
+                    <a href="#">
+                        <h3>
+                            <span class="name">2016款 TFSI技术型</span>
+                            <span class="price">21.53万</span>
+                        </h3>
+                        <div class="info">
+                            <dl>
+                                <dt>首付</dt>
+                                <dd><em class="downpayment">3.50万</em></dd>
+                                <dt>月供</dt>
+                                <dd><em class="monthly-payment">3963元</em><i>起</i>X<span class="periods">36</span>期</dd>
+                            </dl>
+                        </div>
+                    </a>
+                </li>
+                <li data-id="116516">
+                    <a href="#">
+                        <h3>
+                            <span class="name">2016款 TFSI技术型</span>
+                            <span class="price">21.53万</span>
+                        </h3>
+                        <div class="info">
+                            <dl>
+                                <dt>首付</dt>
+                                <dd><em class="downpayment">3.50万</em></dd>
+                                <dt>月供</dt>
+                                <dd><em class="monthly-payment">3963元</em><i>起</i>X<span class="periods">36</span>期</dd>
+                            </dl>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <!--车贷资讯start-->
+    <section class="loan-news">
+        <dl>
+            <dt><span>车贷资讯</span><a href="#">查看更多</a></dt>
+            <dd>
+                <ul>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                    <li><a href="#">贷款购车要走哪些流程？看完这篇攻略，小…贷款购车要走哪些流程？看完这篇攻略，小…，小…？</a></li>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                    <li><a href="#">汽车贷款的条件是什么？</a></li>
+                </ul>
+            </dd>
+        </dl>
+    </section>
+    <!--车贷资讯end-->
+    <!-- 面包屑导航 -->
+    <section class="breadcrumb">
+        <a href="#">首页</a>
+        <span>&gt;</span>
+        <a href="#">奥迪</a>
+        <span>&gt;</span>
+        <a href="#">奥迪A4L</a>
+    </section>
+
+    <!--底通-->
+    <section class="escdk13">
+        <div class="escdk131 font-ctn">腾讯、京东、百度、易车旗下的互联网汽车金融平台</div>
+        <div class="escdk132">
+            <div><span>触屏版</span></div>
+            <div>
+                <a href="http://www.daikuan.com/?from=newmweb">电脑版</a>
+            </div>
+
+            <div>
+                <a href="http://m.daikuan.com/home/about#!/">关于我们</a>
+            </div>
+            <div>
+                <a href="http://m.daikuan.com/Feedback/">意见反馈</a>
+            </div>
+        </div>
+        <div class="escdk133">服务电话：4000-169-169 (9:00-21:00)</div>
+    </section>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

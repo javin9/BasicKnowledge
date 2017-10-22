@@ -1,0 +1,40 @@
+@import 'sassHelper/mixin';
+@import 'sassHelper/vars';
+
+.component-report-header{
+	@include borderBottom;
+	position: relative;
+	font-size:14px;
+	color:$normal-color;
+	padding-bottom: 30px;
+
+	h2{
+		font-size:22px;
+		color:#000;
+		font-weight: normal;
+		line-height: $main-line-height;
+		margin-bottom: 9px;
+	}
+
+	p{
+		span{
+			color:#000;
+			margin-right: 20px;
+		}
+	}
+
+	aside{
+		position: absolute;
+		right:0;
+		top:20px;
+
+		span{
+			padding:0 10px;
+			line-height: 1;
+		}
+
+		span+span{
+			@include borderLeft;
+		}
+	}
+}

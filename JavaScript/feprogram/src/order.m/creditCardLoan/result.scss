@@ -1,0 +1,220 @@
+@import 'sassHelper/mixin';
+
+.btn-one {
+    height: px2rem(88);
+    line-height: px2rem(88);
+    width: auto!important;
+
+    &.btn-orange {
+	    display: block;
+    	text-align: center;
+	    background: #e9474d;
+	    color:#fff;
+	    line-height: px2rem(88);
+	    @include fsize(32);
+	    width: auto;
+	    border: 0;
+	    border-radius: px2rem(5);
+	    height: px2rem(88);
+	}
+}
+
+.m-no-result2 {
+    background: #fff;
+
+    .loanResult-box {
+	    display: -moz-box;
+	    display: -webkit-box;
+	    display: box;
+	    height: px2rem(150);
+	    width: 570px;
+	    margin: 0 auto;
+	    box-pack:center;
+	    box-align:center;
+	    -webkit-box-pack:center;
+	    -webkit-box-align:center;
+
+	    .face {
+		    margin:0;
+		    width: px2rem(134);
+		    height: px2rem(126);
+		}
+
+		.face-succeed {
+		    background:url(images/express_icon.png) px2rem(24) px2rem(-700) no-repeat;
+		    background-size: px2rem(312) auto!important
+		}
+
+		.face-fail {
+		    background:url(images/express_icon.png) px2rem(-208) px2rem(-700) no-repeat;
+		    background-size: px2rem(312) auto!important
+		}
+
+		h6 {
+		    @include fsize(34);
+		    color: #333;
+		    text-align:left;
+		    line-height: 150%;
+		    margin:0;
+		    -moz-box-flex:1;
+		    -webkit-box-flex:1;
+		    box-flex:1
+		}
+
+	}
+
+	p {
+		text-align: center;
+	    @include fsize(24);
+	    margin:0!important;
+	    line-height:150%!important;
+	    color:#999!important;
+
+	    a {
+		    color:#5fc3e8;
+	    	@include fsize(24);
+		}
+	}
+
+}
+
+.result-btn {
+    background:#fff;
+    padding: px2rem(24) px2rem(30) px2rem(30);
+}
+
+
+.recommend {
+    box-sizing:border-box;
+    margin-top: px2rem(24);
+    border:0;
+    position:relative;
+    padding-left: px2rem(56);
+    background: #fff!important;
+    height: px2rem(80);
+    margin: px2rem(30) 0 0;
+
+    .font14 {
+	    color:#666;
+	    line-height: px2rem(80);
+	    margin:0;
+	    padding:0;
+	    font-weight:400;
+	    @include fsize(28);
+	}
+
+	div {
+	    display:none;
+	    position:absolute;
+	    top: px2rem(30);
+	    height: px2rem(20);
+	    left: px2rem(30);
+	    width: px2rem(4);
+	    background: #1b5693;
+	}
+}
+
+.BudegtList {
+
+	.recommend-black {
+	    padding:0 0 0 px2rem(30);
+	    background-color: #fff;
+
+	    .recommend-top {
+		    border: 0;
+		    position: relative;
+		    padding: px2rem(20) px2rem(20) px2rem(20) px2rem(10);
+
+		    img {
+		    	display: inline-block;
+		    	width: px2rem(40);
+		    	height: px2rem(40);
+		    	border: none;
+		    	vertical-align: px2rem(-8);
+		    }
+
+		    h5 {
+		    	display: inline-block;
+		    	height: px2rem(40);
+		    	padding-left: px2rem(10);
+		    	color: #333;
+		    	@include fsize(30);
+		    	line-height: px2rem(40);
+		    }
+
+		    em {
+			    display: block;
+			    height: px2rem(40);
+			    padding-left: px2rem(64);
+			    font-style: normal;
+			    @include fsize(24);
+			    color: #666;
+			    line-height: px2rem(40);
+			}
+
+			&:after {
+			    position:absolute;
+			    bottom:0;
+			    left:0;
+			    right:0;
+			    border-bottom: 1px solid #ececec
+			}
+		}
+
+		.content {
+		    padding: px2rem(20) px2rem(30) px2rem(20) 0;
+		    border-top: 1px solid #ececec;
+
+		    h5 {
+		    	@include fsize(32);
+		    	color: #333;
+		    	margin-bottom: px2rem(6);
+		    }
+
+		    .mt_20 {
+		    	margin-top: px2rem(40);
+		    }
+
+			.table {
+				display: table;
+				width: 100%;
+
+				>a {
+					display: block;
+					width: 100%;
+				}
+
+				ul {
+					width: 90%;
+
+					&.col-3 {
+					    width:100%;
+					    overflow: hidden;
+
+					    li {
+					    	float: left;
+							width:49%;
+							text-align: center;
+						}
+					}
+				}
+			}
+
+			.c-box {
+				margin: 0 auto;
+				@include fsize(28);
+
+				h6 {
+					display: block;
+					text-align: center;
+					color: #999;
+				}
+
+				em.current {
+					color: #DD2727;
+				}
+			}
+		}
+
+	}
+}

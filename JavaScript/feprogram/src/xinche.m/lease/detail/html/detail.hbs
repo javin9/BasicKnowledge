@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script>
+        var RESURL = "http://img1.bitautoimg.com/jinrong/newmweb/";
+        var oldshopWebAddress = "http://mzt.chedai.bitauto.com/";
+        var staticResourceUrl = "http://img1.bitautoimg.com/jinrong/newmweb/";
+
+        var APIURL = "http://api.chedai.bitauto.com/";
+        //车款信息
+        var car = {
+            masterBrandId: "8", //品牌ID
+            masterBrandName: "大众", //品牌名称
+            masterBrandLogo: "http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_8_55.png", //品牌logoUrl
+            serialId: "2370", //车系ID
+            serialName: "朗逸",//车系名称
+            serialSpell: "langyi", //车型全拼
+            carId: "109958", //车ID
+            carPrice: "12.49", //车价
+            purchaseTaxRate: "", //购置税
+            carSerialShowName: "朗逸" //车系（显示）全称
+        };
+        //城市信息
+        var city = {
+            CityId: "201",
+            CityName: "北京",
+            RegionId: "110100",
+            CitySpell: "beijing",
+            SelectCityLevel: "2",
+            SelectCityName: "北京",
+            cityId: "201",
+            cityName: "北京",
+            regionId: "110100",
+            citySpell: "beijing",
+            selectCityLevel: "2",
+            selectCityName: "北京"
+        };
+        //产品
+        var product = {
+            productID: "126438",
+            packageID: "4345",
+            productPromotionId: "0"
+        };
+        //经销商信息
+        var dealer = {
+            dealerId: "0",
+            dealerName: "北京4S店平均报价"
+        };
+        var channel = "";
+        var source = "906";
+        var companyID = "472";
+        var businessLineId = '553';  // 租赁业务线id
+        var adviserApi = "http://adviserapi.daikuan.com/";
+
+        var starYellow = "http://img4.bitautoimg.com/jinrong/newmweb/css/xinche/images/list6.png?v=201701231140";
+        var starGray = "http://img1.bitautoimg.com/jinrong/newmweb/css/xinche/images/list7.png?v=201701231140";
+
+        var isForCity = 'True';//是否支持该城市
+        var hasCityFitCar = 'True';//是否有城市支持该车款
+        var isPromotionExpired = 'False';//促销是否已过期
+        var isPackageExpired = 'False';//套餐是否已过期
+        var orderApplyUrl = "http://sq.m.daikuan.com/OrderApplyYx/Index";
+        var baseRoutes = "";
+        var loanUserId = 3525883;
+        var deviceId = "2ab030b3-2cbf-4304-8bd3-a96c0c461fd9";
+        var GetRecentOrders = "/Lease/GetRecentOrders/"; //参数：int pageIndex = 1, int pageSize = 10
+        var canApply = 'True';//是否可申请
+
+        var GetCouponInfoUrl = '/Lease/GetCouponInfoUrl';
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="yxWrapper">
+    <header class="header-bar">
+        <a href="javascript:history.go(-1);"></a>
+        <h3 class="font-nav">开走吧</h3>
+        <div id="navCity" class="nav-city">北京</div>
+        <div id="tools-nav"></div>
+        <div id="navTips" class="nav-tips hide">
+            <a href="#"><i></i>首页</a>
+            <a href="#"><i></i>我的申请</a>
+            <a href="javascript:void(0)" id="shareNavTip"><i></i>分享</a>
+        </div>
+        <div class="tips_text hide">您可以在这里更改所在城市</div>
+    </header>
+    <script src="http://img3.bitautoimg.com/jinrong/assetshuidu/headType.m/headTypeCookies.js?v=201701221852"></script>
+
+    <div class="car-photos">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="http://img3.bitautoimg.com/autoalbum/files/20150608/029/0622000295_8.jpg" alt="" /></div>
+                <div class="swiper-slide"><img src="http://img3.bitautoimg.com/autoalbum/files/20150608/029/0622000295_8.jpg" alt="" /></div>
+                <div class="swiper-slide"><img src="http://img3.bitautoimg.com/autoalbum/files/20150608/029/0622000295_8.jpg" alt="" /></div>
+                <div class="swiper-slide"><img src="http://img3.bitautoimg.com/autoalbum/files/20150608/029/0622000295_8.jpg" alt="" /></div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div class="car-info">
+        <h3 class="car-name">捷达 2015款 质惠版 1.6L 自动时尚型</h3>
+        <p class="car-price">厂商指导价<em>12.49万</em></p>
+    </div>
+
+    <div class="product-info">
+        <h3>先开一年<em>(首年花费)</em></h3>
+        <div class="scheme">
+            <span>首次支付<em>1.25万</em></span>
+            <span>月租<em>999元</em></span>
+            <span>期限<em>12期</em></span>
+        </div>
+        <ul>
+            <li>月租已包含购置税、一年车险等费用</li>
+            <li>支付需缴纳10%保证金，一年后可退可抵<br /><em>( 医生、律师、教师、公务员免收保证金 )</em></li>
+        </ul>
+    </div>
+
+    <div class="expire">
+        <h3>一年后可选方案<em>(二选一)</em></h3>
+        <ul>
+            <li><strong>分期买车</strong>3654元×36个月</li>
+            <li><strong>换辆新车</strong>相同方案，再开一年</li>
+        </ul>
+    </div>
+
+    <div class="product-detail" id="product-detail">
+        <nav class="bookmark">
+            <div class="mark active"><span>产品详情</span></div>
+            <div class="mark"><span>最近成交</span></div>
+            <div class="mark"><span>常见问题</span></div>
+        </nav>
+
+        <div class="conwrap">
+            <!-- 产品详情 -->
+            <div class="con p-detail">
+                <img src="../images/intro1.html.jpg" alt="" />
+                <img src="../images/intro2.html.jpg" alt="" />
+            </div>
+            <!-- 产品详情 end -->
+
+            <div class="process">
+                <h3 class="sec-tit">申请流程</h3>
+                <ol>
+                    <li><span>1</span>选中爱车，在线下单</li>
+                    <li><span>2</span>客服致电，快速审核</li>
+                    <li><span>3</span>店内签约，新车开走</li>
+                    <li><span>4</span>到期可换可买，灵活选择</li>
+                </ol>
+            </div>
+
+            <!-- 成交记录 -->
+            <div class="con p-deal">
+                <h3 class="sec-tit">最近成交</h3>
+                <dl id="comment-list">
+                    <dt>上海大众  朗逸2013款 1.6L 自动风尚型</dt>
+                    <dd>
+                        <span class="tel">138****5844</span>
+                        <span class="loc">北京</span>
+                        <span class="date">2017-01-06</span>
+                    </dd>
+                    <dt>上海大众  朗逸2013款 1.6L 自动风尚型</dt>
+                    <dd>
+                        <span class="tel">138****5844</span>
+                        <span class="loc">北京</span>
+                        <span class="date">2017-01-06</span>
+                    </dd>
+                    <dt>上海大众  朗逸2013款 1.6L 自动风尚型</dt>
+                    <dd>
+                        <span class="tel">138****5844</span>
+                        <span class="loc">北京</span>
+                        <span class="date">2017-01-06</span>
+                    </dd>
+                </dl>
+                <div class="more">
+                    <a href="javascript:void(0)" id="more-comment">查看更多(1349条)</a>
+                </div>
+            </div>
+            <!-- 成交记录 end -->
+
+            <!-- 常见问题 -->
+            <div class="con p-question">
+                <h3 class="sec-tit">常见问题</h3>
+                <dl>
+                    <dt>什么是易鑫•开走吧？</dt>
+                    <dd>“易鑫•开走吧”产品是指您仅需支付裸车价的10%首付，无须考虑购置税和保险，无须考虑牌照问题，即可把车开走，每月交很少的租金，既可以用车一年，一年后您可以决定把车买走，或者重新签订合同换新车。</dd>
+                    <dt>一般多久可以开上车？</dt>
+                    <dd>您在线申请我们的产品，一小时内您即可收到是否通过审批的通知以及短信核销码，您考虑好之后即可到店签约支付首付，即可上牌开走新车。</dd>
+                    <dt>“易鑫•开走吧”价格是不是比贷款买车或者租车更合适？</dt>
+                    <dd>贷款买车一般需要30% 的首付以及要 缴纳车辆购置税、保险、抵押费用。而我们“易鑫•开走吧”产品只需10%的首付即可把车开走。某某租车的品牌很大，价格对比我们“易鑫•开走吧”产品，价格是我们的3倍左右。</dd>
+                </dl>
+                <div class="ask">
+                    <a href="#">我要提问</a>
+                </div>
+            </div>
+            <!-- 常见问题 end -->
+
+            <div class="links">
+                <a href="#" class="return-btn">查看全部车型</a>
+                <div class="logo"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 分享 -->
+    <div id="shareBox">
+        <share :options="shareOptions" qrcode-title="二维码描述标题" title="分享描述标题" :show.sync="showShareCtl" view="share"></share>
+    </div>
+    <!-- 分享 end -->
+    <div class="apply-wrapper">
+        <div class="adviser-btn">
+            <span class="icon"></span>
+            <span class="text">免费咨询<em>服务时间 9:00-21:00</em></span>
+        </div>
+        <div class="order-btn" order-action="http://sq.m.daikuan.com/CarRentalApply/Index">立即申请</div>
+    </div>
+
+    <!-- 立即申请表单start -->
+    <form action="http://sq.m.daikuan.com/OrderApply/Index/" method="post" id="orderInfoForm">
+        <input type="hidden" name="PageTitle" value="">
+        <input type="hidden" name="SourceUrl" value="">
+        <input type="hidden" name="SourceType" value="">
+        <input name="Orders" type="hidden" value="">
+        <input name="CarId" type="hidden" value="">
+        <input name="CityId" type="hidden" value="">
+        <input name="CarPrice" type="hidden" value="">
+        <input name="Source" type="hidden" value="">
+        <input name="Channel" type="hidden" value="667">
+        <input name="DealerId" type="hidden" value="">
+        <input name="DealerName" type="hidden" value="">
+        <input name="Line" type="hidden" value="">
+        <input name="DealerTelphone" type="hidden">
+        <input name="SourceDicName" type="hidden" value="">
+        <input name="From" type="hidden" value="">
+        <input name="FromNew" type="hidden" value="">
+
+        <input name="DownPayment" type="hidden" value="">
+        <input name="LoanAmount" type="hidden" value="">
+        <input name="AdviserId" type="hidden" value="">
+        <input name="Shop" type="hidden" value="">
+        <input name="OrderType" type="hidden" value="1">
+        <input name="Idx" type="hidden">
+    </form>
+    <!-- 立即申请表单end -->
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

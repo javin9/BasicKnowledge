@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var CODE_GETTING_URL = '/Validate/GetCode';
+        var CODE_VALIDATING_URL = '/Validate/CheckCode';
+        var USERCENTERURL = 'http://test.i.m.daikuan.com/';
+        var APIURL = 'http://192.168.15.153:8081/';
+        var RESURL = 'http://192.168.145.9:8011/MWeb/';
+        var CDNFileURL = 'http://t.image.bitautoimg.com/chedai/';
+        var BusinessLine = 552;
+        var dataSgin = "car";
+        var oid = '798785';
+        sessionStorage['oid']=oid;
+        var option=2;
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+ <div id="yxWrapper">
+        <div id='wx_pic' style='margin:0 auto;display:none;'>
+            <img src='http://192.168.145.9:8011/MWeb/images/pic300.jpg?v=201605171437' />
+        </div>
+        <input name="__RequestVerificationToken" type="hidden" value="pEdLhW7LLTa2T7_Mai11jHBMEhjoxFuvDejU4EsmWAQF8_jOwSF4r7LjHeBtarm8dn3C0MLNnZ6nzRkJUM8xfichYTEpRdo94gsHClcRBSE1" />
+            <!-- ViewBag.Title = "车辆信息 - QQ钱包"; -->
+
+<article class="QQ">
+    <header class="header box_sizing">
+        <div class="header-title f-gray6">车辆抵押贷款咨询流程</div>
+        <div class="header-ctn">
+            <span class="uf-f1 cur">身份验证</span>
+            <span class="uf-f1 cur">提交车辆信息</span>
+            <span class="uf-f1">提交资质信息</span>
+            <span class="uf-f1">等待回访</span>
+        </div>
+    </header>
+
+    <blockquote class="form select-form">
+        <ul>
+            <li id="selectCar" class="input-item uf uf-ic selcon unsubmit">
+                <label class="input-icon icon01"></label>
+                <div class="item-name">车型</div>
+                <div class="uf-f1 ut-r ut-s select-ctn">请选择</div>
+                <i class="right"></i>
+                <input class="uf-f1 data" type="hidden" name="CarID">
+            </li>
+
+            <li id="selectDate" class="input-item uf uf-ic selcon unsubmit">
+                <label class="input-icon icon02"></label>
+                <div class="item-name">上牌时间</div>
+                <div class="uf-f1 ut-r ut-s select-ctn">请选择</div>
+                <i class="right"></i>
+                <input class="uf-f1 data" type="hidden" name="LicenseYear">
+                <input class="uf-f1 data" type="hidden" name="LicenseMonth">
+            </li>
+
+            <li id="selectCity" class="input-item uf uf-ic selcon unsubmit">
+                <label class="input-icon icon03"></label>
+                <div class="item-name">上牌城市</div>
+                <div class="uf-f1 ut-r ut-s select-ctn">请选择</div>
+                <i class="right"></i>
+                <input class="uf-f1 data" type="hidden" name="LicenseCityID">
+            </li>
+
+            <li class="input-item uf uf-ic unsubmit" data-type="行驶里程请输入0.01-100万公里之间，最多两位小数">
+                <label class="input-icon icon04"></label>
+                <div class="item-name">行驶里程</div>
+                <input class="uf-f1 ut-r checkApp data" type="number" name="TenThousandKilometres" placeholder="" maxlength="5" oninput="if(value.length>5)value=value.slice(0,5)">
+                <div class="unit">万公里</div>
+            </li>
+            <li class="formTip">请输入里程</li>
+
+            <li id="HasMortgage" class="input-item uf uf-ic">
+                <label class="input-icon icon05"></label>
+                <div class="item-name">抵押状态</div>
+                <div class="uf-f1 ut-r">
+                    <span class="check-box">
+                        <span class="check-icon radio cur" data-id="true"></span><span>有抵押</span>
+                    </span>
+                    <span class="check-box">
+                        <span class="check-icon radio" data-id="false"></span><span>无抵押</span>
+                    </span>
+                </div>
+                <input class="uf-f1 data" type="hidden" name="HasMortgage" value="true">
+            </li>
+
+            <li id="LoanPeriod" class="input-item uf uf-ic selcon unsubmit selectControl" data-aslider-in="LoanPeriod|fade|bottom">
+                <label class="input-icon icon06"></label>
+                <div class="item-name">贷款期限</div>
+                <div class="uf-f1 ut-r ut-s select-ctn">请选择</div>
+                <i class="right"></i>
+                <input class="uf-f1 data" type="hidden" name="LoanPeriod">
+                <aside class="sel-control-box" data-aslider="LoanPeriod">
+                    <div class="asilder_wrapper">
+                        <div class="sel-ctrl-fun-btn">
+                            <div class="sel-ctrl-close font-nav">取消</div>
+                            <div class="sel-ctrl-title font-nav">贷款期限</div>
+                            <div class="sel-ctrl-complete font-nav">确定</div>    
+                        </div>
+                        <div class="scroll-wrapper">
+                            <div class="scroll">
+                                <ul class="slider">
+                                    <li data-id="1" class="cur">1个月</li>
+                                    <li data-id="3">3个月</li>
+                                    <li data-id="6">6个月</li>
+                                    <li data-id="12">12个月</li>
+                                    <li data-id="24">24个月</li>
+                                    <li data-id="36">36个月</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </li>
+
+            <li id="Gender" class="input-item uf uf-ic">
+                <label class="input-icon icon07"></label>
+                <div class="item-name">性别</div>
+                <div class="uf-f1 ut-r">
+                    <span class="check-box">
+                        <span class="check-icon radio cur" data-id="男"></span><span>男</span>
+                    </span>
+                    <span class="check-box">
+                        <span class="check-icon radio" data-id="女"></span><span>女</span>
+                    </span>
+                </div>
+                <input class="uf-f1 data" type="hidden" name="Gender" value="男">
+            </li>
+
+            <li class="input-item uf uf-ic unsubmit" data-type="年龄请输入22-65正整数">
+                <label class="input-icon icon08"></label>
+                <div class="item-name">年龄</div>
+                <input class="uf-f1 ut-r data checkApp" type="number" name="Age" maxlength="2" placeholder="">
+                <div class="unit">周岁</div>
+            </li>
+            <li class="formTip">请输入年龄</li>
+        </ul>
+    </blockquote>
+    <div id="car_btn" class="btn sel-btn">下一步</div>
+
+    <footer class="footer">本服务由易鑫车贷提供</footer>
+</article>
+        
+        <div id="maskLayer"></div>
+        <div class="bottom-to-top"><img src='http://192.168.145.9:8011/MWeb/images/scroll-to-top-icon.png?v=201605171437' /></div>
+    </div>
+    <script src="http://open.mobile.qq.com/sdk/qqapi.js?_bid=152" type="text/javascript"></script>
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

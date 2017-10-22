@@ -1,0 +1,20 @@
+<div id="edit-phone" class="panel">
+	<div class="wrapper">
+		<h4 class="icon-phone">修改手机号</h4>
+		<span class="close-panel"></span>
+		<div class="form-item">
+			<label>手机号</label>
+			<input type="number" placeholder="请输入手机号" id="Phone" class="telphone">
+			<a id="getCodeBtn" class="btn" rel="Phone">获取验证码</a>
+		  <p id="PhoneValidata" class="warning">无效的手机号</p>
+		</div>
+		<div class="form-item">
+			<label>验证码</label>
+			<input type="tel" name="CheckCode" id="CheckCode" placeholder="请输入验证码" />
+			<li id="CheckCodeValidata" class="warning">验证码错误</li>
+		</div>
+		<p>修改手机号将退出当前帐号，并以修改后的手机号作为车贷申请帐号</p>
+		<button id="tel-submit" class="btn_main">确认修改</button>
+	</div>
+	<div class="cover close-panel"></div>
+</div>

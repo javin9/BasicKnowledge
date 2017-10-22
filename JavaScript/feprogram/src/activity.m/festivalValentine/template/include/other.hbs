@@ -1,0 +1,10 @@
+{{#if Result}}
+<div class="other-wrapper">
+  <p>选择更多金融产品，更高审批通过几率</p>
+  <article class="form_wrap res_module" id="other_product">
+  	{{#each Data}}
+  		{{> ./product.hbs}}
+  	{{/each}}
+  </article>
+</div>
+{{/if}}

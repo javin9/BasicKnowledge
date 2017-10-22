@@ -1,0 +1,6 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+@mixin font($size){
+	@include fsize(map-get($mfont,$size));
+}

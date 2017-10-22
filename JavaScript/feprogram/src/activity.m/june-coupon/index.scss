@@ -1,0 +1,27 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+.modal{
+  footer{
+    a{
+      width:px2rem(629) !important;
+      height:px2rem(114) !important;
+      background:url(./images/btn_bg.png) no-repeat left top !important;
+      background-size:contain !important;
+      @include fsize(32,!important);
+      line-height:px2rem(114) !important;
+      text-align:center !important;
+      border-radius: 0 !important;
+    }
+  }
+}
+
+body{
+  background: #a13aca url(./images/bg.png) no-repeat left top;
+  background-size: px2rem(750);
+  width: 100%;
+}
+
+.component-rule{
+  bottom: px2rem(15);
+}

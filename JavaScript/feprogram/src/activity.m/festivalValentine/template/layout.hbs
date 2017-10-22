@@ -1,0 +1,13 @@
+<section id="firstContainer" class="page-container" rel="chatting">
+	{{> chatting.hbs}}
+</section>
+<section id="secondContainer" class="page-container" rel="order">
+	{{#if lts}}
+		{{> order.lts.hbs}}
+	{{else}}
+		{{> order.hbs}}
+	{{/if}}
+</section>
+<section id="thirdContainer" class="page-container" rel="result">
+	{{> result.hbs}}
+</section>

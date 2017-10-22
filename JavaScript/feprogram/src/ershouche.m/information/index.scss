@@ -1,0 +1,273 @@
+@import 'sassHelper/vars';
+
+/*@import 'sassHelper/mixin';*/
+
+@import '../css/ershouche';
+@mixin font($size) {
+    @include fsize(map-get($mfont, $size));
+}
+
+body {
+    overflow-x: hidden
+}
+
+.car_info_box {
+    padding: px2rem(30);
+    @extend .ub;
+    border-bottom: solid 1px #e5e5e5;
+    background: #fff;
+    .img {
+        width: px2rem(210);
+        height: px2rem(140);
+        overflow: hidden;
+        img {
+            width: px2rem(210);
+            height: px2rem(140);
+        }
+    }
+    .info {
+        padding-left: px2rem(30);
+        @extend .ub-f1;
+        h6 {
+            @include fsize(34);
+            color: $hei;
+            line-height: px2rem(50);
+            font-weight: 600;
+            @extend .ellipsis;
+            width: 98%;
+            display: block;
+        }
+        .txt {
+            @include fsize(24);
+            color: $grey;
+            line-height: px2rem(36);
+        }
+        .price {
+            padding-top: px2rem(18);
+            @include fsize(32);
+            color: $red;
+            line-height: px2rem(36);
+        }
+    }
+}
+
+.call_info {
+    background: #fff;
+    overflow: hidden;
+    .validate-code-wrap {
+        border-top: solid 1px #e5e5e5;
+        &:after {
+            content: '';
+            width: px2rem(30);
+            height: 3px;
+            overflow: hidden;
+            background: #fff;
+            position: absolute;
+            left: 0;
+            top: -1px;
+        }
+        &:before {
+            content: '';
+            width: px2rem(30);
+            height: 3px;
+            overflow: hidden;
+            background: #fff;
+            position: absolute;
+            right: 0;
+            top: -1px;
+        }
+    }
+    .inputwrap {
+        position: relative;
+        height: px2rem(48);
+        line-height: px2rem(48);
+        @extend .ub;
+        padding: px2rem(30);
+        &>i {
+            width: px2rem(48);
+            height: px2rem(48);
+            background-size: px2rem(36) px2rem(36)!important;
+            display: block;
+            &.tel {
+                background: url(../images/c2bv/tel.png) left center no-repeat;
+            }
+            &.code {
+                background: url(../images/c2bv/code.png) left center no-repeat;
+            }
+        }
+        .tit {
+            height: px2rem(48);
+            line-height: px2rem(48);
+            color: #394043;
+            @include fsize(32);
+            padding-left: px2rem(30)
+        }
+        .input {
+            padding-left: px2rem(50);
+        }
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            border: 0;
+            background: transparent;
+            @include fsize(32);
+            line-height: px2rem(48);
+            padding-left: px2rem(18);
+            /*color: #666;*/
+        }
+        .get-validate-code {
+            position: absolute;
+            top: px2rem(30);
+            right: px2rem(30);
+            width: px2rem(170);
+            height: px2rem(50);
+            line-height: px2rem(50);
+            text-align: center;
+            @include fsize(24);
+            border: 1px solid $red;
+            border-radius: px2rem(5);
+            color: $red;
+            &:after {
+                content: '';
+                position: absolute;
+                left: px2rem(-27);
+                height: 100%;
+                width: 1px;
+                background: #e5e5e5;
+            }
+            &.disabled {
+                background: #fff;
+                border: 1px solid #D6D6D6;
+                border-radius: px2rem(5);
+                color: #D6D6D6;
+            }
+        }
+        .empty-btn {
+            position: absolute;
+            z-index: 10;
+            right: px2rem(30);
+            top: px2rem(32);
+            width: px2rem(48);
+            height: px2rem(48);
+            background-size: px2rem(44) px2rem(39)!important;
+            background: url(../images/c2bv/del.png) left center no-repeat;
+        }
+        &.validate-code-wrap {
+            .empty-btn {
+                right: px2rem(240);
+            }
+        }
+        .error-btn {
+            position: absolute;
+            z-index: 10;
+            right: px2rem(30);
+            top: px2rem(32);
+            width: px2rem(48);
+            height: px2rem(48);
+            background-size: px2rem(44) px2rem(44)!important;
+            background: url(../images/loginvue/err.png) left center no-repeat;
+        }
+        &.validate-code-wrap {
+            .error-btn {
+                right: px2rem(240);
+            }
+        }
+    }
+}
+
+.tip_txt {
+    padding: 0 px2rem(30);
+    @include fsize(26);
+    color: #686868;
+    line-height: px2rem(54);
+}
+
+.information_box {
+    .info_ul {
+        background: #fff;
+        padding: 0 px2rem(30);
+        .itmes {
+            padding: px2rem(30) 0;
+            border-bottom: solid 1px #e5e5e5;
+            height: px2rem(48);
+            line-height: px2rem(48);
+            @extend .ub;
+            position: relative;
+            &>i {
+                width: px2rem(48);
+                height: px2rem(48);
+                background-size: px2rem(40) px2rem(40)!important;
+                display: block;
+                &.icon_1 {
+                    background: url(../images/loginvue/professional.png) left center no-repeat;
+                }
+                &.icon_2 {
+                    background: url(../images/loginvue/monthlyincome.png) left center no-repeat;
+                }
+                &.icon_3 {
+                    background: url(../images/loginvue/social.png) left center no-repeat;
+                }
+                &.icon_4 {
+                    background: url(../images/loginvue/house.png) left center no-repeat;
+                }
+            }
+            .tit {
+                height: px2rem(48);
+                line-height: px2rem(48);
+                color: #394043;
+                @include fsize(32);
+                padding-left: px2rem(30);
+                @include fsize(32);
+            }
+            .txt {
+                padding-left: px2rem(40);
+                box-sizing: border-box;
+                @include fsize(32);
+                span {
+                    color: #C4C4C4
+                }
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: px2rem(44);
+                right: 0;
+                width: px2rem(12);
+                height: px2rem(12);
+                transform: rotate(45deg);
+                border: 2px #e5e5e5 solid;
+                border-bottom: 0;
+                border-left: 0;
+            }
+        }
+    }
+    .red_btn {
+        @include fsize(32);
+        color: #fff;
+        height: px2rem(100);
+        line-height: px2rem(100);
+        border-radius: px2rem(5);
+        margin: px2rem(40) px2rem(30);
+        background: $red;
+        text-align: center;
+    }
+}
+
+.pulse {
+    animation: flash 1s;
+}
+
+@keyframes flash {
+    from {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale3d(1.5, 1.5, 1.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}

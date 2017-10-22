@@ -1,0 +1,171 @@
+.form-wrapper-inner{
+	::-webkit-input-placeholder { /* WebKit browsers */ 
+		@include fsize(32);
+	  color: #c4c4c4; 
+	} 
+	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+	  @include fsize(32);
+	  color: #c4c4c4; 
+	} 
+	::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+	  @include fsize(32);
+	  color: #c4c4c4; 
+	} 
+	:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+	  @include fsize(32);
+	  color: #c4c4c4; 
+	} 
+	.form_modu {
+		input {
+			text-align: left;
+			outline:none;
+		}
+
+		li.form_modu_head {
+			// fix 安卓机qq浏览器 实名认证弹层边框被遮挡1pxbug
+			overflow: visible;
+
+			&:nth-child(1) {
+				border-top: 0;
+			}
+
+			& > b {
+				box-sizing: content-box;
+				width: 4em;
+				padding-left: px2rem(66);
+				padding-right: px2rem(46);
+				font-weight: normal;
+
+				&.phone {
+					background: url(#{$img-base}/phone.png) no-repeat left center;
+					background-size: px2rem(36) auto;
+				}
+
+				&.code {
+					background: url(#{$img-base}/code.png) no-repeat left center;
+					background-size: px2rem(36) auto;
+				}
+
+				&.name {
+					background: url(#{$img-base}/name-icon.png) no-repeat left center;
+					background-size: px2rem(36) auto;
+				}
+
+				&.idnumber {
+					background: url(#{$img-base}/id.png) no-repeat left center;
+					background-size: px2rem(36) auto;
+				}
+			}
+
+			& > span{
+				text-align: left;
+				height: px2rem(48);
+				input {
+					padding-top:0;
+					height: px2rem(45);
+					line-height:px2rem(45);
+				}
+			}
+
+			.get_code_btn_wrapper {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				padding-left: px2rem(24);
+				height: px2rem(50);
+				-webkit-transform: translate(0, -50%);
+				transform: translate(0, -50%);
+				border-left-width: 1px;
+				border-left-style: solid;
+				overflow: visible;
+
+				a {
+					display: block;
+					width: px2rem(170);
+					height: px2rem(50);
+					@include fsize(26);
+					line-height: px2rem(50);
+					text-align: center;
+					-webkit-border-radius: px2rem(5);
+					border-radius: px2rem(5);
+				}
+			}
+
+			.authenticated-tip {
+				&:before{
+					content:' ';
+					width: px2rem(30);
+					height:px2rem(26);
+					background:url(#{$img-base}/auth.png) no-repeat left top;
+					background-size: contain;
+					display: inline-block;
+					margin-right: px2rem(10);
+				}
+			}
+		}
+	}
+}
+
+#certificate {
+	li.form_modu_head {
+		position: relative;
+		> b {
+			width: 3em;
+			padding-left: 0;
+			&.tupian {
+				width: 5em;
+			}
+			&.name {
+				background-size: px2rem(0) auto;
+			}
+			&.idnumber {
+				background-size: px2rem(0) auto;
+			}
+		}
+
+		span {
+			height: px2rem(48);
+			input {
+				height: px2rem(38);
+				line-height: px2rem(38);
+			}
+		}
+		.img-code {
+			position: absolute;
+			right: 0;
+			top: px2rem(15);
+			> img {
+			 	width: px2rem(201);
+			 	height: px2rem(80);
+			}
+
+			> label {
+				display: block;
+				width: px2rem(40);
+				height: px2rem(40);
+				background: url(../../../common.m/images/refresh.png) no-repeat left top;
+				background-size: contain;
+				position: absolute;
+				bottom: px2rem(13);
+				right: 0;
+			}
+		}
+	}
+	@media screen and (max-device-width:320px){
+		input {
+			font-size: px2rem(32);
+		}
+		::-webkit-input-placeholder { /* WebKit browsers */ 
+			font-size: px2rem(32);
+		} 
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+		  font-size: px2rem(32);
+		} 
+		::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+		  font-size: px2rem(32);
+		} 
+		:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+		  font-size: px2rem(32);
+		} 
+	}
+}

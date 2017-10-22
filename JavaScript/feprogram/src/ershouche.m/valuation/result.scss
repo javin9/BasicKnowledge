@@ -1,0 +1,107 @@
+@import 'sassHelper/vars';
+/*@import 'sassHelper/mixin';*/
+@import '../css/ershouche';
+.bg-w{background: #fff}
+.infopage{overflow: hidden;}
+.top_info{@extend .bg-w;overflow: hidden;
+  h2{@include fsize(34);color:$hei;line-height: px2rem(50);padding:px2rem(25) 0;margin:0 px2rem(30);border-bottom: solid 1px #e5e5e5;font-weight: bold;}
+  .ul{@extend .ub;padding:px2rem(40) px2rem(30);clear: both;
+    li{width: 25%;@extend .ub-f1;position: relative;display: block;
+      &:after{content: '';position: absolute;left:0;top:10%;height: 80%;width: 1px;background:#e5e5e5;overflow: hidden;}
+      &:first-child{position: inherit;}
+      & *{@include fsize(26);line-height: px2rem(42); text-align: center;}
+      .tit{color:$hei;font-weight: bold;}
+      .txt{color:#9C9FA1;padding-top:px2rem(6)}
+    }
+  }
+}
+.tab_box{@extend .bg-w;margin-top:px2rem(20);
+  .tabs{height:px2rem(100);line-height: px2rem(100);border-bottom: solid 1px #e5e5e5;
+    li{display:inline-block;padding:0 px2rem(50) 0 px2rem(30);line-height: px2rem(100);
+      span{line-height: px2rem(100);height:px2rem(100);color:$hei;@include fsize(32);border-bottom: solid 4px transparent;margin-bottom:-1px;display:inline-block;}
+      &.cur{span{@extend .col_red;border-bottom: solid 4px #E9474D;}}
+    }
+  }
+  .tab_cont_box{padding:px2rem(60) px2rem(70);
+    .conter{padding-bottom:px2rem(220);position: relative;}
+    .line-box{position: relative;border-bottom: solid 2px #D6D6D6;height: px2rem(142);
+      .line-box2{position: relative;border-bottom: solid 2px #E9474D;height: px2rem(142); margin-bottom:-2px;width:px2rem(328);
+        &:before{content:'';position: absolute;left:0;bottom:px2rem(-10);width:px2rem(20);height:px2rem(20);border-radius:55%;background:#E9474D;}
+        &:after{content:'';position: absolute;right:0;bottom:px2rem(-10);width:px2rem(20);height:px2rem(20);border-radius:55%;background:#E9474D;}
+        .price{display: inline-block;border:solid 1px #E9474D;border-radius:px2rem(8);background: #E9474D;width: px2rem(190);position: relative;left:50%;margin-left:px2rem(-95);
+          &>div{height: px2rem(44);line-height: px2rem(44); text-align: center;/*padding:0 px2rem(20);*/}
+          .top{color:#fff}
+          .down{color:#666;@extend .bg-w;border-radius:0 0 px2rem(8) px2rem(8);}
+          &:before{content:''; z-index:2;position: absolute;left:50%;margin-left:px2rem(-10);bottom:px2rem(-64);width:px2rem(18);height:px2rem(18);border-radius:55%;border:solid 2px #E9474D;@extend .bg-w;}
+          &:after{content:'';z-index:1;position: absolute;left:50%;margin-left:px2rem(-1);bottom:px2rem(-64);width:2px;height:px2rem(64);background:#E9474D;}
+        }
+      }
+      &:before{content:'';position: absolute;right:px2rem(73);bottom:px2rem(-10);width:px2rem(20);height:px2rem(20);border-radius:55%;background:#D6D6D6;}
+      /*&:before{content:'';position: absolute;left:0;bottom:px2rem(-10);width:px2rem(20);height:px2rem(20);border-radius:55%;background:#E9474D;}
+      &:after{content:'';position: absolute;left:0;bottom:-2px;width:px2rem(328);height: 2px;background:#E9474D;}*/
+      .bot_box{width:px2rem(308);border: dashed 1px #979797;border-top: 0; height: px2rem(105);margin:px2rem(12) 0 0 px2rem(10);position: relative;
+        .pri{@extend .ub;position: relative;/*position: absolute;*/
+          &>div{width:px2rem(308);text-align: center;@include fsize(26);line-height: px2rem(40);background: #fff;@extend .col_red;}
+          .l{margin-left:-50%;}.c{}
+          .r{color:#c4c4c4; width:px2rem(200);position: absolute;right:px2rem(-307);span{@include fsize(24);display: block;margin:px2rem(-2);line-height: 100%;}}
+        }
+        .txt{display: inline-block;color:#9C9FA1;@extend .bg-w;position: absolute;left:50%;margin-left:px2rem(-84);bottom:px2rem(-16);line-height: px2rem(32);padding:0 px2rem(10);}
+      }
+    }
+  }
+  .infotxt{@include fsize(26);color: #686868;line-height:px2rem(40);padding:0 0 px2rem(60);position:absolute;bottom: px2rem(-60);left:px2rem(-30);width: 120%;}
+}
+
+.recommended{padding:px2rem(20) 0 0 0;
+  .title{height: px2rem(100);line-height: px2rem(100);@extend .bg-w;@include fsize(32);padding-left: px2rem(30);}
+  .cont_box{
+    .ul{overflow: hidden;margin-left:px2rem(-10);
+      li{width: 50%;float: left;padding-bottom: px2rem(10);
+        a{display: block;padding-left:px2rem(10);}
+        .img{height:px2rem(246);@extend .bg-w;img{width: 100%;}}
+        .info{height: px2rem(236);@extend .bg-w;padding:px2rem(30) px2rem(20) 0;
+          .tit{@include fsize(32);line-height: px2rem(48);max-height:px2rem(100);width: 100%;@extend .clamp2; color:$hei;overflow: hidden;}
+          .txt{@include fsize(24);line-height: px2rem(36);display: block;color:$grey;padding-top:px2rem(4);overflow: hidden;}
+          .price_box{@extend .ub;padding-top:px2rem(15);
+            .price_l{color:$red;@include fsize(28);line-height: px2rem(42);}
+            .price_r{padding-left:px2rem(10);@extend .ub-f1;text-align:left;font-size:px2rem(24);line-height:px2rem(42);color:#9C9FA1;}
+          }
+        }
+      }
+      li:nth-child(even){ a {}}
+    }
+    .btn_box{@extend .bg-w;padding:px2rem(30);}
+    .btn_more{display:block;text-align: center;@include fsize(30);line-height: px2rem(74);background: rgba(233,71,77,0.05);
+      border: 1px solid $red; border-radius:px2rem(5);color:$red;
+      i{border-right:solid 1px $red;border-top:solid 1px $red;transform:rotate(45deg);height: px2rem(15);width: px2rem(15);    display: inline-block;
+        vertical-align: middle;margin-top: px2rem(-6);margin-left:px2rem(10);}
+    }
+  }
+}
+/*  202 60 142
+
+<div class="line-box2">
+
+            <!--推荐车源-->
+            <div class="recommended">
+                <div class="title">推荐车源</div>
+                <div class="cont_box">
+                    <ul class="ul">
+                        <li class="items">
+                            <a href="item.url">
+                                <div class="img"><img src="../images/imgbg.html.png"></div>
+                                <div class="info">
+                                    <h6 class="tit">朗逸 2011款 2.0L 自动品悠自动品悠版</h6>
+                                    <div class="txt">11.68万/2011年/6.4万公里</div>
+                                    <div class="price_box">
+                                        <div class="price_l">首付3.50万</div>
+                                        <div class="price_r">全款11.68万</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="btn_box"><a href="#" class="btn_more">更多车源<i></i></a></div>
+                </div>
+            </div>
+        </div>*/

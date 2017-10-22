@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script>
+        var CODE_GETTING_URL='/Login/GetCode';
+        var CODE_VALIDATING_URL='/Login/CheckCode';
+        var PAGE_DATA = {
+            from: "500",
+            channel: "120",
+            source: "530",
+            cityId: "201",
+            cityName: "北京",
+            interfaceCity: "/api/Common/GetGroupingCityList/",
+            interfaceCityAvailable: "/test/validate",
+            interfaceBrand: "/api/Common/GetCarMasterBrandListWithFirstLetter",
+            interfaceSeries: "/api/Common/GetCarSerialListWithBrand",
+            interfaceCar: "/api/Common/GetCarListWithPrice",
+            submitAction: "/test/submit",
+            background: "http://img1.yixinfinance.com/chedai/a82583d3-bd93-4eef-a35c-4692515ea748.jpg"
+        }
+    </script>
+</head>
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+
+    <div class="main" id="main">
+        <div class="form-panel">
+            <div class="row">
+                <label>心仪车型</label>
+                <div class="input-wrapper">
+                    <div id="selCar">
+                        <div class="select-elem placeholder">
+                            <div class="text">请选择心仪的车型</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <label>购车城市</label>
+                <div class="input-wrapper">
+                    <div id="selCity">
+                        <div class="select-elem placeholder">
+                            <div class="text">请选择购车城市</div>
+                        </div>
+                    </div>
+                    <div class="error-tip">暂不支持该城市，请切换</div>
+                </div>
+            </div>
+            <div class="row">
+                <label>手机号</label>
+                <div class="input-wrapper">
+                    <div class="input-elem">
+                        <input type="text" id="mobile" name="mobile" placeholder="请输入手机号" />
+                    </div>
+                    <div class="error-tip">请输入正确的手机号</div>
+                </div>
+            </div>
+            <div class="row">
+                <label>验证码</label>
+                <div class="input-wrapper">
+                    <div class="input-elem validate-code">
+                        <input type="text" id="validateCode" name="validateCode" placeholder="请输入验证码" />
+                        <a href="javascript:void(0)" id="getCode" class="get-validate-code disabled">获取验证码</a>
+                    </div>
+                    <div class="error-tip">请输入正确的验证码</div>
+                </div>
+            </div>
+            <div class="row btn-wrapper">
+                <a class="submit-btn disabled" id="submitBtn">立即申请</a>
+            </div>
+        </div>
+    </div>
+
+    <form id="submitForm" method="post">
+        <input type="hidden" name="CarId" id="CarId" />
+        <input type="hidden" name="CityId" id="CityId" />
+        <input type="hidden" name="Telephone" id="Telephone" />
+        <input type="hidden" name="code" id="code" />
+        <input type="hidden" name="Orders" id="Orders" />
+        <input type="hidden" name="Source" id="Source" />
+        <input type="hidden" name="Channel" id="Channel" />
+        <input type="hidden" name="From" id="From" />
+        <input type="hidden" name="line" id="line" />
+    </form>
+
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

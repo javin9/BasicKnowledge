@@ -1,0 +1,51 @@
+.main-modal{
+	position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100000;
+  display:none;
+
+  &-close{
+  	background: url(../images/modal-close.png) no-repeat left top / contain;
+  	width: px2rem(72);
+  	height: px2rem(72);
+  	position: absolute;
+  	bottom:px2rem(-100);
+  	left:50%;
+  	transform:translateX(-50%);
+  }
+
+	&-content{
+		position:fixed;
+		left:50%;
+		top:50%;
+		transform:translate(-50%, -50%);
+		border-radius:px2rem(5);
+
+		>img{
+			width: px2rem(590);
+			display: block;
+			border-radius:px2rem(5);
+		}
+
+		>a{
+			@include fsize(32);
+			@include border($main-color);
+			display: block;
+			background: #FEF6F6;
+			color:$main-color;
+			text-align: center;
+			line-height: px2rem(80);
+			border-radius:px2rem(5);
+			margin-top: px2rem(20);
+			position: absolute;
+			left:50%;
+			bottom:px2rem(30);
+			width: px2rem(530);
+			transform:translateX(-50%);
+		}
+	}  
+}

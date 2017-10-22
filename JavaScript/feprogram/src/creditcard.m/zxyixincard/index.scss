@@ -1,0 +1,17 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+/* jquery生成的，没有vue版本号只能写在外部 */
+.swiper-pagination-bullet {
+  width: px2rem(12) !important;
+  height: px2rem(12)!important;
+  border-radius: 0 !important;
+  background: url(./images/dot_white.png) no-repeat left top !important;
+  background-size: contain!important;
+  background-color: transparent!important;
+  opacity:1 !important;
+  &.swiper-pagination-bullet-active {
+    background-color: transparent!important;
+    background-image: url(./images/dot_red.png)!important;
+  }
+}

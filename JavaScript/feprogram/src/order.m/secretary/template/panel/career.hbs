@@ -1,0 +1,17 @@
+<!-- 职业 -->
+<div id="CareerDiv" class="choose_bot" style="display: none">
+    <ul class="form_modu">
+        <li class="form_modu_head uf uf_ac">
+            <b>您的职业是？</b>
+            <!-- update -->
+            <span class="progress"><em>2</em>/6</span>
+            <!-- update end -->
+        </li>
+        <li class="progress-bar"><div style="width:33.333%"></div></li>
+        <li class="form_modu_body choose_area">
+            {{#each data.careers}}
+            <a id="{{id}}" href="javascript:void(0);">{{name}}</a>
+            {{/each}}
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+    <script>
+        var citySpell = 'beijing';
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var RESURL = "http://img1.bitautoimg.com/jinrong/newpcweb/";
+        var USERCENTERURL = "http://i.daikuan.com";
+        var BusinessLine = 583;
+        var LoanApplyURL = "http://sq.daikuan.com/";
+        var APIURL = 'http://api.chedai.bitauto.com/';
+        var CheDaiURL = 'http://xinche.daikuan.com/';
+        var companycode = 'ptzy';
+
+        //申请流程站点
+        var loanOrderApplyUrl = 'http://sq.daikuan.com/';
+        //车款信息
+        var car = {
+            masterBrandId: "157",
+            masterBrandName: "宝骏",
+            serialId: "4447",
+            serialName: "宝骏560",
+            carId: "122526",
+            carPrice: "9.88",
+            purchaseTaxRate: "0.1",
+            carSerialAllSpell: "baojun560"
+        };
+        //城市信息
+        var city = {
+            cityId: "201",
+            cityName: "北京",
+            regionId: "110100",
+            citySpell: "beijing",
+        };
+
+        //经销商信息
+        var dealer = {
+            dealerId: "",
+            dealerName: "北京4S店平均报价"
+        };
+        var channel = "";
+        var source = "918";
+        var adviserApi = "http://test.adviserapi.daikuan.com/";
+        var localcityid = '';
+        var companyid = '472';   // 新车公司id
+        var shopcompanyid = '7';   // 旗舰店公司id
+        var depositpackagetype = '37';
+        var shopcode = "ptzy";
+
+        var isshowallbrand = '';//  是否全品牌   true 或 false
+
+    </script>
+    <div class="container">
+        hello world
+    </div>
+
+    {{{htmlWebpackPlugin.options.footer}}}
+
+    <script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

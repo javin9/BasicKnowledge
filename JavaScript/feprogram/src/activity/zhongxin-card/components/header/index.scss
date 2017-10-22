@@ -1,0 +1,17 @@
+@import 'sassHelper/mixin';
+@import 'sassHelper/vars';
+
+.component-header{
+	@include borderBottom(#ddd);
+	height: 90px;
+	width: 100%;
+
+	em{
+		width: 1200px;
+		height:100%;
+		display: block;
+		margin:0 auto;
+		background:url(./logo.png) no-repeat left center;
+	}
+
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script>
+        var locationCityId = 201;
+        var xinche='http://www.daikuan.com';
+        var citySpell = 'beijing';
+        var USERCENTERURL='http://i.daikuan.com';
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var RESURL = "http://img1.bitautoimg.com/jinrong/newpcweb/";
+        var CODE_GETTING_URL='/Login/GetCode';
+        var CODE_VALIDATING_URL='/Login/CheckCode';
+        var domainQueue = ["img1.bitautoimg.com","img2.bitautoimg.com","img3.bitautoimg.com","img4.bitautoimg.com"];
+        var BusinessLine = 550;
+        var returnurl = "http://www.daikuan.com/beijing/";
+        // var loadsign = 'login';
+        var loadsign = false;
+        var headerBusiFlag = "1";
+        var headerFunFlag = "0";
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div class="bindAccount">
+    <div class="for-ctn bor-box">
+        <div class="ctn-header clrfix">
+            <div class="header-text">手机号绑定</div>
+        </div>
+
+        <article>
+            <blockquote id="bindForm" class="forget-box sideTip">
+                <div class="pad20B pad30RL pad100L clrfix">
+                    <div class="input-item fl clrfix">
+                        <div class="fl input-name"><i class="font-red">*</i> 手 机 号</div>
+                        <div class="input-box fl"><input id="mobile" name="CellPhone" type="text" maxlength="11" class="AppCheck unsubmit nocheck sideTip data" placeholder="请输入手机号" /></div>
+                    </div>
+                    <div class="jyts bor-box font-red fl"><i class="waring"></i><span>您输入的手机号有误</span></div>
+                </div>
+
+                <div class="pad20B pad30RL pad100L clrfix">
+                    <div class="fl input-name"><i class="font-red">*</i> 验 证 码</div>
+                    <div class="input-item fl w-180 clrfix">
+                        <div class="input-box w-180 fl"><input id="ValidateCode" name="ValidateCode" type="text" maxlength="4" class="AppCheck unsubmit sideTip data" placeholder="请输入验证码" /></div>
+                    </div>
+                    <div id="GetValidateCode" class="fl btn code-btn">获取验证码</div>
+                    <div class="jyts bor-box font-red fl"><i class="waring"></i><span>您输入的验证码有误</span></div>
+                </div>
+
+
+                <input name="ThirdMark" type="hidden" value="Sina" class="data">
+                <input name="OpenID" type="hidden" value="2618628931" class="data">
+                <input name="NickName" type="hidden" value="张小三三900" class="data">
+                <input name="HeadPortrait" type="hidden" value="http://tvax4.sinaimg.cn/default/images/default_avatar_female_180.gif" class="data">
+
+                <div id="set-btn" class="btn set-btn">提交</div>
+            </blockquote>
+        </article>
+    </div>
+    <input type='hidden' name='__RequestVerificationToken' id='__RequestVerificationToken' data-id='Rw60P8LUQDD-M7rWKiiFwFEWsDprU0YBSslIk8jw-nWuoJLvA6lE7pe_dWmX6HxaG1Q1d4XUrAKELS8uKSm4v-ifjpQ1' value='Rw60P8LUQDD-M7rWKiiFwFEWsDprU0YBSslIk8jw-nWuoJLvA6lE7pe_dWmX6HxaG1Q1d4XUrAKELS8uKSm4v-ifjpQ1'>
+</div>
+
+<!-- 遮罩层 -->
+<div id="mask" class="mask hide">
+    <div class="mask-body">
+        <div class="mask-layer clrfix"></div>
+        <div class="mask-ctn">
+            <div class="close fr"></div>
+            <div class="mask-ctn-body clrfix">
+                <div class="mask-icon fl"></div>
+                <div class="mask-text fl">
+                    <div class="thanks">感谢您对易鑫车贷平台的支持！</div>
+                    <div class="mask-tip">您已成功绑定手机号</div>
+                    <div class="mask-tel">以后可以使用<span></span>手机号直接登录了！</div>
+                    <!-- <a href="http://www.daikuan.com" class="btn go-index">确定</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var jtlj="";
+        var addQualificationUrl = "/";
+        var paymentUrl = "/";
+        var isNeedPay = true;
+        var queryResultUrl = "/";
+        var resultUrl = "/";
+        var productId = 312
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<header class="header-bar">
+    <a href="javascript:void(0);"></a>
+    <h1 class="font-nav">资质信息</h1>
+    <span></span>
+</header>
+<section class="form-box">
+    <header>请完善资质信息</header>
+    <ul>
+        <li id="CertificateNumber" class="font-title"><i></i><b>身份证号</b><span><input type="text" value="" class="font-input" placeholder="18位身份证号码" /></span></li>
+        <li class="warning">请输入身份证号</li>
+        
+        <li id="Career" class="font-title select-con" data-aslider-in="Career|fade|bottom"><i></i><b>职业身份</b><span><em>请选择</em></span></li>
+        <li class="warning">请选择职业身份</li>
+
+        <li id="Education" class="font-title select-con" data-aslider-in="Education|fade|bottom"><i></i><b>学历</b><span><em>请选择</em></span></li>
+        <li class="warning">请选择学历</li>
+
+        <li id="Credit" class="font-title select-con" data-aslider-in="Credit|fade|bottom"><i></i><b>信用记录</b><span><em>请选择</em></span></li>
+        <li class="warning">请选择信用记录</li>
+
+        <li id="MaritalStatus" class="font-title select-con" data-aslider-in="MaritalStatus|fade|bottom"><i></i><b>婚姻状况</b><span><em>请选择</em></span></li>
+        <li class="warning">请选择婚姻状况</li>
+
+        <li id="Income" class="font-title"><i></i><b><s>个人</s>月收入(税后)</b><span><input type="number" id="txtIncome" class="iptbox" placeholder="请输入" /> 元</span></li>
+        <li class="warning">请输入正确月收入</li>
+
+    </ul>
+    <div class="submit-form cur">
+        <form action="" id="formQ"></form>
+        <a href="javascript:void(0);" class="font-btn">获取额度</a>
+    </div>
+</section>
+
+
+
+
+<!-- 职业身份-->
+<aside class="sel-control-box" data-aslider="Career">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">职业身份</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                    <li data-id="0">选项</li>
+                    <li data-id="1">选项1</li>
+                    <li data-id="2">选项2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+
+<!-- 学历 -->
+<aside class="sel-control-box" data-aslider="Education">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">学历</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                    <li data-id="0">选项</li>
+                    <li data-id="1">选项1</li>
+                    <li data-id="2">选项2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<!-- 信用记录 -->
+<aside class="sel-control-box" data-aslider="Credit">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">信用记录</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                    <li data-id="0">选项</li>
+                    <li data-id="1">选项1</li>
+                    <li data-id="2">选项2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<!-- 婚姻状况 -->
+<aside class="sel-control-box" data-aslider="MaritalStatus">
+    <div class="asilder_wrapper">
+        <div class="sel-ctrl-fun-btn">
+            <div class="sel-ctrl-close font-nav">取消</div>
+            <div class="sel-ctrl-title font-nav">婚姻状况</div>
+            <div class="sel-ctrl-complete font-nav">确定</div>
+        </div>
+        <div class="scroll-wrapper">
+            <div class="scroll">
+                <ul class="slider">
+                    <li data-id="0">选项</li>
+                    <li data-id="1">选项1</li>
+                    <li data-id="2">选项2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<section class="assessment-box">
+    <div class="assessment-bg"></div>
+    <div class="assessment-wrapper">
+        <div class="ass-ani-box">
+
+            <div class="ass-ani">
+                <div class="circle_process">
+                    <canvas id="canvas-preview"></canvas>
+                </div>
+            </div>
+            <div class="ass-bg">
+                <span class="font-label">正在评估您的<em>基本信息</em></span>
+                <b id="priceChange">--<em>万</em></b>
+                <div>预审批额度</div>
+            </div>
+        </div>
+        <div class="ass-btn font-nav">评估中</div>
+
+    </div>
+</section>
+
+<div id="tipBox">
+    <div class="layout-text font-title">获取额度中...</div>
+</div>
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

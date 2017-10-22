@@ -1,0 +1,140 @@
+@import 'sassHelper/mixin';
+@import 'sassHelper/vars';
+
+.component-car-replace-modal{
+  width:500px;
+  box-sizing:border-box;
+  position: fixed;
+  left:50%;
+  top:50%;
+  border-radius:$main-border-radius;
+  background: #fff;
+  text-align: center;
+  margin-left: -250px;
+  // transform:translateX(-50%) translateY(-50%);
+  z-index: 10000;
+  text-align: left;
+  color:$normal-color;
+  overflow: hidden;
+
+  h6{
+    font-size:14px;
+    padding:13px 20px;
+    color:$normal-color;
+    background:#F0F0F0;
+    position: relative;
+    font-weight: normal;
+
+    .close{
+      @include size(14px);
+      position: absolute;
+      right:20px;
+      top:16px;
+      background:url(./close.png) no-repeat left top;
+    }
+  }
+
+  .list{
+
+    .code{
+      @include border(#C4C4C4);
+    	font-size:22px;
+    	color:$dark-color;
+      border-radius:px2rem($main-border-radius);
+      text-align: center;
+      padding:18px 0;
+      margin:20px auto;
+      width: 340px;
+    }
+
+    ul{
+      max-height:360px;
+      overflow-y: scroll;
+      li{
+        @include borderBottom;
+        font-size:14px;
+        padding:24px 20px;
+        color:$dark-color;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor:pointer;
+
+        i{
+        	@include size(16px);
+        	content:' ';
+        	background:url(./unselected.png) no-repeat left top;
+        	display: inline-block;
+        	vertical-align: middle;
+        	margin-right: 10px;
+        	position: relative;
+        	top:2px;
+
+          &.selected{
+            background-image: url(./selected.png);
+          }
+        }
+
+        span{
+        	display: inline-block;
+        	vertical-align: middle;
+        }
+      }
+    }
+
+    button{
+			width: 140px;
+			background:$main-color;
+			color:#fff;
+			font-size:18px;
+			border:0;
+			outline:none;
+			margin:20px auto 30px;
+			display: block;
+			line-height: 40px;
+			border-radius:3px;
+			cursor:pointer;
+      font-weight: normal;
+    }
+  }
+
+  .confirm{
+    h6{
+      color:$main-color;
+    }
+    dl{
+      font-size:14px;
+      padding:30px 30px 0;
+      color:$normal-color;
+
+      dd{
+        margin-top: 14px;
+        color:#000;
+      }
+    }
+    footer{
+      text-align: center;
+      margin:30px 40px;
+
+      a{
+        display: inline-block;
+        line-height: 40px;
+        width: 140px;
+        text-align: center;
+        color:#fff;
+        font-size:18px;
+        background:$main-color;
+        margin-right: 20px;
+        border-radius:3px;
+        @include border($main-color);
+
+        &:last-child, &.reset-btn{
+          @include border(#ddd);
+          margin-right: 0;
+          background: #fff;
+          color:$normal-color;
+        }
+      }
+    }
+  }
+}

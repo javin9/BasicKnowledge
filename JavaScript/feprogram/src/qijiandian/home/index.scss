@@ -1,0 +1,425 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+@import '../main.scss';
+$activeAWidth: 269px;
+$width: (
+  s: 256px,
+  l: 920px
+);
+$homeSpacing: (
+  s: 8px,
+  m: 12px
+);
+.container {
+  .active-box {
+    width: 1200px;
+    margin: 0 auto;
+    .left {
+      width: 420px;
+      font-size: 20px;
+      line-height: 2;
+      margin: 20px 0;
+      img {
+        width: 38px;
+        height: 38px;
+        margin-right: 16px;
+        vertical-align: middle;
+      }
+      span {
+        max-width: 365px;
+        display: block;
+        letter-spacing: .1em;
+      }
+    }
+    .right {
+      padding-left: 110px;
+      font-size: 0;
+      position: relative;
+      &:before {
+        content: '';
+        width: auto;
+        height: 40px;
+        border-left: 1px solid #c5c5c5;
+        position: absolute;
+        top: 20px;
+        left: 0;
+      }
+      a {
+        display: inline-block;
+        margin-right: 130px;
+        width: $activeAWidth;
+        font-size: 14px;
+        line-height: 2;
+        color: map-get($font, normal);
+        position: relative;
+        top: 10px;
+        &:hover {
+          img {
+            position: relative;
+            left: -2px;
+          }
+          h3 {
+            color: #3269b4;
+          }
+        }
+        img {
+          width: 60px;
+          height: 60px;
+          margin-right: 20px;
+        }
+        h3 {
+          font-weight: 600;
+          max-width: $activeAWidth;
+        }
+        p{
+          max-width: $activeAWidth;
+        }
+      }
+    }
+  }
+  nav {
+    background-color: #5f6060;
+    height: 40px;
+    line-height: 40px;
+    > div {
+      width: 1200px;
+      margin: 0 auto;
+      font-size: 0;
+      color: map-get($font, white);
+      > a {
+        display: inline-block;
+        width: 120px;
+        font-size: 16px;
+        text-align: center;
+        background-color: map-get($pbg, red);
+        color: map-get($font, white);
+      }
+      .all-box {
+        display: inline-block;
+        font-size: 16px;
+        width: 120px;
+        height: 40px;
+        text-align: center;
+        cursor: pointer;
+        &:after {
+          display: inline-block;
+          content: '';
+          width: 15px;
+          height: 10px;
+          background: url(../images/shop_icon.png) no-repeat 0 bottom;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .main {
+    width: 1200px;
+    margin: 0 auto;
+    > aside.left {
+      width: map-get($width, s);
+      padding-right: 24px;
+
+      // 快速选车
+      .fast {
+        .search-box {
+          background: #fafafa;
+          padding: 20px;
+          display: none;
+          input {
+            width: 202px;
+            height: 32px;
+            padding-left: 10px;
+            line-height: 32px;
+            font-size: 14px;
+            color: #ccc;
+            border: 1px solid #c5c5c5;
+          }
+        }
+        ul.car-select {
+          background-color: #fff;
+          border-top: 1px solid #eee;
+          font-size: 0;
+          padding: 0 12px;
+          li {
+            display: block;
+            border-bottom: 1px solid #eee;
+            .car-brand {
+              position: relative;
+              padding: 12px 0;
+              cursor: pointer;
+              font-size: 0;
+              position: relative;
+              img {
+                width: 40px;
+                height: 40px;
+                margin-right: 20px;
+                vertical-align: middle;
+              }
+              span {
+                font-size: 14px;
+                color: #333;
+                position: relative;
+                top: 5px;
+              }
+              i {
+                display: block;
+                width: 14px;
+                height: 14px;
+                background: url(../images/shop_icon.png) no-repeat right bottom;
+                position: absolute;
+                right: 0;
+                top: 25px;
+              }
+            }
+            .car-box {
+              border-top: 1px solid #eee;
+              padding: 12px 0 0 12px;
+              a{
+                display: inline-block;
+                width: 84px;
+                margin-bottom: 12px;
+                margin-right: 5px;
+                padding: 2px 10px;
+                color: map-get($font, normal);
+                font-size: 12px;
+                &:hover, &.cur {
+                  color: map-get($font, white);
+                  background-color: #ff6446;
+                }
+              }
+            }
+            &.cur {
+              i {
+                background-position: -50px bottom;
+              }
+            }
+          }
+        }
+        .load-box {
+          background-color: #fff;
+          padding: 50px 0;
+          .acc-loading {
+            width: 32px;
+            height: 32px;
+            margin: 0 auto;
+            background: url(../images/loading.gif) no-repeat;
+          }
+        }
+      }
+      // 特惠活动
+      .tehui-item {
+        width: 100%;
+        height: 146px;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 20px;
+        img {
+          width: 100%;
+          height: 146px;
+        }
+        div {
+          width: 100%;
+          font-size: 14px;
+          line-height: 2;
+          text-align: center;
+          color: map-get($font, white);
+          background-color: #000;
+          @include pcOpacity(0.6);
+          position: absolute;
+          bottom: 0;
+        }
+      }
+    }
+    > aside.right {
+      width: map-get($width, l);
+      //热门车型
+      .hot-item .loading{
+        width: 174px;
+        margin: 0 auto;
+        padding-top: 40px;
+        text-align: center;
+        .load-img {
+          width: 100%;
+          height: 80px;
+          background: url(../../common/images/load.jpg) no-repeat;
+          margin-bottom:20px;
+        }
+      }
+      .hot {
+        background-color: map-get($bg, white);
+        padding: map-get($homeSpacing, m) 20px 20px map-get($homeSpacing, s);
+        ul {
+          font-size: 0;
+          li {
+            display: inline-block;
+            width: 285px;
+            font-size: 16px;
+            margin-left: 12px;
+            padding-top: map-get($homeSpacing, s);
+            overflow: hidden;
+            a {
+              display: block;
+              width: 283px;
+              height: 320px;
+              border: 1px solid #eee;
+              overflow: hidden;
+              &:hover {
+                border: 1px solid map-get($pbg, yellow);
+              }
+              img {
+                width: 285px;
+                height: 190px;
+              } 
+              .car-ctn {
+                padding: 14px 16px 0 16px;
+                h3 {
+                  color: map-get($font, black);
+                  padding-bottom: 4px;
+                }
+                p {
+                  display: block;
+                  width: 100%;
+                  height: 26px;
+                  font-size: 14px;
+                  color: map-get($font, normal);
+                  overflow: hidden;
+                  span {
+                    display: block;
+                    // white-space:nowrap;
+                    &.first {
+                      // max-width: 100%;
+                      margin-right: 20px;
+                    }
+                    i.icon {
+                      display: inline-block;
+                      width: 22px;
+                      height: 22px;
+                      background-image: url(../images/shop_index.png);
+                      background-repeat: no-repeat;
+                      position: relative;
+                      top: 5px;
+                      margin-right: 3px;
+                      &.icon_ji {
+                        background-position: left bottom;
+                      }
+                      &.icon_zheng {
+                        background-position: 0 2px;
+                      }
+                    }
+                  }
+                }
+                .car-detail {
+                  color: #000;
+                  padding-top: 10px;
+                  .shoufu {
+                    margin-right: 10px;
+                  }
+                  font {
+                    font-size: 20px;
+                    color: map-get($pcfont, red);
+                    font-weight: 700;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      //品牌故事
+      .story {
+        width: 100%;
+        overflow: hidden;
+      }
+    }
+  }
+  .popup-box {
+    display: none;
+    width: 440px;
+    height:148px;
+    padding: 50px 0 33px;
+    background-color: map-get($bg, white);
+    font-size: 18px;
+    text-align: center;
+    color: map-get($font, black);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -220px;
+    margin-top: -115px;
+    z-index: 100000;
+    h3 {
+      padding-bottom: 10px;
+    }
+    p{
+      padding-bottom: 30px;
+    }
+    span.sel-city-wrapper {
+      width: 158px;
+      margin-right: 5px;
+    }
+    .btn {
+      display: inline-block;
+      width: 158px;
+      height: 48px;
+      line-height: 50px;
+      font-size: 16px;
+      &.city-btn {
+        background-color: map-get($pbg, red);
+        color: map-get($font, white);
+        border: 1px solid map-get($pbg, red);
+      }
+      &.back-btn {
+        background-color: map-get($pbg, light);
+        color: map-get($font, normal);
+        border: 1px solid #ddd;
+      }
+    }
+    .sel-city-menu {
+      width: 438px;
+      min-height: 229px;
+      left: -55px;
+      top: -144px;
+    }
+    &.transparent {
+      // background-color: transparent;
+
+      h3, p {
+        color: transparent;
+      }
+      .btn {
+        background-color: transparent;
+        color: transparent;
+        border-color: transparent;
+      }
+      .sel-city-menu {
+        display: block !important;
+      }
+    }
+
+    .city-loading {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .search-box {
+    .drop-layer {
+      top: 33px !important;
+    }
+    .empty-search {
+      top: 18px;
+    }
+  }
+  nav {
+    .drop-layer {
+      top: 31px !important;
+      // height: 340px;
+      height: 360px;
+    }
+  }
+}

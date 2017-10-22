@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <link rel="apple-touch-icon-precomposed" href='http://img1.bitautoimg.com/jinrong/newmweb/images/size4_w114_h114.png?v=201610191598' />
+
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+
+    <title>补充信息</title>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="app" skip="/tf/result.html" order-id="1234" car-name="车车" car-id="123" car-year="2015" city-name="北京" city-id="1"></div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

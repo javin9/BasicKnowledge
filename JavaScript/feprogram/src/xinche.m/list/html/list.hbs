@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script>
+  var APIURL = "http://api.chedai.bitauto.com/";
+  var xinche_m_url = "http://m.daikuan.com";
+  var BusinessLine = 550;
+  var CODE_GETTING_URL='/Login/GetCode';
+  var CODE_VALIDATING_URL='/Login/CheckCode';
+  //申请流程站点
+  var loanOrderApplyUrl = 'http://sq.m.daikuan.com/';
+  var listImgTel = 'http://img1.bitautoimg.com/jinrong/newmweb/';
+  //车款信息
+  var car = {
+      masterBrandId: "196",
+      masterBrandName: "哈弗",
+      masterBrandLogo: "http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_196_100.png",
+      serialId: "3152",
+      serialName: "哈弗H6",
+      carId: "112890",
+      carPrice: "9.98",
+      purchaseTaxRate: "0.1",
+      carSerialAllSpell: "hafuh6",
+      carSerialShowName: "哈弗H6" //车系（显示）全称
+  };
+  // //城市信息
+  // var city = {
+  //     CityId: "201",
+  //     CityName: "北京",
+  //     RegionId: "110100",
+  //     CitySpell: "beijing",
+  //     SelectCityLevel: "2",
+  //     SelectCityName: "北京",
+  //     cityId: "201",
+  //     cityName: "北京",
+  //     regionId: "110100",
+  //     citySpell: "beijing",
+  //     selectCityLevel: "2",
+  //     selectCityName: "北京"
+  // };
+        //城市信息
+        var city = {
+            CityId: "201",
+            CityName: "北京",
+            RegionId: "110100",
+            CitySpell: "beijing",
+            SelectCityLevel: "2",
+            SelectCityName: "北京",
+            cityId: "201",
+            cityName: "北京",
+            regionId: "110100",
+            citySpell: "beijing",
+            selectCityLevel: "2",
+            selectCityName: "北京"
+        };
+
+
+  //经销商信息
+  var dealer = {
+      dealerId: "",
+      dealerName: "北京4S店平均报价"
+  };
+  var channel = "";
+  var source = "714";
+
+  var successtar = "http://img2.bitautoimg.com/jinrong/newmweb/css/xinche/images/list6.png?v=201610191596";
+  var failstar = "http://img3.bitautoimg.com/jinrong/newmweb/css/xinche/images/list7.png?v=201610191596";
+
+  var adviserApi = "http://test.adviserapi.daikuan.com/";
+  var list3 = "http://img1.bitautoimg.com/jinrong/newmweb/css/xinche/images/list3.png?v=201610191596";
+  var list4 = "http://img4.bitautoimg.com/jinrong/newmweb/css/xinche/images/list4.png?v=201610191596";
+  var list5 = "http://img2.bitautoimg.com/jinrong/newmweb/css/xinche/images/list5.png?v=201610191596";
+  var scrollPhotosCount = "8";
+  var BusinessLine = 550;
+  var ADVISERAPIURL = "http://test.adviserapi.daikuan.com/";
+  var scrollMask = false;
+  var noLoanCostCityIds = '201,1502,302';
+</script>
+<div id="yxWrapper">
+
+<div id="list">
+
+
+  <header class="header-bar">
+      <a href="javascript:void(0);" v-on:click="goBack" class="nav-back"></a>
+      <!-- <h3 style="margin-left: 1.4rem;" class="font-nav">金融产品列表</h3> -->
+      <div id="searchcar" class="search-car" v-on:click="searchCar">
+        <span class="icon-search ut-s">请输入品牌或车型</span>
+      </div>
+<!--       <div class="header_right ut-s" id="selectCity" data-cityid="201" v-on:click="changeCity">
+          <span class="list-icon location-icon"></span>
+          <span id="localText" class="localText">北京</span>
+      </div> -->
+      <div id="selectCity" class="city-box" data-cityid="201" v-on:click="changeCity">
+          <div id="localText" class="ut-s city-name">北京</div>
+      </div>
+      <div id="tools-nav"></div>
+      <div id="navTips" class="nav-tips hide">
+          <a href="#"><i></i>首页</a>
+          <a href="#"><i></i>我的申请</a>
+          <a href="javascript:void(0)" id="shareNavTip"><i></i>分享</a>
+      </div>
+  </header>
+
+  <!-- 车辆信息 -->
+  <section class="block-group car-det">
+    <div class="det-top uf">
+      <a href="javascript:void(0);">
+        <!-- <img src="http://img1.bitautoimg.com/autoalbum/files/20161101/883/16332388305922_5359508_3.jpg"> -->
+        <!-- 没有图片 -->
+        <img src="../../../common.m/images/no_car.html.jpg">
+        <!-- <div class="img-num">630张</div> -->
+      </a>
+      <div class="uf-f1">
+        <div v-on:click="changeCar" class="car-name">奔驰B级 2016款 B2001.6T双离合 1.8T豪华版</div>
+        <div class="car-price">北京4S店平均报价：<span id="baojia">￥195,000</span></div>
+      </div>
+    </div>
+    <a href="javascript:void(0);" class="det-bottom uf">
+      <div class="uf-f1 uf">
+        <span class="uf-f4">油耗：<font>6.5/100km</font></span>
+        <span class="uf-f3">排量：<font>1.8T</font></span>
+      </div>
+      <div class="canshu">参数配置</div>
+    </a>
+  </section>
+
+
+
+
+  <!-- 首付&期限 -->
+  <section class="block-group condition">
+    <div class="con-top">
+      <!-- 首付 -->
+      <div class="slide-box">
+        <h2>首付</h2>
+        <div class="yx-silder-wrapper">
+          <div id="downPayment"></div>
+        </div>
+      </div>
+      <!-- 期限 -->
+      <div class="slide-box">
+        <h2>期限</h2>
+        <div class="yx-silder-wrapper">
+          <div id="term"></div>
+        </div>
+      </div>
+    </div>
+    <!-- 数据展示 -->
+    <dl class="con-bottom uf">
+      <dd class="uf-f1">
+        <h2>首付</h2>
+        <p v-text="downPayment"></p>
+      </dd>
+      <dd class="uf-f1">
+        <h2>贷款额度</h2>
+        <p v-text="loanVolumn"></p>
+      </dd>
+      <!-- <dd class="uf-f1" v-on:click="showTips">
+        <h2><span>税费</span><i class="list-icon shui"></i></h2>
+        <p>￥<span v-text="taxes"></span></p>
+      </dd> -->
+    </dl>
+    <!-- <ul class="shui-tips uf" v-show="isShowTips">
+      <li class="uf-f1">
+        <div>税费</div>
+        <div class="ut-s">￥<span v-text="taxes"></span></div>
+      </li>
+      <li class="symbol">=</li>
+      <li class="uf-f1">
+        <div>购置税</div>
+        <div class="ut-s" v-text="purchaseTaxText"></div>
+      </li>
+      <li class="symbol">+</li>
+      <li class="uf-f1">
+        <div>上牌税</div>
+        <div class="ut-s">500</div>
+      </li>
+      <li class="symbol">+</li>
+      <li class="uf-f1">
+        <div>交强险</div>
+        <div class="ut-s">950/年</div>
+      </li>
+    </ul> -->
+  </section>
+
+  <!-- 筛选列表 -->
+  <section class="block-group select">
+    <div id="sel-top" :class="[isShowCondition?'sel-top cur':'sel-top']">
+      <div class="sel-header uf">
+        <div class="left">
+          <span :class="[isShowSClass?'tap cur':'tap']" v-on:click="showSort"><span v-text="sotText"></span><i :class="[isSort && isSortArrow?'list-icon cur':'list-icon']"></i></span>
+          <span :class="[isShowQClass?'tap cur':'tap']" v-on:click="showQuality">资质<label v-text="quaCount" v-show="showQuaNum"></label><i :class="[isQualityArrow?'list-icon cur':'list-icon']"></i></span>
+        </div>
+        <div class="right uf-f1">
+          <div id="selSwiper" class="swiper-container">
+            <div class="swiper-wrapper">
+                <div :class="[company!=''?'swiper-slide cur':'swiper-slide']" v-on:click="swiperSelect('0')">易鑫自营</div>
+                <div :class="[tiexi?'swiper-slide cur':'swiper-slide']" v-on:click="swiperSelect('1')">优惠促销</div>
+               <!--  <div :class="[elasticTail!=''?'swiper-slide cur':'swiper-slide']" v-on:click="swiperSelect('2')">弹性尾款</div>
+                <div :class="[isYouXuan?'swiper-slide cur':'swiper-slide']" v-on:click="swiperSelect('3')">优选商户</div>
+                <div :class="[filterName?'swiper-slide cur':'swiper-slide']" v-on:click="swiperSelect('4')">VIP顾问</div> -->
+            </div>
+        </div>
+        </div>
+      </div>
+      <!-- 下拉开始 -->
+      <!-- 排序 -->
+      <div class="tap-ctn sort" v-show="isShowSort">
+        <div :class="[sortObj.isMR?'sort-tap cur':'sort-tap']" v-on:click="selectSort('MR', '综合排序')">综合排序</div>
+        <div :class="[sortObj.isZCB?'sort-tap cur':'sort-tap']" v-show='isShowLoanCost' v-on:click="selectSort('ZCB', '成本最低')">分期成本最低</div>
+        <div :class="[sortObj.isYG?'sort-tap cur':'sort-tap']" v-on:click="selectSort('YG', '月供最低')">月供最低</div>
+        <div :class="[sortObj.isRQ?'sort-tap cur':'sort-tap']" v-on:click="selectSort('RQ', '人气最旺')">人气最旺</div>
+      </div>
+      <!-- 我的资质 -->
+      <div id="quality" class="tap-ctn quality" v-show="isShowQuality">
+        <dl>
+          <dd class="qua-items">
+            <h2>职业身份</h2>
+            <!-- <span data-id="0" class="cur">全部</span> -->
+            <span data-id="40" data-sign="1">公务员/事业单位</span>
+            <span data-id="41" data-sign="2">上班族</span>
+            <span data-id="42" data-sign="3">企业主</span>
+            <span data-id="44" data-sign="4">个体户</span>
+            <span data-id="45" data-sign="5">自由职业者</span>
+            <span data-id="45" data-sign="6">其他</span>
+          </dd>
+          <dd class="qua-items">
+            <h2>信用记录</h2>
+            <!-- <span data-id="0" class="cur">全部</span> -->
+            <span data-id="46" data-sign="1">信用良好</span>
+            <span data-id="47" data-sign="2">少数逾期</span>
+            <span data-id="48" data-sign="3">多次逾期</span>
+            <span data-id="46" data-sign="4">无信用记录</span>
+          </dd>
+          <dd class="qua-items">
+            <h2>住房记录</h2>
+            <!-- <span data-id="0" class="cur">全部</span> -->
+            <span data-id="49" data-sign="1">自有全款房</span>
+            <span data-id="50" data-sign="2">自有贷款房</span>
+            <span data-id="51" data-sign="3">租赁</span>
+            <span data-id="51" data-sign="4">其他</span>
+          </dd>
+          <dd class="qua-items">
+            <h2>社保</h2>
+            <!-- <span data-id="0" class="cur">全部</span> -->
+            <span data-id="56" data-sign="1">有社保</span>
+            <span data-id="57" data-sign="2">无社保</span>
+          </dd>
+          <dd class="qua-items">
+            <h2>公积金</h2>
+            <!-- <span data-id="0" class="cur">全部</span> -->
+            <span data-id="58" data-sign="1">有公积金</span>
+            <span data-id="59" data-sign="2">无公积金</span>
+          </dd>
+          <dd style="width: 10rem;height: 4rem;"></dd>
+        </dl>
+
+        <!-- 底部按钮 -->
+        <div class="btn-box">
+          <div id="reset" class="btn btn-reset">重置</div>
+          <div id="ensure" class="btn btn-ensure">确定</div>
+        </div>
+      </div>
+    </div>
+    <!-- 列表内容 -->
+    <div id="listCtn" class="content-ctn" v-show="isShowListCtn">
+      <div class="pro-groups uf" v-bind:data-month="product.MonthlyPaymentText+product.MonthlyPaymentUnit" v-bind:data-applyurl="product.applyUrl" v-bind:data-order="product.order" v-for="product in productsView" v-bind:data-Idx="product.Idx">
+       <div v-bind:class="[product.checked?'check-box cur':'check-box']" v-bind:data-month="product.MonthlyPaymentText+product.MonthlyPaymentUnit" v-bind:data-applyurl="product.applyUrl" v-bind:data-order="product.order" ></div>
+        <div class="uf-f1 pro-items">
+          
+          <a href="javascript:void(0);" class="pro-info" v-bind:href="product.detailUrl">
+            <div class="img_box">
+              <img src="http://img1.bitautoimg.com/chedai/45ca0fb4-9503-4780-9b30-478c583ce0eb.jpg" v-bind:src="product.CompanyLogoUrl">
+              <div class="top-tag" v-bind:class="product.IsTopKlass">置顶</div>
+            </div>
+            <div class="item_right_box">
+              <div class="dl title_box uf uf-ic">
+                  <div class="dt font-title tit uf-f1 ut-s">
+                      <span v-text="product.PackageName">111招商银行</span>(<span v-text="product.CompanyName">汽车分期</span>)
+                  </div>
+                  <div class="dd"> </div>
+              </div>
+              <!-- 副标题 -->
+              <div class="dl subtitle" v-bind:class="product.IsSubtitleKlass" v-text="product.SubHeading">5成首付，1小时速批</div>
+
+              <div class="dl apply_price">
+                  <div class="dt"><span v-text="product.CommonRequirementName">申请信息</span>：<span class="font-28 level_one" v-bind:class="product.CommonRequirementKlass" v-text="product.CommonRequirement">宽松</span></div>
+                  <div class="dd price font-ctn"><span v-text="product.MonthlyPaymentPrefix"></span><span class="col_rede font-34" v-text="product.MonthlyPaymentText">3243</span><span v-text="product.MonthlyPaymentUnit"></span>/月</div>
+              </div>
+              <div class="dl apply_evaluation">
+                  <div class="dt">
+                      <span v-html="product.CommentHtml">
+                        <!-- <span class="font-title col_rede font_no_blod">4.7</span>分／<span class="evaluation"><span >62</span>条评价</span> -->
+                      </span>
+                      <!--<span class="apply"><span v-text="product.ApplyCount">4833</span>人申请</span>-->
+                  </div>
+                  <div class="dd">
+                      <span class="col_grey9"><span v-text="product.TotalCostPrefix">贷款成本</span><span v-text="product.TotalCostText">1.20万</span></span>
+                  </div>
+              </div>
+              <div class="dl apply_tag" v-show="product.IsPackageShow">
+                  <div class="dt" v-html="product.PackageFeatureHrml">
+                    <!-- <span class="font-22 tag_blue">在线秒批</span><span class="font-22 tag_red">仅身份证</span> -->
+                  </div>
+              </div>
+              <ul class="img_info" v-bind:class="product.ImgInfoKlass">
+                  <li class="uf uf-ic ut-s" v-bind:class="product.MultiLabelKlass"><i class="icon icon-hui"></i><span class="uf-f1 ut-s" v-text="product.MultiLabel">首次下单减免购置税、赠送2800元交强险、首次下单送礼品</span></li>
+                  <li class="uf uf-ic ut-s" v-bind:class="product.PackageGiftValueKlass"><i class="icon icon-li"></i><span class="uf-f1 ut-s">申请即送<span v-text="product.PackageGiftValueAmount">398</span>礼包</span></li>
+                  <li class="uf uf-ic ut-s" v-bind:class="product.FuLabelKalss"><i class="icon icon-fu"></i><span class="uf-f1 ut-s" v-text="product.PaySimpleInfo">在线支付一元押金抵1000元</span></li>
+              </ul>
+              <div class="boom-view hide">
+                <span class="btn-conslut"><i></i>电话咨询</span><span class="btn-apply">立即申请</span>
+              </div>
+            </div>
+            <div v-bind:class="product.RecommendTextKlass" ><span v-text="product.RecommendText"></span></div>
+          </a>
+        </div>
+      </div>
+      <div id="empty" class="bottom-empty" v-show="isShowEmpty"></div>
+    </div>
+
+    <!-- 加载中 -->
+    <div class="login-box" v-show="isShowLogin">
+        <div class="login-img"></div>
+    </div>
+
+      <!-- 缺省页 -->
+    <div class="default-box" v-show="isShowDefault">
+      <div class="default-img"></div>
+      <div class="default-title">抱歉哦！没有找到匹配的金融产品~</div>
+      <!-- <div class="default-text">建议您调整首付比例、还款期限或减少筛选条件</div> -->
+      <div id="userTel" class="tel-channel"></div>
+      <div class="bottom-empty" v-show="isShowEmpty"></div>
+    </div>
+      <!--车贷资讯start-->
+      <section class="loan-news">
+          <dl>
+              <dt><span>车贷资讯</span><a href="#">查看更多</a></dt>
+              <dd>
+                  <ul>
+                      <li><a href="#">汽车贷款的条件是什么？</a></li>
+                      <li><a href="#">汽车贷款的条件是什么？</a></li>
+                      <li><a href="#">汽车贷款的条件是什么？</a></li>
+                      <li><a href="#">贷款购车要走哪些流程？看完这篇攻略，小…贷款购车要走哪些流程？看完这篇攻略，小…，小…？</a></li>
+                      <li><a href="#">汽车贷款的条件是什么？</a></li>
+                      <li><a href="#">汽车贷款的条件是什么？</a></li>
+                      <li><a href="#">汽车贷款的条件是什么？</a></li>
+                      <li><a href="#">汽车贷款的条件是什么？</a></li>
+                      <li><a href="#">汽车贷款的条件是什么？</a></li>
+                  </ul>
+              </dd>
+          </dl>
+      </section>
+      <!--车贷资讯end-->
+    <!-- 面包屑导航 -->
+    <section class="breadcrumb">
+      <a href="#">首页</a>
+      <span>&gt;</span>
+      <a href="#">奥迪</a>
+      <span>&gt;</span>
+      <a href="#">奥迪A4L</a>
+      <span>&gt;</span>
+      <a href="#">2017款 经典版 1.5T 手动 两驱 超值型</a>
+    </section>
+
+      <!--底通-->
+      <section class="escdk13">
+          <div class="escdk131 font-ctn">腾讯、京东、百度、易车旗下的互联网汽车金融平台</div>
+          <div class="escdk132">
+              <div><span>触屏版</span></div>
+              <div>
+                  <a href="http://www.daikuan.com/?from=newmweb">电脑版</a>
+              </div>
+
+              <div>
+                  <a href="http://m.daikuan.com/home/about#!/">关于我们</a>
+              </div>
+              <div>
+                  <a href="http://m.daikuan.com/Feedback/">意见反馈</a>
+              </div>
+          </div>
+          <div class="escdk133">服务电话：4000-169-169 (9:00-21:00)</div>
+      </section>
+
+    <!-- 立即申请  -->
+    <div class="apply-box uf" v-show="isShowBtn">
+      <div class="left uf-f1">
+        <div id="advBox" class="adv" v-show="isShowAdv" v-bind:data-href="isShowAdvTel">
+          <div class="adv-tel-r"></div>
+          <span v-text="isShowAdvName"></span>顾问
+        </div>
+        <div class="no-adv" v-show="isShowMonth">
+           
+        </div>
+        <div class="no-checked" v-show="isShowNoChecked">请选金融产品</div>
+      </div>
+      <div :class="isShowNoChecked?'right disabled':'right'" v-on:click="clickApplyNow">立即申请</div>
+    </div>
+   
+  </section>
+
+  <!-- 经销商报价 -->
+  <blockquote id="dealerQuotes" class="dealer-quotes hide">
+    <div>
+      <header class="ut-c">经销商报价</header>
+      <a href="javascript:;" class="close"></a>
+      <section id="dealeContent">
+        <div class="dealer-con">
+          <a href="javascript:void(0);" class="dealer uf uf-ic cur" data-id="0" data-href="/beijing/xinaodia6l/m121296?source=714">
+            <div class="dealer-name uf-f2">
+              北京4S店平均报价
+            </div>
+            <div class="dealer-price uf-f1 ut-r">35.08万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="100041819" data-href="/beijing/xinaodia6l/m121296/d100041819?source=714">
+              <div class="dealer-name uf-f2">
+                  奥之旅奥迪
+              </div>
+              <div class="dealer-price uf-f1 ut-r">32.70万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="100073870" data-href="/beijing/xinaodia6l/m121296/d100073870?source=714">
+              <div class="dealer-name uf-f2">
+                  博瑞祥星奥迪
+              </div>
+              <div class="dealer-price uf-f1 ut-r">41.88万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="100043584" data-href="/beijing/xinaodia6l/m121296/d100043584?source=714">
+              <div class="dealer-name uf-f2">
+                  北京华阳奥通
+              </div>
+              <div class="dealer-price uf-f1 ut-r">33.92万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="3802006" data-href="/beijing/xinaodia6l/m121296/d3802006?source=714">
+              <div class="dealer-name uf-f2">
+                  北京博瑞祥云
+              </div>
+              <div class="dealer-price uf-f1 ut-r">34.34万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="100036821" data-href="/beijing/xinaodia6l/m121296/d100036821?source=714">
+              <div class="dealer-name uf-f2">
+                  北京天润奥迪
+              </div>
+              <div class="dealer-price uf-f1 ut-r">33.52万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="100040078" data-href="/beijing/xinaodia6l/m121296/d100040078?source=714">
+              <div class="dealer-name uf-f2">
+                  北京奥嘉世茂
+              </div>
+              <div class="dealer-price uf-f1 ut-r">33.93万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="100040921" data-href="/beijing/xinaodia6l/m121296/d100040921?source=714">
+              <div class="dealer-name uf-f2">
+                  名尊奥翔奥迪
+              </div>
+              <div class="dealer-price uf-f1 ut-r">41.88万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="100047063" data-href="/beijing/xinaodia6l/m121296/d100047063?source=714">
+              <div class="dealer-name uf-f2">
+                  运通嘉奥
+              </div>
+              <div class="dealer-price uf-f1 ut-r">31.87万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="100051064" data-href="/beijing/xinaodia6l/m121296/d100051064?source=714">
+              <div class="dealer-name uf-f2">
+                  北京安洋伟业
+              </div>
+              <div class="dealer-price uf-f1 ut-r">33.50万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="50001941" data-href="/beijing/xinaodia6l/m121296/d50001941?source=714">
+              <div class="dealer-name uf-f2">
+                  北京寰宇恒通
+              </div>
+              <div class="dealer-price uf-f1 ut-r">33.50万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="100058871" data-href="/beijing/xinaodia6l/m121296/d100058871?source=714">
+              <div class="dealer-name uf-f2">
+                  兴奥晟通奥迪
+              </div>
+              <div class="dealer-price uf-f1 ut-r">33.51万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="3802004" data-href="/beijing/xinaodia6l/m121296/d3802004?source=714">
+              <div class="dealer-name uf-f2">
+                  北京运通博奥
+              </div>
+              <div class="dealer-price uf-f1 ut-r">34.34万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="50000004" data-href="/beijing/xinaodia6l/m121296/d50000004?source=714">
+              <div class="dealer-name uf-f2">
+                  北京德奥达
+              </div>
+              <div class="dealer-price uf-f1 ut-r">33.50万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="50001946" data-href="/beijing/xinaodia6l/m121296/d50001946?source=714">
+              <div class="dealer-name uf-f2">
+                  北京奥吉通
+              </div>
+              <div class="dealer-price uf-f1 ut-r">41.88万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="100017542" data-href="/beijing/xinaodia6l/m121296/d100017542?source=714">
+              <div class="dealer-name uf-f2">
+                  合利通赢奥迪
+              </div>
+              <div class="dealer-price uf-f1 ut-r">33.50万</div>
+          </a>
+          <a href="javascript:void(0);" class="dealer uf uf-ic " data-id="100080820" data-href="/beijing/xinaodia6l/m121296/d100080820?source=714">
+              <div class="dealer-name uf-f2">
+                  永定门奥迪
+              </div>
+              <div class="dealer-price uf-f1 ut-r">33.50万</div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </blockquote>
+  <!-- 贷款顾问开始 -->
+  <blockquote id="adviserBox" class="adviser-box hide">
+      <div class="adv-header">贷款顾问</div>
+      <div id="adviserScroll" class="win_box_max">
+        <div>
+          <div>
+              <div class="adviser-groups win_left_pad uf uf-ic" v-for="adviser in loanAdviserOrders">
+                  <div v-bind:data="adviser.Id" name="gotoAdviser" class="adv-img"><img v-bind:src="adviser.photo"/></div>
+                  <div v-bind:data="adviser.Id" name="gotoAdviser" class="adv-body uf-f1">
+                      <div class="adv-body-top"><span v-text="adviser.name">贷款顾问</span><i v-bind:class="adviser.skillLevelClass"></i></div>
+                      <div class="adv-body-bottom" v-text="adviser.serveNumber"></div>
+                  </div>
+                  <a class="adv-tel" v-bind:href="'tel:'+adviser.cN400+','+adviser.exTen"></a>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="javascript:;" class="adv-close"></a>
+  </blockquote>
+  <!-- 贷款顾问结束 -->
+
+  <!-- 立即申请表单start -->
+
+  <!-- 立即申请表单end -->
+
+  <!-- app下载 -->
+  <!-- <down></down> -->
+    <!-- 分享 -->
+    <share :options="shareOptions" qrcode-title="二维码描述标题" title="分享描述标题" :show.sync="showShareCtl" view="share"></share>
+    <car-selector v-on:callback="selectCarCallback" v-bind:only-search="onlySearch" v-bind:level="carSelectorLevel" v-bind:auto-close="false"></car-selector>
+</div>
+
+</div>
+
+<!-- <div id="TelPopUp" class="popUp-box">
+    <div class="close"></div>
+    <div>
+        <h3>短信验证码已发送至您的手机 <font id="TelNum">--</font> <font>请查收！</font></h3>
+        <div class="verification uf">
+            <div class="text">验证码</div>
+            <div class="uf-f1"><input class="validateCode" type="number" name="" placeholder="请输入" maxlength="6"></div>
+            <input type="hidden" id="Phone" value="">
+            <div id="GetValidateCode" class="btn">获取验证码</div>
+        </div>
+        <div class="btn-box">
+            <div class="tips"><p>请输入正确验证码</p></div>
+            <div class="apply-btn">提交</div>
+        </div>
+    </div>
+</div>
+
+<div id="telSuccess" class="success-box hide">
+    <div class="icon-success"></div>
+    <h3>感谢您的支持！</h3>
+    <p>我们将24小时内与您联系，请关注来电～</p>
+    <p>周末节假日顺延</p>
+    <div class="ok-btn">我知道了</div>
+</div>
+ -->
+
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

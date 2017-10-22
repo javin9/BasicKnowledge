@@ -1,0 +1,55 @@
+@import "sassHelper/mixin";
+@import "../../../../vars";
+
+.Tip{
+	display: inline-block;
+	width: 14px;
+	height:$height;
+	background:url(icon.png) no-repeat left center;
+	background-repeat: no-repeat;
+	margin-left: 10px;
+	cursor:pointer;
+	position: relative;
+
+	&:hover &-popup{
+			display: block;
+	}
+
+	&-popup{
+		cursor:default;
+		position: absolute;
+		left:-50px;
+		top:44px;
+		width: 330px;
+		border:1px solid #979797;
+		background:#fff;
+		box-sizing:border-box;
+		padding:12px;
+		font-size:14px;
+		z-index: 6;
+		border-radius:10px;
+		display: none;
+		box-shadow:1px 0px 3px rgba(160,159,159,.5);
+
+		&:after{
+			content:' ';
+			width:33px;
+			height:16px;
+			background:url(arc.png) no-repeat left top;
+			position: absolute;
+			left:40px;
+			top:-16px;
+		}
+
+		h6{
+			font-weight: normal;
+			color:#000;
+			line-height: 1.2;
+			margin-bottom: 6px;
+		}
+		p{
+			color:#666;
+			line-height: 1.5;
+		}
+	}
+}

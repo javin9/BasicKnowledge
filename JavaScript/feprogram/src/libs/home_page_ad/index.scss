@@ -1,0 +1,98 @@
+@import 'sassHelper/mixin';
+
+
+/*广告弹层*/
+#homePageAD{
+	position:fixed;
+    width: 100%;
+    height: 100%;
+	left:50%;
+	top:50%;
+	overflow: hidden;
+	z-index:99999;
+    .homePageAD_colse{
+        position:absolute;
+        top:10px;
+        right:10px;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        background:url(images/toast_closed.png) no-repeat left top;
+    }
+    img{
+     
+    }
+    
+}
+#headerAD{
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    overflow: hidden;
+    div{    
+        position: relative;
+        width: 1200px;
+        margin: 0 auto;
+        .headerAD_colse{
+            position:absolute;
+            top:0;
+            right:0;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background:url(images/heard-closed.png) no-repeat left top;
+        }
+        
+    }
+      
+}
+#bottomAD{
+    width: 100%;
+    height: 180px;
+    font-size: 0;
+    position: fixed;
+    bottom: 0;
+    background:url(images/bottomAD_bg.png);
+    z-index:8887;
+    div{    
+        position: relative;
+        width: 1200px;
+        margin: 0 auto;
+        .bottomAD_colse{
+            position:absolute;
+            top:0;
+            right:0;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background:url(images/heard-closed.png) no-repeat left top;
+        }
+        
+    }
+}
+#bottomAD_s1{
+    width: 160px;
+    height: 100px;
+    background:url(images/bottomAD_s1_bg.png) no-repeat left top;
+    font-size: 0;
+    position: fixed;
+    bottom: 30px;
+    z-index:8887;
+    img{
+        width: 100px;
+        height: 100px;
+        padding-left:10px;
+    }
+}
+#bottomAD_s2{
+    width: 50px;
+    height: 100px;
+    background:url(images/bottomAD_s2_bg.png) no-repeat left top;
+    font-size: 0;
+    position: fixed;
+    bottom: 30px;
+    z-index:8887;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var listData = [
+            {
+                type: '',
+                title: '户口本',
+                intro: '',
+                state: '通过',
+                href: '#',
+                imageCount: 12
+            },
+            {
+                type: '',
+                title: '驾驶证',
+                intro: '',
+                state: '待审核',
+                href: '##',
+                imageCount: 2
+            },
+            {
+                type: '',
+                title: '结婚证',
+                intro: '',
+                state: '未确认',
+                href: '###',
+                imageCount: 2
+            },
+            {
+                type: '',
+                title: '房产证',
+                intro: '',
+                state: '未上传',
+                href: '####',
+                imageCount: 0
+            }
+        ];
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="main">
+    <morefiles :list-data="listData"></morefiles>
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+
+</body>
+</html>

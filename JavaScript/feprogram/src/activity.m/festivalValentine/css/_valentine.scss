@@ -1,0 +1,228 @@
+body{
+	background:#fff;
+}
+
+.topguide{
+	background:#f2f2f2;
+}
+#firstContainer:after {
+	content: "";
+	display: block;
+	width: px2rem(231);
+	height: px2rem(144);
+	position: absolute;
+	right: px2rem(117);
+	bottom: px2rem(325);
+	z-index: 998;
+	background: transparent url(./images/gift.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+	animation: fadeInDownUp 3s 1.5s infinite linear;
+}
+
+#firstContainer.fixAfterStyle:after {
+	bottom: px2rem(352);
+}
+@keyframes fadeInDownUp{
+	0%{
+		opacity:1;
+		transform:translate3d(0,-20%,0)
+	}
+	50%{
+		opacity:1;
+		transform:translate3d(0,0,0)
+	}
+	100%{
+		opacity:1;
+		transform:translate3d(0,-20%,0)
+	}
+}
+#chattingWrap {
+	background: #fff url(./images/basement.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+
+	&:after {
+		content: ' ';
+		display: block;
+		width: px2rem(701);
+		height: px2rem(363);
+		position: fixed;
+		bottom: px2rem(370);
+		left: px2rem(25);
+		z-index: 997;
+		background:url('./images/ribon.png') center top no-repeat;
+		background-size:px2rem(701) px2rem(363);
+		animation: fadeInDownUp 3s infinite linear;
+	}
+
+}
+
+.form_modu li.form_modu_head .progress {
+	color: #EC3D79;
+}
+
+.icon {
+}
+
+.icon_serv {
+	background: transparent url(./images/icon-car.png) no-repeat center center;
+	background-size: px2rem(80) auto!important;
+	border: 0;
+	border-radius: 0;
+}
+
+.icon_cust {
+	background: transparent url(./images/icon-user.png) no-repeat center center;
+	background-size: px2rem(80) auto!important;
+	border: 0;
+	border-radius: 0;
+}
+
+article[class^="dialog_"] .message .txt {
+	box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.30);
+	border-radius: px2rem(36)!important;
+
+	&.chatValentine {
+		padding-top: px2rem(240);
+		color: #333;
+		background: #FFFA00 url('./images/chat-0.png') center px2rem(30) no-repeat;
+		background-size: px2rem(412) auto;
+	}
+}
+
+.dialog_serv .message .txt {
+	color: #000;
+	background-color: #FFFA00;
+}
+
+.dialog_cust .message .txt {
+	color: #fff;
+	background-color: #ec3d79;
+	border: 1px solid #ffd230;
+}
+
+.dialog_serv {
+
+	&:before {
+		left: px2rem(100);
+		z-index: 1;
+		width:0; 
+	    height:0; 
+	    border-top: px2rem(16) solid transparent;
+	    border-bottom: px2rem(16) solid transparent; 
+	    border-right: px2rem(16) solid yellow; 
+	}
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: px2rem(5);
+		right: auto;
+		left: px2rem(122);
+		width: px2rem(47);
+		height: px2rem(33);
+		background:transparent url('./images/light.png') left top no-repeat;
+		border: 0;
+		background-size: 100% 100%;
+	}
+}
+
+.dialog_cust {
+	&:before {
+		content: none;
+	}
+	.txt {
+		position: relative;
+
+		&:before,
+		&:after {
+			border: solid transparent;
+			content: ' ';
+			height: 0;
+			left: 100%;
+			position: absolute;
+			width: 0;
+		}
+
+		&:before {
+			border-width: px2rem(16);
+			border-left-color: #FFFA00;
+			top: px2rem(22);
+			margin-left: -1px;
+		}
+
+		&:after {
+			margin-left: -2px;
+			border-width: px2rem(14);
+			border-left-color: #EC3D79;
+			top: px2rem(24);
+		}
+	}
+}
+
+.form_modu li.choose_area a.cur {
+	background-color: #EC3D79;
+}
+
+.circle-item
+.circle-item {
+	.cg-wrap {
+		background-color: #000;
+	}
+	.circle-left,
+	.circle-right {
+		background: #f5f5f5;
+	}
+
+	.circle-mask {
+		color: #EC3D79;
+	}
+}
+
+.success-top {
+	display: none;
+}
+
+.success-top-zy {
+	height: px2rem(798);
+	margin: 0;
+	padding-top: px2rem(480);
+	background:transparent url('./images/basement-result.png') left top no-repeat;
+	background-size: px2rem(750) px2rem(800);
+	.success-top-btn {
+		margin-top: 0;
+	}
+
+	.btn-only {
+		width: px2rem(530);
+		height: px2rem(184);
+		background:transparent url('./images/btn.png') left top no-repeat;
+		background-size:px2rem(530) px2rem(368);
+		border: 0;
+		display:block;
+		margin:0 auto;
+
+		&:active {
+			background-position: 0 px2rem(-190);
+		}
+	}
+
+	p {
+		color: #fff;
+		@include fsize(26);
+	}
+}
+
+.other-wrapper {
+	background-color: #f2f2f2;
+
+	> p {
+		padding-top: px2rem(20);
+	}
+}
+
+.circle-item .cg-wrap {
+	background: #EC3D79;
+}
+.circle-item .circle-mask {
+	color: #EC3D79;
+}

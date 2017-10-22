@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script type="text/javascript">
+        var CODE_GETTING_URL = '/Validate/GetCode';
+        var CODE_VALIDATING_URL = '/Validate/CheckCode';
+        var APIURL = "http://api.chedai.bitauto.com/";
+        var RESURL = "http://img1.bitautoimg.com/jinrong/newpcweb/";
+        var USERCENTERURL = "http://i.daikuan.com";
+        var CDNFileURL = 'http://img1.bitautoimg.com/chedai/';
+        var BusinessLine = 552;
+        var line = 552
+        var from = '';
+        var url_addInfoInStep1 = '/Mortgage/AddMortgageOrder';
+        var headerBusiFlag = "4";
+        var headerFunFlag = "0";
+    </script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div class="bt_page">
+    <div class="title-box"><h3>贷款计算器</h3></div>
+    <div class="tisi_box2 f_16 border_bot">易鑫车抵贷最低贷款利率为月息0.77%起</div>
+    <ul class="mort_cal_list">
+        <li class="item">
+            <div class="dt"><span class="col_red">*</span>贷款金额：</div>
+            <div class="dd">
+                <input name="money" id="money" type="text" value="" class="f-w150"><span class="unit">万元</span>
+                <span class="alert" style="display: none;">请填写有效的贷款金额哦</span>
+                <span class="col_red nb_big" style="display: none;">输入数值超过最大限额9999999999</span>
+            </div>
+        </li>
+        <li class="item">
+            <div class="dt"><span class="col_red">*</span>贷款期限：</div>
+            <div class="dd">
+                <input name="timeTrigger" id="timeTrigger" type="text" value="" class="f-w150"><span class="unit">月</span>
+                <span class="alert" style="display: none;">最大支持240个月</span>
+            </div>
+        </li>
+        <li class="item">
+            <div class="dt"><span class="col_red">*</span>还款方式：</div>
+            <div class="dd">
+                <span class="radio-box mtd_sel sel" data-id="jin"><input id="radio_dj" name="radio_djbx" type="radio" value="" checked="checked" /> <label for="radio_dj">等额本金</label></span>
+                <span class="radio-box mtd_sel" data-id="xi"><input id="radio_bx" name="radio_djbx" type="radio" value="" /> <label for="radio_bx">等额本息</label></span>
+                <span class="alert" style="display: none;">至少选着一项</span>
+            </div>
+        </li>
+        <li class="item">
+            <div class="dt"><span class="col_red">*</span>贷款月利率：</div>
+            <div class="dd">
+                <input name="rateTrigger" id="rateTrigger" type="text" value="" class="f-w150"><span class="unit">％</span>
+                <span class="alert" style="display: none;">请填写有效的贷款月利率</span>
+            </div>
+        </li>
+    </ul>
+    <div class="mort_cal_btn_box"><a href="javascript:;" class="btn btn_yellow calculBtn">开始计算</a></div>
+    <div class="blk20 border_bot"></div>
+    <div class="mort_loan_details" style="display:block;">
+        <div class="tit_details">
+            <div class="f_16">贷款明细 </div>
+            <div class="f_16 col_bule"><a href="javascript:;" class="col_blue calcul_con_a">详情 &gt;</a></div>
+        </div>
+        <ul class="mort_details">
+            <li class="item icon_blue">
+                <div class="dt">贷款总额：</div>
+                <div class="dd col_g8"><span id="moneyE" class="cleEvt"></span>万元</div>
+            </li>
+            <li class="item icon_yellow">
+                <div class="dt">支付利息：</div>
+                <div class="dd col_g8"><span id="lxE" class="cleEvt"></span>元</div>
+            </li>
+            <li class="item">
+                <div class="dt">利      率：</div>
+                <div class="dd col_g8"><span id="rateE" class="cleEvt"></span>%</div>
+            </li>
+            <li class="item">
+                <div class="dt">参考月供：</div>
+                <div class="dd col_g8"><span id="xE" class="cleEvt"></span>元/月</div>
+            </li>
+        </ul>
+        <div class="prompt_box col_g8">以上结果仅供参考</div>
+        <div class="blk20"></div>
+        <div class="blk20"></div>
+
+        <div class="mar_cal_pie_box">
+            <div class="cvs_con"><div id="canvas_circle"></div> </div>
+        </div>
+        <div class="talbes" style="display:none;">
+            <div class="table_thead">
+                <div class="table_th">期次</div>
+                <div class="table_th">偿还本息</div>
+                <div class="table_th">偿还利息</div>
+                <div class="table_th">偿还本金</div>
+                <div class="table_th">剩余本金</div>
+            </div>
+            <div class="table_tbody">
+                <ul class="table_ul">
+                    <li class="table_td">1</li>
+                    <li class="table_td">211</li>
+                    <li class="table_td">322</li>
+                    <li class="table_td">1</li>
+                    <li class="table_td">434</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="mort_loan_box">
+        <div class="tisi_box3"><span class="col_red">*</span>车辆抵押贷款难？立即申请，让车辆抵押专家为您提供更好、更省心的金融服务。</div>
+        <div class="mort_cal_btn_box"><a href="javascript:;" class="btn btn_yellow i_rapidly">我要贷款</a></div>
+    </div>
+
+</div>
+<!-- 急速贷款弹窗开始 -->
+<div id="rapidly" class="mask hide">
+    <div class="mask_body">
+        <div class="mask_layer"></div>
+        <div class="popup_window">
+            <div class="popup_w_tit">
+                <div class="close"></div>
+                <div class="popup_title">快速申请</div>
+            </div>
+            <div class="popup_win_con form">
+                <div class="input_item">
+                    <span>姓　名<span class="font_red">*</span></span>
+                    <input name="Name" type="text" class="w_l1 AppCheck" placeholder="请输入">
+                </div>
+                <div class="jyts bor-box font_red"></div>
+
+                <div class="input_item">
+                    <span>手机号<span class="font_red">*</span></span>
+                    <input id="Telphone" name="Mobile" type="tel" maxlength="11" class="w_l2 AppCheck" placeholder="请输入">
+                    <span id="GetValidateCode" class="getCode">获取验证码</span>
+                </div>
+                <div class="jyts bor-box font_red"></div>
+
+                <div class="input_item">
+                    <span>验证码<span class="font_red">*</span></span>
+                    <input id="ValidateCode" name="code" type="num" class="w_l1" placeholder="请输入">
+                </div>
+                <div class="jyts bor-box font_red">*请输入验证码</div>
+
+                <div id="submit" class="rapidly_btn">提交并申请</div>
+            </div>
+            <div class="popup_win_con succForm hide">
+                <div class="ok_icon"></div>
+                <div class="congradulation">恭喜您，快速申请已提交成功</div>
+                <div class="thanks">继续完善资料有助于您快速获得贷款！</div>
+                <a id="get_apply_btn" href="javascript:void(0);" class="get_apply_btn">我要快速获得贷款</a>
+            </div>
+        </div>
+    </div>
+</div>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

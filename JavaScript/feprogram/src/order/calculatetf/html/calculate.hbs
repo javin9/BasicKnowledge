@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    {{{htmlWebpackPlugin.options.shim}}}
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="root"></div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script>
+
+	window.USERCENTERURL = window.location.origin
+	window.APIURL = '/'
+	window.citySpell = 'shanghai'
+	window.RESURL = "http://img1.bitautoimg.com/jinrong/newpcweb/"
+	window.domainQueue = ["img1.bitautoimg.com", "img2.bitautoimg.com", "img3.bitautoimg.com", "img4.bitautoimg.com"]
+	window.BusinessLine = 550
+
+	var initData = {
+
+		tab:0,
+
+		// 车款id
+		carId: 10,
+		// carId: 0,
+		
+		//城市数据 
+		city: {
+			id: 10,
+			name: '北京',
+			spell:'beijing'
+		},
+
+		// 车价, Number
+		price: 13.57,
+
+		//新车基地址
+		baseUrl: '/test',
+
+		// 优惠购买商业险链接
+		linkBuyProduct: 'http://www.baidu.com',
+
+		source:101
+	}
+	//from 从cookie读取的 没有就不存
+	var source = "910";
+  var channel = "667";
+  var order_creating_url = "/calculatortf/AddSimpleOrder";
+  var car_info_getting_url = "/calculator/getcarinfo";
+
+</script>
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+<script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

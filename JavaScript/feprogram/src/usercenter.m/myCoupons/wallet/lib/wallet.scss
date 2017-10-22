@@ -1,0 +1,543 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+
+.wallet-tab{
+  @include fsize(26);
+  width: 100%;
+  height: px2rem(81);
+  background: #FFFFFF;
+  color: #686868;
+  line-height: px2rem(81);
+  text-align: center;
+  div{
+    position: relative;
+  }
+  .on{
+      color: #E9474D !important;
+  }
+  .on:after {
+    width: px2rem(160);
+  position: absolute;
+	bottom: 0;
+  border-bottom: px2rem(3) solid #E9474D;
+	content: '';
+	left: 20%;
+  }
+ 
+}
+.wallet-tip{
+  @include fsize(26);
+  height: px2rem(81);
+  line-height: px2rem(81);
+  margin-left: px2rem(30);
+  color: #999999;
+}
+.form_modu{
+  background: #fff;
+}
+.form_modu li {
+    position: relative;
+    line-height: 1.33333rem
+}
+
+.form_modu .warning {
+    line-height: 2;
+    padding: 0 .266667rem;
+    text-align: right
+}
+
+.form_modu input {
+  @include fsize(30);
+    width: 100%;
+    border: 0;
+    color: #333!important
+}
+
+.form_modu input#CheckCode {
+    // width: 2.426667rem
+}
+
+.form_modu #getCodeBtn {
+   @include fsize(26);
+    display: inline-block;
+    width: px2rem(170);
+    height: px2rem(54);
+    color: #E9474D;
+    border: 1px solid #E9474D;
+    text-align: center;
+    line-height: .746667rem;
+    background-color: #fff;
+    border-radius: .373333rem;
+        position: absolute;
+    right:px2rem(30);
+    top: px2rem(25);
+}
+
+.form_modu li.form_modu_head {
+    height: px2rem(110);
+    line-height:  px2rem(110);
+    padding: 0 .266667rem;
+    font-size: .4rem;
+    border-top: 1px solid #eee
+}
+
+.form_modu li.form_modu_head>b,.form_modu li.form_modu_head>span {
+    display: block
+}
+
+.form_modu li.form_modu_head>b {
+    width: 1.866667rem;
+    font-weight: 400;
+    @include fsize(30);
+}
+
+.form_modu li.form_modu_head>span {
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.form_modu li.form_modu_head em {
+    color: #d0d0d0
+}
+
+.form_modu li.form_modu_head .icon {
+    width: .666667rem;
+    height: .666667rem;
+    margin-right: .133333rem
+}
+
+.form_modu li.selcon {
+    padding-right: .746667rem!important
+}
+
+.form_modu li.selcon:after {
+    content: "";
+    position: absolute;
+    top: .533333rem;
+    right: .4rem;
+    display: block;
+    width: .293333rem;
+    height: .293333rem;
+    border-top: 1px solid #bebebe;
+    border-right: 1px solid #bebebe;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.form_modu li.form_modu_body {
+    margin-left: .4rem;
+    padding: .266667rem 0;
+    border-top: 1px solid #eee
+}
+
+.form_modu li.choose_area a {
+    display: inline-block;
+    height: .853333rem;
+    margin-top: .266667rem;
+    margin-right: .133333rem;
+    padding: 0 .373333rem;
+    line-height: .853333rem;
+    font-size: .32rem;
+    color: #333;
+    background-color: #f5f5f5;
+    border-radius: .106667rem
+}
+
+.form_modu li.choose_area a.cur {
+    color: #fff;
+    background-color: #dbb76c
+}
+
+.form_modu li.choose_area>span {
+    margin-right: .2rem;
+    font-size: .4rem;
+    color: #333
+}
+
+.form_modu li.choose_area#FundsDiv,.form_modu li.choose_area#InsuranceDiv {
+    padding-left: .8rem
+}
+
+.form_modu li.choose_area+li.choose_area {
+    margin-left: .976666rem;
+    padding-left: .266667rem!important
+}
+
+.form_modu .select-con span:after {
+    content: "";
+    display: inline-block;
+    width: .266667rem;
+    height: .266667rem;
+    margin-right: .133333rem;
+    border-top: 1px solid #666;
+    border-right: 1px solid #666;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: center center;
+    transform-origin: center center
+}
+a.btn_main {
+    display: block;
+    margin: .4rem .266667rem;
+    height: 1.306667rem;
+    font-size: .426667rem;
+    line-height: 1.306667rem;
+    text-align: center;
+    color: #fff;
+    background-color: #E9474D;
+    border-radius: px2rem(5);
+}
+btn-no{
+  background-color: #C4C4C4 !important;
+}
+
+//center
+.use-center-list{
+  margin-left:  px2rem(20);
+  .out{
+     background:url('./images/center_out.png') no-repeat!important;
+  }
+   .gone{
+     background:url('./images/guang.png') no-repeat!important;
+  }
+  .card{
+      margin-top: px2rem(20);
+      position:relative;
+      background:url('./images/center.png') no-repeat;
+      background-size:  100% 100% !important;
+      margin-right: px2rem(20);
+      height: px2rem(252);
+    .r-desc-top66{
+       padding-top:px2rem(66)!important;
+    }
+    .r-desc{
+        line-height: px2rem(40);
+           font-weight:500;
+         height: px2rem(252);
+      @include fsize(26);
+    color: #BDA3F4;
+    width: px2rem(32);
+    right: px2rem(23);
+    position: absolute;
+       padding: .61333rem 0 .53333rem 5rem;
+    }
+    .left{
+      top: 0;
+      left: 0;
+      position:absolute;
+      height: px2rem(252);
+      width: px2rem(250);
+      img{
+        height: px2rem(200);
+        width: px2rem(200);
+        margin-top:px2rem(25);
+        margin-left: px2rem(25);
+      }
+      .left-card-icon{
+        height: px2rem(74);
+        width: px2rem(80);
+        margin-top: px2rem(62);
+        margin-left: px2rem(86);
+        background:url('./images/logo.png') no-repeat;
+        background-size: 100% 100%;
+      }
+      .left-card-text{
+        margin-top: px2rem(21);
+        text-align: center;
+        @include fsize(26);
+        color: #686868;
+      }
+   .left-card-icon-out{
+           height: px2rem(80);
+      width: px2rem(80);
+      margin-top: px2rem(62);
+      margin-left: px2rem(86);
+        background:url('./images/logo_h.png') no-repeat;
+            background-size: 100% 100%;
+      }
+      .left-card-text-out{
+        margin-top: px2rem(21);
+        text-align: center;
+        @include fsize(26);
+        color: #b2b2b2;
+      }
+    }
+    .right{
+      position:absolute;
+      margin-left: px2rem(280);
+      .right-card{
+           div:first-child{
+              padding-top: px2rem(36);
+              width: px2rem(322);
+              line-height: px2rem(44);
+              height: px2rem(88);
+              overflow: hidden;
+           }
+        .card-name{
+         @include fsize(26);
+        color: #686868;
+        }
+       
+      }
+    
+      .right-text{
+        color: #BDA3F4;
+        padding-top: px2rem(18);
+        margin-left: px2rem(5);
+        width: px2rem(322);
+        height: px2rem(70);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        .price{
+         font-weight:500;
+         height: px2rem(70);
+         line-height: px2rem(70);
+
+           @include fsize(66);
+        }
+        .text{
+            font-weight:500;
+             @include fsize(26);
+             margin-left: px2rem(10);
+            height: px2rem(70);
+         line-height: px2rem(70);
+        }
+         .desc{
+            @include fsize(42);
+        }
+      }
+    }
+  }
+}
+
+
+.card-item{
+  width: px2rem(710);
+  box-sizing:border-box;
+  background:url(./images/card-bg.png) no-repeat left top / cover;
+  margin:px2rem(20) auto;
+  padding:px2rem(20);
+
+  &-jd{
+    h3, dl dt > div:last-child p{
+      color: #9F75F9 !important;
+    }
+  }
+
+  &-mx{
+    h3, dl dt > div:last-child p{
+      color: #E9474D !important;
+    }
+  }
+
+  dl{
+    @include border;
+    padding:px2rem(30) px2rem(20) 0;
+
+    dt{
+      overflow: hidden;
+      padding-bottom: px2rem(10);
+      position: relative;
+
+      h3{
+        @include fsize(36);
+        color:#4F95FD;
+      }
+
+      p{
+        @include fsize(24);
+        margin:px2rem(10) 0;
+        color:$dark-color;
+
+        span{
+          color:$normal-color;
+        }
+      }
+
+      >div:first-child{
+      }
+
+      >div:last-child{
+        position: absolute;
+        right:0;
+        top:0;
+        text-align: right;
+
+        p{
+          @include fsize(26);
+          color:#4F95FD;
+          margin-top: px2rem(8);
+        }
+      }
+    }
+
+    dd{
+      border-top:1px dashed #e5e5e5;
+      color: $light-color;
+      padding:px2rem(14) 0;
+      overflow: hidden;
+      line-height: $main-line-height;
+
+      span{
+        float: left;
+
+        i{
+          &.important{
+            color:#32ad67;
+          }
+          font-style:normal;
+        }
+      }
+
+      a{
+        float: right;
+        text-decoration: none;
+        color:$main-color;
+        background:url(./images/arrow.png) no-repeat right center / px2rem(10) auto;
+        padding-right: px2rem(16);
+      }
+    }
+  }
+}
+
+.failure-card-list .card-item{
+  position: relative;
+
+  h3, dl dt > div:last-child p{
+    color:#C4C4C4 !important;
+  }
+
+  >i{
+    background:url(./images/failure.png) no-repeat left top / contain;
+    position: absolute;
+    width: px2rem(186);
+    height:px2rem(118);
+    right:px2rem(142);
+    bottom:px2rem(28);
+  }
+}
+
+.activated-card-list .card-item{
+  dl dt p{
+    color:$normal-color !important;
+  }
+  h3, dl dt > div:last-child p{
+    color:#C4C4C4 !important;
+  }
+}
+
+.activated-card-list,.use-card-list{
+  padding-bottom: px2rem(100);
+}
+.no-data{
+  margin-top:px2rem(200);
+}
+.no-data-text{
+    margin-top: px2rem(-50);
+text-align: center;
+@include fsize(30);
+color: #333333;
+}
+//邀请
+.invitation{
+     margin-top: px2rem(20);
+text-align: center;
+  .desc{
+    width:  px2rem(484);
+    @include fsize(28);
+    color: #686868;
+
+  }
+  .btn{
+    @include fsize(32);
+    margin: 0 auto;
+    margin-top: px2rem(60);
+    width: px2rem(300);
+    height: px2rem(80);
+    background: #E9474D;
+    border-radius: px2rem(5px);
+    color:#fff;
+    text-align: center;
+    line-height: px2rem(80);
+    display: block;
+  }
+}
+.mian-no{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: px2rem(60);
+    @include fsize(32);
+    color:#666;
+}
+.add-car{
+    background: $main-color;
+    width: 100%;
+    height: px2rem(100);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    
+    div{
+      width: px2rem(690);
+      height: px2rem(100);
+      margin-left: px2rem(30);
+      background: #E9474D;
+      border-radius:  px2rem(5);
+      @include fsize(32);
+      color: #FFFFFF;
+      line-height: px2rem(100);
+      i{
+        display:inline-block;
+        width: px2rem(32);
+        height: px2rem(32);
+        // background:url('./images/jia.png') no-repeat;
+        // background-size:  100% 100% !important;
+      }
+    
+    }
+}
+
+.fs42{
+   @include fsize(42,!important);
+}
+.fcb{
+  color: #cccccc !important;
+}
+//添加卡卷页面
+.add-card-view{
+  margin-top: px2rem(20);
+  background: #FFFFFF;
+  width: 100%;
+  height: px2rem(110);
+  line-height: px2rem(110);
+  @include fsize(30);
+  margin-bottom: px2rem(30);
+  span{
+    color: #333333;
+    padding-left: px2rem(30);
+  }
+  input{
+    color: #333333;
+    padding-left: px2rem(50);
+    border: 0;
+  }
+
+}  
+::-webkit-input-placeholder{
+   color: #B2B2B2;
+}
+.add-btn{
+  width: px2rem(690);
+  height: px2rem(100);
+  line-height: px2rem(100);
+  margin: 0 auto;
+  background: #E9474D;
+  border-radius: px2rem(5);
+  text-align: center;
+  @include fsize(32);
+color: #FFFFFF;
+}

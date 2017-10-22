@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="format-detection" content="telephone=no"/>
+  </head>
+
+  <body>
+
+    {{{htmlWebpackPlugin.options.header}}}
+    <script>
+      var CityId = '201';
+      var CityName = "北京";
+      var BusinessLine = 550;
+      var CODE_GETTING_URL='/Login/GetCode';
+      var CODE_VALIDATING_URL='/Login/CheckCode';
+      var ADVISERAPIURL = "http://test.adviserapi.daikuan.com/";
+      var tab_1 = 0;
+      var tab_2 = 1;
+    </script>
+
+    <div id="yxWrapper">
+      <div id="detail" class="detail">
+        <!-- 导航开始 -->
+        <header class="header-bar">
+          <a href="javascript:void(0);" v-on:click="goBack" class="nav-back"></a>
+          <h3 class="font-nav">易鑫资讯</h3>
+          <div id="tools-nav"></div>
+          <div id="navTips" class="nav-tips hide">
+              <a href="#"><i></i>首页</a>
+              <a href="#"><i></i>我的申请</a>
+              <a href="javascript:void(0);" id="shareNavTip" ><i></i>分享</a>
+          </div>
+        </header>
+        <!-- 导航结束 -->
+
+        <article class="article">
+          <h1>2017年最新银行存贷款利率表：央行最新基准利率表</h1>
+          <p>
+            <span>2017-07-14</span>
+            <span>作者：张大山</span>
+            <span>来源：易鑫车贷</span>
+          </p>
+
+          <!-- 文章正文开始 -->
+          <div class="container">正文内容是富文本</div>
+          <!-- 文章正文结束 -->
+        </article>
+
+        <!-- 手机号通道开始 -->
+        <section id="userTel" class="tel-channel"></section>
+        <!-- 手机号通道结束 -->
+
+        <!-- 相关资讯开始 -->
+        <section class="relatyzx">
+          <header>
+            <a href="javascript:void(0);" v-bind:class="[isCurrent1?'cur':'']" v-on:click="tabChange(1)">相关资讯</a>
+            <a href="javascript:void(0);" v-bind:class="[isCurrent2?'cur':'']" v-on:click="tabChange(2)">热门资讯</a>
+          </header>
+          <dl class="tab1" v-show="isCurrent1">
+            <dd>
+              <a href="">
+                <h3 class="wrap clamp2">车贷首付最低20%，你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！</h3>
+                <div>2017-07-14</div>
+              </a>
+            </dd>
+            <dd>
+              <a href="">
+                <h3 class="wrap clamp2">车贷首付最低20%，你偏要付全款，其实是吃亏！</h3>
+                <div>2017-07-14</div>
+              </a>
+            </dd>
+            <dd>
+              <a href="">
+                <h3 class="wrap clamp2">车贷首付最低20%，你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！</h3>
+                <div>2017-07-14</div>
+              </a>
+            </dd>
+            <dd>
+              <a href="">
+                <h3 class="wrap clamp2">车贷首付最低20%，你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！</h3>
+                <div>2017-07-14</div>
+              </a>
+            </dd>
+            <dd>
+              <a href="">
+                <h3 class="wrap clamp2">车贷首付最低20%，你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！</h3>
+                <div>2017-07-14</div>
+              </a>
+            </dd>
+            <dd>
+              <a href="">
+                <h3 class="wrap clamp2">车贷首付最低20%，你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！</h3>
+                <div>2017-07-14</div>
+              </a>
+            </dd>
+          </dl>
+          <dl class="tab2" v-show="isCurrent2">
+            <dd>
+              <a href="">
+                <h3 class="wrap clamp2">2222车贷首付最低20%，你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！</h3>
+                <div>2017-07-14</div>
+              </a>
+            </dd>
+            <dd>
+              <a href="">
+                <h3 class="wrap clamp2">车贷首付最低20%，你偏要付全款，其实是吃亏！</h3>
+                <div>2017-07-14</div>
+              </a>
+            </dd>
+            <dd>
+              <a href="">
+                <h3 class="wrap clamp2">车贷首付最低20%，你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！</h3>
+                <div>2017-07-14</div>
+              </a>
+            </dd>
+            <dd>
+              <a href="">
+                <h3 class="wrap clamp2">车贷首付最低20%，你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！</h3>
+                <div>2017-07-14</div>
+              </a>
+            </dd>
+            <dd>
+              <a href="">
+                <h3 class="wrap clamp2">车贷首付最低20%，你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！</h3>
+                <div>2017-07-14</div>
+              </a>
+            </dd>
+            <dd>
+              <a href="">
+                <h3 class="wrap clamp2">车贷首付最低20%，你偏要付全款，其实是吃亏！你偏要付全款，其实是吃亏！</h3>
+                <div>2017-07-14</div>
+              </a>
+            </dd>
+          </dl>
+        </section>
+        <!-- 相关资讯结束 -->
+
+        <!-- 面包屑导航开始 -->
+        <nav class="crumbs">
+          <a href="#">首页&gt;</a>
+          <a href="#">易鑫资讯&gt;</a>
+          <a href="#">汽车贷款&gt;</a>
+          <span>正文</span>
+        </nav>
+        <!-- 面包屑导航结束 -->
+
+        <!-- 分享 -->
+        <share :options="shareOptions" qrcode-title="二维码描述标题" title="分享描述标题" view="share"></share>
+      </div>
+    </div>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.dll.vue}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+  </body>
+</html>

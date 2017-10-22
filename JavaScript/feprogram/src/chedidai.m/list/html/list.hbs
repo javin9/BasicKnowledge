@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<script>
+    var CODE_GETTING_URL = '/Validate/GetCode';
+    var CODE_VALIDATING_URL = '/Validate/CheckCode';
+    var USERCENTERURL = 'http://i.m.daikuan.com';
+    var APIURL = 'http://api.chedai.bitauto.com/';
+    var RESURL = 'http://img1.bitautoimg.com/jinrong/newmweb/';
+    var CDNFileURL = 'http://img1.bitautoimg.com/chedai/';
+    var BusinessLine = 552;
+    var pingGuParas = { "Id": "8", "CarId": "113261", "LicenseYear": "2015", "LicenseMonth": "6", "LicenseCityID": "201", "Mileage": "2", "LoanPeriod": "12", "Source": "718", "CitySpell": "beijing" };
+    var carImg = "http://img3.bitautoimg.com/autoalbum/files/20160803/574/0510235747_2.jpg";
+    var city = {
+        CityId: '201',
+        CityName: '北京',
+        CitySpell: 'beijing',
+        RegionId: '110100'
+    };
+    //车款信息
+    var car = {
+        masterBrandName: "一汽丰田", //品牌名称
+        masterBrandLogo: "http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/55/m_7_55.png", //品牌logoUrl
+        serialId: "2701", //车系ID
+        serialSpell: "yiqifengtianrav4", //车型全拼
+        carPrice: "21.78", //车价
+    };
+    var licenseCityName = '北京';
+</script>
+<div id="yxWrapper">
+    <div id='wx_pic' style='margin:0 auto;display:none;'>
+        <img src='http://img4.bitautoimg.com/jinrong/newmweb/images/pic300.jpg?v=201702061000' />
+    </div>
+    <input name="__RequestVerificationToken" type="hidden" value="H9INcONFLcztKm3AjaOERfFtlzeY0z4VYLmbcfm-VDIhCazbNVmV0RKdSAK9_YpsUr06bF5dGYtG8QvyUA6act80t91zNZYX4YstIUFGauQ1" />
+
+
+    <article class="list font-24">
+        <!-- 头部导航开始 -->
+        <header class="header-bar">
+            <a href="javascript:window.history.back(-1);"></a>
+            <h1 class="font-nav">金融产品列表</h1>
+            <span></span>
+        </header>
+        <script src="http://img4.bitautoimg.com/jinrong/assets/headType.m/headTypeCookies.js?v=201702061000"></script>
+        <!-- 头部导航结束 -->
+
+        <blockquote class="bg-white pad30A uf">
+            <div class="car-img uf uf-ic mag30R">
+                <img data-original="http://img3.bitautoimg.com/autoalbum/files/20160803/574/0510235747_2.jpg" src="http://img3.bitautoimg.com/autoalbum/files/20160803/574/0510235747_2.jpg" data-bind="attr:{'src':CarImg}">
+            </div>
+            <div class="uf-f1 pad20R selectCar">
+                <div class="car-name font-28 f-blod" id="selectCar" data-option="false" data-year="2015" data-id="113261">一汽丰田 2015款2.0L CVT 四驱 风尚版</div>
+                <div class="f-gray9 mt-bycj"><span class="mag40R">本月成交：<span data-bind="text:TradeVolume">--</span>台</span><span>平均成交额：<span data-bind="text:AvgTradeMoney">--</span></span></div>
+            </div>
+            <div class="uf uf-ic selectCar">
+                <i class="right"></i>
+            </div>
+        </blockquote>
+
+        <!-- 车辆详情开始 -->
+        <blockquote class="bg-white pad30L mag20T">
+            <header class="card-header uf uf-ic pad30R font-26" id="carInfo">
+                <div class="f-blod">车辆详情</div>
+                <div id="carRel" class="uf-f1 ut-s ut-r pad40L pad20R f-gray6 box_sizing" data-cityid="201" data-year='2015' data-month="6" data-mileage="2" data-carid="113261">
+
+                    北京 2015-6 2万公里
+                    <!-- 北京 2016-3 5.8万公里 -->
+                </div>
+                <div class="uf uf-ic">
+                    <i class="right"></i>
+                </div>
+            </header>
+            <div class="uf pad45TB">
+                <div class="uf-f1 ut-c">
+                    <span class="f-gray9">预估车价：</span><span class="f-red font-40" data-bind="text:EstimatePrice">--</span>
+                </div>
+                <div class="uf-f1 ut-c">
+                    <span class="f-gray9">可贷额度：</span><span class="f-red font-40" data-bind="text:LoanAmount">--</span>
+                </div>
+            </div>
+        </blockquote>
+        <!-- 车辆详情结束 -->
+        <!-- 资质期限开始 -->
+        <blockquote class="bg-white pad30L mag20T font-26">
+            <div class="card-header uf uf-ic">
+                <div class="f-blod">贷款期限</div>
+                <div class="uf-f1 ut-s ut-r f-gray box_sizing font-26 ml-dkqx">
+                    <div class="swiper-container w-100 uf uf-ic" id="mouthPay">
+                        <div class="swiper-wrapper  font-26">
+                            <div class="swiper-slide">
+                                <div class="label" data-id="1">1个月</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="label" data-id="3">3个月</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="label" data-id="6">6个月</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="label cur" data-id="12">12个月</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="label" data-id="24">24个月</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="label" data-id="36">36个月</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="uf uf-ic pad30R pad45TB font-26" id="myQuilty">
+                <div class="f-blod">我的资质</div>
+                <div class="uf-f1 ut-s ut-r pad40L pad20R f-gray box_sizing font-26" id="quilty-ctn">
+                    <!-- 填写文本内容时  去掉f-gray 添加 f-gray6-->
+                    匹配最佳产品
+                </div>
+                <div class="uf uf-ic">
+                    <i class="right"></i>
+                </div>
+            </div>
+        </blockquote>
+        <!-- 资质期限结束 -->
+
+
+        <!-- 列表页内容开始 -->
+        <blockquote id="list" class="card-box mag0B">
+            <header class="ctn-header font-26 f-gray6">
+                <!-- <span>默认排序</span> -->
+                <ul class="uf">
+                    <li class="uf-f1 ut-c sort cur" data-id="-1">默认排序</li>
+                    <li class="uf-f1 ut-c sort" data-id="1">总成本最低</li>
+                    <li class="uf-f1 ut-c sort" data-id="2">月供最低</li>
+                    <!-- <li class="uf-f1 ut-c sort" data-id="3">人气最低</li> -->
+                </ul>
+            </header>
+
+            <div class="com-ctn hide" data-bind="foreach:{data:ProductList}">
+                <div class="com-box box_sizing" data-bind="attr:{'data-rpId':recommendProductId, 'data-pid':Id, 'data-Period':loanPeriod, 'data-lRate':loanRate, 'data-dRate':discountRate, 'data-mPay':MonthPayment, 'data-tmaney':totalMoney, 'data-comId':companyID}">
+                    <div class="com-box-ctn box_sizing uf">
+                        <div class="check-box uf uf-ic">
+                            <i class="check"></i>
+                        </div>
+                        <a href="javascript:void(0);" class="uf-f1 uf mr-link" data-bind="attr:{'href':detailUrl}">
+                            <div class="uf-f1 pad30R">
+                                <div class="uf uf-ic mag20B">
+                                    <img class="com-logo" src="" data-bind="attr:{'src':Logo}">
+                                    <div class="uf-f1">
+                                        <span class="f-blod font-28" data-bind="text:ProductName"></span><span data-bind="html:promotionHtml"></span>
+                                    </div>
+                                </div>
+                                <div class="uf font-24">
+                                    <div class="uf-f1 ut-l">
+                                        <span class="f-gray6">月还款额</span> <span class="f-red" data-bind="text:MonthPaymentTxt"></span>
+                                    </div>
+                                    <!-- <div class="uf-f1 ut-c">
+                                        <span class="f-gray6">利率</span> <span class="f-red" data-bind="text:MonthRateTxt"></span>
+                                    </div> -->
+                                    <div class="uf-f1 ut-l">
+                                        <span class="f-gray6">总费用</span> <span class="f-red" data-bind="text:TotalMoneyTxt"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uf uf-ic">
+                                <i class="right"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- 加载中开始 -->
+            <div class="login-box hide"></div>
+            <!-- 加载中结束 -->
+
+            <!-- 缺省页开始 -->
+            <div class="default-box hide">
+                <div class="default"></div>
+            </div>
+        </blockquote>
+        <div class="h-btn hide"></div>
+        <!-- 列表页内容结束 -->
+        <div class="btn-fixed h-btn uf box_sizing hide">
+            <div class="uf-f2 uf-ic btn-black uf uf-ic"><div class="w-100 ut-c font-26 apply-txt">请选择金融产品</div></div>
+            <div id="apply-btn" class="uf-f1 uf-ic btn-gray uf uf-ic"><div class="w-100 ut-c font-30">立即申请</div></div>
+        </div>
+
+        <blockquote class="quali hide">
+            <div id="close" class="close-box"><div class="close"></div></div>
+
+            <div id="quilty">
+                <ul class="form_quali">
+                    <li>
+                        <div class="quali_hd">职业身份</div>
+                        <div id="vocational" class="quali_bd professional">
+                            <div class="btn_radio" data-id="73">公务员或事业单位</div>
+                            <div class="btn_radio" data-id="74">企业主</div>
+                            <div class="btn_radio" data-id="75">个体户</div>
+                            <div class="btn_radio" data-id="76">上班族</div>
+                            <div class="btn_radio" data-id="77">无固定职业</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="quali_hd">工资收入</div>
+                        <div id="income" class="quali_bd ">
+                            <div class="btn_radio" data-id="66">3000元以下</div>
+                            <div class="btn_radio" data-id="67">3000-5000元</div>
+                            <div class="btn_radio" data-id="68">5000-8000元</div>
+                            <div class="btn_radio" data-id="69">8000-12000元</div>
+                            <div class="btn_radio" data-id="108">12000-20000元</div>
+                            <div class="btn_radio" data-id="109">20000元以上</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="quali_hd">信用记录</div>
+                        <div id="credit" class="quali_bd ">
+                            <div class="btn_radio" data-id="70">长期多次逾期</div>
+                            <div class="btn_radio" data-id="71">信用良好</div>
+                            <div class="btn_radio" data-id="72">少数逾期</div>
+                            <div class="btn_radio" data-id="256">无信用记录</div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="quali_hd">住房状态</div>
+                        <div id="mortgage" class="quali_bd ">
+                            <div class="btn_radio" data-id="79">自有全款房</div>
+                            <div class="btn_radio" data-id="80">自有贷款房</div>
+                            <div class="btn_radio" data-id="81">租赁</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="quali_hd">社保</div>
+                        <div id="security" class="quali_bd ProofSocialSecurity">
+                            <div class="btn_radio" data-id="1">有本地社保</div>
+                            <div class="btn_radio" data-id="0">无本地社保</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="quali_hd">公积金</div>
+                        <div id="fund" class="quali_bd ">
+                            <div class="btn_radio" data-id="1">有公积金</div>
+                            <div class="btn_radio" data-id="0">无公积金</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="uw_100 e-btn" id="ensure-btn">
+                <div class="btn_black">确定</div>
+            </div>
+        </blockquote>
+    </article>
+
+    <div id="maskLayer"></div>
+    <div class="bottom-to-top"><img src='http://img1.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=201702061000' /></div>
+</div>
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

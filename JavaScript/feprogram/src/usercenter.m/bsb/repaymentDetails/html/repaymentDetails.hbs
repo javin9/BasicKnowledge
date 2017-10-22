@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>还款明细</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+
+<div id="yxWrapper">
+
+	<header class="header-bar">
+	    <a href="javascript:history.go(-1);"></a>
+	    <h1 class="font-nav">还款明细</h1>
+	    <span class="font-title"></span>
+	</header>
+	
+	<div class="rpm_wrap">
+
+		<section class="rpm_box">
+			<div class="uf uf_ac status">
+				<div class="uf_f1 c_9">第5期应还款 (元)</div>
+				<i class="tag tag_red">已逾期</i>
+			</div>
+			<div class="total">
+				<div><b>2500.00</b></div>
+			</div>
+			<div class="c_6 date">2016-05-19 至 2016-06-19</div>
+		</section>
+
+	</div>
+
+	<div class="rpm_wrap">
+
+		<section class="rpm_box">
+			<div class="uf uf_ac listtop">
+				<div class="c_6">本期月供</div>
+				<div class="uf_f1 c_6">2580.00元</div>
+			</div>
+			<div class="uf uf_ac list">
+				<div class="c_9">本金</div>
+				<div class="uf_f1 c_9">2000.00元</div>
+			</div>
+			<div class="uf uf_ac list">
+				<div class="c_9">利息</div>
+				<div class="uf_f1 c_9">500.00元</div>
+			</div>
+			<div class="uf fine">
+				<div class="uf_f1 c_6">罚息</div>
+				<div class="c_6">500.00元</div>
+			</div>
+		</section>
+
+	</div>
+
+	<div class="rpm_wrap">
+
+		<section class="rpm_box">
+			<div class="uf rest">
+				<div class="uf_f1 c_6">剩余本金</div>
+				<div class="c_6">133,400.00元</div>
+			</div>
+		</section>
+	</div>
+
+	<section class="rpm_msg c_9">
+		如需还款，请联系当地业务人员或者致电客服，如已还款，还款状态将在24小时后同步更新。
+	</section>
+</div>
+
+<!--整屏蒙层start-->
+  <div id="maskLayer"></div>
+<!--整屏蒙层end-->
+<div class="bottom-to-top">
+    <img src='http://img3.bitautoimg.com/jinrong/newmweb/images/scroll-to-top-icon.png?v=201610191560' />
+</div>
+
+{{{htmlWebpackPlugin.options.footer}}}
+
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

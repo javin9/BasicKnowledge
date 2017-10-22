@@ -1,0 +1,121 @@
+<header class="topguide">
+    {{#if isLoggedIn}}
+        <p>已根据登录信息，为您自动填充资料</p>
+    {{else}}
+        <p>立即申请该金融产品，贷款顾问将会尽快联系您</p>
+    {{/if}}
+</header>
+<div class="form-wrapper-inner">
+    <ul class="form_modu">
+        {{#if isTf2}}
+        {{!- 投放2： 实名认证直接显示，不在弹层 -}}
+            {{#if isLoggedIn}}
+                {{#if isAuthenticated}}
+                    <li class="form_modu_head uf uf_ac">
+                        <b class="name">姓名</b>
+                        <span class="uf_f1">
+                            {{showingUserName}}
+                            <input type="hidden" name="Name" id="Name" placeholder="请输入姓名" value="{{userName}}" disabled />
+                        </span>
+                        <span class="authenticated-tip">已实名认证</span>
+                    </li>
+                    <li class="form_modu_head uf uf_ac {{!-- selcon --}}">
+                        <b class="phone">手机号</b>
+                        <span class="uf_f1">
+                            {{showingMobile}}
+                            <input type="hidden" name="Telphone" id="Telphone" placeholder="请输入手机号码" value="{{mobile}}" disabled />
+                        </span>
+                    </li>
+                {{else}}
+                    <li class="form_modu_head uf uf_ac {{!-- selcon --}}">
+                        <b class="phone">手机号</b>
+                        <span class="uf_f1">
+                            {{showingMobile}}
+                            <input type="hidden" name="Telphone" id="Telphone" placeholder="请输入手机号码" value="{{mobile}}" disabled />
+                        </span>
+                    </li>
+                    <li class="form_modu_head uf uf_ac">
+                        <b class="name">姓名</b>
+                        <span class="uf_f1"><input type="text" name="RealName" id="RealName" placeholder="请输入您的真实姓名"></span>
+                    </li>
+                    <li id="RealNameValidata" class="warning">请输入真实的姓名</li>
+                    <li class="form_modu_head uf uf_ac">
+                        <b class="idnumber">身份证</b>
+                        <span class="uf_f1"><input type="number" name="CertificateNumber" id="CertificateNumber" placeholder="请输入您的身份证号码" maxlength="18" /></span>
+                    </li>
+                    <li id="CertificateNumberValidata" class="warning">身份证号错误</li>
+                {{/if}}
+            {{else}}
+                <li class="form_modu_head uf uf_ac">
+                    <b class="phone">手机号</b>
+                    <span class="uf_f1"><input type="tel" name="Telphone" id="Telphone" placeholder="请输入手机号码" maxlength="11" /></span>
+                </li>
+                <li id="TelphoneValidata" class="warning">手机号错误</li>
+                <li class="form_modu_head uf uf_ac">
+                    <b class="code">验证码</b>
+                    <span class="uf_f1"><input type="tel" name="CheckCode" id="CheckCode" placeholder="请输入验证码" maxlength="4"/></span>
+                    <span class="get_code_btn_wrapper"><a id="getCodeBtn" rel="Telphone" class="disabled">获取验证码</a></span>
+                </li>
+                <li id="CheckCodeValidata" class="warning">验证码错误</li>
+                <li class="form_modu_head uf uf_ac">
+                    <b class="name">姓名</b>
+                    <span class="uf_f1"><input type="text" name="RealName" id="RealName" placeholder="请输入您的真实姓名"></span>
+                </li>
+                <li id="RealNameValidata" class="warning">请输入真实的姓名</li>
+                <li class="form_modu_head uf uf_ac">
+                    <b class="idnumber">身份证</b>
+                    <span class="uf_f1"><input type="number" name="CertificateNumber" id="CertificateNumber" placeholder="请输入您的身份证号码" maxlength="18" /></span>
+                </li>
+                <li id="CertificateNumberValidata" class="warning">身份证号错误</li>
+            {{/if}}
+        {{else}}
+        {{!- 普通或投放1流程 -}}
+            {{#if isLoggedIn}}
+                {{#if isAuthenticated}}
+                    <li class="form_modu_head uf uf_ac">
+                        <b class="name">姓名</b>
+                        <span class="uf_f1">
+                            {{showingUserName}}
+                            <input type="hidden" name="Name" id="Name" placeholder="请输入姓名" value="{{userName}}" disabled />
+                        </span>
+                        <span class="authenticated-tip">已实名认证</span>
+                    </li>
+                {{else}}
+                    <li class="form_modu_head uf uf_ac">
+                        <b class="name">姓名</b>
+                        <span class="uf_f1"><input type="text" name="Name" id="Name" placeholder="请输入您的真实姓名"></span>
+                    </li>
+                    <li id="NameValidata" class="warning">请输入真实的姓名</li>
+                {{/if}}
+                <li class="form_modu_head uf uf_ac {{!-- selcon --}}">
+                    <b class="phone">手机号</b>
+                    <span class="uf_f1">
+                        {{showingMobile}}
+                        <input type="hidden" name="Telphone" id="Telphone" placeholder="请输入手机号码" value="{{mobile}}" disabled />
+                    </span>
+                </li>
+            {{else}}
+                <li class="form_modu_head uf uf_ac">
+                    <b class="name">姓名</b>
+                    <span class="uf_f1"><input type="text" name="Name" id="Name" placeholder="请输入您的真实姓名"></span>
+                </li>
+                <li id="NameValidata" class="warning">请输入真实的姓名</li>
+                <li class="form_modu_head uf uf_ac">
+                    <b class="phone">手机号</b>
+                    <span class="uf_f1"><input type="tel" name="Telphone" id="Telphone" placeholder="请输入手机号码" maxlength="11" /></span>
+                </li>
+                <li id="TelphoneValidata" class="warning">手机号错误</li>
+                <li class="form_modu_head uf uf_ac">
+                    <b class="code">验证码</b>
+                    <span class="uf_f1"><input type="tel" name="CheckCode" id="CheckCode" placeholder="请输入验证码" maxlength="4"/></span>
+                    <span class="get_code_btn_wrapper"><a id="getCodeBtn" rel="Telphone" class="disabled">获取验证码</a></span>
+                </li>
+                <li id="CheckCodeValidata" class="warning">验证码错误</li>
+            {{/if}}
+        {{/if}}
+
+        <li class="form_modu_head btn-wrapper">
+            <a href="javascript:void(0);" id="submitBtn" class="btn_main">立即申请</a>
+        </li>
+    </ul>
+</div>

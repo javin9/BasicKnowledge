@@ -1,0 +1,88 @@
+@import "sassHelper/mixin";
+@import "../../../../vars";
+
+.Text{
+	position: relative;
+
+	input{
+		display: block;
+		border:1px solid $border;
+		border-radius: 2px;
+		line-height: $height;
+		height:$height;
+		padding:0 10px;
+		font-size:14px;
+		color:#000;
+		box-sizing:border-box;
+		width: 100%;
+
+		&.disabled{
+			@include disabled;
+		}
+
+		&.disabled-light{
+			color:#666;
+			background-color: $disabled;
+		}
+	}
+
+	&-rate{
+		&:after{
+			content: '%';
+			position: absolute;
+			right:10px;
+			top:0;
+			line-height: $height;
+			color:#7d7d7d;
+		}
+	}
+
+	&-error{
+		display: inline-block;
+		line-height: 22px;
+		border:1px solid $main;
+		color:$main;
+		font-size:12px;
+		background:#FCECED url(error.png) no-repeat 10px center;
+		padding:0 10px 0 36px;
+		margin-top: 10px;
+	}
+
+	&-code,
+	&-tel {
+		position: relative;
+		input {
+			border: 0;
+			border-bottom: 1px solid #E7E7E7;
+			border-radius: 0;
+			&.disabled {
+				background-color: #fff;
+			}
+		}
+		.GetCode {
+			width: 87px;
+			text-align: center;
+			height: 30px;
+			line-height: 30px;
+			font-size: 12px;
+			color: #E9474D;
+			background: #F5F5F6;
+			position: absolute;
+			right: 0;
+			top: 6px;
+			cursor: pointer;
+
+			&.disabled {
+				color: #999;
+				cursor: default;
+			}
+		}
+	}
+
+	&-tips {
+		font-size: 10px;
+		color: #F00;
+		letter-spacing: 0;
+		padding-top: 8px;
+	}
+}

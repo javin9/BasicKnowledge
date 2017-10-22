@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8"> {{{htmlWebpackPlugin.options.shim}}}
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+</head>
+
+<body>
+    {{{htmlWebpackPlugin.options.header}}}
+    <script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+    <script>
+        //-------------------//
+        var citySpell = 'beijing';
+        var APIURL = "http://testapi.chedai.bitauto.com/";
+        var RESURL = "http://192.168.145.9:8011/web/";
+        var USERCENTERURL = "http://test.i.daikuan.com";
+        var BusinessLine = 550;
+        //-------------------//
+        var Host = '';
+        var CODE_GETTING_URL = Host + '/Secretary/GetCode';//GetCode(string mobile, int line = 550)
+        var CODE_VALIDATING_URL = Host + '/Secretary/CheckCode';//CheckCode(string mobile, string validatecode, int line = 550)
+        var feaures_getting_url = Host + '/Secretary/GetPackageFeatures';
+        var order_creating_url = Host + '/Secretary/Create';
+        var UpdateLevel = Host + '/Secretary/UpdateLevel';
+        //var auth_url = 'http://testapi.chedai.bitauto.com/api/YxRiskOnline/RealNameAuthenticate';
+        var similar_products_getting_url = Host + '/Secretary/GetSimilarProducts';
+        var qa_list_getting_url = '';
+        var usercenter_url = 'http://i.daikuan.com/';
+        var home_page_url = 'http://www.daikuan.com';
+        var channal = '605';
+        var source = '609';
+        var from = '';
+        var cityId = '201';
+        var cityName = '北京';
+        var userName = '';//
+        var mobile = '';//
+        var identityNumber = '';//
+        var isLoggedIn = false;
+        var isAuthenticated = false;
+        var isTF = false;
+        var city = {
+            cityId: '201',
+            cityName: '北京',
+            citySpell: 'beijing'
+        };
+        var id_checking_url = '/common/idchecking';
+        var image_code_getting_url = '/common/getimagecode';
+        var carInfo = {
+            "CarId": 122000,
+            "CarName": "蓝标 1.5T 手动 舒适型",
+            "CarSerialId": 4852,
+            "CarSerialName": "哈弗H2s",
+            "CarBrandId": 20211,
+            "CarBrandName": "哈弗",
+            "CarMasterBrandId": 196,
+            "CarMasterBrandName": "哈弗",
+            "CarYear": 2017,
+            "CarReferPrice": 8.38,
+            "CarSerialImgUrl": "//img4.bitautoimg.com/autoalbum/files/20161109/189/0531141893_1.jpg",
+            "CarSerialAllSpell": "hafuf2",
+            "CarSerialShowName": "哈弗H2s"
+        };
+
+    </script>
+
+
+    <div class="order_nav clrfix">
+        <h1 class="order_nav_logo"></h1>
+        <ul class="order_nav_ul">
+            <li id="next1" class="front"><span class="nub">1</span><span class="txt">购车意向</span></li>
+            <li id="next2"><span class="nub">2</span><span class="txt">资质信息</span></li>
+            <li id="next3"><span class="nub">3</span><span class="txt">个人信息</span></li>
+            <li id="next4"><span class="nub">4</span><span class="txt">提交成功</span></li>
+        </ul>
+        <div class="clearFix"></div>
+    </div>
+
+    <div id="app">
+        <article class="container">
+            <div class="order-process">
+                <div class="order-process-container">
+                    <div class="head_word">
+                    </div>
+                    <div class="buy_guidance_container">
+                        <div class="guidance_content">
+                            <div class="topSpace">
+                                <div>
+                                    <span class="topSpace-title">小鑫帮您贷</span><span class="topSpace-text">千家金融机构精准匹配，满足您的车贷需求</span>
+                                </div>
+                            </div>
+                            <div class="guidance_process">
+                                <div class="guidance_process_left">
+                                    <div id="step_one" class="step_container">
+                                        <div class="step_container_height_percentage">
+                                            <div class="service_icon_container">
+                                                <div class="service_icon"></div>
+                                            </div>
+                                            <div class="service_dialog">
+                                                <div class="process_border_container">
+                                                    <div class="process_content">
+                                                        <p class="process_marginLeft_40 process_marginTop process_text">
+                                                            易鑫车贷是易车、腾讯、京东、百度旗下的中国领先互联网汽车金融平台，为您提供全面的线上贷款购车服务。
+                                                        </p>
+                                                        <div class="step_xian"></div>
+                                                        <div class="process_marginLeft process_marginTop_30 process_title">
+                                                            终于等到您，您准备在哪儿购买呢？您心仪的车是哪款？
+                                                        </div>
+                                                        <div class="process_marginLeft">
+                                                            <div class="selectCarAndCity floatLeft">
+                                                                <div class="car_select">
+                                                                    <div class="floatLeft selectCar">
+                                                                        购车城市
+                                                                    </div>
+                                                                    <div class="select_list floatLeft">
+                                                                        <span class="sel-city-wrapper" style="height:0px;display:inline-block;">
+<span class="sel-city-wrapper" style="height:0px;display:inline-block;"><div id="liveCity">
+    <div class="floatLeft" id="cityText">北京</div>
+    <div style="margin-top: -3px;" class="dropdown_select floatLeft"></div>
+</div><div class="sel-city-menu drop-layer"><div class="city-loading"></div></div></span>
+                                                                        <div class="sel-city-menu drop-layer">
+                                                                            <div class="city-loading"></div>
+                                                                        </div>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                                <div class="clear"></div>
+                                                                <div class="city_select">
+                                                                    <div class="floatLeft selectCity">
+                                                                        目标车型
+                                                                    </div>
+                                                                    <div class="select_list floatLeft">
+                                                                        <div id="likeCarType">
+                                                                            <div class="floatLeft" id="cartypeHiddenText">
+                                                                                请选择
+                                                                            </div>
+                                                                            <div class="dropdown_select floatLeft"></div>
+                                                                        </div>
+                                                                        <div id="cartypeText" data-bind="text : CarsFullVal"></div>
+                                                                        <div id="CarSelCon">
+                                                                            <ul id="carCrumbs">
+                                                                                <li class="cur"><a href="javascript:void(0);">品牌</a>
+                                                                                </li>
+                                                                                <li><span class="jomt">&gt;</span></li>
+                                                                                <li><a href="javascript:void(0);">车型</a>
+                                                                                </li>
+                                                                                <li><span class="jomt">&gt;</span></li>
+                                                                                <li><a href="javascript:void(0);">车款</a>
+                                                                                </li>
+                                                                            </ul>
+                                                                            <div id="CarBrandCon">
+                                                                                <div class="brandLetter">
+                                                                                    <ul data-bind="foreach : CarLetters"></ul>
+                                                                                </div>
+                                                                                <div class="brandList" data-bind="foreach : CarBrands"></div>
+                                                                            </div>
+                                                                            <div id="CarSerailCon" data-bind="foreach : CarSerials"></div>
+                                                                            <div id="CarCon" data-bind="foreach : CarDetails"></div>
+                                                                            <div id="CarSelLoadingCon">加载中...</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="car_gray_icon floatLeft"></div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="process_marginLeft recommendDown">
+                                                            <div class="recommenTitle">我还为您推荐</div>
+                                                            <div class="recommendLine"></div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="process_marginLeft recommendDetail">
+                                                            <div class="recommen_show_1">
+                                                                <div class="recommen_car_img floatLeft">
+                                                                    <img class="showCarImg" src="http://img2.bitautoimg.com/jinrong/newpcweb/images/xinche/Secretary/car_img.png?v=201612281014">
+                                                                </div>
+                                                                <div class="recommen_car_info floatLeft">
+                                                                    <div class="car_name">上海大众帕萨特</div>
+                                                                    <div class="car_type">
+                                                                        2016款380TTSI御尊版
+                                                                    </div>
+                                                                    <div class="car_local">购车城市：北京</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="recommen_show_2">
+                                                                <div class="recommen_car_img floatLeft">
+                                                                    <img class="showCarImg" src="http://img3.bitautoimg.com/jinrong/newpcweb/images/xinche/Secretary/car_img.png?v=201612281014">
+                                                                </div>
+                                                                <div class="recommen_car_info floatLeft">
+                                                                    <div class="car_name">上海大众帕萨特</div>
+                                                                    <div class="car_type">
+                                                                        2016款380TTSI御尊版
+                                                                    </div>
+                                                                    <div class="car_local">购车城市：北京</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <div class="process_marginLeft suerBtnp_step_1">
+                                                            <div class="suerBtn" data="0" id="suerBtnp_step_1">
+                                                                下一步
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="service_icon_leftArrow"></div>
+                                                <div class="service_icon_leftArrow_bg"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!--第二步-->
+                                    <div id="step_two" class="step_container">
+                                        <div class="step_container_height_percentage">
+                                            <div class="service_icon_container">
+                                                <div class="service_icon"></div>
+                                            </div>
+                                            <div class="service_dialog">
+                                                <div class="process_border_container">
+                                                    <div class="process_content">
+                                                        <p class="process_marginLeft process_marginTop process_title">
+                                                            这款车可用的金融机构和套餐有好多啊<br>哪个是最适合您的呢？快去补充下面的问题吧!
+                                                        </p>
+                                                        <div class="step_xian"></div>
+                                                        <p class="process_marginLeft process_marginTop process_title">
+                                                            您的职业是？
+                                                        </p>
+                                                        <div class="process_marginLeft process_marginTop_10">
+                                                            <div class="radioBtn" datatype="workType" data-value="73">
+                                                                公务员/事业单位
+                                                            </div>
+                                                            <div class="radioBtn" datatype="workType" data-value="74">
+                                                                企业主
+                                                            </div>
+                                                            <div class="radioBtn" datatype="workType" data-value="75">
+                                                                个体户
+                                                            </div>
+                                                            <div class="radioBtn" datatype="workType" data-value="76">
+                                                                上班族
+                                                            </div>
+                                                            <div class="radioBtn" datatype="workType" data-value="77">
+                                                                自由职业者
+                                                            </div>
+                                                            <div class="radioBtn" data-value="77" datatype="workType">
+                                                                其他
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="creditContainer">
+                                                            <p class="process_marginLeft process_marginTop process_title">
+                                                                您的信用记录如何呢？
+                                                            </p>
+                                                            <div class="process_marginLeft process_marginTop_10">
+                                                                <div class="radioBtn" datatype="creditType" data-value="71">
+                                                                    信用良好
+                                                                </div>
+                                                                <div class="radioBtn" datatype="creditType" data-value="72">
+                                                                    少数逾期
+                                                                </div>
+                                                                <div class="radioBtn" datatype="creditType" data-value="70">
+                                                                    多次逾期
+                                                                </div>
+                                                                <div class="radioBtn" datatype="creditType" data-value="256">
+                                                                    无信用记录
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="overdue_container">
+                                                            <div class="overdue_12_3">
+                                                                <div class="overdueTip">
+                                                                    12个月内有超过3次的逾期记录
+                                                                </div>
+                                                                <div class="overdueTipArrowTop"></div>
+                                                                <div class="overdueTipArrowBommt"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="service_icon_leftArrow"></div>
+                                                <div class="service_icon_leftArrow_bg"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--第三步-->
+                                    <div id="step_three" class="step_container">
+                                        <div class="step_container_height_percentage">
+                                            <div class="service_icon_container">
+                                                <div class="service_icon"></div>
+                                            </div>
+                                            <div class="service_dialog">
+                                                <div class="process_border_container">
+                                                    <div class="process_content">
+                                                        <p class="process_marginLeft process_marginTop process_title">
+                                                            这款车可用的金融机构和套餐有好多啊<br>哪个是最适合您的呢？快去补充下面的问题吧!
+                                                        </p>
+                                                        <div class="step_xian"></div>
+                                                        <p class="process_marginLeft process_marginTop process_title">
+                                                            悄悄告诉我，您的住房状态是怎样的呢？
+                                                        </p>
+                                                        <div class="process_marginLeft process_marginTop_10">
+                                                            <div class="radioBtn" datatype="houseType" data-value="79">
+                                                                自有全款
+                                                            </div>
+                                                            <div class="radioBtn" datatype="houseType" data-value="80">
+                                                                自有贷款
+                                                            </div>
+                                                            <div class="radioBtn" datatype="houseType" data-value="81">
+                                                                租赁
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="insurance">
+                                                            <p class="process_marginLeft process_title process_marginTop_20">
+                                                                您有缴社保么？
+                                                            </p>
+                                                            <div class="process_marginLeft process_marginTop_10">
+                                                                <div>
+                                                                    <div class="radioBtn" datatype="insuranceType" data-value="1">
+                                                                        有社保
+                                                                    </div>
+                                                                    <div class="radioBtn" datatype="insuranceType" data-value="0">
+                                                                        无社保
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="founsContainer">
+                                                            <p class="process_marginLeft process_title process_marginTop_20">
+                                                                公积金呢？
+                                                            </p>
+                                                            <div class="process_marginLeft process_marginTop_10">
+                                                                <div>
+                                                                    <div class="radioBtn" datatype="fundsType" data-value="1">
+                                                                        有公积金
+                                                                    </div>
+                                                                    <div class="radioBtn" datatype="fundsType" data-value="0">
+                                                                        无公积金
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="service_icon_leftArrow"></div>
+                                                <div class="service_icon_leftArrow_bg"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--第四步-->
+                                    <div id="step_four" class="step_container">
+                                        <div class="step_container_height_240">
+                                            <div class="service_icon_container">
+                                                <div class="service_icon"></div>
+                                            </div>
+                                            <div class="service_dialog">
+                                                <div class="process_border_container">
+                                                    <div class="process_content">
+                                                        <p class="process_marginLeft process_marginTop process_title">
+                                                            这是最后一个问题啦，为了匹配最合适您的金融套餐<br>麻烦您选择一下个人月收入范围好吗？
+                                                        </p>
+                                                        <div class="process_marginLeft process_marginTop_30">
+                                                            <div class="radioBtn" datatype="incomeType" data-value="109">
+                                                                20000元以上
+                                                            </div>
+                                                            <div class="radioBtn" datatype="incomeType" data-value="108">
+                                                                12000-20000元
+                                                            </div>
+                                                            <div class="radioBtn" datatype="incomeType" data-value="69">
+                                                                8000-12000元
+                                                            </div>
+                                                            <div class="radioBtn" datatype="incomeType" data-value="68">
+                                                                5000-8000元
+                                                            </div>
+                                                            <div class="radioBtn" datatype="incomeType" data-value="67">
+                                                                3000-5000元
+                                                            </div>
+                                                            <div class="radioBtn" datatype="incomeType" data-value="66">
+                                                                3000元以下
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="service_icon_leftArrow"></div>
+                                                <div class="service_icon_leftArrow_bg"></div>
+                                            </div>
+                                        </div>
+                                        <div style="width: 100%;height: 20px"></div>
+                                        <div class="incomeContainer">
+                                            <div class="step_container_height_200">
+                                                <div class="service_icon_container">
+
+                                                </div>
+                                                <div class="service_dialog">
+                                                    <div class="process_border_container">
+                                                        <div class="process_content">
+                                                            <div id="percentage">0%</div>
+                                                            <p class="percentage_text">根据您提供的资料，正在匹配金融产品</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--第五步-->
+                                    <div id="step_five" class="step_container">
+                                        <div class="step_container_height_percentage">
+
+                                            <div class="service_dialog">
+                                                <div class="process_border_container" style="border:none;left: 200px">
+                                                    <div class="process_content">
+                                                        <p class="process_marginLeft process_marginTop_50 process_title_n">
+                                                            已为您匹配到了<span id="p_characteristic" class="process_title_red"></span>金融产品
+                                                        </p>
+                                                        <!-- 未登录         -->
+                                                        <p style="color:#666666;font-size:14px;margin-top: 10px;margin-left: 160px;">
+                                                            请留下个人信息，以便金融机构尽快联系到您。</p>
+
+                                                        <div class="process_marginLeft process_marginTop_30 step_5_info_container_left">
+                                                            <div class="stepInput">
+                                                                <span class="personInfoSpan"><span>*</span>姓名</span>
+                                                                <input id="step_5_name" autocomplete="off" placeholder="请输入真实姓名">
+                                                                <span class="validateText" id="step_5_name_validate"><i></i>请输入真实姓名</span>
+                                                            </div>
+                                                            <div class="stepInput">
+                                                                <span class="personInfoSpan"><span>*</span>手机号</span>
+                                                                <input id="step_5_phone" autocomplete="off" placeholder="请输入手机号码">
+                                                                <span class="validateText" id="step_5_phone_validate"><i></i>无效的手机号</span>
+                                                            </div>
+                                                            <div class="stepInput">
+                                                                <span class="personInfoSpan"><span>*</span>验证码</span>
+                                                                <input id="step_5_verification" autocomplete="off" placeholder="请输入验证码">
+                                                                <span id="verficationBtn">获取验证码</span>
+                                                                <span class="validateText" id="step_5_verification_validate"><i></i>验证码错误</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- 登录
+                                                       <p style="color:#666666;font-size:14px;margin-top: 10px;margin-left: 160px;">
+                                                        请留下个人信息，以便金融机构尽快联系到您。</p>
+                                            
+                                                                                                    <div class="process_marginLeft process_marginTop_30 step_5_info_container_left">
+                                                                                                        <div class="stepInput">
+                                                                                                            <span class="personInfoSpan"><span>*</span>姓名</span>
+                                                                                                            <input autocomplete="off" id="step_5_name" placeholder="请输入真实姓名" >
+                                                                                                            <span class="validateText" id="step_5_name_validate"><i></i>请输入真实姓名</span>
+                                                                                                        </div>
+
+                                                                                                        <div class="stepInput stepInput_text">
+                                                                                                            <span class="personInfoSpan">手机号</span>
+                                                                                                            <span class="process_marginLeft_30" >150 3456 7776</span>
+
+                                                                                                        </div>
+
+                                                                                                    </div>
+                                                                                                    -->
+                                                        <!-- 实名认证 
+                                                       <p style="color:#666666;font-size:14px;margin-top: 10px;margin-left: 160px;">
+                                                        已读取到您的个人信息，立即申请查看贷款方案明细</p>
+                                            
+                                                                                                    <div class="process_marginLeft process_marginTop_30 step_5_info_container_left">
+                                                                                                        <div class="stepInput stepInput_text  process_marginLeft_60">
+                                                                                                            <span class="personInfoSpan">姓名</span>
+                                                                                                            <span class="process_marginLeft_30" >牛二牛</span>
+
+                                                                                                        </div>
+                                                                                                        <div class="stepInput stepInput_text process_marginLeft_60">
+                                                                                                            <span class="personInfoSpan">身份证</span>
+                                                                                                            <span class="process_marginLeft_30" >110******3120</span>
+
+                                                                                                        </div>
+
+                                                                                                        <div class="stepInput stepInput_text process_marginLeft_60">
+                                                                                                            <span class="personInfoSpan">手机号</span>
+                                                                                                            <span class="process_marginLeft_30">150 3456 7776</span>
+
+                                                                                                        </div>
+
+                                                                                                    </div>
+                                                                                                     -->
+
+                                                        <div class="clear"></div>
+                                                        <div class="step_5_callTime_container process_marginLeft hide">
+                                                            意向接电话时间
+                                                            <span class="call_time" datatype="call_time" data-value="345">任意时间</span>
+                                                            <span class="call_time" datatype="call_time" data-value="346">9点-12点</span>
+                                                            <span class="call_time" datatype="call_time" data-value="347">13点-18点</span>
+                                                            <span class="call_time" datatype="call_time" data-value="348">18点-21点</span>
+
+                                                        </div>
+                                                        <div style="margin-left: 133px;" class="process_marginLeft suerBtnp_step_5">
+                                                            <div class="suerBtn" id="suerBtn_step_5">立即申请</div>
+                                                        </div>
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--第六步-->
+                                    <div id="step_six" class="step_container">
+                                        <div class="step_container_height_percentage">
+                                            <div class="ok_box">
+                                                <div class="ok_icon_bg">
+                                                    <p class="f_18">提交成功！</p>
+                                                    <div class="col_grey6">根据您的资质，我们为您匹配了以下金融产品，<br/>稍后会有专属客服与您联系。</div>
+                                                </div>
+                                                <div class="tell">4008-155-609转1551</div>
+                                            </div>
+                                            <table class="table_success">
+                                                <tr>
+                                                    <th>贷款方案</th>
+                                                    <th>评分</th>
+                                                    <th>申请要求</th>
+                                                    <th>月供</th>
+                                                    <th>贷款成本</th>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tal"><img src='http://img1.bitautoimg.com/chedai/b0214fb4-836f-4393-8545-2c987c435e65.jpg'
+                                                        />易鑫包商联合贷（有氧金融）
+                                                    </td>
+                                                    <td>4.9</td>
+                                                    <td>宽松</td>
+                                                    <td>78721人</td>
+                                                    <td><span class="col_red">1.03万</span><span class="col_grey2a">（参考价）</span></td>
+                                                    <td><span class="col_black">6.03万</span><span class="col_grey2a">（参考价）</span></td>
+                                                </tr>
+                                            </table>
+                                            <div class="btn_box"><a href="#" class="btn_red">查看订单</a><a href="#" class="btn_grey">返回首页</a>
+                                            </div>
+                                            <p class="info_tit">您还可同时申请以下金融产品，增加获得贷款机会</p>
+                                            <table class="table_suc_info">
+                                                <tr>
+                                                    <th>贷款方案</th>
+                                                    <th>评分</th>
+                                                    <th>申请要求</th>
+                                                    <th>月供</th>
+                                                    <th>贷款成本</th>
+                                                    <th>申请</th>
+                                                </tr>
+
+                                            </table>
+                                            <div class="info_box">
+                                                <span class="tit_l">注：月供和贷款成本均为参考价。</span>
+                                                <span class="tit_r">查找更多金融方案<i class="arrowBlank"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--第六步 end-->
+                                </div>
+                                <!--用户选择后显示信息区域-->
+                                <div class="guidance_process_right">
+                                    <div class="guidance_process_right_detail">
+                                        <div class="car_detail">
+                                            <div class="car_img floatRight">
+                                                <img src="">
+                                            </div>
+                                            <div class="clear"></div>
+                                            <div class="car_info floatRight">
+                                                <div class="car_name"></div>
+                                                <div class="car_type"></div>
+                                                <div class="car_local"></div>
+                                            </div>
+
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="person_info">
+                                            <div class="person_info_text floatRight">公务员/事业单位</div>
+                                            <div class="info_arrows floatRight"></div>
+                                        </div>
+                                        <div class="person_info">
+                                            <div class="person_info_text floatRight">公务员/事业单位</div>
+                                            <div class="info_arrows floatRight"></div>
+                                        </div>
+                                        <div class="person_info">
+                                            <div class="person_info_text floatRight">公务员/事业单位</div>
+                                            <div class="info_arrows floatRight"></div>
+                                        </div>
+                                        <div class="person_info">
+                                            <div class="person_info_text floatRight">公务员/事业单位</div>
+                                            <div class="info_arrows floatRight"></div>
+                                        </div>
+                                        <div class="person_info">
+                                            <div class="person_info_text floatRight">公务员/事业单位</div>
+                                            <div class="info_arrows floatRight"></div>
+                                        </div>
+                                        <div class="person_info">
+                                            <div class="person_info_text floatRight">公务员/事业单位</div>
+                                            <div class="info_arrows floatRight"></div>
+                                        </div>
+                                        <div class="person_info_detail">
+                                            <div class="person_info_detail_text floatRight">
+                                                <div class="person_name">
+                                                    <div class="person_icon floatLeft"></div>
+                                                    <div class="person_name_text floatLeft">姓名：刘正也</div>
+                                                </div>
+                                                <div class="clear"></div>
+                                                <div class="person_id">
+                                                    <div class="person_id_icon floatLeft"></div>
+                                                    <div class="person_id_text floatLeft">
+                                                        身份证：420222198601308888
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                                <div class="person_phone">
+                                                    <div class="person_person_phone_icon floatLeft"></div>
+                                                    <div class="person_person_phone_text floatLeft">
+                                                        手机枵 ：13800138000
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="info_arrows floatRight"></div>
+                                        </div>
+                                        <div class="guidance_step_state">
+
+                                            <!--重新填写按钮-->
+                                            <div class="reset_container floatLeft">
+                                                <div class="reset_btn" id="resetBtn">
+                                                    <div class="reset_btn_container">
+                                                        <div class="reset_btn_icon"></div>
+                                                        <div class="reset_btn_text">重新填写</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="name-certification hide">
+                <div class="title">我们已收到您的贷款申请！请留意短信通知。<i id="close" class="close"></i></div>
+                <div class="info">
+                    <div class="info-text">补充身份信息可缩短贷款审核时间</div>
+                    <div class="stepInput">
+                        <span class="personInfoSpan"><span>*</span>姓名</span>
+                        <input id="step_5_name_box" placeholder="请输入真实姓名" maxlength="10">
+                        <br/>
+                        <span id="step_5_name_boxerror" class="validateTexterror">请输入真实姓名</span>
+                    </div>
+                    <div class="stepInput">
+                        <span class="personInfoSpan"><span>*</span>身份证号</span>
+                        <input id="step_5_id" placeholder="请输入身份证号码" maxlength="18">
+                        <br/>
+                        <span id="step_5_iderror" class="validateTexterror">请输入有效身份证</span>
+                    </div>
+                    <div class="info-desc">身份证信息我们将严格保密，请放心填写</div>
+
+                    <div id="imgValidateCodeBox" class="stepInput imgValidateCodeBox hide">
+                        <span class="personInfoSpan">图片验证码</span>
+                        <input id="step_5_img" placeholder="请输入图片验证码" maxlength="4">
+                        <div id="GetImgValidateCode" class="GetImgValidateCode fr"><img src="../imgs/GetImageValidateCode.html.jpg"></div>
+                        <a class="changeCode" id="changeCode">换一个</a>
+                        <br/>
+                        <span id="step_5_imgerror" class="validateTexterror">请输入正确的验证码</span>
+                    </div>
+
+                </div>
+                <div class="sub process_marginLeft suerBtnp_step_5">
+                    <div class="suerBtn_pop">提交</div>
+                    <span class="tiaoguo">跳过<i class="arrowBlank"></i></span>
+                </div>
+            </div>
+
+
+        </article>
+    </div>
+
+
+    {{{htmlWebpackPlugin.options.footer}}}
+    <script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+    <script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+
+</html>

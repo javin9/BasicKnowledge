@@ -1,0 +1,401 @@
+@import 'sassHelper/vars';
+@import 'sassHelper/mixin';
+
+$red: map-get($colors, red);
+$gold: map-get($colors, gold);
+$main: #dd212a;
+
+html, body {
+    background: #bb0f1c;
+}
+
+.image-wrapper {
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+    }
+}
+
+.image-content {
+    div:nth-child(1) {
+        height: px2rem(450);
+    }
+    div:nth-child(2) {
+        height: px2rem(706);
+    }
+    div:nth-last-child(2) {
+        height: px2rem(106);
+        position: relative;
+        z-index: 2;
+        margin-top: px2rem(-40);
+    }
+    .car-wrapper {
+        height: px2rem(535);
+    }
+}
+
+.car-wrapper {
+    position: relative;
+
+    .yiche-link {
+        position: absolute;
+        z-index: 1;
+        left: px2rem(20);
+        top: px2rem(50);
+        width: px2rem(320);
+        height: px2rem(300);
+        background: transparent;
+
+        &.right {
+            left: auto;
+            right: px2rem(20);
+        }
+    }
+
+    .order-link {
+        position: absolute;
+        z-index: 1;
+        left: px2rem(20);
+        top: px2rem(370);
+        width: px2rem(710);
+        height:px2rem(100);
+        background: transparent;
+    }
+}
+
+.tel-btn {
+    position: fixed;
+    z-index: 2222;
+    right: px2rem(20);
+    bottom: px2rem(80);
+    width: px2rem(84);
+    height: px2rem(84);
+    background: url(images/tel.png) no-repeat center center;
+    background-size: cover;
+    border-radius: 100%;
+}
+
+// 表单弹层
+.layer-cover {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+
+    .layer-content {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border-radius: px2rem(15);
+        background: url(images/layer-content-bg.jpg) no-repeat center top #df1c21;
+        background-size: 100% auto;
+
+        .carinfo {
+            height: px2rem(270);
+            padding: 0 px2rem(45);
+            overflow: hidden;
+
+            .title {
+                @include fsize(38);
+                line-height: px2rem(46);
+                height: px2rem(46);
+                padding-top: px2rem(82);
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                color: #ffffff;
+            }
+
+            .info {
+                margin-top: px2rem(10);
+                @include fsize(28);
+                line-height: px2rem(40);
+                color: #ffb6aa;
+            }
+        }
+
+        .order {
+            padding: px2rem(80) px2rem(30) px2rem(76);
+            background: #FFFFFF;
+            border-radius: 0 0 px2rem(15) px2rem(15);
+
+            .inputwrap {
+                position: relative;
+                height: px2rem(96);
+                border: 1px solid $main;
+                border-radius: px2rem(96);
+                line-height: px2rem(96);
+                margin-bottom: px2rem(80);
+
+                input {
+                    box-sizing: border-box;
+                    width: 100%;
+                    padding: 0;
+                    border: 0;
+                    background: transparent;
+                    @include fsize(32);
+                    line-height: px2rem(46);
+                    padding: px2rem(25) px2rem(30);
+                    color: #666666;
+                }
+
+                .get-validate-code {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: px2rem(240);
+                    height: px2rem(96);
+                    line-height: px2rem(96);
+                    border-radius: px2rem(96);
+                    text-align: center;
+                    @include fsize(30);
+                    background: $main;
+                    color: #FFFFFF;
+
+                    &.disabled {
+                        background: #8b8b8b;
+                    }
+                }
+
+                .error {
+                    position: absolute;
+                    left: px2rem(30);
+                    top: px2rem(96);
+                    @include fsize(26);
+                    line-height: px2rem(50);
+                    color: $main;
+                }
+
+                .empty-btn {
+                    position: absolute;
+                    z-index: 10;
+                    top: 50%;
+                    right: px2rem(10);
+                    width: px2rem(86);
+                    height: px2rem(86);
+                    -webkit-transform: translate(0, -50%);
+                    transform: translate(0, -50%);
+                    background: transparent;
+                    border-radius: 100%;
+                    overflow: hidden;
+
+                    span {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        width: px2rem(46);
+                        height: px2rem(46);
+                        -webkit-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+                        background: #a7a7a7;
+                        border-radius: 100%;
+                        overflow: hidden;
+
+                        &:before,
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            width: px2rem(5);
+                            height: 60%;
+                            border-radius: px2rem(5);
+                            background: #FFFFFF;
+                        }
+
+                        &:before {
+                            -webkit-transform: translate(-50%, -50%) rotate(45deg);
+                            transform: translate(-50%, -50%) rotate(45deg);
+                        }
+
+                        &:after {
+                            -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+                            transform: translate(-50%, -50%) rotate(-45deg);
+                        }
+                    }
+                }
+
+                &.validate-code-wrap {
+                    .empty-btn {
+                        right: px2rem(240);
+                    }
+                }
+            }
+
+            /* .tip {
+                @include fsize(26);
+                line-height: px2rem(42);
+                padding: px2rem(50) 0 px2rem(14) px2rem(30);
+                margin-bottom: px2rem(5);
+                color: #999999;
+            } */
+
+            .submit-btn {
+                display: block;
+                height: px2rem(100);
+                border-radius: px2rem(100);
+                background: $main;
+                color: #FFFFFF;
+                text-align: center;
+                @include fsize(40);
+                line-height: px2rem(100);
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            z-index: 10;
+            top: 0;
+            right: px2rem(30);
+            width: px2rem(60);
+            height: px2rem(60);
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            background: #FFFFFF;
+            border-radius: 100%;
+            overflow: hidden;
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: px2rem(5);
+                height: 60%;
+                border-radius: px2rem(5);
+                background: $main;
+            }
+
+            &:before {
+                -webkit-transform: translate(-50%, -50%) rotate(45deg);
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &:after {
+                -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+}
+
+// 活动细则
+.about-wrapper {
+    height: px2rem(878);
+    padding: 2px 0;
+    overflow: auto;
+    -webkit-overflow-scrolling : touch;
+
+    h3 {
+        @include fsize(36);
+        line-height: 1;
+        padding: px2rem(40) px2rem(50) px2rem(30);
+        color: #FFFFFF;
+    }
+
+    .content {
+        padding-bottom: px2rem(60);
+        height: px2rem(976);
+        background: url(images/about-content.png) no-repeat center top;
+        background-size: 100% auto;
+    }
+}
+
+.about-link {
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    bottom: px2rem(10);
+    width: px2rem(220);
+    height: px2rem(120);
+    //background: rgba(0,0,0,0.5);
+    background: transparent;
+}
+
+// 动画
+/* always present */
+.fademenu-transition {
+    transition: all .2s ease;
+
+    .layer-content {
+        transition: all .2s ease-out .05s;
+    }
+}
+/* .expand-enter defines the starting state for entering */
+/* .expand-leave defines the ending state for leaving */
+.fademenu-enter, .fademenu-leave {
+    background: transparent;
+
+    .layer-content {
+        -webkit-transform: translate(0, 100%);
+        transform: translate(0, 100%);
+    }
+}
+
+.fademenu-leave {
+    transition: all .2s ease .05s;
+
+    .layer-content {
+        transition: all .2s ease-out;
+    }
+}
+
+// fix
+/* .bottom-to-top {
+    display: none !important;
+} */
+.anchors {
+    margin-top: px2rem(-24);
+    padding-top: px2rem(24);
+    padding-left: px2rem(20);
+    padding-bottom: px2rem(10);
+    background: #f1253c;
+
+    ul {
+        overflow: hidden;
+
+        li {
+            float: left;
+            width: 25%;
+            margin-bottom: px2rem(20);
+
+            a {
+                display: block;
+                margin-right: px2rem(20);
+                @include fsize(28);
+                line-height: px2rem(68);
+                text-align: center;
+                color: #f4dcae;
+                background: #bd0912;
+                -webkit-border-radius: px2rem(5);
+                border-radius: px2rem(5);
+
+                &.active {
+                    background: #8a0008;
+                }
+            }
+        }
+    }
+}

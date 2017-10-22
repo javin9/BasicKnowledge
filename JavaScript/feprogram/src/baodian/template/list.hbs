@@ -1,0 +1,56 @@
+{{#if isSType}}
+{{#each result}}
+    <div class="baodian-list-item">
+        <a href="{{ID}}" target="_blank" class="show-item">
+                <dl>
+                    <dt>
+                        {{#if UserHeadPicture}}
+                        <div class="avatar">
+                            <img src="{{UserHeadPicture}}">
+                        </div>
+                        {{/if}}
+                        <div class="des">
+                            <h4>{{UserName}}</h4>
+                            <p>
+                                <span class="fl">{{formatJsonDate CreatedOn}}</span>
+                                <span class="fr">
+                                    <span class="icon-browser">{{BrowserCountSelf}}</span>
+                  <span class="icon-like">{{ClickCountSelf}}</span>
+                                </span>
+                            </p>
+                        </div>
+                    </dt>
+                    <dd>
+                        {{#if image}}
+                        <img src="{{image}}">
+                        {{/if}}
+                        <h6>{{Title}}</h6>
+                        <p>{{Summary}}</p>
+                    </dd>
+                </dl>
+            </a>
+    </div>
+{{/each}}
+{{else}}
+{{#each result}}
+    <div class="baodian-list-item">
+            <a href="{{ID}}" target="_blank" class="common-item">
+                <dl>
+                    <dt>
+                        <h3>{{Title}}</h3>
+                        <p>
+                            <span class="fl">来自<em>{{Source}}</em></span>
+                            <span class="fr">发布于 {{formatJsonDate UpdateTime}}</span>
+                        </p>
+                    </dt>
+                    <dd>
+                        {{#if CoverPictureName}}
+                        <img src="{{CoverPictureName}}">
+                        {{/if}}
+                        <p>{{Guide}}</p>
+                    </dd>
+                </dl>
+            </a>
+    </div>  
+{{/each}}
+{{/if}}

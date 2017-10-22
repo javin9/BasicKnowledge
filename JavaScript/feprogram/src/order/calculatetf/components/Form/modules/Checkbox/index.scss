@@ -1,0 +1,55 @@
+@import "sassHelper/mixin";
+@import "../../../../vars";
+
+.Checkbox{
+  box-sizing:border-box;
+  font-style:normal;
+  font-size:14px;
+  color:#000;
+  border:1px solid #ddd;
+  height:28px;
+  line-height: 26px;
+  padding:0 4px;
+  margin-left: 10px;
+  cursor:pointer;
+  position: relative;
+  display: inline-block;
+  // margin-top: 5px;
+  text-align: center;
+  width: 38px;
+  text-align: center;
+  &:first-child {
+    margin-left: 0;
+  }
+  &-no-icon{
+    width:67px;
+    // &:after{
+    //   display: none;
+    // }
+  }
+
+  &-active{
+    border-width:1px;
+    border-color:$main;
+
+    &:after{
+      @include size(12px);
+      content:' ';
+      background:url(selected.png) no-repeat center center;
+      position: absolute;
+      right:-1px;
+      bottom:-1px;
+    }
+  }
+
+  &.disabled{
+    background:$disabled !important;
+    border-color:$border !important;
+    color:#cdcdcd;
+    border-width:1px;
+
+    &:after{
+      display: none !important;
+    }
+  }
+}

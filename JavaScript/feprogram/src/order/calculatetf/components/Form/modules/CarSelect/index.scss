@@ -1,0 +1,78 @@
+@import "sassHelper/mixin";
+@import "../../../../vars";
+
+#car-select.empty-size{
+	color:$main;
+	background-color: #F5F5F6;
+}
+
+.empty{
+	background-color: #F5F5F6;
+}
+
+.car-wrapper{
+	position: relative;
+	width: 100%;
+
+	&:after{
+		@include size(12px);
+		content:' ';
+		position: absolute;
+		background:url(jiantou.png) no-repeat left top;
+		right:10px;
+		top:20px;
+	}
+	span{
+		display:block;
+		background:#fff;
+		width: 350px;
+		height:44px;
+		line-height:44px;
+		position: absolute;
+		padding: 0 10px;
+		top:1px;
+		left:1px;
+		overflow:hidden;
+		font-size: 14px;
+		vertical-align: middle;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		box-sizing: border-box;
+		cursor: pointer;
+	}
+	input{
+		display: block;
+		box-sizing:border-box;
+		width: 375px;
+		height:$height;
+		line-height: $height;
+		padding:0 30px 0 10px;
+		cursor:pointer;
+		border:1px solid $border;
+		border-radius: 2px;
+		overflow:hidden;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+	}
+
+	.drop-layer{
+		top:41px !important;
+	}
+
+	.empty-search{
+		display: none !important;
+	}
+}
+
+#CarSelCon{
+	width: 428px !important;
+	border-color:#ddd !important;
+}
+
+#CarSelCon dl{
+	width: 411px !important;
+}
+
+.brandList{
+	width: 361px !important;
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <script src="{{htmlWebpackPlugin.options.common}}"></script>
+    <script type="text/javascript">
+        var total = 413;
+        var pagesize = 20;
+        var city = {"CityId":2501,"RegionId":510100,"CityName":"成都","CitySpell":"chengdu","SelectCityLevel":2,"SelectCityName":"成都","LocateResultType":0};
+        var condition = 'd2';
+        var getLeaseListUrl = "/home/GegBudgetList";//参数：condition,cityId,pageIndex，pageSize
+        var BusinessLine = 550;
+        var ADVISERAPIURL = "http://test.adviserapi.daikuan.com/";
+    </script>
+</head>
+<body>
+<!-- {{{htmlWebpackPlugin.options.header}}} -->
+<header id="Header" class="newHeader">
+    <div class="header-top">
+        <div class="hd-top-con">
+            <p>服务电话: 4000-169-169（9:00-21:00）</p>
+            <ul>
+                <li>欢迎来到易鑫车贷</li>
+                <li id="loginLi" data-trackerid="x001denglu"><a class="user_name" href="http://i.daikuan.com" target="_blank">132****1795</a>&#12288;<a id="header_user_logout" href="http://i.daikuan.com/User/Logout">退出</a></li>
+                <li><a href="http://sq.daikuan.com//rapidloan" target="_blank" data-trackerid="x001jisudaikuan">极速贷款</a></li>
+                <li class="xc-hd-mark"></li>
+                <li class="xc-phone"><a href="/app"><i></i>App
+                    <div class="qr-code-mweb" style="display: none;"></div><span class=""></span></a></li>
+                <li class="xc-hd-mark hd-mark-special"></li>
+                <li class="xc-pub"><i></i>公众号
+                    <div class="qr-code-weixin qrCodeWeixin" style="display: none;"></div><span></span></li>
+                <li class="xc-hd-mark hd-mark-special"></li>
+                <li class="xc-about"><a href="http://www.daikuan.com/home/About?cityspell=chengdu#who">关于我们</a></li>
+                <li class="xc-hd-mark"></li>
+                <li class="xc-tiyandian"><a href="http://www.daikuan.com/ExperienceStore/" target="_blank">易鑫体验店</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="header-main clrfix">
+        <div class="yixin-logo fl">
+            <a href="/" data-trackerid="x001logo"></a>
+        </div>
+        <div class="sel-city fl">
+                        <span class="sel-city-wrapper" data-relation="true" style="height:28px;display:inline-block;"><div class="sel-city-box" data-trackerid="x001chengshi"><span class="city-con">成都</span><i class="downArrow-icon"></i>
+                        </div><div class="sel-city-menu drop-layer" style="display: none;"><div class="city-loading"></div></div></span>
+        </div>
+        <div class="search fl clrfix">
+            <div class="search-box fl clrfix">
+
+                <div class="search-change fl">
+                    <div id="seacrchCtrl" class="select-ctrl">
+                        <div data-id="new">新车</div>
+                        <ul class="drop-layer" style="display: none;">
+                            <!-- <li class="triangle-icon"></li> -->
+                            <li data-id="new">新车</li>
+                            <li data-id="old">二手车</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="search-input fl">
+                    <span class="sel-car-wrapper" style="height:36px;display:inline-block;"><input id="searchCar" name="" placeholder="请输入心仪品牌或车型" type=""><div class="sel-car-brands drop-layer" style="top: 36px; display: none;"><div class="sel-car-loading"></div><div class="brand_letters" id="master-index_letters"></div><div class="brand_name_bg"><div class="brand_name" id="masterIndexList"></div></div></div><div class="sel-car-type drop-layer" style="top: 36px; display: none;"><div class="sel-car-loading"></div></div><div class="sel-car-menu drop-layer" style="top: 36px; display: none;"></div><div class="empty-search"></div></span>
+                </div>
+                <div id="carTip" style="display: none;">请输入心仪品牌或车型</div>
+            </div>
+            <a class="search-btn fl"><i></i>搜索</a>
+        </div>
+
+        <div class="yx-help-btn fl"><a href="http://sq.daikuan.com/secretary/index?Source=1016" target="_blank">帮您贷款</a></div>
+
+        <div class="login-status fr">
+            <a href="http://i.daikuan.com" target="_blank" data-trackerid="x001wodeshenqing">我的申请</a><i></i>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <nav id="HeaderNav">
+            <ul>
+                <li id="xinche_index" class="current" style=""><a href="/" data-trackerid="x001xinche">新车贷款</a><!-- <span><i>超低月供</i><b></b></span> --></li>
+                <li id="zuche_index"><a href="/lease/" data-trackerid="x001zuche">开走吧</a><!-- <span><i>首付1成</i><b></b></span> --></li>
+                <li id="ershouche_index"><a href="http://ershouche.daikuan.com" data-trackerid="x001ershouche">二手车贷款</a><!-- <span><i>优质车源</i><b></b></span> --></li>
+                <li id="baoxian_index"><a href="http://baoxian.daikuan.com" data-trackerid="x001baoxian">汽车保险</a><!-- <span><i>优惠更多</i><b></b></span> --></li>
+                <li id="chezhudai_index"><a href="http://chedidai.daikuan.com" data-trackerid="x001chedidai">车抵贷</a><!-- <span><i>高效服务</i><b></b></span> --></li>
+                <li id="qijiandian_index"><a href="http://shop.daikuan.com" data-trackerid="x001shop">旗舰店</a></li>
+                <li id="xinyongka_index"><a href="http://xinyongka.daikuan.com" data-trackerid="x001xinyongka">车主信用卡</a></li>
+                <li id="tiyandian_index"><a href="http://www.daikuan.com/ExperienceStore/" data-trackerid="x001tiyandian" target="_blank">易鑫体验店</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container-center">
+    <nav class="path-nav">
+        <div class="breadcrumb">
+            <a href="/">首页</a>
+            <i> &gt; </i>
+            <span>车型列表页</span>
+        </div>
+    </nav>
+
+    <section class="budget-filter">
+        <div class="condition-wrap">
+            <dl>
+                <dt>品牌：</dt>
+                <dd><a href="###" class="active">不限</a></dd>
+                <dd><a href="###">大众</a></dd>
+                <dd><a href="###">哈弗</a></dd>
+                <dd><a href="###">众泰</a></dd>
+                <dd><a href="###">日产</a></dd>
+                <dd><a href="###">宝骏</a></dd>
+                <dd><a href="###">现代</a></dd>
+                <dd><a href="###">丰田</a></dd>
+                <dd><a href="###">奥迪</a></dd>
+                <dd><a href="###">奔驰</a></dd>
+                <dd><a href="###">宝马</a></dd>
+            </dl>
+        </div>
+        <div class="condition-wrap">
+            <dl>
+                <dt>车价：</dt>
+                <dd><a href="###" class="active">不限</a></dd>
+                <dd><a href="###">5万以下</a></dd>
+                <dd><a href="###">5-10万</a></dd>
+                <dd><a href="###">10-15万</a></dd>
+                <dd><a href="###">15万以上</a></dd>
+            </dl>
+        </div>
+        <div class="condition-wrap last">
+            <dl>
+                <dt>首付：</dt>
+                <dd><a href="###" class="active">不限</a></dd>
+                <dd><a href="###">0首付</a></dd>
+                <dd><a href="###">1万以下</a></dd>
+                <dd><a href="###">1-2</a></dd>
+                <dd><a href="###">2万以上</a></dd>
+            </dl>
+        </div>
+    </section>  <!-- end of budget-filter -->
+
+    <div class="sort-wrap" id="sort-wrap">
+        <ul class="sort">
+            <li><a href="###" class="active">热销推荐</a></li>
+            <li><a href="###">月租最低</a></li>
+            <li><a href="###">人气最高</a></li>
+        </ul>
+        <div class="count">
+            为您筛选出<em>0条</em>车源
+        </div>
+    </div> <!-- end of sort-wrap -->
+
+    <ul class="ki-list" id="ki-list">
+        <li>
+            <a href="#">
+                <div class="price">
+                    <dl class="downpayment">
+                        <dt>首次支出</dt>
+                        <dd><em>1.55万</em></dd>
+                    </dl>
+                    <dl class="monthly-payment">
+                        <dt>月租</dt>
+                        <dd><em>4482元</em></dd>
+                    </dl>
+                    <div class="tax">新车含购置税保险</div>
+                </div>
+                <div class="image">
+                    <img src="http://img1.bitautoimg.com/autoalbum/files/20170628/486/0600344868_8.jpg" alt="" />
+                </div>
+                <div class="text">
+                    <div class="tit">大众 POLO 2016款 1.4L 自动风尚版自动风尚版  </div>
+                    <div class="car-price">厂商指导价：20.50万</div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="price">
+                    <dl class="downpayment">
+                        <dt>首次支出</dt>
+                        <dd><em>1.55万</em></dd>
+                    </dl>
+                    <dl class="monthly-payment">
+                        <dt>月租</dt>
+                        <dd><em>4482元</em></dd>
+                    </dl>
+                    <div class="tax">新车含购置税保险</div>
+                </div>
+                <div class="image">
+                    <img src="http://img1.bitautoimg.com/autoalbum/files/20170628/486/0600344868_8.jpg" alt="" />
+                </div>
+                <div class="text">
+                    <div class="tit">大众 POLO 2016款 1.4L 自动风尚版自动风尚版  </div>
+                    <div class="car-price">厂商指导价：20.50万</div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="price">
+                    <dl class="downpayment">
+                        <dt>首次支出</dt>
+                        <dd><em>1.55万</em></dd>
+                    </dl>
+                    <dl class="monthly-payment">
+                        <dt>月租</dt>
+                        <dd><em>4482元</em></dd>
+                    </dl>
+                    <div class="tax">新车含购置税保险</div>
+                </div>
+                <div class="image">
+                    <img src="http://img1.bitautoimg.com/autoalbum/files/20170628/486/0600344868_8.jpg" alt="" />
+                </div>
+                <div class="text">
+                    <div class="tit">大众 POLO 2016款 1.4L 自动风尚版自动风尚版  </div>
+                    <div class="car-price">厂商指导价：20.50万</div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="price">
+                    <dl class="downpayment">
+                        <dt>首次支出</dt>
+                        <dd><em>1.55万</em></dd>
+                    </dl>
+                    <dl class="monthly-payment">
+                        <dt>月租</dt>
+                        <dd><em>4482元</em></dd>
+                    </dl>
+                    <div class="tax">新车含购置税保险</div>
+                </div>
+                <div class="image">
+                    <img src="http://img1.bitautoimg.com/autoalbum/files/20170628/486/0600344868_8.jpg" alt="" />
+                </div>
+                <div class="text">
+                    <div class="tit">大众 POLO 2016款 1.4L 自动风尚版自动风尚版  </div>
+                    <div class="car-price">厂商指导价：20.50万</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <div class="list-loading" id="list-loading">
+        <div class="loading-icon"></div>
+        正在努力加载中...
+    </div>
+    <div id="listPagination" class="list_pagination">
+    </div>
+
+    <div class="no_product clrfix">
+        <div><img src="../../../images/no_product.html.png"></div>
+        <div>
+            <h4>此条件下没有车源，建议切换条件</h4>
+            <p>或直接拨打热线电话<a href="tel:400169169">400-169-169</a>咨询</p>
+        </div>
+    </div>
+</div>
+
+
+
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.dll.react}}"></script>
+<script type="text/javascript" src='http://api.map.baidu.com/api?v=1.4'></script>
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

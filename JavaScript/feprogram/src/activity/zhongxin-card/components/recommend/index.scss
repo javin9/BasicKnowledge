@@ -1,0 +1,80 @@
+@import 'sassHelper/mixin';
+@import 'sassHelper/vars';
+
+.component-recommend{
+	@include border;
+	width: 1200px;
+	margin:0 auto;
+	box-sizing:border-box;
+	margin-bottom: 20px;
+	position: relative;
+	padding:30px;
+
+	>a{
+		position: absolute;
+		right:40px;
+		top:69px;
+		width: 200px;
+		height: 40px;
+		color:#fff;
+		text-align: center;
+		background:$main-color;
+		font-size:18px;
+		line-height: 40px;
+	}
+
+	h6{
+		padding:0;
+		margin:0 0 20px 0;
+		font-weight: normal;
+		vertical-align: baseline;
+		line-height: $main-line-height;
+
+		span{
+			font-size:22px;
+			color:$dark-color;
+			display: inline-block;
+			margin-right: 10px;
+		}
+	}
+
+	ul{
+		list-style-position: inside;
+		list-style-type: disc;
+
+		li{
+			color:$dark-color;
+			font-size:16px;
+			vertical-align: baseline;
+			display: inline-block;
+			margin-right: 60px;
+			list-style-type: disc;
+
+			i{
+				color:$light-color;
+				margin-right: 10px;
+			}
+
+			strong{
+				color:$main-color;
+				font-size:22px;
+				margin-left: 9px;
+			}
+
+			&:last-child{
+				padding-left: 60px;
+				position: relative;
+
+				&:before{
+					@include borderLeft(#E5E5E5, 2px);
+					content:'';
+					display: inline-block;
+					height: 23px;
+					position: absolute;
+					left:0;
+					top:7px;
+				}
+			}
+		}
+	}
+}

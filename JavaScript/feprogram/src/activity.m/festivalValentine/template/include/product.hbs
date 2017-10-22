@@ -1,0 +1,80 @@
+<div class="pro-groups">
+{{#if @root.other}}
+<a class="tijiao" data-orders="{{Orders}}" href="javascript:void(0)"><div class="uf uf-ic"> + 同时申请</div></a>
+{{else}}
+    {{#if Adviser}}
+    <a class="adviser"  href="tel:{{Adviser.CN400}},{{Adviser.ExTen}}" data-companyid="250">
+        <div class="uf uf-ic">
+        <div class="name uf uf-ic">
+        <img class="ad-photo" src="{{Adviser.Photo}}">
+        <span>{{Adviser.Name}}</span>
+        </div>
+         <div class="ad-tel"></div>
+        </div>
+    </a>
+    {{/if}}
+{{/if}}
+
+{{#if Product}}
+<a href="#" class="pro-info" >
+    <div class="img_box">
+        <img src="{{Product.CompanyLogoUrl}}">
+    </div>
+    <div class="item_right_box">
+        <div class="dl title_box uf uf-ic">
+            <div class="dt font-title tit uf-f1 ut-s">
+                <span data-bind="text:PackageName">{{Product.PackageName}}</span>(<span data-bind="text:CompanyName">{{Product.CompanyName}}</span>)
+            </div>
+            <div class="dd"> </div>
+        </div>
+        <div class="dl subtitle hide" >描述</div>
+        <div class="dl apply_price">
+            <div class="dt">申请信息：<span class="font-28 {{requirementType Product.CommonRequirementType 'className'}}">{{requirementType Product.CommonRequirementType 'text'}}</span></div>
+            {{#if @root.newversion}}
+            <div class="dd price">
+                <span class="col_rede font-34" data-bind="text:MonthlyPaymentText">{{Product.LoanCalculationInfo.MonthlyPaymentText}}</span>
+                <span class="font-ctn">/月</span> 
+            </div>
+            {{/if}}
+        </div>
+        <div class="dl apply_evaluation">
+            <div class="dt">
+                <span data-bind="html:CommentHtml">
+                    <span class="font-title col_rede font_no_blod">{{scoreFormat Product.CommentScore}}</span>分／<span class="evaluation"><span>{{Product.CommentCount}}</span>条评价</span>
+                </span>
+                <span class="apply"><span data-bind="text:ApplyCount">{{Product.ApplyCount}}</span>人申请</span>
+            </div>
+
+            {{#if @root.newversion}}
+            <div class="dd">
+                <span class="col_grey9">贷款成本<span data-bind="text:TotalCostText">{{Product.LoanCalculationInfo.TotalCostText}}</span></span>
+            </div>
+            {{/if}}
+        </div>
+        <div class="dl apply_tag">
+            <div class="dt" >
+                {{#if Product.PackageFeatureIcon1}}
+                <span class="font-22 tag_blue">{{Product.PackageFeatureIcon1}}</span>
+                {{/if}}
+                {{#if Product.PackageFeatureIcon2}}
+                <span class="font-22 tag_red">{{Product.PackageFeatureIcon2}}</span>
+                {{/if}}
+            </div>
+        </div>
+        {{#if Product.isUl}}
+        <ul class="img_info">
+            {{#if Product.MultiLabel}}
+            <li class="uf uf-ic ut-s"><i class="icon icon-hui"></i><span class="uf-f1 ut-s" data-bind="text:MultiLabel">{{multiLabel Product.MultiLabel}}</span></li>
+            {{/if}}
+            {{#if Product.PackageGiftValueAmount}}
+            <li class="uf uf-ic ut-s" ><i class="icon icon-li"></i><span class="uf-f1 ut-s">送<span data-bind="text:PackageGiftValueAmount">{{Product.PackageGiftValueAmount}}</span>元礼包</span></li>
+            {{/if}}
+        </ul>
+        {{/if}}
+        <div class="top-tag hide">置顶</div>
+    </div>
+    <div class="hide"></div>
+</a>
+{{/if}}
+
+</div>

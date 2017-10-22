@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+       var APIURL = "http://api.chedai.bitauto.com/";
+       var defaultQualification = {"Career":73,"Income":108,"Insurance":1,"Funds":1,"Credit":256,"HouseState":80};
+        var AddQuaUrl = "/rapidloan/AddQualification";
+        var applySuccessUrl = '/rapidloan/ResultSuccess';
+        var payUrl = '/Payment/Pay';
+        var jtlj="http://img3.bitautoimg.com/jinrong/newmweb//css/xinche/RapidLoan/images/sqdk11.png?v=201612151220";
+    </script>
+
+</head>
+<body>
+{{{htmlWebpackPlugin.options.header}}}
+<div id="yxWrapper">
+        <img src="http://img4.bitautoimg.com/jinrong/newmweb/images/size4_w114_h114.png?v=201612161920" style="display: none;"/>
+        
+<header class="header-bar">
+    <span></span>
+    <h1 class="font-nav">订单提交成功</h1>
+    <span></span>
+</header>
+<section class="result-fail-box">
+    <i class="suc-icon"></i>
+    <h2 class="font-h2">订单提交成功！</h2>
+    <p class="color999">客服会联系您，请保持手机畅通</p>
+    <a class="font-h2 mr" href="http://xinche.m.daikuan.com">返回首页</a><a class="font-h2 orders-btn mr-0" href="http://i.m.daikuan.com/myorder/orderdetail?orderId=821482215688259">查看订单</a>
+</section>
+<div class="ad">
+    <a href="http://m.daikuan.com/"></a>
+</div>
+<section class="weixin-box">
+    <div class="weixin-img"><img src="http://img3.bitautoimg.com/jinrong/newmweb/images/home/weixin.jpg?v=201612161920"></div>
+    <div class="font-title">
+    关注微信公众号，订单状态随时跟进<br/>
+    搜索微信公众号：yxchedai 
+    </div>
+</section>
+        <!--整屏蒙层start-->
+        <div id="maskLayer"></div>
+        <!--整屏蒙层end-->
+    </div>
+    
+
+
+<script src="{{htmlWebpackPlugin.options.common}}"></script>
+{{{htmlWebpackPlugin.options.footer}}}
+<script src="{{htmlWebpackPlugin.options.script}}"></script>
+</body>
+</html>

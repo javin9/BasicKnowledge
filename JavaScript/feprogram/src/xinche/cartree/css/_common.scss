@@ -1,0 +1,215 @@
+// common
+$cred: #E9474D;
+
+h1, h2, h3, b, th { font-weight: normal; }
+
+body { font-size: 14px; color: #333; }
+a { cursor: pointer; }
+
+// 面包屑
+.path-nav {
+	a {
+		color: #666;
+	}
+}
+
+.floor_wrap {
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+
+.floorcar_wrap {
+	padding-right: 19px;
+	border-right: 1px solid #eee;
+}
+
+.floorcar_wrap_top {
+	padding-bottom: 30px;
+}
+
+.modu_wrap {
+	margin-bottom: 30px;
+}
+
+.seobrand_wrapper {
+	width: 1200px;
+	margin: 0 auto;
+
+	.seobrand_fl {
+		float: left;
+		width: 960px;
+
+		.floor_wrap {
+			padding-right: 19px;
+		}
+	}
+
+	.seobrand_fr {
+		float: right;
+		width: 230px;
+		margin-left: 10px;
+	}
+
+	.tit_1 {
+		font-size: 20px;
+		height: 60px;
+		padding-left: 20px;
+		padding-right: 20px;
+		background-color: #f9f9f9;
+		line-height: 60px;
+
+		img {
+			float: left;
+			height: 60px;
+			margin-right: 20px;
+		}
+	}
+
+	.tit_2 {
+		font-size: 24px;
+		height: 48px;
+		padding-top: 20px;
+		padding-left: 20px;
+		padding-right: 20px;
+		line-height: 36px;
+	}
+
+	.tit_3 {
+		@extend .tit_1;
+	}
+
+	.tit_4 {
+		height: 1px;
+		margin: 12px 10px 22px;
+		font-size: 16px;
+		text-align: center;
+		border-top: 1px dashed #e8e8e8;
+
+		>span {
+			position: relative;
+			top: -12px;
+			padding: 0 4px;
+			color: #000;
+			background-color: #fff;
+			a{
+				color:#000;
+				&:hover{
+					color:#E9474D;
+				}
+			}
+		}
+	}
+
+	.sidemore {
+		float: right;
+		color: #666;
+		font-size: 14px;
+		
+		a {
+			color: #666;
+		}
+	}
+}
+
+.hotlist {
+
+	.hotitem {
+		font-size: 14px;
+		margin-top: 20px;
+		color: #555;
+
+		a {
+			position: relative;
+			display: block;
+			color: #555;
+			padding: 2px 2px 7px 16px;
+			overflow: hidden;
+
+			&:hover {
+				background: #fafafa;
+			}
+		}
+
+		img {
+			float: left;
+			width: 100px;
+			height: 66px;
+			margin-top: 5px;
+			margin-right: 10px;
+		}
+
+		h3 {
+			font-size: 12px;
+			line-height: 18px;
+			margin-bottom: 4px;
+			max-height: 36px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		    display: -webkit-box;
+		    -webkit-line-clamp: 2;
+		    -webkit-box-orient: vertical;
+		}
+
+		p {
+			font-size: 12px;
+			color: #999;
+
+			span {
+				color: $cred;
+			}
+		}
+
+		i {
+			position: absolute;
+			left: 16px;
+			top: 54px;
+			display: block;
+			width: 100px;
+			height: 20px;
+			line-height: 20px;
+			color: #fff;
+			background-color: $cred;
+			font-size: 12px;
+			text-align: center;
+		}
+	}
+}
+
+.arr_right {
+	padding-right: 12px;
+	background: transparent url(../../../common/images/right_arrow.png) right center no-repeat;
+}
+
+
+/*车贷资讯*/
+.loan-news-list{
+	margin-top:-5px;
+	li{
+		overflow:hidden;
+		height:28px;
+		position: relative;
+		line-height:28px;
+		padding:0 0 0 22px;
+		box-sizing: border-box;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		outline: 0 !important;
+		&:after{
+			position: absolute;
+			left:10px;
+			top:50%;
+			margin-top:-2px;
+			content: ' ';
+			width:4px;
+			height:4px;
+			background: #E8E8E8;
+		}
+		a{
+			font-size:14px;
+			color:#000;
+			&:hover{
+				color:#E9474D;
+			}
+		}
+	}
+}
