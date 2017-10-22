@@ -15,7 +15,7 @@ module.exports = {
 	plugins:[
 	  new htmlWebpackPlugin({
 	  	template:'index.html',
-	  	filename:'a.html',//index-[hash].html
+	  	filename:'a.html',//index-[hash].html  
 	  	inject:'head',//位置
 	  	title:'this is A',//自定义
 	  	chunks:['main','a']//指定的js文件

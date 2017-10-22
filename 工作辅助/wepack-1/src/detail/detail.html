@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- htmlWebpackPlugin  是模块的名字，不是自己定义的名字 -->
+	<title><%=htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+    <div class="box">
+    	<h3>this is box</h3>
+    </div>
+	<h2><%=htmlWebpackPlugin.options.title %></h2>
+	 <% for(var key in htmlWebpackPlugin.files){ %>
+	<br>
+   	<%= key %>:<%=JSON.stringify(htmlWebpackPlugin.files[key])%>
+   <% } %>
+<br>
+      <% for(var key in htmlWebpackPlugin.options){ %>
+      <br>
+   	<%= key %>:<%=JSON.stringify(htmlWebpackPlugin.options[key])%>
+   <% } %>
+</body>
+</html>

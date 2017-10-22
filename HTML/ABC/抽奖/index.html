@@ -84,13 +84,13 @@
         $(document).on(clickEventName['touchend'], "#draw-btn", function(ev) {
             var value = window.cookie("name");
             if (!!value) {
-                $("#id").text('已中奖');
+                $("#txt").text('已中奖');
                 $(".mask,.error").toggleClass('hide');
                 return false;
             }
 
             var num = parseInt(Math.random() * 6) + 1;
-            newdraw.goto(1);
+            newdraw.goto(num);
         });
     });
 
@@ -100,7 +100,7 @@
             case 2:
             case 4:
             case 6:
-                $("#id").text('谢谢参与');
+                $("#txt").text('谢谢参与');
                 $(".mask,.error").toggleClass('hide');
                 break;
             case 1:
@@ -118,11 +118,7 @@
     };
 
     function success(txt) {
-        window.cookie("name", "tank", {
-            "expires": 7,
-            "path": '/',
-            "domain": ""
-        });
+        window.cookie("name", "tank",1);
         $("#get-price").text(txt);
         $(".mask,.success").toggleClass('hide');
     }

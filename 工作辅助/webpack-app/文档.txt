@@ -24,6 +24,12 @@ wepack hello.js hello.m.js --module-bind  "css=style-loader!css-loader"  --progr
 webpack.config.js
 http://webpack.github.io/docs/configuration.html
 
+webpack --config webpack.dev.config.js 指定配置文件
+
+设置npm命令行缩写
+"webpack":"webpack --config webpack.config.js --progress --display-modules  --display-reasons --colors"
+添加参数到script 
+npm run webpack 运行 
 
 webpack --config webpack.dev.config.js//指定配置文件的名字
 
@@ -32,8 +38,13 @@ webpack --config webpack.config.js --progress --display-modules --colors --displ
 
 npm run webpack
 ----------------------------------------------------
-
+output.filename
+[name]
+[hash]
+[chunkhash]
 打包插件
+
+
 npm install html-webpack-plugin --save-dev
 
 
@@ -41,6 +52,8 @@ npm install html-webpack-plugin --save-dev
 //安装babel
 //webpack3.0 configuration  https://webpack.js.org/configuration/
 //http://babeljs.io/docs/plugins/preset-latest/
+
+npm install --save-dev babel-loader babel-core babel-preset-env webpack
 
 npm install --save-dev babel-loader babel-core
 
@@ -76,3 +89,48 @@ npm install file-loader --save-dev
 npm install url-loader --save-dev
 
 npm install image-loader  --save-dev
+
+
+output  中的path输入目录
+
+webpack 如果是全局的，必须在项目底下安装一个
+
+模板传参数 htmlWebpackPlugin.options.title
+<!-- htmlWebpackPlugin  是模块的名字，不是自己定义的名字 -->
+
+   <% for(var key in htmlWebpackPlugin.files){ %>
+   	<%= key %>:<%=JSON.stringify(htmlWebpackPlugin.files[key])%>
+   <% } %>
+
+      <% for(var key in htmlWebpackPlugin.options){ %>
+   	<%= key %>:<%=JSON.stringify(htmlWebpackPlugin.files[key])%>
+   <% } %>
+
+
+   <script type="text/javascript" src="<%=htmlWebpackPlugin.files.chunks.index.entry%>"></script>
+
+
+  excludeChunks:[]  //除了谁之外
+
+
+使用compilation.assets这时候我们就可以取到它里面的内容
+官方案例:https://github.com/ampedandwired/html-webpack-plugin/blob/master/examples/inline/template.jade
+
+compilation.assets[htmlWebpackPlugin.files.chunks.index.entry.substr(htmlWebpackPlugin.files.publicPath.length)].source()
+
+
+new HtmlWebpackPlugin({
+		inlineSource: '.(js|css)$' // embed all javascript and css inline
+	}),
+new HtmlWebpackInlineSourcePlugin()
+
+
+npm install --save-dev extract-text-webpack-plugin
+
+<!-- <script type="text/javascript" src="<%= compilation.assets[htmlWebpackPlugin.files.chunks.index.entry.substr(htmlWebpackPlugin.files.publicPath.length)].source() %>" ></script> -->
+
+npm install --save-dev babel-loader babel-core babel-preset-env webpack
+script 指定 babel:{"preset":['env']}
+
+include
+exclude
