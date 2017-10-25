@@ -1,0 +1,136 @@
+// 混合
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+
+#header {
+  color: @light-blue;
+}
+
+#footer{
+	color:@nice-blue;
+}
+
+.f12{
+	font-size:12px;
+}
+
+.sider-bar{
+	 font-weight: bold;
+	.f12
+}
+
+
+.bordered-fistway {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+
+.bordered-second {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+#menu a {
+  color: #111;
+  .bordered-fistway;
+}
+.post a {
+  color: red;
+  .bordered-second;
+}
+
+//在原来基础添加内容
+.bordered-second(){
+	color:#333;
+}
+
+//Not outputting the mixin
+//If you want to create a mixin but you do not want that mixin to be output, you can put parenthesis after it.
+.my-mixin {
+  color: black;
+}
+.my-other-mixin() {
+  background: white;
+}
+.class {
+  .my-mixin;
+  .my-other-mixin;
+}
+
+//Selectors in mixins
+//Mixins can contain more than just properties, they can contain selectors to.
+.my-hover-mixin() {
+  &:hover {
+    border: 1px solid red;
+  }
+}
+button {
+  .my-hover-mixin();
+}
+
+//Namespaces
+//If you want to mixin properties inside a more complicated selector, you can stack up multiple id's or classes.
+/*
+// all do the same thing
+#outer > .inner;
+#outer > .inner();
+#outer.inner;
+#outer.inner();
+*/
+#outer {
+  .inner {
+    color: red;
+  }
+}
+
+.c {
+  #outer > .inner;
+}
+
+/*
+The !important keyword
+Use the !important keyword after mixin call to mark all properties inherited by it as !important:
+*/
+.foo (@bg: #f5f5f5, @color: #900) {
+  background: @bg;
+  color: @color;
+}
+.unimportant {
+  .foo(1);
+}
+.important {
+  .foo(2) !important;
+}
+
+/*
+Named Parameters
+
+A mixin reference can supply parameters values by their names instead of just positions. Any parameter can be referenced by its name and they do not have to be in any special order:
+*/
+
+.mixin(@color: black; @margin: 10px; @padding: 20px) {
+  color: @color;
+  margin: @margin;
+  padding: @padding;
+}
+.class1 {
+  .mixin(@margin: 20px; @color: #33acfe);
+}
+.class2 {
+  .mixin(#efca44; @padding: 40px);
+}
+
+
+/*
+The @arguments variable
+
+@arguments has a special meaning inside mixins, it contains all the arguments passed, when the mixin was called. This is useful if you don't want to deal with individual parameters:
+*/
+.box-shadow(@x: 0; @y: 0; @blur: 1px; @color: #000) {
+  -webkit-box-shadow: @arguments;
+     -moz-box-shadow: @arguments;
+          box-shadow: @arguments;
+}
+.big-block {
+  .box-shadow(2px; 5px);
+}
+

@@ -1,0 +1,63 @@
+.mixin() {
+  @width:  100%;
+  @height: 200px;
+}
+
+.caller {
+  .mixin();
+  width:  @width;
+  height: @height;
+}
+
+.getfontsize(){
+
+
+}
+
+/*
+
+ body {   
+            font-size: 12px; 
+            }
+        [data-dpr="2"] body {
+            font-size: 24px;
+        }
+        [data-dpr="3"] body {
+            font-size: 36px;
+        }
+*/
+
+.mixin (@a) when (lightness(@a) >= 50%) {
+  background-color: black;
+}
+.mixin (@a) when (lightness(@a) < 50%) {
+  background-color: white;
+}
+.mixin (@a) {
+  color: @a;
+}
+
+.class1 { .mixin(#ddd) }
+.class2 { .mixin(#555) }
+
+
+.fz(@fontsize:12px) {
+         & {   
+            font-size:@fontsize; 
+            }
+        [data-dpr="2"]  & {
+            font-size:@fontsize*2;
+        }
+        [data-dpr="3"]  & {
+            font-size:@fontsize*3;
+        }
+}
+
+.header .a{
+	.fz(24px)
+}
+
+body{
+.fz();
+
+}
