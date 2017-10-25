@@ -140,3 +140,6 @@ npm install minimist
 
 //此处会把命令行的的参数都出来
     const args = require("minimist")(process.argv.slice(2));
+
+
+    webpack-dev-server --inline --hot  --colors --host 0.0.0.0 //--inline --hot  顺序不能颠倒

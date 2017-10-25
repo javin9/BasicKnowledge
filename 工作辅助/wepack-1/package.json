@@ -10,6 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"webpack-dev-server --inline --hot  --colors --host 0.0.0.0 ",
     "webpack": "webpack --config webpack.config.js --progress --display-modules  --display-reasons --colors --env=dev "
   },
   "author": "",
@@ -26,6 +27,7 @@
     "webpack": "^3.0.0"
   },
   "dependencies": {
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "webpack-dev-server": "^2.9.3"
   }
 }
