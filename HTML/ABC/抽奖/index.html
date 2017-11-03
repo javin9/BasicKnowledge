@@ -84,7 +84,7 @@
         $(document).on(clickEventName['touchend'], "#draw-btn", function(ev) {
             var value = window.cookie("name");
             if (!!value) {
-                $("#txt").text('已中奖');
+                $("#txt").text(value);
                 $(".mask,.error").toggleClass('hide');
                 return false;
             }
@@ -102,6 +102,7 @@
             case 6:
                 $("#txt").text('谢谢参与');
                 $(".mask,.error").toggleClass('hide');
+                success('谢谢参与');
                 break;
             case 1:
                 success('充电宝');
@@ -118,7 +119,7 @@
     };
 
     function success(txt) {
-        window.cookie("name", "tank",1);
+        window.cookie("name",txt,1);
         $("#get-price").text(txt);
         $(".mask,.success").toggleClass('hide');
     }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>background-size</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    h4{text-align: center;}
+    .box {
+        width: 500px;
+        height: 200px;
+        background: url('images/1.jpg') no-repeat left top;
+        margin: 10px auto;
+        border: 1px solid #000;
+    }
+    .box0 {
+        background-size: 100%;
+    }
+    .box1 {
+        /*background-size: 0 100%;*/
+    }
+    .box2 {
+        background-size: 100% 100%;
+    }
+    .box3 {
+        background-size: cover;
+    }
+    .box4 {
+        background-size: contain;
+    }
+    </style>
+</head>
+
+<body>
+    <h4> background-size: 100%;</h4>
+    <div class="box box0"></div>
+    <h4>  background-size:;</h4>
+    <div class="box box1"></div>
+    <h4>background-size: 100% 100%;</h4>
+    <div class="box box2"></div>
+    <h4> background-size: cover;</h4>
+    <div class="box box3"></div>
+    <h4> background-size: contain;</h4>
+    <div class="box box4"></div>
+</body>
+
+</html>

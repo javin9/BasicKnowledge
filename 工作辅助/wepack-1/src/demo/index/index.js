@@ -1,9 +1,13 @@
-var underscore=require('underscore'); 
-console.log(underscore);
-require('../../css/detail.css');
-import common from '../../libs/common.js';
+require('../../css/reset.css');
 
+var underscore=require('underscore'); 
+import common from '../../libs/common.js';
 var Jquery=require('Jquery'); 
+require('swiper');
+
+
+console.log(underscore);
+
 console.log(Jquery);
 
 function index(argument) {
@@ -11,5 +15,5 @@ function index(argument) {
 	console.log("dddd");
 }
 index();
-var common=require('../../libs/common.js');
+
 common.cl();

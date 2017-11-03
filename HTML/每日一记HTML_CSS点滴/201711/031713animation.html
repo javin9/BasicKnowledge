@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>0317</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		body{background-color:#333;}
+		.sidebar{position:fixed;top:100px;right:0;width:200px;height:100px;background:red;transition:all 0.9;}
+		.sidebar:hover{right:-100px;}
+		
+
+		.sidebar2{position:fixed;top:300px;right:0;width:200px;height:200px;background:red;}
+		.sidebar2:hover{animation:an 1s;}
+		@keyframes an{
+			10%{
+               right:0;
+			}
+			50%{
+               right:-100px;
+			}
+			100%{
+				 right:-50px;
+			}
+		}
+	</style>
+</head>
+<body>
+    <div class="sidebar">
+    	
+    </div>
+    <div class="sidebar2">
+    	
+    </div>
+</body>
+</html>

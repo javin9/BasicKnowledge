@@ -6,7 +6,7 @@ var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var extractCss = new ExtractTextPlugin({
-    filename: "css/[name].[contenthash].css"
+    filename: "css/[name].css"
 });
 
 var CleanWebpackPlugin = require('clean-webpack-plugin'); //installed via npm
@@ -24,7 +24,7 @@ var cleanOptions = {
     dry: false
 }
 
-
+console.log(process.env.NODE_ENV)
 
 var argv = require('minimist')(process.argv.slice(2));
 console.log(argv);
@@ -35,10 +35,11 @@ module.exports = {
         index: './src/demo/index/index.js',
         list: './src/demo/list/list.js',
         detail: './src/demo/detail/detail.js',
-        common: './src/libs/common.js',
-        cookie: './src/libs/cookie.js',
-        jq:["jquery"],
-        ud:["underscore"]
+        // common: './src/libs/common.js',
+        // cookie: './src/libs/cookie.js',
+        vendor: ["jquery", "underscore"],
+        // jq:["jquery"],
+        // ud:["underscore"]
     },
     output: {
         //path参数表示生成文件的根目录，需要传入一个绝对路径。path参数和后面的filename参数共同组成入口文件的完整路径。
@@ -49,8 +50,11 @@ wepack-1/dist/demo/detail/dist/demo/css/detail.3d282265f969a5a2ee8585ae3bfb4845.
 wepack-1/dist/demo/css/demo/js/detail-a6b6a7cea322ccc60e4e.js
         */
         publicPath: path.resolve(__dirname, './dist/demo'), //'../../../dist/demo',
-        filename: 'js/[name]-[hash].js'
+        filename: 'js/[name]-[hash].js',
         //chunkFilename用来打包require.ensure方法中引入的模块,如果该方法中没有引入任何模块则不会生成任何chunk块文件
+
+        /*由于通过 external 提取过的 js 模块是不会被记录到 webapck 的 chunk 信息中，通过 libraryTarget 可告知我们构建出来的业务模块，当读到了 externals 中的 key 时，需要以 umd 的方式去获取资源名，否则会有出现找不到 module 的情况。*/
+        libraryTarget: 'umd',
     },
     module: {
         noParse: /jquery|lodash/,
@@ -59,21 +63,55 @@ wepack-1/dist/demo/css/demo/js/detail-a6b6a7cea322ccc60e4e.js
             return /jquery|lodash/.test(content);
         },
         rules: [{
-            test: /\.css$/,
-            use: extractCss.extract({
-                use: [{
-                    loader: "css-loader"
+                test: /\.js$/,
+                 exclude: [
+                    path.resolve(__dirname, "./node_modules")
+                ],
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
+                    }
+                }
+            },
+            {
+                test: /\.css$/,
+                // use: extractCss.extract({
+                //     use: [{
+                //         loader: "css-loader"
+                //     }]
+                // }),
+                use: extractCss.extract({
+                    use: ['css-loader'],
+                    // use style-loader in development 
+                    fallback: "style-loader"
+                }),
+                exclude: [
+                    path.resolve(__dirname, "./node_modules")
+                ]
+            },
+            {
+                // test: /\.(png|jpg|gif)$/,
+                // use:[{
+                //     loader: 'file-loader',
+                //     options: {
+                //         // name: '[name].[ext]?[hash]',
+                //         name: '[name]-[hash:5].[ext]',
+                //         outputPath:'/images/',//受上面path影响
+                //         publicPath:" http://www.webpackdemo.com/dist/demo",
+                //     }
+                // }]
+            },
+            {
+                test:/\.(png|jpg|gif)$/,
+                use:[{
+                    loader:'url-loader',
+                    // options:{
+                    //     limit:12000
+                    // }
                 }]
-            }),
-            //  use: extractCss.extract({
-            //      use: ['css-loader'],
-            //     // use style-loader in development 
-            //     fallback: "style-loader"
-            // }),
-            exclude: [
-                path.resolve(__dirname, "./node_modules")
-            ]
-        }]
+            }
+        ]
     },
     plugins: [
         new CleanWebpackPlugin(pathsToClean, cleanOptions),
@@ -98,22 +136,66 @@ wepack-1/dist/demo/css/demo/js/detail-a6b6a7cea322ccc60e4e.js
             filename: 'index/index.html'
         }),
         new HtmlWebpackInlineSourcePlugin(),
-        extractCss,
-        //  new webpack.optimize.CommonsChunkPlugin({
-        //     name: "jquery",
-        //     minChunks:2,
-        //     chunks:["detail","list"]
-        // }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: ["js/common","js/jq","js/ud"], //这公共代码的chunk名为'commons',
-            chu4nks: ["list", "detail"],
-             filename: 'js/[name].js', //生成后的文件名，虽说用了[name]，但实际上就是'commons.bundle.js'了
-            minChunks: 1 //设定要有4个chunk（即4个页面）加载的js模块才会被纳入公共代码。这数目自己考虑吧，我认为3-5比较合适。
-        }),
+
         new webpack.ProvidePlugin({
             $: "jquery",
-            underscore:"underscore"
+            _: "underscore",
+            // swiper:"swiper"
+        }),
+        /*
+          第一种：传入字符串参数，由 chunkplugin 自动计算提取 
+          注意：需要在页面上手动引入 vendor.js  vendor.js的名字受output.filename影响
+          new webpack.optimize.CommonsChunkPlugin('vendor')
+        */
+
+        /*
+          第二种：有选择的提取公共代码
+           new webpack.optimize.CommonsChunkPlugin({
+            name:"vendor",
+            chunks:["detail","list"]
+          })
+
+        注意：需要在页面上手动引入 vendor.js  vendor.js的名字受output.filename影响
+        只提取 detail 节点和 list节点 中的共用部分模块, 生成一个 common.js
+    minChunks: number|Infinity|function(module, count) -> boolean,
+         */
+
+        /*
+         第三种:将 entry 下所有的模块的公共部分（可指定引用次数）提取到一个通用的 chunk 中
+         #提取所有 node_modules 中的模块至 vendors 中，也可以指定 minChunks 中的最小引用数；
+          //module.resource.indexOf(path.join(__dirname, './node_modules')) === 0
+          new webpack.optimize.CommonsChunkPlugin({
+             name: "vendor",
+             filename: "js/[name].js",
+             chunks: ["detail", "list"],
+             minChunks: function(module, count) {
+                 console.log('111111111111111111111111111')
+                 console.log(module.resource);
+                 console.log(path.join(__dirname, './node_modules'));
+                 console.log(module.resource.indexOf(path.join(__dirname,'./node_modules'))===-1);
+                 console.log('111111111111111111111111111')
+                 return module.resource&&
+                        /\.js$/.test(module.resource)&&
+                        module.resource.indexOf(path.join(__dirname,'./node_modules'))===-1;
+             }
+         }),
+         //抽取 enry 中的一些 lib 抽取到 vendors 中
+        new webpack.optimize.CommonsChunkPlugin({
+         name:"jq",
+         filename: "js/[name].js",
+         minChunks:1
         })
 
+         new webpack.optimize.CommonsChunkPlugin({
+            names: ["lib", "vendor"],
+            filename: "js/[name].js",
+            minChunks: 2
+        })
+        */
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ["lib", "vendor"],
+            filename: "js/[name].js"
+        }),
+        extractCss,
     ]
 };

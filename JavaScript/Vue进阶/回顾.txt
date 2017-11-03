@@ -1,0 +1,14 @@
+第二章
+2.1.2
+1.模板只有一个根目录
+2.Vue实例会代理起data对象所有的属性，而不会对传入的对象进行深拷贝
+3.只有初始化时（包括props）传入的对象才是响应式的。声明完后添加的属性，会报错，所以应该提前设置好给null或者undefined；
+4.data中的属性和props中的不能重名，重名就会抛出异常
+5.v-once="name"  只绑定一次 <span v-once="name">{{name}}</span>
+6.v-model对数据进行双向数据绑定,在修改[表单]元素的同时，实例vm的元素也同步进行了更新
+      exp1:
+	  <input type="text" v-model="message" />
+	  <span>Your name is {{message}}</span>
+    
+
+  

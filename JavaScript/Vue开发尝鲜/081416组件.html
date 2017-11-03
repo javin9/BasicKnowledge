@@ -10,6 +10,9 @@
 	<body>
 		<my-component id="app_1"></my-component>
 		<app-component id="app_2"></app-component>
+		<div  id="app_3">
+			<app-component></app-component>
+		</div>
 		<script type="text/javascript">
 			//注册
 			Vue.component('my-component', {
@@ -19,16 +22,22 @@
 			new Vue({
 				el: '#app_1'
 			});
+           
 
+            //
 			var templates = {
-				template: '<div class="">Hello,World!</div>'
+				template: '<h2>I not Name!</h2>'
 			};
 
-			Vue.component("app-component", {
-				template: '<h2>I not Name!</h2>'
-			});
 			var app_2 = new Vue({
 				el: "#app_2",
+				components: {
+					'app-component': templates
+				}
+			});
+
+			var app_3 = new Vue({
+				el: "#app_3",
 				components: {
 					'app-component': templates
 				}
