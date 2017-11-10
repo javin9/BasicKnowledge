@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../js/lib/vue.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+    .list-ul li {
+        margin-bottom: 20px;
+        font-size: 15px;
+    }
+    .list-ul li .delete {
+        display: inline-block;
+        width: 50px;
+        height: 25px;
+        background: red;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .line {
+        text-decoration: line-through;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <input type="text" name="" v-model="content" @keyup.enter="add" />
+        </div>
+        <ul class="list-ul">
+            <my-item v-for="item in list" :cell="item"></my-item>
+        </ul>
+    </div>
+    <script type="text/javascript">
+    Vue.component("my-item", {
+        data: function() {
+            return {
+                select: false,
+                show: true
+            }
+        },
+        props: ["cell"],
+        methods: {
+            del: function() {
+                this.show = false;
+            }
+        },
+        template: `
+           <li :class="{line:select}" v-if="show">
+                <input type="checkbox" v-model='select' name="">{{cell}}<span class="delete"  @click="del">Delete</span>
+            </li>
+        `
+
+    });
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            list: [],
+            content: ''
+        },
+        methods: {
+            add: function() {
+                this.list.push(this.content);
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    	*{margin:0;padding:0;}
+    	.app{width:300px;height:500px;margin:10px auto;border:1px solid #000;}
+    	.app .btn{width:100px;height:50px;background:#20B060;display:block;text-align:center;line-height:50px;cursor:pointer;margin:0 auto;}
+    	.container{position:relative;margin-top:20px;border:1px solid #000;height:350px;overflow:hidden;}
+    	.box{height:300px;width:250px;background:#F08080;position:absolute;top:0;right:0px;}
+
+    	.box-enter{right:-300px;}
+    	.box-enter-active{transition:all 0.3s ;}
+
+    	/*.box-leave{right:0px;}*/
+    	.box-leave-active{transition:all 0.3s;right:-300px;}
+    </style>
+</head>
+
+<body>
+    <div id="app" class="app">
+        <span class="btn" type="button"  @click="btnClick" >切换</span>
+        <div class="container">
+        <transition name="box" >
+            <div class="box" v-show="show"></div>
+        </transition>
+        </div>
+    </div>
+      <script src="../js/lib/vue.js" type="text/javascript" charset="utf-8"></script>
+      <script type="text/javascript">
+      /*
+      当进入下一帧的时候，.box-enter立刻被删除，opactity的值由0变成上面定义的默认值：1，margin-left的值由100%变成上面定义的默认值：0，与此同时也添加了.box-enter-active，正因为.box-enter-active里面的transition属性定义了过渡效果，所以，属性的变化达到了慢慢过渡的效果。
+ 
+而离开过渡（leaving）的时候，是从左到右滑动离开的，并且透明度也是由深到浅，直到透明。所以离开过渡一开始那一刻的样式和默认样式一样，我们无需重复定义。
+ 而离开过渡（leaving）最后的一刻的样式是 right:-300px;
+跟.box-enter的样式一样，进入那一刻从右边进场，最后离开完成那一刻，回到了右边
+      */
+      	var vm=new Vue({
+      		el:"#app",
+      		data:{
+      			show:false
+      		},
+      		methods:{
+      			btnClick:function () {
+      				console.log(+new Date());
+      				this.show=!this.show;
+      			}
+      		}
+      	});
+      </script>
+</body>
+
+</html>

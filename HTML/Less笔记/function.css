@@ -1,0 +1,107 @@
+/*
+作为函数使用的Mixin
+All variables defined in a mixin are visible and can be used in caller's scope (unless the caller defines its own variable with the same name).
+
+Example:
+
+*/
+.caller {
+  width: 100%;
+  height: 200px;
+}
+/*
+Thus variables defined in a mixin can act as its return values. This allows us to create a mixin that can be used almost like a function.
+
+Example:
+*/
+div {
+  padding: 33px;
+}
+.bg {
+  background-color: #000000;
+}
+/*#000*/
+.bb {
+  background-color: #ffffff;
+}
+/*fff*/
+.bb {
+  background-color: #808080;
+}
+/*#808080*/
+.dfdf {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.button {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  width: 10px;
+}
+/*
+.button {
+  .border-radius(6px);
+}
+
+.button {
+  .border-radius;
+}
+*/
+/*
+.big-block {
+  .box-shadow(2px; 5px);
+}
+*/
+.button {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.adb {
+  font-size: 14px;
+}
+[data-dpr="2"] .adb {
+  font-size: 28px;
+}
+[data-dpr="3"] .adb {
+  font-size: 42px;
+}
+.adbddd {
+  font-size: 14px !important;
+}
+[data-dpr="2"] .adbddd {
+  font-size: 28px !important;
+}
+[data-dpr="3"] .adbddd {
+  font-size: 42px !important;
+}
+.dfsdfsdfsdf {
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/*
+.keyframes (line, {
+    0% {
+        background-size: 0% 2px;
+    }
+    100% {
+        background-size: 100% 2px;
+    }
+});
+
+
+
+.keyframes (line, {
+    0% {
+        .transform(rotate(0deg));
+    }
+    100% {
+        .transform(rotate(360deg));
+    }
+});
+*/

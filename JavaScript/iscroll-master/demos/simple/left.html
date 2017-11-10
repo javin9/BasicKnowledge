@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>iScroll demo: simple</title>
+    <link rel="stylesheet" type="text/css" href="mreset.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script type="text/javascript" src="flexible.debug.js"></script>
+    <script type="text/javascript" src="zepto.js"></script>
+    <script type="text/javascript" src="iscroll.js"></script>
+    <script type="text/javascript" src="indexsidebar.js"></script>
+</head>
+
+<body>
+    <div class="btn" id="btn">点击</div>
+    <div id="carSelectComponent">
+        <div class="relative-position defaultAni">
+            <div id="header">头部</div>
+            <div id="wrapper">
+                <div id="scroller">
+                    <ul class="carSelect-allCar-ul">
+                        <img src="http://image.bitautoimg.com/uimg/mbt2015/images/loading.gif">
+                    </ul>
+                </div>
+            </div>
+            <div class="tipsLetter" style="display: none;">P</div>
+            <div id="footer">关闭</div>
+        </div>
+    </div>
+    <script type="text/template" id="brandTemplate">
+        {console.log(data); var MsterList=data.MsterList; for(var n in MsterList){}
+        <div class="tt-small phone-title" data-letter="{=n}">
+            <span>{=n}</span>
+        </div>
+        <div class="box">
+            <ul>
+                { for(var i=0,thisMsterList=MsterList[n],thisLen=thisMsterList.length;i
+                <thisLen;i++){ } <li data-action="car" data-id="{=thisMsterList[i].Bs_Id}" data-spell="{=thisMsterList[i].Bs_UrlSpell}">
+                    <a href="javascript:void(0);" logwt="wap_buycar_select_brand_{=thisMsterList[i].Bs_UrlSpell}">
+                                <span class="brand-ad" data-materid="{=thisMsterList[i].Bs_Id}"></span>
+                                <span class="brand-logo m_{=thisMsterList[i].Bs_Id}_b"></span>
+                                <span class="brand-name">{=thisMsterList[i].Bs_Name}</span>
+                            </a>
+                    </li>
+                    {}}
+            </ul>
+        </div>
+        {}}
+    </script>
+    <script type="text/javascript" src="../../../../JavaScript/js/lib/underscore.js"></script>
+    <script type="text/javascript" src="render.js"></script>
+    <script type="text/javascript" src="brand.js"></script>
+    <script type="text/javascript">
+    var barnds = new BrandSelectComponent({
+        charChange: function(letter) {
+            if (letter === '#') {
+                this.brandScroll.scrollTo(0, 0);
+            } else {
+                var target = document.querySelector('[data-letter="' + letter + '"]');
+                if (!!target && !!target.nodeType) { this.brandScroll.scrollToElement(target, null, null, false); }
+            }
+        },
+        ainimateHideAfter: function() {
+            console.log('ainimateHideAfter')
+            // $("#carSelectComponent").hide();
+        }
+    });
+
+    $("#btn").click(function() {
+        barnds.init();
+    });
+
+    $("#header,#footer").click(function() {
+        barnds.toggleAnimate();
+    });
+    </script>
+</body>
+
+</html>
