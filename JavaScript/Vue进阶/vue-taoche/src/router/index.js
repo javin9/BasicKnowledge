@@ -17,7 +17,8 @@ import three from '@/views/doc_three';
 import usercenter from '@/components/user';
 import login from '@/components/login';
 
-export default new VueRouter({
+
+var router = new VueRouter({
   mode: 'history', //默认是hash模式 ，这里采用history模式
   // linkActiveClass: 'is-class', /*默认router-link-active*/
   scrollBehavior: function(to, from, saveposition) {
@@ -28,7 +29,7 @@ export default new VueRouter({
     // if (saveposition) {
     //   return saveposition
     // } else {
-    //   return {'x':0,'y':0 };
+    //   return { 'x': 0, 'y': 0 };
     // }
   },
   routes: [{
@@ -38,16 +39,24 @@ export default new VueRouter({
         default: home,
         slider: slider
       },
-      meta:{
-        index:0
+      meta: {
+        index: 0,
+        title: 'myhome',
+        login: true
       }
     },
     {
       path: '/about',
       component: about,
-      alias: '/at',
-      meta:{
-        index:1
+      alias: '/at', //别名
+      meta: {
+        index: 1,
+        title: 'about',
+        login: true
+      },
+       beforeEnter:function (to,from,next) {
+        console.log('beforeEnter');
+        next();
       }
     },
     {
@@ -55,7 +64,11 @@ export default new VueRouter({
       component: doc,
       children: [{
           path: '',
-          component: one
+          component: one,
+          meta: {
+            title: 'doc',
+            login: true
+          }
         },
         {
           path: 'd2',
@@ -69,22 +82,38 @@ export default new VueRouter({
     },
     {
       path: '/plan/:title',
-      component: plan
+      component: plan,
+      meta: {
+        title: 'plan',
+        login: true
+      }
     },
     {
       path: '/user/:id?',
       name: 'user',
-      component: usercenter
+      component: usercenter,
+      meta: {
+        title: 'user',
+        login: true
+      }
     },
     {
       path: '/login',
       name: 'login',
-      component: login
+      component: login,
+      meta: {
+        title: 'login',
+        login: true
+      }
     },
     {
       path: '/abc',
       name: 'abc',
-      component: about
+      component: about,
+      meta: {
+        title: 'login',
+        login: true
+      }
     }
     //,
     // {/*跳转到404页面*/
@@ -111,4 +140,20 @@ export default new VueRouter({
       }
     }
   ]
-})
+});
+
+// router.beforeEach(function(to, from, next) {
+//   /* 还没渲染... */
+//   if (to.meta.login) {
+//     next('/login');
+//   }else {
+//      next();
+//   }
+// });
+
+// router.afterEach(function(to, from, next) {
+//   /* body... */
+//   next();
+// });
+
+export default router;

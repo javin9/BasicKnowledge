@@ -9,7 +9,8 @@ Vue.config.productionTip = false;
 import Utils from './lib/utils.js';
 
 Vue.use(Utils);
-
+console.log(Utils);
+console.log(this);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

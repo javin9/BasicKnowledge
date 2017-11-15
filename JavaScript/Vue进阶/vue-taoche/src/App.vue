@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app"  style="height:2000px;">
     <div class="header">
       <ul class="clearfix">
         <li>

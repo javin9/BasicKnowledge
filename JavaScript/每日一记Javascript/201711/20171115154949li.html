@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		li{height:20px;border:1px solid #000;}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+	</ul>
+	<script type="text/javascript">
+		var arr=[1,2,3,4,5,6];
+	arr.reverse();
+   console.log(arr);
+
+   document.querySelector('li').addEventListener('click', function (e) {
+        console.log(this)
+        console.log(e)
+   });
+	</script>
+</body>
+</html>

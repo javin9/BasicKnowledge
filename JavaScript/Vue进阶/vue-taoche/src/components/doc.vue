@@ -3,7 +3,8 @@
  <h2>我是DOC</h2>
  <ul>
  	<router-link tag="li" to="/doc" exact>
- 		<a>文档1</a>
+ 	<div>文档1</div>
+ 		
  	</router-link>	
  	<router-link tag="li" to="/doc/d2">
  		<a>文档1</a>

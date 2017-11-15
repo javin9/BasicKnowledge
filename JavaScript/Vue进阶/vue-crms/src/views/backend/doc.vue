@@ -40,10 +40,39 @@
 
 <script>
   import DocView from '@/views/backend/doc-view';
-  // import TWEEN from 'tween.js';
+  import TWEEN from 'tween.js';
   export default {
     components: {
       DocView
+    },
+    beforeRouteUpdate:function (to,from,next) {
+      this.animate(to);
+      next();
+    },
+    methods:{
+      animate:function (to) {
+        function animateFunc(time) {
+         requestAnimationFrame(animateFunc);
+         TWEEN.update(time);
+        }
+
+        if (to) {
+          console.log(to);
+          var el=document.querySelector(to.hash);
+          var doc=document.querySelector('.doc');
+          
+          if (!!el) {
+            animateFunc();
+            new TWEEN.Tween({
+              number:doc.scrollTop
+            }).to({
+              number:el.offfsetTop
+            },500).onUpdate(function () {
+                 doc.scrollTop=this.number.toFixed(0);
+            }).start();
+          }
+        }
+      }
     }
   }
 </script>
