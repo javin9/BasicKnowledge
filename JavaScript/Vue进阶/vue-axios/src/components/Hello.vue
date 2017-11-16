@@ -8,13 +8,13 @@
   export default {
   name: 'hello',
   created(){
-      this.$http.get('http://easy-mock.com/mock/596077559adc231f357bcdfb/axios/test-axios')
-      .then((response)=>{
-            console.log(response.data)
-        })
-      .catch((error) =>{
-        console.log(error)
-    })
+    //   this.$http.get('http://easy-mock.com/mock/596077559adc231f357bcdfb/axios/test-axios')
+    //   .then((response)=>{
+    //         console.log(response.data)
+    //     })
+    //   .catch((error) =>{
+    //     console.log(error)
+    // })
 
   }
 }
