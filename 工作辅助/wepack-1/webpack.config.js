@@ -82,9 +82,16 @@ wepack-1/dist/demo/css/demo/js/detail-a6b6a7cea322ccc60e4e.js
                 //     }]
                 // }),
                 use: extractCss.extract({
-                    use: ['css-loader'],
-                    // use style-loader in development 
-                    fallback: "style-loader"
+                    use: [{
+                        loader:'style-loader'
+                    },
+                      {
+                        loader:'css-loader',
+                        options:{
+                            module:true//模块化
+                        }
+                      }
+                    ],
                 }),
                 exclude: [
                     path.resolve(__dirname, "./node_modules")
@@ -112,6 +119,11 @@ wepack-1/dist/demo/css/demo/js/detail-a6b6a7cea322ccc60e4e.js
                 }]
             }
         ]
+    },
+    devServer:{
+        open:true,
+        port:9090,
+        contentBase: './dist'
     },
     plugins: [
         new CleanWebpackPlugin(pathsToClean, cleanOptions),
