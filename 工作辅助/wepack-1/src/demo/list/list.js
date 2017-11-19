@@ -1,4 +1,4 @@
-require('../../css/reset.css');
+// require('../../css/reset.css');
 
 import common from '../../libs/common.js';
 

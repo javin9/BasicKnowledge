@@ -1,4 +1,4 @@
-require('../../css/reset.css');
+
 
 var underscore=require('underscore'); 
 import common from '../../libs/common.js';

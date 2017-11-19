@@ -64,7 +64,7 @@ wepack-1/dist/demo/css/demo/js/detail-a6b6a7cea322ccc60e4e.js
         },
         rules: [{
                 test: /\.js$/,
-                 exclude: [
+                exclude: [
                     path.resolve(__dirname, "./node_modules")
                 ],
                 use: {
@@ -76,23 +76,21 @@ wepack-1/dist/demo/css/demo/js/detail-a6b6a7cea322ccc60e4e.js
             },
             {
                 test: /\.css$/,
+                use: extractCss.extract({
+                    use: ['style-loader','css-loader']
+                }),
                 // use: extractCss.extract({
                 //     use: [{
-                //         loader: "css-loader"
-                //     }]
+                //             loader: 'style-loader'
+                //         },
+                //         {
+                //             loader: 'css-loader'
+                //             // options:{
+                //             //     module:true//模块化
+                //             // }
+                //         }
+                //     ],
                 // }),
-                use: extractCss.extract({
-                    use: [{
-                        loader:'style-loader'
-                    },
-                      {
-                        loader:'css-loader',
-                        options:{
-                            module:true//模块化
-                        }
-                      }
-                    ],
-                }),
                 exclude: [
                     path.resolve(__dirname, "./node_modules")
                 ]
@@ -110,9 +108,9 @@ wepack-1/dist/demo/css/demo/js/detail-a6b6a7cea322ccc60e4e.js
                 // }]
             },
             {
-                test:/\.(png|jpg|gif)$/,
-                use:[{
-                    loader:'url-loader',
+                test: /\.(png|jpg|gif)$/,
+                use: [{
+                    loader: 'url-loader',
                     // options:{
                     //     limit:12000
                     // }
@@ -120,10 +118,11 @@ wepack-1/dist/demo/css/demo/js/detail-a6b6a7cea322ccc60e4e.js
             }
         ]
     },
-    devServer:{
-        open:true,
-        port:9090,
-        contentBase: './dist'
+    devServer: {
+        open: true,
+        port: 9090,
+        contentBase: './dist',
+        // publicPath:''   此处设置了，就不会去output里面寻找了
     },
     plugins: [
         new CleanWebpackPlugin(pathsToClean, cleanOptions),

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="js/vue.js">
+</head>
+
+<body>
+    <div id="app">
+    	<com-a></com-a>
+    </div>
+    <div></div>
+    <input type="text" v-model>
+    <script>
+    var bus = new Vue();
+    bus.$on('create',function (msg) {
+    	console.log(msg);
+    });
+
+    //bus.$emit('create',"my name is Cupid");
+    var vm = new Vue({
+        el: "#app",
+        components: {
+            comA: {2
+                template: ' <div> <input type="text"  v-model="name"></div><button @click="create">提交</button>',
+                 data: function() {
+                    return {
+                        name: "Cupid"
+                    }
+                },
+                methods: {
+                    create: function() {
+                       bus.$emit('create',"my name is Cupid");
+                    }
+                }
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>
