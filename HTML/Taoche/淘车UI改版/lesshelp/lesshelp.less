@@ -1,0 +1,167 @@
+@r: 75rem;
+@d: 37.5rem;
+@imgurl: 'http://image.bitautoimg.com/taoche';
+@devimgurl: '../../img';
+
+
+.fz(@fontsize: 14px, @important: 0) {
+    & when (@important=1) {
+
+        [data-dpr="1"] & {
+            font-size: @fontsize !important;
+        }
+        [data-dpr="2"] & {
+            font-size: @fontsize*2 !important;
+        }
+        [data-dpr="3"] & {
+            font-size: @fontsize*3 !important;
+        }
+    }
+
+    & when (@important=0) {
+        [data-dpr="1"]  & {
+            font-size: @fontsize;
+        }
+        [data-dpr="2"] & {
+            font-size: @fontsize*2;
+        }
+        [data-dpr="3"] & {
+            font-size: @fontsize*3;
+        }
+    }
+}
+
+
+/*
+.adb{.fz(14px);}
+.adbddd{.fz(14px,1);}
+*/
+
+.border-radius(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+
+
+/*
+.button {
+  .border-radius(6px);
+}
+
+.button {
+  .border-radius;
+}
+*/
+
+.box-shadow(@x: 0;
+@y: 0;
+@blur: 1px;
+@color: #000) {
+    -webkit-box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    box-shadow: @arguments;
+}
+
+
+
+
+/*
+.big-block {
+  .box-shadow(2px; 5px);  
+}  
+}
+*/
+
+.gradient(@angle: top, @start: #000, @stop: #111) {
+    background: -webkit-linear-gradient(@angle, @start, @stop);
+    background: -moz-linear-gradient(@angle, @start, @stop);
+    background: -o-linear-gradient(@angle, @start, @stop);
+    background: linear-gradient(@angle, @start, @stop);
+}
+
+
+
+/*
+.box4 {
+  .gradient(180deg,#000,#fff);
+}
+*/
+
+.transform(@transform) {
+    -webkit-transform: @transform;
+    -moz-transform: @transform;
+    -ms-transform: @transform;
+    -o-transform: @transform;
+    transform: @transform;
+}
+
+
+
+/*
+.dfsdf{
+	.transform(rotate(0deg));
+}
+
+.dddtranslate{
+	.transform(translate(-50%, -50%));
+}
+*/
+
+.keyframes (@name, @frames) {
+    @-webkit-keyframes @name {
+        @frames();
+    }
+    @-moz-keyframes @name {
+        @frames();
+    }
+    @-ms-keyframes @name {
+        @frames();
+    }
+    @-o-keyframes @name {
+        @frames();
+    }
+    @keyframes @name {
+        @frames();
+    }
+}
+
+/*
+.keyframes (line, {
+    0% {
+        background-size: 0% 2px;
+    }
+    100% {
+        background-size: 100% 2px;
+    }
+});
+
+
+
+.keyframes (line, {
+    0% {
+        .transform(rotate(0deg));
+    }
+    100% {
+        .transform(rotate(360deg));
+    }
+});
+*/
+
+
+.rgba(@a:0.8,@b:40){
+
+    filter: alpha(opacity=@b); 
+
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{b})"; 
+
+    opacity:@a;    
+
+}
+
+/*
+.div{
+	.rgba(.4,40);
+}
+*/

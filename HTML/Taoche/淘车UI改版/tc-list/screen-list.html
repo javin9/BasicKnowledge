@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../tc-header/css/tc-headerUsed.css" />
+    <link rel="stylesheet" type="text/css" href="../tc-footer/css/tc-footer.css" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" type="text/css" href="css/list.css" />
+    <script src="../js/flexible.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body style="font-size: 12px;">
+    <div>
+        <!--主体-->
+        <!--header-->
+        <div class="header clearfix">
+            <div class="logo clearfix">
+                <span class="return">
+                    <img src="../img/return.png">
+                </span>
+                <span class="logo_used">
+                    <img src="../img/used_logo.png">
+                    <i>二手车</i>
+                </span>
+            </div>
+            <div class="search">
+                <a class="search_icon" href="/select/search.aspx"></a>
+                <a class="search_city" href="javascript:;">北京<i></i></a>
+                <a class="share_icon" href="javascript:;"></a>
+                <a class="search_menu" href="javascript:;"></a>
+                <!--header_menu  头部菜单-->
+                <div class="menu_mobile hide" id="menu-mobile">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">新车</a></li>
+                        <li><a href="#">二手车</a></li>
+                        <li><a href="#">分期</a></li>
+                        <li><a href="#">卖车</a></li>
+                        <li><a href="#">估价</a></li>
+                        <li><a href="#">帮买</a></li>
+                        <li><a href="#">置换</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--筛选内容-->
+        <div class="shaix-box" id="filter-bar">
+            <!--未点击posit-rel  posit-fix-->
+            <div class="posit-rel">
+                <!--筛选nav-->
+                <div class="filter-seller">
+                    <div class="seller-rzc"><a href="javascript:;" class="seller-rzc-sel">淘车认证</a></div>
+                    <ul class="seller-nav">
+                        <!-- seller-nav-sel -->
+                        <li id='filter-order' data-filter="filterOrder">
+                            <a href="javascript:;">排序</a>
+                        </li>
+                        <li id='filter-price' data-filter="filterPrice">
+                            <a href="javascript:;">车价</a>
+                        </li>
+                        <li class="brand-trigger" data-filter="filterBrand">
+                            <a href="javascript:;">品牌</a>
+                        </li>
+                        <li id='filter-more' data-filter="filterMore">
+                            <a href="javascript:;">筛选</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--排序-->
+                <div id="filter-order-layer" class="filter-layer seller-list paix-list hide">
+                    <a href="javascript:;" class='<%= OrderField==0?"paix-sel":"" %>'>推荐排序</a>
+                    <a href="javascript:;" class='<%= OrderField==2?"paix-sel":"" %>'>价格最低</a>
+                    <a href="javascript:;" class='<%= OrderField==3?"paix-sel":"" %>'>价格最高</a>
+                    <a href="javascript:;" class='<%= OrderField==1?"paix-sel":"" %>'>时间最新</a>
+                    <a href="javascript:;" class='<%= OrderField==5?"paix-sel":"" %>'>车龄最短</a>
+                    <a href="javascript:;" class='<%= OrderField==4?"paix-sel":"" %>'>里程最少</a>
+                </div>
+                <!--车价-->
+                <div id="filter-price-layer" class="filter-layer seller-list chej-list hide ">
+                    <h3>自定义</h3>
+                    <div class="chej-defined">
+                        <p class="chej-input">
+                            <input type="number" id='min-price' step='1' />
+                        </p>
+                        <p class="chej-line">—</p>
+                        <p class="chej-input">
+                            <input type="number" id='max-price' step='1' />
+                        </p>
+                        <p class="chej-btn ">
+                            <!--class="btn-sel"-->
+                            <a href="javascript:;" id='price-btn'>确定</a>
+                        </p>
+                        <!--输入后按钮增加样式btn-sel-->
+                    </div>
+                    <!---->
+                    <div class="chej-pice-list clearfix">
+                        <span class="chej-pice-sel"><a href="javascript:;">不限</a></span>
+                        <span><a href="javascript:;">3万以下</a></span>
+                        <span><a href="javascript:;">3-5万</a></span>
+                        <span><a href="javascript:;">5-8万</a></span>
+                        <span><a href="javascript:;">8-10万</a></span>
+                        <span><a href="javascript:;">10-15万</a></span>
+                        <span><a href="javascript:;">15-20万</a></span>
+                        <span><a href="javascript:;">20-30万</a></span>
+                        <span><a href="javascript:;">30-50万</a></span>
+                        <span><a href="javascript:;">50-100万</a></span>
+                        <span><a href="javascript:;">100万以上</a></span>
+                    </div>
+                </div>
+                <!--筛选-->
+                <div id="filter-more-layer" class="filter-layer brand-sortlist clearfix hide ">
+                    <div class="brand-item clearfix" id="filter-more-wrapper">
+                        <div class="seller-scroller">
+                            <!-- 车源特色 start -->
+                            <div class="term-box clearfix">
+                                <div class="tt-small">
+                                    <span>车源特色<i class="t-second">（可多选）</i></span>
+                                </div>
+                                <div class="tc-item">
+                                    <ul class="tc-sort" data-ps="s" id="sourceid">
+                                        <li>
+                                            <a href="javascript:;">个人车源</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">商家车源</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">淘车认证</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">品牌认证</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">准新车</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">有图</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">帮卖车源</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 车源特色 end -->
+                            <!-- 车龄 start -->
+                            <div class="term-box clearfix">
+                                <div class="tt-small ">
+                                    <span>车龄</span>
+                                </div>
+                                <div class="tc-item clearfix">
+                                    <ul class="tc-sort" id="carAgeId" data-ps="a">
+                                        <!-- <li>
+                                            <a href="javascript:;">1年内</a>
+                                        </li>
+                                        <li class="cur">
+                                            <a href="javascript:;">2年内</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">3年内</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">3-5年</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">5-8年</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">8年以上</a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 车龄 end -->
+                            <!-- 里程 start -->
+                            <div class="term-box clearfix">
+                                <div class="tt-small ">
+                                    <span>里程</span>
+                                </div>
+                                <div class="tc-item">
+                                    <ul class="tc-sort tc-sort-lic" id="mileageId" data-ps="x">
+                                        <li>
+                                            <a href="javascript:;">1万公里内</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">3万公里内</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">5万公里内</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">10万公里内</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 里程 end -->
+                            <!-- 级别 start -->
+                            <div class="term-box clearfix">
+                                <div class="tt-small ">
+                                    <span>级别</span>
+                                </div>
+                                <div class="tc-item">
+                                    <ul class="tc-sort tc-sort-grade clearfix" id="levelId" data-ps="g">
+                                        <!-- <li data-id="2" logwt="wap_buycar_select_more_level_weixingche"  class="cur">
+                                            <a href="javascript:;">
+                                <em class="car-weixing"></em>
+                                <p class="col-txt">微型车</p>
+                            </a>
+                                        </li>
+                                        <li data-id="4" logwt="wap_buycar_select_more_level_xiaoxingche">
+                                            <a href="javascript:;">
+                                <em class="car-xiaoxing"></em>
+                                <p class="col-txt">小型车</p>
+                            </a>
+                                        </li>
+                                        <li data-id="7" logwt="wap_buycar_select_more_level_jinchouxingche">
+                                            <a href="javascript:;">
+                                <em class="car-jincou"></em>
+                                <p class="col-txt">紧凑型</p>
+                            </a>
+                                        </li>
+                                        <li data-id="6" logwt="wap_buycar_select_more_level_zhongxingche">
+                                            <a href="javascript:;">
+                                <em class="car-zhongxing"></em>
+                                <p class="col-txt">中型车</p>
+                            </a>
+                                        </li>
+                                        <li data-id="3" logwt="wap_buycar_select_more_level_zhongdaxingche">
+                                            <a href="javascript:;">
+                                <em class="car-zhongdxing"></em>
+                                <p class="col-txt">中大型车</p>
+                            </a>
+                                        </li>
+                                        <li data-id="1" logwt="wap_buycar_select_more_level_haohuaxingche">
+                                            <a href="javascript:;">
+                                <em class="car-haohua"></em>
+                                <p class="col-txt">豪华车</p>
+                            </a>
+                                        </li>
+                                        <li data-id="5" logwt="wap_buycar_select_more_level_mpv">
+                                            <a href="javascript:;">
+                                <em class="car-mpv"></em>
+                                <p class="col-txt">MPV</p>
+                            </a>
+                                        </li>
+                                        <li data-id="8" logwt="wap_buycar_select_more_level_suv">
+                                            <a href="javascript:;">
+                                <em class="car-suv"></em>
+                                <p class="col-txt">SUV</p>
+                            </a>
+                                        </li>
+                                        <li data-id="9" logwt="wap_buycar_select_more_level_paoche">
+                                            <a href="javascript:;">
+                                <em class="car-paoche"></em>
+                                <p class="col-txt">跑车</p>
+                            </a>
+                                        </li>
+                                        <li data-id="11" logwt="wap_buycar_select_more_level_miaobaoche">
+                                            <a href="javascript:;">
+                                <em class="car-mianbao"></em>
+                                <p class="col-txt">面包车</p>
+                            </a>
+                                        </li>
+                                        <li data-id="12" logwt="wap_buycar_select_more_level_pikache">
+                                            <a href="javascript:;">
+                                <em class="car-pika"></em>
+                                <p class="col-txt">皮卡</p>
+                            </a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 级别 end -->
+                            <!-- 排量 start -->
+                            <div class="term-box clearfix">
+                                <div class="tt-small ">
+                                    <span>排量</span>
+                                </div>
+                                <div class="tc-item">
+                                    <ul class="tc-sort" id="exhaustId" data-ps="e">
+                                        <!--  <li>
+                                            <a href="javascript:;">1.0升以下</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">1.1-1.5升</a>
+                                        </li>
+                                        <li class="cur">
+                                            <a href="javascript:;">1.6-2.0升</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">2.1-3.0升</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">3.1升以上</a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 排量 end -->
+                            <!-- 变速箱 start -->
+                            <div class="term-box clearfix">
+                                <div class="tt-small ">
+                                    <span>变速箱</span>
+                                </div>
+                                <div class="tc-item ">
+                                    <ul class="tc-sort" id="gearBoxId" data-ps="b">
+                                        <!-- <li>
+                                            <a href="javascript:;">手动</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">自动</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">手自一体</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">无级变速</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">双离合</a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 变速箱 end -->
+                            <!-- 排放标准 start -->
+                            <div class="term-box clearfix">
+                                <div class="tt-small ">
+                                    <span>排放标准</span>
+                                </div>
+                                <div class="tc-item">
+                                    <ul class="tc-sort" id="emissionId" data-ps="o">
+                                        <!-- <li>
+                                            <a href="javascript:;">OBD</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">京5</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">欧5</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">欧4</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">欧3</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">国5</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">国4</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">国3</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">国2</a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 排放标准 end -->
+                            <!-- 驱动 start -->
+                            <div class="term-box clearfix">
+                                <div class="stle-close">
+                                    <a href="javascript:;">
+                                        <span>驱动</span>
+                                        <s class="selected-item" id="selected-item-cardrive"></s>
+                                    </a>
+                                </div>
+                                <div class="tt-small tt-small-ext hide">
+                                    <a href="javascript:;" class="tt-open"></a>
+                                    <span>驱动</span>
+                                </div>
+                                <div class="tc-item hide">
+                                    <ul class="tc-sort" id="carDriveId" data-ps="q">
+                                        <!-- <li>
+                                            <a href="javascript:;">前驱</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">后驱</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">四驱</a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 驱动 end -->
+                            <!-- 车身 start -->
+                            <div class="term-box clearfix">
+                                <div class="stle-close">
+                                    <a href="javascript:;">
+                                        <span>车身</span>
+                                        <s class="selected-item" id="selected-item-carbody"></s>
+                                    </a>
+                                </div>
+                                <div class="tt-small tt-small-ext hide">
+                                    <a href="javascript:;" class="tt-open"></a>
+                                    <span>车身</span>
+                                </div>
+                                <div class="tc-item hide">
+                                    <ul class="tc-sort" id="carBodyId" data-ps="t">
+                                        <!--  <li>
+                                            <a href="javascript:;">两厢</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">三厢</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">旅行版</a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 车身 end -->
+                            <!-- 燃料 start -->
+                            <div class="term-box clearfix">
+                                <div class="stle-close">
+                                    <a href="javascript:;">
+                                        <span>燃料</span>
+                                        <s class="selected-item"  id="selected-item-carfuel"></s>
+                                    </a>
+                                </div>
+                                <div class="tt-small tt-small-ext hide">
+                                    <a href="javascript:;" class="tt-open"></a>
+                                    <span>燃料</span>
+                                </div>
+                                <div class="tc-item hide">
+                                    <ul class="tc-sort" id="carFuelId" data-ps="r">
+                                        <!-- <li>
+                                            <a href="javascript:;">汽油</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">柴油</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">纯电动</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">油电混合</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">油气混合</a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 燃料 end -->
+                            <!-- 国别 start -->
+                            <div class="term-box clearfix">
+                                <div class="stle-close special">
+                                    <a href="javascript:;">
+                                        <span>国别</span>
+                                        <s class="selected-item" id="selected-item-carcounty"></s>
+                                    </a>
+                                </div>
+                                <div class="tt-small tt-small-ext hide">
+                                    <a href="javascript:;" class="tt-open"></a>
+                                    <span>国别</span>
+                                </div>
+                                <div class="tc-item hide">
+                                    <ul class="tc-sort"  id="carCountyId">
+                                       <!--  <li>
+                                            <a href="javascript:;">德国</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">日本</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">美国</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">韩国</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">法国</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">英国</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">意大利</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">瑞典</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">中国</a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 国别 end -->
+                            <!-- 颜色 start -->
+                            <div class="term-box clearfix">
+                                <div class="stle-close special">
+                                    <a href="javascript:;">
+                                        <span>颜色</span>
+                                        <s class="selected-item" id="selected-item-carcolor">黑色</s>
+                                    </a>
+                                </div>
+                                <div class="tt-small tt-small-ext hide">
+                                    <a href="javascript:;" class="tt-open"></a>
+                                    <span>颜色</span>
+                                </div>
+                                <div class="tc-item hide">
+                                    <ul class="tc-sort tc-sort-color" id="carColorId" data-ps="c">
+                                      <!--   <li>
+                                            <a href="javascript:;">
+                                    <em class="black"></em>
+                                    <p class="col-txt">黑色</p>
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                    <em class="y-gray"></em>
+                                    <p class="col-txt">银灰色</p>
+                                </a>
+                                        </li>
+                                        <li class="cur">
+                                            <a href="javascript:;">
+                                    <em class="white"></em>
+                                    <p class="col-txt">白色</p>
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                    <em class="red"></em>
+                                    <p class="col-txt">红色</p>
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                    <em class="blue"></em>
+                                    <p class="col-txt">蓝色</p>
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                    <em class="s-gray"></em>
+                                    <p class="col-txt">深灰色</p>
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                    <em class="champagne"></em>
+                                    <p class="col-txt">香槟色</p>
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                    <em class="green"></em>
+                                    <p class="col-txt">绿色</p>
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                    <em class="yellow"></em>
+                                    <p class="col-txt">黄色</p>
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                    <em class="orange"></em>
+                                    <p class="col-txt">橙色</p>
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                    <em class="coffee"></em>
+                                    <p class="col-txt">咖啡色</p>
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                    <em class="purple"></em>
+                                    <p class="col-txt">紫色</p>
+                                </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                    <em class="colour"></em>
+                                    <p class="col-txt">多彩色</p>
+                                </a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 颜色 end -->
+                            <!-- 配置 start -->
+                            <div class="term-box to-bottom">
+                                <div class="stle-close special">
+                                    <a href="javascript:;">
+                                        <span>配置</span>
+                                        <s class="selected-item txtElps"  id="selected-item-hotconfig"></s>
+                                    </a>
+                                </div>
+                                <div class="tt-small tt-small-ext hide">
+                                    <a href="javascript:;" class="tt-open"></a>
+                                    <span>配置（可多选）</span>
+                                </div>
+                                <div class="tc-item hide clearfix">
+                                    <ul class="tc-sort" id="carConfigId" data-ps="z">
+                                        <!-- <li class="cur">
+                                            <a href="javascript:;">天窗</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">GPS导航</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">GPS导航</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">儿童锁</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">涡轮增压</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">无钥匙启动</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">四轮碟刹</a>
+                                        </li>
+                                        <li class="cur">
+                                            <a href="javascript:;">真皮座椅</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">EPS</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">疝气大灯</a>
+                                        </li>
+                                        <li class="cur">
+                                            <a href="javascript:;">定速巡航</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">自动空调</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">胎压监测</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">自动泊车</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">空气净化</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">换挡拨片</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">电动座椅</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">儿童座椅</a>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 配置  end -->
+                        </div>
+                    </div>
+                    <div class="brand-bottom clearfix">
+                        <!-- 第一种情况 start -->
+                        <div class="bot-fixed bot-sortbox ">
+                            <ul>
+                                <li class="li-close btn-close-js">
+                                    <a href="javascript:;" id="close-more-filterlayer">
+                                    <span>关闭</span>
+                                </a>
+                                </li>
+                                <li class="li-reset">
+                                    <a href="javascript:;">
+                                    <span>重置</span>
+                                </a>
+                                </li>
+                                <li class="li-sure">
+                                    <a href="javascript:;">
+                                    <span>确定</span>
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 第一种情况 end -->
+                        <!-- 第二种情况 start -->
+                        <div class="bot-fixed bot-sortbox" style="display:none;">
+                            <ul>
+                                <li class="li-close btn-close-js">
+                                    <a href="javascript:;">
+                                    <span>关闭</span>
+                                </a>
+                                </li>
+                                <li class="li-reset li-reset-no">
+                                    <a href="javascript:;">
+                                    <span>重置</span>
+                                </a>
+                                </li>
+                                <li class="li-sure li-sure-no">
+                                    <a href="javascript:;">
+                                    <span>暂无合适车源</span>
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 第二种情况 end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--内容-->
+        <div class="seller-nav-sub">
+            <ul>
+                <!-- 第一种 -->
+                <li><a class="seller-dbsel" href="javascript:;">淘车直卖</a></li>
+                <!-- 第二种 -->
+                <li>
+                    <a class="seller-dbse-f" href="javascript:;">淘车直卖</a>
+                    <a class="seller-dbse-l" href="javascript:;">淘车认证</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 足迹 s -->
+        <div class="tract-top new-tract post-re">
+            <div class="track-div  mar50">
+                <ul class="trackul">
+                    <li><a href="javascript:;"><b>奔驰C级</b><i class="icon-close-01"></i></a></li>
+                    <li><a href="javascript:;"><b>大众</b><i class="icon-close-01"></i></a></li>
+                    <li><a href="javascript:;"><b>宝来</b><i class="icon-close-01"></i></a></li>
+                    <li><a href="javascript:;"><b>北京新能源远远远额</b><i class="icon-close-01"></i></a></li>
+                </ul>
+            </div>
+            <!--清空-->
+            <div class="track-del">
+                <em class="icon-qingkong"></em>清空
+            </div>
+        </div>
+        <!-- 足迹 e -->
+        <div class="car-list-wrap boxwrap">
+            <div class="carlist-inner">
+                <ul class="carlist-ul-horizontal">
+                    <li>
+                        <a href="javascript:;">
+                            <div class="car-img">
+                                <img src="http://img8.taoche.cn/1d/02170zpqqv.jpg">
+                                <span class="car-ico">
+                                    <em class="car-tcrz"></em>
+                                </span>
+                                <i class="ygong-txt">日供10元开回家</i>
+                            </div>
+                            <div class="car-txt">
+                                <p class="name">奥迪Q5(进口)10款奥迪Q5(进口)10款奥迪Q5(进口)10款奥迪Q5(进口)10款</p>
+                                <p class="time">2013年 | 8.0万公里 | 北北京京</p>
+                                <p class="bq-hidde cf">
+                                    <em class="s-bt fl add-mr">30天可退</em>
+                                    <em class="s-fqgc fl">保障车</em>
+                                    <em class="s-ywkz fl">保障车</em>
+                                </p>
+                                <p class="pri"><i class="car-pri-s">首付19.82万</i>全款40.78万</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <div class="car-img">
+                                <img src="http://img8.taoche.cn/1d/02170zpqqv.jpg">
+                            </div>
+                            <div class="car-txt">
+                                <p class="name">奥迪Q5(进口)10款奥迪Q5(进口)</p>
+                                <p class="time">2013年 | 8.0万公里 | 北北京京</p>
+                                <p class="bq-hidde cf">
+                                    <em class="s-bt fl add-mr">30天可退</em>
+                                    <em class="s-bzc fl">保障车</em>
+                                </p>
+                                <p class="pri"><i class="car-pri-s">首付19.82万</i>27.56万</p>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- 价位 品牌 年限 e -->
+                    <li class="add-spokesman">
+                        <img src="../img/spokesman_adv.png" alt="">
+                        <a href="javascript:;">
+                            <img src="../img/module_btn.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <div class="no_content">
+                            <img src="../img/no_content.png" alt="">
+                            <p>暂时没有这样的车</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="no_content">
+                            <img src="../img/no_network.png" alt="">
+                            <p>加载失败，请点击重新加载</p>
+                            <a href="javascript:;" class="re_load">重新加载</a>
+                        </div>
+                    </li>
+                    <li class="add-advert">
+                        <a href="javascript:;"><img src="../img/applist_picbg.jpg" alt=""></a>
+                        <span class="adv-close-btn"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bot-sxdiv">
+                <em class="ui-loading"></em>加载中...
+            </div>
+            <div class="new-navlist">
+                <a href="javascript:;">淘车</a> &gt; <a href="javascript:;">呼和浩特二手车</a> &gt; <a href="javascript:;">阿尔法·罗密欧4C</a> &gt; <a href="javascript:;">阿尔法·罗密欧4C</a> &gt; <a href="javascript:;">阿尔法·罗密欧4C</a> &gt; <a href="javascript:;">阿尔法·罗密欧4C</a> &gt; <a href="javascript:;">POLO</a> &gt; <a href="javascript:;">POLO</a>
+            </div>
+            <div class="add-line"></div>
+            <div class="new-ambitus">
+                <div class="ambitus-nav">
+                    <span><a href="javascript:;" class="sel-item">热门</a></span>
+                    <span><a href="javascript:;">周边</a></span>
+                </div>
+                <div class="ambitus-box">
+                    <a href="javascript:;">北京二手车阿尔法·罗密罗密罗密欧 </a>
+                    <a href="javascript:;">北京二手车阿尔法·罗密欧 </a>
+                    <a href="javascript:;">北京二手车</a>
+                    <a href="javascript:;">北京二手车</a>
+                    <a href="javascript:;">北京二手车阿尔法·罗密欧 </a>
+                    <a href="javascript:;">北京二手车阿尔法·罗密欧 </a>
+                    <a href="javascript:;">北京二手车阿尔法·罗密欧 </a>
+                    <a href="javascript:;">北京二手车阿尔法·罗密欧 </a>
+                    <a href="javascript:;">北京二手车阿尔法·罗密欧 </a>
+                    <a href="javascript:;">北京二手车阿尔法·罗密欧 </a>
+                </div>
+            </div>
+        </div>
+        <div class="mark"></div>
+        <div class="pop-wrap-down">
+            <div class="pop-inner-down">
+                <div class="pop-tle-down"></div>
+                <div class="pop-desc-down">
+                    <p>签到送车币，豪奖轻松兑</p>
+                    <p>更有淘车定制礼品限量抢</p>
+                </div>
+                <ul class="pop-list-down">
+                    <li>
+                        <p class="car-source">海量车源</p>
+                    </li>
+                    <li>
+                        <p class="accurate-delivery">精准送达</p>
+                    </li>
+                    <li>
+                        <p class="professional-service">专业送达</p>
+                    </li>
+                    <li>
+                        <p class="easy-car">轻松卖车</p>
+                    </li>
+                </ul>
+                <a href="javascript:;" class="pop-down-btn">立即前往下载</a>
+            </div>
+            <a href="javascript:;" class="pop-close"></a>
+        </div>
+        <div class="add-line"></div>
+        <!--footer-->
+        <div class="footer clearfix">
+            <ul>
+                <li><a href="javascript:;"><i class="computer"></i>看电脑版</a></li>
+                <li><a href="javascript:;"><i class="opinion"></i>提意见</a></li>
+                <li><a href="javascript:;"><i class="about"></i>关于我们</a></li>
+            </ul>
+            <p>新车分期热线: 4000-169-169</p>
+            <p>二手车热线: 4000-189-167</p>
+            <p>每天9:00-21:00（法定假日除外)</p>
+            <span class="span_one">淘车 m.taoche.com</span>
+            <span>易鑫集团旗下</span>
+        </div>
+        <!--menu-->
+        <div class="menu">
+            <ul>
+                <li class="active">
+                    <i class="home"></i>
+                    <span>首页</span>
+                </li>
+                <li>
+                    <i class="newCar"></i>
+                    <span>新车</span>
+                </li>
+                <li>
+                    <i class="second"></i>
+                    <span>二手车</span>
+                </li>
+                <li>
+                    <i class="stages"></i>
+                    <span>分期</span>
+                </li>
+                <li>
+                    <i class="my"></i>
+                    <span>我的</span>
+                </li>
+            </ul>
+        </div>
+        <!--遮罩-->
+        <div class="mask-cover hide" id="mask-cover"></div>
+    </div>
+    <!-------------------------->
+    <!--<div style="height: 500px; background-color: #4cc38b; "></div>-->
+    <!-------------------------->
+    <!--品牌-->
+    <div id="carSelectComponent">
+        <div class="leftmask" style="display:none;">
+            <em>点<br>击<br>收<br>起</em>
+        </div>
+        <div class="relative-position defaultAni" id="first-wrapper">
+            <!--heard-->
+            <div id="header" class="seller-heard">
+                <a href="javascript:;" title="返回" class="goback go-back"></a>
+                <span>
+                <img src="../img/serren-logo.svg" alt="">
+                选择品牌
+            </span>
+            </div>
+            <!---->
+            <div id="wrapper" class="wrapper">
+                <div id="scroller" class="seller-scroller">
+                    <div class="carSelect-allCar-ul">
+                        <img src="http://image.bitautoimg.com/uimg/mbt2015/images/loading.gif">
+                    </div>
+                    <a class="brand-all-text" href="#">
+                        全部品牌
+                    </a>
+                    <div class="brand-hot clearfix" id="hot-wrapper">
+                    </div>
+                    <!--数据循环-->
+                    <!--<div class="brand-col clearfix">-->
+                    <!--<div class="brand-title-item">-->
+                    <!--A-->
+                    <!--</div>-->
+                    <!--<div class="brand-col-list">-->
+                    <!--<ul>-->
+                    <!--<li>-->
+                    <!--<a href="javascript:;">-->
+                    <!--<div class="brand-col-img">-->
+                    <!--<img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_26_100.png" alt="">-->
+                    <!--</div>-->
+                    <!--<span>-->
+                    <!--奥迪-->
+                    <!--</span>-->
+                    <!--</a>-->
+                    <!--</li>-->
+                    <!--</ul>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="tipsLetter" style="display: none;">P</div>
+        </div>
+        <div class="relative-position defaultAni new-wrapp" id="sery-wrapper">
+            <div id="car-wrapper" class="wrapper seller-next-w">
+                <div id="sery-scroller" class="seller-scroller">
+                    <img src="http://image.bitautoimg.com/uimg/mbt2015/images/loading.gif" class="seller-load">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript" src="js/indexsidebar.js"></script>
+    <script type="text/template" id="hotTemplate">
+        <div class="brand-hot-text">热门品牌</div>
+        <ul class="brand-hot-list clearfix">
+            {for(var k=0,kLen=data.length;k
+            <kLen;k++){ var item=data[k]; } <li data-action="car" data-id="{=item.bs_Id}" data-name="{=item.bs_Name}">
+                <a href="javascript:;">
+                      <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_{=item.bs_Id}_100.png" alt="">
+                      <p>{=item.bs_Name}</p>
+                 </a>
+                </li>
+                {}}
+        </ul>
+    </script>
+    <script type="text/template" id="brandTemplate">
+        {console.log(data); console.log(currentid);var MsterList=data.MsterList; for(var n in MsterList){}
+        <div class="brand-col clearfix">
+            <div class="brand-title-item" data-letter="{=n}">
+                {=n}
+            </div>
+            <div class="brand-col-list">
+                <ul>
+                    { for(var i=0,thisMsterList=MsterList[n],thisLen=thisMsterList.length;i
+                    <thisLen;i++){ } <li data-action="car" data-id="{=thisMsterList[i].Bs_Id}" data-name="{=thisMsterList[i].Bs_Name}">
+                        <a href="javascript:;">
+                            <div class="brand-col-img">
+                                <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_{=thisMsterList[i].Bs_Id}_100.png" alt="">
+                            </div>
+                            <span {=thisMsterList[i].Bs_Id.toString()==currentid? "class='colffd2'": ""}>{=thisMsterList[i].Bs_Name}</span>
+                        </a>
+                        </li>
+                        {}}
+                </ul>
+            </div>
+        </div>
+        {}}
+    </script>
+    <script type="text/template" id="carTemplate">
+        {console.log(data);console.log(currentid); console.log(name); }
+        <div class="citycont-back">
+            <a href="#" title="返回" class="goback"></a>
+            <span>选择车款</span>
+        </div>
+        <div class="seller-nex-name">
+            <p><img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_{=pid}_100.png" alt=""></p>{=name}
+        </div>
+        <div class="seller-nex-no">
+            <a href="{=data[0].PUrl}">不限车型</a>
+        </div>
+        <div class="seller-nex-list">
+            { for(var i = 0,len=data.length;i<len; i++){ 
+            if(data[i].Child.length> 0){  }
+                <div class="seller-nex-title">
+                    {= data[i].BrandName }
+                </div>
+                <div class="seller-nex-collist">
+                    <ul>
+                {for(var j = 0,thisList=data[i],thisChild=thisList.Child,lenChild=thisChild.length,url=thisList.Url;j
+                        <lenChild; j++){ } 
+                    <li><a {=thisChild[j].CsId==currentid? 'class="colffd2"': ''} data-id="{= thisChild[j].CsId}" href="{=url.format([thisChild[j].AllSpell])}">
+                    {= thisChild[j].CsShowName }
+
+                </a></li>
+                   {}}
+                    </ul>
+                </div>
+                {}}
+                {}}
+        </div>
+    </script>
+    <!-- 车龄，里程，排量,排放标准,燃料,国别,车身-->
+    <script type="text/template" id="systemTemplate">
+        { for(var a=0,aLen=data.length;a
+        <aLen;a++){ 
+        var item=data[a]; 
+        var className=item.TagCode==current?'class="cur"':'';
+
+        } <li {=className}>
+            <a href="javascript:;" data-id="{=item.TagCode}" logwt="{=(logwt+item.TagCode)}">{=item.TagName}
+            </a>
+            </li>
+            {}}
+    </script>
+
+    <!-- 级别,驱动标准 -->
+    <script type="text/template" id="customTemplate">
+        { for(var a=0,aLen=data.length;a
+        <aLen;a++){ 
+        var item=data[a]; 
+        var className=item.Id==current?'class="cur"':'';
+        }
+       <li  {=className}>
+            <a href="javascript:;" data-id="{=item.Id}" logwt="{=(logwt+item.Spell)}">
+                                <em class="car-{=item.Spell}"></em>
+                                <p class="col-txt">{=item.Name}</p>
+             </a>
+            </li>
+            {}}
+    </script>
+
+    <!-- 变速 -->
+    <script type="text/template" id="carGearBoxTemplate">
+        { for(var a=0,aLen=data.length;a
+        <aLen;a++){
+         var item=data[a];
+         var className=item.Id==current?'class="cur"':'';
+          } 
+        <li {=className}>
+            <a href="javascript:;"  data-id="{=item.Id}" logwt="wap_buycar_select_more_gearbox_{=item.Id}">{=item.Name}</a>
+            </li>
+            {}}
+    </script>
+
+    <!-- 驱动标准 -->
+    <script type="text/template" id="carDriveTemplate">
+        { for(var a=0,aLen=data.length;a
+        <aLen;a++){ 
+        var item=data[a]; 
+        var className=item.Id==current?'class="cur"':'';
+        } <li {=className}>
+            <a href="javascript:;" data-id="{=item.Id}" logwt="wap_buycar_select_more_drive_{=item.Spell}" >{=item.Name}</a>
+            </li>
+            {}}
+    </script>
+
+  
+    <!-- 颜色 -->
+    <script type="text/template" id="carCarColorTemplate">
+        { for(var a=0,aLen=data.length;a
+        <aLen;a++){ 
+        var item=data[a];
+        var className=item.Id==current?'class="cur"':'';
+         } 
+        <li {=className}>
+                <a href="javascript:;" data-id="{=item.Id}" logwt="wap_buycar_select_more_color_{=item.Spell}">
+                    <em class="{=item.Spell}"></em>
+                    <p class="col-txt">{=item.Name}</p>
+         </a>
+        </li>
+        {}}
+    </script>
+
+    <!-- 亮点配置 -->
+    <script type="text/template" id="carHotConfigTemplate">
+        { for(var a=0,aLen=data.length;a<aLen;a++){ 
+        var item=data[a];
+        var className=arr.indexOf(String(item.CCDID))>-1?'class="cur"':'';
+         } 
+        <li {=className}>
+            <a href="javascript:;"  data-id="{=item.CCDID}" logwt="wap_buycar_select_more_lightpoint_{=item.CCDID}">{=item.CCName}</a>
+        </li>
+    {}}
+    </script>
+    <script type="text/javascript" src="js/underscore.js"></script>
+    <script type="text/javascript" src="js/render.js"></script>
+    <script type="text/javascript" src="js/brand.js"></script>
+    <script type="text/javascript" src="js/tc.validator.js"></script>
+    <script type="text/javascript" src="tc.utils.js"></script>
+    <script type="text/javascript" src="header.js"></script>
+    <script type="text/javascript" src="list.js"></script>
+</body>
+
+</html>

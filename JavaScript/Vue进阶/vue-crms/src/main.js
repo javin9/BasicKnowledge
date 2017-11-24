@@ -5,6 +5,10 @@ import App from './App'
 import router from './router'
 import './assets/css/app.css'
 
+
+import VueBus from 'vue-bus';
+Vue.use(VueBus);
+
 Vue.config.productionTip = false;
 import Utils from './lib/utils.js';
 

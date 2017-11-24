@@ -1,0 +1,711 @@
+@import "../../lesshelp/lesshelp.less";
+
+//内部less变量
+@h1_color:#2F3540;
+@h2_color:#25282D;
+@p_price:#818D9A;
+@main_color:#FF6402;
+@move_color:#868A8B;
+@orange:#FF9900;
+@green:#06C1AE;
+@ping:#FF2D4F;
+@gray:#818D9A;
+@lightgray:#B0B3B4;
+@black:#2F3540;
+
+//公共样式
+.hide{display:none;}
+.borb0{border-bottom:0/@d !important;}
+.borr0{border-right:0/@d !important; }
+img{max-width:100%;}
+a{color:#333333;}
+.boxwrap{background:#fff;}
+.mt12 {
+    margin-top: 12/@d;
+}
+.pab50{
+    padding-bottom: 54/@d;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body{font-size:12px}
+.clearfix{zoom:1}
+.clearfix:after{display:block; content:''; clear:both;}
+.bg-greyer {
+    background: #f5f5f5;
+}
+/* banner */
+.banner-wrap{position:relative;}
+.pagination {position: absolute;z-index: 20;left: 10/@d;bottom: 10/@d;width:100%;text-align:center;  }
+.swiper-pagination-switch {display: inline-block;width: 0.5rem;height: 0.5rem;border-radius: 0.5rem;background: #999;margin-right: 0.5rem;opacity: 0.8;cursor: pointer;  }
+.swiper-active-switch {background: #dd2727;}
+.ban_swiper .swiper-slide {text-align: center;position:relative;  }
+.ban_swiper .swiper-slide a{display:block;width:100%;}
+.ban_swiper .swiper-slide a:after{content: '';display: block;width: 100%;padding-top:66.6667%;}
+.ban_swiper .swiper-slide img{width: 100%;display:block;height:100%;top:0;left:0;position:absolute;}
+.swiper-pagination-current{color:#ff6600;}
+.swiper-pagination-current{.fz(16px)}
+
+.banner-wrap .swiper-slide img{display:block;}
+.ban-icon{position:relative;width:100%;}
+.ban-icon-no{position:absolute;z-index:10;background:rgba(0,0,0,0.4);width:100%;left:0;bottom:0;}
+.ico-bzc{background: url(../../img/tag-bzc.png) no-repeat; position:absolute;left:30/@r;bottom:30/@r;z-index:10;display:block;width:78/@d;height:25/@d;background-size: contain;}
+.ico-rzc{background:url(../../img/tag-pprz.png) no-repeat; position:absolute;left:30/@r;bottom:30/@r;z-index:10;display:block;width:78/@d;height:25/@d;background-size: contain;}
+.ico-wrz{display:block;
+background:url(http://image.bitautoimg.com/taoche/2016taoche_m/d_gr.png) no-repeat left center;
+.fz(12px);
+background-size:13/@d 13/@d;padding-left:17/@d; color:#fff;line-height:25/@d;margin-left:15/@d;}
+.ban-page{position:absolute;right:15/@d;bottom:10/@d;z-index:10;background:rgba(0,0,0,0.4);width:60/@d;line-height:25/@d;text-align:center;color:#fff;
+    border-radius:3/@d;
+    -webkit-border-radius:3/@d;
+    -moz-border-radius:3/@d;
+    .fz(14px)
+}
+
+/*淘车直卖图标*/
+.ico-taob_zmc{    position: absolute;  left: 0/@d;  bottom: 0/@d;  z-index: 10;  display: block; 
+ width: 160/@r;  height: 46/@r;line-height: 46/@r;
+ color: white;
+ .fz(12px);
+ background-color: #FF6D02 ;
+ border-radius: 5/@r;
+ }
+ .ico-taob_zmc i{
+     display: inline-block;
+     width: 22/@r;
+     height: 24/@r;
+     background:url(../../img/taochezhimai@2x.png) no-repeat center ;
+     background-size: cover;
+     position: absolute;
+     top: 50%;
+     margin-top: -12/@r;
+     margin-left: 5/@r;
+ }
+ .ico-taob_zmc span{
+     display: inline-block;
+     margin-left: 40/@r;
+     height: 46/@r;line-height: 46/@r;
+ }
+
+
+/* det-wrap */
+.det-wrap{padding:0 15/@d;}
+.d-tle{ .fz(16px);
+color:@black;line-height:45/@r;padding:11/@d 0 5/@d;}
+.d-secondtle{color:@black;
+.fz(14px);
+margin-top: 20/@r;
+line-height:120/@r;
+height: 120/@r;
+}
+.d-secondtle .line{
+.fz(14px);
+padding:0 10/@d;
+}
+.d-secondtle li{
+width: 33%;
+float: left;
+height: 100/@r;
+}
+.d-secondtle p:nth-child(1){
+    color: #818D9A;
+    .fz(11px);
+}
+.d-secondtle p{
+    height: 50/@r;
+    line-height: 50/@r;
+    text-align: center;
+    .fz(13px);
+    color: #2F3540;
+}
+/*价格区块*/
+.d-price{overflow:hidden;}
+.d-price .left-pri{padding-right:42/@r;.fz(30px);color:#ff6d02;line-height:84/@r;float: left;}
+.d-price .right-pri{float: left;height: 100%;padding-top: 5/@r;width: 420/@r;}
+.d-price .right-pri p{display:block;.fz(13px);color: #818D9A;line-height:37/@r;}
+
+/*估值标签*/
+.look-gz{overflow:hidden;}
+.look-gz a{float:left;display:block;margin-right:17/@d;padding-left:21/@d;line-height:25/@d;color:#FF6402;.fz(13px);background: url(../../img/icon-valuation.png) no-repeat;background-size:30/@r 28/@r;background-position:center left}
+
+/*开走导航*/
+.xq-onepic{width: 100%; height: 100/@r; background: #FFF6EF; margin-top: 30/@r; margin-bottom:0; padding: 9/@d 11/@d; line-height: 27/@d;}
+.xq-onepic s{ width: 40/@d; height: 64/@d; display: inline-block;position:absolute; top:-30/@d; left:-10/@d;}
+.xq-onepic span{.fz(13px);  color: #FF6D02;  letter-spacing: 0; padding-left: 48/@d; float: left; display: inline-block; padding-top: 2/@r;}
+.xq-onepic span em{ padding: 0 8/@d;}
+.xq-onepic a{ position:relative; display: block; height: 37/@r;line-height: 37/@r;top: 50%;margin-top: -18.5/@r;}
+.xq-onepic i{.fz(13px); color: #FF6D02 ;float: right;line-height: 37/@r;height: 37/@r;margin-top: 2/@r; }
+.xq-onepic i:after{display:block;content: '';background:url(../../img/go-orange.png) no-repeat;background-size: contain; width: 12/@r;height: 20/@r;position: absolute;top: 10/@r;right: -20/@r;}
+
+/*保障服务*/
+.bz-wrap{
+    display: flex;
+    height: 120/@r;
+}
+.bz-wrap div{
+    display: block;
+    .fz(13px);
+    color: #394043;
+    text-align: center;
+    height: 120/@r;
+    line-height: 120/@r;
+    flex: 1;
+}
+.bz-wrap span{display: inline-block; line-height: 37/@r;position: relative;}
+.bz-wrap .bc-k1{
+    background: url(../../img/icon-bz-yczb.png) no-repeat;
+    background-size: 23/@r 27/@r;
+    background-position-y: center;
+    padding-left: 30/@r;
+}
+
+.bz-wrap .bc-k2{
+  
+    background: url(../../img/icon-bz-mfgh.png) no-repeat;
+    background-size: 28/@r 22/@r;
+    background-position-y: center;
+    padding-left: 35/@r;
+       
+}
+
+/*品牌商认定*/
+.i-right{
+    background: url(../../img/icon-right.png) no-repeat center right 30/@r;background-size: 12/@r 20/@r;
+}
+.pps-wrap a{
+    display: block;
+    line-height: 120/@r;
+    height: 120/@r;
+    padding-left: 30/@r;
+}
+.pps-wrap a span{line-height: 37/@r;.fz(13px);padding-left: 30/@r;background: url(../../img/icon-ppsj.png) no-repeat center left;background-size: 25/@r 28/@r;}
+
+/*宝马金融*/
+.bmw-wrap{padding:0px 30/@r;}
+.bmw-entry{ width:100%; height:100/@r;background: rgba(251,118,20,0.10); overflow:hidden;}
+.bmw-entry a{display:block; width:100%; height:100/@r; color:#FF6D02;}
+.bmw-l{float:left;.fz(15px); line-height:100/@r; padding-left:90/@r; background:url(../../img/icon-bmw.png) no-repeat 20/@r center; background-size:60/@r 60/@r; }
+.bmw-r{float:right; .fz(15px); line-height: 100/@r; margin-right:30/@r;}
+
+/* public tle */
+.m-tle{position:relative;border-bottom:1/@d solid #ececec;padding:0 15/@d;overflow:hidden;}
+.h2{.fz(16px);color: #2F3540;;line-height:50/@d;}
+.mtle-link{ .fz(14px); float: right;  color: #666666;  letter-spacing: 0;     background: url("http://image.bitautoimg.com/taoche/2016taoche_m/arrow-right.png") no-repeat right center;  background-size: 7/@d 11/@d; padding-right: 13/@d;}
+
+/* record-wrap */
+.table-rec td{border-right:1/@d solid #ececec;border-bottom:1/@d solid #ececec;padding:10/@d 0 10/@d 15/@d;width:33.333%;vertical-align:top;}
+.table-rec td:last-child{border-right:none;}
+.table-rec td p.pt{.fz(14px);color:#333;line-height:24/@d;}
+.table-rec td p.pb{.fz(12px);color:#999;line-height:20/@d;}
+
+.table-rec td p.p-orange{color:#FF6D02;}
+.table-rec td p.p-red{color:#FF2D4F;}
+.car-desc{padding:10/@d 0 5/@d;margin:0 15/@d;border-bottom:1/@d solid #ececec;}
+.car-desc li{float:left;width:49%;.fz(14px);line-height:23/@d;padding-bottom:5/@d;padding-left:1%;}
+.car-desc li span{color:#666;}
+
+.car-light{padding:10/@d 0;margin:0 15/@d;border-bottom:1/@d solid #ececec;}
+.car-light li{position:relative;width:20%;float:left;padding:5/@d 0 0;text-align:center;}
+.car-light li a{display:block;}
+.car-light li .car-lico{
+    width: 60/@r;
+    height: 60/@r;
+    text-align: center;;
+    vertical-align: middle;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.car-light li .car-lico img{
+    width: 100%;
+}
+.car-light li .car-ltxt{.fz(12px);color:@black;line-height:23/@d;}
+
+.ico-zp{position:absolute;top:0;right:0;width:24/@d;height:16/@d;background-position:0 -207/@d;}
+.alink{line-height:50/@d;text-align:center;}
+.alink a{display:block;}
+.alink a em{padding-right:13/@d;.fz(13px);color:#666;}
+.tan{
+    display: inline-block;
+    margin-left: 5/@d;
+    width: 13/@d;
+    height: 13/@d;
+    vertical-align: -2px;
+    background: url(../../img/icon-warn-gray.png) no-repeat;
+    background-size: contain;
+}
+
+/*车源图片*/
+.carpic-list {
+    padding: 30/@r 15/@r 0;
+}
+.carpic-list p {
+    padding-bottom: 15px;
+}
+.carpic-list p img {
+    display: block;
+    margin: 0 auto;
+//  height: 460/@r;
+  //  width: 690/@r;
+    width: 100%;
+}
+.load-more {
+    padding: 3px 0 19px;
+}
+.load-more a {
+    display: block;
+    color: #666;
+    .fz(14px);
+    text-align: center;
+}
+.load-more a em {
+    padding-right: 16/@d;
+    background: url(http://image.bitautoimg.com/taoche/2016taoche_m/ico_open.png) no-repeat;
+    background-size: 11/@d 30/@d;
+    background-position: right 6/@d;
+    color: #2F3540;
+    .fz(13px);
+}
+
+/*购车流程*/
+
+.gclc-box{margin-top: 22/@d; position: relative; height: 80/@d; }
+.gclc-table{height: 50/@d;  width: 100%; position: absolute; left: 0/@d; top: -8/@d;  }
+.gclc-table li{ width: 20%; height: 60/@d; float: left; text-align: center;
+background: url(../../img/liucheng_right_arrow@2x.png) no-repeat right center;
+background-size: 12/@r 16/@r;
+}
+.gclc-table li:nth-child(5){ 
+background-image: none;
+}
+.gclc-table li i{ width: 45/@r; height: 50/@r; display: inline-block;}
+
+.gclc-table li:nth-child(1) i{ background: url("../../img/goucheyixiang@2x.png") no-repeat center; background-size: contain;}
+.gclc-table li:nth-child(2) i{ background: url("../../img/goucheguwen@2x.png") no-repeat center;background-size: contain;}
+.gclc-table li:nth-child(3) i{ background: url("../../img/daikuanfangan@2x.png") no-repeat center;background-size: contain;}
+.gclc-table li:nth-child(4) i{ background: url("../../img/shendufucha@2x.png") no-repeat center;background-size: contain;}
+.gclc-table li:nth-child(5) i{ background: url("../../img/baozhangfuwu@2x.png") no-repeat center;background-size: contain;}
+.gclc-table li span{ display:block;
+ padding-top: 5/@d;
+.fz(12px);
+color: #666666;  letter-spacing: 0; line-height: 16/@d; width: 100%;}
+
+
+/*弹层*/
+.z-max{ z-index: 10000 !important;}
+.z-max .logtime_box{ width: 314/@d; margin-left: -157/@d;}
+.bot-fixed span{.fz(12px);}
+
+
+/*预约看车*/
+.tc_book{ padding: 15/@d 10/@d;}
+.appoint_inputtel{ height: 35/@d; margin-top: 8px;}
+.appoint_inputtel input{ height: 70/@r; border: #B0B3B4 solid 1px; width: 480/@r; float: left; border-radius: 5/@r; padding-left: 11/@d;.fz(13px); vertical-align: middle; padding-top: 7/@d; padding-bottom: 5/@d; line-height: 70/@r; font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;}
+
+.appoint_inputtel a{ width: 200/@r; height: 70/@r; display: inline-block; float: left; background-color: #FF6402  ; color: #ffffff;  text-align: center; margin-left: 2%; border-radius: 3px;.fz(15px); line-height: 70/@r;}
+.tc_book .flase_txt{
+    .fz(13px);
+    color: #FF2D4F;
+    line-height: 46/@r;
+    margin-top: 20/@r;
+    text-align: center;
+} 
+.tc_book .success_txt{
+    .fz(13px);
+    color: #4EC77C;
+    line-height: 46/@r;
+    margin-top: 20/@r;
+    text-align: center;
+} 
+.appoint_txt{color: #2F3540;.fz(13px); line-height: 28/@d;}
+.bord-red{border:#FF4A36 solid 1px !important;}
+
+/*新车口碑 */
+.eva-box{position:relative;padding:0 15/@d;line-height:50/@d;}
+.eva-box a{display:block;background-position:right center;}
+.grade{ position: absolute;top:0;right:15/@d;.fz(14px); padding-right: 15/@d ;background: url(http://image.bitautoimg.com/taoche/2016taoche_m/arrow-right.png) no-repeat right center;
+    background-size: 14/@r 22/@r;}
+.grade span{ background: url(http://image.bitautoimg.com/taoche/2016taoche_m/star2.png) no-repeat; background-size:83/@d 14/@d; width: 83/@d; height: 14/@d; display: inline-block; vertical-align:-1px; margin-right:10/@d}
+.grade b{ background: url(http://image.bitautoimg.com/taoche/2016taoche_m/star.png) no-repeat; background-size:83/@d 14/@d; height: 14/@d; display: block;}
+.koub{float:right;.fz(14px); color:#999;line-height:50/@d;}
+
+/*卖家描述*/
+.m-cont{
+    padding: 0 15/@r;
+}
+.seller-wrap .m-cont {
+     padding: 0 30/@r;
+}
+
+.seller-wrap  .sell-left{
+         position:relative;
+         display: block;
+         width: 100%;
+         padding: 30/@r 15/@r;
+         background: url(http://image.bitautoimg.com/taoche/2016taoche_m/arrow-right.png) no-repeat right center;
+         background-size: 7/@d 11/@d;
+         border-bottom: 1px solid #ececec;
+}
+.seller-wrap .seller-pic{
+    position: absolute;
+    left: 10/@r;
+    top: 38/@r;
+    width: 36/@r;
+    height: 40/@r;
+}
+.seller-wrap  .sell-left p{
+.fz(15px);
+color: #2F3540;
+line-height: 50/@r;
+padding-left: 50/@r;
+}
+.seller-wrap  .sell-left span{
+.fz(13px);
+color: #818D9A;
+line-height: 37/@r;
+padding-left: 50/@r;
+}
+.seller-wrap .bz-icon{
+    width: 23/@r;
+    height: 27/@r;
+}
+.seller-dec p {
+    .fz(14px);
+    color: #666;
+    line-height: 50/@r;
+}
+.d-mask {
+    position: relative;
+}
+.d-more {
+    padding: 8/@d 0 30/@r;
+}
+.d-more a {
+    display: block;
+    color: #666;
+    .fz(14px);
+    text-align: center;
+}
+.d-more a em {
+    padding-right: 20/@r;
+    background: url(../../img/icon-down.png) no-repeat center right;
+    background-size: 20/@r 12/@r;
+}
+.d-more a em.open {
+    background: url(../../img/icon-up.png) no-repeat center right;
+    background-size: 20/@r 12/@r;
+}
+.seller-address {
+    position: relative;
+    line-height: 100/@r;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+}
+.seller-address a {
+    display: block;
+    .fz(14px);
+    color: #666;
+    background: url(../../img/icon-right.png) no-repeat right center;
+    background-size: 12/@r 20/@r;
+}
+.seller-address a:before{position:absolute;left:0;top:50%;margin-top:-8/@d;content:"";width:20/@d;height:17/@d;
+background: url(../../img/icon-map.png) no-repeat;
+background-size: contain;
+}
+
+.seller-address span{
+    margin-right: 25/@d;
+    margin-left: 21/@d;
+}
+.new_seller_btn{
+    height: 150/@r;
+    text-align: center;
+}
+.new_seller_btn a{
+   display: inline-block;
+   width: 200/@r;
+   height:60/@r ;
+   line-height:60/@r;
+   color: #FF6402 ;
+   border: 1px solid #FF6402 ;
+   border-radius: 5px;
+   text-align: center;
+   background-color: #FFFFFF;
+   .fz(13px);
+   margin-top: 40/@r;
+}
+.new_seller_btn a:nth-child(1){
+    margin-right: 30/@r;
+}
+
+
+/* safetips-wrap */
+.safetips-wrap{padding:0 30/@r 15/@r;}
+.tip-tle{line-height:88/@r;padding-left:20px;background:url(../../img/tag-taoche.png) no-repeat left center;background-size:34/@r 41/@r;padding-left:40/@r;color:#FF6402;.fz(16px);}
+.tip-cnt{line-height:37/@r;color:#666; .fz(13px);padding:30/@r 0;}
+.btn-tips{overflow:hidden; bottom: 30/@r;margin-top: 15/@r;margin-bottom: 40/@r;text-align: center;}
+.btn-tips a{display:inline-block;border:1px solid #FF6402;color:#FF6402;.fz(14px); width:200/@r;text-align:center;line-height:60/@r;
+    border-radius:5/@r;
+}
+.btn-tips a:nth-child(2){
+    margin-right: 30/@r;
+}
+
+
+/*app下载*/
+.ad-app {
+    width: 100%;
+    height: 150/@r;
+    background: #f0f0f0;
+    overflow: hidden
+}
+
+.ad-app-top {
+    border-bottom: 1px solid #ececec
+}
+
+.ad-app.ad-app-content,.ad-app.ad-app-fixed {
+    background-color: #fff
+}
+
+.ad-app-fixed {
+    border-top: 1px solid #ececec;
+    opacity: .95;
+    z-index: 98
+}
+
+.ad-app .ad-close {
+    width: 11/@r;
+    height: 11/@r;
+    background: url(//image.bitautoimg.com/taoche/ercyidong2015/app-banner-close.png) no-repeat;
+    background-size: 11px auto;
+    float: left;
+    text-indent: -999em;
+    margin: 20px 0 0 15px
+}
+
+.ad-app img {
+    width: 120/@r;
+    height: 120/@r;
+    display: block;
+    float: left;
+   
+}
+
+.ad-app dl {
+    float: left;
+    margin: 30/@r 0 0 30/@r;
+}
+
+.ad-app dt {
+    .fz(16px);
+    line-height: 45/@r;
+    color: @black;
+}
+
+.ad-app dd {
+    .fz(13px);
+    color:@gray;
+}
+
+.ad-app .ad-btn-download2 {
+    width: 136/@r;
+    line-height: 60/@r;
+    border: 1px solid #ff6d02;
+    color: #ff6d02;
+    text-align: center;
+    border-radius: 3px;
+    float: right;
+    .fz(13px);
+    margin: 45/@r 30/@r 45/@r 0
+}
+
+
+
+
+/*推荐车源*/
+.recom-wrap{
+    margin-bottom: 200px;
+}
+.mtab-ul{position:absolute;right:15px;top:0;overflow:hidden;}
+.mtab-ul li{float:left;line-height:48px;padding:0 10px;}
+.mtab-ul li:last-child{padding-right:0;}
+.mtab-ul li a{display:block;.fz(16px); color:#666;border-bottom:2px solid #fff;}
+.mtab-ul li.on a{color:#ff6d02;border-bottom:2px solid #ff6d02;}
+
+.mcar-list{margin-top:15/@d;}
+.mcar-list li{overflow:hidden;border-bottom:1/@d solid #ececec;margin:0 15/@d;}
+.mcar-list li:last-child{margin-bottom:0;border-bottom:none;}
+.mcar-list li a{display:block;padding:15/@d 0;min-height:120/@d;}
+.mcar-list li .car-img{position:relative;float:left;width:210/@r;height:140/@r;overflow:hidden;}
+.mcar-list li .car-img .authen{position:absolute;left:0px;top:0px;width:40/@d;}
+.mcar-list li .car-img span{
+    width: 100%;
+    display: inline-block;
+    line-height: 36/@r;
+    background-color: #000;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    color: white;
+    opacity: 0.5;
+    .fz(11px);
+}
+.mcar-list li .car-txt{margin-left:230/@r;}
+.mcar-list li .name{height:84/@r;line-height:42/@r;overflow:hidden;.fz(16px);position:relative;top:-4/@d;color:@h1_color;}
+.mcar-list li .time{margin-top:6/@r;.fz(13px);height:40/@r;overflow:hidden;line-height:40/@r;color:@p_price;}
+.mcar-list li .pri{color:#FF6D02;.fz(16px);line-height:42/@r;margin-top:8/@r;}
+.mcar-list li .pri em{color:@p_price;.fz(13px);display:inline-block;margin-left:15/@d;}
+
+.list-ad-h .ad a{position:relative;border-top:1/@d solid #ececec;border-bottom:1/@d solid #ececec;padding:12/@d 0 17/@d;}
+.list-ad-h .ad img{display:block;width:100%;}
+.mcar-list .list-ad-h .ad a{border-bottom:none;border-top:none;}
+.mcar-list .list-ad-h .ad a .ico-ad{bottom:20/@d !important;}
+
+.mcar-list li.list-ad{display:table;width:100%;border-bottom:none!important;margin:0;}
+.mcar-list li.list-ad a{margin:0 15/@d;border-bottom:1/@d solid #ececec;}
+.mcar-list li.list-ad .car-img{display:table-cell;position:relative;}
+.carlist-ul li.list-ad .car-img img{display:block;}
+.mcar-list li.list-ad .car-txt{display:table-cell;padding-left:10/@d;vertical-align:middle;height:90/@d;}
+.mcar-list li.list-ad .time{padding-top:5/@d;height:auto;}
+.mcar-list li.list-ad .pri{display:none;}
+.txt-r{float:right;color:#999;.fz(12px);}
+.alink{line-height:50/@d;text-align:center;}
+.alink a{display:block;}
+.recom-wrap .alink a em{padding-right:13/@d;.fz(13px);color:@black;background: url(../../img/icon-right.png) no-repeat;background-size: 12/@r 20/@r;background-position:right}
+.record-wrap .alink a em{padding-right:13/@d;.fz(13px);color:@black;background: url(../../img/icon-right.png) no-repeat;background-size: 12/@r 20/@r;background-position:right}
+
+
+/*bm-wrap*/
+.bm-wrap{height: 140/@r;padding: 30/@r;}
+.bm-wrap .bm-left{float: left;color: #2F3540;.fz(15px);width: 80%;border-right:1px solid #E5E5E5}
+.bm-wrap .bm-left p{line-height: 45/@r;}
+.bm-wrap .bm-left span{.fz(13px);color: #818D9A;line-height: 37/@r;display: block;margin-top: 10/@r;}
+.bm-wrap .bm-right{float: right;}
+.bm-wrap .bm-right span{display: block;margin-top: 10/@r; line-height: 37/@r;color: #FF6402;.fz(13px)}
+
+
+/* report-wrap 车检报告 */
+.mbox-ico{padding-bottom:7/@d;}
+.mbox-ico span{display:inline-block;width:146/@r;height:146/@r;background:url(../../img/icon-qualified.png) no-repeat;background-size:contain;}
+.mbox-top{padding:17/@d 0 10/@d;}
+.mbox-top p{
+    text-align:center;
+}
+.after-top{padding:17/@d 0 15/@d;}
+.mbox-txt{.fz(16px); color:#333;line-height:25/@d;}
+.mbox-txt .have-num{color: #FF2D4F;}
+.mbox-txt2{.fz(14px);color:@gray;line-height:22/@d;margin-top: 10/@r;}
+.qua-result{overflow:hidden;padding:10/@r 0 40/@r;border-top:1px solid #ececec;}
+.qua-result li{width:33%;float:left;display:inline;margin-top:12/@d;text-align:center;}
+.qua-result li .qua-img{position:relative;display:inline-block;width:80/@r;height:80/@r;}
+.qua-result li .qua-txt{height:37/@r;line-height:37/@r;.fz(13px);color:@gray;overflow:hidden;}
+
+.qua-area{border-top: 1px solid #ececec; padding-top: 30/@r;}
+.qua-area .qua-item{height: 205/@r;}
+.qua-area .pic-img{float: left;width: 100/@r;text-align: right;}
+//.qua-area .pic-img img{width: 60/@r;height: 60/@r;}
+.qua-area .qua-content{ width: 600/@r; float: left;padding-left: 20/@r;}
+.qua-area .qua-content .title{line-height: 42/@r;.fz(15px);color: @black;}
+.qua-area .qua-content .title span{line-height: 37/@r;.fz(13px);color: @gray;margin-left: 5/@r;}
+.qua-area .qua-content ul{.fz(13px);}
+.qua-area .qua-content ul li{padding-left: 30/@r; line-height: 37px;margin: 16/@r 0px 0px; float: left;width: 50%; background: url(../../img/item-ok.png) no-repeat center left; background-size: 24/@r 24/@r;}
+.qua-area .qua-content ul li.warn{background: url(../../img/item-false.png) no-repeat center left; background-size: 24/@r 24/@r;}
+
+
+
+
+/* after-wrap 售后保障*/
+ .after-wrap .mbox-ico span{background: url(../../img/icon-4s.png) no-repeat;background-size: contain;width: 147/@r;height: 147/@r;background-position: center;}
+ .after-wrap .mbox-txt{.fz(16px); color:#2F3540;line-height:45/@r;}
+ .after-wrap .mbox-desc{color: #818D9A;.fz(13px);margin-top: 10/@r;line-height: 37/@d;}
+  .after-wrap .mbox-desc span{color: red;}
+  
+/*品牌认证售后保障*/
+.rz-after-wrap .mbox-ico span{background: url(../../img/icon-brz1.png) no-repeat;background-size: contain;width: 147/@r;height: 147/@r;background-position: center center;}
+.rz-after-wrap .mbox-desc{line-height: 40/@r;color: @gray;text-align: center;margin-top: 20/@r;}
+  
+/*延长质保服务*/
+.bz-after-wrap .mbox-ico span{background: url(../../img/icon-bz.png) no-repeat;background-size: contain;width: 147/@r;height: 147/@r;background-position: center center;}
+.bz-after-wrap .mbox-desc{.fz(13px); line-height: 40/@r;color: @gray;text-align: center;margin-top: 20/@r;}
+  
+/*底部定位*/
+.bottom-fixed{position:fixed;left: 0px;bottom: 0px;width: 100%;background-color: #FFFFFF;overflow: hidden;height: 100/@r;}
+.bottom-fixed div{display: inline-block; text-align: center;}
+.bottom-fixed .collect{width: 135/@r;border-right: 1px solid #E5E5E5;}
+.bottom-fixed .collect a{color: #FF6402;.fz(13px);position: relative;top: 20/@r;}
+.bottom-fixed .collect a:before{content:'';display: inline-block;width: 30/@r;height: 30/@r;background: url(../../img/ic_btshouchang.png) no-repeat;background-size: contain;position: absolute;left: 50%;.transform(translate3d(-50%,0,0));}
+.bottom-fixed .bargain{ width: 135/@r; color: #FF6402;.fz(13px);}
+.bottom-fixed .bargain a{ color: #FF6402;.fz(13px);position: relative;top: 20/@r;}
+.bottom-fixed .bargain a:before{content:'';display: inline-block;width: 30/@r;height: 30/@r;background: url(../../img/ic_btshouchang.png) no-repeat;background-size: contain;position: absolute;left: 50%;.transform(translate3d(-50%,0,0));}
+.bottom-fixed .askprice{width: 240/@r; .fz(16px);color: #FFFFFF;background: #FF9900 ;}
+.bottom-fixed .askprice a{.fz(16px);color: #FFFFFF;}
+.bottom-fixed .askprice a:before{content:'';display: inline-block;width: 60/@r;height: 60/@r;background: url(../../img/ic_btkanjia.png) no-repeat;background-size: contain;vertical-align: middle;}
+.bottom-fixed .askprice a.banm:before{background: url(../../img/ic_btkanjia.png) no-repeat; background-size: contain;}
+.bottom-fixed .askphone{width: 240/@r; .fz(16px);color: #FFFFFF;background: #FF6402 ;}
+.bottom-fixed .askphone a{.fz(16px);color: #FFFFFF;}
+.bottom-fixed .askphone a:before{content:'';display: inline-block;width: 60/@r;height: 60/@r;background: url(../../img/ic_btkanjia.png) no-repeat;background-size: contain;vertical-align: middle;}
+.bottom-fixed a{line-height: 100/@r;height: 100/@r;text-align: center;}
+.bottom-fixed .w615{width: 615/@r;}
+
+
+/*底部免费咨询滑出页*/
+.new_mfzx_fix{ position: fixed; width: 230/@d; height: 50/@d; right: 15/@d; bottom: 114/@r;  border-radius: 3/@d; z-index: 100;  }
+.mfzx_fix_c{ position: absolute; left: 0; top: 0; z-index: 110; width: 230/@d; height: 34/@d; padding: 8/@d;}
+.mfzx_fix_c:after{  content: '';  width: 0;  height: 0;  font-size: 0;  overflow: hidden;  border-width: 7/@d;  border-style: solid dashed dashed dashed;  border-color: #000 transparent transparent transparent;filter:alpha(opacity=70);  -moz-opacity:0.7;  -khtml-opacity: 0.7;  opacity: 0.7;
+    display: block; position: absolute; right: 12/@d; bottom: -30/@d;
+}
+.mfzx_fix_img{ width: 44/@d; height: 34/@d; float: left; margin-right: 7/@d;}
+.mfzx_fix_img img{ width: 100%; height: 100%;}
+.mfzx_fix_c h2{color: #ffffff;.fz(12px); line-height: 17/@d; }
+.bg_opacity70{    background: #000000;filter:alpha(opacity=70);  -moz-opacity:0.7;  -khtml-opacity: 0.7;  opacity: 0.7;position: absolute ;left: 0; top: 0; width: 100%; height: 100%;border-radius: 3/@d; overflow: hidden;}
+
+/*车源已售出*/
+.sold-fixed{
+    height: 100/@r;
+    line-height: 100/@r;
+    background-color: #D6D6D6;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+}
+.sold-fixed i{
+    position: relative;
+    top: 3/@r;
+    display: inline-block;
+    width: 30/@r;
+    height: 30/@r;
+    background: url(../../img/icon-warn-white.png) no-repeat;background-size: contain;
+}
+.sold-fixed span{
+ display: inline-block;
+ .fz(16px);
+ color: #FFFFFF;
+ margin-left: 10/@r;
+}
+
+/*右侧动画*/
+
+@-webkit-keyframes fadeInRightBig{0%{opacity:0;-webkit-transform:translate3d(500px,0,0)}100%{opacity:1;-webkit-transform:translate3d(0,0,0)}}
+@keyframes fadeInRightBig{0%{opacity:0;transform:translate3d(500px,0,0)}100%{opacity:1;transform:translate3d(0,0,0)}}
+
+@-webkit-keyframes bounce{0%,20%,50%,80%,100%{-webkit-transform:rotate(0deg);-webkit-transform-origin:right center 0}40%{-webkit-transform:rotate(-15deg);-webkit-transform-origin:right center 0}60%{-webkit-transform:rotate(-5deg);-webkit-transform-origin:right center 0}}
+@keyframes bounce{0%,20%,50%,80%,100%{transform:rotate(0deg);transform-origin:right center 0}40%{transform:rotate(-10deg);transform-origin:right center 0}60%{transform:rotate(-5deg);transform-origin:right center 0}}
+
+@-webkit-keyframes fadeOutRightBig{0%{opacity:1;-webkit-transform:translate3d(0,0,0)}100%{opacity:0;-webkit-transform:translate3d(500px,0,0)}}
+@keyframes fadeOutRightBig{0%{opacity:1;transform:translate3d(0,0,0)}100%{opacity:0;transform:translate3d(500px,0,0)}}
+
+
+.store-tips{width:147/@r;height:130/@r;position:fixed;bottom:550/@r; right:0; z-index: 2;}
+.store-tips *{position:absolute;right:0;bottom:0;}
+.store-tips a{display:inline-block;width:147/@r;height:130/@r}
+.store-tips .ani-1{-webkit-animation:bounce 1.3s .2s infinite both;animation:bounce 1.3s .2s infinite both}
+
+
+/*页面背景图标*/
+.i_bao{display: inline-block;vertical-align: -5/@r;margin-left: 10/@r;background: url(../../img/icon-b.png) no-repeat;background-size: 23/@r 27/@r;width: 23/@r;height: 27/@r;}
+.i_bangmai{display: block;margin:5/@r auto;vertical-align: -5/@r;background: url(../../img/icon-bm.png) no-repeat;background-size: 36/@r 31/@r;width: 36/@r;height: 31/@r;}
+.i-tcrz{width:60/@r;height: 60/@r;background: url(http://image.bitautoimg.com/taoche/2016taoche_m/2017db11-03.png) no-repeat;background-size:contain;display: inline-block;margin-right: 3/@d;position: absolute;top: 0px;}

@@ -1,0 +1,29 @@
+@import "../../lesshelp/lesshelp.less";
+
+//公共css
+body{font-size:12px;padding:0px;margin:0px;}
+//公共less
+.border-radius{.border-radius(54/@r);}
+
+
+.header{width:100%;height:88/@r;box-shadow:0px 0px 2px #C4C4C4;}
+.header .logo,.search{float:left;}
+
+.header .logo{width:50%;height:88/@r;position:relative;}
+.header .logo span{display:block;float:left;}
+.header .logo .return img{width:18/@r;height:30/@r;margin:30/@r 40/@r;}
+.header .logo .return:after{content:'';display:inline-block;width:1/@r;height:35/@r;border-left:2px solid #E5E5E5;position:absolute;left:85/@r;top:28/@r;}
+
+.header .logo .logo_used img{width:81/@r;height:33/@r;margin:30/@r 0px 0px 30/@r;}
+.header .logo .logo_used i{.fz(16px);position:relative;top:-5/@r;left:5/@r;}
+
+
+.header .search{width:50%;height:88/@r;text-align:right;}
+.header .search a{display:inline-block;margin:27/@r 0/@r;}
+.header .search .share_icon{width:32/@r;height:32/@r;background:url("../../img/fenxiang.png") no-repeat center center;background-size:cover;}
+.header .search .search_menu{width:30/@r;height:30/@r;background:url("../../img/menu.png") no-repeat center center;background-size:cover;margin-left:40/@r;margin-right:30/@r;}
+
+@media screen and (device-width:320px) and (device-height:568px) and (-webkit-device-pixel-ratio:2){
+.header .search .search_city i{position:relative;top:3/@r;}
+.header .logo .logo_used i{.fz(14px);}
+}

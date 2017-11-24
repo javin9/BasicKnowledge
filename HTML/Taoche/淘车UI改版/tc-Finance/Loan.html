@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<title>贷款方案</title>
+		<script src="../js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../tc-header/css/tc-headerDetails.css"/>
+		<link rel="stylesheet" type="text/css" href="../tc-footer/css/tc-footer.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/Loan.css"/>
+	</head>
+	<body>
+		
+		<div class="content_list">
+			<div class="list">
+				<div class="list_main">
+					<img src="../img/car_list1.png">
+					<div class="list_detail">
+						<h2>哈弗H6 2013款 运动版 1.5T 手动两驱</h2>
+						<p><span>2011年</span> | <span>3.2万公里</span></p>
+						<h3 class="col">卖家报价 <span>27.56万</span></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--贷款计算-->
+		<div class="loan_reckon">
+			<div class="loan_title">贷款计算</div>
+			<div class="loan_main">
+				<div class="total">总花费 ￥56179</div>
+				<div class="total_left">
+					<div class="container">
+						<canvas id="myChart"></canvas>
+					</div>
+					
+					<div class="total_font">
+						明细 <i></i>
+					</div>
+				</div>
+				<div class="total_right">
+					<ul>
+						<li><i class="i-color1"></i>首付<span>￥15000</span></li>
+						<li><i class="i-color2"></i>贷款额度<span>￥15000</span></li>
+						<li><i class="i-color3"></i>贷款成本<span>￥15000</span></li>
+					</ul>
+				</div>
+			</div>
+			<!--效果位置-->
+			<div class="slider">
+				<div class="slider_title">实际额度由最终成交价决定，此处仅供参考</div>
+			</div>
+			
+			<div id="ruler" class="ruler">
+				<h3>首付</h3>
+				<span>￥15000</span>
+				<div class="progress">
+					<div class="progress-bar-wrapper">
+	                    <div class="progress-bar progress-bar-bc"></div>
+	                    <div class="progress-bar progress-bar-active"></div>
+                	</div>
+					<div class="progress-btn"></div>
+				</div>
+				<ul class="ratio"></ul>
+			</div>
+		
+			<div class="ruler ruler2">
+				<h3>月供</h3>
+				<span>￥15000</span>
+				<div class="progress">
+					<div class="progress-bar-wrapper">
+	                    <div class="progress-bar progress-bar-bc"></div>
+	                    <div class="progress-bar progress-bar-active"></div>
+                	</div>
+					<div class="progress-btn"></div>
+				</div>
+				<ul class="ratio"></ul>
+			</div>
+		</div>
+		
+		<!--贷款流程-->
+		<div class="schedule">
+			<div class="loan_title">贷款流程</div>
+			<ul>
+				<li>
+					<div class="sch_title">
+						<i>1</i>
+						线上预约, 急速审批
+					</div>
+					<div class="sch_main">
+						<div class="sch_main_details">
+							<p>在线提交资质，省心省时效率高，不妨碍您线下再砍价哦</p>
+						</div>
+					</div>
+				</li>
+				
+				<li>
+					<div class="sch_title">
+						<i>2</i>
+						实地看车, 随时换车
+					</div>
+					<div class="sch_main">
+						<div class="sch_main_details">
+							<p>确认购车、完成复检后，为您补全手续，立刻放款，直接提车</p>
+						</div>
+					</div>
+				</li>
+				
+				<li>
+					<div class="sch_title">
+						<i>3</i>
+						确认购车, 马上开走
+					</div>
+					<div class="sch_main" style="border:none;">
+						<div class="sch_main_details">
+							<p>提交方式: 贷款订单等待客服电话联系中提交方式: 贷款订单等待客服电话联系中</p>
+						</div>
+					</div>
+				</li>
+				
+				
+			</ul>
+		</div>
+		
+		<!--footer-->
+		<div class="foo_nav">
+			<ul>
+				<li class="li_titleOne">
+					<i></i>
+					<p>免费咨询</p>
+				</li>
+				
+				<li class="li_titleTwo">
+					<i></i>
+					<p>切换套餐</p>
+				</li>
+				
+				<li class="li3">
+					<span>立即申请</span>
+				</li>
+			</ul>
+		</div>
+		
+		
+		<!--阴影-->
+		<div id="shadow hide"></div>
+		
+		<!--套餐弹层-->
+		<div class="package_pop hide">
+			<h2>套餐选择<i></i></h2>
+			<div class="package_ul">
+				<ul>
+					<li class="active">
+						<a href="#">
+							<div class="pop_title">
+								易鑫金融 一证通
+								<span>宽松</span>
+							</div>
+							<div class="pop_main">
+								<span>首付30%起 : <i class="orange">1.50万</i></span>
+								<span class="float_span">月供36期 : <i class="black">1166元</i></span>
+							</div>
+						</a>
+					</li>
+					
+					<li>
+						<a href="#">
+						<div class="pop_title">
+							易鑫金融 一证通
+							<span>宽松</span>
+						</div>
+						<div class="pop_main">
+							<span>首付30%起 : <i class="orange">1.50万</i></span>
+							<span class="float_span">月供36期 : <i class="black">1166元</i></span>
+						</div>
+						</a>
+					</li>
+					
+					<li>
+						<a href="#">
+						<div class="pop_title">
+							易鑫金融 一证通
+							<span>宽松</span>
+						</div>
+						<div class="pop_main">
+							<span>首付30%起 : <i class="orange">1.50万</i></span>
+							<span class="float_span">月供36期 : <i class="black">1166元</i></span>
+						</div>
+						</a>
+					</li>
+					
+					<li>
+						<a href="#">
+						<div class="pop_title">
+							易鑫金融 一证通
+							<span>宽松</span>
+						</div>
+						<div class="pop_main">
+							<span>首付30%起 : <i class="orange">1.50万</i></span>
+							<span class="float_span">月供36期 : <i class="black">1166元</i></span>
+						</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!--总花费-->
+		<div class="tab_total hide">
+			<h1>贷款方案明细</h1>
+			<h2>总花费: <span>￥10025</span></h2>
+			<ul>
+				<li>
+					<div class="li_left">
+						<h4>首付</h4>
+						<span class="orange">￥20025</span>
+					</div>
+					<div class="li_right">
+						<div class="li_one">
+							<h6>车价</h6>
+							<span>80025</span>
+						</div>
+						<i>×</i>
+						<div class="li_two">
+							<h6>首付比例</h6>
+							<span>30%</span>
+						</div>
+					</div>
+				</li>
+				
+				<li>
+					<div class="li_left">
+						<h4>贷款额度</h4>
+						<span class="orange">￥20025</span>
+					</div>
+					<div class="li_right">
+						<div class="li_one">
+							<h6>车价</h6>
+							<span>80025</span>
+						</div>
+						<i>×</i>
+						<div class="li_two">
+							<h6>首付比例</h6>
+							<span>30%</span>
+						</div>
+					</div>
+				</li>
+				
+				<li>
+					<div class="li_left">
+						<h4>月供</h4>
+						<span class="orange">￥20025</span>
+					</div>
+					<div class="li_right">
+						<div class="li_one">
+							<h6>月费率</h6>
+							<span>0.68%</span>
+						</div>
+						
+					</div>
+				</li>
+				
+				<li style="border:none;">
+					<div class="li_left">
+						<h4 class="grey">贷款成本</h4>
+						<span class="grey">￥15655</span>
+					</div>
+					<div class="li_right">
+						<div class="li_one">
+							<h6>利息</h6>
+							<span class="span_1">156632</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<img src="img/tanchuangguanbi.png">
+		</div>
+		
+		
+		<!--todos-->
+		<div class="todos">
+			<p>提交失败</p>
+		</div>
+		
+		
+		<script src="../js/Chart.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var ctx = document.getElementById("myChart").getContext('2d');
+			var options = {
+				cutoutPercentage: 50,
+				onAnimationComplete: function() {
+					console.log('onAnimationComplete');
+				},
+				animation: {
+					animateScale: !1,
+					animateRotate: !0
+				},
+				elements: {
+					arc: {
+						backgroundColor: "rgb(255, 0, 0)",
+						borderColor: "rgb(0, 0, 255)",
+						borderWidth: 0,
+						hoverBackgroundColor: "rgb(255, 255, 255)"
+					}
+				},
+				tooltips: {
+					enabled: !1
+				}
+			};
+			var myChart = new Chart(ctx, {
+				type: 'doughnut',
+				data: {
+					//labels: ["M", "T", "W"],
+					datasets: [{
+						backgroundColor: [
+							"#2ecc71",
+							"#3498db",
+							"#95a5a6"
+						],
+						data: [12,24, 7]
+					}]
+				},
+				options:{
+					tooltips:{
+						enabled: false//去掉tooltips
+					},
+					//cutoutPercentage:80,//环形的宽度
+					//rotation:-0.6 * Math.PI,//旋转  
+					//circumference:0.5*Math.PI,  //圆周的
+					//animation:{
+						//animateRotate:false,
+						//animateScale:true
+					//},
+				}
+			});
+		</script>
+		<script type="text/javascript">
+			var Ruler = function(options) {
+				/*默认参数*/
+				this.settings = {
+					rulerid: null,
+					ratioText: ["0%", "25%", "50%", "75%", "100%"],
+					ratioindex: 0,
+					ontransitionend: null,
+					onstart: null,
+					onmove: null,
+					onend: null
+				};
+
+				this.settings = this.extend(this.settings, options);
+				this.init();
+			};
+			Ruler.prototype.init = function(options) {
+				if(!this.validator()) {
+					return fasle;
+				}
+
+				this.createRatio();
+				this.bindEvent();
+				this.initRatio();
+			};
+			Ruler.prototype.initRatio = function() {
+				var settings = this.settings,
+					ratioindex = settings.ratioindex,
+					progressBar = settings.progressBar,
+					progressBtn = settings.progressBtn;
+				if(ratioindex > 0) {
+					var percent = (ratioindex / (settings.ratioText.length - 1)) * 100 + "%";
+
+					window.setTimeout(function() {
+						var transition = "all 0.5s ease";
+						progressBar.style.webkitTransition = transition;
+						progressBar.style.width = percent;
+						addEnd(progressBar, end);
+
+						progressBtn.style.webkitTransition = transition;
+						progressBtn.style.left = percent;
+
+					}, 100);
+
+				}
+
+				function end() {
+					progressBar.style.webkitTransition = '';
+					progressBtn.style.webkitTransition = ''
+					removeEnd(progressBar, end);
+					settings.ontransitionend && settings.ontransitionend.call(this, settings);
+				}
+
+				function addEnd(obj, fn) {
+					obj.addEventListener('WebkitTransitionEnd', fn, false);
+					obj.addEventListener('transitionend', fn, false);
+				}
+
+				function removeEnd(obj, fn) {
+					obj.removeEventListener('WebkitTransitionEnd', fn, false);
+					obj.removeEventListener('transitionend', fn, false);
+				}
+			};
+			Ruler.prototype.validator = function() {
+				var settings = this.settings,
+					rulerid = settings.rulerid,
+					result = true;
+				if(!rulerid) {
+					new Error('settings.rulerid is null or undefined');
+					return fasle;
+				}
+
+				var ruler = document.getElementById(settings.rulerid);
+				if(!ruler) {
+					new Error('ruler is null or undefined');
+					return fasle;
+				}
+
+				var progressBtn = ruler.getElementsByClassName('progress-btn')[0];
+				if(!progressBtn) {
+					new Error('progressBtn is null or undefined');
+					return fasle;
+				}
+				this.settings["progressBtn"] = progressBtn;
+
+				var progressBar = ruler.getElementsByClassName('progress-bar-active')[0];
+				if(!progressBar) {
+					new Error('progressBar is null or undefined');
+					return fasle;
+				}
+				this.settings["progressBar"] = progressBar;
+
+				var progressBarBc = ruler.getElementsByClassName('progress-bar-bc')[0];
+				if(!progressBarBc) {
+					new Error('progressBarBc is null or undefined');
+					return fasle;
+				}
+				this.settings["progressBarBc"] = progressBarBc;
+
+				var ratioWrapper = ruler.getElementsByClassName('ratio')[0];
+				if(!ratioWrapper) {
+					new Error('ratioWrapper is null or undefined');
+					return fasle;
+				}
+				this.settings["ratioWrapper"] = ratioWrapper;
+				return true;
+			};
+			/*创建参数列表*/
+			Ruler.prototype.createRatio = function() {
+				var frag = document.createDocumentFragment();
+				var ratioWrapper = this.settings.ratioWrapper,
+					ratioText = this.settings.ratioText,
+					ratioPercent = [],
+					len = ratioText.length - 1;
+				var base = 1 / len,
+					subbase = base / 2,
+					percent = 0;
+				for(var i = 0; i <= len; i++) {
+					var li = document.createElement('li');
+					if(i === 0) {
+						li.style.left = "0";
+						li.innerText = ratioText[0];
+						ratioPercent.push({
+							position: 0,
+							mark: true,
+							index: 0
+						});
+						ratioPercent.push({
+							position: subbase,
+							mark: false,
+							index: -1
+						});
+					} else if(i === len) {
+						li.style.left = "100%";
+						li.innerText = ratioText[len];
+						ratioPercent.push({
+							position: 1,
+							mark: true,
+							index: len
+						});
+					} else {
+						percent = i * base;
+						li.style.left = percent * 100 + "%";
+						li.innerText = ratioText[i];
+						ratioPercent.push({
+							position: percent,
+							mark: true,
+							index: i
+						});
+						ratioPercent.push({
+							position: percent + subbase,
+							mark: false,
+							index: -1
+						})
+
+					}
+					frag.appendChild(li);
+				}
+				console.log(ratioPercent);
+				this.settings["ratioPercent"] = ratioPercent;
+				ratioWrapper.appendChild(frag);
+			};
+			Ruler.prototype.bindEvent = function() {
+				var xDistance = 0,
+					that = this,
+					settings = that.settings,
+					ratioFlat = 0,
+					progressBtn = settings.progressBtn || null,
+					ratioLen = settings.ratioText.length;
+
+				progressBtn.addEventListener("touchstart", function(ev) {
+					ev.preventDefault();
+					settings.onstart && settings.onstart.call(this, settings);
+				});
+				progressBtn.addEventListener("touchmove", function(ev) {
+					ev.preventDefault();
+					var progressBar = settings.progressBar,
+						progressBarBc = settings.progressBarBc,
+						progressBarBcW = progressBarBc.getBoundingClientRect().width;
+
+					xDistance = ev.targetTouches[0].pageX - that.offset(progressBar).left;
+					if(xDistance < 0) {
+						xDistance = 0;
+					}
+
+					if(xDistance > progressBarBcW) {
+						xDistance = progressBarBcW;
+					}
+					ratioFlat = xDistance / progressBarBcW;
+					var ratioPosition = ratioFlat.toFixed(2) * 100 + "%";
+					this.style.left = ratioPosition;
+					progressBar.style.width = ratioPosition;
+					settings.onmove && settings.onmove.call(this, settings);
+				});
+				progressBtn.addEventListener("touchend", function() {
+					console.log(ratioFlat);
+					console.log(settings.ratioPercent);
+					var ratioPercent = settings.ratioPercent;
+					for(var i = ratioPercent.length - 1; i >= 0; i--) {
+						if(ratioFlat > ratioPercent[i].position) {
+							break;
+						}
+					}
+					console.log(ratioPercent[i]);
+					var thisPercent = ratioPercent[i],
+						position = 0;
+
+					if(!thisPercent.mark) {
+						thisPercent = ratioPercent[i + 1];
+					}
+
+					position=thisPercent.position*100+"%";
+					this.style.left = position;
+					settings.ratioindex=thisPercent.index;
+					settings.progressBar.style.width = position;
+					settings.onend && settings.onend.call(this, settings);
+				});
+			};
+
+			Ruler.prototype.offset = function(ele) {
+				var t = ele.offsetTop;
+				var l = ele.offsetLeft;
+				var p = ele.offsetParent;
+				while(p && p.id !== "wrapper") {
+					if(window.navigator.userAgent.indexOf('MSIE 8') > -1) {
+						l += p.offsetLeft;
+						t += p.offsetTop;
+					} else {
+						l += p.offsetLeft + p.clientLeft;
+						t += p.offsetTop + p.clientTop;;
+					}
+					p = p.offsetParent;
+				}
+				return {
+					left: l,
+					top: t
+				};
+			};
+
+			Ruler.prototype.extend = function(destination, options) {
+				for(var item in options) {
+					destination[item] = options[item];
+				}
+				return destination;
+			};
+
+			var ruler1 = new Ruler({
+				rulerid: "ruler",
+				ratioText: ["0%", "25%", "50%", "75%", "100%"],
+				ratioindex: 1,
+				onstart: null,
+				onmove: null,
+				onend: function(options){
+					console.log(options);
+				}
+			});
+			
+			
+			var ruler2 = new Ruler({
+				rulerid: "ruler2",
+				ratioText: ["12期", "24期", "36期"],
+				ratioindex: 1,
+				onstart: null,
+				onmove: null,
+				onend: function(options){
+					console.log(options);
+				}
+			});
+			
+			ruler2.init;
+		</script>
+	</body>
+</html>

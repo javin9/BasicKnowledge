@@ -49,6 +49,12 @@
       this.animate(to);
       next();
     },
+    created(){
+      this.$bus.emit('showHello','hellow world1');
+    },
+     beforeDestroy(){
+      this.$bus.off('showHello');
+    },
     methods:{
       animate:function (to) {
         function animateFunc(time) {

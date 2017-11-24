@@ -11,9 +11,17 @@
 </template>
 
 <script>
-
+  
   export default {
-    name: 'Project'
+    name: 'Project',
+    methods:{
+     showHello:function (msg) {
+       console.log(msg);
+     }
+    },
+    created(){
+      this.$bus.on('showHello',this.showHello);
+    }
   }
 </script>
 <style>
