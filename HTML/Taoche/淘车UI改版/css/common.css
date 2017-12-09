@@ -903,7 +903,7 @@ a {
   font-size: 54px;
 }
 .bg-white {
-  background: #fff;
+  background: #ffffff;
 }
 .btn-bot-none {
   width: 3.46666667rem;
@@ -1079,7 +1079,7 @@ a {
   color: #598BDD;
 }
 .first-tags li.current a span {
-  border-bottom: 0.05333333rem solid #598BDD;
+  border-bottom: 0.05333333rem solid #598bdd;
 }
 .first-tags3 li {
   width: 33.33333%;
@@ -1539,7 +1539,7 @@ a.btn-add-more i {
 .car-nav li.current a {
   height: 1.14666667rem;
   color: #5B8BDD;
-  border-bottom: 0.05333333rem solid #588BDE;
+  border-bottom: 0.05333333rem solid #588bde;
 }
 /*sort*/
 .sort {
@@ -2596,4 +2596,63 @@ a.btn-submit.blue {
 }
 .show {
   display: block;
+}
+/*toast.css*/
+/*loading*/
+.todos-loding {
+  opacity: 0.8;
+  background: #000000;
+  border-radius: 0.13333333rem;
+  width: 2.66666667rem;
+  letter-spacing: 0.3px;
+  position: absolute;
+  left: 50%;
+  margin-left: -1.33333333rem;
+  top: 50%;
+  margin-top: -1.33333333rem;
+  height: 2.66666667rem;
+}
+.todos-loding img.copy-loding {
+  width: 0.8rem;
+  height: 0.8rem;
+  display: inline-block;
+  margin: 0.93333333rem auto;
+}
+/*提示层*/
+.toast-fix {
+  opacity: 0.8;
+  background: #000000;
+  border-radius: 0.13333333rem;
+  position: fixed;
+  top: 45%;
+  width: 70%;
+  left: 15%;
+  z-index: 9999999;
+}
+.toast-fix p {
+  padding: 0.53333333rem 0.4rem;
+  line-height: 0.53333333rem;
+  color: #FFFFFF;
+  letter-spacing: 0.3px;
+  min-height: 1.6rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+[data-dpr="1"] .toast-fix p {
+  font-size: 14px;
+}
+[data-dpr="2"] .toast-fix p {
+  font-size: 28px;
+}
+[data-dpr="3"] .toast-fix p {
+  font-size: 42px;
+}
+.slideup-transition {
+  -webkit-transform: translateY(0) translateZ(99999px);
+  -moz-transform: translateY(0) translateZ(99999px);
+  -ms-transform: translateY(0) translateZ(99999px);
+  -o-transform: translateY(0) translateZ(99999px);
+  transform: translateY(0) translateZ(99999px);
+  transition: all .3s ease;
+  z-index: 99999;
 }

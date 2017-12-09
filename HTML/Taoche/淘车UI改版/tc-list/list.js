@@ -21,11 +21,12 @@ $(function() {
     var parametersHelper = {
         paramsKeys: ['p', 'g', 'e', 's', 'b', 'x', 'c', 'd', 'z', 'a', 'o', 'q', 't', 'r'],
         params: {},
-        paramsbak:{},
+        paramsbak: {},
         querysKeys: ['pic', 'bm', 'newcar', 'cy', 'active', 'lp', 'hp'], //有图,帮买,准新车,国别,活动,低价格,高价格
         querys: {},
-        querysbak:{},
-        url: '/buycar/p4g4e2s3bx2c2dz29859889811a5o2q1t1r2/?pic=1&bm=1&t=3&newcar=1&active=1',
+        querysbak: {},
+        currenturl: '',
+        url: '/buycar/p4g4e2s2bx2c2dz29859889811a5o2q1t1r2/?pic=1&bm=1&t=3&newcar=1&active=1',
         urlQuery: 'pic=1&bm=1&t=3&newcar=1&active=1&cy=2', //window.location.search.substr(1),
         urlquerys: window.location.search.substr(1),
         urlfragment: '/buycar/',
@@ -45,7 +46,7 @@ $(function() {
         getQueryValue: function(name) {
             var that = this;
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-            var r = that.urlquerys.match(reg);
+            var r = window.location.search.substr(1).match(reg);
             if (r != null) return unescape(r[2]);
             return null;
         },
@@ -56,7 +57,7 @@ $(function() {
                 that.params[item] = itemValue;
             });
             console.log(that.params);
-            that.paramsbak=$.extend({},that.params);
+            that.paramsbak = $.extend({}, that.params);
         },
         createQuerys: function() {
             var that = this;
@@ -73,10 +74,39 @@ $(function() {
             }
 
             that.querys = querysJson;
-            that.querysbak=querysJson;
+            that.querysbak = querysJson;
             console.log(that.querys);
         },
         geturl: function() {
+            var that = this;
+            //params
+            var params = that.params;
+            var paramsStr = '';
+            for (var property in params) {
+                paramsStr += property;
+                var paramsValue = params[property];
+                paramsStr += !!paramsValue ? paramsValue : '';
+            }
+            //querys
+            var querys = that.querys;
+            var querysStr = '';
+            for (var item in querys) {
+                var querysValue = querys[item];
+                if (!!querysValue) {
+                    querysStr += item;
+                    querysStr += "=";
+                    querysStr += querys[item];
+                    querysStr += "&";
+                }
+            }
+
+            querysStr = querysStr.substr(0, querysStr.length - 1);
+            console.log(that.urlfragment);
+            console.log(paramsStr);
+            console.log(querysStr);
+
+            that.currenturl = that.urlfragment + paramsStr + "?" + querysStr;
+            console.log(that.currenturl);
 
         },
         splitUrl: function() {
@@ -97,6 +127,7 @@ $(function() {
     }
     parametersHelper.init();
     console.log(parametersHelper);
+    parametersHelper.geturl();
     /*param end*/
 
     /*filterBar  start*/
@@ -142,9 +173,9 @@ $(function() {
             }
         },
         resetData: function() {
-            var that=parametersHelper;
-            that.params=$.extend({},that.paramsbak);
-            that.querys=$.extend({},that.querysbak);
+            var that = parametersHelper;
+            that.params = $.extend({}, that.paramsbak);
+            that.querys = $.extend({}, that.querysbak);
             this.bindHtml(this.dataSet);
         },
         bindHtml: function(data) {
@@ -162,7 +193,10 @@ $(function() {
             that.createCarCountryHtml(data.dicCountry, parametersHelper.querys.cy); //国别
             that.createCarColorHtml(data.dicCarColor, parametersHelper.params.c); //颜色
             that.createCarConfigHtml(data.listConfiguration, parametersHelper.params.z); //亮点配置
-
+            that.createPicHtml(); //有图
+            this.createBmHtml(); //帮买
+            this.createNewCarHtml(); //准新车
+            this.createSourceHtml(); //来源
             setTimeout(function() {
                 !!that.filterMoreLayerScroll && that.filterMoreLayerScroll.refresh();
             }, 0);
@@ -181,6 +215,29 @@ $(function() {
                 }
             });
 
+        },
+        createSourceHtml: function() {
+            var s = parametersHelper.params['s'];
+            $("#source-tag>a[data-id='" + s + "']").parent().addClass('cur');
+        },
+        createPicHtml: function() {
+            var pic = parametersHelper.querys['pic'];
+            if (!!pic) {
+                $(".pic-tag").addClass('cur');
+            }
+        },
+        createBmHtml: function() {
+            var bm = parametersHelper.querys['bm'];
+            if (!!bm) {
+
+                $(".bm-tag").addClass('cur');
+            }
+        },
+        createNewCarHtml: function() {
+            var newcar = parametersHelper.querys['newcar'];
+            if (!!newcar) {
+                $(".newcar-tag").addClass('cur');
+            }
         },
         createCarAgeHtml: function(data, current) {
             current = current || '';
@@ -492,7 +549,7 @@ $(function() {
                     },
                     hideCallback: function() {
                         console.log(999999999999);
-                       that.resetData();
+                        that.resetData();
                     },
                     layer: that.filterMoreLayer
                 }
@@ -500,8 +557,6 @@ $(function() {
                 that.toogleSelect(params);
             });
             //
-
-
             $('#close-more-filterlayer').click(function() {
                 that.filterMore.trigger('click');
             });
@@ -511,152 +566,286 @@ $(function() {
                 console.log(filterTarget);
                 filterTarget && that[filterTarget] && that[filterTarget].trigger('click');
             });
-            //车龄
-            $('#carAgeId').on('tap', "a", function() {
+
+            //车源特色
+            $('#sourceid').on("tap", ".source-tag>a", function() {
                 var $this = $(this),
                     parent = $this.parent(),
                     id = $this.attr("data-id");
-                parent.addClass('cur').siblings().removeClass('cur');
-                parametersHelper.params["a"] = id;
-                console.log("a=" + id);
+                parent.addClass('cur').siblings('.source-tag').removeClass('cur');
+                parametersHelper.params["s"] = id;
+                console.log("s=" + id);
                 console.log(parametersHelper);
+                parametersHelper.geturl();
+
+            });
+            //准新车
+            $('#sourceid').on("tap", ".newcar-tag>a", function() {
+                var $this = $(this),
+                    parent = $this.parent();
+                if (parent.hasClass('cur')) {
+                    parametersHelper.querys['newcar'] = 0;
+                    parent.removeClass('cur');
+                } else {
+                    parametersHelper.querys['newcar'] = 1;
+                    parent.addClass('cur');
+                    $('#carAgeId').find('li').removeClass('cur');
+                    parametersHelper.params["a"] = '';
+                    $('#mileageId').find('li').removeClass('cur');
+                    parametersHelper.params["x"] = '';
+                }
+                console.log(parametersHelper);
+                parametersHelper.geturl();
+            });
+            //有图
+            $('#sourceid').on("tap", ".pic-tag>a", function() {
+                var $this = $(this),
+                    parent = $this.parent();
+                if (parent.hasClass('cur')) {
+                    parametersHelper.querys['pic'] = 0;
+                    parent.removeClass('cur');
+                } else {
+                    parametersHelper.querys['pic'] = 1;
+                    parent.addClass('cur');
+                }
+                console.log(parametersHelper);
+                parametersHelper.geturl();
+            });
+            //帮买车源
+            $('#sourceid').on("tap", ".bm-tag>a", function() {
+                var $this = $(this),
+                    parent = $this.parent();
+                if (parent.hasClass('cur')) {
+                    parametersHelper.querys['bm'] = 0;
+                    parent.removeClass('cur');
+                } else {
+                    parametersHelper.querys['bm'] = 1;
+                    parent.addClass('cur');
+                }
+                console.log(parametersHelper);
+                parametersHelper.geturl();
+            });
+            //车龄
+            $('#carAgeId').on('tap', "a", function() {
+                var $this = $(this),
+                    parent = $this.parent();
+
+                if (parent.hasClass('cur')) {
+                    parent.removeClass('cur');
+                    parametersHelper.params["a"] = '';
+
+                } else {
+                    var id = $this.attr("data-id");
+                    parent.addClass('cur').siblings().removeClass('cur');
+                    parametersHelper.params["a"] = id;
+                    $('#sourceid .newcar-tag').removeClass('cur');
+                    parametersHelper.querys['newcar'] = 0;
+                    console.log("a=" + id);
+                }
+                console.log(parametersHelper);
+                parametersHelper.geturl();
             });
             //里程
             $('#mileageId').on('tap', "a", function() {
                 var $this = $(this),
-                    parent = $this.parent(),
-                    id = $this.attr("data-id");
-                parent.addClass('cur').siblings().removeClass('cur');
-                parametersHelper.params["x"] = id;
-                console.log("x=" + id);
+                    parent = $this.parent();
+
+                if (parent.hasClass('cur')) {
+                    parent.removeClass('cur');
+                    parametersHelper.params["x"] = '';
+                } else {
+                    var id = $this.attr("data-id");
+                    parent.addClass('cur').siblings().removeClass('cur');
+                    parametersHelper.params["x"] = id;
+
+                    $('#sourceid .newcar-tag').removeClass('cur');
+                    parametersHelper.querys['newcar'] = 0;
+                    console.log("x=" + id);
+                }
+
                 console.log(parametersHelper);
+                parametersHelper.geturl();
             });
             //级别
             $('#levelId').on('tap', "a", function() {
                 var $this = $(this),
-                    parent = $this.parent(),
-                    id = $this.attr("data-id");
-                parent.addClass('cur').siblings().removeClass('cur');
-                parametersHelper.params["g"] = id;
-                console.log("g=" + id);
+                    parent = $this.parent();
+
+                if (parent.hasClass('cur')) {
+                    parent.removeClass('cur');
+                    parametersHelper.params["g"] = '';
+                } else {
+                    var id = $this.attr("data-id");
+                    parent.addClass('cur').siblings().removeClass('cur');
+                    parametersHelper.params["g"] = id;
+                    console.log("g=" + id);
+                }
+
                 console.log(parametersHelper);
+                parametersHelper.geturl();
             });
             //排量
             $('#exhaustId').on('tap', "a", function() {
                 var $this = $(this),
-                    parent = $this.parent(),
-                    id = $this.attr("data-id");
-                parent.addClass('cur').siblings().removeClass('cur');
-                parametersHelper.params["e"] = id;
-                console.log("e=" + id);
+                    parent = $this.parent();
+
+                if (parent.hasClass('cur')) {
+                    parent.removeClass('cur');
+                    parametersHelper.params["e"] = '';
+                } else {
+                    var id = $this.attr("data-id");
+                    parent.addClass('cur').siblings().removeClass('cur');
+                    parametersHelper.params["e"] = id;
+                    console.log("e=" + id);
+                }
+
                 console.log(parametersHelper);
+                parametersHelper.geturl();
             });
 
             //变速箱
             $('#gearBoxId').on('tap', "a", function() {
                 var $this = $(this),
-                    parent = $this.parent(),
-                    id = $this.attr("data-id");
-                parent.addClass('cur').siblings().removeClass('cur');
-                parametersHelper.params["b"] = id;
-                console.log("b=" + id);
+                    parent = $this.parent();
+
+                if (parent.hasClass('cur')) {
+                    parent.removeClass('cur');
+                    parametersHelper.params["b"] = '';
+                } else {
+                    var id = $this.attr("data-id");
+                    parent.addClass('cur').siblings().removeClass('cur');
+                    parametersHelper.params["b"] = id;
+                    console.log("b=" + id);
+                }
+
                 console.log(parametersHelper);
+                parametersHelper.geturl();
             });
             //排放标准
             $('#emissionId').on('tap', "a", function() {
                 var $this = $(this),
-                    parent = $this.parent(),
-                    id = $this.attr("data-id");
-                parent.addClass('cur').siblings().removeClass('cur');
-                parametersHelper.params["o"] = id;
-                console.log("o=" + id);
+                    parent = $this.parent();
+
+                if (parent.hasClass('cur')) {
+                    parent.removeClass('cur');
+                    parametersHelper.params["o"] = '';
+                } else {
+                    var id = $this.attr("data-id");
+                    parent.addClass('cur').siblings().removeClass('cur');
+                    parametersHelper.params["o"] = id;
+                    console.log("o=" + id);
+                }
+
+
                 console.log(parametersHelper);
+                parametersHelper.geturl();
             });
             //驱动  
             $('#carDriveId').on('tap', "a", function() {
                 var $this = $(this),
-                    parent = $this.parent(),
-                    current = $this.attr("data-id");
-                parent.addClass('cur').siblings().removeClass('cur');
-                parametersHelper.params["q"] = current;
-                console.log("q=" + current);
-                console.log(parametersHelper);
+                    parent = $this.parent();
 
-                that.createTagData({
-                    data: that.dataSet.dicCarDrive,
-                    current: current,
-                    selector: '#selected-item-cardrive',
-                    tagId: "Id",
-                    tagName: "Name"
-                });
+                if (parent.hasClass('cur')) {
+                    parent.removeClass('cur');
+                    parametersHelper.params["q"] = '';
+                    $('#selected-item-cardrive').text('');
+                } else {
+                    var current = $this.attr("data-id");
+                    parent.addClass('cur').siblings().removeClass('cur');
+                    parametersHelper.params["q"] = current;
+                    that.createTagData({
+                        data: that.dataSet.dicCarDrive,
+                        current: current,
+                        selector: '#selected-item-cardrive',
+                        tagId: "Id",
+                        tagName: "Name"
+                    });
+                }
+                console.log(parametersHelper);
+                parametersHelper.geturl();
+
+
 
             });
             //车身  
             $('#carBodyId').on('tap', "a", function() {
                 var $this = $(this),
-                    parent = $this.parent(),
-                    current = $this.attr("data-id");
-                parent.addClass('cur').siblings().removeClass('cur');
-                parametersHelper.params["t"] = current;
-                console.log("t=" + current);
+                    parent = $this.parent();
+                if (parent.hasClass('cur')) {
+                    parent.removeClass('cur');
+                    parametersHelper.params["t"] = '';
+                    $('#selected-item-carbody').text('');
+                } else {
+                    var current = $this.attr("data-id");
+                    parent.addClass('cur').siblings().removeClass('cur');
+                    parametersHelper.params["t"] = current;
+                    that.createTagData({
+                        data: that.dataSet.dicCarBody,
+                        current: current,
+                        selector: '#selected-item-carbody',
+                        tagId: "TagCode",
+                        tagName: "TagName"
+                    });
+                }
                 console.log(parametersHelper);
-
-                that.createTagData({
-                    data: that.dataSet.dicCarBody,
-                    current: current,
-                    selector: '#selected-item-carbody',
-                    tagId: "TagCode",
-                    tagName: "TagName"
-                });
-
+                parametersHelper.geturl();
             });
             //燃料  
             $('#carFuelId').on('tap', "a", function() {
                 var $this = $(this),
-                    parent = $this.parent(),
-                    current = $this.attr("data-id");
-                parent.addClass('cur').siblings().removeClass('cur');
-                parametersHelper.params["r"] = current;
-                console.log("r=" + current);
-                console.log(parametersHelper);
+                    parent = $this.parent();
 
-                that.createTagData({
-                    data: that.dataSet.dicFuel,
-                    current: current,
-                    selector: '#selected-item-carfuel',
-                    tagId: "TagCode",
-                    tagName: "TagName"
-                });
+                if (parent.hasClass('cur')) {
+                    parent.removeClass('cur');
+                    parametersHelper.params["r"] = '';
+                    $('#selected-item-carfuel').text('');
+                } else {
+                    var current = $this.attr("data-id");
+                    parent.addClass('cur').siblings().removeClass('cur');
+                    parametersHelper.params["r"] = current;
+                    that.createTagData({
+                        data: that.dataSet.dicFuel,
+                        current: current,
+                        selector: '#selected-item-carfuel',
+                        tagId: "TagCode",
+                        tagName: "TagName"
+                    });
+                }
 
             });
             //国别  
             $('#carCountyId').on('tap', "a", function() {
                 var $this = $(this),
-                    parent = $this.parent(),
-                    current = $this.attr("data-id");
-                parent.addClass('cur').siblings().removeClass('cur');
-                parametersHelper.querys["cy"] = current;
-                console.log("cy=" + current);
-                console.log(parametersHelper);
+                    parent = $this.parent();
 
-                that.createTagData({
-                    data: that.dataSet.dicCountry,
-                    current: current,
-                    selector: '#selected-item-carcounty',
-                    tagId: "TagCode",
-                    tagName: "TagName"
-                });
+                if (parent.hasClass('cur')) {
+                    parent.removeClass('cur');
+                    parametersHelper.querys["cy"] = '';
+                    $('#selected-item-carcounty').text('');
+                } else {
+                    var current = $this.attr("data-id");
+                    parent.addClass('cur').siblings().removeClass('cur');
+                    parametersHelper.querys["cy"] = current;
+                    that.createTagData({
+                        data: that.dataSet.dicFuel,
+                        current: current,
+                        selector: '#selected-item-carcounty',
+                        tagId: "TagCode",
+                        tagName: "TagName"
+                    });
+                }
 
             });
             //颜色  
             $('#carColorId').on('tap', "a", function() {
+                /*
                 var $this = $(this),
                     parent = $this.parent(),
                     current = $this.attr("data-id");
                 parent.addClass('cur').siblings().removeClass('cur');
                 parametersHelper.params["c"] = current;
                 console.log("c=" + current);
-                console.log(parametersHelper);
+                console.log(parametersHelper);parametersHelper.geturl();
 
                 that.createTagData({
                     data: that.dataSet.dicCarColor,
@@ -665,6 +854,26 @@ $(function() {
                     tagId: "Id",
                     tagName: "Name"
                 });
+                */
+                var $this = $(this),
+                    parent = $this.parent();
+
+                if (parent.hasClass('cur')) {
+                    parent.removeClass('cur');
+                    parametersHelper.params["c"] = '';
+                    $('#selected-item-carcolor').text('');
+                } else {
+                    var current = $this.attr("data-id");
+                    parent.addClass('cur').siblings().removeClass('cur');
+                    parametersHelper.params["c"] = current;
+                    that.createTagData({
+                        data: that.dataSet.dicCarColor,
+                        current: current,
+                        selector: '#selected-item-carcolor',
+                        tagId: "Id",
+                        tagName: "Name"
+                    });
+                }
 
             });
 
@@ -687,6 +896,10 @@ $(function() {
                 parametersHelper.params["z"] = selected.join('98');
                 console.log(parametersHelper)
             });
+            //点击确定
+            $(document).on('tap', '#li-sure', function() {
+                parametersHelper.geturl();
+            });
         },
         toogleSelect: function(options) {
             var that = this;
@@ -698,9 +911,12 @@ $(function() {
                 options.layer.addClass('hide');
                 typeof options.destoryScroll === 'function' && options.destoryScroll.call(that);
                 typeof options.hideCallback === 'function' && options.hideCallback.call(that);
-                document.documentElement.removeEventListener('touchmove', preventScroll);
+                document.removeEventListener('touchmove', preventScroll);
             } else {
-                document.documentElement.addEventListener('touchmove', preventScroll);
+                document.addEventListener('touchmove', preventScroll, isPassive() ? {
+                    capture: false,
+                    passive: false
+                } : false);
                 if (!that.filterBarContentSelector.hasClass('posit-fix')) {
                     that.filterBarContentSelector.removeClass('posit-rel').addClass('posit-fix');
                 }
@@ -905,6 +1121,20 @@ $(function() {
         return document.body && document.body.scrollTop ? document.body.scrollTop : document.documentElement.scrollTop;
     }
 
+    function isPassive() {
+        var supportsPassiveOption = false;
+        try {
+            addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                get: function() {
+                    supportsPassiveOption = true;
+                }
+            }));
+        } catch (e) {}
+        return supportsPassiveOption;
+    }
+
+
+
     function preventScroll() {
         arguments[0].preventDefault();
     }
@@ -945,3 +1175,5 @@ $(function() {
     };
 
 });
+
+

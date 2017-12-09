@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>sms</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/layer-detail-style.css">
+    <script src="../js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+    .header-section {
+        width: 100%;
+        height: 1.5rem;
+        background: red;
+        font-size: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2222;
+    }
+    li {
+        border-bottom: 1px solid #000;
+        height: 2rem;
+    }
+    .container-section {
+        /* main绝对定位，进行内部滚动 */
+        background: #C1FFC1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        /* 使之可以滚动 */
+        overflow-y: scroll;
+    }
+    .slideup-transition {
+        -webkit-transform: translateY(0) translateZ(999px);
+        transform: translateY(0) translateZ(999px);
+        transition: all .3s ease;
+        z-index: 9999;
+    }
+    </style>
+</head>
+
+<body>
+    <section class="header-section">头部</section>
+    <section class="header-section .smsTrigger">头部</section>
+    <section class="container-section">
+        <ul>
+        </ul>
+    </section>
+    <div class="mask"></div>
+    <!-- float-layer-section -->
+    <section class="float-layer-section">
+        <div class="layer-cover hide"></div>
+        <div class="layer-fix" id="smsWrapper">
+            <div class="layer-close sms-close"></div>
+            <div class="layer-title sms-pop_title">预约看车</div>
+            <div class="layer-box">
+                <div class="layer-li">
+                    <p class="iphone-input">
+                        <input  type="tel" maxlength="11" placeholder="请输入手机号" class="layer-input sms-phone" />
+                        <i class="input-del sms-del" style="display:none;" data-target=".sms-phone"></i>
+                    </p>
+                    <p class="iphone-time" id="countdown-wrapper">
+                        <span class="countdown colff2">发送验证码</span>
+                        <span class="recountdown hide"><em class="countdown-num-wrapper"><em class="countdown-num"></em>s后</em>重新发送</span>
+                        <!--<span>重新获取(60秒)</span>-->
+
+                    </p>
+                </div>
+                <div class="layer-yzm">
+                    <input type="text" class="layer-input sms-code" maxlength="6" step="1" placeholder="请输入验证码">
+                     <i class="input-del sms-del" data-target=".sms-code"  style="display:none;"></i>
+                </div>
+                <div class="error-h  sms-alert-wrapper">
+                    <!--错误提示-->
+                    <p class="layer-error sms-alert-txt"></p>
+                </div>
+            </div>
+            <div class="layer-btn">
+                <span class="btn-disable sms-submit">完成</span>
+                <!-- <span class="btn-sub">完成</span> -->
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="js/tc.validator.js"></script>
+    <script type="text/javascript" src="js/bargain.js"></script>
+    <script type="text/javascript" src="js/sms.js"></script>
+    <script type="text/javascript" src="layer.js"></script>
+</body>
+
+</html>

@@ -12,19 +12,19 @@
     <script src="../js/flexible.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
-<body style="font-size: 12px;">
+<body>
     <div>
         <!--主体-->
         <!--header-->
         <div class="header clearfix">
             <div class="logo clearfix">
-                <span class="return">
+                <a class="return">
                     <img src="../img/return.png">
-                </span>
-                <span class="logo_used">
+                </a>
+                <a class="logo_used">
                     <img src="../img/used_logo.png">
                     <i>二手车</i>
-                </span>
+                </a>
             </div>
             <div class="search">
                 <a class="search_icon" href="/select/search.aspx"></a>
@@ -121,25 +121,28 @@
                                 </div>
                                 <div class="tc-item">
                                     <ul class="tc-sort" data-ps="s" id="sourceid">
-                                        <li>
-                                            <a href="javascript:;">个人车源</a>
+                                        <li class="source-tag">
+                                            <a href="javascript:;" data-id="1">个人车源</a>
                                         </li>
-                                        <li>
-                                            <a href="javascript:;">商家车源</a>
+                                        <li class="source-tag">
+                                            <a href="javascript:;" data-id="2">商家车源</a>
                                         </li>
-                                        <li>
-                                            <a href="javascript:;">淘车认证</a>
+                                        <li class="source-tag">
+                                            <a href="javascript:;" data-id="4">淘车认证</a>
                                         </li>
-                                        <li>
-                                            <a href="javascript:;">品牌认证</a>
+                                        <li class="source-tag">
+                                            <a href="javascript:;" data-id="7">淘车直卖</a>
                                         </li>
-                                        <li>
+                                        <li class="source-tag">
+                                            <a href="javascript:;" data-id="3">品牌认证</a>
+                                        </li>
+                                        <li class="newcar-tag">
                                             <a href="javascript:;">准新车</a>
                                         </li>
-                                        <li>
-                                            <a href="javascript:;">有图</a>
+                                        <li class="pic-tag">
+                                            <a href="javascript:;" >有图</a>
                                         </li>
-                                        <li>
+                                        <li class="bm-tag">
                                             <a href="javascript:;">帮卖车源</a>
                                         </li>
                                     </ul>
@@ -681,7 +684,7 @@
                                     <span>重置</span>
                                 </a>
                                 </li>
-                                <li class="li-sure">
+                                <li class="li-sure" id="li-sure">
                                     <a href="javascript:;">
                                     <span>确定</span>
                                 </a>
@@ -752,6 +755,9 @@
                                 <span class="car-ico">
                                     <em class="car-tcrz"></em>
                                 </span>
+                                 <span class="car-ico">
+                                    <em class="car-tczm"></em>
+                                    </span>
                                 <i class="ygong-txt">日供10元开回家</i>
                             </div>
                             <div class="car-txt">
@@ -902,9 +908,6 @@
         <!--遮罩-->
         <div class="mask-cover hide" id="mask-cover"></div>
     </div>
-    <!-------------------------->
-    <!--<div style="height: 500px; background-color: #4cc38b; "></div>-->
-    <!-------------------------->
     <!--品牌-->
     <div id="carSelectComponent">
         <div class="leftmask" style="display:none;">
@@ -1120,7 +1123,6 @@
     <script type="text/javascript" src="js/underscore.js"></script>
     <script type="text/javascript" src="js/render.js"></script>
     <script type="text/javascript" src="js/brand.js"></script>
-    <script type="text/javascript" src="js/tc.validator.js"></script>
     <script type="text/javascript" src="tc.utils.js"></script>
     <script type="text/javascript" src="header.js"></script>
     <script type="text/javascript" src="list.js"></script>

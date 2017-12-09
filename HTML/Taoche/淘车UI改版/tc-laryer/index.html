@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>详情弹层</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/layer-detail-style.css">
+    <script src="../js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+    .header-section {
+        width: 100%;
+        height: 1.5rem;
+        background: red;
+        font-size: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2222;
+    }
+    li {
+        border-bottom: 1px solid #000;
+        height: 2rem;
+    }
+    .container-section {
+        /* 绝对定位，进行内部滚动 */
+        background: #C1FFC1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        /* 使之可以滚动 */
+        overflow-y: scroll;
+    }
+    /* .slideup {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }*/
+
+    .animate-transition {
+        /*transition: all .3s ease;*/
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 浪奔浪流万里涛涛江水永不休 -->
+    <section class="header-section">头部</section>
+    <section class="container-section">
+        <ul>
+        </ul>
+    </section>
+    <div class="mask"></div>
+    <!-- float-layer-section -->
+    <section class="float-layer-section">
+        <div class="layer-cover hide" id="shadow_detail"></div>
+        <!--商家报价1-->
+        <div class="layer-fix animate-transition hide" id="barginWrapper">
+            <div class="layer-close bargin-close"></div>
+            <div class="layer-title">商家报价: <i class="colff2 bargin-show-price"></i></div>
+            <div class="layer-box  ">
+                <div class="layer-li">
+                    <p class="iphone-input-all">
+                        <input type="number" class="layer-input  bargain-price" placeholder="请输入您的心理价位" step="0.01" max="999.99" min="0.01" />
+                        <i class="input-txt">万</i>
+                    </p>
+                </div>
+                <div class="error-h minhauto hide" id="bargin-pricelow">
+                    <!--错误提示-->
+                    <p class="layer-error colff2">您的报价太低商家无法接受</p>
+                </div>
+                <div class="layer-li ">
+                    <p class="iphone-input-all">
+                        <input type="tel" class="layer-input bargain-phone" maxlength="11" placeholder="请输入手机号">
+                        <i class="input-del bargin-del" data-target=".bargain-phone" style="display:none;"></i>
+                    </p>
+                </div>
+                <div class="error-h bargain-alert-wrapper">
+                    <!--错误提示  出价太低了，车主可能接受不了哦~-->
+                    <p class="layer-error bargin-alert-txt"></p>
+                </div>
+            </div>
+            <div class="layer-btn">
+                <span class="btn-disable bargain-submit">询底价</span>
+                <!-- <span class="btn-sub">询底价</span> -->
+            </div>
+        </div>
+        <div class="layer-fix hide" id="smsWrapper">
+            <div class="layer-close sms-close"></div>
+            <div class="layer-title sms-pop_title">预约看车</div>
+            <div class="layer-box">
+                <div class="layer-li">
+                    <p class="iphone-input">
+                        <input type="tel" maxlength="11" placeholder="请输入手机号" class="layer-input sms-phone" />
+                        <i class="input-del sms-del" style="display:none;" data-target=".sms-phone"></i>
+                    </p>
+                    <p class="iphone-time" id="countdown-wrapper">
+                        <span class="countdown colff2">发送验证码</span>
+                        <span class="recountdown hide"><em class="countdown-num-wrapper"><em class="countdown-num"></em>s后</em>重新发送</span>
+                        <!--<span>重新获取(60秒)</span>-->
+                    </p>
+                </div>
+                <div class="layer-yzm">
+                    <input type="text" class="layer-input sms-code" maxlength="6" step="1" placeholder="请输入验证码">
+                    <i class="input-del sms-del" data-target=".sms-code" style="display:none;"></i>
+                </div>
+                <div class="error-h  sms-alert-wrapper">
+                    <!--错误提示-->
+                    <p class="layer-error sms-alert-txt"></p>
+                </div>
+            </div>
+            <div class="layer-btn">
+                <span class="btn-disable sms-submit">完成</span>
+                <!-- <span class="btn-sub">完成</span> -->
+            </div>
+        </div>
+        <!-- 成功郯城 -->
+        <div class="layer-fix hide" id="successWrapper">
+            <div class="layer-close success-close"></div>
+            <div class="layer-title success-title">询价成功</div>
+            <div class="layer-box">
+                <p class="xjcc-box">
+                    <img src="../img/layer-win.png" alt="">
+                    <span>
+                客服人员会很快联系您<br>请注意接听电话
+            </span>
+                </p>
+            </div>
+            <div class="layer-btn">
+                <span class="btn-sub success-btn">我知道了</span>
+            </div>
+        </div>
+
+        <!-- 降价后短信通知我 -->
+        <div class="layer-fix"  id="ordinarySmsWrapper">
+            <div class="layer-close sms-close"></div>
+            <div class="layer-title sms-pop_title">降价后短信通知我</div>
+            <div class="layer-box  ">
+                <div class="layer-li ">
+                    <p class="iphone-input-all">
+                        <!-- <input type="text" class="layer-input" placeholder="请输入手机号">
+                        <i class="input-del"></i> -->
+                        <input type="tel" maxlength="11" placeholder="请输入手机号" class="layer-input sms-phone" />
+                        <i class="input-del sms-del" style="display:none;" data-target=".sms-phone"></i>
+                    </p>
+                </div>
+                <div class="layer-li hide sms-imagecodewrapper">
+                    <p class="iphone-input">
+                        <input type="text sms-imgcode" placeholder="请输入右侧验证码" class="layer-input">
+                         <i class="input-del sms-del" style="display:none;" data-target=".sms-imgcode"></i>
+                    </p>
+                    <p class="iphone-time">
+                        <img src="../img/yzm-ico.jpg" alt="">
+                        <i class="ribsh-ico"></i>
+                    </p>
+                </div>
+                 <div class="error-h  sms-alert-wrapper">
+                    <!--错误提示-->
+                    <p class="layer-error sms-alert-txt"></p>
+                </div>
+
+            </div>
+            <div class="layer-btn">
+                <span class="btn-disable sms-submit">提交</span>
+            </div>
+            <div class="kj-txt">
+                <a href="#">电话沟通好议价</a>
+            </div>
+    </section>
+    <script type="text/javascript">
+    function css(element, attr, val) {
+        if (attr == "scale" || attr == "scaleX" ||
+            attr == "scaleY" || attr == "scaleZ" ||
+            attr == "rotateX" || attr == "rotateY" ||
+            attr == "rotateZ" || attr == "rotate" ||
+            attr == "skewX" || attr == "skewY" ||
+            attr == "translateX" || attr == "translateY" ||
+            attr == "translateZ") {
+            return cssTransform(element, attr, val);
+        }
+        if (arguments.length == 2) {
+            var val = getComputedStyle(element)[attr];
+            if (attr == 'opacity') {
+                val = Math.round(val * 100);
+            }
+            return parseFloat(val);
+        }
+        if (attr == "opacity") {
+            element.style.opacity = val / 100;
+        } else {
+            element.style[attr] = val + "px";
+        }
+    }
+
+    function cssTransform(element, attr, val) {
+        if (!element.transform) {
+            element.transform = {};
+        }
+        if (typeof val === "undefined") {
+            if (typeof element.transform[attr] === "undefined") {
+                switch (attr) {
+                    case "scale":
+                    case "scaleX":
+                    case "scaleY":
+                    case "scaleZ":
+                        element.transform[attr] = 100;
+                        break;
+                    default:
+                        element.transform[attr] = 0;
+                }
+            }
+            return element.transform[attr];
+        } else {
+            element.transform[attr] = val;
+            var transformVal = "";
+            for (var s in element.transform) {
+                switch (s) {
+                    case "scale":
+                    case "scaleX":
+                    case "scaleY":
+                    case "scaleZ":
+                        transformVal += " " + s + "(" + (element.transform[s] / 100) + ")";
+                        break;
+                    case "rotate":
+                    case "rotateX":
+                    case "rotateY":
+                    case "rotateZ":
+                    case "skewX":
+                    case "skewY":
+                        transformVal += " " + s + "(" + element.transform[s] + "deg)";
+                        break;
+                    default:
+                        transformVal += " " + s + "(" + element.transform[s] + "px)";
+                }
+            }
+            element.style.WebkitTransform = element.style.transform = transformVal;
+        }
+    }
+    </script>
+
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="js/tc.validator.js"></script>
+    <script type="text/javascript" src="js/success.js"></script>
+    <script type="text/javascript" src="js/sms.js"></script>
+    <script type="text/javascript" src="js/bargain.js"></script>
+    <script type="text/javascript" src="js/smsOrdinary.js"></script>
+    <script type="text/javascript" src="layer.js"></script>
+</body>
+
+</html>
