@@ -10,6 +10,17 @@
     <link rel="stylesheet" href="css/screen.css">
     <link rel="stylesheet" type="text/css" href="css/list.css" />
     <script src="../js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+/*    body,
+    html {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }*/
+    </style>
 </head>
 
 <body>
@@ -68,7 +79,8 @@
                             <a href="javascript:;">筛选</a>
                         </li>
                     </ul>
-                </div>
+            </div>
+             </div>
                 <!--排序-->
                 <div id="filter-order-layer" class="filter-layer seller-list paix-list hide">
                     <a href="javascript:;" class='<%= OrderField==0?"paix-sel":"" %>'>推荐排序</a>
@@ -80,35 +92,35 @@
                 </div>
                 <!--车价-->
                 <div id="filter-price-layer" class="filter-layer seller-list chej-list hide ">
-                    <h3>自定义</h3>
-                    <div class="chej-defined">
-                        <p class="chej-input">
-                            <input type="number" id='min-price' step='1' />
-                        </p>
-                        <p class="chej-line">—</p>
-                        <p class="chej-input">
-                            <input type="number" id='max-price' step='1' />
-                        </p>
-                        <p class="chej-btn ">
-                            <!--class="btn-sel"-->
-                            <a href="javascript:;" id='price-btn'>确定</a>
-                        </p>
-                        <!--输入后按钮增加样式btn-sel-->
-                    </div>
-                    <!---->
-                    <div class="chej-pice-list clearfix">
-                        <span class="chej-pice-sel"><a href="javascript:;">不限</a></span>
-                        <span><a href="javascript:;">3万以下</a></span>
-                        <span><a href="javascript:;">3-5万</a></span>
-                        <span><a href="javascript:;">5-8万</a></span>
-                        <span><a href="javascript:;">8-10万</a></span>
-                        <span><a href="javascript:;">10-15万</a></span>
-                        <span><a href="javascript:;">15-20万</a></span>
-                        <span><a href="javascript:;">20-30万</a></span>
-                        <span><a href="javascript:;">30-50万</a></span>
-                        <span><a href="javascript:;">50-100万</a></span>
-                        <span><a href="javascript:;">100万以上</a></span>
-                    </div>
+                        <h3>自定义</h3>
+                        <div class="chej-defined">
+                            <p class="chej-input">
+                                <input type="number" id='min-price' step='1' />
+                            </p>
+                            <p class="chej-line">—</p>
+                            <p class="chej-input">
+                                <input type="number" id='max-price' step='1' />
+                            </p>
+                            <p class="chej-btn ">
+                                <!--class="btn-sel"-->
+                                <a href="javascript:;" id='price-btn'>确定</a>
+                            </p>
+                            <!--输入后按钮增加样式btn-sel-->
+                        </div>
+                        <!---->
+                        <div class="chej-pice-list clearfix">
+                            <span class="chej-pice-sel"><a href="javascript:;">不限</a></span>
+                            <span><a href="javascript:;">3万以下</a></span>
+                            <span><a href="javascript:;">3-5万</a></span>
+                            <span><a href="javascript:;">5-8万</a></span>
+                            <span><a href="javascript:;">8-10万</a></span>
+                            <span><a href="javascript:;">10-15万</a></span>
+                            <span><a href="javascript:;">15-20万</a></span>
+                            <span><a href="javascript:;">20-30万</a></span>
+                            <span><a href="javascript:;">30-50万</a></span>
+                            <span><a href="javascript:;">50-100万</a></span>
+                            <span><a href="javascript:;">100万以上</a></span>
+                        </div>
                 </div>
                 <!--筛选-->
                 <div id="filter-more-layer" class="filter-layer brand-sortlist clearfix hide ">
@@ -140,7 +152,7 @@
                                             <a href="javascript:;">准新车</a>
                                         </li>
                                         <li class="pic-tag">
-                                            <a href="javascript:;" >有图</a>
+                                            <a href="javascript:;">有图</a>
                                         </li>
                                         <li class="bm-tag">
                                             <a href="javascript:;">帮卖车源</a>
@@ -468,8 +480,8 @@
                                     <span>国别</span>
                                 </div>
                                 <div class="tc-item hide">
-                                    <ul class="tc-sort"  id="carCountyId">
-                                       <!--  <li>
+                                    <ul class="tc-sort" id="carCountyId">
+                                        <!--  <li>
                                             <a href="javascript:;">德国</a>
                                         </li>
                                         <li>
@@ -514,7 +526,7 @@
                                 </div>
                                 <div class="tc-item hide">
                                     <ul class="tc-sort tc-sort-color" id="carColorId" data-ps="c">
-                                      <!--   <li>
+                                        <!--   <li>
                                             <a href="javascript:;">
                                     <em class="black"></em>
                                     <p class="col-txt">黑色</p>
@@ -715,7 +727,6 @@
                         <!-- 第二种情况 end -->
                     </div>
                 </div>
-            </div>
         </div>
         <!--内容-->
         <div class="seller-nav-sub">
@@ -755,7 +766,7 @@
                                 <span class="car-ico">
                                     <em class="car-tcrz"></em>
                                 </span>
-                                 <span class="car-ico">
+                                <span class="car-ico">
                                     <em class="car-tczm"></em>
                                     </span>
                                 <i class="ygong-txt">日供10元开回家</i>
@@ -918,7 +929,7 @@
             <div id="header" class="seller-heard">
                 <a href="javascript:;" title="返回" class="goback go-back"></a>
                 <span>
-                <img src="../img/serren-logo.svg" alt="">
+                <img src="//image.bitautoimg.com/taoche/2018_m_usedcar/serren-logo.svg" alt="">
                 选择品牌
             </span>
             </div>
@@ -965,9 +976,6 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="js/zepto.js"></script>
-    <script type="text/javascript" src="js/iscroll.js"></script>
-    <script type="text/javascript" src="js/indexsidebar.js"></script>
     <script type="text/template" id="hotTemplate">
         <div class="brand-hot-text">热门品牌</div>
         <ul class="brand-hot-list clearfix">
@@ -1017,48 +1025,37 @@
             <a href="{=data[0].PUrl}">不限车型</a>
         </div>
         <div class="seller-nex-list">
-            { for(var i = 0,len=data.length;i<len; i++){ 
-            if(data[i].Child.length> 0){  }
+            { for(var i = 0,len=data.length;i
+            <len; i++){ if(data[i].Child.length> 0){ }
                 <div class="seller-nex-title">
                     {= data[i].BrandName }
                 </div>
                 <div class="seller-nex-collist">
                     <ul>
-                {for(var j = 0,thisList=data[i],thisChild=thisList.Child,lenChild=thisChild.length,url=thisList.Url;j
-                        <lenChild; j++){ } 
-                    <li><a {=thisChild[j].CsId==currentid? 'class="colffd2"': ''} data-id="{= thisChild[j].CsId}" href="{=url.format([thisChild[j].AllSpell])}">
+                        {for(var j = 0,thisList=data[i],thisChild=thisList.Child,lenChild=thisChild.length,url=thisList.Url;j
+                        <lenChild; j++){ } <li><a {=thisChild[j].CsId==currentid? 'class="colffd2"': ''} data-id="{= thisChild[j].CsId}" href="{=url.format([thisChild[j].AllSpell])}">
                     {= thisChild[j].CsShowName }
 
                 </a></li>
-                   {}}
+                            {}}
                     </ul>
                 </div>
-                {}}
-                {}}
+                {}} {}}
         </div>
     </script>
     <!-- 车龄，里程，排量,排放标准,燃料,国别,车身-->
     <script type="text/template" id="systemTemplate">
         { for(var a=0,aLen=data.length;a
-        <aLen;a++){ 
-        var item=data[a]; 
-        var className=item.TagCode==current?'class="cur"':'';
-
-        } <li {=className}>
+        <aLen;a++){ var item=data[a]; var className=item.TagCode==current? 'class="cur"': ''; } <li {=className}>
             <a href="javascript:;" data-id="{=item.TagCode}" logwt="{=(logwt+item.TagCode)}">{=item.TagName}
             </a>
             </li>
             {}}
     </script>
-
     <!-- 级别,驱动标准 -->
     <script type="text/template" id="customTemplate">
         { for(var a=0,aLen=data.length;a
-        <aLen;a++){ 
-        var item=data[a]; 
-        var className=item.Id==current?'class="cur"':'';
-        }
-       <li  {=className}>
+        <aLen;a++){ var item=data[a]; var className=item.Id==current? 'class="cur"': ''; } <li {=className}>
             <a href="javascript:;" data-id="{=item.Id}" logwt="{=(logwt+item.Spell)}">
                                 <em class="car-{=item.Spell}"></em>
                                 <p class="col-txt">{=item.Name}</p>
@@ -1066,60 +1063,45 @@
             </li>
             {}}
     </script>
-
     <!-- 变速 -->
     <script type="text/template" id="carGearBoxTemplate">
         { for(var a=0,aLen=data.length;a
-        <aLen;a++){
-         var item=data[a];
-         var className=item.Id==current?'class="cur"':'';
-          } 
-        <li {=className}>
-            <a href="javascript:;"  data-id="{=item.Id}" logwt="wap_buycar_select_more_gearbox_{=item.Id}">{=item.Name}</a>
+        <aLen;a++){ var item=data[a]; var className=item.Id==current? 'class="cur"': ''; } <li {=className}>
+            <a href="javascript:;" data-id="{=item.Id}" logwt="wap_buycar_select_more_gearbox_{=item.Id}">{=item.Name}</a>
             </li>
             {}}
     </script>
-
     <!-- 驱动标准 -->
     <script type="text/template" id="carDriveTemplate">
         { for(var a=0,aLen=data.length;a
-        <aLen;a++){ 
-        var item=data[a]; 
-        var className=item.Id==current?'class="cur"':'';
-        } <li {=className}>
-            <a href="javascript:;" data-id="{=item.Id}" logwt="wap_buycar_select_more_drive_{=item.Spell}" >{=item.Name}</a>
+        <aLen;a++){ var item=data[a]; var className=item.Id==current? 'class="cur"': ''; } <li {=className}>
+            <a href="javascript:;" data-id="{=item.Id}" logwt="wap_buycar_select_more_drive_{=item.Spell}">{=item.Name}</a>
             </li>
             {}}
     </script>
-
-  
     <!-- 颜色 -->
     <script type="text/template" id="carCarColorTemplate">
         { for(var a=0,aLen=data.length;a
-        <aLen;a++){ 
-        var item=data[a];
-        var className=item.Id==current?'class="cur"':'';
-         } 
-        <li {=className}>
-                <a href="javascript:;" data-id="{=item.Id}" logwt="wap_buycar_select_more_color_{=item.Spell}">
+        <aLen;a++){ var item=data[a]; var className=item.Id==current? 'class="cur"': ''; } <li {=className}>
+            <a href="javascript:;" data-id="{=item.Id}" logwt="wap_buycar_select_more_color_{=item.Spell}">
                     <em class="{=item.Spell}"></em>
                     <p class="col-txt">{=item.Name}</p>
          </a>
-        </li>
-        {}}
+            </li>
+            {}}
     </script>
-
     <!-- 亮点配置 -->
     <script type="text/template" id="carHotConfigTemplate">
-        { for(var a=0,aLen=data.length;a<aLen;a++){ 
-        var item=data[a];
-        var className=arr.indexOf(String(item.CCDID))>-1?'class="cur"':'';
-         } 
-        <li {=className}>
-            <a href="javascript:;"  data-id="{=item.CCDID}" logwt="wap_buycar_select_more_lightpoint_{=item.CCDID}">{=item.CCName}</a>
-        </li>
-    {}}
+        { for(var a=0,aLen=data.length;a
+        <aLen;a++){ var item=data[a]; var className=arr.indexOf(String(item.CCDID))>-1?'class="cur"':''; }
+            <li {=className}>
+                <a href="javascript:;" data-id="{=item.CCDID}" logwt="wap_buycar_select_more_lightpoint_{=item.CCDID}">{=item.CCName}</a>
+            </li>
+            {}}
     </script>
+    <script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript" src="js/indexsidebar.js"></script>
     <script type="text/javascript" src="js/underscore.js"></script>
     <script type="text/javascript" src="js/render.js"></script>
     <script type="text/javascript" src="js/brand.js"></script>

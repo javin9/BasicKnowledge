@@ -517,7 +517,7 @@ $(function() {
                 var params = {
                     target: target,
                     showMask: true,
-                    initLayerScroll: null,
+                    initLayerScroll:null,
                     showCallback: function() {
                         /* body... */
                     },

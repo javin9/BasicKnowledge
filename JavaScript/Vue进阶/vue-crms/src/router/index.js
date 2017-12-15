@@ -25,6 +25,9 @@ let router = new Router({
       component: Home,
       meta: {
         login: false
+      },
+      beforeEnter:function () {
+        /* body... */
       }
     },
     {

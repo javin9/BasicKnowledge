@@ -1,0 +1,76 @@
+html,
+body {
+  height: 100%;
+}
+.main-secition {
+  background: #eee;
+  /* 绝对定位，进行内部滚动 */
+  position: relative;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* 使之可以滚动 */
+  overflow-y: scroll;
+  -webkit-overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.layer-form {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  padding-top: 0.66666667rem;
+  z-index: 999;
+}
+input {
+  height: 1.33333333rem;
+  padding: 0.33333333rem 0;
+  width: 100%;
+  text-indent: 1em;
+}
+[data-dpr="1"] input {
+  font-size: 18px;
+}
+[data-dpr="2"] input {
+  font-size: 36px;
+}
+[data-dpr="3"] input {
+  font-size: 54px;
+}
+.input-wrapper {
+  height: 2.4rem;
+  line-height: 2.4rem;
+  border-bottom: 1px solid #000;
+  width: 80%;
+  margin: 0 auto;
+}
+.btn-warpper {
+  margin-top: 0.66666667rem;
+}
+.btn-submit {
+  display: block;
+  width: 50%;
+  height: 0.66666667rem;
+  background: red;
+  color: #fff;
+  letter-spacing: 1em;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 0.06666667rem;
+  -webkit-border-radius: 0.06666667rem;
+}
+[data-dpr="1"] .btn-submit {
+  font-size: 16px;
+}
+[data-dpr="2"] .btn-submit {
+  font-size: 32px;
+}
+[data-dpr="3"] .btn-submit {
+  font-size: 48px;
+}
+.fixfixed .layer-form {
+  position: absolute;
+}
