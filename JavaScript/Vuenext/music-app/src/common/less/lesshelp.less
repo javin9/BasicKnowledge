@@ -1,0 +1,178 @@
+@r: 75rem;
+@d: 37.5rem;
+@imgurl: 'http://image.bitautoimg.com/taoche';
+@devimgurl: '../../img';
+
+
+.fz(@fontsize: 14px, @important: 0) {
+    & when (@important=1) {
+
+        [data-dpr="1"] & {
+            font-size: @fontsize !important;
+        }
+        [data-dpr="2"] & {
+            font-size: @fontsize*2 !important;
+        }
+        [data-dpr="3"] & {
+            font-size: @fontsize*3 !important;
+        }
+    }
+
+    & when (@important=0) {
+        [data-dpr="1"]  & {
+            font-size: @fontsize;
+        }
+        [data-dpr="2"] & {
+            font-size: @fontsize*2;
+        }
+        [data-dpr="3"] & {
+            font-size: @fontsize*3;
+        }
+    }
+}
+
+
+/*
+.adb{.fz(14px);}
+.adbddd{.fz(14px,1);}
+*/
+
+.border-radius(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+
+
+/*
+.button {
+  .border-radius(6px);
+}
+
+.button {
+  .border-radius;
+}
+*/
+
+.box-shadow(@args) {
+    -webkit-box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    box-shadow: @arguments;
+}
+
+
+
+
+/*
+.big-block {
+  .box-shadow(2px; 5px);  
+}  
+}
+*/
+
+.gradient(@angle: top, @start: #000, @stop: #111) {
+    background: -webkit-linear-gradient(@angle, @start, @stop);
+    background: -moz-linear-gradient(@angle, @start, @stop);
+    background: -o-linear-gradient(@angle, @start, @stop);
+    background: linear-gradient(@angle, @start, @stop);
+}
+
+
+
+/*
+.box4 {
+  .gradient(180deg,#000,#fff);
+}
+*/
+
+.transform(@transform) {
+    -webkit-transform: @transform;
+    -moz-transform: @transform;
+    -ms-transform: @transform;
+    -o-transform: @transform;
+    transform: @transform;
+}
+
+
+
+/*
+.dfsdf{
+	.transform(rotate(0deg));
+}
+
+.dddtranslate{
+	.transform(translate(-50%, -50%));
+}
+*/
+
+.keyframes (@name, @frames) {
+    @-webkit-keyframes @name {
+        @frames();
+    }
+    @-moz-keyframes @name {
+        @frames();
+    }
+    @-ms-keyframes @name {
+        @frames();
+    }
+    @-o-keyframes @name {
+        @frames();
+    }
+    @keyframes @name {
+        @frames();
+    }
+}
+
+/*
+.keyframes (line, {
+    0% {
+        background-size: 0% 2px;
+    }
+    100% {
+        background-size: 100% 2px;
+    }
+});
+
+
+
+.keyframes (line, {
+    0% {
+        .transform(rotate(0deg));
+    }
+    100% {
+        .transform(rotate(360deg));
+    }
+});
+*/
+
+
+.rgba(@a:0.8,@b:40){
+
+    filter: alpha(opacity=@b); 
+
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{b})"; 
+
+    opacity:@a;    
+
+}
+.flex(@value:1){
+    -webkit-box-flex:@value;
+    -webkit-flex:@value;
+    -ms-flex:@value;
+    flex:@value;
+}
+
+/*弹性盒子*/
+.flex-box{display:-webkit-box;display:-webkit-flex;display: -moz-box;display:-ms-flexbox;display:flex;}
+.flex-v{-webkit-box-orient:vertical;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}
+.flex-1{-webkit-box-flex:1;-webkit-flex:1;-moz-box-flex:1;-ms-flex:1;flex:1;width: 0;display: block;}
+.flex-align-center{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;}
+.flex-pack-center{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}
+.flex-pack-justify{-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}
+
+/*
+.div{
+	.rgba(.4,40);
+}
+*/
