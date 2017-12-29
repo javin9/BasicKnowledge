@@ -7,17 +7,20 @@
 <body>
 <script type="text/javascript">
 
-/*
-
-Promise.resolve(1).then(function(m){
+//不带参数
+Promise.resolve().then(function(){
+	console.log('look here')
+})
+//带参数
+Promise.resolve('look here').then(function(m){
 	console.log(m)
 })
-*/
 
-Promise.reject('abc').then(function(){
-	alert(1),alert(2);
-},function(m){
-	console.log(m)
+//失败了去做某事
+Promise.reject('look here').then(function(m){
+	console.log("resolve="+m);
+}).catch(function () {
+	console.log('reject='+m);
 });
 
 </script>

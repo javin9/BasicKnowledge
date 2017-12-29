@@ -6,6 +6,7 @@ import fastclick from 'fastclick';
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import reset from 'common/less/reset.less';
 
 Vue.config.productionTip = false;
 

@@ -5,13 +5,14 @@
   "author": "'Cupid' <'liujianwei1213@163.com'>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --config build/webpack.dev.conf.js --inline --progress",
     "start": "npm run dev",
     "build": "node build/build.js"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "fastclick": "^1.0.6",
+    "jsonp": "^0.2.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
@@ -34,6 +35,8 @@
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
     "node-notifier": "^5.1.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",

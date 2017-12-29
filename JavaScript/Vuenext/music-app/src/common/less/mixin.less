@@ -1,0 +1,60 @@
+@r: 75rem;
+
+.bg-image(@imageurl,@imagename) {
+  background-image:url('@{imageurl}/@{imagename}@2x.png');
+
+  @media srceen and(-webkit-min-device-pixel-ratio:3){
+     background-image:url('@{imageurl}/@{imagename}@3x.png');
+  }
+  @media srceen and(min-device-pixel-ratio:3){
+     background-image:url('@{imageurl}/@{imagename}@3x.png');
+  }
+}
+/*一行文字省略*/
+.single-no-wrap(){
+   overflow: hidden;
+   text-overflow:ellipsis;
+   white-space: nowrap;
+}
+/*两行文字省略*/
+.two-no-wrap(){
+	overflow:hidden;
+	text-overflow:ellipsis;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+	-webkit-line-clamp:2;
+	line-clamp:2;
+	-webkit-box-orient:vertical;
+	box-orient:vertical;
+}
+
+
+
+
+.fz(@fontsize: 14px, @important: 0) {
+    & when (@important=1) {
+
+        [data-dpr="1"] & {
+            font-size: @fontsize !important;
+        }
+        [data-dpr="2"] & {
+            font-size: @fontsize*2 !important;
+        }
+        [data-dpr="3"] & {
+            font-size: @fontsize*3 !important;
+        }
+    }
+
+    & when (@important=0) {
+        [data-dpr="1"]  & {
+            font-size: @fontsize;
+        }
+        [data-dpr="2"] & {
+            font-size: @fontsize*2;
+        }
+        [data-dpr="3"] & {
+            font-size: @fontsize*3;
+        }
+    }
+}

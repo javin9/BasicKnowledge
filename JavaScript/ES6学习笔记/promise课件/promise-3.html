@@ -7,20 +7,31 @@
 <body>
 <script type="text/javascript">
 	new Promise(function (resolve,reject){
-		resolve('abc');
-	//	reject();
+		resolve('你');
 	}).then(function(v){
-		//alert(1);
-		alert(v);
-		return 'abc';
+		console.log(v);//你
+		return '好';
 	}).then(function(v){
-		//alert(v)
-		return '123';
+		console.log(v);//好
+		return '啊';
 	}).then(function(m){
-		//console.log(m)
-		throw 'this is bug'
+		console.log(m);//啊
 	}).catch(function(l){
 		console.log(l)
+	})
+
+	new Promise(function (resolve,reject){
+		reject('游戏技术');
+	}).then(function(v){
+		console.log(v);
+		return '好';
+	}).then(function(v){
+		console.log(v);
+		return '啊';
+	}).then(function(m){
+		console.log(m);
+	}).catch(function(result){
+		console.log(result)
 	})
 </script>
 </body>
