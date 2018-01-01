@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>城市控件</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/control-city.css">
+    <script src="../js/flexible.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div style="height: 500px; background-color: #4cc38b; "></div>
+
+<div class="btn" id="btn">点击</div>
+
+<!---->
+<div id="carSelectComponent">
+    <div class="leftmask" style="display:none;">
+        <!--<em>点<br>击<br>收<br>起</em>-->
+    </div>
+    <div class="relative-position defaultAni" id="first-wrapper">
+        <!--heard-->
+        <div id="header" class="seller-heard">
+            <a href="#" title="返回" class="goback"></a>
+            <span>
+                <img src="../img/serren-logo.svg" alt="">
+                地区选择
+            </span>
+        </div>
+        <!---->
+        <div id="wrapper" class="wrapper">
+
+            <div id="scroller" class="seller-scroller">
+                <div class="carSelect-allCar-ul">
+                    <img src="http://image.bitautoimg.com/uimg/mbt2015/images/loading.gif">
+                </div>
+
+                <div class="cityname-list clearfix">
+                    <div class="cityname-title">当前定位城市</div>
+                    <div class="cityname-posit">
+                        <span class="posit-cio">
+                            <!--定位失败-->
+                            北京
+                        </span>
+                        <a href="#">刷新定位</a>
+                    </div>
+                    <div class="cityname-title">区域</div>
+                    <div class="cityname-area clearfix">
+                        <a href="" class="cit-area-sel">全国</a>
+                        <a href="">珠三角</a>
+                        <a href="">长三角</a>
+                        <a href="">京津冀</a>
+                        <a href="">云贵川</a>
+                    </div>
+                    <div class="cityname-title ">直辖市</div>
+                    <div class="cityname-area">
+                        <a href="">北京</a>
+                        <a href="">上海</a>
+                        <a href="">天津</a>
+                        <a href="">重庆</a>
+                    </div>
+                </div>
+
+                <!--数据循环-->
+                <div class="city-col clearfix">
+                    <div class="city-title-item">
+                        A
+                     </div>
+                <div class="city-col-list">
+                    <ul>
+                        <li>
+                            <a href="">
+                            安徽
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+                <div class="city-col clearfix">
+                    <div class="city-title-item">
+                        B
+                     </div>
+                <div class="city-col-list">
+                    <ul>
+                        <li>
+                            <a href="">
+                            北京
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="tipsLetter" style="display: none;">P</div>
+    </div>
+    <div class="relative-position defaultAni new-wrapp" id="sery-wrapper">
+        <div id="car-wrapper" class="wrapper seller-next-w">
+            <div id="sery-scroller" class="seller-scroller">
+                <img src="http://image.bitautoimg.com/uimg/mbt2015/images/loading.gif" class="seller-load">
+
+                <!---->
+
+                <div class="citycont-back">
+                    <a href="#" title="返回" class="goback"></a>
+            <span>
+                地区选择
+            </span>
+                </div>
+                <!--循环-->
+                <div class="citycont-nex-list">
+                    <ul>
+                        <li><a href="">合肥</a></li>
+                        <li><a href="">合肥</a></li>
+                        <li><a href="">合肥</a></li>
+                        <li><a href="">合肥</a></li>
+                        <li><a href="">合肥</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/indexsidebar.js"></script>
+<script type="text/template" id="brandTemplate">
+    {console.log(data); var MsterList=data.MsterList; for(var n in MsterList){}
+    <div class="brand-col clearfix">
+        <div class="brand-title-item" data-letter="{=n}">
+            {=n}
+        </div>
+        <div class="brand-col-list">
+            <ul>
+                { for(var i=0,thisMsterList=MsterList[n],thisLen=thisMsterList.length;i
+                <thisLen;i++){ }
+                <li data-action="car" data-id="{=thisMsterList[i].Bs_Id}" data-name="{=thisMsterList[i].Bs_Name}">
+                    <a href="#">
+                        <div class="brand-col-img">
+                            <img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_{=thisMsterList[i].Bs_Id}_100.png" alt="">
+                        </div>
+                        <span>{=thisMsterList[i].Bs_Name}</span>
+                    </a>
+                </li>
+                {}}
+            </ul>
+        </div>
+    </div>
+    {}}
+</script>
+<!--<script type="text/template" id="carTemplate">-->
+    <!--{console.log(data);-->
+    <!--console.log(name);-->
+    <!--}-->
+    <!--<div class="seller-nex-name">-->
+        <!--<p><img src="http://image.bitautoimg.com/bt/car/default/images/logo/masterbrand/png/100/m_{=pid}_100.png" alt=""></p>{=name}-->
+    <!--</div>-->
+    <!--<div class="seller-nex-no">-->
+        <!--<a href="{=data[0].PUrl}">不限车型</a>-->
+    <!--</div>-->
+    <!--<div class="seller-nex-list">-->
+        <!--{ for(var i = 0,len=data.length;i-->
+        <!--<len; i++){ } {if(data[i].Child.length> 0){ }-->
+        <!--<div class="seller-nex-title">-->
+            <!--{= data[i].BrandName }-->
+        <!--</div>-->
+        <!--{}}-->
+        <!--<div class="seller-nex-collist">-->
+            <!--<ul>-->
+                <!--{for(var j = 0,thisList=data[i],thisChild=thisList.Child,lenChild=thisChild.length,url=thisList.Url;j-->
+                <!--<lenChild; j++){ }-->
+                <!--<li>-->
+                    <!--<a  data-id="{= thisChild[j].CsId}" href="#">-->
+                        <!--{= thisChild[j].CsShowName }-->
+
+                    <!--</a>-->
+                <!--</li>-->
+                <!--{}}-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--{}}-->
+<!--</script>-->
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/javascript" src="js/render.js"></script>
+<script type="text/javascript" src="js/brand.js"></script>
+<script type="text/javascript">
+    var barnds = new BrandSelectComponent({
+        charChange: function(letter) {
+            if (letter === '#') {
+                this.brandScroll.scrollTo(0, 0);
+            } else {
+                var target = document.querySelector('[data-letter="' + letter + '"]');
+                if (!!target && !!target.nodeType) {
+                    this.brandScroll.scrollToElement(target,0);
+                }
+            }
+        },
+        ainimateHideAfter: function() {
+            console.log('ainimateHideAfter');
+        }
+    });
+
+    $("#btn").click(function() {
+        barnds.init();
+    });
+
+    $("#header").click(function() {
+        barnds.toggleAnimate();
+    });
+</script>
+</body>
+</html>

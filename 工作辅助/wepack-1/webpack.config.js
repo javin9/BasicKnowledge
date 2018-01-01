@@ -122,7 +122,7 @@ wepack-1/dist/demo/css/demo/js/detail-a6b6a7cea322ccc60e4e.js
         open: true,
         port: 9090,
         contentBase: './dist',
-        // publicPath:''   此处设置了，就不会去output里面寻找了
+        // publicPath:''   此处设置了，就不会去output里面寻找了output里面寻找了
     },
     plugins: [
         new CleanWebpackPlugin(pathsToClean, cleanOptions),

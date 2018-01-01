@@ -1,0 +1,45 @@
+@import "../../lesshelp/lesshelp.less";
+//公共css
+body{font-size:12px;padding:0px;margin:0px;}
+
+
+.footer{width:100%;margin-bottom:100/@r;background:white;margin-top:20/@r;}
+.footer ul{overflow:hidden;padding:0px 30/@r;padding-bottom:30/@r;}
+.footer ul li{float:left;height:110/@r;line-height:110/@r;width:33%;text-align:center;position:relative;border-bottom:1px solid #E5E5E5;}
+.footer ul li a{display:inline-block;}
+.footer ul li i{display:inline-block;width:40/@r;height:40/@r;position:relative;top:12/@r;margin-right:18/@r;}
+.footer ul li i.computer{background:url("../../img/computer.png") no-repeat center center;background-size:100% 100%;}
+.footer ul li:after{content:'';display:inline-block;width:1px;height:45/@r;border-left:2/@r solid #E5E5E5;position:absolute;right:0px;top:32/@r;}
+.footer ul li:last-child:after{border:none;}
+.footer ul li i.opinion{background:url("../../img/opinion.png") no-repeat center center;background-size:100% 100%;}
+.footer ul li i.about{background:url("../../img/about.png") no-repeat center center;background-size:100% 100%;}
+.footer p{display:block;text-align:center;height:50/@r;line-height:50/@r;.fz(13px);color:#818D9A;}
+.footer span{display:block;text-align:center;.fz(12px);color:#B0B3B4;line-height:40/@r;}
+.footer .span_one{padding-top:30/@r;}
+.footer span:last-child{padding-bottom:30/@r;}
+
+
+//底部链接
+.menu{width:100%;height:100/@r;border-top:2/@r solid #E9E9E9;position:fixed;left:0px;bottom:0px;background:white;}
+.menu ul{height:100/@r;overflow:hidden;display:-webkit-flex;display:flex;flex-flow:row nowrap;justify-content:space-around;padding-top:14/@r;}
+.menu ul li{float:left;align-items:center;}
+
+.menu ul li i{display:block;width:42/@r;height:42/@r;margin:0 auto;}
+.menu ul li i.home{background:url("../../img/home.png") no-repeat center center;background-size:cover;}
+.menu ul li i.newCar{background:url("../../img/newsCar.png") no-repeat center center;background-size:cover;}
+.menu ul li i.second{background:url("../../img/second.png") no-repeat center center;background-size:cover;}
+.menu ul li i.stages{background:url("../../img/stages.png") no-repeat center center;background-size:cover;}
+.menu ul li i.my{background:url("../../img/my.png") no-repeat center center;background-size:cover;}
+
+.menu ul li.active i.home{background-image:url("../../img/home_ac.png");color:#FF6402;}
+.menu ul li.active i.newCar{background-image:url("../../img/newsCar_ac.png");color:#FF6402;}
+.menu ul li.active i.second{background-image:url("../../img/second_ac.png");color:#FF6402;}
+.menu ul li.active i.stages{background-image:url("../../img/stages_ac.png");color:#FF6402;}
+.menu ul li.active i.my{background-image:url("../../img/my_ac.png");color:#FF6402;}
+
+.menu ul li.active i.home + span{color:#FF6402;}
+.menu ul li.active i.newCar + span{color:#FF6402;}
+.menu ul li.active i.second + span{color:#FF6402;}
+.menu ul li.active i.stages + span{color:#FF6402;}
+.menu ul li.active i.my + span{color:#FF6402;}
+.menu ul li span{display:inline-block;.fz(12px);color:#868A8B;padding-top:6/@r;}

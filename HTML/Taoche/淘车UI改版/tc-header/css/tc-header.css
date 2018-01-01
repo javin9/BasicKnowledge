@@ -1,0 +1,155 @@
+/*
+.adb{.fz(14px);}
+.adbddd{.fz(14px,1);}
+*/
+/*
+.button {
+  .border-radius(6px);
+}
+
+.button {
+  .border-radius;
+}
+*/
+/*
+.big-block {
+  .box-shadow(2px; 5px);  
+}  
+}
+*/
+/*
+.box4 {
+  .gradient(180deg,#000,#fff);
+}
+*/
+/*
+.dfsdf{
+	.transform(rotate(0deg));
+}
+
+.dddtranslate{
+	.transform(translate(-50%, -50%));
+}
+*/
+/*
+.keyframes (line, {
+    0% {
+        background-size: 0% 2px;
+    }
+    100% {
+        background-size: 100% 2px;
+    }
+});
+
+
+
+.keyframes (line, {
+    0% {
+        .transform(rotate(0deg));
+    }
+    100% {
+        .transform(rotate(360deg));
+    }
+});
+*/
+/*
+.div{
+	.rgba(.4,40);
+}
+*/
+body {
+  font-size: 12px;
+  padding: 0px;
+  margin: 0px;
+}
+.border-radius {
+  -webkit-border-radius: 0.72rem;
+  -moz-border-radius: 0.72rem;
+  border-radius: 0.72rem;
+}
+.header {
+  width: 100%;
+  height: 1.17333333rem;
+  background: white;
+}
+.header .logo,
+.search,
+.city {
+  float: left;
+}
+.header .logo {
+  display: block;
+  width: 1.94666667rem;
+  height: 1.17333333rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.header .logo img {
+  width: 1.05333333rem;
+  height: 1.17333333rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.header .search {
+  display: block;
+  width: 6rem;
+  height: 0.8rem;
+  vertical-align: middle;
+  margin: 0.17333333rem 0px;
+  background: #F2F3F5;
+  border-radius: 0.72rem;
+}
+.header .search img {
+  width: 0.4rem;
+  height: 0.4rem;
+  display: inline-block;
+  margin: 0.2rem 0.13333333rem 0rem 0.46666667rem;
+}
+.header .search input {
+  height: 0.49333333rem;
+  color: #B0B3B4;
+  background: none;
+  position: relative;
+  top: -0.09333333rem;
+}
+[data-dpr="1"] .header .search input {
+  font-size: 13px;
+}
+[data-dpr="2"] .header .search input {
+  font-size: 26px;
+}
+[data-dpr="3"] .header .search input {
+  font-size: 39px;
+}
+.header .city {
+  display: block;
+  width: 2.05333333rem;
+  height: 1.17333333rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.header .city span {
+  height: 1.17333333rem;
+  line-height: 1.17333333rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+[data-dpr="1"] .header .city span {
+  font-size: 15px;
+}
+[data-dpr="2"] .header .city span {
+  font-size: 30px;
+}
+[data-dpr="3"] .header .city span {
+  font-size: 45px;
+}
+.header .city i {
+  display: inline-block;
+  width: 0.29333333rem;
+  height: 0.29333333rem;
+  background: url("../../img/header_select.png") no-repeat center center;
+  background-size: 100%;
+  position: relative;
+  top: 0.05333333rem;
+  margin-left: 0.2rem;
+}

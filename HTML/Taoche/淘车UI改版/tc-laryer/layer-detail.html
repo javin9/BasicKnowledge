@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情弹层</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/layer-detail-style.css">
+    <script src="../js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+        /*.layer-fix{position: static;}*/
+    </style>
+
+</head>
+<body>
+<div style="background:#333;height:10000px;"></div>
+<div class="layer-cover hide"></div>
+<!--预约看车1-->
+<div class="layer-fix">
+    <div class="layer-close"></div>
+    <div class="layer-title">已发送短信验证码</div>
+    <div class="layer-box  ">
+        <div class="layer-li">
+            <p class="iphone-input">
+            <input type="tel" placeholder="请输入手机号" class="layer-input">
+                <i class="input-del"></i>
+            </p>
+            <p class="iphone-time">
+            <span>发送验证码</span>
+            <!--<span class="colff2">重新发送</span>-->
+            <!--<span>重新获取(60秒)</span>-->
+            </p>
+        </div>
+        <div class="layer-yzm">
+            <input type="tel" class="layer-input" placeholder="请输入验证码">
+            <i class="input-del"></i>
+        </div>
+
+        <div class="error-h">
+            <!--错误提示-->
+        <p class="layer-error">您输入的验证码有误</p>
+        </div>
+    </div>
+    <div class="layer-btn">
+        <span class="btn-disable">完成</span>
+        <span class="btn-sub">完成</span>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

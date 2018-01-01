@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>车源图片大图</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/bigimg.css">
+    <script src="../js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+        body {
+            background: rgba(0,0,0,0.90);
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            color:#000;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+
+        }
+        .swiper-slide {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="new_picshow_name">
+    <!--<div class=" bg_opacity80"></div>-->
+    <p>
+        <a href="#" class="showpic_back_ico"></a>
+        <span>甲壳虫(进口)07款 自动款 自动版(5门)豪华型版(5门)豪华型</span>
+    </p>
+</div>
+<div class="picshow_hr"></div>
+<!-- Swiper -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="swiper-zoom-container">
+                <img src="http://img7.taoche.cn/1k/021703vyek.jpg">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="swiper-zoom-container">
+                <img src="http://img7.taoche.cn/1k/021703vyf7.jpg">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="swiper-zoom-container">
+                <img src="http://img7.taoche.cn/1k/021703vyeo.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Pagination -->
+<div class="picshow_number">
+    <div class="bg_opacity70"></div>
+    <p><em class="colf6">1</em><i>/</i><em>15</em></p>
+</div>
+
+
+<!--按钮-->
+<div class="picshow_button">
+    <!--<div class="bg_opacity80"></div>-->
+    <!--按钮1-->
+    <p>
+        <a href="javascript:" class="picshow_btn_ms mykj-btn ">我要砍价</a>
+        <a href=""  class="picshow_btn_ms dhzx-btn">电话咨询</a>
+    </p>
+    <!--按钮2-->
+    <p  >
+        <a href="" class="picshow_btn_m ">免费咨询</a>
+    </p>
+</div>
+
+
+<!-- Swiper JS -->
+<script src="../js/swiper.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        zoom: true,
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev'
+    });
+</script>
+</body>
+</html>

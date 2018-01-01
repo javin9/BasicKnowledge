@@ -23,7 +23,9 @@ input.active{
 
 btn.onclick = function(){
 	ajax('2.php').then(function(v){
-		alert(v)
+		 console.log(v)
+	}).catch(function(v) {
+	   console.log(v)
 	})
 }
 function ajax(url){

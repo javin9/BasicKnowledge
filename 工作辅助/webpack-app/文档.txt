@@ -146,13 +146,41 @@ npm install minimist
 //此处会把命令行的的参数都出来
     const args = require("minimist")(process.argv.slice(2));
 
-webpack-dev-server 本地服务器，先打包-在访问 不会产生真实的文件 都放到内存里面去了
+
+////////////////////////////////////////////////////////////////////////////////
+webpack-dev-server 本地服务器，先打包-在访问r 不会产生真实的文件 都放到内存里面去了
  webpack-dev-server --inline --hot  --colors --host 0.0.0.0 //--inline --hot  顺序不能颠倒
 
- npm i clean-webpack-plugin --save-dev
+ npm i clean-webpack-plugin --s-ave-dev
 
  npm install jquery  --save-dev
 
 
 
  // "start": "webpack-dev-server --inline --hot  --colors --host 123 ",
+
+ 默认找到的是webpack.config.js文件 如果更改了需要在start 配置 --config webpack-dev-server-dev.js
+
+
+//////////////////////////////////////////////////////////////////////////////
+ path:'dist/' 不要加文件夹名 
+ publicPath:'/' 
+   1.最后都要添加 / 因为loader的静态资源，比如images，css，前面不会自动添加 / 
+   2.所有资源的基础路径  拼接在静态资源前面的路径
+   index.html ,不要使用../的形式
+
+ deServer:{
+   open:true,
+   port:888,
+   contentPath:'./',
+   publicPath:'/' //1.如果这里有publicPath 就用自己的，如果没有 就去上面找output 的publicPaht
+                  //2.服务器打包后的资源路径  真实的文件路径  所有资源打包的起点
+ }
+
+
+https://webpack.js.org/guides/getting-started/
+https://doc.webpack-china.org/concepts/
+
+
+
+

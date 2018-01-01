@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src='../../common/flexible.js'></script>
+    <link rel="stylesheet" type="text/css" href="../../CSS代码类库/mreset.css" />
+    <link rel="stylesheet" type="text/css" href="css/11092746inputproblem.css">
+</head>
+
+<body>
+ <div class="h100"></div>   
+    <div class="main-secition"></div>
+    <div class="float-section">
+        <div class="layer-form">
+            <div class="input-wrapper">
+                <input type="tel" name="" placeholder="请输入手机号" />
+            </div>
+            <div class="input-wrapper">
+                <input type="text" name="" placeholder="请输入手机号" />
+            </div>
+            <div class="btn-warpper">
+                <a href="javascript:;" class="btn-submit">提交</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../common/jquery.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var createDiv = function(txt) {
+            var div = document.createElement('div');
+            div.innerText = txt;
+            div.className = 'item';
+            return div;
+        }
+
+        var frag = document.createDocumentFragment();
+        for (var k = 0, length3 = 100; k < length3; k++) {
+            var txt = "我是第" + k + "个DIV";
+            var div = createDiv(txt);
+            frag.appendChild(div);
+        }
+        $('.main-secition').append(frag);
+
+    
+            /* cache dom references */
+            var $body = $('body');
+
+            /* bind events */
+                //  $(document).on('focus', 'input', function() {
+                //     $body.addClass('fixfixed');
+                // })
+                // .on('blur', 'input', function() {
+                //     $body.removeClass('fixfixed');
+                // })
+                //  .on('keydown', 'input', function() {
+                //     $body.addClass('fixfixed');
+                // })
+                
+    })
+    </script>
+</body>
+
+</html>

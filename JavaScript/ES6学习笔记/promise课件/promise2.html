@@ -7,17 +7,17 @@
 <body>
 <script type="text/javascript">
 	new Promise(function (resolve,reject){
-		resolve('abc');
-	//	reject();
-	}).then(function(v){
-		//alert(1);
-		alert(v);
-		return 'abc';
-	}).then(function(v){
-		//alert(v)
-		return '123';
-	}).then(function(m){
-		console.log(m)
+		//天亮了，做一件事，天不亮做一件事
+		let a='天亮了';
+		if (a=='天亮了') {
+          resolve('起床');
+		}else{
+		  reject('睡觉');
+		}
+	}).then(function(opt){
+         console.log('我想'+opt);
+	}).catch(function(opt){
+		console.log('我想'+opt);
 	})
 </script>
 </body>

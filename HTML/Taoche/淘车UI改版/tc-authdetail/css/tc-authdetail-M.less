@@ -1,0 +1,517 @@
+@import "../../lesshelp/lesshelp.less";
+
+//内部less变量
+@gray:#818D9A;
+@lightgray:#B0B3B4;
+@black:#2F3540;
+
+//公共样式
+.hide{display:none;}
+.borb0{border-bottom:0/@d !important;}
+.borr0{border-right:0/@d !important; }
+img{max-width:100%;}
+a{color:#333333;}
+.boxwrap{background:#fff;}
+.mt12 {
+    margin-top: 12/@d;
+}
+.pab50{
+    padding-bottom: 54/@d;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body{font-size:12px}
+.clearfix{zoom:1}
+.clearfix:after{display:block; content:''; clear:both;}
+.bg-greyer {
+    background: #f5f5f5;
+}
+/* banner */
+.banner-wrap{position:relative;}
+.pagination {position: absolute;z-index: 20;left: 10/@d;bottom: 10/@d;width:100%;text-align:center;  }
+.swiper-pagination-switch {display: inline-block;width: 0.5rem;height: 0.5rem;border-radius: 0.5rem;background: #999;margin-right: 0.5rem;opacity: 0.8;cursor: pointer;  }
+.swiper-active-switch {background: #dd2727;}
+.ban_swiper .swiper-slide {text-align: center;position:relative;  }
+.ban_swiper .swiper-slide a{display:block;width:100%;}
+.ban_swiper .swiper-slide a:after{content: '';display: block;width: 100%;padding-top:66.6667%;}
+.ban_swiper .swiper-slide img{width: 100%;display:block;height:100%;top:0;left:0;position:absolute;}
+.swiper-pagination-current{color:#ff6600;}
+.swiper-pagination-current{.fz(16px)}
+
+.banner-wrap .swiper-slide img{display:block;}
+.ban-icon{position:relative;width:100%;}
+.ban-icon-no{position:absolute;z-index:10;background:rgba(0,0,0,0.4);width:100%;left:0;bottom:0;}
+.ico-bzc{position:absolute;left:15/@d;bottom:10/@d;z-index:10;display:block;width:78/@d;height:25/@d;}
+.ico-rzc{position:absolute;left:15/@d;bottom:10/@d;z-index:10;display:block;width:78/@d;height:25/@d;background-position:0 -496/@d;}
+.ico-wrz{display:block;
+background:url(http://image.bitautoimg.com/taoche/2016taoche_m/d_gr.png) no-repeat left center;
+.fz(12px);
+background-size:13/@d 13/@d;padding-left:17/@d; color:#fff;line-height:25/@d;margin-left:15/@d;}
+.ban-page{position:absolute;right:15/@d;bottom:10/@d;z-index:10;background:rgba(0,0,0,0.4);width:60/@d;line-height:25/@d;text-align:center;color:#fff;
+    border-radius:3/@d;
+    -webkit-border-radius:3/@d;
+    -moz-border-radius:3/@d;
+    .fz(14px)
+}
+
+/*淘车认证图标*/
+.ico-taob_rzc{    position: absolute;  left: 0/@d;  bottom: 0/@d;  z-index: 10;  display: block; 
+ width: 180/@r;  height: 46/@r;line-height: 46/@r;
+ color: white;
+ .fz(12px);
+ background-color: #FF6D02 ;
+ border-radius: 5/@r;
+ }
+// .ico-taob_rzc i{
+//   display: inline-block;
+//   width: 30/@r;
+//   height: 34/@r;
+//   background:url(../../img/taoche@2x.png) no-repeat center ;
+//   background-size: contain;
+//   position: absolute;
+//   top: 50%;
+//   margin-top: -17/@r;
+//   margin-left: 5/@r;
+// }
+// .ico-taob_rzc span{
+//   display: inline-block;
+//   margin-left: 40/@r;
+//   height: 46/@r;line-height: 46/@r;
+// }
+
+/* det-wrap */
+.det-wrap{padding:0 15/@d;}
+.d-tle{ .fz(16px);
+color:#333;line-height:45/@r;padding:11/@d 0 5/@d;}
+.d-secondtle{color:#666;
+.fz(14px);
+margin-top: 20/@r;
+line-height:120/@r;
+height: 120/@r;
+}
+.d-secondtle .line{
+.fz(14px);
+padding:0 10/@d;
+}
+.d-secondtle li{
+width: 33%;
+float: left;
+height: 100/@r;
+}
+.d-secondtle p:nth-child(1){
+    color: #818D9A;
+    .fz(11px);
+}
+.d-secondtle p:nth-child(1){
+    color: #818D9A;
+    .fz(11px);
+}
+.d-secondtle p{
+    height: 50/@r;
+    line-height: 50/@r;
+    text-align: center;
+    .fz(13px);
+    color: @black;
+}
+.d-price{overflow:hidden;}
+.d-price .left-pri{padding-right:42/@r;.fz(30px);color:#ff6d02;line-height:84/@r;float: left;}
+.d-price .right-pri{float: left;height: 100%;padding-top: 5/@r;width: 420/@r;}
+.d-price .right-pri p{display:block;.fz(13px);color: #818D9A;line-height:37/@r;}
+
+.look-gz{overflow:hidden;}
+.look-gz a{background-position:0 -28/@d;float:left;display:block;margin-right:17/@d;padding-left:21/@d;line-height:25/@d;color:#ff6d02;.fz(14px);}
+.look-gz a.wx{background-position:0 -524/@d;padding-left:25/@d;}
+.ico-d{display:block;position:absolute;left:0;top:-21/@d;margin-right:5/@d;width:40/@d;height:64/@d;line-height:15/@d;text-align:center;color:#fff;.fz(12px);
+    border-radius:2/@d;
+    -webkit-border-radius:2/@d;
+    -moz-border-radius:2/@d;
+}
+.ico-r{display:block;position:absolute;left:0;top:50%;margin-top:-8/@d;margin-right:5/@d;background:url(http://image.bitautoimg.com/taoche/2016taoche_m/icon-r.png) no-repeat;background-size:14/@d 15/@d;width:14/@d;height:15/@d;}
+.zr-ptxt{margin:0 15/@d 0 20/@d;
+.fz(14px);
+}
+.itemul li{position:relative;line-height:44/@d;border-bottom:1/@d solid #ececec;}
+.itemul li:last-child{border-bottom:none;}
+.itemul li a{display:block;color:#666;
+.fz(14px);
+}
+.itemul li a:after{content:"";display:block;position:absolute;right:0;top:50%;margin-top:-6/@d;background-position:0 -58/@d;width:7/@d;height:11/@d;}
+.item-txt{margin:0 15/@d 0 50/@d;.fz(14px);}
+.item-txt .pri{padding-left:6/@d;}
+.item-txt .line{padding:0 10/@d;}
+.ico-em{margin-right:20/@d;}
+.ico-em:before{content:"";display:inline-block;background-position:0 -77/@d;width:15/@d;height:15/@d;vertical-align:middle;margin-right:5/@d;}
+
+.xq-onepic{width: 100%; height: 100/@r; background: #FFF6EF; margin-top: 30/@r; margin-bottom:0; padding: 9/@d 11/@d; line-height: 27/@d;}
+.xq-onepic s{ width: 40/@d; height: 64/@d; display: inline-block;position:absolute; top:-30/@d; left:-10/@d;}
+.xq-onepic span{.fz(13px);  color: #FF6D02;  letter-spacing: 0; padding-left: 48/@d; float: left; display: inline-block; padding-top: 2/@r;}
+.xq-onepic span em{ padding: 0 8/@d;}
+.xq-onepic a{ position:relative; display: block; height: 37/@r;line-height: 37/@r;top: 50%;margin-top: -18.5/@r;}
+.xq-onepic i{.fz(13px); color: #FF6D02 ;float: right;line-height: 37/@r;height: 37/@r;margin-top: 2/@r; }
+.xq-onepic i:after{display:block;content: '';background:url(../../img/go-orange.png) no-repeat;background-size: contain; width: 12/@r;height: 20/@r;position: absolute;top: 10/@r;right: -20/@r;}
+
+
+
+/* public tle */
+.m-tle{position:relative;border-bottom:1/@d solid #ececec;padding:0 15/@d;overflow:hidden;}
+.h2{.fz(16px);
+color: @black;;line-height:50/@d;}
+
+
+/*放心选*/
+.mtle-link{.fz(13px); float: right;  color: #818D9A;  letter-spacing: 0;     background:url(../../img/icon-right.png) no-repeat right center;  background-size: 7/@d 11/@d; padding-right: 13/@d;}
+.hard-chang-list{ padding: 20/@d 15/@d;  overflow: hidden;}
+.hard-chang-list li{ width: 25%;float: left; text-align: center;}
+.hard-chang-list li img{ display: inline-block; width: 35/@d; height: 36/@d;}
+.hard-chang-list li p{ line-height: 20/@d;.fz(14px);  color: #818D9A;  letter-spacing: 0;}
+
+/* record-wrap */
+.table-rec td{border-right:1/@d solid #ececec;border-bottom:1/@d solid #ececec;padding:10/@d 0 10/@d 15/@d;width:33.333%;vertical-align:top;}
+.table-rec td:last-child{border-right:none;}
+.table-rec td p.pt{.fz(14px);color:@black;line-height:24/@d;}
+.table-rec td p.pb{.fz(12px);color:#818D9A;line-height:20/@d;}
+.table-rec td p.p-orange{color:#FF6D02;}
+.table-rec td p.p-red{color:#FF2D4F;}
+.car-desc{padding:10/@d 0 5/@d;margin:0 15/@d;border-bottom:1/@d solid #ececec;color: @black;}
+.car-desc li{float:left;width:49%;.fz(14px);line-height:23/@d;padding-bottom:5/@d;padding-left:1%;}
+.car-desc li span{color:#818D9A;}
+.car-light{padding:10/@d 0;margin:0 15/@d;border-bottom:1/@d solid #ececec;}
+.car-light li{position:relative;width:20%;float:left;padding:5/@d 0 0;text-align:center;}
+.car-light li a{display:block;}
+//.car-light li .car-lico{position:relative;width:60/@r;height:60/@r;margin:0 auto 5/@d;}
+.car-light li .car-lico{
+    width: 60/@r;
+    height: 60/@r;
+    text-align: center;;
+    vertical-align: middle;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.car-light li .car-lico img{display: inline-block; width: 100%;}
+.car-light li .lico1{background-position:0 -227/@d;}
+.car-light li .lico2{background-position:0 -290/@d;}
+.car-light li .lico3{background-position:0 -353/@d;}
+.car-light li .lico4{background-position:0 -416/@d;}
+.car-light li .car-ltxt{.fz(12px);color:@black;line-height:23/@d;}
+.ico-zp{position:absolute;top:0;right:0;width:24/@d;height:16/@d;background-position:0 -207/@d;}
+.alink{line-height:50/@d;text-align:center;}
+.alink a{display:block;}
+.record-wrap .alink a em{padding-right:13/@d;.fz(13px);color:@black;background: url(../../img/icon-right.png) no-repeat;background-size: 12/@r 20/@r;background-position:right}
+.tan{
+    display: inline-block;
+    margin-left: 5/@d;
+    width: 13/@d;
+    height: 13/@d;
+    vertical-align: -2px;
+    background: url(../../img/icon-warn-gray.png) no-repeat;
+    background-size: contain;
+}
+
+
+/*淘宝认证车*/
+.tc-rzcar-table{ width: 100%; clear: both; overflow: hidden;}
+.tc-rzcar-nav{height: 90/@d; background: #F8F8F8;}
+.tc-rzcar-nav ul{ padding: 0 15/@d; text-align: center; display: table; width: 100%;}
+.tc-rzcar-nav ul li{ width: 25%; display:table-cell;height: 90/@d; text-align: center; line-height: 20/@d;.fz(14px);
+    letter-spacing: 0;}
+.tc-rzcar-nav ul li a i{.fz(30px); display: inline-block; padding-bottom: 9/@d; margin-top: 10/@d;}
+.tc-rzcar-nav ul li a { color: #666666; display: block; height: 90/@d; padding-top: 12/@d; position: relative;  }
+
+.tc-rzcar-nav ul li a.rzcar-nav-sel{color: #FE7816;border-bottom: 5px solid #FE7816;}
+.tc-rzcar-nav ul li a.rzcar-nav-sel:after{  content: "";  width: 0;  height: 0;  font-size: 0;  overflow: hidden;  border-width: 9/@d;  border-style: solid dashed dashed dashed;  border-color:transparent transparent #ffffff  transparent;  display: block; position: absolute; bottom: 0; left: 50%; margin-left: -9/@d;  }
+.tc-rzcar-nav i{width: 50/@r;height: 55/@r;}
+.tc-rzcar-nav i.nav-pic1{background: url(../../img/tcrz-check.png) no-repeat;background-size: contain;}
+.tc-rzcar-nav i.nav-pic2{background: url(../../img/tcrz-loan.png) no-repeat;background-size: contain;}
+.tc-rzcar-nav i.nav-pic3{background: url(../../img/tcrz-retreat.png) no-repeat;background-size: contain;}
+.tc-rzcar-nav i.nav-pic4{background: url(../../img/tcrz-keep.png) no-repeat;background-size: contain;}
+.tc-rzcar-nav ul li a.rzcar-nav-sel i.nav-pic1{background: url(../../img/tcrz-check-s.png) no-repeat;background-size: contain;}
+.tc-rzcar-nav ul li a.rzcar-nav-sel i.nav-pic2{background: url(../../img/tcrz-loan-s.png) no-repeat;background-size: contain;}
+.tc-rzcar-nav ul li a.rzcar-nav-sel i.nav-pic3{background: url(../../img/tcrz-retreat-s.png) no-repeat;background-size: contain;}
+.tc-rzcar-nav ul li a.rzcar-nav-sel i.nav-pic4{background: url(../../img/tcrz-keep-s.png) no-repeat;background-size: contain;}
+
+/**/
+.tc-rzcar-box{ padding: 20/@d 15/@d; padding-bottom: 0/@d;}
+.double-jc{ background: url("http://image.bitautoimg.com/taoche/2016taoche_m/jc-bg.png") no-repeat; background-size: 100% 550/@d;  padding-top: 30/@d; position: relative; height: 550/@d; margin-bottom: 15/@d;}
+.double-jc h3{.fz(12px);  color: #666666;  letter-spacing: 0.4/@d; text-align: center; line-height: 20/@d; padding: 0 15/@d;}
+.double-jc h3 span{.fz(16px); color: #333333;  letter-spacing: 0.45/@d; padding-bottom: 9/@d; display: block;}
+
+.yinzhang{ width: 69/@d; height: 68/@d; background: url(../../img/tcrz-seal.png) no-repeat; background-size: 100% 100%; display: block; position: absolute; right: 2/@d; top: 23/@d;}
+/*双重检测*/
+.jcbg_item_a{ padding: 35/@d 15/@d 0; clear: both;}
+.jcbg_item_a li{  width: 100%; line-height: 18/@d; clear: both; min-height: 36/@d;}
+.jcbg_item_a li em{ float: left;.fz(20px); display:inline-block; text-align: center; width: 30/@r;height: 30/@r;color:@black;background-size: 100%;background-repeat: no-repeat;background-position: center;}
+.jcbg_item_a  .waiguan-pic{background-image:url(../../img/car-icon1.png)}
+.jcbg_item_a  .neishi-pic{background-image:url(../../img/car-icon2.png)}
+.jcbg_item_a  .dianqi-pic{background-image:url(../../img/car-icon3.png)}
+.jcbg_item_a  .jichang-pic{background-image:url(../../img/car-icon4.png)}
+.jcbg_item_a li dl{ width: 67%; float: left; padding-left: 9/@d;}
+.jcbg_item_a li dt{.fz(14px);  color: @black;  letter-spacing: 0.35/@d; float: left; width: 40/@d; }
+.jcbg_item_a li dd{.fz(12px);  color: @gray;  letter-spacing: 0.3/@d; margin-left: 40/@d; max-height: 36/@d; overflow: hidden;}
+.jcbg_item_a li a{ float: right; color: #666666;.fz(12px); line-height: 18/@d; display: inline-block;}
+.jcbg_item_a li a i{
+    display: inline-block;
+    width: 30/@r;
+    height: 30/@r;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    }
+.jcbg_item_a li a.jc-txt-t i{ color: #4CC38B; background-image: url(../../img/icon-normal.png);}
+.jcbg_item_a li a.jc-txt-f{ color:#E34C4C;}
+.jcbg_item_a li a.jc-txt-f i{ background-image: url(../../img/icon-abnormal.png);}
+ 
+
+/**/
+.jcbg_item_b{ padding:25/@d; clear: both; overflow: hidden;}
+.jcbg_item_b li{ width: 33.3%; float: left; text-align: center;.fz(14px);  color: #666666;  letter-spacing: 0.35/@d;}
+.jcbg_item_b li img{ width: 41/@d; height: 41/@d; display: inline-block; }
+.jcbg_item_b li p{ padding-top:5/@d;color: @gray;}
+.jcbg_item_b li a{ display: inline-block;}
+/**/
+.jcbg-time{ clear: both; text-align: center;.fz(12px);  color: #818D9A;  letter-spacing: 0.3/@d; padding: 10/@d 0;}
+.jcbg-look{ width: 100%; text-align: center;.fz(10px);  color: @gray;  letter-spacing: 0.25/@d; line-height: 30/@d;}
+.jcbg-look a{.fz(14px);  color:@black;letter-spacing: 0.35/@d;display: block;}
+.jcbg-look a i{display: inline-block; width: 12/@r;height: 20/@r;background: url(../../img/icon-right.png) no-repeat;background-size: contain; color: #B3B3B3;margin-left: 10/@r;}
+
+/**/
+.fz-box{ padding: 30/@d 0/@d 20/@d;text-align: center; box-shadow: 0 2/@r 14/@r 0 rgba(0,0,0,0.15); }
+.fz-box-a img{ display: inline-block;}
+.fz-box-a h3{.fz(16px);  color: @black;  letter-spacing: 0.45/@d; padding-top: 20/@d;}
+.fz-wen{ padding-top: 10/@d;}
+.fz-wen span{background-color: white;
+    border: 1px solid #FF9900;
+    color: #FF9900;
+    .fz(11px);
+    }
+.fz-wen span:first-child{ margin-right: 20/@d;}
+.fz-box-b,.fz-box-c{ margin-top:10/@d;text-align: center; margin: 10/@d 10/@d 0;}
+.fz-box-b p{ height: 80/@d; padding:9/@d 0/@d; letter-spacing: 0.35/@d;}
+.fz-box-b p span{ width: 50%; float: left;.fz(12px);  color: #818D9A;; height: 56/@d; padding-top: 6/@d; }
+.fz-box-b p span em{.fz(15px);  color: #FF6402;  letter-spacing: 0.5/@d; display: block; margin-top: 8/@d;}
+.dk-txt{ padding: 0 10/@d 0; .fz(12px); color:#B0B3B4;  letter-spacing: 0.3/@d;  line-height: 14/@d; line-height: 18/@d;}
+.rz-btn{ height: 90/@r; border: 1/@r solid #FF6402;  border-radius: 3/@d; line-height: 44/@d;.fz(16px);  color: #FF6402;  letter-spacing: 0; display: block; margin-top: 17/@d;}
+.fz-box-c{ padding: 12/@d 15/@d;margin: 10/@d 10/@d 0;}
+.fz-box-c p{ line-height: 18/@d; .fz(13px); text-align: left;color:  @black;}
+.fz-box-c  a{ padding-top: 22/@d;display:inline-block;.fz(13px);color: #818D9A;}
+
+
+/*维修保养*/
+
+.byjj-item{ padding: 15/@d;}
+.byjj-item p{.fz(13px);  color:@black;  letter-spacing: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; height: 52/@r;line-height: 52/@r;}
+.byjj-item p span{
+   color: #818D9A;
+}
+.new-bujj-btn a{.fz(14px); width: 200/@r;line-height:70/@r;}
+.new-bujj-btn input{ width: 64%;height: 70/@r;  border: #818D9A solid 1/@r;  float: left;  border-radius: 3/@d;  padding-left: 11/@d;.fz(14px);  vertical-align: middle;  padding-top: 7/@d;  padding-bottom: 5/@d;  line-height: 23/@d;  font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif;color: #B0B3B4;}
+.appoint_inputtel {
+    height: 35/@d;
+    margin-top: 8/@d;
+}
+.appoint_inputtel a {
+    width: 30%;
+    height: 70/@r;
+    display: inline-block;
+    float: left;
+    background: #FF6402;
+    color: #ffffff;
+    text-align: center;
+    margin-left: 2%;
+    border-radius: 3/@d;
+    .fz(15px);
+    line-height: 70/@r;
+}
+.byjj-item .new_flase_txt {
+    width: 100%;
+    height:46/@r;
+    line-height: 46/@r;
+    color: #FF2D4F;
+    text-align: center;
+    .fz(13px);
+    margin-top: 20/@r;
+}
+
+.byjj-xx-btn{ width: 33.5%; text-align: center; height: 70/@r;border: 1/@r solid #FF6402;
+    border-radius: 3/@d; line-height: 70/@r;display:block; .fz(13px); color: #FF6402;  letter-spacing: -0.39/@d; margin:32/@r auto 0px ; }
+.wxbb-suc{.fz(14px);  color: #666666;  letter-spacing: 0; position: absolute;
+    right: 40/@r;}
+.wxbb-suc i{ 
+    background: url(../../img/success.png) no-repeat;
+    width: 24/@r;
+    height: 24/@r;
+    display: inline-block;
+    margin-right: 10/@r;
+    background-size: cover;
+}
+
+/*--two---*/
+.tw-double{ width: 100%; padding-top: 8/@d;}
+.tw-double h3{ text-align: center; .fz(16px); color: #333333;  letter-spacing: 0.4/@d; line-height: 30/@d;}
+.tw-double-list{ margin:20/@d 15/@d 0/@d; height: 230/@d; background: url(../../img/car-check.png) 7/@d 0 no-repeat; background-size: 122/@r 326/@r; }
+.tw-double-list p{ padding-left: 89/@d;.fz(14px); color: @gray;  letter-spacing: 0.35/@d;  line-height: 17/@d; }
+.tw-double-list  span{.fz(16px); color: #666666;  letter-spacing: 0.4/@d; line-height: 25/@d; display: block;}
+.tw-double-list p.h126{ height: 126/@d;}
+.tw-double-em{padding: 15/@d 15/@d 20/@d;.fz(12px);  color: @gray;  letter-spacing: 0.25/@d; text-align: center;  }
+.tw-double-btn{ width: 100%; height: 48/@d; text-align: center; line-height: 48/@d;}
+.tw-double-btn a{.fz(14px);  color: #666666;  letter-spacing: 0.35/@d;    background: url("http://image.bitautoimg.com/taoche/2016taoche_m/arrow-right.png") no-repeat right center;
+    background-size: 7/@d 11/@d;
+    padding-right: 13/@d;}
+
+
+/*车源图片*/
+.carpic-list {
+    padding: 30/@r 15/@r 0;
+}
+.carpic-list p {
+    padding-bottom: 15px;
+}
+.carpic-list p img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+.load-more{padding:3px 0 19px}
+.load-more a{display:block;color:#666;.fz(14px);text-align:center}
+.load-more a em{padding-right:16/@d;background:url(../../img/icon-down.png) no-repeat;background-size:20/@r 12/@r;background-position:right 6/@d;color:@black;.fz(13px)}
+.load-more a.open em{background:url(../../img/icon-up.png) no-repeat;background-size:20/@r 12/@r;background-position:right 6/@d}
+
+/*购车流程*/
+
+.gclc-box{margin-top: 22/@d; position: relative; height: 80/@d; }
+.gclc-table{height: 50/@d;  width: 100%; position: absolute; left: 0/@d; top: -8/@d;  }
+.gclc-table li{ width: 20%; height: 60/@d; float: left; text-align: center;
+background: url(../../img/icon-right-process.png) no-repeat right center;
+background-size: 12/@r 16/@r;
+}
+.gclc-table li:nth-child(5){ 
+background-image: none;
+}
+.gclc-table li i{ width: 45/@r; height: 50/@r; display: inline-block;}
+
+.gclc-table li:nth-child(1) i{ background: url(../../img/car-process-1.png) no-repeat center;background-size: contain;}
+.gclc-table li:nth-child(2) i{ background: url("../../img/car-process-2.png") no-repeat center;background-size: contain;}
+.gclc-table li:nth-child(3) i{ background: url("../../img/car-process-3.png") no-repeat center;background-size: contain;}
+.gclc-table li:nth-child(4) i{ background: url("../../img/car-process-4.png") no-repeat center;background-size: contain;}
+.gclc-table li:nth-child(5) i{ background: url("../../img/car-process-5.png") no-repeat center;background-size: contain;}
+.gclc-table li span{ display:block;
+ padding-top: 5/@d;
+.fz(12px);
+color: @black;  letter-spacing: 0; line-height: 16/@d; width: 100%;}
+///*底部导航*/
+//.new_ico_shoucang{    display: block;  margin: 0 auto;  width: 20/@d;  height: 20/@d;  vertical-align: middle;.fz(19px);
+//background: url(../../img/pk@2x.png) no-repeat center;
+//}
+//.new_ico_kanj{display: block;  margin: 0 auto;  width: 20/@d;  height: 20/@d;  vertical-align: middle; .fz(19px);
+//background: url(../../img/pk@2x.png) no-repeat center;
+//}
+//
+//.li-xdj img{
+//  width: 25/@r;
+//  vertical-align:middle;
+//}
+//
+//.li-phone img{
+//  width: 25/@r;
+//  vertical-align:middle;
+//}
+//
+////.li-phone a{
+////  background: url(../../img/buttomphone@2x.png) no-repeat left;
+////  background-position-x: 8/@r;
+////}
+//.new_ico_mianfei{.fz(20px);}
+//.new-dis{ width: 90/@d; text-align: center; bottom: 67/@d; height: 46/@d;}
+//.new-dis .mfzx_fix_c{ width: 90/@d; padding-top: 5/@d; padding-left: 0/@d; padding-right: 0/@d;}
+//.new-dis .mfzx_fix_c:after{ right: 35/@d;ont-size: 1.2rem;  color: #FFFFFF;  letter-spacing: -0.69/@d; bottom: -26/@d;}
+
+
+/*弹层*/
+.z-max{ z-index: 10000 !important;}
+.z-max .logtime_box{ width: 314/@d; margin-left: -157/@d;}
+.bot-fixed span{.fz(12px);}
+
+
+/*淘车认证车服务介绍*/
+.jies-box{ width: 100%; clear: both;}
+.jies-box h2{ height: 58/@d; line-height: 58/@d; background: #F5F5F5; text-align: center;.fz(18px);  color: #333333;  letter-spacing: 0.45/@d; }
+.jies-title{ height: 58/@d; border-bottom: #ECECEC solid 1/@d; line-height: 58/@d; padding-left: 25/@d;.fz(18px);  color: #666666;  letter-spacing: 0;}
+.jies-title i{ display: inline-block; position: relative; top: 10/@d; margin-right: 8/@d;}
+.jies-jc{ width: 36/@d; height: 36/@d; background: url("http://image.bitautoimg.com/taoche/2016taoche_m/rez-xq-20.png") no-repeat; background-size: 100% 100%;}
+.jies-bt{ width: 36/@d; height: 33/@d; background: url("http://image.bitautoimg.com/taoche/2016taoche_m/rez-xq-21.png") no-repeat; background-size: 100% 100%;}
+.jies-bx{ width: 36/@d; height: 33/@d; background: url("http://image.bitautoimg.com/taoche/2016taoche_m/rez-xq-22.png") no-repeat; background-size: 100% 100%;}
+.jies-sg{ width: 36/@d; height: 33/@d; background: url("http://image.bitautoimg.com/taoche/2016taoche_m/rez-xq-23.png") no-repeat; background-size: 100% 100%;}
+.jies-tl{width: 36/@d; height: 33/@d; background: url("http://image.bitautoimg.com/taoche/2016taoche_m/rez-xq-21.png") no-repeat; background-size: 100% 100%;}
+.jies-txt{ padding: 20/@d 20/@d 4/@d;}
+.jies-txt p{.fz(14px);  color: @gray;  letter-spacing: 0;  line-height: 18/@d; padding-bottom: 16/@d;}
+.rod-ico{ display: inline-block; width: 8/@d; height: 8/@d; background: #FF8124; border-radius: 50%; margin-right: 5/@d; position: relative; top: -2/@d; }
+.bt-jdbz{ .fz(14px); text-decoration: underline;  color: @gray;  letter-spacing: 0; text-align: center; padding-bottom: 13/@d; width: 100%; clear: both; display: inline-block;}
+.bt-liuc{ width: 100%; line-height: 50/@d; text-align: center;}
+.bt-liuc a{.fz(14px); color: @gray;  letter-spacing: 0;text-decoration: underline;}
+
+/* bot-fixed */
+.bot-fixed{position:fixed;bottom:0;left:0;z-index:15;width:100%;background:#fff;overflow:hidden;}
+.bot-fixed ul{display:table;width:100%;table-layout:fixed;}
+.bot-fixed ul li{text-align:center;display:table-cell;vertical-align:middle;}
+.bot-fixed ul li .bot-ico{display:block;margin:0 auto;background:url(http://image.bitautoimg.com/taoche/2016taoche_m/bar.png) no-repeat;background-size:22/@d auto;width:22/@d;height:22/@d;vertical-align:middle;}
+.bot-fixed ul li.li-message .bot-ico{background-position:0 -44/@d;}
+.bot-fixed ul li.collect-ok .bot-ico{background-position:0 -22/@d;}
+.bot-fixed ul li a{color:#ff9900;display:block;vertical-align:middle;line-height:22/@d;}
+.bot-fixed ul li.li-collect{width:16.5%;border-top:1/@d solid #ececec;}
+.bot-fixed ul li.li-message{width:16.5%;border-left:1/@d solid #ececec;border-top:1/@d solid #ececec;}
+
+/* 橘色底色   */
+.bot-fixed ul li.li-phone,
+.bot-fixed ul li.li-bangm,
+.bot-fixed ul li.li-xdj{
+    background:#ff9900;line-height:22/@d;
+}
+.bot-fixed ul li.li-phone a,
+.bot-fixed ul li.li-bangm a,
+.bot-fixed ul li.li-xdj a{
+    color:#fff;.fz(16px); height:55/@d;
+}
+.bot-fixed ul li.li-phone a p,
+.bot-fixed ul li.li-bangm a p,
+.bot-fixed ul li.li-xdj a p{
+    line-height:55/@d;display:inline-block;
+}
+.bot-fixed ul li.li-bangm,
+.bot-fixed ul li.li-xdj{
+    border-right:1/@d solid #ffb84d;
+}
+.bot-fixed ul li.li-phone .bot-ico{background-position:0 -66/@d;float:left;margin-right:5/@d;margin-top:15/@d;}
+.bot-fixed ul li.li-bangm .bot-ico{background-position:0 -110/@d;float:left;margin-right:5/@d;margin-top:15/@d;}
+.bot-fixed ul li.li-xdj .bot-ico{background-position:0 -88/@d;float:left;margin-right:5/@d;margin-top:15/@d;} 
+.bot-sc{display:block;line-height:50/@d;text-align:center;color:#fff;.fz(16px); background:#ff9900;}
+.new_ico_xixun {
+    .fz(20px);
+    vertical-align: middle;
+}
+
+
+/*底部定位*/
+.bottom-fixed{position:fixed;left: 0px;bottom: 0px;width: 100%;background-color: #FFFFFF;overflow: hidden;height: 100/@r;}
+.bottom-fixed div{display: inline-block; text-align: center;}
+.bottom-fixed .collect{width: 135/@r;border-right: 1px solid #E5E5E5;}
+.bottom-fixed .collect a{color: #FF6402;.fz(13px);position: relative;top: 20/@r;}
+.bottom-fixed .collect a:before{content:'';display: inline-block;width: 30/@r;height: 30/@r;background: url(../../img/star-empty.png) no-repeat;background-size: contain;position: absolute;left: 50%;.transform(translate3d(-50%,0,0));}
+.bottom-fixed .collect a.active:before{background: url(../../img/star-solid.png) no-repeat;background-size: contain;}
+.bottom-fixed .bargain{ width: 135/@r; color: #FF6402;.fz(13px);}
+.bottom-fixed .bargain a{ color: #FF6402;.fz(13px);position: relative;top: 20/@r;}
+.bottom-fixed .bargain a:before{content:'';display: inline-block;width: 30/@r;height: 30/@r;background: url(../../img/price-flex.png) no-repeat;background-size: contain;position: absolute;left: 50%;.transform(translate3d(-50%,0,0));}
+.bottom-fixed .askprice{width: 240/@r; .fz(16px);color: #FFFFFF;background: #FF9900 ;}
+.bottom-fixed .askprice a{.fz(16px);color: #FFFFFF;}
+.bottom-fixed .askprice a:before{content:'';display: inline-block;width: 30/@r;height: 30/@r;background: url(../../img/ask-flex.png) no-repeat;background-size: contain;vertical-align: middle;margin-right: 5/@r;}
+.bottom-fixed .askprice a.banm:before{background: url(../../img/ic_btkanjia.png) no-repeat; background-size: contain;}
+.bottom-fixed .askphone{width: 240/@r; .fz(16px);color: #FFFFFF;background: #FF6402 ;}
+.bottom-fixed .askphone a{.fz(16px);color: #FFFFFF;}
+.bottom-fixed .askphone a:before{content:'';display: inline-block;width: 30/@r;height: 30/@r;background: url(../../img/phone-flex.png) no-repeat;background-size: contain;vertical-align: middle;}
+.bottom-fixed a{line-height: 100/@r;height: 100/@r;text-align: center;}
+.bottom-fixed .w615{width: 615/@r;}
+
+
+/*图标*/
+.ico-taob_rzc{background: url(../../img/tag-tcrz.png) no-repeat;background-size: contain; position: absolute;width: 160/@r;height: 46/@r; bottom: 30/@r;left: 30/@r;}

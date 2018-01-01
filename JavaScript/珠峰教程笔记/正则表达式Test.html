@@ -1,16 +1,133 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
+
 <body>
     <script type="text/javascript">
-        var str = "pg1e1s5bx1c1dzao1q1l1r1";
-        var str1 = "p4g1e1s5bx1c1dzao1q1l1r1";
-        console.log(str.match(/^p(\d*)g[a-z0-9].+/));
-        console.log(str1.match(/^p(\d*)g[a-z0-9].+/));
-        console.log(parseInt(-1));
+    var str = "pg1e1s5bx1c1dzao1q1l1r1";
+    var str1 = "p4g1e1s5bx1c1dzao1q1l1r1";
+    var str2 = 'p1g2e3s4b55x6c6d6z6a6o2q8t9r11'
+    var str3 = '/all/p1g2e3s4b55x6c6d6z6a6o2q8t9r11/';
+    var str4 = '/all/p1g2e3s4b55x6c6d6z6a6o2q8t9r11/?t=1';
+    var str5 = '/buycar/p1g2e3s4b55x6c6d6z6a6o2q8t9r11/?p=1'
+    //pgesbxcdzaoqtr
+    console.log(str.match(/^p(\d*)g[a-z0-9].+/));
+    console.log(str1.match(/^p(\d*)g[a-z0-9].+/));
+    var reg = /(p\d*)?(g\d*)?(e\d*)?(s\d*)?(b\d*)?(x\d*)?(c\d*)?(d\d*)?(z\d*)?(a\d*)?(o\d*)?(q\d*)?(t\d*)?(r\d*)?/;
+
+    var reg2 = /\/(\w+)\/(p{1}\d*)?(g{1}\d*)?(e{1}\d*)?(s{1}\d*)?(b{1}\d*)?(x{1}\d*)?(c{1}\d*)?(d{1}\d*)?(z{1}\d*)?(a{1}\d*)?(o{1}\d*)?(q{1}\d*)?(t{1}\d*)?(r{1}\d*)?/;
+
+    var reg3 = /\/(\w+)\/(p{1}\d*)?(g{1}\d*)?(e{1}\d*)?(s{1}\d*)?(b{1}\d*)?(x{1}\d*)?(c{1}\d*)?(d{1}\d*)?(z{1}\d*)?(a{1}\d*)?(o{1}\d*)?(q{1}\d*)?(t{1}\d*)?(r{1}\d*)?/;
+
+    // console.log(str2.match(reg));
+    // console.log(str3.match(reg2));
+    // console.log(str4.match(reg2));
+    // console.log(str5.match(reg2));
+
+    var query = function(name) {
+        var reg = new RegExp("{1}(\d)*");
+        var r = "p4g1e1s5bx1c1dzao1q1l1r1".match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+    console.log('==========================')
+
+    function getparam(name) {
+        var reg = new RegExp("(" + name + ")(\d*)");
+        console.log(reg)
+        var result = 'pg2e3s4b55x6c6d6z6a6o2q8t9r11'.match(reg);
+        console.log(result);
+    }
+
+    var url = '/buycar/p4g4e2s3bxcdza5o2qtr/?pic=1&bm=1&t=3&newcar=1&active=1';
+    var url = '/all/?td=ddd'
+    var parametersHelper = {
+        paramsKeys: ['p', 'g', 'e', 's', 'b', 'x', 'c', 'd', 'z', 'a', 'o', 'q', 't', 'r'],
+        params: {},
+        querysKeys: ['pic', 'bm', 'newcar', 'cy', 'active', 'lp', 'hp'], //有图,帮买,准新车,国别,活动,低价格,高价格
+        querys: {},
+        url:'/buycar/p4g4e2s3bxcdza5o2qtr/?pic=1&bm=1&t=3&newcar=1&active=1',
+        urlquerys: window.location.search.substr(1),
+        urlfragment: '/buycar/',
+        urlMoreFragment:'pgesbxcdzaoqtr',
+        init: function() {
+            this.splitUrl();
+            this.createParams();
+        },
+        getParamValue: function(paramter, name) {
+            var reg = new RegExp('(' + name + '+)(\\d*)');
+            console.log(reg)
+            var r = paramter.match(reg);
+            if (r != null) return unescape(r[2]);
+
+        },
+
+        getQueryValue: function(name) {
+            var that = this;
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = that.urlquerys.match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        },
+        createParams: function() {
+            var that = this;
+            that.paramsKeys.forEach(function(item, index) {
+                var itemValue = that.getParamValue(that.urlMoreFragment, item);
+                that.params[item] = itemValue;
+            });
+            console.log(that.params);
+        },
+        createQuerys: function() {
+            var hash,
+                querysJson = {},
+                hashes = window.location.search.substr(1).split('&');
+            console.log(hashes);
+            var that = this;
+            // hashes = _.without(hashes, ""); //去掉空元素
+            // var paramext = that.paramext;
+            for (var i = 0, len = hashes.length; i < len; i++) {
+                hash = !!hashes[i] && hashes[i].split('=');
+                if (!!hash[0]) {
+                    querysJson[hash[0]] = hash[1];
+                }
+            }
+
+            that.querys = querysJson;
+            console.log(that.querys);
+        },
+        geturl: function() {
+
+
+        },
+        splitUrl: function() {
+            var that = this;
+            var reg = /(\/(\w+)\/)|((\w+)\/)/ig;
+
+            var paramsFragments = that.url.match(reg);
+            
+            that.urlfragment = paramsFragments[0];
+            if (that.urlfragment == "/all/") {
+                that.urlfragment = "/buycar/";
+            }
+            if (paramsFragments.length>1) {
+                that.urlMoreFragment=paramsFragments[1].substr(0,paramsFragments[1].length-1);
+            }
+        }
+
+    }
+
+    parametersHelper.init();
+    parametersHelper.splitUrl();
+    
+    console.log(parametersHelper);
+
+    // console.log('p5g2e3s4b55x6c6d6z6a6o2q8t9r11'.match(regg))
     </script>
 </body>
+
 </html>

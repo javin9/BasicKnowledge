@@ -1,0 +1,87 @@
+@r: 75rem;
+.fz(@fontsize: 14px, @important: 0) {
+    & when (@important=1) {
+
+        [data-dpr="1"] & {
+            font-size: @fontsize !important;
+        }
+        [data-dpr="2"] & {
+            font-size: @fontsize*2 !important;
+        }
+        [data-dpr="3"] & {
+            font-size: @fontsize*3 !important;
+        }
+    }
+
+    & when (@important=0) {
+        [data-dpr="1"] & {
+            font-size: @fontsize;
+        }
+        [data-dpr="2"] & {
+            font-size: @fontsize*2;
+        }
+        [data-dpr="3"] & {
+            font-size: @fontsize*3;
+        }
+    }
+}
+html,
+body {
+   height:100%;
+}
+.main-secition {
+    background: #eee;
+    /* 绝对定位，进行内部滚动 */
+    position: relative;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* 使之可以滚动 */
+    overflow-y: scroll;
+    -webkit-overflow-y:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.layer-form {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding-top: 50/@r;
+    z-index: 999;
+}
+input {
+    height: 100/@r;
+    padding:25/@r 0;
+    width: 100%;
+    text-indent: 1em;
+    .fz(18px);
+}
+.input-wrapper {
+    height: 180/@r;
+    line-height: 180/@r;
+    border-bottom: 1px solid #000;
+    width: 80%;
+    margin: 0 auto;
+}
+.btn-warpper {
+    margin-top: 50/@r;
+}
+.btn-submit {
+    display: block;
+    width: 50%;
+    height: 50/@r;
+    background: red;
+    color: #fff;
+    .fz(16px);
+    letter-spacing: 1em;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5/@r;
+    -webkit-border-radius: 5/@r;
+}
+.fixfixed .layer-form {
+    position: absolute;
+}

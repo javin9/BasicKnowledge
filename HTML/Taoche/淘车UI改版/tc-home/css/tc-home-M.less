@@ -1,0 +1,221 @@
+@import "../../lesshelp/lesshelp.less";
+//公共css
+body{padding:0px;margin:0px;background:#F8F8F8;font-size:12px;}
+.gradient{.gradient(left,#FF5F58,#FF9000);color:white !important;}
+.border-radius{.border-radius(3/@r);}
+.hide{display:none !important;}
+.show{display:block !important;}
+//公共less
+.border-radius{.border-radius(54/@r);}
+
+//直卖角标
+.selective ul li a .direct{display:block;position:absolute;left:0px;top:0px;width:30/@d;height:30/@d;}
+//认证角标
+.selective ul li a .authen{display:block;position:absolute;left:0px;top:0px;width:30/@d;height:30/@d;}
+//公共样式less
+//查看全部
+@View_allColor:#818D9A;
+//分期变量颜色
+@h2_color:#25282D;
+@p_color:#818D9A;
+@span_color:#FF6402;
+@h1_color:#2F3540;
+@p_price:#818D9A;
+@main_color:#FF6402;
+@move_color:#868A8B;
+
+@orange:#FF9900;
+@green:#06C1AE;
+@ping:#FF2D4F;
+
+
+//lable标签big
+.tab_lable(@color){
+    display:inline-block;
+    padding:3/@d 5/@d;
+    color:@color;
+    border:1px solid @color;
+}
+
+//猜你喜欢lable标签
+.tab_lableSmall(@color){
+    display:inline-block;
+    padding:1/@d 3/@d;
+    color:@color;
+    border:1px solid @color;
+}
+
+
+
+
+/* banner */
+.pagination {position:absolute;z-index: 20;left:10/@d;bottom:10/@d;width:100%;text-align:right;padding-right:12/@d;}
+.swiper-pagination-switch {display:inline-block;width:0.5rem;height:0.5rem;border-radius:0.5rem;background:#999;margin-right:0.5rem;opacity:0.8;cursor:pointer;}
+.swiper-active-switch {background: #dd2727;}
+.ban_swiper .swiper-slide {text-align:center;background: #fff;position:relative;}
+.ban_swiper .swiper-slide {.fz(18px)}
+.ban_swiper .swiper-slide a{display:block;width:100%;}
+.ban_swiper .swiper-slide a:after{content:'';display: block;width: 100%;padding-top:31.33333%;}
+.ban_swiper .swiper-slide img{width: 100%;display:block;height:100%;top:0;left:0;position:absolute;}
+.ban_swiper .swiper-pagination-bullet{margin-right:0.5rem;width:8/@d;height:8/@d;background:#fff;opacity:0.4;border-radius:100%;-webkit-border-radius:100%;-moz-border-radius:100%;}
+.ban_swiper .swiper-pagination-bullet-active{background:#ff6d02;opacity:1;}
+
+
+
+/*20180831luoli*/
+.index-sel-list{clear:both;}
+.index-tdico{clear:both;width:100%;background:#ffffff;padding:20/@d 1%;margin-bottom:12/@d;overflow:hidden;}
+.index-tdico ul li{width:20%;height:68/@d;float:left;text-align:center;}
+.index-tdico ul li a{display:block;}
+.index-tdico ul li span{width:48/@d;height:48/@d;display:inline-block;position:relative;}
+.tdico-txt{width:38/@d;height:15/@d;background:url("http://image.bitautoimg.com/taoche/2016taoche_m/tdico-txt.png") no-repeat;background-size:100% 100%;display:inline-block;position:absolute;right:-15/@d;top:-2/@d;}
+.index-tdico ul li p{color: #394043;line-height: 20/@d; }
+.index-tdico ul li p{.fz(13px)}
+.tdico-a{background:url("@{devimgurl}/kaizouba.png") no-repeat center center; background-size:100%;}
+.tdico-b{background:url("@{devimgurl}/daikuan.png") no-repeat center center; background-size:100%;}
+.tdico-c{background:url("@{devimgurl}/guzhi.png") no-repeat center center; background-size:100%;}
+.tdico-d{background:url("@{devimgurl}/maiche.png") no-repeat center center; background-size:100%;}
+.tdico-e{background:url("@{devimgurl}/lijian.png") no-repeat center center; background-size:100%;}
+
+/*nav_tab*/
+.index-sel-list{width:100%;background:#ffffff;}
+.index-sel-nav{height:45/@d;border-bottom:#ececec solid 1px; }
+.index-sel-nav span{width:33.3%;height:45/@d;display:inline-block;float:left;text-align:center;}
+.index-sel-nav span{.fz(15px)}
+.index-sel-nav span a{display:inline-block;height:45/@d;line-height:45/@d; }
+.index-sel-nav span a.sel-item{color:#FF6C02;border-bottom:#FF6C02 solid 2px; padding:0 7@d; }
+.index-sel-box{ clear:both;width:100%;padding-bottom:20/@d;}
+/**/
+.lb-carlist-show{background:#ffffff;width:100%;clear:both; }
+.bor-show0{box-shadow:none !important;-webkit-box-shadow:none !important;}
+/**/
+.lb-carlist {padding-top:15/@d;overflow:hidden;padding-bottom:6/@d;}
+.lb-carlist li{display:block;width:20%;float:left;height:46/@d; margin-bottom:12/@d;text-align:center;}
+.lb-carlist li a{display:block;}
+.lb-carlist li a img{width:27/@d;height:27/@d;}
+.lb-carlist-more{color:#ff9933;}
+.lb-carlist-more i{width:25/@d;height:25/@d;display:inline-block;margin-top:4/@d;}
+.lb-carlist-more i{.fz(20px)}
+.lb-carlist-wz{clear:both;padding-top:6/@d;padding-bottom:4/@d; }
+/*border-top:  #ECECEC solid 1px;*/
+.bort{border-top:#ECECEC solid 1/@d;clear:both;height:16/@d;margin-top:12/@d;}
+.lb-carlist-wz{clear:both;border-top:1/@d solid #ececec;padding-top:16/@d;padding-bottom:4/@d;}
+.lb-carlist-wz p{height:33/@d; text-align:center;}
+.lb-carlist-wz p{.fz(12px)}
+.lb-carlist-wz p a{width:20%;display:inline-block;float:left;}
+.lb-carlist-wz span{width:20%;display: inline-block; float: left; color: #999999 }
+.index-sel-btn{margin:0 15/@d;height:37/@d;border:1px solid #FF6402;border-radius:4/@d; text-align:center;line-height:34/@d;}
+.index-sel-btn a{display:block;color:#FF6D02;}
+.index-sel-btn a{.fz(14px)}
+.index-sel-btn a i{margin-left:2/@d;}
+.index-sel-btn a i{.fz(12px)}
+/**/
+.new-cari-item{ padding:10/@d 0 10/@d 24/@d; overflow: hidden;}
+.new-cari-item h3{color:#999999;padding-bottom:5/@d;padding-top:10/@d;clear:both;}
+.new-cari-item h3{.fz(12px)}
+.new-cari-item p{overflow:hidden;}
+.new-cari-item p a{width:25%;line-height: 30/@d;color:#333333;display:inline-block;float:left;}
+.new-cari-item p a{.fz(12px)}
+.hot-rz{position:relative;}
+.hot-rz i{display:inline-block;width:24/@d;height:14/@d;position:absolute;right:2/@d;top:-14/@d;}
+
+
+
+
+/*车险*/
+.gg-sel-box{padding-bottom:0/@d;}
+.cx-item01{height:80/@d;}
+.cx-item01 a{width:33.3%; height:80/@d;float:left;text-align:center;display:block;font-size: 1.2rem;color: #666666;}
+.cx-item01 a{.fz(12px)}
+.cx-item01 a em{display:block;height:52/@d; }
+.cx-item01 a em img{width:40/@d;height:40/@d;display:inline-block;margin-top:13/@d;}
+.cx-item01 a em img.ie0a{width:63/@d;height:40/@d;margin-top:12/@d;margin-left:24/@d;}
+.cx-adve{width:100%;clear:both;background:#ffffff;height:240/@d; }
+.cx-adve ul{box-sizing:border-box;clear:both;}
+.cx-adve ul li{width:50%;height:80/@d;border-top:1px solid #ececec;border-right:1px solid #ececec;float:left;padding-right:15/@d;}
+.cx-adve ul li{.fz(12px)}
+.cx-adve ul li a{display:block;width:100%;height:80/@d; position:relative;line-height:18/@d;}
+.adve-img{width:65/@d;height:78/@d;float:left;margin-left:10/@d;}
+.adve-img img{display:inline-block;margin-top:13/@d;width:132/@d;}
+.adve-img .lastImg{position:relative;top:8/@d;width:132/@d;}
+.adve-img em{width:35/@d;height:33/@d;position:absolute;top:-1/@d;left:-1/@d;display:inline-block;}
+.hd-ico01{background:url("@{devimgurl}/dijian.png") no-repeat;background-size:35/@d 33/@d;}
+.hd-ico02{background:url("@{devimgurl}/huod.png") no-repeat;background-size:35/@d 33/@d;}
+.cx-adve ul li a h3{padding-top:15/@d;text-align:right;color:#2F3540;.fz(16px);line-height:30/@d;}
+.cx-adve ul li a h4{color:#666666;text-align:right;.fz(12px);}
+
+
+/*20171110新车开回家*/
+.module_NewCar{margin-bottom:15/@d;background:white;margin-top:12/@d;}
+.carlist-title{height:53/@d;line-height:53/@d;color:#333333;letter-spacing:0.18/@d;padding:0 15/@d;position:relative;background:white;font-weight:bold;}
+.carlist-title{.fz(18px)}
+.carlist-title a{float:right;color:@View_allColor;background:url("@{devimgurl}/22Combined Shape Copy 2@2x.png") no-repeat 78% 52%;background-size:7/@d 11/@d;display:inline-block;position:absolute;right:0/@d;top:0/@d;padding-right:30/@d;}
+.carlist-title a{.fz(12px)}
+.pat0{ padding-top: 0px !important;}
+.gohome-list::-webkit-scrollbar{height:0/@d;}
+.gohome-list{padding:0px 15/@d;overflow:hidden;overflow-x:scroll;-webkit-overflow-scrolling:touch;-ms-overflow-style:none;background:white;padding-bottom:30/@d;}
+.gohome-list ul{white-space:nowrap;}
+.gohome-list ul li{width:150/@d;margin-right:10/@d;border:1/@d solid #E5E5E5;display:inline-block;white-space:nowrap;text-align:center;box-shadow:0px 0px 10/@d #DEDEDE;}
+.gohome-list ul li a{display:block;width:100%;}
+.gohome-a{padding-top:10/@d;text-align:center;line-height:18/@d;height:44/@d;width:120/@d;margin:0 auto;}
+.gohome-a span{display:block;.fz(13px);color:#FF6C02;text-align:right;margin-bottom:7/@d;}
+.gohome-a span em{color:#2F3540; width: 50px; display:block; float: left;}
+.gohome-b{height:22/@d;line-height:18/@d;text-align:center;.fz(11px);color:#FFFFFF;margin:0 auto;text-align:center;margin-top:22/@d;max-width:100/@d;margin-bottom:10/@d;}
+.gohome-b span{overflow:hidden;border-radius:3/@d;display:block;white-space:nowrap;text-overflow:ellipsis;padding:1/@d 2/@d;.gradient(left,#FF5F58,#FF9000)}
+.gohome-list ul li img{width:90/@d;height:60/@d;margin:3/@d auto 0;border:0/@d;display:block;}
+.gohome-c{text-align:center;.fz(14px);color:#333333;padding:0 5/@d;overflow:hidden;max-width:110/@d;white-space:nowrap;text-overflow:ellipsis;text-align:center;margin:3/@d auto 0;padding-bottom:10/@d;}
+.mt20{width:100%;height:20/@d;clear:both;}
+.patb0{padding-top:0/@d;padding-bottom:0/@d;}
+
+
+//分期爆款车
+.module_stages{margin-bottom:15/@d;background:white;margin-top:12/@d;}
+.module_stages .carlist-title{margin-bottom:30/@r;}
+.module_stages .stages_main{padding:0px 20/@r;}
+.module_stages .stages_main ul:first-child{border-bottom:1px solid #EBEBEB;margin-bottom:50/@r;padding-bottom:30/@r;}
+.module_stages .stages_main ul:last-child{padding-bottom:30/@r;}
+.module_stages .stages_main ul li{width:33%;float:left;}
+.module_stages .stages_main ul li .st_detail{padding-left:15/@r;}
+.module_stages .stages_main ul li .st_detail h2{.fz(16px);color:@h2_color;}
+.module_stages .stages_main ul li .st_detail p{.fz(13px);color:@p_color;line-height:45/@r;}
+.module_stages .stages_main ul li .st_detail span{display:inline-block;.fz(12px);color:@span_color;padding:3/@r 0px;margin-bottom:20/@r;}
+.module_stages .stages_main ul li .st_detail span.gradient{display:inline-block;.fz(12px);color:@span_color;padding:3/@r 10/@r;margin-bottom:20/@r;}
+.module_stages .stages_main ul li img{width:210/@r;height:140/@r;position:relative;left:12/@r;}
+
+//放心保障二手车
+.guarantee .stages_main .ul_one:first-child{border:none;padding-bottom:10/@r;}
+.guarantee .stages_main .ul_one li{width:50%;}
+.guarantee .stages_main .ul_one li img{display:block;width:330/@r;height:auto}
+.guarantee .stages_main .ul_one li img.last_img{float:right;}
+
+
+//精选认证二手车
+.selective{margin-bottom:30/@r;}
+.selective ul li{text-align:left;padding:0px;}
+.selective ul li a{height:auto;position:relative;}
+.selective ul li a img{width:100%;height:auto;display:block;margin:0px;}
+.selective ul li a .selective_main{padding:10/@d 10/@d;}
+.selective ul li a .selective_main h2{.fz(16px);color:@h1_color;}
+.selective ul li a .selective_main .para{.fz(13px);color:@p_price;line-height:25/@d;}
+.selective ul li a .selective_main .price{.fz(16px);color:@main_color;font-weight:bold;}
+.selective ul li a .selective_main .tab_lable{margin-top:8/@d;}
+.selective ul li a .selective_main .tab_lable span.lable_orange{.tab_lable(@orange);.border-radius(2px);}
+.selective ul li a .selective_main .tab_lable span.lable_green{.tab_lable(@green);.border-radius(2px);}
+.selective ul li a .selective_main .tab_lable span.lable_ping{.tab_lable(@ping);.border-radius(2px);}
+
+.carlist-ul-horizontal li .car-img{position:relative;float:left;width:135/@d;height:90/@d;overflow:hidden;}
+.carlist-ul-horizontal li .car-img .authen{position:absolute;left:0px;top:0px;}
+//车险
+.insurance{height:70/@d;line-height:70/@d;}
+
+
+@media screen and (min-width:320px) {
+.cx-adve ul li a h4{.fz(12px);} 
+.cx-adve ul li{padding-right:10/@d;}
+.cx-adve ul li a h3{.fz(14px);}
+.gohome-list ul li{width:175/@d;}
+.gohome-a{width:140/@d;}
+.gohome-b{height:22/@d;line-height:18/@d;text-align:center;.fz(11px);color:#FFFFFF;margin:0 auto;text-align:center;margin-top:22/@d;max-width:140/@d;margin-bottom:10/@d;}
+.gohome-b span{padding:3/@d 10/@d;}
+.insurance{height:70/@d;line-height:70/@d;}
+}

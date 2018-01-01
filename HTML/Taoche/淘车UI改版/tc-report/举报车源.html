@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="yes" name="apple-touch-fullscreen">
+		<meta content="telephone=no,email=no" name="format-detection">
+		<title>举报车源</title>
+		<script src="../js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/tc-report.css" />
+
+	</head>
+
+	<body class="bg-greyer"><div class="minh500 report-main">
+        <!-- 举报原因star -->
+        <div class="col-title">举报原因（必选）</div>
+        <div class="report-reason">
+            <ul id="reportReasonUl" class="clearfix">
+                
+                <li data-id="101"><a href="javascript:;">价格过低</a></li>
+                
+                <li data-id="104"><a href="javascript:;">车源已售</a></li>
+                
+                <li data-id="102"><a href="javascript:;">图片与车况不符</a></li>
+                
+                <li data-id="106"><a href="javascript:;">异地看车</a></li>
+                
+                <li data-id="107"><a href="javascript:;">商家只卖新车</a></li>
+                
+                <li data-id="105"><a href="javascript:;">骗取定金</a></li>
+                
+                <li data-id="103"><a href="javascript:;">无法过户</a></li>
+                
+                <li data-id="108"><a href="javascript:;">其他</a></li>
+                
+            </ul>
+        </div>
+        <!-- 举报原因end -->
+
+        <!-- 其他信息star -->
+        <div class="col-title">其他信息</div>
+        <div class=" form-box other-information ">
+            <ul>
+                <li>
+                    <label>手机</label><input type="tel" class="tel" id="telId" placeholder="请输入您的手机号" maxlength="11"><div style="display: none;" id="telError" class="error input-tel"></div>
+                </li>
+            </ul>
+            <div class="information-text">
+                <textarea id="reason" name="" cols="" rows="" class="textarea" placeholder="简要描述你的举报问题（选填）" maxlength="100"></textarea>
+            </div>
+        </div>
+        <!-- 其他信息end -->
+        <div class="btn-block" id="btnSubmit" logwt="wap_reportcar_sub" _islog="1"><a class="disable" href="javascript:;" istrack="1">提交</a></div>
+        <p class="information-p">您的信息不会再网站上显示，我们将保证您的隐私安全，您还可以直接拨打 <span class="orange">4000-189-167</span>  进行举报。</p>
+    </div>
+	
+	</body>
+
+</html>
