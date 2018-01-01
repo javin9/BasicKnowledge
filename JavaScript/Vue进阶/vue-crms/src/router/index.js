@@ -72,7 +72,7 @@ router.beforeEach((to, from, next) => {
   })
 
   if(to.matched.some((item) => item.meta.login)){
-    let info = router.app.$local.fetch("miaov")
+    let info = router.app.$local.fetch("name")
     if(info.login){  // 已经登录
         next()
     }else{

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>混合</title>
+    <script type="text/javascript" src="../../js/lib/vue.js"></script>
+    <style>
+         .sayhello{width:100px;height:50px;background:red;text-align:center;}
+        .kuang{width: 200px; height: 100px;border: 1px solid #ccc;}
+        .huaguo{ margin-top: 20px;background: blue;width: 80px;height: 30px;text-align: center;line-height: 30px;}
+        .huaguo1{width: 100px;height: 300px;margin-top: 10px; background: darkcyan;}
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div @click="SayHello" class="sayhello">你好</div>
+        <!-- 弹窗组件 -->
+        <tankuang></tankuang>
+        <!-- 划过时的弹窗组件 -->
+        <huaguo></huaguo>
+    </div>
+    
+    <script type="text/x-template" id="tcTpl">
+        <div>
+            <input type="button" value="弹出" @click="tog" />
+             
+            <div class="kuang" v-show="visible">
+                我是弹出框
+                <input type="button" value="X" @click="hide" />
+            </div>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="hgTpl">
+        <div>
+            <div class="huaguo" @mouseover="tog" @mouseout="tog">显示更多</div>
+            <div class="huaguo1" v-show="visible">我是划过隐藏的div</div>
+        </div>
+    </script>
+    <script>
+
+  
+    var gonggong = {  //公共的相同的
+        data: function() {
+            return {
+                visible: false
+            };
+        },
+        methods: {
+            tog: function() {
+                this.visible = !this.visible
+            },
+            hide: function() {
+                this.visible = false
+            }
+        }
+    }
+    var tankuang = { //创建弹框组件
+        template: "#tcTpl",
+        mixins: [gonggong]
+    }
+    var huaguo = {//创建划过组件
+        template: "#hgTpl",
+        mixins: [gonggong]
+    }
+    //初始化根实例
+    var app = new Vue({
+        el: "#app",
+        components: {
+            'tankuang': tankuang,
+            'huaguo': huaguo,
+        },
+        methods:{
+          SayHello:function() {
+              alert('Hello!');
+          },
+          hide:function(){
+            alert('hide')
+          }
+        }
+    });
+    </script>
+</body>
+
+</html>
