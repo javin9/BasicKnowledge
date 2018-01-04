@@ -5,16 +5,6 @@
  </div>
 </template>
 
-<script>
-export default {
-  name: 'm-header',
-  data:function() {
-    return {
-      msg: ''
-    }
-  }
-}
-</script>
 <!-- Add "scoped" attribute to limit CSS to this component only  lang='css' 如果使用less 必须更改lang="less"-->
 <style scoped lang="less">
 @import "../../common/less/mixin.less";

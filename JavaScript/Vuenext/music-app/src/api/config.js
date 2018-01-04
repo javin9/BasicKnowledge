@@ -1,8 +1,6 @@
-export const ERR_OK=10000;
+export const ERR_OK=0;
 
-export const API={
-  "recommend":'https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg'
-}
+
 
 export const options={
   param:'jsonpCallback'

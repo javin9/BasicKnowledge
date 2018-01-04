@@ -1,0 +1,52 @@
+
+<!--引用template模板-->
+<import src="post-item/post-item-temp.wxml" />
+<view>
+  <swiper indicator-dots="true" indicator-color="rgba(1, 255, 0, .3)" indicator-active-color="#fffff" autoplay="true" interval="2000" circular="true" catchtap="onTapSwiper">
+    <swiper-item>
+      <image src="/images/wx.png"  data-id="1"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/vr.png"  data-id="2"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/iqiyi.png" data-id="3"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!--测试显示和隐藏-->
+
+<!--view>
+  <text wx:if="true">测试</text>
+   <text wx:if="{{false}}">测试显示和隐藏</text>
+</view-->
+
+<!--block wx:for="{{list}}">
+  <view class="post-container">
+    <view class="post-author-date">
+      <image class="post-author" src="{{item.headImgSrc}}"></image>
+      <text>{{item.date}}</text>
+    </view>
+    <text class="post-title">{{item.title}}</text>
+    <image class="post-image" src="{{item.imgSrc}}"></image>
+    <text class="post-content">{{"【内容】"+item.content}}</text>
+    <view class="post-like">
+      <image class="post-like-image" src="/images/icon/chat.png"></image>
+      <text class="post-like-font">{{item.collection}}</text>
+      <image class="post-like-image" src="/images/icon/view.png"></image>
+      <text class="post-like-font">{{item.reading}}</text>
+    </view>
+  </view>
+</block-->
+
+<!--template的方式-->
+<block wx:for="{{list}}" wx:for-item="item">
+  <view catchtap="onGotoDetail"  data-postId="{{item.postId}}">
+    <template is="postItem" data="{{item}}" />
+  </view>
+
+  <!--如果item前面添加三个小点 ···  那么template绑定数据的时候 {{item.name}} 应该改写成{{name}}-->
+
+  <!--<template is="postItem" data="{{...item}}" />-->
+</block>

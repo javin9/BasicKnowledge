@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>line-height</title>
+    <script src="../../common/flexible.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../CSS代码类库/mreset.css">
+    <style type="text/css">
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h2 {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        border: 1px solid #000;
+    }
+    .main-content {
+        margin: 50px;
+        width: 100px;
+        height: 50px;
+        border: 1px solid #000;
+        text-align: center;
+    }
+    .main-content span {
+        line-height: 50px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>header</h2>
+        <section class="main-content">
+            <span>内容</span>
+        </section>
+        <h2>footer</h2>
+    </div>
+</body>
+
+</html>
