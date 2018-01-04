@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自定义指令</title>
+    <script type="text/javascript" src="../../js/lib/vue.js"></script>
+    <style>
+    #app {
+        height: 1000px;
+    }
+
+    .aa {
+        width: 200px;
+        min-height: 100px;
+        border: 1px solid #ccc;
+        background: salmon;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="aa" v-mypine="fixed">组件可以扩展 HTML 元素，封装可重用的代码</div>
+        我要上去了</br>
+        我要上去了</br>
+        我要上去了</br>
+        我要上去了</br>
+    </div>
+    <script>
+    //创建自定义指令
+    Vue.directive("mypine", {
+        bind: function(el, binding) {
+            console.log(el); //当前元素对象
+            console.log(binding);
+            console.log(binding.value); //传入的值 ,对个值得时候可以传入一个对象
+            if (binding.value) {
+                el.style.position = "fixed";
+                el.style.left = "20px";
+                el.style.top = "10px";
+            }
+        }
+    })
+    var app = new Vue({
+        el: "#app",
+        data: {
+            fixed: true
+        }
+    });
+
+
+    </script>
+</body>
+
+</html>
