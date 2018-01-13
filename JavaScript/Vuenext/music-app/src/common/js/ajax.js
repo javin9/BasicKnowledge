@@ -5,7 +5,7 @@ export function jsonp(url, data, option) {
     if (!!data) {
       url += (url.indexOf('?') < 0 ? '?' : '&') + param(data);
     }
-    originJsonp(url,option, (err, data) => {
+    originJsonp(url, option, (err, data) => {
       if (!err) {
         resolve(data);
       } else {
@@ -21,7 +21,7 @@ export function jsonp(url, data, option) {
    data:''
 */
 export function ajax(opts) {
-  var url=opts.url;
+  var url = opts.url;
   return new Promise((resolve, reject) => {
     if (!!opts.data) {
       url += (url.indexOf('?') < 0 ? '?' : '&') + param(opts.data);
@@ -29,6 +29,7 @@ export function ajax(opts) {
 
     var xhr = new XMLHttpRequest();
     xhr.open(opts.type, url, true);
+    xhr.setRequestHeader("Content-Type", "json");
     xhr.send(null);
 
     xhr.onload = function() {

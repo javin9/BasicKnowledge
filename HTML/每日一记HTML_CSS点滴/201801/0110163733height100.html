@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+    .box {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: red;
+    }
+    .inner {
+        width: 100%;
+        height: 100%;
+        background-color: green;
+    }
+    .top {
+        height: 50px;
+        background-color: #000;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="top"></div>
+        <div class="inner"></div>
+    </div>
+    <script type="text/javascript">
+    function preventDefault() {
+        arguments[0].preventDefault();
+    }
+
+    function isPassive() {
+        var supportsPassiveOption = false;
+        try {
+            addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                get: function() {
+                    supportsPassiveOption = true;
+                }
+            }));
+        } catch (e) {}
+        return supportsPassiveOption;
+    }
+
+    document.addEventListener('touchmove', preventDefault, isPassive() ? {
+        capture: false,
+        passive: false
+    } : false);
+    document.removeEventListener('touchmove', preventDefault)
+    </script>
+</body>
+
+</html>

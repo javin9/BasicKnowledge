@@ -9,8 +9,8 @@ let store = new Vuex.Store({
     count: 16
   },
   getters: {
-      filercontent(state) {
-    return   state.count>200?200:state.count;
+    filercontent(state) {
+      return state.count > 200 ? 200 : state.count;
     }
   },
   mutations: {

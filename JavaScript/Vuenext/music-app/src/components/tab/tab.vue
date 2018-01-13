@@ -21,7 +21,17 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 @import "../../common/less/mixin.less";
- .tab{display:flex;display:-webkit-box;}
+ .tab{
+ 	display:flex;
+ 	display:-webkit-box;
+ 	// position:fixed;
+ 	// top:80/@r;
+ 	// left:0;
+ 	// right:0;
+ 	// z-index:1000;
+ 	width:100%;
+ 	background-color:#fff;
+ }
  .tab .tab-item{flex:1;-webkit-box-flex:1;text-align:center;height:100/@r;line-height:100/@r;background-color:#fff;}
  .tab .tab-link{color:#000;display:block;}
  .router-link-active{border-bottom:2/@r solid #31C27C;}
