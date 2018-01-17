@@ -1,0 +1,1206 @@
+@import "../../lesshelp/lesshelp.less";
+.seller-box {
+    width: 100%;
+    position: relative;
+    z-index: 2; //max-width: 750/@r;
+    // margin: 0 auto;
+}
+//筛选导航
+.filter-seller {
+    width: 100%;
+    height: 100/@r;
+    border-bottom: #E5E5E5 solid 1px;
+    padding: 20/@r 0;
+    z-index: 2;
+    position: relative;
+    background: #fff;
+}
+.seller-rzc {
+    width: 140/@r;
+    height: 60/@r;
+    margin-left: 30/@r;
+    float: left;
+    margin-right: 10/@r;
+    a {
+        display: block;
+        text-align: center;
+        border: 1px solid #818D9A;
+        border-radius: 5/@r;
+        .fz(13px);
+        color: #818D9A;
+        position: relative;
+        overflow: hidden;
+        line-height: 58/@r;
+        width: 138/@r;
+        background: #fff;
+    }
+}
+.seller-rzc a.seller-rzc-sel {
+    border: 1px solid #FF6D02;
+    color: #FE6402;
+    display: block;
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/list-screen-rzcbg.png") bottom right no-repeat;
+    background-size: 18/@r 18/@r; //&:after{
+    //  content: '';
+    //  width: 18/@r;
+    //  height: 18/@r;
+    //  display: inline-block;
+    //  position: absolute;
+    //  left: 0/@r;
+    //  top: 0/@r;
+    //
+    //}
+    //background-position: 110/@r bottom;
+}
+.seller-nav {
+    width: 75%;
+    height: 60/@r; //display: flex;
+    display: table;
+    text-align: center;
+    padding: 10/@r 0;
+    li {
+        //flex: 1 0 0;
+        //-webkit-box-flex: 1;
+        width: 25%;
+        display: table-cell;
+        height: 40/@r;
+        line-height: 40/@r;
+        a {
+            .fz(13px);
+            color: #394043;
+
+            &:after {
+                content: '';
+                width: 12/@r;
+                height: 8/@r;
+                background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/list-sree-cio01.png") no-repeat;
+                background-size: 100% auto;
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 10/@r;
+                margin-top: -4/@r;
+            }
+        }
+    }
+}
+.seller-nav li.defult-sel a {
+    color: #FF6D02;
+    &:after {
+        content: '';
+        width: 12/@r;
+        height: 8/@r;
+        background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/list-sree-cio01-deful.png") no-repeat;
+        background-size: 100% auto;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10/@r;
+        margin-top: 0/@r;
+    }
+}
+.seller-nav li.seller-nav-sel a {
+    color: #FF6D02;
+    &:after {
+        content: '';
+        width: 12/@r;
+        height: 8/@r;
+        background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/list-sree-cio01-hover.png") no-repeat;
+        background-size: 100% auto;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10/@r;
+        margin-top: 0/@r;
+    }
+}
+
+
+//筛选box
+#carSelectComponent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+}
+
+//遮罩
+.mask-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: #000000;
+    z-index: 2;
+}
+
+//排序 价格 box
+.seller-list {
+    width: 100%;
+    position: absolute;
+    left: 0; //top: 100/@r;
+    background: #fff;
+    text-align: left;
+    z-index: 2;
+}
+.paix-list {
+    padding: 0 30/@r;
+    a {
+        display: block;
+        height: 110/@r;
+        border-top: 1px solid #ECECEC;
+        line-height: 110/@r;
+        .fz(15px);
+        color: #2F3540;
+        &:first-child {
+            border-top: 0px;
+        }
+    }
+}
+.paix-list a.paix-sel {
+    color: #FF6D02;
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/list-screen-paix.png") right center no-repeat;
+    background-size: 26/@r 20/@r;
+}
+
+//车价
+.chej-list {
+    padding: 30/@r;
+    padding-top: 0;
+}
+.chej-list h3 {
+    .fz(12px);
+    color: #818D9A;
+}
+.chej-defined {
+    margin-top: 25/@r;
+    height: 110/@r;
+    padding-bottom: 40/@r;
+    border-bottom: #ECECEC solid 1px;
+}
+.chej-defined p.chej-input {
+    float: left;
+    width: 210/@r;
+    height: 70/@r;
+    border: 1px solid #818D9A;
+    border-radius: 5/@r;
+    position: relative;
+}
+.chej-defined p.chej-input input {
+    width: 90%;
+    height: 68/@r;
+    background: none;
+    line-height: 28/@r ;
+    .fz(14px);
+    text-align: right;
+    padding: 3/@r 30/@r 0;
+}
+.chej-defined p.chej-input:after {
+    content: '万';
+    display: block;
+    position: absolute;
+    right: 10/@r;
+    top: 22/@r;
+    line-height: 28/@r ;
+    .fz(13px);
+}
+
+.chej-defined p.chej-line {
+    width: 30/@r;
+    height: 70/@r;
+    float: left;
+    line-height: 70/@r ;
+    text-align: center;
+    color: #868A8B;
+    .fz(6px);
+}
+.chej-defined p.chej-btn {
+    float: left;
+    width: 210/@r;
+    height: 72/@r;
+    text-align: center;
+    margin-left: 29/@r;
+    .fz(13px);
+    color: #FFFFFF;
+    line-height: normal;
+    padding: 3/@r 0;
+}
+.chej-defined p.chej-btn a {
+    display: block;
+    height: 72/@r;
+    color: #FFFFFF;
+    line-height: 72/@r;
+    background: #D6D6D6;
+    border-radius: 5/@r;
+    width: 100%;
+    margin-top: -4/@r;
+}
+.chej-defined p a.btn-sel {
+    background: #FF6402;
+    color: #fff;
+}
+.chej-pice-list {
+    width: 100%;
+}
+.chej-pice-list span {
+    float: left;
+    display: block;
+    width: 210/@r;
+    height: 70/@r;
+    text-align: center;
+    line-height: 70/@r;
+    border: 1px solid #DDDDDD;
+    border-radius: 5/@r;
+    margin-right: 29/@r;
+    margin-top: 30/@r;
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
+}
+.chej-pice-list span a {
+    .fz(13px);
+    color: #2F3540;
+}
+.chej-pice-list span.chej-pice-sel {
+    border: 1px solid #FF6D02;
+}
+.chej-pice-list span.chej-pice-sel a {
+    color: #FF6D02;
+}
+
+//筛选
+.tt-small {
+    height: 56/@r;
+    background: #F8F8F8;
+    line-height: 56/@r ;
+    padding-left: 30/@r;
+    .fz(13px);
+
+    span {
+        padding: 0;
+        color: #818D9A !important;
+    }
+}
+
+
+.tt-open {
+    float: right;
+    margin-right: 15/@d;
+    .fz(14px);
+    color: #999
+}
+.tt-open:after {
+    content: "";
+    display: inline-block;
+    width: 20/@r;
+    height: 12/@r;
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/list-srceen-arrow.png") no-repeat;
+    background-position: 0 0;
+    background-size: 20/@r 24/@r;
+    float: right;
+    margin-top: 25/@r;
+}
+
+
+
+/* 收起选项*/
+
+.stle-close {
+    height: 56/@r;
+    position: relative;
+    line-height: 56/@r;
+    background: #F8F8F8;
+    padding: 0 30/@r;
+}
+.stle-close span {
+    .fz(13px);
+    color: #818D9A;
+}
+.selected-item {
+    position: absolute;
+    left: 80/@d;
+    top: 0;
+    color: #FF6D02;
+    .fz(13px);
+    width: 55%
+}
+.l243 {
+    left: 243/@r;
+}
+.txtElps {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+.stle-close a {
+    display: block
+}
+.stle-close a:after {
+    content: "";
+    display: inline-block;
+    width: 20/@r;
+    height: 12/@r;
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/list-srceen-arrow.png") no-repeat;
+    background-position: 0 -13/@r;
+    background-size: 20/@r 24/@r;
+    margin-top: 25/@r;
+    float: right;
+}
+
+
+
+
+
+
+
+// 按条件筛选
+.term-box {
+    padding-bottom: 30/@r;
+}
+
+.tc-sort {
+    margin-left: 30/@r;
+}
+.tc-sort li {
+    text-align: center;
+    width: 210/@r;
+    height: 70/@r;
+    float: left;
+    margin-top: 30/@r;
+    margin-right: 29/@r;
+}
+
+.tc-sort li a {
+    display: block; //line-height:70/@r;
+    .fz(13px);
+    color: #2F3540;
+    border: 1px solid #DDDDDD;
+    border-radius: 5/@r;
+    line-height: normal;
+    padding: 15/@r 0;
+}
+
+.tc-sort li.cur a {
+    border: 1px solid #FF6D02;
+    color: #FF6D02;
+    padding: 15/@r 0;
+}
+
+.tc-sort li.cur a em,
+.tc-sort li.cur a em.white {
+    border: 1px solid #E5E5E5;
+}
+
+//颜色
+.tc-sort-color li {
+    width: 20%;
+}
+.tc-sort-color li a {
+    border: none;
+}
+.tc-sort li a em {
+    display: block;
+    margin: 0 auto;
+    width: 48/@r;
+    height: 48/@r;
+    border-radius: 30/@r;
+    -webkit-border-radius: 30/@r;
+    -moz-border-radius: 30/@r;
+}
+
+.col-txt {
+    padding-top: 18/@r;
+    height: 45/@r;
+    .fz(13px);
+    color: #2F3540;
+}
+.tc-sort li a em.black {
+    background: #000
+}
+.tc-sort li a em.y-gray {
+    background: #EDECEA
+}
+.tc-sort li a em.white {
+    background: #fff;
+    border: 1px solid #ececec
+}
+.tc-sort li a em.red {
+    background: #B73838
+}
+.tc-sort li a em.blue {
+    background: #3D5CA1
+}
+.tc-sort li a em.s-gray {
+    background: #747373
+}
+.tc-sort li a em.champagne {
+    background: #FDECC9
+}
+.tc-sort li a em.green {
+    background: #5B9472
+}
+.tc-sort li a em.yellow {
+    background: #E7E33F
+}
+.tc-sort li a em.orange {
+    background: #FBB662
+}
+.tc-sort li a em.coffee {
+    background: #6D410E
+}
+.tc-sort li a em.purple {
+    background: #593173
+}
+.tc-sort li a em.purple {
+    background: #593173
+}
+.tc-sort li a em.colour {
+    background-image: linear-gradient(-180deg, #FD4E4E 0%, #245AFC 100%)
+}
+
+//级别
+.tc-sort-grade {
+    margin-right: 30/@r;
+}
+.tc-sort-grade li {
+    height: 134/@r;
+    width: 30%;
+}
+.tc-sort-grade li a {
+    border: none;
+    padding-bottom: 0;
+}
+.tc-sort-grade li a em {
+    display: block;
+    margin: 0 auto;
+    border-radius: 0;
+    height: 60/@r;
+    width: 150/@r;
+}
+.tc-sort-grade li:nth-child(3n) {
+    margin-right: 0;
+}
+
+.tc-sort-grade li a em.car-weixing {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-01.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li a em.car-xiaoxing {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-02.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li a em.car-jincou {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-03.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li a em.car-zhongxing {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-04.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li a em.car-zhongdxing {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-05.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li a em.car-haohua {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-06.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li a em.car-mpv {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-07.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li a em.car-suv {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-08.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li a em.car-paoche {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-09.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li a em.car-mianbao {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-10.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li a em.car-pika {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-11.png") no-repeat;
+    background-size: 100% auto;
+}
+
+
+
+
+
+.tc-sort-grade li.cur a em {
+    display: block;
+    margin: 0 auto;
+    height: 60/@r;
+    width: 150/@r;
+}
+.tc-sort-grade li.cur .col-txt {
+    color: #FF6D02;
+    border: none;
+}
+
+.tc-sort-grade li.cur a em.car-weixing {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-01-hover.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li.cur a em.car-xiaoxing {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-02-hover.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li.cur a em.car-jincou {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-03-hover.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li.cur a em.car-zhongxing {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-04-hover.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li.cur a em.car-zhongdxing {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-05-hover.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li.cur a em.car-haohua {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-06-hover.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li.cur a em.car-mpv {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-07-hover.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li.cur a em.car-suv {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-08-hover.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li.cur a em.car-paoche {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-09-hover.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li.cur a em.car-mianbao {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-10-hover.png") no-repeat;
+    background-size: 100% auto;
+}
+.tc-sort-grade li.cur a em.car-pika {
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/car-jb-11-hover.png") no-repeat;
+    background-size: 100% auto;
+}
+
+
+
+.tc-sort-grade li.cur a {
+    border: none;
+    padding-bottom: 0;
+}
+.tc-sort-grade li.cur a em {
+    border: none
+}
+
+.sort-reset {
+    padding: 18/@r 22/@r;
+    .fz(16px);
+    margin-bottom: 50/@r;
+    border-radius: 3/@r;
+    -webkit-border-radius: 3/@r;
+    -moz-border-radius: 3/@r
+}
+
+//颜色
+.tc-sort-color {
+    padding-top: 36/@r;
+}
+.tc-sort-color li {
+    width: 128/@r;
+    height: 148/@r;
+    margin-right: 10/@r;
+    margin-top: 0px;
+    margin-bottom: 7/@r;
+    .fz(13px);
+    color: #2F3540;
+}
+.tc-sort-color li a {
+    padding: 0 !important;
+    border: 2px solid #fff;
+}
+.tc-sort-color li em {
+    margin-top: 26/@r !important;
+}
+.tc-sort-color li.cur a {
+    display: block;
+    height: 148/@r;
+}
+//.tc-sort-color li p.col-txt{
+//  margin-top: 11/@r;
+//}
+//anniu
+.bot-fixed {
+    width: 100%;
+    height: 100/@r;
+    overflow: hidden;
+}
+.bot-fixed ul {
+    width: 100%;
+    height: 100/@r;
+}
+.bot-fixed ul li {
+    text-align: center;
+    height: 100/@r;
+    float: left;
+    width: 25%;
+    border-top: 1px solid #dedede;
+    background: #fff;
+}
+.bot-fixed ul li.li-sure {
+    background: #FF6402;
+    width: 50%;
+    border-top: 1px solid #FF6402;
+}
+
+//.bot-sortbox ul li{line-height:100/@r}
+.bot-fixed ul li a {
+    display: block;
+    height: 99/@r;
+    line-height: 99/@r;
+}
+.li-close a,
+.li-reset a {
+    color: #FF6D02;
+    .fz(16px);
+}
+.li-reset {
+    border-left: 1px solid #ececec;
+}
+
+.li-sure a {
+    color: #fff;
+}
+.li-sure a span {
+    .fz(16px);
+}
+.li-sure a em {
+    .fz(12px);
+}
+
+
+
+/*    按钮置灰*/
+
+.li-reset-no a {
+    color: #999
+}
+.li-sure-no {
+    background: #ccc
+}
+.li-sure-no a {
+    color: #fff
+}
+
+.shaix-box {
+    height: 100/@r;
+    width: 100%;
+}
+
+
+.brand-sortlist {
+    height: 100%;
+    padding-bottom: 100/@r;
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    top: 99/@r;
+    left: 0;
+    height: 1050/@r;
+}
+.brand-item {
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    height: 100%;
+    overflow: hidden;
+}
+.brand-bottom {
+    position: absolute;
+    bottom: -1/@r;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    height: 100/@r;
+    z-index: 110;
+}
+.posit-rel {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    transform: translateZ(0px);
+}
+.posit-fix {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1009;
+    width: 100%;
+}
+
+
+//品牌
+.btn {
+    width: 100%;
+    height: 2rem;
+    color: #fff;
+    background-color: red;
+    text-align: center;
+    font-size: 2em;
+}
+.seller-heard {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 88/@r;
+    padding: 20/@r 0;
+    line-height: 48/@r;
+    background: #fff;
+    border-bottom: #DDDDDD solid 1px;
+}
+.seller-heard a {
+    width: 76/@r;
+    height: 48/@r;
+    float: left;
+    display: block;
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/serren-logoback.png") center 9/@r no-repeat;
+    background-size: 16/@r 30/@r;
+    &:after {
+        content: '';
+        border-right: #E5E5E5 solid 2px;
+        height: 30/@r;
+        display: inline-block;
+        vertical-align: middle;
+        float: right;
+        margin-top: 9/@r;
+    }
+}
+.seller-heard span {
+    height: 48/@r;
+    float: left;
+    display: block;
+    padding-left: 30/@r;
+    .fz(16px);
+    color: #2F3540;
+    line-height: 48/@r;
+}
+.seller-heard span img {
+    vertical-align: middle;
+    float: left;
+    width: 81/@r;
+    height: 33/@r;
+    margin-right: 10/@r;
+    margin-top: 8/@r;
+}
+//动画
+.defaultAni {
+    -webkit-transform: translate(100%);
+    transform: translate(100%);
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 0 0
+}
+
+.defaultAni,
+.drawAni {
+    transition: all .2s;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 0 0
+}
+
+.drawAni {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 0 0;
+}
+
+.drawAni2 {
+    z-index: 100;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    transition: -webkit-transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 0 0
+}
+.relative-position {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.new-wrapp {
+    width: 500/@r;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+//
+.wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 88/@r;
+    bottom: 0px; // right: -100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+.brand-all-text {
+    display: block;
+    border-bottom: #E5E5E5 solid 1px;
+    margin-left: 30/@r;
+    margin-right: 45/@r;
+    height: 110/@r;
+    line-height: 110/@r ;
+    .fz(16px);
+    color: #2F3540;
+}
+.brand-hot {
+    padding-bottom: 40/@r;
+}
+.brand-hot-text {
+    padding-top: 40/@r;
+    padding-left: 30/@r;
+    padding-right: 30/@r;
+    .fz(16px);
+    color: #2F3540;
+}
+.brand-hot-list {
+    width: 100%;
+    padding-top: 10/@r;
+    padding-right: 20/@r;
+
+    li {
+        width: 25%;
+        height: 130/@r;
+        float: left;
+        text-align: center;
+        margin-top: 30/@r;
+        img {
+            width: 70/@r;
+            height: 70/@r;
+            display: inline-block;
+            margin-bottom: 10/@r;
+        }
+        p {
+            .fz(13px);
+            color: #2F3540;
+            line-height: 40/@r;
+        }
+        a {
+            display: block;
+        }
+    }
+}
+
+.brand-col {
+    width: 100%;
+}
+.brand-title-item {
+    background: #F8F8F8;
+    height: 56/@r;
+    line-height: 56/@r;
+    .fz(16px);
+    color: #2F3540;
+    padding-left: 30/@r;
+     margin-right:40/@r;
+}
+.brand-col-list {
+    margin-left: 30/@r;
+    margin-right: 45/@r;
+    li {
+        height: 110/@r;
+        padding-top: 20/@r;
+        a {
+            display: block;
+            height: 90/@r;
+            border-bottom: #E5E5E5 solid 1px;
+        }
+    }
+}
+.brand-col-list li:last-child a {
+    border-bottom: 0;
+}
+
+
+.brand-col-img {
+    width: 100/@r;
+    height: 91/@r;
+    float: left;
+    background: #fff;
+}
+.brand-col-img img {
+    width: 70/@r;
+    height: 70/@r;
+}
+.brand-col-list span {
+    display: block;
+    height: 90/@r;
+    .fz(16px);
+    color: #2F3540;
+    line-height: 70/@r;
+    padding-left: 100/@r;
+}
+
+
+.seller-scroller {
+    position: absolute;
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+    min-height: 100%;
+}
+
+
+#carSelectComponent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    .transform(translate(0,
+    0px,
+    -1px));
+}
+
+
+.index-sidebar-container {
+    position: fixed;
+    // top: 158/@r;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    right: 0;
+    overflow: visible;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    z-index: 100000;
+}
+.index-sidebar-container ul {
+    padding: 0 5px;
+    list-style: none; // .fz(13px);
+    color: #FF6402;
+}
+.index-sidebar-container li {
+    width: 40/@r;
+    height: 40/@r;
+    line-height: 40/@r;
+    text-align: center;
+    .fz(13px);
+}
+.index-sidebar-container .current-char {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: -80px;
+    margin-top: -20px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 32px;
+    text-align: center;
+    color: #999;
+}
+
+.tipsLetter {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 160/@r;
+    height: 160/@r;
+
+    line-height: 160/@r;
+    text-align: center;
+
+    border-radius: 5/@r;
+    background-color: #fff;
+    z-index: 9999;
+    border: 1px solid #FF6402;
+    .fz(32px);
+    color: #FF6402;
+}
+
+
+
+.leftmask {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    em {
+        width: 42/@r;
+        height: 220/@r;
+        display: inline-block;
+        background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/list-seran-makch.png") center top no-repeat;
+        background-size: 42/@r 42/@r;
+        text-align: center;
+        .fz(16px);
+        color: #FFFFFF;
+        line-height: 42/@r;
+        margin-left: 80/@r;
+        padding-top: 52/@r;
+        position: absolute;
+        top: 50%;
+        margin-top: -110/@r;
+    }
+}
+.seller-load {
+    width: 70/@r;
+    height: 70/@r;
+    position: absolute;
+    top: 45%;
+    right: 45%;
+    margin-left: -35/@r;
+    margin-top: -35/@r;
+}
+.seller-next-w {
+    top: 88/@r;
+}
+.seller-nex-name {
+    height: 110/@r;
+    padding: 20/@r 30/@r;
+    line-height: 70/@r;
+    .fz(16px);
+    color: #2F3540;
+    border-bottom: #E5E5E5 solid 1px;
+    p {
+        width: 70/@r;
+        height: 70/@r;
+        float: left;
+        margin-right: 30/@r;
+    }
+    img {
+        width: 100%;
+        display: block;
+    }
+}
+
+.seller-nex-no {
+    height: 110/@r;
+    line-height: 110/@r;
+
+    .fz(16px);
+    color: #2F3540;
+    a {
+        padding-left: 30/@r;
+        display: block;
+    }
+}
+.seller-nex-list {
+    width: 100%;
+}
+.seller-nex-title {
+    background: #F8F8F8;
+    height: 56/@r;
+    line-height: 56/@r;
+    .fz(13px);
+    color: #2F3540;
+    padding-left: 30/@r;
+}
+.seller-nex-collist {
+    width: 100%;
+
+    li {
+
+        padding-left: 30/@r;
+        a {
+            .fz(16px);
+            display: block;
+            color: #2F3540;
+            padding: 34/@r 0;
+            line-height: 42/@r;
+            border-bottom: #E5E5E5 solid 1px;
+            padding-right: 30/@r;
+        }
+    }
+}
+.seller-nex-collist li:last-child a {
+    border-bottom: 0;
+}
+.carSelect-allCar-ul {
+    width: 70/@r;
+    height: 70/@r;
+    position: absolute;
+    z-index: 11;
+    left: 50%;
+    top: 50%;
+    margin-left: -35/@r;
+    margin-top: -35/@r;
+}
+
+.colffd2 {
+    color: #FF6D02 !important;
+}
+
+
+
+//
+.citycont-back {
+    height: 88/@r;
+    border-bottom: #E5E5E5 solid 1px;
+    line-height: 88/@r;
+    .fz(16px);
+    color: #2F3540;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    background: #fff;
+}
+.citycont-back a.goback {
+    position: absolute;
+    top: 20/@r;
+    left: 0;
+    width: 76/@r;
+    height: 48/@r;
+    display: block;
+    background: url("//image.bitautoimg.com/taoche/2018_m_usedcar/serren-logoback.png") center center no-repeat;
+    background-size: 16/@r 30/@r;
+}
+
+
+
+@media screen and (max-device-width: 320px) {
+    .seller-rzc a {
+        .fz(11px);
+    }
+}

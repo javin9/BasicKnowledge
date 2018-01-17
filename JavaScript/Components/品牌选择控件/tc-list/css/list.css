@@ -1,0 +1,1089 @@
+/*
+.adb{.fz(14px);}
+.adbddd{.fz(14px,1);}
+*/
+/*
+.button {
+  .border-radius(6px);
+}
+
+.button {
+  .border-radius;
+}
+*/
+/*
+.big-block {
+  .box-shadow(2px; 5px);  
+}  
+}
+*/
+/*
+.box4 {
+  .gradient(180deg,#000,#fff);
+}
+*/
+/*
+.dfsdf{
+	.transform(rotate(0deg));
+}
+
+.dddtranslate{
+	.transform(translate(-50%, -50%));
+}
+*/
+/*
+.keyframes (line, {
+    0% {
+        background-size: 0% 2px;
+    }
+    100% {
+        background-size: 100% 2px;
+    }
+});
+
+
+
+.keyframes (line, {
+    0% {
+        .transform(rotate(0deg));
+    }
+    100% {
+        .transform(rotate(360deg));
+    }
+});
+*/
+/*弹性盒子*/
+.flex-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex-v {
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.flex-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 0;
+  display: block;
+}
+.flex-align-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.flex-pack-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.flex-pack-justify {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+/*
+.div{
+	.rgba(.4,40);
+}
+*/
+/* 图文横排   */
+.carlist-ul-horizontal li {
+  overflow: hidden;
+  border-bottom: 1px solid #ececec;
+  margin: 0 0.4rem;
+  position: relative;
+}
+.carlist-ul-horizontal li:last-child {
+  border-bottom: 0 none;
+}
+.carlist-ul-horizontal li.add-advert {
+  margin: 0;
+  border-bottom: none;
+  padding: 0;
+}
+.carlist-ul-horizontal li.add-advert a {
+  padding: 0;
+  height: 3.2rem;
+}
+.carlist-ul-horizontal li.add-advert img {
+  padding: 0;
+  width: 10rem;
+  height: 2.93333333rem;
+}
+.carlist-ul-horizontal li a {
+  display: block;
+  padding: 0.4rem 0 0.26666667rem;
+  min-height: 2.66666667rem;
+}
+.carlist-ul-horizontal li .car-img {
+  position: relative;
+  float: left;
+  width: 2.8rem;
+  height: 1.86666667rem;
+}
+.carlist-ul-horizontal li .car-img img {
+  position: relative;
+  float: left;
+  width: 2.8rem;
+  height: 1.86666667rem;
+}
+.carlist-ul-horizontal li .car-img .car-ico {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0.82666667rem;
+}
+.carlist-ul-horizontal li .car-img .car-tcrz {
+  width: 0.8rem;
+  height: 0.82666667rem;
+  background: url(//image.bitautoimg.com/taoche/2018_m_usedcar/renzhengicon.png) no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  margin-right: 0.08rem;
+  float: left;
+}
+.carlist-ul-horizontal li .car-img .car-tczm {
+  width: 0.8rem;
+  height: 0.82666667rem;
+  background: url(//image.bitautoimg.com/taoche/2018_m_usedcar/zhimaiicon.png) no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  margin-right: 0.08rem;
+  float: left;
+}
+.carlist-ul-horizontal li .car-img .ygong-txt {
+  height: 0.48rem;
+  opacity: .6;
+  background: #000;
+  line-height: 0.48rem;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+}
+[data-dpr="1"] .carlist-ul-horizontal li .car-img .ygong-txt {
+  font-size: 10px;
+}
+[data-dpr="2"] .carlist-ul-horizontal li .car-img .ygong-txt {
+  font-size: 20px;
+}
+[data-dpr="3"] .carlist-ul-horizontal li .car-img .ygong-txt {
+  font-size: 30px;
+}
+.carlist-ul-horizontal li .car-txt {
+  margin-left: 3.06666667rem;
+}
+.carlist-ul-horizontal li .name {
+  max-height: 1.12rem;
+  line-height: 0.56rem;
+  overflow: hidden;
+  margin-top: -0.10666667rem;
+  position: relative;
+}
+[data-dpr="1"] .carlist-ul-horizontal li .name {
+  font-size: 16px;
+}
+[data-dpr="2"] .carlist-ul-horizontal li .name {
+  font-size: 32px;
+}
+[data-dpr="3"] .carlist-ul-horizontal li .name {
+  font-size: 48px;
+}
+@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) {
+  .carlist-ul-horizontal li .name {
+    margin-top: -0.05333333rem;
+  }
+}
+.carlist-ul-horizontal li .name .list-ding {
+  position: relative;
+  display: inline-block;
+  top: 0.10666667rem;
+  width: 0.45333333rem;
+  height: 0.45333333rem;
+  background: url(//image.bitautoimg.com/taoche/2018_m_usedcar/ding.png) no-repeat 0 0;
+  background-size: 0.45333333rem 0.45333333rem;
+  margin-right: 0.05333333rem;
+}
+.carlist-ul-horizontal li .name .list-jing {
+  position: relative;
+  display: inline-block;
+  top: 0.10666667rem;
+  width: 0.45333333rem;
+  height: 0.45333333rem;
+  background: url(//image.bitautoimg.com/taoche/2018_m_usedcar/jing.png) no-repeat 0 0;
+  background-size: 0.45333333rem 0.45333333rem;
+  margin-right: 0.05333333rem;
+}
+@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) {
+  .carlist-ul-horizontal li .name .list-ding {
+    top: 0.06666667rem;
+  }
+  .carlist-ul-horizontal li .name .list-jing {
+    top: 0.06666667rem;
+  }
+}
+.carlist-ul-horizontal li .time {
+  color: #818D9A;
+  height: 0.53333333rem;
+  line-height: 0.53333333rem;
+  margin-top: 0.08rem;
+  overflow: hidden;
+  margin-top: 0.10666667rem;
+}
+[data-dpr="1"] .carlist-ul-horizontal li .time {
+  font-size: 13px;
+}
+[data-dpr="2"] .carlist-ul-horizontal li .time {
+  font-size: 26px;
+}
+[data-dpr="3"] .carlist-ul-horizontal li .time {
+  font-size: 39px;
+}
+.carlist-ul-horizontal li .time span {
+  line-height: 0.53333333rem;
+  margin: 0 0.2rem;
+  float: left;
+}
+.carlist-ul-horizontal li .time span:nth-of-type(1) {
+  margin-left: 0;
+}
+.carlist-ul-horizontal li .time em {
+  float: left;
+  margin-top: -0.02666667rem;
+}
+.carlist-ul-horizontal li .bq-hidde {
+  margin-top: 0.18666667rem;
+  height: 0.48rem;
+}
+.carlist-ul-horizontal li .add-mr {
+  margin-right: 0.10666667rem;
+}
+.carlist-ul-horizontal li .pri {
+  color: #818D9A;
+  margin-top: 0.10666667rem;
+}
+[data-dpr="1"] .carlist-ul-horizontal li .pri {
+  font-size: 13px;
+}
+[data-dpr="2"] .carlist-ul-horizontal li .pri {
+  font-size: 26px;
+}
+[data-dpr="3"] .carlist-ul-horizontal li .pri {
+  font-size: 39px;
+}
+.carlist-ul-horizontal li .car-pri-s {
+  color: #FF6402;
+  margin-right: 0.26666667rem;
+}
+[data-dpr="1"] .carlist-ul-horizontal li .car-pri-s {
+  font-size: 16px;
+}
+[data-dpr="2"] .carlist-ul-horizontal li .car-pri-s {
+  font-size: 32px;
+}
+[data-dpr="3"] .carlist-ul-horizontal li .car-pri-s {
+  font-size: 48px;
+}
+.txt-r {
+  float: right;
+  color: #999;
+}
+[data-dpr="1"] .txt-r {
+  font-size: 12px;
+}
+[data-dpr="2"] .txt-r {
+  font-size: 24px;
+}
+[data-dpr="3"] .txt-r {
+  font-size: 36px;
+}
+.carlist-ul-horizontal li.list-ad {
+  display: table;
+  width: 100%;
+  border-bottom: none!important;
+  margin: 0;
+}
+.carlist-ul-horizontal li.list-ad a {
+  margin: 0 0.4rem;
+  border-bottom: 0.02666667rem solid #ececec;
+}
+.carlist-ul-horizontal li.list-ad .car-img {
+  display: table-cell;
+  position: relative;
+}
+.carlist-ul li.list-ad .car-img img {
+  display: block;
+}
+.carlist-ul-horizontal li.list-ad .car-txt {
+  display: table-cell;
+  padding-left: 0.26666667rem;
+  vertical-align: middle;
+  height: 2.4rem;
+}
+.carlist-ul-horizontal li.list-ad .time {
+  padding-top: 0.13333333rem;
+  height: auto;
+}
+.carlist-ul-horizontal li.list-ad .pri {
+  display: none;
+}
+.list-ad-h .ad a {
+  position: relative;
+  border-top: 0.02666667rem solid #ececec;
+  border-bottom: 0.02666667rem solid #ececec;
+  padding: 0.32rem 0 0.45333333rem;
+}
+.list-ad-h .ad img {
+  display: block;
+  width: 100%;
+}
+.carlist-ul-horizontal .list-ad-h .ad a {
+  border-bottom: none;
+  border-top: none;
+}
+.carlist-ul-horizontal .list-ad-h .ad a .ico-ad {
+  bottom: 0.53333333rem !important;
+}
+.carlist-ul-horizontal .embed-filter {
+  overflow: hidden;
+  margin-right: -0.25333333rem;
+  padding-top: 0.53333333rem;
+  padding-bottom: 0.24rem;
+}
+.carlist-ul-horizontal .embed-filter a {
+  display: inline-block;
+  width: 2.10666667rem;
+  height: 0.93333333rem;
+  text-align: center;
+  line-height: 0.93333333rem;
+  padding: 0;
+  min-height: 0;
+  border: 1px solid #B0B3B4;
+  border-radius: 0.06666667rem;
+  float: left;
+  margin-right: 0.25333333rem;
+  margin-bottom: 0.26666667rem;
+  color: #2F3540;
+}
+[data-dpr="1"] .carlist-ul-horizontal .embed-filter a {
+  font-size: 12px;
+}
+[data-dpr="2"] .carlist-ul-horizontal .embed-filter a {
+  font-size: 24px;
+}
+[data-dpr="3"] .carlist-ul-horizontal .embed-filter a {
+  font-size: 36px;
+}
+.carlist-ul-horizontal .embed-hot-cars {
+  overflow: hidden;
+  margin-right: -0.4rem;
+  padding-top: 0.53333333rem;
+  padding-bottom: 0.24rem;
+}
+.carlist-ul-horizontal .embed-hot-cars a {
+  display: inline-block;
+  width: 2.8rem;
+  height: 1.33333333rem;
+  text-align: center;
+  padding: 0;
+  min-height: 0;
+  border: 1px solid #B0B3B4;
+  border-radius: 0.06666667rem;
+  float: left;
+  margin-right: 0.4rem;
+  margin-bottom: 0.26666667rem;
+  padding-top: 0.25333333rem;
+  padding-bottom: 0.21333333rem;
+}
+.carlist-ul-horizontal .embed-hot-cars span {
+  display: block;
+  line-height: 0.44rem;
+}
+.carlist-ul-horizontal .embed-hot-cars span.car-name {
+  color: #2F3540;
+}
+[data-dpr="1"] .carlist-ul-horizontal .embed-hot-cars span.car-name {
+  font-size: 12px;
+}
+[data-dpr="2"] .carlist-ul-horizontal .embed-hot-cars span.car-name {
+  font-size: 24px;
+}
+[data-dpr="3"] .carlist-ul-horizontal .embed-hot-cars span.car-name {
+  font-size: 36px;
+}
+.carlist-ul-horizontal .embed-hot-cars span.attention-num {
+  color: #B0B3B4;
+}
+[data-dpr="1"] .carlist-ul-horizontal .embed-hot-cars span.attention-num {
+  font-size: 12px;
+}
+[data-dpr="2"] .carlist-ul-horizontal .embed-hot-cars span.attention-num {
+  font-size: 24px;
+}
+[data-dpr="3"] .carlist-ul-horizontal .embed-hot-cars span.attention-num {
+  font-size: 36px;
+}
+.seller-nav-sub {
+  height: 1.33333333rem;
+  background: #fff;
+  border-bottom: 1px solid #ececec;
+  padding: 0.26666667rem 0.4rem;
+}
+.seller-nav-sub ul {
+  overflow: hidden;
+  height: 0.8rem;
+}
+.seller-nav-sub ul li {
+  width: 100%;
+  float: left;
+  /* border-radius: 3/@d;
+	.fz(13px);  
+	color: #333333;
+	text-align: center; 
+	line-height: 29/@d; 
+	border:  #F5F5F5 solid 1px;  
+	margin-right:9/@d; */
+}
+.seller-nav-sub ul li a {
+  display: block;
+  float: left;
+  border-radius: 0.08rem;
+  color: #333333;
+  text-align: center;
+  line-height: 0.77333333rem;
+  border: #F5F5F5 solid 1px;
+  margin-right: 0.24rem;
+  width: 48%;
+}
+[data-dpr="1"] .seller-nav-sub ul li a {
+  font-size: 13px;
+}
+[data-dpr="2"] .seller-nav-sub ul li a {
+  font-size: 26px;
+}
+[data-dpr="3"] .seller-nav-sub ul li a {
+  font-size: 39px;
+}
+.seller-nav-sub ul li a.seller-dbsel {
+  background: none;
+  border: 1px solid #818D9A;
+  border-radius: 0.06666667rem;
+  color: #818D9A;
+  width: 2.8rem;
+  height: 0.8rem;
+  float: left;
+}
+[data-dpr="1"] .seller-nav-sub ul li a.seller-dbsel {
+  font-size: 13px;
+}
+[data-dpr="2"] .seller-nav-sub ul li a.seller-dbsel {
+  font-size: 26px;
+}
+[data-dpr="3"] .seller-nav-sub ul li a.seller-dbsel {
+  font-size: 39px;
+}
+.seller-nav-sub ul li a.seller-dbsel.active {
+  border: 1px solid #FF6D02;
+  border-radius: 0.06666667rem;
+  color: #FF6D02;
+  width: 2.8rem;
+  height: 0.8rem;
+  float: left;
+}
+[data-dpr="1"] .seller-nav-sub ul li a.seller-dbsel.active {
+  font-size: 13px;
+}
+[data-dpr="2"] .seller-nav-sub ul li a.seller-dbsel.active {
+  font-size: 26px;
+}
+[data-dpr="3"] .seller-nav-sub ul li a.seller-dbsel.active {
+  font-size: 39px;
+}
+.seller-nav-sub ul li a.seller-dbse-f {
+  background: none;
+  border: 1px solid #818D9A;
+  border-radius: 0.06666667rem;
+  color: #818D9A;
+  width: 49%;
+  height: 0.8rem;
+  float: left;
+  margin: 0;
+}
+[data-dpr="1"] .seller-nav-sub ul li a.seller-dbse-f {
+  font-size: 13px;
+}
+[data-dpr="2"] .seller-nav-sub ul li a.seller-dbse-f {
+  font-size: 26px;
+}
+[data-dpr="3"] .seller-nav-sub ul li a.seller-dbse-f {
+  font-size: 39px;
+}
+.seller-nav-sub ul li a.seller-dbse-f.active {
+  border: 1px solid #FF6D02;
+  border-radius: 0.06666667rem;
+  color: #FF6D02;
+  width: 49%;
+  height: 0.8rem;
+  float: left;
+  margin: 0;
+}
+[data-dpr="1"] .seller-nav-sub ul li a.seller-dbse-f.active {
+  font-size: 13px;
+}
+[data-dpr="2"] .seller-nav-sub ul li a.seller-dbse-f.active {
+  font-size: 26px;
+}
+[data-dpr="3"] .seller-nav-sub ul li a.seller-dbse-f.active {
+  font-size: 39px;
+}
+.seller-nav-sub ul li a.seller-dbse-l {
+  background: none;
+  border: 1px solid #818D9A;
+  border-radius: 0.06666667rem;
+  color: #818D9A;
+  height: 0.8rem;
+  float: right;
+  margin: 0;
+}
+[data-dpr="1"] .seller-nav-sub ul li a.seller-dbse-l {
+  font-size: 13px;
+}
+[data-dpr="2"] .seller-nav-sub ul li a.seller-dbse-l {
+  font-size: 26px;
+}
+[data-dpr="3"] .seller-nav-sub ul li a.seller-dbse-l {
+  font-size: 39px;
+}
+.seller-nav-sub ul li a.seller-dbse-l.active {
+  border: 1px solid #FF6D02;
+  border-radius: 0.06666667rem;
+  color: #FF6D02;
+  height: 0.8rem;
+  float: right;
+  margin: 0;
+}
+[data-dpr="1"] .seller-nav-sub ul li a.seller-dbse-l.active {
+  font-size: 13px;
+}
+[data-dpr="2"] .seller-nav-sub ul li a.seller-dbse-l.active {
+  font-size: 26px;
+}
+[data-dpr="3"] .seller-nav-sub ul li a.seller-dbse-l.active {
+  font-size: 39px;
+}
+.carlist-ul-horizontal .add-spokesman {
+  margin: 0;
+  width: 10rem;
+  height: 4.26666667rem;
+}
+.carlist-ul-horizontal .add-spokesman img {
+  width: 100%;
+}
+.carlist-ul-horizontal .add-spokesman a {
+  position: absolute;
+  padding: 0;
+  right: 1.46666667rem;
+  bottom: 0.4rem;
+  width: 3.2rem;
+  min-height: 1.09333333rem;
+}
+.new-tract {
+  padding: 0.16rem 0.4rem 0;
+}
+.new-tract .tra-span {
+  line-height: 0.74666667rem;
+}
+.post-re {
+  position: relative;
+  height: auto;
+  border-bottom: 1px solid #ececec;
+}
+.post-re .track-div {
+  overflow: auto;
+}
+.post-re .trackul {
+  white-space: normal;
+}
+.trackul li {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 0.21333333rem;
+}
+.new-tract .trackul li {
+  line-height: 0.8rem;
+  height: 0.8rem;
+  margin-bottom: 0.16rem;
+  background-color: #F8F8F8;
+  border-radius: 0.06666667rem;
+  float: left;
+  margin-right: 0.26666667rem;
+}
+.trackul li a {
+  display: inline-block;
+  padding: 0 0.26666667rem;
+  padding-right: 0.46666667rem;
+  line-height: 0.53333333rem;
+  text-align: center;
+  color: #666;
+  border-radius: 0.53333333rem;
+  -webkit-border-radius: 0.53333333rem;
+  -moz-border-radius: 0.53333333rem;
+}
+[data-dpr="1"] .trackul li a {
+  font-size: 12px;
+}
+[data-dpr="2"] .trackul li a {
+  font-size: 24px;
+}
+[data-dpr="3"] .trackul li a {
+  font-size: 36px;
+}
+.new-tract .trackul li a {
+  border-radius: 0.08rem;
+  -webkit-border-radius: 0.08rem;
+  -moz-border-radius: 0.53333333rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  overflow: hidden;
+  position: relative;
+}
+[data-dpr="1"] .new-tract .trackul li a {
+  font-size: 14px;
+}
+[data-dpr="2"] .new-tract .trackul li a {
+  font-size: 28px;
+}
+[data-dpr="3"] .new-tract .trackul li a {
+  font-size: 42px;
+}
+.new-tract .trackul li a b {
+  max-width: 2.4rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+  float: left;
+  color: #2F3540;
+  line-height: 0.8rem;
+}
+[data-dpr="1"] .new-tract .trackul li.double11-list a.selected {
+  font-size: 13px;
+}
+[data-dpr="2"] .new-tract .trackul li.double11-list a.selected {
+  font-size: 26px;
+}
+[data-dpr="3"] .new-tract .trackul li.double11-list a.selected {
+  font-size: 39px;
+}
+.new-tract .trackul li.double11-list a.selected em {
+  margin-left: 0.21333333rem;
+  background-size: 0.24rem auto;
+  width: 0.24rem;
+  height: 0.24rem;
+}
+.new-tract .trackul li.double11-list a.next-selected {
+  border: 1px solid #FF3500;
+  border-radius: 0.08rem;
+  color: #FF3500;
+  background: #F5F5F5;
+  line-height: 0.69333333rem;
+}
+.mar50 {
+  margin-right: 100px !important;
+}
+.track-del {
+  width: 1.2rem;
+  height: 0.8rem;
+  position: absolute;
+  right: 0.4rem;
+  top: 0.18666667rem;
+  line-height: 0.8rem;
+  text-align: right;
+  font-size: 0.34666667rem;
+  color: #818D9A;
+  background: url(//image.bitautoimg.com/taoche/2018_m_usedcar/delete.png) no-repeat 0 center;
+  background-size: 0.4rem 0.37333333rem;
+}
+[data-dpr="1"] .track-del {
+  line-height: 0.93333333rem;
+}
+.track-del a {
+  display: block;
+  color: #818D9A;
+}
+.icon-qingkong {
+  /* background:url(//image.bitautoimg.com/taoche/2018_m_usedcar/delete.png) 0 0;
+	background-size:30/@r 28/@r;
+	width:30/@r;
+	height:29/@r;
+	position:absolute;
+	top:11/@r;
+	left:12/@r; */
+}
+.new-tract .trackul li .icon-close-01 {
+  background: url(//image.bitautoimg.com/taoche/2018_m_usedcar/close_changgui.png) no-repeat center center;
+  background-size: 50% 50%;
+  width: 0.48rem;
+  height: 0.48rem;
+  position: absolute;
+  top: 0.16rem;
+  right: 0;
+}
+.ui-loading {
+  width: 0.48rem;
+  height: 0.4rem;
+  display: inline-block;
+  vertical-align: -0.13333333rem;
+  margin-right: 0.08rem;
+  color: #666;
+  background: url(http://image.bitautoimg.com/taoche/2016taoche_m/loading.png);
+  background-size: 0.48rem auto;
+  animation: 1000ms linear 0s normal none infinite running refreshing-loader;
+  -webkit-animation: 1000ms linear 0s normal none infinite running refreshing-loader;
+  -moz-animation: 1000ms linear 0s normal none infinite running refreshing-loader;
+  vertical-align: middle;
+}
+[data-dpr="1"] .ui-loading {
+  font-size: 14px;
+}
+[data-dpr="2"] .ui-loading {
+  font-size: 28px;
+}
+[data-dpr="3"] .ui-loading {
+  font-size: 42px;
+}
+.no_content {
+  padding-top: 1.52rem;
+  padding-bottom: 1.49333333rem;
+  text-align: center;
+  border-bottom: 1px solid #E5E5E5;
+}
+.no_content p {
+  margin-top: 0.53333333rem;
+  color: #818D9A;
+  line-height: 0.44rem;
+}
+[data-dpr="1"] .no_content p {
+  font-size: 12px;
+}
+[data-dpr="2"] .no_content p {
+  font-size: 24px;
+}
+[data-dpr="3"] .no_content p {
+  font-size: 36px;
+}
+.re_load {
+  width: 2.8rem;
+  height: 0.93333333rem;
+  display: block;
+  margin: 0 auto;
+  color: #2F3540;
+  min-height: 0;
+  padding: 0;
+  line-height: 0.93333333rem;
+  border-radius: 0.06666667rem;
+  border: 1px solid #818D9A;
+  margin-top: 0.66666667rem;
+}
+[data-dpr="1"] .re_load {
+  font-size: 13px;
+}
+[data-dpr="2"] .re_load {
+  font-size: 26px;
+}
+[data-dpr="3"] .re_load {
+  font-size: 39px;
+}
+.mark {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  transform: translateZ(1010px);
+  display: none;
+}
+.pop-wrap-down {
+  position: fixed;
+  top: 11%;
+  z-index: 100004;
+  transform: translateZ(100004px);
+  width: 100%;
+  display: none;
+}
+.pop-inner-down {
+  width: 7.46666667rem;
+  height: 9.62666667rem;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 0.16rem;
+}
+.pop-tle-down {
+  width: 100%;
+  height: 3.8rem;
+  background: url(//image.bitautoimg.com/taoche/2018_m_usedcar/pop-tle-down.png) no-repeat 0 0;
+  background-size: 100% 3.8rem;
+}
+.pop-desc-down {
+  width: auto;
+  height: 1.06666667rem;
+  margin: 0.45333333rem auto 0.4rem;
+  text-align: center;
+}
+.pop-desc-down p {
+  line-height: 0.53333333rem;
+  color: #666;
+}
+[data-dpr="1"] .pop-desc-down p {
+  font-size: 13px;
+}
+[data-dpr="2"] .pop-desc-down p {
+  font-size: 26px;
+}
+[data-dpr="3"] .pop-desc-down p {
+  font-size: 39px;
+}
+.pop-list-down {
+  padding: 0 0.33333333rem;
+  overflow: hidden;
+  margin-right: -0.2rem;
+}
+.pop-list-down li {
+  width: 22%;
+  float: left;
+  text-align: center;
+  margin-right: 0.2rem;
+}
+.pop-list-down li p {
+  color: #666;
+  padding-top: 1.26666667rem;
+}
+[data-dpr="1"] .pop-list-down li p {
+  font-size: 10px;
+}
+[data-dpr="2"] .pop-list-down li p {
+  font-size: 20px;
+}
+[data-dpr="3"] .pop-list-down li p {
+  font-size: 30px;
+}
+.pop-list-down li p.car-source {
+  background: url(//image.bitautoimg.com/taoche/2018_m_usedcar/car-source.png) no-repeat center 0;
+  background-size: 1.06666667rem 1.06666667rem;
+}
+.pop-list-down li p.accurate-delivery {
+  background: url(//image.bitautoimg.com/taoche/2018_m_usedcar/accurate-delivery.png) no-repeat center 0;
+  background-size: 1.06666667rem 1.06666667rem;
+}
+.pop-list-down li p.professional-service {
+  background: url(//image.bitautoimg.com/taoche/2018_m_usedcar/professional-service.png) no-repeat center 0;
+  background-size: 1.06666667rem 1.06666667rem;
+}
+.pop-list-down li p.easy-car {
+  background: url(//image.bitautoimg.com/taoche/2018_m_usedcar/easy-car.png) no-repeat center 0;
+  background-size: 1.06666667rem 1.06666667rem;
+}
+.pop-down-btn {
+  display: block;
+  width: 6.4rem;
+  height: 1.2rem;
+  margin: 0 auto;
+  background: #FF6402;
+  color: #fff;
+  border-radius: 0.06666667rem;
+  line-height: 1.2rem;
+  text-align: center;
+  margin-top: 0.53333333rem;
+}
+[data-dpr="1"] .pop-down-btn {
+  font-size: 16px;
+}
+[data-dpr="2"] .pop-down-btn {
+  font-size: 32px;
+}
+[data-dpr="3"] .pop-down-btn {
+  font-size: 48px;
+}
+.pop-close {
+  position: absolute;
+  left: 50%;
+  bottom: -2.13333333rem;
+  width: 1.2rem;
+  height: 1.22666667rem;
+  margin-left: -0.6rem;
+  background: url(//image.bitautoimg.com/taoche/2018_m_usedcar/pop-close-btn.png) no-repeat 0 0;
+  background-size: 1.2rem 1.2rem;
+}
+.new-navlist {
+  min-height: 0.53333333rem;
+  background: #ffffff;
+  line-height: 0.53333333rem;
+  color: #999999;
+  padding: 0.26666667rem 0.4rem;
+  border-top: 1px solid #ECECEC;
+}
+.new-navlist a {
+  color: #999999;
+  letter-spacing: -0.00773333rem;
+}
+[data-dpr="1"] .new-navlist a {
+  font-size: 12px;
+}
+[data-dpr="2"] .new-navlist a {
+  font-size: 24px;
+}
+[data-dpr="3"] .new-navlist a {
+  font-size: 36px;
+}
+.add-line {
+  width: 100%;
+  height: 0.26666667rem;
+  background: #F8F8F8;
+}
+.new-ambitus {
+  width: 100%;
+}
+.ambitus-nav {
+  height: 1.06666667rem;
+  border-bottom: #F6F6F6 solid 1px;
+  text-align: center;
+}
+.ambitus-nav span {
+  width: 30%;
+  height: 1.09333333rem;
+  display: inline-block;
+}
+[data-dpr="1"] .ambitus-nav span {
+  font-size: 14px;
+}
+[data-dpr="2"] .ambitus-nav span {
+  font-size: 28px;
+}
+[data-dpr="3"] .ambitus-nav span {
+  font-size: 42px;
+}
+.ambitus-nav span a.sel-item {
+  color: #FF6D02;
+  border-bottom: #ff6c02 solid 0.05333333rem;
+}
+.ambitus-nav span a {
+  display: inline-block;
+  height: 1.09333333rem;
+  line-height: 1.09333333rem;
+  color: #999999;
+  padding: 0 0.66666667rem;
+}
+.ambitus-box {
+  padding: 0.53333333rem;
+  overflow: hidden;
+}
+.ambitus-box a {
+  width: 45%;
+  line-height: 0.98666667rem;
+  height: 0.98666667rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  float: left;
+  color: #818D9A;
+}
+[data-dpr="1"] .ambitus-box a {
+  font-size: 12px;
+}
+[data-dpr="2"] .ambitus-box a {
+  font-size: 24px;
+}
+[data-dpr="3"] .ambitus-box a {
+  font-size: 36px;
+}
+.ambitus-box a:nth-of-type(even) {
+  float: right;
+}
+.add-advert {
+  position: relative;
+}
+.adv-close-btn {
+  position: absolute;
+  top: 0.18666667rem;
+  right: 0.33333333rem;
+  width: 0.49333333rem;
+  height: 0.4rem;
+  background: url(//image.bitautoimg.com/taoche/2018_m_usedcar/adv-close.png) no-repeat 0 0;
+  background-size: 0.49333333rem 0.4rem;
+}
+.fewer-cars-txt {
+  line-height: 0.93333333rem;
+  height: 0.93333333rem;
+  text-align: center;
+  color: #818D9A;
+  background: #F9F9F9;
+}
+[data-dpr="1"] .fewer-cars-txt {
+  font-size: 13px;
+}
+[data-dpr="2"] .fewer-cars-txt {
+  font-size: 26px;
+}
+[data-dpr="3"] .fewer-cars-txt {
+  font-size: 39px;
+}
+.cars-bottom {
+  text-align: center;
+  height: 1.33333333rem;
+  line-height: 1.33333333rem;
+  background: #F8F8F8;
+  color: #B0B3B4;
+}
+.cars-txt {
+  position: relative;
+  display: inline-block;
+}
+.cars-left {
+  position: absolute;
+  top: 50%;
+  left: -1.86666667rem;
+  width: 1.6rem;
+  height: 0;
+  border-top: 1px solid #c4c4c4;
+}
+.cars-right {
+  position: absolute;
+  top: 50%;
+  right: -1.86666667rem;
+  width: 1.6rem;
+  height: 0;
+  border-top: 1px solid #c4c4c4;
+}
+.borb0 {
+  border-bottom: 0!important;
+}
+.btm-box {
+  padding: 0 0.53333333rem;
+}
+.btm-line {
+  border-bottom: 1px solid #E5E5E5;
+}
+.h100 {
+  width: 100%;
+  height: 1.33333333rem;
+  clear: both;
+}
