@@ -4,7 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store/index.js';
-
+var Mock=require('mockjs');
+console.log(Mock)
+var data = Mock.mock({
+    'list|1-10': [{
+        'id|+1': 1
+    }]
+});
+console.log(Mock.Random)
+console.log(data)
 
 Vue.config.productionTip = false
 

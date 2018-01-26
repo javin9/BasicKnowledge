@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>中序遍历的算法原理</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function BinaryTree() {
+        function Node(key) {
+            this.key = key;
+            this.left = null;
+            this.right = null;
+        }
+
+        var root = null;
+        this.insert = function(key) {
+            var newNode = new Node(key);
+            if (root === null) {
+                root = newNode;
+            } else {
+                insertNode(root, newNode);
+            }
+        }
+
+        function insertNode(node, newNode) {
+            if (node.key > newNode.key) {
+                //放到左侧
+                if (node.left === null) {
+                    node.left = newNode;
+                } else {
+                    insertNode(node.left, newNode);
+                }
+            } else {
+                //放到右侧
+                if (node.right === null) {
+                    node.right = newNode;
+                } else {
+                    insertNode(node.right, newNode);
+                }
+            }
+        }
+
+        /*中序遍历 从小到大*/
+        this.inOrderTraverse = function(callback) {
+            inOrderTraverseNode(root, callback);
+        }
+
+        function inOrderTraverseNode(node, callback) {
+            if (node !== null) {
+                inOrderTraverseNode(node.left, callback);
+                callback(node.key);
+                inOrderTraverseNode(node.right, callback);
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>

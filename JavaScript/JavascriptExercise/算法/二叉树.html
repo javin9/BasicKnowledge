@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    /*
+   思路：创建节点 判断左侧节点  判断右侧节点
+    */
+    function BinaryTree() {
+        /*建模的思想*/
+        function Node(key) {
+            this.key = key;
+            this.left = null;
+            this.right = null;
+        }
+
+        var root = null;
+        this.insert = function(key) {
+            var newNode = new Node(key);
+            if (root === null) {
+                root = newNode;
+            } else {
+                insertNode(root, newNode);
+            }
+        }
+
+        function insertNode(node, newNode) {
+            if (node.key > newNode.key) {
+                //放到左侧
+                if (node.left === null) {
+                    node.left = newNode;
+                } else {
+                    insertNode(node.left, newNode);
+                }
+            } else {
+                //放到右侧
+                if (node.right === null) {
+                    node.right = newNode;
+                } else {
+                    insertNode(node.right, newNode);
+                }
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>

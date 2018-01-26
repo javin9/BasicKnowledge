@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>递归算法</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function sort(inputArr) {
+			if(inputArr.length<=1)
+			{
+				return inputArr;
+			}
+			var middleNumPosition=Math.floor(inputArr/2);
+			var middleNum=inputArr.slice(middleNumPosition,1);//数组中 已经没有中间这个值了
+			var left=[];
+			var right=[];
+			for(var k = 0, length3 = inputArr.length; k < length3; k++){
+				var item=inputArr[i];
+				if (item<middleNum) {
+					left.push(item);
+				    console.log(left);
+				}else {
+					right.push(item);
+					console.log(right);
+				}
+			}
+
+			return sort(left).concat([middleNum],sort(right));
+
+		}
+		console.log(sort[5,2,4,6,13,8])
+	</script>
+</body>
+</html>
