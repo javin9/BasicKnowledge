@@ -48,12 +48,83 @@
             inOrderTraverseNode(root, callback);
         }
 
+
         function inOrderTraverseNode(node, callback) {
             if (node !== null) {
                 inOrderTraverseNode(node.left, callback);
                 callback(node.key);
                 inOrderTraverseNode(node.right, callback);
             }
+        }
+
+        /*前序遍历 复制节点*/
+        this.preOrderTraverse = function(callback) {
+            preOrderTraverse(root, callback);
+        }
+
+        function preOrderTraverse(node, callback) {
+            if (node !== null) {
+                callback(node.key);
+                preOrderTraverse(node.left, callback);
+                preOrderTraverse(node.right, callback);
+            }
+        }
+        /*后续遍历 操作系统遍历文件夹*/
+        this.postOrderTraverse(callback) {
+            postpreOrderTraverse(root, callback);
+        }
+
+        function postpreOrderTraverse(node, callback) {
+            if (node !== null) {
+                postpreOrderTraverse(node.left);
+                postpreOrderTraverse(node.right);
+                callback(node.key);
+            }
+        }
+        this.min = function() {
+            return min(root);
+        }
+
+        function min(node) {
+            if (node) {
+                while (!!node && node.left !== null) {
+                    node = node.left;
+                }
+                return node.key;
+            }
+            return null;
+
+        }
+
+        this.max = function() {
+            max(root);
+        }
+
+        function max(node) {
+            if (node) {
+                while (!!node && node.right !== null) {
+                    node = node.right;
+                }
+                return node.key;
+            }
+            return null;
+
+        }
+        this.getItem = function(item) {
+            getItem(root, item);
+        }
+
+        function getItem(node, item) {
+            if (node !== null) {
+                if (item === node.key) {
+                    return true;
+                } else if (node.key > item) {
+                    getItem(node.left, item);
+                } else if (node.key < item) {
+                    getItem(node.right, item);
+                }
+            }
+
         }
     }
     </script>

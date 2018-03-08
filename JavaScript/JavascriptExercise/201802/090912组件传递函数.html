@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <child-todo :parameter="param" :callback="callbackP"></child-todo>
+    </div>
+    <script type="text/javascript" src="../../js/lib/vue.js"></script>
+    <script type="text/javascript">
+    Vue.component('child-todo', {
+        template: '<div  @click="add">ABC</div>',
+        data() {
+            return {
+
+            }
+        },
+        props: {
+            parameter: {
+                type: String,
+                default: '请输入正确的验证码'
+            },
+            callback: {
+                type: Function,
+                default: function() {
+                    console.log('default')
+                }
+            }
+        },
+        methods: {
+            add() {
+                console.log(this.parameter);
+                this.callback('你点击了组组件');
+            }
+        }
+    });
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            param: 'this is parent param',
+            callbackP: function(msg) {
+                console.log(msg)
+            }
+        },
+        methods: {
+            add2() {
+
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>

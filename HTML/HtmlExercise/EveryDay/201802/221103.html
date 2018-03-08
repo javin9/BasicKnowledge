@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../../../common/css/reset.css">
+    <style type="text/css">
+    .wrapper {
+        display/*:*/
+        table;
+    }
+    .outer {
+        margin: 0 auto;
+        width: 300px;
+        height: 300px;
+        background: red;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .inner {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        /*vertical-align: middle;*/
+        background: blue;
+    }
+    .outer-big {
+        height: 600px;
+        background: red;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .wrapper{
+    	display:table;
+    	width:600px;
+    	width:600px;
+    }
+    .outer3 {
+        width: 60%;
+        height: 60%;
+        background-color: red;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .outer3 div {
+        height: 200px;
+        border: 1px solid #000;
+    }
+    .qq{
+    	width:200px;
+    	height:200px;
+    }
+    .abs{
+    	display:inline-block;
+    	width:50%;
+    	height:50%;
+    	background-color: red;
+    }
+    </style>
+</head>
+
+<body>
+    <p>
+        table-cell同样会被其他一些CSS属性破坏，例如float, position:absolute，所以，在使用display:table-cell与float:left或是position:absolute属性尽量不用同用。设置了display:table-cell的元素对宽度高度敏感，对margin值无反应，响应padding属性，基本上就是活脱脱的一个td标签元素了
+    </p>
+    <h1>====================</h1>
+    <p>outer display: table-cell;vertical-align: middle;实现里面的元素标签垂直居中 </p>
+    <div class="outer">
+        <div class="inner">innder</div>
+    </div>
+    <h2>==========</h2>
+    <div class="outer-big">
+        <img src="../../伸缩相册/images/pic1.png">
+    </div>
+    <h1>====================</h1>
+    <div class="wrapper">
+        <div class="outer3">
+            <div>
+                Demo
+            </div>
+        </div>
+    </div>
+     <h1>====================</h1>
+     <div class="qq">
+     	<a href="#" class="abs">123123</a>
+     </div>
+</body>
+
+</html>

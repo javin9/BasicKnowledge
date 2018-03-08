@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>三蓝双飞翼布局</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .wrap {
+        width: 900px;
+        margin:0 auto;
+        overflow:hidden;
+    }
+    .wrap>div{
+        float: left;
+    }
+    .main {
+        width: 100%;
+        background-color: red;
+    }
+    .left {
+        width: 200px;
+        height: 500px;
+        background: #abc;
+        margin-left:-100%;
+    }
+    .right {
+        width: 200px;
+        height: 500px;
+        background: green;
+        margin-left:-200px;
+    }
+    .content {
+        height: 500px;
+    }
+    </style>
+</head>
+
+<body>
+    <section class="wrap">
+       <div class="main">
+            <div class="content"></div>
+        </div>
+        <div class="left"></div>
+        <div class="right"></div>
+         
+    </section>
+</body>
+
+</html>

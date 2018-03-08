@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>window.requestAnimationFrame</title>
+    <style type="text/css">
+    html,
+    body {
+        position: relative;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        top: 100px;
+        background-color: red;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+    <script type="text/javascript">
+    window.onload = function() {
+        var ele = document.querySelector('.box');
+        var start = null;
+        console.log(ele.offsetLeft);
+        console.log(ele.offsetTop);
+        var left = 0;
+
+        function move(timeStamp) {
+            console.log(timeStamp);
+            if (!start) {
+                start = timeStamp;
+            }
+            var progress = timeStamp - start;
+            // left += 10;
+            ele.style.left = Math.min(progress / 10, 200) + 'px';
+            if (progress < 2000) {
+                window.requestAnimationFrame(move)
+            }
+            else {
+            	window.cancelAnimationFrame(move)
+            }
+        }
+        window.requestAnimationFrame(move)
+    }
+    </script>
+</body>
+
+</html>

@@ -9,37 +9,35 @@
     <div style="margin:20px;backgroun:red;" v-customdir="{'name':'cupid','css':'margin:50px;background:blue;'}"></div>
   </div>
 </template>
-
-
 <script>
 import HeaderCustom from './components/header.vue';
 
 
 export default {
-name: 'app',
-components:{
-  HeaderCustom:HeaderCustom
-},
-data:function (argument) {
- return {
-   headercustom:'header-custom'
- }
-},
-directives:{
-  customdir:{
-    inserted:function (el,bind) {
-      var valueObj=bind.value;
-      el.innerText=valueObj.name;
-      el.style.cssText=valueObj.css;
-    },
-    // inserted:function () {
-    //   /* body... */
-    // }
+  name: 'app',
+  components: {
+    HeaderCustom: HeaderCustom
+  },
+  data: function(argument) {
+    return {
+      headercustom: 'header-custom'
+    }
+  },
+  directives: {
+    customdir: {
+      inserted: function(el, bind) {
+        var valueObj = bind.value;
+        el.innerText = valueObj.name;
+        el.style.cssText = valueObj.css;
+      },
+      // inserted:function () {
+      //   /* body... */
+      // }
+    }
   }
 }
-}
-</script>
 
+</script>
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -49,4 +47,5 @@ directives:{
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>
