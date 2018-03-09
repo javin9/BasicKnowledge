@@ -27,6 +27,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /*service-section*/
 
 .service-section {
@@ -142,7 +154,84 @@
         font-size: 28/@r;
         color: #fff;
     }
-    .split{
-    	padding:0 10/@r;
+    .split {
+        padding: 0 10/@r;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*linkme-layer*/
+
+.linkme-layer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    margin-left: -282/@r;
+    margin-top: -250/@r;
+    width: 565/@r;
+    height: 500/@r;
+    
+    .link-way {
+        width: 100%;
+        height: 330/@r;
+        background: #fff;
+        border-radius: 10/@r;
+        -webkit-border-radius: 10/@r;
+        h4 {
+            height: 100/@r;
+            line-height: 100/@r;
+            text-align: center;
+            font-size: 28/@r;
+            font-weight: bold;
+            color: #161312;
+        }
+        p {
+            height: 75/@r;
+            line-height: 75/@r;
+            text-align: center;
+            font-size: 24/@r;
+            color: #6e6e6e;
+            i{
+                padding-right:30/@r;
+                font-size:24/@r;
+            }
+        }
+    }
+    .close {
+        margin: 0 auto;
+        margin-top: 70/@r;
+        width: 80/@r;
+        height: 80/@r;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.cover {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #000;
+    opacity: 0.8;
+}
+.oper{
+    display:none;
 }

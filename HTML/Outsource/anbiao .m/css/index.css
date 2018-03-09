@@ -117,3 +117,63 @@
 .copyright-section .split {
   padding: 0 0.2rem;
 }
+/*linkme-layer*/
+.linkme-layer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  margin-left: -5.64rem;
+  margin-top: -5rem;
+  width: 11.3rem;
+  height: 10rem;
+}
+.linkme-layer .link-way {
+  width: 100%;
+  height: 6.6rem;
+  background: #fff;
+  border-radius: 0.2rem;
+  -webkit-border-radius: 0.2rem;
+}
+.linkme-layer .link-way h4 {
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  font-size: 0.56rem;
+  font-weight: bold;
+  color: #161312;
+}
+.linkme-layer .link-way p {
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  font-size: 0.48rem;
+  color: #6e6e6e;
+}
+.linkme-layer .link-way p i {
+  padding-right: 0.6rem;
+  font-size: 0.48rem;
+}
+.linkme-layer .close {
+  margin: 0 auto;
+  margin-top: 1.4rem;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.linkme-layer .close img {
+  width: 100%;
+  height: 100%;
+}
+.cover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #000;
+  opacity: 0.8;
+}
+.oper {
+  display: none;
+}

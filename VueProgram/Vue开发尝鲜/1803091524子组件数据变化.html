@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/javascript">
+    Vue.component("child", {
+        props: {
+            message: String
+        },
+        data() {
+            return {
+                newMsg: this.message
+            }
+        },
+        template: "<div><p>{{message}}</p><p>{{newMsg}}</p></div>",
+        watch: {
+            message(newValue, oldValue) {
+                this.newMsg = this.message;
+            }
+        }
+    });
+    new Vue({
+        el: "#app",
+        data: {
+            msg: ""
+        },
+        template: '<div><input type = "text" v-model = "msg" ><child :message="msg"></child></div>',
+        component: {
+
+        }
+    });
+    </script>
+</body>
+
+</html>

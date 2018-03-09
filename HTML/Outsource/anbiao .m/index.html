@@ -7,6 +7,7 @@
     <title>飞个镖，挣个钱</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="font/iconfont.css">
     <script type="text/javascript">
     (function(argument) {
         var html = document.documentElement;
@@ -154,8 +155,30 @@
         </ul>
     </div>
     <div class="copyright-section">
-        <a href="#">隐私条款</a><a href="#" class="split">|</a><a href="#">联系我们</a>
+        <a href="copyright.html">隐私条款</a><a href="javascript:;" class="split">|</a><a href="javascript:;" id="linkme">联系我们</a>
     </div>
+    <div class="linkme-layer  oper" id="layer">
+        <div class="link-way">
+            <h4>联系我们</h4>
+            <p class="email"><i class="iconfont icon-youxiang"></i>E-Mail: anbiao@baui.cn</p>
+            <p class="mobile"><i class="iconfont icon-dianhua"></i>电话：<a href="tel:(86)10-66501688">(86)10-66501688</a></p>
+        </div>
+        <div class="close">
+            <img src="images/close.png" id="close">
+        </div>
+    </div>
+    <div class="cover oper"></div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $("#linkme").click(function() {
+            $(".oper").show();
+        });
+        $("#close").click(function() {
+            $(".oper").hide();
+        });
+    });
+    </script>
 </body>
 
 </html>
