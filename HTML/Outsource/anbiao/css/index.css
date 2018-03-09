@@ -25,6 +25,14 @@
 
 
 
+
+
+
+
+
+
+
+
 /*banner*/
 
 .top-banner img {
@@ -48,7 +56,6 @@
 
 
 
-
 /*service-section*/
 
 .service-section {
@@ -59,11 +66,25 @@
 
 .service-section ul li {
     position: relative;
+    border-radius: 5px;
+    -webkit-border-raduis: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
     width: 540px;
     height: 550px;
     float: left;
     cursor: pointer;
     overflow: hidden;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+.service-section ul li:hover {
+    box-shadow: 0 1px 9px rgba(0, 0, 0, .3);
+    // transform: scale(1.025, 1.025);
+    // -webkit-transform: scale(1.025, 1.025);
+    z-index: 1
 }
 .service-section ul .left-service {
     margin-right: 120px;
@@ -126,14 +147,6 @@
 
 
 
-
-
-
-
-
-
-
-
 /*operation-section*/
 
 .operation-section {
@@ -144,11 +157,21 @@
 .operation-section li {
     float: left;
     width: 240px;
+     transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
 }
 .operation-section li .img-container {
     width: 100%;
     height: 162px;
     padding-top: 16px;
+}
+.operation-section li:hover {
+    box-shadow: 0 1px 9px rgba(0, 0, 0, .3);
+    transform: scale(1.025, 1.025);
+    -webkit-transform: scale(1.025, 1.025);
+    z-index: 1
 }
 .operation-section li dt {
     height: 100px;
@@ -161,15 +184,11 @@
     font-size: 16px;
     color: #161312;
     line-height: 40px;
+    padding:0 10px;
 }
 .operation-section li+li {
     margin-left: 80px;
 }
-
-
-
-
-
 
 
 
@@ -204,6 +223,16 @@
 .data-section li {
     width: 290px;
     float: left;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+.data-section li:hover {
+    box-shadow: 0 1px 9px rgba(0, 0, 0, .3);
+    transform: scale(1.025, 1.025);
+    -webkit-transform: scale(1.025, 1.025);
+    z-index: 1
 }
 .data-section li+li {
     margin-left: 165px;
@@ -241,11 +270,4 @@
 .copyright-section h2 .split {
     display: inline-block;
     margin: 0 30px;
-}
-
-.scale {
-    transform: scale(1.05);
-    -moz-transform: scale(1.05);
-    -webkit-transform: scale(1.05);
-    -o-transform: scale(1.05);
 }
