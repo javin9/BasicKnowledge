@@ -147,10 +147,18 @@
         </div>
     </div>
     <div class="copyright-section section">
-        <div class="w1200">
-            <h2><a href="#">隐私条款</a><a href="#" class="split">|</a><a href="#">联系我们</a></h2>
+        <div class="w1200 copyright-c">
+            <h2>
+            <a href="copyright.html">隐私条款</a><a href="javascript:;" class="split">|</a><a href="javascript:;" id="linkMe">联系我们</a>
+            </h2>
+            <div class="link-way" id="way" style="display: none;">
+                <h4>联系我们</h4>
+                <p class="email">E-Mail: anbiao@baui.cn</p>
+                <p class="mobile">电话：<a href="tel:(86)10-66501688">(86)10-66501688</a></p>
+            </div>
         </div>
     </div>
+    <div class="cover oper"></div>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
     $(function() {
@@ -162,7 +170,12 @@
                 $(this).removeClass('active');
             });
     });
-   
+    $("#linkMe").mouseenter(function() {
+            $("#way").show();
+        })
+        .mouseleave(function() {
+            $("#way").hide();
+        });
     </script>
 </body>
 

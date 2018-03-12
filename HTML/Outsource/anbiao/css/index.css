@@ -33,6 +33,13 @@
 
 
 
+
+
+
+
+
+
+
 /*banner*/
 
 .top-banner img {
@@ -52,6 +59,13 @@
     font-size: 50px;
     color: #161312;
 }
+
+
+
+
+
+
+
 
 
 
@@ -81,8 +95,7 @@
     -o-transition: all 0.5s;
 }
 .service-section ul li:hover {
-    box-shadow: 0 1px 9px rgba(0, 0, 0, .3);
-    // transform: scale(1.025, 1.025);
+    box-shadow: 0 1px 9px rgba(0, 0, 0, .3); // transform: scale(1.025, 1.025);
     // -webkit-transform: scale(1.025, 1.025);
     z-index: 1
 }
@@ -147,6 +160,13 @@
 
 
 
+
+
+
+
+
+
+
 /*operation-section*/
 
 .operation-section {
@@ -157,7 +177,7 @@
 .operation-section li {
     float: left;
     width: 240px;
-     transition: all 0.5s;
+    transition: all 0.5s;
     -moz-transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -184,11 +204,18 @@
     font-size: 16px;
     color: #161312;
     line-height: 40px;
-    padding:0 10px;
+    padding: 0 10px;
 }
 .operation-section li+li {
     margin-left: 80px;
 }
+
+
+
+
+
+
+
 
 
 
@@ -207,6 +234,13 @@
 .cooperation-section li+li {
     margin-left: 79px;
 }
+
+
+
+
+
+
+
 
 
 
@@ -270,4 +304,30 @@
 .copyright-section h2 .split {
     display: inline-block;
     margin: 0 30px;
+}
+.copyright-c {
+    position: relative;
+}
+
+.link-way {
+    position: absolute;
+    left: 55%;
+    bottom:60px;
+    width: 320px;
+    height: 210px;
+    background: #fff;
+    border-radius: 5px;
+    -weblit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.link-way h4 {
+    padding-top:35px;
+    font-size: 16px;
+    margin-bottom:20px;
+}
+.link-way p {
+    margin-bottom: 30px;
 }
