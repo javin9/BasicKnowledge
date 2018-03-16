@@ -6,7 +6,10 @@ Vue.use(Vuex);
 console.log(Vuex);
 let store = new Vuex.Store({
   state: {
-    count: 16
+    count: 16,
+    name:"Cupid",
+    age:18,
+    address:"北京市河东区"
   },
   getters: {
     filercontent(state) {
