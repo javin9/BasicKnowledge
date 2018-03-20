@@ -12,6 +12,33 @@
     </div>
     <script type="text/javascript" src="../../js/lib/vue.js"></script>
     <script type="text/javascript">
+    function Person() {
+        this.name = "cupid";
+    }
+
+    Person.prototype = {
+        name: "Cupid_Ext"
+    }
+
+    Function.prototype.getName = function() {
+        console.log("getName");
+    }
+    var p = new Person();
+    console.log(p.name);
+    console.log(p.getName);
+    /**/
+    var result=0;
+    function fn() {
+        return function(nu) {
+            result+=nu;
+            console.log(result);
+            return fn();
+        }
+    }
+    var g=fn();
+    g(1)(2)(3)(4);
+    </script>
+    <script type="text/javascript">
     Vue.component('child-todo', {
         template: '<div  @click="add">ABC</div>',
         data() {

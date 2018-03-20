@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>柯里化</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    // var curry = function(fn) {
+    //     var arg = [].slice.call(arguments, 1);
+    //     return function() {
+    //         var newArg = arg.concat([].slice.call(arguments));
+    //         return fn.apply(null, newArg);
+    //     }
+    // }
+    // var add = function(x) {
+    //     console.log(x);
+    // }
+
+    // function square(i) {
+    //     return i * i;
+    // }
+    // curry(add)(1)(2);
+    var curry = function(fn) {
+        //这里是需要复用的参数
+        var args = [].slice.call(arguments, 1); //剩余的参数
+        return function() {
+            //这里是自身参数
+            var innerArgs = [].slice.call(arguments);
+            //合并自身参数和复用的参数
+            var finalArgs = args.concat(innerArgs);
+            return fn.apply(null, finalArgs);
+        }
+    }
+    var add = function() {
+        var args = [].slice.call(arguments);
+        var sum = 0;
+        for (var i = 0; i < args.length; i++) {
+            sum += args[i];
+        }
+        return sum;
+    }
+    var curryAdd = curry(add, 3, 4, 5);
+    console.log(curryAdd(6, 7)) //结果为25,也可以传入单个参数
+
+
+
+    var add = function() {
+        var args = [].slice.call(arguments);
+        var sum = 0;
+        for (var i = 0; i < args.length; i++) {
+            sum += args[i];
+        }
+        return sum;
+    }
+    var curryDelay = function(fn) {
+        //复用的参数
+        var args = [].slice.call(arguments, 1);
+        //定义一个保存复用参数和自身参数的数组
+        var ary = args;
+        return function() {
+            //这里是自身参数              
+            if (arguments.length == 0) {
+                return fn.apply(null, ary);
+            } else {
+                ary = ary.concat([].slice.call(arguments));
+                console.log(ary);
+            }
+        }
+    }
+    var curryDelayAdd = curryDelay(add, 3, 4, 5);
+    curryDelayAdd(6); //ary为[3,4,5,6]
+    curryDelayAdd(7); //ary为[3,4,5,6,7]
+    curryDelayAdd(8); //ary为[3,4,5,6,7,8]
+    console.log(curryDelayAdd()); //结果33
+
+    var curryDelayExt = function(fn) {
+        //复用的参数
+        var args = [].slice.call(arguments, 1);
+        //定义一个保存复用参数和自身参数的数组
+        var ary = args;
+
+        function innerFn() {
+            //这里是自身参数              
+            if (arguments.length == 0) {
+                return fn.apply(null, ary);
+            } else {
+                ary = ary.concat([].slice.call(arguments));
+                console.log(ary);
+                return innerFn;
+            }
+        }
+
+        return innerFn;
+    }
+    var g = curryDelayExt(add);
+    g(1)(2)(3)();
+    </script>
+</body>
+
+</html>
