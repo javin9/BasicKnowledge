@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
 </head>
+
 <body>
-	<script type="text/javascript">
-		var str="<table class='MsoNormalTable' align='center' style='border-collapse:collapse;width:416.8000pt;margin-left:4.6500pt;mso-table-layout-alt:fixed;mso-padding-alt:0.7500pt 0.7500pt 0.7500pt 0.7500pt ;'>";
-		var reg=/width:[\w\W]*;/;
-		console.log(str.replace(reg,function () {
-			/* body... */
-		}))
-	</script>
+    <script type="text/javascript">
+    const a = {
+         'POST /softPhone-web/(.*)': 'http://192.168.148.176:8168/softPhone-web/'
+    };
+    const b = {
+         'POST /softPhone-web/123123': '123123'
+    }
+    const c = { ...b, ...a};
+    console.log(c);
+    </script>
 </body>
+
 </html>
