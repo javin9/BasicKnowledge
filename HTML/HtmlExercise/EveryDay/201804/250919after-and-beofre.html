@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.url-link:before{
+            content:attr(href); 
+		}
+		.url-link-1:before{
+			 content:"("attr(href)")"; 
+		}
+		h2:before{
+			content:url('../../Capture/img/box.png');
+		}
+		h2{
+			background:blue;
+		}
+	</style>
+</head>
+<body>
+  <a class="url-link" href="http://www.daxiong.com">Hello,Daxiong!</a>
+  <a class="url-link-1" href="http://www.daxiong.com">Hello,Daxiong!</a>
+  <h2>Hello,Daxiogn</h2>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>transform-origin</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .transition {
+        margin: 0 auto;
+        width: 100px;
+        height: 30px;
+        position: relative;
+        text-align: center;
+    }
+
+    .transition:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        transform: scale(0);
+        transform-origin: 100% 0;
+        transition: transform 0.5s;
+    }
+
+    .transition:hover:before {
+        transform: scale(1);
+        transform-origin: 0 0;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+        margin: 20px auto;
+        background: blue;
+        background: yellowgreen;
+        box-shadow: 0 0 0 10px #655,
+        0 0 0 15px deeppink,
+        0 2px 5px 15px rgba(0,0,0,.6);
+    }
+
+    .pin {
+        margin: 20px auto;
+        border-radius: 60px;
+        width: 60px;
+        height: 60px;
+        padding: 30px;
+        background: white;
+        box-shadow: 0 0 0 10px hsl(0, 100%, 50%) inset,
+        0 0 0 20px hsl(100, 100%, 50%) inset,
+        0 0 0 30px hsl(200, 100%, 50%) inset;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="transition">数据中心</div>
+    <div class="box"></div>
+    <div class="pin"></div>
+</body>
+
+</html>

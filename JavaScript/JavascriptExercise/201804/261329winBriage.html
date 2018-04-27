@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+    const eventList = ['camera', 'microphone', 'volume', 'start'];
+    const eventCallback = {
+        camera: function() {
+            console.log('camera');
+            return "volume";
+        },
+        volume: function() {
+            console.log('volume');
+             return "microphone";
+        },
+        start: function() {
+            console.log('start');
+            return "camera";
+        },
+        microphone: function() {
+            console.log('microphone');
+            return '0';
+        }
+    };
+
+    function detect(name){
+          return new Promise(function(resolve){
+            resolve(step);
+          });
+    }
+
+    // function check(step) {
+    //     return new Promise(resolve => {
+    //         step--;
+    //         console.log(step);
+    //         resolve(step);
+    //     });
+    // }
+
+    // async function step(num) {
+    //     if (num <= 0) {
+    //         return false;
+    //     }
+    //     var result = await check(num);
+    //     console.log(`result=${result}`);
+    //     step(result);
+    // }
+
+    // step(5);
+    </script>
+</body>
+
+</html>

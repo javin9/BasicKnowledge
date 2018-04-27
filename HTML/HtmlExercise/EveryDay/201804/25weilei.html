@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul,
+    li {
+        list-style: none;
+    }
+
+    ul {
+        overflow: hidden;
+    }
+
+    li {
+        position: relative;
+        float: left;
+        margin: 0 10px;
+        color: blue;
+    }
+
+    li:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 0;
+        height: 100%;
+        box-sizing: border-box;
+        border-bottom: 2px solid #000;
+        transition: all 0.3s;
+    }
+
+    li:hover:before {
+        left: 0;
+        width: 100%;
+    }
+
+    li:hover~li::before {
+        left: 0;
+    }
+    </style>
+</head>
+
+<body>
+ <input type="radio" name="voice" value="1">
+    <ul>
+        <li>不可思议的CSS</li>
+        <li>导航栏</li>
+        <li>光标小下划线跟随</li>
+        <li>PURE CSS</li>
+        <li>Nav Underline</li>
+    </ul>
+
+    <div class="outer">
+    	<div class="inner"></div>
+    </div>
+    
+</body>
+
+</html>

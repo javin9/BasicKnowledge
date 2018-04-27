@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .outer {
+        position: absolute;
+        margin: 200px auto;
+        height: 300px;
+        width: 300px;
+        background: red;
+    }
+
+    .inner {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 400px;
+        width: 400px;
+        background: blue;
+    }
+
+    .outer_before:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 400px;
+        width: 400px;
+        background:gray;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+    <!-- 
+       尝试目的：relative的外层元素，包不住内层的 absolute元素
+       如果包住了，可能,可能父级设置了overlofw：hidden；
+     -->
+   <!--  <div class="outer outer_before">
+        天王盖地虎
+    </div> -->
+</body>
+
+</html>

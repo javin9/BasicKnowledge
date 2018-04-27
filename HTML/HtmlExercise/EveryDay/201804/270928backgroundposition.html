@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    /*	.outer{
+			margin:30px auto;
+			width:200px;
+			height:200px;
+			background:url('../../../common/images/google_banner.png') no-repeat right bottom #58a;
+		}*/
+    /*.outer {
+        margin: 30px auto;
+        width: 200px;
+        height: 200px;
+        background: url('../../../common/images/google_banner.png') no-repeat right bottom #58a;
+        background-position:right 20px bottom 20px;
+    }*/
+    /*  .outer {
+        margin: 30px auto;
+        width: 200px;
+        height: 200px;
+        background: url('../../../common/images/google_banner.png') no-repeat right bottom #58a;
+        background-position: right 20px bottom 20px;
+    }*/
+    /*.outer{
+			margin:30px auto;
+			padding:20px;//添加
+			width:200px;
+			height:200px;
+			background:url('../../../common/images/google_banner.png') no-repeat right bottom #58a;
+            background-origin:content-box;//默认是padding-box
+		}*/
+
+    .outer {
+        margin: 30px auto;
+        width: 200px;
+        height: 200px;
+        background: url('../../../common/images/google_banner.png') no-repeat  #58a;
+        background-position:calc(100% - 20px) calc(100% - 20px);
+    }
+    </style>
+</head>
+
+<body>
+<!-- 图片距离右下角的位置，几种不同的实现方式  用到了backgroud-position backgroud-origin calc() -->
+    <div class="outer">
+    </div>
+</body>
+
+</html>

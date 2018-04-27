@@ -1,0 +1,55 @@
+/* CSS Document */
+.box{
+	width:664px;
+	height:406px;
+	border-radius:9px;
+	margin:50px auto;
+	position:relative;
+	border:18px solid #5d75b1;
+	overflow:hidden;
+}
+.box label{
+	width:300px;
+	height:400px;
+	border:2px solid #16254c;
+	position:absolute;
+	top:0;
+	transition:1s;	
+}
+.box input{
+	display:none;	
+}
+.box label:nth-of-type(1){
+	background:url(../images/pic1.png);
+	left:0;	
+}
+.box label:nth-of-type(2){
+	background:url(../images/pic2.png);
+	left:72px;	
+}
+.box label:nth-of-type(3){
+	background:url(../images/pic3.png);
+	left:144px;	
+}
+.box label:nth-of-type(4){
+	background:url(../images/pic4.png);
+	left:216px;	
+}
+.box label:nth-of-type(5){
+	background:url(../images/pic5.png);
+	left:288px;	
+}
+.box label:nth-of-type(6){
+	background:url(../images/pic6.png);
+	left:360px;	
+}
+.box input:checked~label{
+	transform:translateX(230px);
+	-webkit-transform:translateX(230px);	
+}
+
+
+
+
+
+
