@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../../js/lib/jquery-2.1.1.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+
+    $(function() {
+        $(document).on('start', function() {
+            console.log('start···');
+            $(document).trigger('a');
+        });
+        $(document).on('a', function() {
+            console.log('this is A···');
+            $(document).trigger('b');
+        });
+        $(document).on('b', function() {
+            console.log('this is B···');
+            $(document).trigger('c');
+        });
+        $(document).on('c', function() {
+            console.log('this is C···');
+            $(document).trigger('d');
+        });
+        $(document).on('d', function() {
+            console.log('this is D···');
+            $(document).trigger('end');
+        });
+        $(document).on('end', function() {
+            console.log('ending···');
+        });
+
+        //开始检测
+        $(document).trigger('start');
+
+        function handStaus(){
+        	
+        }
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>多重边框</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        margin: 20px auto;
+        width: 100px;
+        height: 100px;
+    }
+
+    .outer {
+        margin: 20px auto;
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+        background: #655;
+    }
+
+    .outer>.inner {
+        padding: 10px;
+        height: 100%;
+        box-sizing: border-box;
+        background: tan;
+        border-radius: 5px;
+    }
+
+    .outer-version {
+        margin: 20px auto;
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+        background: tan;
+        border-radius: 5px;
+        box-shadow: 0 0 0 10px #655;
+        outline: 10px solid #655;
+    }
+
+    .gradient {
+        background: linear-gradient(#fb3 20%, #58a 0);
+        background-size: 100% 20px;
+    }
+    </style>
+</head>o
+
+<body>
+    <div class="outer">
+        <div class="inner">
+            多重的；多样的；许多的；倍数；[电] 并联；
+        </div>
+    </div>
+    <div class="outer-version">
+        多重的；多样的；许多的；倍数；[电] 并联；
+    </div>
+    <div class="gradient box"></div>
+</body>
+
+</html>
