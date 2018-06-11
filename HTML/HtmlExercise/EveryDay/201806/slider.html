@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../common/css/reset.css">
+    <style>
+        ::-webkit-scrollbar-track-piece {
+            background-color: #f8f8f8;
+        }
+
+        ::-webkit-scrollbar {
+            width: 9px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #dddddd;
+            background-clip: padding-box;
+            min-height: 28px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #bbb;
+        }
+
+        .slider-container {
+            position: relative;
+            margin: 20px auto 0 auto;
+            width: 500px;
+            height: 50px;
+            background-color: bisque;
+            overflow: hidden;
+            -webkit-overflow-scrolling: touch;
+            white-space: nowrap
+        }
+
+        .slider-ruler {
+            margin-top: 10px;
+            box-sizing: border-box;
+            padding-right: 10px;
+            transform: translateX(0);
+            transition: all 1s;
+            font-size: 0;
+            width: 10000px;
+        }
+
+        .slider-ruler a {
+            display: inline-block;
+            margin-left: 10px;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            background: aqua;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-container">
+        <div class="slider-ruler">
+            <a href="#" class="circle">1</a>
+            <a href="#" class="circle">2</a>
+            <a href="#" class="circle">3</a>
+            <a href="#" class="circle">4</a>
+            <a href="#" class="circle">5</a>
+            <a href="#" class="circle">6</a>
+            <a href="#" class="circle">7</a>
+            <a href="#" class="circle">8</a>
+            <a href="#" class="circle">9</a>
+            <a href="#" class="circle">10</a>
+            <a href="#" class="circle">11</a>
+            <a href="#" class="circle">12</a>
+            <a href="#" class="circle">13</a>
+            <a href="#" class="circle">14</a>
+            <a href="#" class="circle">15</a>
+            <a href="#" class="circle">16</a>
+            <a href="#" class="circle">17</a>
+            <a href="#" class="circle">18</a>
+            <a href="#" class="circle">19</a>
+            <a href="#" class="circle">20</a>
+            <a href="#" class="circle">21</a>
+        </div>
+    </div>
+    <script src="../../../common/js/jquery.js"></script>
+    <script>
+        $(function () {
+            var slideSelectorr = $(".slider-container");
+            var sliderLeft = slideSelectorr.offset().left;
+            var halfSliderWidth = slideSelectorr.width() / 2;
+            var rulerWidth = 21 * 40 + 10;
+            $(".slider-ruler").css("width", rulerWidth + "px");
+            $(".circle").click(function (ev) {
+                var $this = $(this);
+                var index = $this.index();
+                console.log("index=" + index);
+                var station = (index + 1) * 10 + index * 30;
+                console.log("station=" + station);
+                console.log("halfSliderWidth=" + halfSliderWidth);
+                var distance = station - halfSliderWidth;
+                console.log("distance====>" + distance);
+                var translateX = -distance;
+                console.log("translateX=" + translateX);
+                if (translateX > 0) {
+                    translateX = 0;
+                }
+                if (Math.abs(translateX) > rulerWidth - halfSliderWidth * 2) {
+                    translateX = -(rulerWidth - halfSliderWidth * 2);
+                }
+                $(".slider-ruler").css("transform", "translateX(" + translateX + "px)");
+
+            });
+        });
+
+    </script>
+</body>
+
+</html>

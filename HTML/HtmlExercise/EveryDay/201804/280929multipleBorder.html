@@ -43,14 +43,66 @@
         outline: 10px solid #655;
     }
 
-    .gradient {
-        background: linear-gradient(#fb3 20%, #58a 0);
+    .gradient-horizonal {
+        background: linear-gradient(#fb3 50%, #58a 0);
         background-size: 100% 20px;
     }
+
+    .gradient-vertical {
+        background: linear-gradient(90deg, #fb3 50%, #58a 0);
+        background-size: 20px 100%
+    }
+
+    .gradient-incline {
+        background: linear-gradient(45deg, #fb3 50%, #58a 0);
+        background-size: 20px 20px
+    }
+
+    audio {
+        width: 433px;
+        height: 36px;
+    }
+
+    .input-wrapper {
+        font-size: 0;
+        overflow: hidden;
+    }
+
+    .input-wrapper .search-input {
+        width: 200px;
+        height: 50px;
+        box-sizing: border-box;
+        vertical-align: middle;
+        border: 0 outeline:0;
+        /*float:right;*/
+    }
+
+    .input-wrapper .search-btn {
+        width: 50px;
+        height: 50px;
+        box-sizing: border-box;
+        vertical-align: middle;
+        float: left;
+        border: 0;
+    }
+
+    .grid {
+        width: 200px;
+        height: 200px;
+        background-color: #58a;
+        background-image: linear-gradient(#fff 1px, transparent 0), linear-gradient(90deg, #fff 1px, transparent 0);
+        background-size: 5px 5px;
+    }
     </style>
-</head>o
+</head>
 
 <body>
+    <select>
+        <option value="volvo">Volvo22222222</option>
+        <option value="saab">Saab222222222</option>
+        <option value="opel">Opel22222222222</option>
+        <option value="audi">Audi22222222</option>
+    </select>
     <div class="outer">
         <div class="inner">
             多重的；多样的；许多的；倍数；[电] 并联；
@@ -59,7 +111,17 @@
     <div class="outer-version">
         多重的；多样的；许多的；倍数；[电] 并联；
     </div>
-    <div class="gradient box"></div>
+    <div class="gradient-horizonal box"></div>
+    <div class="gradient-vertical box"></div>
+    <div class="gradient-incline box"></div>
+    <div class="input-wrapper">
+        <input type="text" name="" class="search-input" />
+        <input type="button" class="search-btn" name="" value="搜索" />
+    </div>
+    <div class="grid box"></div>
+    <!-- C:\作业帮\25451819.m4a -->
+    <audio controls src="E:\Download\video\348083603.m4a">播放器</audio>
+    <audio controls src="C:/作业帮\25451819.m4a">作业帮</audio>
 </body>
 
 </html>

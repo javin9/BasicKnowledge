@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="../../../common/js/jquery.js"></script>
+    <style type="text/css">
+    .custom-select {
+        position: relative;
+        margin: 0 auto;
+        width: 367px;
+        height: 38px;
+    }
+    /*下拉框*/
+
+    .select-input {
+        display: block;
+        width: 367px;
+        height: 38px;
+        line-height: 38px;
+        border: #ddd solid 1px;
+        outline: none;
+        background-color: #fff;
+        border: 1px #ccc solid;
+        cursor: pointer;
+        padding-left: 5px;
+        box-sizing: border-box;
+    }
+    /*样式一：下拉一排一个*/
+
+    .select-list {
+        position: absolute;
+        border: 1px #ccc solid;
+        width: 367px;
+        z-index: 10000;
+        background: #fff;
+        box-sizing: border-box;
+    }
+
+    .select-list span {
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        height: 28px;
+        line-height: 22px;
+        padding: 0;
+        font-size: 14px;
+        padding-left: 5px;
+        box-sizing: border-box;
+    }
+
+    .select-list span:hover {
+        background: #ddd;
+        color: #fff
+    }
+
+    .triangle-down {
+        position: absolute;
+        right: 10px;
+        top: 14px;
+        width: 0;
+        height: 0;
+        cursor: pointer;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 12px solid #000;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="custom-select">
+        <div class="trigger-select">
+            <div class="select-input">1992</div>
+            <div class="triangle-down"></div>
+        </div>
+        <div class="select-list hide" style="display:none;">
+            <span id="1">1992111111111</span>
+            <span id="1">19922222222222</span>
+            <span id="1">19923333333</span>
+            <span id="1">1992444444444</span>
+        </div>
+    </div>
+    <select>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+    </select>
+    <script type="text/javascript">
+    $(".select-list").on("click", "span", function(event) {
+        var that = $(this);
+        $(".select-input").text(that.text());
+        $(".select-list").hide().addClass('hide');
+    });
+
+    $(".trigger-select").click(function() {
+        if ($(".select-list").hasClass('hide')) {
+            $(".select-list").show().removeClass('hide');
+        } else {
+            $(".select-list").hide().addClass("hide");
+        }
+
+    });
+
+    $(document).on("click", function(ev) {
+        var target = $(ev.target);
+        if (!target.is(".select-list") && !target.is(".trigger-select")&&!target.is(".select-input")&&!target.is(".triangle-down")) {
+            if (!$(".select-list").hasClass("hide")) {
+                $(".select-list").hide().addClass('hide');
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>

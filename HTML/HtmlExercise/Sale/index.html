@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
-		<title></title>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <title></title>
+    <style>
+        a {
+            font-family: Arial, Helvetica, sans-serif
+        }
+    </style>
+</head>
 
-	<body>
-	</body>
+<body>
+    <script type="text/javascript">
+        Object.prototype.a = 1;
+        Function.prototype.b = 2;
+
+        function Person() {
+
+        }
+        var p1 = new Person();
+        console.log(p1.a);
+        console.log(p1.b);
+
+
+
+        setTimeout(function () {
+            console.log(1111);
+        }, 0)
+
+        new Promise(() => {
+            console.log(22222);
+        });
+        console.log(33333);
+    </script>
+</body>
 
 </html>

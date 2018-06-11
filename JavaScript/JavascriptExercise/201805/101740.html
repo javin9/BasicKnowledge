@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="btn">上传</button>
+    <br/>
+    <input type="file" name="" id="upload" />
+    <ul>
+        <li tabindex="0" class="el-upload-list__item is-uploading">
+            <a class="el-upload-list__item-name">
+            <i class="el-icon-document"></i>1.jpg
+            </a>
+            <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" class="el-progress el-progress--line">
+                <div class="el-progress-bar">
+                    <div class="el-progress-bar__outer" style="height: 2px;">
+                        <div class="el-progress-bar__inner" style="width: 100%;">
+                          
+                        </div>
+                    </div>
+                </div>
+                <div class="el-progress__text" style="font-size: 12.8px;">100%</div>
+            </div>
+        </li>
+        <li tabindex="0" class="el-upload-list__item is-uploading">
+            <a class="el-upload-list__item-name">
+            <i class="el-icon-document"></i>1.jpg
+            </a>
+            <label class="el-upload-list__item-status-label">
+                <i class="el-icon-upload-success el-icon-circle-check"></i>
+            </label>
+            <i class="el-icon-close"></i><i class="el-icon-close-tip">按 delete 键可删除</i>
+            <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" class="el-progress el-progress--line">
+                <div class="el-progress-bar">
+                    <div class="el-progress-bar__outer" style="height: 2px;">
+                        <div class="el-progress-bar__inner" style="width: 100%;">
+                            <!---->
+                        </div>
+                    </div>
+                </div>
+                <div class="el-progress__text" style="font-size: 12.8px;">100%</div>
+            </div>
+            <!---->
+        </li>
+    </ul>
+    <script type="text/javascript">
+    window.onload = function() {
+        console.log('ddd');
+        // document.querySelector("#btn").addclick(function() {
+        //     document.querySelector("#upload").dispatchEvent('change');
+        // });
+        document.querySelector("#btn").addEventListener("click", function() {
+            document.querySelector("#upload").dispatchEvent('change');
+        })
+    }
+
+
+      jsUploadingCallback  参数格式
+                   {
+                    "status":0,//0:未完成，1：遗传完毕
+                    "type":2,//2:学生讲义，3：教师讲义，4：音频，5：视频，6:长文章
+                    "percent":80,//进度数值
+                   }
+
+     jsOkCallback 
+                  参数
+                  {
+                     "status":0,//0:失败，1：成功
+                  }            
+    </script>
+</body>
+
+</html>

@@ -121,6 +121,9 @@ git log
     git reset --hard <commit_id>   删除了---》 整个版本的恢复  工作区 撤销挂起更改  具体到哪条记录
     git reset --hard HEAD^
     git reflog //回到未来
+
+
+    $ git log MainActivity.java
 ---------------------
 8 同步到远程仓库
 
@@ -139,7 +142,22 @@ git fetch  拉取过来不合并 需要手动合并
 git pull  拉取过来合并
 
 
+例子：比如同时有三个人开发，1.2最早是基于1.0，但是由于项目未发布，1.0,1.1,1.2全部都在同时开发，现在想把1.0已经增加的功能先合并到1.2；
 
+此时的步骤：check 1.2和1.0
+git checkout v1.0 
+git checkout v1.2
+
+然后再v1.2的分支基础上执行merge
+git merge v1.0
+
+如果没有报错，那就直接提交代码
+git push origin v1.2
+
+我们的先切换到dev分支，合并其他分支，之后push
+
+git checkout dev
+git merge origin/uploadfile
 -----------------------------------
 10  开源项目写作
  通过网站合并分支
@@ -311,3 +329,4 @@ git checkout -b 远程仓库分支名字 origin/远程仓库分支名字
 
 git pull
 
+git clone -b <branch name> [remote repository address]
