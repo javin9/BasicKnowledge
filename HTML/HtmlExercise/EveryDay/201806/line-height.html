@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        line-height: 50px;
+    }
+
+    .box span {
+        line-height: 10px;
+    }
+
+    .box2 {
+        line-height: 10px;
+    }
+
+    .box2 span {
+        line-height: 50px;
+    }
+    /*-===============*/
+
+    button.disabled {
+        cursor: not-allowed;
+    }
+    /*none-cursor*/
+
+    .none-cursor {
+        width: 200px;
+        height: 200px;
+        background: #000;
+        cursor: none;
+    }
+    /*background-clip*/
+
+    .clip-demo {
+        margin: 10px auto;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #a6a6a6;
+        background-clip: padding-box;
+        cursor: pointer;
+        border: 10px solid transparent;
+    }
+
+    .clip-before {
+        position:relative;
+        left:50px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #a6a6a6;
+        background-clip: padding-box;
+        /*box-shadow: 0 0 0 2px rgba(0, 0, 0, .3) inset, 0 .1em .2em -.05em rgba(0, 0, 0, .5);*/
+        cursor: pointer;
+    }
+    .clip-before:before{
+        content:"";
+        position:absolute;
+        left:-10px;
+        right:-10px;
+        top:-10px;
+        bottom:-10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span>这是内容...</span>
+    </div>
+    <div class="box2">
+        <span>这是内容...</span>
+    </div>
+    <div>12881766373836637733</div>
+    <!-- button disabled -->
+    <button class="disabled">我被警用了</button>
+    <!-- none-cursor -->
+    <div class="none-cursor"></div>
+    <!-- background-clip -->
+    <div class="clip-demo"></div>
+    <!-- clip-before -->
+    <div class="clip-before"></div>
+</body>
+
+</html>

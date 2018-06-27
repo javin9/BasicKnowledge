@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            background-color: aquamarine;
+        }
+
+        input[type="checkbox"] {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+            /*clip 属性剪裁绝对定位元素*/
+        }
+
+        input[type="checkbox"]+label:before {
+            content: "\a0";
+            display: inline-block;
+            margin-right: .2em;
+            width: .8em;
+            height: .8em;
+            line-height: .65;
+            border-radius: .2em;
+            background: silver;
+            text-indent: .15em;
+        }
+
+        .label {
+            font-size: 20px;
+        }
+
+        input[type="checkbox"]:checked+label:before {
+            content: "\2713";
+            background: yellowgreen;
+        }
+
+        .middle {
+            /* float: left; */
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            border: 1px solid blue;
+            line-height: 200px;
+            overflow: hidden;
+           
+        }
+
+        .middle span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="checkbox" id="awsome">
+        <label for="awsome" class="label">Awsome</label>
+    </div>
+
+
+    <div class="middle">
+        <span>测试文字测试文字</span>
+    </div>
+    <div class="middle">
+        <span>
+            测试文字测试文字
+        </span>
+    </div>
+    <div class="middle">
+        <span>
+            测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字
+            测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字
+            测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字
+            测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字
+            测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字
+            测试文字 测试文字 测试文字 测试文字 测试文字 测试文字 测试文字
+        </span>
+    </div>
+</body>
+
+</html>
