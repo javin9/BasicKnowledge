@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://www.css88.com/doc/webpack/plugins/dll-plugin/ -->
+<html lang="zh-hans"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+        <title>DllPlugin · webpack 中文文档(v3.5.5)</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="愚人码头">
+        
+        
+    
+    <link rel="stylesheet" href="./DllPlugin · webpack 中文文档(v3.5.5)_files/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="./DllPlugin · webpack 中文文档(v3.5.5)_files/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="./DllPlugin · webpack 中文文档(v3.5.5)_files/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="./DllPlugin · webpack 中文文档(v3.5.5)_files/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="./DllPlugin · webpack 中文文档(v3.5.5)_files/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="./DllPlugin · webpack 中文文档(v3.5.5)_files/website(1).css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="./DllPlugin · webpack 中文文档(v3.5.5)_files/website(2).css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://www.css88.com/doc/webpack/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="http://www.css88.com/doc/webpack/gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="http://www.css88.com/doc/webpack/plugins/environment-plugin/">
+    
+    
+    <link rel="prev" href="http://www.css88.com/doc/webpack/plugins/define-plugin/">
+    
+
+    </head>
+    <body>
+        
+<div class="book without-animation with-summary font-size-2 font-family-1">
+    <div class="book-summary">
+    <a class="book-name" href="http://www.css88.com/doc/webpack/"><img class="logo" src="./DllPlugin · webpack 中文文档(v3.5.5)_files/webpack.svg"> webpack 中文文档(v3.5.5)</a>
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="http://www.css88.com/doc/webpack/">
+            
+                    
+                    webpack概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../concepts/">
+            
+                <a href="http://www.css88.com/doc/webpack/concepts/">
+            
+                    
+                    第一部分：概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../concepts/entry-points/">
+            
+                <a href="http://www.css88.com/doc/webpack/concepts/entry-points/">
+            
+                    
+                    入口起点(Entry Points)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../concepts/output/">
+            
+                <a href="http://www.css88.com/doc/webpack/concepts/output/">
+            
+                    
+                    输出(Output)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../concepts/loaders/">
+            
+                <a href="http://www.css88.com/doc/webpack/concepts/loaders/">
+            
+                    
+                    加载器(Loaders)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../concepts/plugins/">
+            
+                <a href="http://www.css88.com/doc/webpack/concepts/plugins/">
+            
+                    
+                    插件(Plugins)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../concepts/configuration/">
+            
+                <a href="http://www.css88.com/doc/webpack/concepts/configuration/">
+            
+                    
+                    配置(Configuration)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../../concepts/modules/">
+            
+                <a href="http://www.css88.com/doc/webpack/concepts/modules/">
+            
+                    
+                    模块(Modules)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../../concepts/module-resolution/">
+            
+                <a href="http://www.css88.com/doc/webpack/concepts/module-resolution/">
+            
+                    
+                    模块解析(Module Resolution)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../../concepts/dependency-graph/">
+            
+                <a href="http://www.css88.com/doc/webpack/concepts/dependency-graph/">
+            
+                    
+                    依赖图表(Dependency Graph)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../../concepts/manifest/">
+            
+                <a href="http://www.css88.com/doc/webpack/concepts/manifest/">
+            
+                    
+                    文件清单(Manifest)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../../concepts/targets/">
+            
+                <a href="http://www.css88.com/doc/webpack/concepts/targets/">
+            
+                    
+                    构建目标(Targets)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../../concepts/hot-module-replacement/">
+            
+                <a href="http://www.css88.com/doc/webpack/concepts/hot-module-replacement/">
+            
+                    
+                    模块热替换(Hot Module Replacement)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../guides/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/">
+            
+                    
+                    第二部分：指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../guides/installation/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/installation/">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../guides/getting-started/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/getting-started/">
+            
+                    
+                    起步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../guides/asset-management/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/asset-management/">
+            
+                    
+                    管理资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../../guides/output-management/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/output-management/">
+            
+                    
+                    管理输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../../guides/development/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/development/">
+            
+                    
+                    开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../../guides/hot-module-replacement/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/hot-module-replacement/">
+            
+                    
+                    模块热替换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../../guides/production/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/production/">
+            
+                    
+                    生产环境构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../../guides/tree-shaking/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/tree-shaking/">
+            
+                    
+                    Tree shaking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.9" data-path="../../guides/code-splitting/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/code-splitting/">
+            
+                    
+                    代码拆分(Code Splitting)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.10" data-path="../../guides/lazy-loading/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/lazy-loading/">
+            
+                    
+                    懒加载(Lazy Loading)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.11" data-path="../../guides/caching/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/caching/">
+            
+                    
+                    缓存(Caching)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.12" data-path="../../guides/author-libraries/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/author-libraries/">
+            
+                    
+                    创建库 (Library)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.13" data-path="../../guides/environment-variables/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/environment-variables/">
+            
+                    
+                    使用环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.14" data-path="../../guides/shimming/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/shimming/">
+            
+                    
+                    Shimming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.15" data-path="../../guides/typescript/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/typescript/">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.16" data-path="../../guides/development-vagrant/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/development-vagrant/">
+            
+                    
+                    开发 - Vagrant
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.17" data-path="../../guides/dependency-management/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/dependency-management/">
+            
+                    
+                    管理依赖
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.18" data-path="../../guides/migrating/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/migrating/">
+            
+                    
+                    从 v1 迁移到 v2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.19" data-path="../../guides/public-path/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/public-path/">
+            
+                    
+                    Public Path(公共路径)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.20" data-path="../../guides/integrations/">
+            
+                <a href="http://www.css88.com/doc/webpack/guides/integrations/">
+            
+                    
+                    集成(Integrations)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第三部分：文档</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../api/">
+            
+                <a href="http://www.css88.com/doc/webpack/api/">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../api/cli/">
+            
+                <a href="http://www.css88.com/doc/webpack/api/cli/">
+            
+                    
+                    命令行接口(CLI)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../../api/module-methods/">
+            
+                <a href="http://www.css88.com/doc/webpack/api/module-methods/">
+            
+                    
+                    模块 API - 方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../api/module-variables/">
+            
+                <a href="http://www.css88.com/doc/webpack/api/module-variables/">
+            
+                    
+                    模块 API - 变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../../api/node/">
+            
+                <a href="http://www.css88.com/doc/webpack/api/node/">
+            
+                    
+                    Node.js API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../../api/loaders/">
+            
+                <a href="http://www.css88.com/doc/webpack/api/loaders/">
+            
+                    
+                    加载器 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../../api/hot-module-replacement/">
+            
+                <a href="http://www.css88.com/doc/webpack/api/hot-module-replacement/">
+            
+                    
+                    模块热替换(Hot Module Replacement)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../configuration/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../configuration/configuration-languages/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/configuration-languages/">
+            
+                    
+                    使用不同语言进行配置(Configuration Languages)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../configuration/configuration-types/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/configuration-types/">
+            
+                    
+                    多种配置类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../configuration/entry-context/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/entry-context/">
+            
+                    
+                    入口和上下文(Entry and Context)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../../configuration/output/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/output/">
+            
+                    
+                    输出(Output)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="../../configuration/module/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/module/">
+            
+                    
+                    模块(Module)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="../../configuration/resolve/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/resolve/">
+            
+                    
+                    解析(Resolve)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="../../configuration/plugins/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/plugins/">
+            
+                    
+                    插件(Plugins)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="../../configuration/dev-server/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/dev-server/">
+            
+                    
+                    开发中 Server(DevServer)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="../../configuration/devtool/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/devtool/">
+            
+                    
+                    开发工具(Devtool)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="../../configuration/target/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/target/">
+            
+                    
+                    构建目标(Targets)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="../../configuration/watch/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/watch/">
+            
+                    
+                    Watch 和 WatchOptions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="../../configuration/externals/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/externals/">
+            
+                    
+                    外部扩展(Externals)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="../../configuration/node/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/node/">
+            
+                    
+                    Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.14" data-path="../../configuration/performance/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/performance/">
+            
+                    
+                    性能(Performance)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.15" data-path="../../configuration/stats/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/stats/">
+            
+                    
+                    统计(Stats)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.16" data-path="../../configuration/other-options/">
+            
+                <a href="http://www.css88.com/doc/webpack/configuration/other-options/">
+            
+                    
+                    其它选项(Other Options)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../../loaders/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/">
+            
+                    
+                    加载器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../../loaders/babel-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/babel-loader/">
+            
+                    
+                    babel-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../../loaders/bundle-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/bundle-loader/">
+            
+                    
+                    bundle-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" data-path="../../loaders/cache-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/cache-loader/">
+            
+                    
+                    cache-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4" data-path="../../loaders/coffee-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/coffee-loader/">
+            
+                    
+                    coffee-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.5" data-path="../../loaders/coffee-redux-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/coffee-redux-loader/">
+            
+                    
+                    coffee-redux-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.6" data-path="../../loaders/coverjs-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/coverjs-loader/">
+            
+                    
+                    coverjs-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.7" data-path="../../loaders/css-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/css-loader/">
+            
+                    
+                    css-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.8" data-path="../../loaders/dynamic-css-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/dynamic-css-loader/">
+            
+                    
+                    dynamic-css-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.9" data-path="../../loaders/exports-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/exports-loader/">
+            
+                    
+                    exports-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.10" data-path="../../loaders/expose-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/expose-loader/">
+            
+                    
+                    expose-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.11" data-path="../../loaders/file-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/file-loader/">
+            
+                    
+                    file-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.12" data-path="../../loaders/gzip-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/gzip-loader/">
+            
+                    
+                    gzip-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.13" data-path="../../loaders/html-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/html-loader/">
+            
+                    
+                    html-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.14" data-path="../../loaders/i18n-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/i18n-loader/">
+            
+                    
+                    i18n-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.15" data-path="../../loaders/imports-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/imports-loader/">
+            
+                    
+                    imports-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.16" data-path="../../loaders/istanbul-instrumenter-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/istanbul-instrumenter-loader/">
+            
+                    
+                    istanbul-instrumenter-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.17" data-path="../../loaders/jshint-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/jshint-loader/">
+            
+                    
+                    jshint-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.18" data-path="../../loaders/json-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/json-loader/">
+            
+                    
+                    json-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.19" data-path="../../loaders/json5-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/json5-loader/">
+            
+                    
+                    json5-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.20" data-path="../../loaders/less-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/less-loader/">
+            
+                    
+                    less-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.21" data-path="../../loaders/mocha-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/mocha-loader/">
+            
+                    
+                    mocha-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.22" data-path="../../loaders/multi-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/multi-loader/">
+            
+                    
+                    multi-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.23" data-path="../../loaders/node-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/node-loader/">
+            
+                    
+                    node-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.24" data-path="../../loaders/null-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/null-loader/">
+            
+                    
+                    null-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.25" data-path="../../loaders/raw-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/raw-loader/">
+            
+                    
+                    raw-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.26" data-path="../../loaders/react-proxy-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/react-proxy-loader/">
+            
+                    
+                    react-proxy-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.27" data-path="../../loaders/restyle-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/restyle-loader/">
+            
+                    
+                    restyle-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.28" data-path="../../loaders/sass-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/sass-loader/">
+            
+                    
+                    sass-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.29" data-path="../../loaders/script-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/script-loader/">
+            
+                    
+                    script-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.30" data-path="../../loaders/source-map-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/source-map-loader/">
+            
+                    
+                    source-map-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.31" data-path="../../loaders/style-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/style-loader/">
+            
+                    
+                    style-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.32" data-path="../../loaders/svg-inline-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/svg-inline-loader/">
+            
+                    
+                    svg-inline-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.33" data-path="../../loaders/thread-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/thread-loader/">
+            
+                    
+                    thread-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.34" data-path="../../loaders/transform-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/transform-loader/">
+            
+                    
+                    transform-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.35" data-path="../../loaders/url-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/url-loader/">
+            
+                    
+                    url-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.36" data-path="../../loaders/val-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/val-loader/">
+            
+                    
+                    val-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.37" data-path="../../loaders/worker-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/worker-loader/">
+            
+                    
+                    worker-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.38" data-path="../../loaders/yaml-frontmatter-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/loaders/yaml-frontmatter-loader/">
+            
+                    
+                    yaml-frontmatter-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/">
+            
+                    
+                    插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.1" data-path="../min-chunk-size-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/min-chunk-size-plugin/">
+            
+                    
+                    MinChunkSizePlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.2" data-path="../babili-webpack-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/babili-webpack-plugin/">
+            
+                    
+                    BabiliWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3" data-path="../banner-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/banner-plugin/">
+            
+                    
+                    BannerPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.4" data-path="../commons-chunk-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/commons-chunk-plugin/">
+            
+                    
+                    CommonsChunkPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.5" data-path="../component-webpack-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/component-webpack-plugin/">
+            
+                    
+                    ComponentWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.6" data-path="../compression-webpack-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/compression-webpack-plugin/">
+            
+                    
+                    CompressionWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.7" data-path="../context-replacement-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/context-replacement-plugin/">
+            
+                    
+                    ContextReplacementPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.8" data-path="../define-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/define-plugin/">
+            
+                    
+                    DefinePlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="7.1.9" data-path="./">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/dll-plugin/">
+            
+                    
+                    DllPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.10" data-path="../environment-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/environment-plugin/">
+            
+                    
+                    EnvironmentPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.11" data-path="../extract-text-webpack-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/extract-text-webpack-plugin/">
+            
+                    
+                    ExtractTextWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.12" data-path="../hot-module-replacement-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/hot-module-replacement-plugin/">
+            
+                    
+                    HotModuleReplacementPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.13" data-path="../html-webpack-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/html-webpack-plugin/">
+            
+                    
+                    HtmlWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.14" data-path="../i18n-webpack-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/i18n-webpack-plugin/">
+            
+                    
+                    I18nWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.15" data-path="../ignore-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/ignore-plugin/">
+            
+                    
+                    IgnorePlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.16" data-path="../LimitChunkCountPlugin/index.md">
+            
+                <span>
+            
+                    
+                    LimitChunkCountPlugin
+            
+                
+            
+
+            
+        </span></li>
+    
+        <li class="chapter " data-level="7.1.17" data-path="../loader-options-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/loader-options-plugin/">
+            
+                    
+                    LoaderOptionsPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.18" data-path="../../pluginsno-emit-on-errors-plugin/index.md">
+            
+                <span>
+            
+                    
+                    NoEmitOnErrorsPlugin
+            
+                
+            
+
+            
+        </span></li>
+    
+        <li class="chapter " data-level="7.1.19" data-path="../normal-module-replacement-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/normal-module-replacement-plugin/">
+            
+                    
+                    NormalModuleReplacementPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.20" data-path="../npm-install-webpack-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/npm-install-webpack-plugin/">
+            
+                    
+                    NpmInstallWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.21" data-path="../provide-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/provide-plugin/">
+            
+                    
+                    ProvidePlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.22" data-path="../source-map-dev-tool-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/source-map-dev-tool-plugin/">
+            
+                    
+                    SourceMapDevToolPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.23" data-path="../uglifyjs-webpack-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/uglifyjs-webpack-plugin/">
+            
+                    
+                    UglifyjsWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.24" data-path="../zopfli-webpack-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/plugins/zopfli-webpack-plugin/">
+            
+                    
+                    ZopfliWebpackPlugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../../development/">
+            
+                <a href="http://www.css88.com/doc/webpack/development/">
+            
+                    
+                    开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../../development/how-to-write-a-plugin/">
+            
+                <a href="http://www.css88.com/doc/webpack/development/how-to-write-a-plugin/">
+            
+                    
+                    如何编写一个插件？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" data-path="../../development/plugin-patterns/">
+            
+                <a href="http://www.css88.com/doc/webpack/development/plugin-patterns/">
+            
+                    
+                    有用的插件模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.3" data-path="../../development/how-to-write-a-loader/">
+            
+                <a href="http://www.css88.com/doc/webpack/development/how-to-write-a-loader/">
+            
+                    
+                    如何编写一个加载器(loader)？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.4" data-path="../../development/release-process/">
+            
+                <a href="http://www.css88.com/doc/webpack/development/release-process/">
+            
+                    
+                    webpack合并，标记和发布过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com/" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+<!-- <div class="sidebar-addition">
+    <div class="sidebar-addition-con"><a href="http://www.css88.com/nav/" target="_blank"><img src="http://css88.b0.upaiyun.com/css88/2017/01/content_web_data.jpg">
+    </a><p>前端文档和工具</p>
+    <a href="http://www.css88.com/nav/" class="btn" target="_blank">马上查看</a></div>
+    
+</div> -->
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <a class="btn pull-left js-toolbar-action" aria-label="" href="http://www.css88.com/doc/webpack/plugins/dll-plugin/#"><i class="fa fa-align-justify"></i></a><a class="btn pull-left more-tool-hack" aria-label="" href="http://www.css88.com/doc/webpack2/">v2.2.0版本</a>
+    <a class="btn pull-left" aria-label="" href="http://www.css88.com/">WEB前端开发首页</a>
+    <div class="dropdown pull-right js-toolbar-action"><a class="btn toggle-dropdown" aria-label="Share" href="http://www.css88.com/doc/webpack/plugins/dll-plugin/#"><i class="fa fa-share-alt"></i></a><div class="dropdown-menu dropdown-left"><div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div><div class="buttons"><button class="button size-5 ">Facebook</button><button class="button size-5 ">Google+</button><button class="button size-5 ">Twitter</button><button class="button size-5 ">Weibo</button><button class="button size-5 ">Instapaper</button></div></div></div><a class="btn pull-right js-toolbar-action" aria-label="" href="http://www.css88.com/doc/webpack/plugins/dll-plugin/#"><i class="fa fa-weibo"></i></a><div class="dropdown pull-left font-settings js-toolbar-action"><a class="btn toggle-dropdown" aria-label="Font Settings" href="http://www.css88.com/doc/webpack/plugins/dll-plugin/#"><i class="fa fa-font"></i></a><div class="dropdown-menu dropdown-right"><div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div><div class="buttons"><button class="button size-2 font-reduce">A</button><button class="button size-2 font-enlarge">A</button></div><div class="buttons"><button class="button size-2 ">Serif</button><button class="button size-2 ">Sans</button></div><div class="buttons"><button class="button size-3 ">White</button><button class="button size-3 ">Sepia</button><button class="button size-3 ">Night</button></div></div></div><h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="http://www.css88.com/doc/webpack/">DllPlugin</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                    
+                                
+                                <h1 id="DllPlugin">DllPlugin</h1>
+                                
+                                <p><code>DLLPlugin</code> 和 <code>DLLReferencePlugin</code> 用某种方法实现了拆分 bundles，同时还大大提升了构建的速度。</p>
+<h2 id="dllplugin"><code>DllPlugin</code></h2>
+<p>这个插件是在一个额外的独立的 webpack 设置中创建一个只有 dll 的 bundle(dll-only-bundle)。 这个插件会生成一个名为 <code>manifest.json</code> 的文件，这个文件是用来让 <a href="http://www.css88.com/doc/webpack/plugins/dll-plugin/#dllreferenceplugin"><code>DLLReferencePlugin</code></a> 映射到相关的依赖上去的。</p>
+<ul>
+<li><code>context</code> (optional): manifest 文件中请求的上下文(context)(默认值为 webpack 的上下文(context))</li>
+<li><code>name</code>: 暴露出的 DLL 的函数名 (<a href="https://github.com/webpack/webpack/blob/master/lib/TemplatedPathPlugin.js" target="_blank">TemplatePaths</a>: <code>[hash]</code> &amp; <code>[name]</code> )</li>
+<li><code>path</code>: manifest json 文件的<strong>绝对路径</strong> (输出文件)</li>
+</ul>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>DllPlugin</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+</code></pre>
+<p>在给定的 <code>path</code> 路径下创建一个名为 <code>manifest.json</code> 的文件。 这个文件包含了从 <code>require</code> 和 <code>import</code> 的request到模块 id 的映射。 <code>DLLReferencePlugin</code> 也会用到这个文件。</p>
+<p>这个插件与 <a href="http://www.css88.com/doc/webpack/configuration/output#output-library"><code>output.library</code></a> 的选项相结合可以暴露出 (也叫做放入全局域) dll 函数。</p>
+<h2 id="dllreferenceplugin"><code>DllReferencePlugin</code></h2>
+<p>这个插件是在 webpack 主配置文件中设置的， 这个插件把只有 dll 的 bundle(们)(dll-only-bundle(<a href="http://www.css88.com/doc/webpack/glossary.html#s" class="glossary-term" title="">s</a>)) 引用到需要的预编译的依赖。</p>
+<ul>
+<li><code>context</code>: (<strong>绝对路径</strong>) manifest (或者是内容属性)中请求的上下文</li>
+<li><code>manifest</code> (object): 包含 <code>content</code> 和 <code>name</code> 的对象</li>
+<li><code>content</code> (optional): 请求到模块 id 的映射 (默认值为 <code>manifest.content</code>)</li>
+<li><code>name</code> (optional): dll 暴露的地方的名称 (默认值为 <code>manifest.name</code>) (可参考 <a href="http://www.css88.com/doc/webpack/configuration/externals"><code>externals</code></a>)</li>
+<li><code>scope</code> (optional): dll 中内容的前缀</li>
+<li><code>sourceType</code> (optional): dll 是如何暴露的 (<a href="http://www.css88.com/doc/webpack/configuration/output#output-librarytarget">libraryTarget</a>)</li>
+</ul>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>DllReferencePlugin</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+</code></pre>
+<p>通过引用 dll 的 manifest 文件来把依赖的名称映射到模块的 id 上，之后再在需要的时候通过内置的 <code>__webpack_require__</code> 函数来 <code>require</code> 他们</p>
+<p><a href="http://www.css88.com/doc/webpack/glossary.html#w" class="glossary-term" title="">W</a>&gt; 与 <a href="http://www.css88.com/doc/webpack/configuration/output#output-library"><code>output.library</code></a> 保持 <code>name</code> 的一致性。</p>
+<h3 id="模式modes">模式(Modes)</h3>
+<p>这个插件支持两种模式，分别是<em>作用域(scoped)</em>和<em>映射(mapped)</em>。</p>
+<h4 id="作用域模式scoped-mode">作用域模式(Scoped Mode)</h4>
+<p>dll 中的内容可以在模块前缀下才能被引用，举例来说，令<code>scope = "xyz"</code>的话，这个 dll 中的名为 <code>abc</code> 的文件可以通过 <code>require("xyz/abc")</code> 来获取</p>
+<p><a href="http://www.css88.com/doc/webpack/glossary.html#t" class="glossary-term" title="">T</a>&gt; <a href="https://github.com/webpack/webpack/tree/master/examples/dll-user" target="_blank">作用域的用例</a></p>
+<h4 id="映射模式mapped-mode">映射模式(Mapped Mode)</h4>
+<p>dll 中的内容被映射到了当前目录下。如果一个被 <code>require</code> 的文件符合 dll 中的某个文件(解析之后)，那么这个dll中的这个文件就会被使用。</p>
+<p>由于这是在解析了 dll 中每个文件之后才发生的，相同的路径必须能够确保这个 dll bundle 的使用者(不一定是人，可指某些代码)有权限访问。 举例来说， 假如一个 dll bundle 中含有 <code>loadash</code>库 以及 文件<code>abc</code>， 那么 <code>require("lodash")</code> 和 <code>require("./abc")</code> 都不会被编译进主要的 bundle文件，而是会被 dll 所使用。</p>
+<h2 id="用法usage">用法(Usage)</h2>
+<p><a href="http://www.css88.com/doc/webpack/glossary.html#w" class="glossary-term" title="">W</a>&gt; <code>DllReferencePlugin</code> 和 <code>DLL插件DllPlugin</code> 都是在<em>另外</em>的 webpack 设置中使用的。</p>
+<p><strong>webpack.vendor.config.js</strong></p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>DllPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  context<span class="token punctuation">:</span> __dirname<span class="token punctuation">,</span>
+  name<span class="token punctuation">:</span> <span class="token string">"[name]_[hash]"</span><span class="token punctuation">,</span>
+  path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"manifest.json"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p><strong>webpack.app.config.js</strong></p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>DllReferencePlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  context<span class="token punctuation">:</span> __dirname<span class="token punctuation">,</span>
+  manifest<span class="token punctuation">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./manifest.json"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  name<span class="token punctuation">:</span> <span class="token string">"./my-dll.js"</span><span class="token punctuation">,</span>
+  scope<span class="token punctuation">:</span> <span class="token string">"xyz"</span><span class="token punctuation">,</span>
+  sourceType<span class="token punctuation">:</span> <span class="token string">"commonsjs2"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="示例examples">示例(Examples)</h2>
+<p><a href="https://github.com/webpack/webpack/tree/master/examples/dll" target="_blank">Vendor</a> and <a href="https://github.com/webpack/webpack/tree/master/examples/dll-user" target="_blank">User</a></p>
+<p><em>两个单独的用例，用来分别演示作用域(scope)和上下文(context)。</em></p>
+<p><a href="http://www.css88.com/doc/webpack/glossary.html#t" class="glossary-term" title="">T</a>&gt; 多个 <code>DllPlugins</code> 和 <code>DllReferencePlugins</code>.</p>
+<h2 id="引用参考references">引用参考(References)</h2>
+<h3 id="source">Source</h3>
+<ul>
+<li><a href="https://github.com/webpack/webpack/tree/master/lib/DllPlugin.js" target="_blank">DllPlugin source</a></li>
+<li><a href="https://github.com/webpack/webpack/tree/master/lib/DllReferencePlugin.js" target="_blank">DllReferencePlugin source</a></li>
+<li><a href="https://github.com/webpack/webpack/blob/master/lib/DllEntryPlugin.js" target="_blank">DllEntryPlugin source</a></li>
+<li><a href="https://github.com/webpack/webpack/blob/master/lib/DllModuleFactory.js" target="_blank">DllModuleFactory source</a></li>
+<li><a href="https://github.com/webpack/webpack/blob/master/lib/LibManifestPlugin.js" target="_blank">ManifestPlugin source</a></li>
+</ul>
+<h3 id="tests">Tests</h3>
+<ul>
+<li><a href="https://github.com/webpack/webpack/tree/master/test/configCases/dll-plugin/0-create-dll/webpack.config.js" target="_blank">DllPlugin creation test</a></li>
+<li><a href="https://github.com/webpack/webpack/tree/master/test/configCases/dll-plugin/2-use-dll-without-scope/webpack.config.js" target="_blank">DllPlugin without scope test</a></li>
+<li><a href="https://github.com/webpack/webpack/tree/master/test/configCases/dll-plugin" target="_blank">DllReferencePlugin use Dll test</a></li>
+</ul>
+
+                                <!-- <a href="http://www.icketang.com/2017/ickt_state_0713/190.html?shcss884" target="_blank" style="margin-top: 20px; display: block;"><img src="http://css88.b0.upaiyun.com/css88/2017/07/icketang.jpg" alt=""></a> -->
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="http://www.css88.com/doc/webpack/plugins/define-plugin/" class="navigation navigation-prev " aria-label="Previous page: DefinePlugin">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="http://www.css88.com/doc/webpack/plugins/environment-plugin/" class="navigation navigation-next " aria-label="Next page: EnvironmentPlugin" style="margin-right: 17px;">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script async="" src="./DllPlugin · webpack 中文文档(v3.5.5)_files/analytics.js.下载"></script><script src="./DllPlugin · webpack 中文文档(v3.5.5)_files/hm.js.下载"></script><script async="" src="http://www.css88.com:35729/livereload.js"></script><script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"DllPlugin","contributors":["aretecode","sokra","opiepj","simon04","skipjack"],"related":[{"title":"Code Splitting Example","url":"https://github.com/webpack/webpack/tree/master/examples/explicit-vendor-chunk/README.md"}],"level":"7.1.9","depth":2,"next":{"title":"EnvironmentPlugin","level":"7.1.10","depth":2,"path":"plugins/environment-plugin/index.md","ref":"plugins/environment-plugin/index.md","articles":[]},"previous":{"title":"DefinePlugin","level":"7.1.8","depth":2,"path":"plugins/define-plugin/index.md","ref":"plugins/define-plugin/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","page-toc-button","sharing","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"prism":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":false,"google":false,"instapaper":false,"twitter":false,"vk":false,"weibo":true},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","author":"愚人码头","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"webpack 中文文档(v3.5.5)","language":"zh-hans","gitbook":"*"},"file":{"path":"plugins/dll-plugin/index.md","mtime":"2017-08-31T03:37:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-11-07T09:51:56.141Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+<div class="page-toc-button"><i class="fa fa-bars" aria-hidden="true"></i><div class="page-toc-menu"><ul><li><a href="http://www.css88.com/doc/webpack/plugins/dll-plugin/#DllPlugin">DllPlugin</a></li><ul><li><a href="http://www.css88.com/doc/webpack/plugins/dll-plugin/#dllplugin">DllPlugin</a></li><li><a href="http://www.css88.com/doc/webpack/plugins/dll-plugin/#dllreferenceplugin">DllReferencePlugin</a></li><ul><li><a href="http://www.css88.com/doc/webpack/plugins/dll-plugin/#%E6%A8%A1%E5%BC%8Fmodes">模式(Modes)</a></li></ul><li><a href="http://www.css88.com/doc/webpack/plugins/dll-plugin/#%E7%94%A8%E6%B3%95usage">用法(Usage)</a></li><li><a href="http://www.css88.com/doc/webpack/plugins/dll-plugin/#%E7%A4%BA%E4%BE%8Bexamples">示例(Examples)</a></li><li><a href="http://www.css88.com/doc/webpack/plugins/dll-plugin/#%E5%BC%95%E7%94%A8%E5%8F%82%E8%80%83references">引用参考(References)</a></li><ul><li><a href="http://www.css88.com/doc/webpack/plugins/dll-plugin/#source">Source</a></li><li><a href="http://www.css88.com/doc/webpack/plugins/dll-plugin/#tests">Tests</a></li></ul></ul></ul></div></div></div>
+
+        
+    <script src="./DllPlugin · webpack 中文文档(v3.5.5)_files/gitbook.js.下载"></script>
+    <script src="./DllPlugin · webpack 中文文档(v3.5.5)_files/theme.js.下载"></script>
+    
+        
+        <script src="./DllPlugin · webpack 中文文档(v3.5.5)_files/plugin.js.下载"></script>
+        
+    
+        
+        <script src="./DllPlugin · webpack 中文文档(v3.5.5)_files/buttons.js.下载"></script>
+        
+    
+        
+        <script src="./DllPlugin · webpack 中文文档(v3.5.5)_files/plugin.js(1).下载"></script>
+        
+    
+        
+        <script src="./DllPlugin · webpack 中文文档(v3.5.5)_files/search-engine.js.下载"></script>
+        
+    
+        
+        <script src="./DllPlugin · webpack 中文文档(v3.5.5)_files/search.js.下载"></script>
+        
+    
+        
+        <script src="./DllPlugin · webpack 中文文档(v3.5.5)_files/lunr.min.js.下载"></script>
+        
+    
+        
+        <script src="./DllPlugin · webpack 中文文档(v3.5.5)_files/search-lunr.js.下载"></script>
+        
+    
+        
+        <script src="./DllPlugin · webpack 中文文档(v3.5.5)_files/fontsettings.js.下载"></script>
+        
+    
+
+        <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f8be45191941378fa9c93900b0d0be23";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43525385-12', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+
+
+</body></html>

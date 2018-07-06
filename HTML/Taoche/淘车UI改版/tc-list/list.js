@@ -1,22 +1,4 @@
 $(function() {
-    /*Validator start*/
-    String.prototype.format = String.prototype.format || function(obj) {
-        var that = this;
-        if (typeof obj == "object") {
-            for (var attr in obj) {
-                var regAttr = eval("/\\{" + attr + "\\}/ig");
-                that = that.replace(regAttr, obj[attr]);
-            }
-        } else {
-            //把参数放到数组里面 slice() 方法可从已有的数组中返回选定的元素。
-            var arr = [].slice.call(arguments, 1);
-            //调用自己
-            return format(that, arr);
-        }
-        return that;
-    };
-    /*Validator end*/
-
     /*param start*/
     var parametersHelper = {
         paramsKeys: ['p', 'g', 'e', 's', 'b', 'x', 'c', 'd', 'z', 'a', 'o', 'q', 't', 'r'],
@@ -126,7 +108,6 @@ $(function() {
 
     }
     parametersHelper.init();
-    console.log(parametersHelper);
     parametersHelper.geturl();
     /*param end*/
 
@@ -156,7 +137,6 @@ $(function() {
 
         this.init();
     }
-
     FilterBar.prototype = {
         init: function() {
             this.getMoreData();
@@ -935,7 +915,6 @@ $(function() {
 
         }
     };
-
     var filterBar = new FilterBar();
     /*filterBar  end*/
 
@@ -1090,7 +1069,6 @@ $(function() {
         //加载更多
 
     });
-
     /*scroll function end */
 
     /*filter more start*/
@@ -1112,8 +1090,6 @@ $(function() {
             filterBar.filterMoreLayerScroll.refresh();
         }, 0);
     });
-
-
     /*filter more start*/
 
     /*common function*/
