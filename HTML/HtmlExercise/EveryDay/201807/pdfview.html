@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* .lightbox {
+            display: block;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 7;
+            opacity: 0.3;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .pop {
+            position: absolute;
+            left: 50%;
+            width: 894px;
+            margin-left: -447px;
+            z-index: 9;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <h1>
+        <a href="javascript:void(0)" target="_blank" id="showpdf">显示pdf文档</a>
+    </h1>
+    <div id="container" style="display: none;">
+        <div class="lightbox"></div>
+        <div id="pop" class="pop">
+        </div>
+    </div>
+    <script src="../../../common/js/jquery.js"></script>
+    <script src="../../../common/js/pdf/pdf.js"></script>
+    <script src="../../../common/js/pdf/pdf.worker.js"></script>
+    <script>
+        var url = "https://charge.zuoyebang.cc/lecture_d6e9857896525e8070b5b73967f36867.pdf?authorization=bce-auth-v1%2F80054b2251d24cb98eda994c93426d7d%2F2018-07-21T10%3A18%3A17Z%2F1800%2Fhost%2F816c515ab091029988ddbd4fb11d87c3baa046218a2163a6cce0b3a52d5bc4de";
+        $(function () {
+            $("#showpdf").click(function () {
+                $("#container").show();
+                PDFJS
+                    .getDocument(url)
+                    .then((pdfDoc_) => {
+                        console.log(pdfDoc_);
+                        var numPages = pdfDoc_.numPages;
+                        createCanvasList(numPages);
+                        for (let index = 0; index < numPages; index++) {
+                            pdfDoc_
+                                .getPage(index)
+                                .then((page) => {
+                                    var scale = 1;
+                                    var viewport = page.getViewport(scale);
+                                    var canvas = document.getElementById('canvas_'+index);
+                                    var context = canvas.getContext('2d');
+                                    canvas.height = viewport.height;
+                                    canvas.width = viewport.width;
+                                    var renderContext = {
+                                        canvasContext: context,
+                                        viewport: viewport
+                                    };
+                                    page.render(renderContext);
+                                });
+                        }
+
+                    })
+            });
+        });
+
+        function createCanvasList(count){
+          var frag=  document.createDocumentFragment();
+            for (let index = 0; index < count; index++) {
+                var canvas=document.createElement("canvas");
+                    canvas.id="canvas_"+index;
+                frag.appendChild(canvas);
+            }
+            $("#pop").html(frag);
+        }
+    </script>
+</body>
+
+</html>

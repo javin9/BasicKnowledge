@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>欢迎使用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        [type="submit"] {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 2px 12px;
+            background-color: #19b955;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        :focus+label.btn {
+            outline: 1px dashed hotpink;
+            outline: 3px auto -webkit-focus-ring-color;
+        }
+
+        .btn-audio {
+            margin: 90px auto;
+            width: 186px;
+            height: 186px;
+            background: url(images/voice_stop.png) no-repeat center bottom;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel">
+        <input type="submit" id="box">
+        <label for="box" class="btn">提交</label>
+    </div>
+    <div class="btn-audio">
+        <audio id="mp3Btn">
+            <source src="E:\Download\1.mp3" type="audio/mpeg" />
+        </audio>
+    </div>
+    <script>
+    var obj={
+        a1:1,
+        b1:2,
+        c1:3
+    };
+   var  {a,b,c}=obj;
+   console.log({a,b,c});
+    </script>
+    
+</body>
+
+</html>

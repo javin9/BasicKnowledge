@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../../common/js/vue.js"></script>
+    <link rel="stylesheet" href="../../../common/css/reset.css">
+    <link rel="stylesheet" href="../../../common/font/iconfont.css">
+    <style>
+        .audio-wrapper {
+            margin-top: 50px;
+            margin-left: 50px;
+            box-sizing: border-box;
+            padding:0 12px;
+            width: 196px;
+            height: 22px;
+            background: #F7F7F7;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- https://blog.csdn.net/Dandelion_drq/article/details/77645659?locationNum=2&fps=1 -->
+    <div id="app">
+        <div class="audio-wrapper">
+            <audio>
+                <source :src="src" type="audio/mp3">
+            </audio>
+            <div class="controls">
+                <i class="icon iconfont icon-bofang"></i>
+                <i class="icon iconfont icon-zanting"></i>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    src: "C:\Users\zuoyebang\Desktop\文件\audio\希望的种子.mp3"
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
