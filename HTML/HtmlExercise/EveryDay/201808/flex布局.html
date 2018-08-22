@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*缺点：新技术要考虑浏览器兼容*/
+
+        .container {
+            display: flex;
+        }
+
+        .main {
+            flex: 1;
+            height: 300px;
+            background-color: red;
+        }
+
+        .left {
+            order: -1;
+            /*排最左*/
+            flex-basis: 200px;
+            /*分配空间*/
+            height: 300px;
+            background-color: blue;
+        }
+
+        .right {
+            flex-basis: 100px;
+            height: 300px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>

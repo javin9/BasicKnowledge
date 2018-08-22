@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <div class="container">
+        <div class="main"></div>
+        <!--先写主体内容，优先渲染-->
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <style>
+        /*要点：父元素设置margin左右，main宽度100%，然后left和right都设置margin-left左移到同一排*/
+
+        .container {
+            margin-left: 100px;
+            margin-right: 200px;
+        }
+
+        .main {
+            float: left;
+            width: 100%;
+            height: 300px;
+            background-color: red;
+        }
+
+        .left {
+            float: left;
+            width: 100px;
+            height: 300px;
+            margin-left: -100%;
+            /*左移100%,使left和main在同一行*/
+            position: relative;
+            left: -100px;
+            /*左移100px，与container的margin-left相对应。使元素响应地靠左排列*/
+            background-color: blue;
+        }
+
+        .right {
+            float: left;
+            width: 200px;
+            height: 300px;
+            margin-left: -200px;
+            /*左移自身宽度，使right和main在同一行*/
+            position: relative;
+            right: -200px;
+            /*右移200px，与container的margin-right相对应。使元素响应地靠右排列*/
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main"></div>
+        <!--先写主体内容，优先渲染-->
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>

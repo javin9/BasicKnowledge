@@ -994,7 +994,8 @@ $(function() {
             console.log('ainimateHideAfter');
         },
         currentfirstid: 9, //第一层级选中id
-        currentdsenondid: 2556 //第二层级选中id
+        currentdsenondid: 2556, //第二层级选中id
+        level: 2
     });
 
     $(".brand-trigger").click(function() {
