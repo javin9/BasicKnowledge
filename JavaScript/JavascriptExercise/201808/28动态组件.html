@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="example">
+        <button @click="change">切换组件</button>
+        <component :is="currentView"></component>
+    </div>
+    <script src="../../js/lib/vue.js"></script>
+    <script>
+        var tiankong = { template: '<div>我是填空题</div>' };
+        var xuanze = { template: '<div>我是选择题</div>' };
+        var yuedu = { template: '<div>我是阅读题</div>' };
+        new Vue({
+            el: '#example',
+            components: {
+                tiankong,
+                xuanze,
+                yuedu,
+            },
+            data: {
+                index:1,
+                obj: {
+                    "1": 'tiankong',
+                    "2": 'xuanze',
+                    "3": 'yuedu',
+                }
+            },
+            computed: {
+                currentView() {
+                    return this.obj[this.index];
+                }
+            },
+            methods: {
+                change() {
+                    this.index++;;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

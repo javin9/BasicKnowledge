@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 11;
+        var b = 22;
+        var obj = {
+            a: 1,
+            b: 2,
+            fn1() {
+                console.log(this.a);
+            },
+            fn2: function () {
+                console.log(this.b);
+            },
+            fn3: () => {
+                console.log(this.a);
+            },
+            fn4: () => {
+                return () => {
+                    console.log(this.a);
+                }
+            }
+        }
+
+        obj.fn1();//1
+        obj.fn2();//2
+        obj.fn3();//11
+        obj.fn4()();//11
+        
+        obj.fn1.bind({a:33})()//33
+        obj.fn2.bind({b:33})();//33
+        obj.fn3.bind({a:33})();//11
+
+        console.log(JSON.stringify([1,3,4]));
+        console.log(JSON.parse(JSON.stringify([1,3,4])));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        #navigator {
+            position: relative;
+            margin: 50px auto;
+            height: 34px;
+            width: 726px;
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+
+        ul {
+            width: 10000px;
+            transition: all .3s;
+            transform: translateX(0px);
+        }
+
+        ul li {
+            float: left;
+
+        }
+
+
+        .thumbnail-item {
+            width: 24px;
+            height: 24px;
+            background: #35CC67;
+            line-height: 24px;
+            text-align: center;
+            color: #FFF;
+            border-radius: 50%;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .thumbnail-item-current {
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            margin: 0 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <navigator :count="50" />
+    </div>
+    <script src="../../js/lib/vue.js"></script>
+    <script>
+        Vue.component('navigator', {
+            template: `<div id="navigator" ref="thumbnailContainer">
+                        <ul class="clearfix" ref="thumbSliderContainer">
+                            <li class="thumbnail-item" v-for="(item,index) in count" @click="tapQuestion(item,index)" :class="{'thumbnail-item-current':index===currentIndex}"
+                                :key="index">
+                                {{index+1}}
+                            </li>
+                        </ul>
+                    </div>`,
+            props: {
+                thumbnail: {
+                    type: Object,
+                    default() {
+                        return {
+                            itemWidth: 24,
+                            itemMarginLeft: 5,
+                            itemMarginRight: 5,
+                            itemPaddingLeft: 0,
+                            itemPaadingRight: 0,
+                            thumbnailObjLeft: 12,
+                        }
+                    }
+                },
+                count: {
+                    type: Number,
+                    required: true
+                },
+                current: {
+                    type: Number,
+                    default: 0
+                }
+            },
+            data() {
+                return {
+                    currentIndex: 0
+                }
+            },
+            created(){
+                this.currentIndex=this.current;
+            },
+            mounted() {
+                /*外层容器的宽度*/
+                this.thumbnailContainerWidth = this.$refs.thumbnailContainer.getBoundingClientRect().width;
+
+                /*内部li的宽度*/
+                let options = this.thumbnail;
+                this.itemBoxWidth = options.itemWidth + options.itemMarginLeft + options.itemMarginRight + options.itemPaddingLeft + options.itemPaadingRight;
+                /*内部ul的宽度*/
+                this.thumbnailObjWidth = this.count * this.itemBoxWidth;
+                this.$refs.thumbSliderContainer.style.width = `${this.thumbnailObjWidth}px`;
+
+                /*能滑动的上限数值*/
+                this.translateXMax = this.thumbnail.thumbnailObjLeft + this.thumbnailObjWidth - this.thumbnailContainerWidth;
+                if (this.translateXMax > 0) {
+                    this.$emit("notes-container");//展示左右切换
+                }
+
+            },
+            methods: {
+                tapQuestion(item, index) {
+                    this.$emit("selectedquestion", {
+                        item: item,
+                        
+                        index: index
+                    });
+                    this.setIndex(index);
+                },
+                setIndex(index) {
+                    if (index === this.currentIndex) {
+                        return false;
+                    }
+                    this.currentIndex = index;
+                    var cuurentItemLeft = this.calcCurrentItemLeft(index),
+                        distance = cuurentItemLeft - (this.thumbnailContainerWidth / 2);
+                    this.moveSlider(distance);
+                },
+                calcCurrentItemLeft(index) {
+                    let options = this.thumbnail;
+                    /*盒子宽度=content+marginLeft+marginRight/*/
+                    let itemBoxWidth = options.itemWidth + options.itemMarginLeft + options.itemMarginRight + options.itemPaddingLeft + options.itemPaadingRight;
+                    let cuurentItemLeft = options.thumbnailObjLeft + (index + 1) * itemBoxWidth + (options.itemWidth / 2) + options.itemMarginLeft;
+                    return cuurentItemLeft;
+                },
+                moveSlider(translateX) {
+                    if (this.translateXMax <= 0) {
+                        return false;
+                    }
+                    /*左边界*/
+                    if (translateX < 0) {
+                        translateX = 0
+                    }
+                    /*右边界*/
+                    if (Math.abs(translateX) > this.translateXMax) {
+                        translateX = this.translateXMax;
+                    }
+                    translateX = -translateX;
+                    var dd = `translateX(${translateX}px))`;
+                    this.$refs.thumbSliderContainer.style.transform = `translateX(${translateX}px)`;
+                },
+                goHead() {
+                    this.moveSlider(0);
+                },
+                goEnd() {
+                    this.moveSlider(1000000);
+                }
+            }
+        });
+        var vm = new Vue({
+            el: "#app",
+        });
+        // var vm = new Vue({
+        //     el: "#app",
+        //     data() {
+        //         return {
+        //             count: 50,
+        //             currentIndex: 0,
+        //             thumbnail: {
+
+        //             },
+        //         }
+        //     },
+        //     computed: {
+
+        //     },
+        //     created() {
+
+        //     },
+        //     mounted() {
+        //         /*外层容器的宽度*/
+        //         this.thumbnailContainerWidth = this.$refs.thumbnailContainer.getBoundingClientRect().width;
+
+        //         /*内部li的宽度*/
+        //         let options = this.thumbnail;
+        //         this.itemBoxWidth = options.itemWidth + options.itemMarginLeft + options.itemMarginRight + options.itemPaddingLeft + options.itemPaadingRight;
+        //         /*内部ul的宽度*/
+        //         this.thumbnailObjWidth = this.count * this.itemBoxWidth;
+        //         this.$refs.thumbSliderContainer.style.width = `${this.thumbnailObjWidth}px`;
+
+        //         /*能滑动的上限数值*/
+        //         this.translateXMax = this.thumbnail.thumbnailObjLeft + this.thumbnailObjWidth - this.thumbnailContainerWidth;
+        //         if (this.translateXMax > 0) {
+        //             this.$emit("notes-container");//展示左右切换
+        //         }
+
+        //     },
+        //     methods: {
+        //         tapQuestion(item, index) {
+        //             this.$emit("selectedquestion", {
+        //                 item: item,
+        //                 index: index
+        //             });
+        //             this.setIndex(index);
+        //         },
+        //         setIndex(index) {
+        //             if (index === this.currentIndex) {
+        //                 return false;
+        //             }
+        //             this.currentIndex = index;
+        //             var cuurentItemLeft = this.calcCurrentItemLeft(index),
+        //                 distance = cuurentItemLeft - (this.thumbnailContainerWidth / 2);
+        //             this.moveSlider(distance);
+        //         },
+        //         calcCurrentItemLeft(index) {
+        //             let options = this.thumbnail;
+        //             /*盒子宽度=content+marginLeft+marginRight/*/
+        //             let itemBoxWidth = options.itemWidth + options.itemMarginLeft + options.itemMarginRight + options.itemPaddingLeft + options.itemPaadingRight;
+        //             let cuurentItemLeft = options.thumbnailObjLeft + (index + 1) * itemBoxWidth + (options.itemWidth / 2) + options.itemMarginLeft;
+        //             return cuurentItemLeft;
+        //         },
+        //         moveSlider(translateX) {
+        //             if (this.translateXMax <= 0) {
+        //                 return false;
+        //             }
+        //             /*左边界*/
+        //             if (translateX < 0) {
+        //                 translateX = 0
+        //             }
+        //             /*右边界*/
+        //             if (Math.abs(translateX) > this.translateXMax) {
+        //                 translateX = this.translateXMax;
+        //             }
+        //             translateX = -translateX;
+        //             var dd = `translateX(${translateX}px))`;
+        //             this.$refs.thumbSliderContainer.style.transform = `translateX(${translateX}px)`;
+        //         },
+        //         goHead() {
+        //             this.moveSlider(0);
+        //         },
+        //         goEnd() {
+        //             this.moveSlider(1000000);
+        //         }
+        //     }
+        // });
+
+    </script>
+</body>
+
+</html>
