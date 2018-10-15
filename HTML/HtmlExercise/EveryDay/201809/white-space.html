@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            margin: 20px auto;
+            width: 100px;
+            border: 1px solid #000;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+
+        .pre {
+            white-space: pre;
+        }
+
+        .pre-line {
+            white-space: pre-line;
+        }
+
+        .pre-wrap {
+            white-space: pre-wrap;
+        }
+
+        .unset {
+            white-space: unset;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>white-space normal控制空白字符的显示的，同时还能控制是否自动换行</h2>
+    <div class="box">
+        Hi&nbsp;&nbsp;, This is a incomprehensibilities long word.
+        </br>
+        你好&nbsp;&nbsp;， 这 是一个不可思议的长单词
+    </div>
+    <h2>white-space nowrap控制空白字符的显示的，同时还能控制是否自动换行</h2>
+    <div class="box nowrap">
+        Hi&nbsp;&nbsp;, This is a incomprehensibilities long word.
+        </br>
+        你好&nbsp;&nbsp;， 这 是一个不可思议的长单词
+    </div>
+    <h2>word-wrap pre控制空白字符的显示的，同时还能控制是否自动换行</h2>
+    <div class="box pre">
+        Hi&nbsp;&nbsp;, This is a incomprehensibilities long word.
+        </br>
+        你好&nbsp;&nbsp;， 这 是一个不可思议的长单词
+    </div>
+    <h2>word-wrap pre-line控制空白字符的显示的，同时还能控制是否自动换行</h2>
+    <div class="box pre-line">
+        Hi&nbsp;&nbsp;, This is a incomprehensibilities long word.
+        </br>
+        你好&nbsp;&nbsp;， 这 是一个不可思议的长单词
+    </div>
+    <h2>word-wrap pre-wrap控制空白字符的显示的，同时还能控制是否自动换行</h2>
+    <div class="box pre-wrap">
+        Hi&nbsp;&nbsp;, This is a incomprehensibilities long word.
+        </br>
+        你好&nbsp;&nbsp;， 这 是一个不可思议的长单词
+    </div>
+    <h2>word-wrap unset控制空白字符的显示的，同时还能控制是否自动换行</h2>
+    <div class="box unset">
+        Hi&nbsp;&nbsp;, This is a incomprehensibilities long word.
+        </br>
+        你好&nbsp;&nbsp;， 这 是一个不可思议的长单词
+    </div>
+</body>
+
+</html>

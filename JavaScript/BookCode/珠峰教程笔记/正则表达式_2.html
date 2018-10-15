@@ -8,16 +8,16 @@
      
         window.onload = function () {
 
-            var stree = 'FSFSFS  current  oooo ';
-            stree.replace('current', '');
-            console.log(stree);
-            console.log(stree.replace('current', ''));
-            //注意正则加了g,就对正则属性LastIndex属性更改
-            var reg = /\d+/g;
-            var reee = /\d/g;
-            var r1 = reg.test('12312shfskhdf');//false
-            console.log(r1);
-            console.log(reg.lastIndex);
+            // var stree = 'FSFSFS  current  oooo ';
+            // stree.replace('current', '');
+            // console.log(stree);
+            // console.log(stree.replace('current', ''));
+            // //注意正则加了g,就对正则属性LastIndex属性更改
+            // var reg = /\d+/g;
+            // var reee = /\d/g;
+            // var r1 = reg.test('12312shfskhdf');//false
+            // console.log(r1);
+            // console.log(reg.lastIndex);
             //var r2 = reg.test('sdfssdfsf123123');//true;
             //console.log(r2);
             //console.log(reg.lastIndex);
@@ -37,11 +37,13 @@
             //console.log(RegExp.$2);
             //console.log(RegExp.$3);
 
-            //var reg3 = /\d+/g;
-            //var str3 = "dsf34753094sdfsdf";
-            //var str31 = "dsfsdfsdfsdfsdfs345345345s";
-            //console.log(str3.search(reg3));
-            //console.log(str31.search(reg3));
+            var reg3 = /\d+/g;
+            var str3 = "dsf34753094sdfsdf";
+            var str31 = "dsfsdfsdfsdfsdfs345345345s";
+            console.log(str3.search(reg3));
+            console.log(str31.search(reg3));
+            console.log(reg3.exec(str3));
+            console.log(str3.match(reg3));
 
             ////分解年月日时分秒
             //var str4 = '2015-7-7 22:59:11';

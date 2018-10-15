@@ -1,20 +1,103 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>
-			<%= htmlWebpackPlugin.options.title%>
-		</title>
-		<script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>">
-			
-		</script>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%= htmlWebpackPlugin.options.title%>
+    </title>
+    <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>">
 
-	<body>
-   <% for(var key in htmlWebpackPlugin.files){ %>
-   	<%= key %>:<%=JSON.stringify(htmlWebpackPlugin.files[key])%>
-   <% } %>
-	</body>
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <% for(var key in htmlWebpackPlugin.files){ %>
+    <%= key %>:
+    <%=JSON.stringify(htmlWebpackPlugin.files[key])%>
+    <% } %>
+
+    <script>
+        // src/single/index.js
+        var index2 = require('./index2');
+        var util = require('./util');
+        console.log(index2);
+        console.log(util);
+
+        // src/single/index2.js
+        var util = require('./util');
+        console.log(util);
+        module.exports = "index 2";
+
+        // src/single/util.js
+        module.exports = "Hello World";
+
+        // 通过 config/webpack.config.single.js 打包
+        const webpack = require('webpack');
+        const path = require('path')
+
+        module.exports = {
+            entry: {
+                index: [path.resolve(__dirname, '../src/single/index.js')],
+            },
+            output: {
+                path: path.resolve(__dirname, '../dist'),
+                filename: '[name].[chunkhash:8].js'
+            },
+        }
+            // dist/index.xxxx.js
+            (function (modules) {
+                // 已经加载过的模块
+                var installedModules = {};
+
+                // 模块加载函数
+                function __webpack_require__(moduleId) {
+                    if (installedModules[moduleId]) {
+                        return installedModules[moduleId].exports;
+                    }
+                    var module = installedModules[moduleId] = {
+                        i: moduleId,//模块在书中的Index
+                        l: false,//该模块是否已经加载完毕
+                        exports: {}//该模块的导出值
+                    };
+                    modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+                    module.l = true;
+                    return module.exports;
+                }
+
+                return __webpack_require__(__webpack_require__.s = 3);
+
+            })([
+                /* 0 */
+                (function (module, exports, __webpack_require__) {
+                    var util = __webpack_require__(1);
+                    console.log(util);
+                    module.exports = "index 2";
+                }),
+                /* 1 */
+                (function (module, exports) {
+                    module.exports = "Hello World";
+                }),
+                /* 2 */
+                (function (module, exports, __webpack_require__) {
+                    var index2 = __webpack_require__(0);
+                    index2 = __webpack_require__(0);
+                    var util = __webpack_require__(1);
+                    console.log(index2);
+                    console.log(util);
+                }),
+                /* 3 */
+                (function (module, exports, __webpack_require__) {
+                    module.exports = __webpack_require__(2);
+                })]);
+
+    </script>
+</body>
 
 </html>
