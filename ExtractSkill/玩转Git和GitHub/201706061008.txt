@@ -333,3 +333,25 @@ git checkout -b 远程仓库分支名字 origin/远程仓库分支名字
 git pull
 
 git clone -b <branch name> [remote repository address]
+
+
+//创建tag
+git tag -a v1.2   -m  'release 1.2'
+
+//查看tag
+git tag
+
+//查看tag的附注信息，用show命令查看
+git  show v1.2
+
+//推送到远程git仓库
+git  push origin --tags
+
+//删除本地分支tag
+git tag -d v1.2
+
+//删除远程分支tag
+git  push origin :refs/tags/v1.2
+
+//获取远程版本
+git  fetch origin tag v1.2
