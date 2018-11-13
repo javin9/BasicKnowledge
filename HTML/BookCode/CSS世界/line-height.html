@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../common/css/reset.css">
+    <style>
+        div {
+            margin: 20x 50px;
+        }
+
+        .title {
+            margin: 50px;
+            width: 500px;
+            line-height: 50px;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .multiple-title {
+            box-sizing: border-box;
+            margin: 50px;
+            padding: 50px;
+            width: 300px;
+            line-height: 124px;
+            background-color: #f2f2f2;
+        }
+
+        .multiple-title .content {
+            display: inline-block;
+            line-height: 20px;
+            vertical-align: middle;
+        }
+
+        .test {
+            margin: 50px;
+            font-size: 16px;
+            line-height: 0;
+            border: 1px solid #ccc;
+            background-color: #f2f2f2;
+        }
+
+        .test1 {
+            margin: 50px;
+            font-size: 16px;
+            line-height: 1;
+            border: 1px solid #ccc;
+            background-color: #f2f2f2;
+        }
+
+        .image-wrapper {
+            line-height: 50px;
+            background-color: #f2f2f2;                                                                   
+        }
+
+        .image-wrapper img {
+            display: inline-block;
+            vertical-align:middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        line-height单行文本垂直居中
+    </div>
+
+    <div class="multiple-title">
+        <div class="content">
+            line-height多行多行文本垂直居中 line-height多行多行文本垂直居中
+        </div>
+    </div>
+
+    <div class="test">
+        我的高度是？
+    </div>
+    <div class="test1">
+        我的高度是？
+    </div>
+
+    <div class="image-wrapper">
+        你好啊
+        <img src="../../Taoche/淘车UI改版/img/about.png" alt="" srcset="">
+    </div>
+
+    <div>
+        <P>body{font-size:12px}</P>
+        <ul>
+            <li>body{line-height:150%;}子类继承body</li>
+            <li>body{line-height:1.5em;}子类继承body</li>
+            <li>body{line-height:1.;}子类继承父类</li>
+        </ul>
+    </div>
+</body>
+
+</html>
