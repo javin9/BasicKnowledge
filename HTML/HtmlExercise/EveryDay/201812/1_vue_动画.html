@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      @keyframes scaleY-in {
+        0% {
+          transform: scaleY(0);
+        }
+        50% {
+          transform: scaleY(0.5);
+        }
+        100% {
+          transform: scaleY(1);
+        }
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box-img {
+        width: 90%;
+        margin: 20px auto;
+      }
+      .button-container {
+        text-align: center;
+      }
+      /* .toggle-enter,
+      .toggle-leave-to {
+        transform: scaleY(0);
+      }
+      .toggle-enter-active,
+      .toggle-leave-active {
+        transition: transform 1s;
+      } */
+      .toggle-enter-active {
+        animation: scaleY-in 1s;
+      }
+      .toggle-leave-active {
+        animation: scaleY-in 1s reverse;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://juejin.im/post/5bfcf3eaf265da61542d50e3?utm_source=gold_browser_extension">文章地址</a>
+    <div id="app">
+      <template>
+        <div class="button-container"><button @click="tapClick">切换</button></div>
+        <div class="box-img">
+          <transition name="toggle"> <img src="../../Capture/img/banner.jpg" v-show="show" alt="" srcset=""/></transition>
+        </div>
+      </template>
+    </div>
+
+    <script src="../../../../JavaScript/js/lib/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          show: true
+        },
+        methods: {
+          tapClick() {
+            console.log("cl");
+            this.show = !this.show;
+          }
+        }
+      });
+
+      function fn(console, console, console, console, console, console, console, console, console, console) {
+        console.log(+new Date());
+      }
+    </script>
+  </body>
+</html>

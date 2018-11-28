@@ -8,8 +8,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../common/css/reset.css">
     <style>
+        body {
+            padding-bottom: 100px;
+        }
+
         div {
-            margin: 20x 50px;
+            margin: 20px 50px;
         }
 
         .title {
@@ -53,12 +57,21 @@
 
         .image-wrapper {
             line-height: 50px;
-            background-color: #f2f2f2;                                                                   
+            background-color: #f2f2f2;
         }
 
         .image-wrapper img {
             display: inline-block;
-            vertical-align:middle;
+            vertical-align: middle;
+        }
+
+        .box {
+            line-height: 32px;
+        }
+
+        .box span {
+            font-size: 24px;
+            vertical-align: top;
         }
     </style>
 </head>
@@ -93,6 +106,79 @@
             <li>body{line-height:1.5em;}子类继承body</li>
             <li>body{line-height:1.;}子类继承父类</li>
         </ul>
+    </div>
+
+    <div class="box">
+        <span>文字</span>
+    </div>
+    <style>
+        .box1 {
+            text-align: justify;
+            width: 900px;
+            border: 1px solid #000;
+        }
+
+        .justify-fix {
+            display: inline-block;
+            width: 1000px;
+        }
+    </style>
+    <div class="box1">
+        <img src="../超实用的CSS代码段/img/constable.jpg" alt="" srcset="">
+        <img src="../超实用的CSS代码段/img/constable.jpg" alt="" srcset="">
+        <img src="../超实用的CSS代码段/img/constable.jpg" alt="" srcset="">
+        <img src="../超实用的CSS代码段/img/constable.jpg" alt="" srcset="">
+        <i class="justify-fix"></i>
+        <i class="justify-fix"></i>
+        <i class="justify-fix"></i>
+    </div>
+    <style>
+        .dib-baseliine {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #f2f2f2;
+            background-color: red;
+        }
+    </style>
+    <div class="inline-block">
+        <span class="dib-baseliine"></span>
+        <span class="dib-baseliine more-dib-baseline">dfsafa</span>
+    </div>
+    <style>
+        .container {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, .5);
+            text-align: center;
+            font-size: 0;
+            white-space: nowrap;
+            overflow: auto;
+        }
+
+        .container:after {
+            display: inline-block;
+            content: '';
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        .dialog {
+            width:100px;
+            height:100px;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: left;
+            font-size: 14px;
+            white-space: normal;
+            background-color: #fff;
+        }
+    </style>
+    <div class="container">
+        <div class="dialog">内容区域</div>
     </div>
 </body>
 
