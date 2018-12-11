@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //：https://juejin.im/post/5bcb2e295188255c55472db0
+      function Animal() {
+        this.property = "Animal";
+      }
+
+      Animal.prototype.getSuperValue = function() {
+        return this.property;
+      };
+
+      function Dog() {
+        Animal.call(this);
+        this.subproperty = "wangwang";
+      }
+      //第一种方式:缺点，改变了父类的constructor 指向
+      // Dog.prototype = Animal.prototype;
+      // Dog.prototype.constructor = Dog;
+
+      // var obj = {};
+      // obj.prototype = Animal.prototype;
+      // Dog.prototype = obj;
+      // Dog.prototype.constructor = Dog;
+
+      Dog.prototype = create(Animal.prototype);
+      Dog.prototype.constructor = Dog;
+      var instance = new Dog();
+      var animal = new Animal();
+      console.log(instance, animal); // true
+
+      function create(obj) {
+        function F() {}
+        F.prototype = obj;
+        return new F();
+      }
+    </script>
+  </body>
+</html>
