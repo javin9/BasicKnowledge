@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function hybrid(fn) {
+      //   fn.remove = () => {
+      //     console.log(this);
+      //     setTimeout(function() {
+      //       // console.log(window[]);
+      //       // delete window[];
+      //       // console.log(window[]);
+      //     }, 1000);
+      //   };
+
+      //   window.abc = function(callback) {
+      //     fn.callbackName = "abc";
+      //     callback.call(fn, "abc");
+      //   };
+      //   //模拟执行
+      //   setTimeout(() => {
+      //     window.abc(fn);
+      //   }, 2000);
+      // }
+      // hybrid(function() {
+      //   console.log(new Date());
+      //   this.remove();
+      // });
+
+      console.log(/^[a-zA-Z0-9\p{P}\u4E00-\u9FA5]+$/gi.test("dd"));
+      console.log(/^[a-zA-Z0-9\p{P}\u4E00-\u9FA5]+$/gi.test("d d")); //wswwewew
+      console.log(/^[a-zA-Z0-9\p{P}\u4E00-\u9FA5]+$/gi.test("qwe"));
+    </script>
+  </body>
+</html>

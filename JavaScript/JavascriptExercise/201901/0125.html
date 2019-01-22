@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <template>
+      <div>
+        <!-- <title-tag :level=1> Hello world</title-tag> -->
+        <title-tag> Hello world</title-tag>
+        <h3>{{name}}</h3>
+        <anchored-heading :level="1">Hello world!</anchored-heading>
+
+        <title-wrapper>title-wrapper</title-wrapper>
+        <multiply-tag>multiply-tag</multiply-tag>
+      </div>
+    </template>
+  </div>
+  <script src="../../js/lib/vue.js"></script>
+  <script>
+    // 第一种用法 HTML标签
+    Vue.component("title-tag", {
+      render(createElement) {
+        return createElement(
+          'h2', this.$slots.default
+        );
+      }
+    });
+
+    Vue.component('anchored-heading', {
+      render: function (createElement) {
+        return createElement(
+          'h' + this.level,   // 标签名称
+          this.$slots.default // 子元素数组
+        )
+      },
+      props: {
+        level: {
+          type: Number,
+          required: true
+        }
+      }
+    })
+
+    //在h3标签中要怎么渲染  
+    Vue.component("show-name", {
+      render(createElement) {
+        return createElement('h3', this.name);
+      }
+    })
+
+    //第二种用法 自定义组件
+    Vue.component("title-wrapper", {
+      render(createElement) {
+        return createElement('title-tag', this.$slots.default)
+      }
+    });
+
+    //第三种用法 多个
+    Vue.component('multiply-tag', {
+      render(createElement) {
+        return createElement('div', [
+          'first',
+          createElement('h3', 'second'),
+          createElement('h2', 'third')
+        ])
+      }
+    })
+
+    new Vue({
+      el: "#app",
+      data() {
+        return {
+          name: "Cupid"
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

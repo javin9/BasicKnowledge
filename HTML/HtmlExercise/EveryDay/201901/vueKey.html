@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="(item,index) in list" :key="index">{{ item }}</li>
+      </ul>
+    </div>
+    <script src="../../../../JavaScript/js/lib/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data() {
+          return {
+            list: [1, 2, 3, 4, 5]
+          };
+        },
+        mounted() {
+          setTimeout(() => {
+            this.changeList();
+          }, 2000);
+        },
+        methods: {
+          changeList() {
+            console.log(123);
+            let first = this.list[0];
+            let second = this.list[1];
+            this.$set(this.list, 0, second);
+            this.$set(this.list, 1, first);
+            // this.list[0] = second;
+            // this.list[1] = first;
+            // console.log(this.list);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

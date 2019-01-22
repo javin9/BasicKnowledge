@@ -7,16 +7,47 @@
     <title>Document</title>
   </head>
   <body>
-    <script>
-      const t = new Date();
-      function fn() {
-        console.log(t);
-        if (false) {
-          const t = "hello world";
-        }
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
       }
+      .box1 {
+        background-color: red;
+        overflow: hidden;
+      }
+      .box1 > .inner {
+        margin: 50%;
+        background: #000;
+      }
+    </style>
+    <div class="box1"><div class="inner"></div></div>
+    <div></div>
+    <script>
+      // const t = new Date();
+      // function fn() {
+      //   console.log(t);
+      //   if (false) {
+      //     const t = "hello world";
+      //   }
+      // }
 
-      fn();
+      // fn();
+      zyb(); //zyb-next
+      var zyb = function() {
+        console.log("zyb");
+      };
+
+      zyb(); //zyb
+
+      function zyb() {
+        console.log("zyb-next");
+      }
+      // let zyb = function() {
+      //   console.log("zyb-next");
+      // };
+
+      // zyb(); //zyb-next
     </script>
   </body>
 </html>
